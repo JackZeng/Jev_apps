@@ -1,0 +1,23 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Local credentials and private working material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+local/
+tmp/
+
+# Optional script caches
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
