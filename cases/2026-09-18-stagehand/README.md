@@ -1,6 +1,12 @@
 # Stagehand 浏览器控制
 
-> 把页面无障碍树交给 Jev，由 Stagehand 执行选中的动作。
+**简体中文** | [English](README.en.md)
+
+> 让 Jev 决定网页上下一步怎么操作，再由 Stagehand 动手。
+
+## 用人话解释原理
+
+网页会向辅助技术提供按钮名称等信息。这个方案把这些信息整理给 Jev，让它选动作；Stagehand 负责真正点击，然后重新查看页面。
 
 [返回总表](../../README.md#browser) · [同类优劣与原理](../../breakdowns/2026-09-18-browser.md)
 
@@ -32,7 +38,7 @@
 
 ## 应用场景与价值
 
-把页面无障碍树交给 Jev，由 Stagehand 执行选中的动作。
+让 Jev 决定网页上下一步怎么操作，再由 Stagehand 动手。
 
 **可借鉴点（分析）**：输入和执行器分工明确，适合已有 Stagehand 项目。
 

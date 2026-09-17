@@ -1,0 +1,757 @@
+{
+  "cases": {
+    "browser-use": {
+      "title": "Browser Use · Ultrafast",
+      "summary": "Describe a flight search and let the agent click, type and find results on the website.",
+      "mechanism": "Each step builds a fresh action space from the DOM. Jev selects an action; a small LLM supplies text when needed.",
+      "advantage": "Dynamic action candidates and public code make the complete browser loop worth studying.",
+      "limitation": "Still uses an LLM for text. The MVP excludes shadow DOM, iframes, canvas and uploads; a few repeated tasks do not establish cross-site reliability.",
+      "reported_result": "The author reports a flight search taking about 7 seconds and costing $0.0039, shown at normal speed.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "source_notes": "**Repository cross-check (2026-09-18)**: The [pinned README](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md) describes separate operation and target judgments in one request, with code executing only the matching target. A small LLM is used for TYPE_TEXT. Its 7,073ms measurement starts after the initial page observation and lists unsupported page types; it is not a general time from browser launch to arbitrary task completion.",
+      "plain_explanation": "Think of an assistant with a constantly updated list of buttons. Code reads the page, Jev chooses the next action, and a text model helps fill in details such as city names."
+    },
+    "stagehand": {
+      "title": "Stagehand browser control",
+      "summary": "Let Jev choose the next browser action and Stagehand carry it out.",
+      "mechanism": "Observe the page → send the accessibility tree as state and actions as questions → Jev decides → Stagehand executes → observe again.",
+      "advantage": "A clear division between observation and execution, useful for existing Stagehand projects.",
+      "limitation": "Depends on page accessibility information; no success rate on a shared task set is published.",
+      "reported_result": "The author reports $0.001 for this remote-browser task.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Webpages expose button names and other information to accessibility tools. This system gives that information to Jev, lets it choose an action, and uses Stagehand to execute it before checking the page again."
+    },
+    "cua-jev-use": {
+      "title": "Cua · jev-use",
+      "summary": "Give Jev a list of allowed browser actions, execute its choice, then check the result.",
+      "mechanism": "PR #3916 describes DOM/semantic observations, locally constructed complete action candidates, Jev selecting a candidate ID, local validation, Driver execution and an independent state endpoint checking the result.",
+      "advantage": "Local code owns and validates actions; the preview includes Python/TypeScript examples and independent outcome checks.",
+      "limitation": "Not a released visual desktop-control feature. The current preview has no screenshot perception and does not certify native Windows/Linux desktop capability.",
+      "reported_result": "The post advertises a macOS/Windows/Linux development preview and mentions #3943. Repository review identified #3916 as the semantic jev-use preview, still unmerged at collection.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "source_notes": "**Repository cross-check (2026-09-18)**: [PR #3916](https://github.com/trycua/cua/pull/3916) describes DOM/semantic evidence and Jev selecting actions outside Driver. Mock E2E CI is not live Jev certification across platforms. [PR #3943, mentioned in the post](https://github.com/trycua/cua/pull/3943), has been narrowed to an unwired perception-foundations draft and should not be treated as an available screenshot-perception feature. These are repository statements, not tests run here.",
+      "plain_explanation": "Like ordering from a menu, Jev selects only an action ID prepared by the application. Code checks it, executes it and independently verifies the form. The current preview does not operate arbitrary software from screenshots."
+    },
+    "coreml-ocr": {
+      "title": "CoreML + OCR desktop clicks",
+      "summary": "Recognize buttons and labels on a Mac, then ask Jev which one to click.",
+      "mechanism": "Local CoreML segments UI elements → on-device OCR reads labels → Jev assigns probabilities to elements → click and detect again.",
+      "advantage": "No DOM required. The author says screen pixels stay on the Mac, offering a route to native-app control.",
+      "limitation": "OCR and detection errors affect results. Label text still leaves the device, so this is not fully offline.",
+      "reported_result": "The author reports roughly 90ms per decision, without a full task benchmark.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Local recognition software does the screen-reading and lists the button labels. Jev chooses from that list. Images stay on the device, but recognized text is still sent to Jev."
+    },
+    "agent-desktop": {
+      "title": "OpenCode + agent-desktop",
+      "summary": "One model remembers the task while Jev helps choose desktop targets quickly.",
+      "mechanism": "The LLM maintains memory and requests agent-desktop snapshots, then sends them to Jev to select an element.",
+      "advantage": "Separates long-term context management from fast action selection.",
+      "limitation": "Still depends on an LLM. Snapshot encoding is unspecified; this does not establish native image input to Jev.",
+      "reported_result": "The author shares a desktop-control demo with a visible cursor.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Think of a coordinator and an operator: the language model keeps context and passes desktop information to Jev for target selection. The post does not explain the exact representation."
+    },
+    "kernel-browser": {
+      "title": "Kernel browser demo",
+      "summary": "Try a web demo of Jev controlling a browser.",
+      "mechanism": "The author provides a Jev + Kernel integration and demo URL; state representation, action constraints and fallback details are not disclosed.",
+      "advantage": "A public entry point supports further reproduction of the interaction.",
+      "limitation": "Only a short demo; complex pages, recovery and completion rates are undocumented.",
+      "reported_result": "The author shares an approximately 22-second demo, without a comparable benchmark.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "The author connects Jev to the Kernel browser service in an observe–choose–act loop. The post does not detail how pages become model inputs or how errors are recovered."
+    },
+    "voice-browser": {
+      "title": "Voice-controlled browser",
+      "summary": "Speak a command, such as “go back,” and let the browser act.",
+      "mechanism": "Speech transcription → Jev interprets the action → browser execution.",
+      "advantage": "Hands-free interaction for short, explicit commands.",
+      "limitation": "Transcription, targeting and browser execution add overhead; decision latency is not end-to-end latency.",
+      "reported_result": "The author reports about 300ms and $0.0002 per decision.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Speech is first transcribed. Jev maps the text to an action, then the browser executes it. Jev chooses what to do; a separate component handles the audio."
+    },
+    "opencode-qa": {
+      "title": "OpenCode app testing",
+      "summary": "Let a coding assistant interact with an app to help check it after development.",
+      "mechanism": "The author demonstrates Jev + OpenCode testing an app; assertions, checking rules and recovery are not published.",
+      "advantage": "Shows a route from automated interaction to development acceptance checks.",
+      "limitation": "Fast interaction does not establish correct assertions or sufficient coverage. Included as a demo.",
+      "reported_result": "The author shares an approximately 24-second testing demo, without a full QA benchmark.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Interacting with an app and knowing whether it is correct are separate jobs. The demo integrates Jev into OpenCode testing but does not publish the full pass/fail rules."
+    },
+    "eve-router": {
+      "title": "Eve criteria-based model router",
+      "summary": "Choose which model should handle a request before sending it there.",
+      "mechanism": "Jev receives the request and selection criteria, selects a candidate model, and the application invokes it.",
+      "advantage": "An explicit selection policy can serve as a separate routing layer.",
+      "limitation": "The post provides no routing accuracy, quota policy or fallback evaluation; the evidence is a demo screenshot.",
+      "reported_result": "The author shares a screenshot of criteria-based model routing.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Like a receptionist routing calls, Jev sees the request and selection criteria, chooses a model, and lets code forward the work. The final task result is needed to judge the choice."
+    },
+    "ephraim-router": {
+      "title": "Request-to-model router",
+      "summary": "Pick a model for each question and send the request automatically.",
+      "mechanism": "User request → Jev model selection → application forwards the request.",
+      "advantage": "Shows invocation after selection, rather than classification alone.",
+      "limitation": "No shared task set establishes better total cost or answer quality than a fixed model.",
+      "reported_result": "The author shares an approximately 14-second routing demo.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Jev acts like a triage desk: it decides who handles the request. The selected model writes the answer. The demo connects selection and forwarding."
+    },
+    "firstmate": {
+      "title": "Firstmate task dispatch",
+      "summary": "Choose an AI worker and effort level based on the task and user preferences.",
+      "mechanism": "Jev replaces the LLM-driven rule-reading and dispatch step; the parent agent still invokes Jev through a tool call.",
+      "advantage": "Routes both execution environment and model configuration within an existing agent orchestrator.",
+      "limitation": "Agreement with Fable on 25 tasks is small-sample decision agreement, not task-outcome accuracy.",
+      "reported_result": "The author reports agreement on 25 tasks and reductions of 71% in cost and 90% in elapsed time for the entire dispatch stage.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "A dispatcher chooses the worker, tool setup and effort level. Jev replaces that dispatch step; other agents still perform the task."
+    },
+    "local-delegation": {
+      "title": "Local coding-agent delegation",
+      "summary": "Send routine work, hard questions and long coding tasks to different AI assistants.",
+      "mechanism": "A deterministic hook in the delegation flow asks Jev to select a harness/model.",
+      "advantage": "Separates mechanical work, complex reasoning and long implementation tasks.",
+      "limitation": "Rules, fallbacks and long-term completion quality are not fully published. A deterministic hook does not make model decisions infallible.",
+      "reported_result": "The author gives different routes for mechanical work, complex subtasks and long-running work.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Before delegation, code asks Jev who should handle the task, then invokes that assistant through a predefined route. Choosing a worker is separate from doing the work."
+    },
+    "skillbox": {
+      "title": "Skillbox skill selection",
+      "summary": "Find useful skills for the current task in a large AI skill library.",
+      "mechanism": "Query → Jev assesses relevant skills → return them to the agent; the library is organized into bundles and profiles.",
+      "advantage": "Useful when a large skill inventory makes tool discovery slow.",
+      "limitation": "No recall evaluation. The preview comes from an earlier Skillbox introduction, not a new screenshot testing the Jev integration.",
+      "reported_result": "The author says the integration returns relevant skills directly, without a formal controlled evaluation.",
+      "media_note": "This preview is from an earlier Skillbox introduction. The newer main post describes the Jev integration.",
+      "plain_explanation": "Like choosing tools from a toolbox, Jev filters skills for the request and the agent uses them. Speed matters, but so does avoiding missed essential skills."
+    },
+    "coding-garden-assistant": {
+      "title": "Coding Garden tool assistant",
+      "summary": "Ask for weather, information or to-do actions and let an assistant call the right tool.",
+      "mechanism": "User prompt → Jev chooses a tool and arguments → tool returns results → assistant presents them with sources.",
+      "advantage": "Connects tool results to a conversational interface for common personal-assistant tasks.",
+      "limitation": "Arguments and tool choices can still be wrong; the author's claim of no hallucinations is not established.",
+      "reported_result": "The author shares an approximately four-minute demo and says no text-generating LLM is used.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Jev selects a tool and its arguments; the tool returns results and the interface displays them. Even sourced answers can be wrong if the wrong tool or arguments are chosen."
+    },
+    "eve-tool-agent": {
+      "title": "Eve tool-calling agent",
+      "summary": "Let Jev choose an agent's next tool to reduce selection overhead.",
+      "mechanism": "Keep the agent execution flow while handing tool selection to Jev; compare combinations with several larger models.",
+      "advantage": "A targeted substitution for existing tool agents without rebuilding the whole system.",
+      "limitation": "The author describes similar results but provides insufficient samples or a shared quality score; savings do not imply complete LLM replacement.",
+      "reported_result": "An earlier update reports roughly one-eighth the cost with similar execution time and output quality.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "The original agent reasons about which tool to use. This experiment hands that choice to Jev while retaining the tools and downstream processing."
+    },
+    "ai-cli": {
+      "title": "ai-cli decision interface",
+      "summary": "Give terminal-based assistants access to Jev judgments, choices and scores.",
+      "mechanism": "A command-line wrapper exposes Jev judgments, choices and scores for agent harnesses.",
+      "advantage": "A common CLI can integrate with multiple agents without a separate interface for each.",
+      "limitation": "An integration tool, not an autonomous task-completion agent; arguments and error handling need evaluation.",
+      "reported_result": "The author publishes a CLI screenshot and the npm package name ai-cli.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "It is a common adapter: Jev becomes callable through terminal commands. Providing an interface does not itself solve a complex task."
+    },
+    "jev-review": {
+      "title": "jev-review MCP",
+      "summary": "Score AI-written code and let the coding agent revise it using feedback.",
+      "mechanism": "Agent submits context → Jev scores several dimensions → agent revises → score again.",
+      "advantage": "Fits into the development loop and supports before/after comparisons.",
+      "limitation": "An experimental plugin. Optimizing a score can reward gaming the metric; it does not replace tests or human review.",
+      "reported_result": "The author demonstrates an experimental, local-first MCP plugin.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "The loop resembles submitting work, receiving feedback and revising it. Jev scores criteria; the coding agent edits. A higher score does not guarantee a correct program."
+    },
+    "typed-pr-review": {
+      "title": "14-check PR risk review",
+      "summary": "Screen code changes for risks such as exposed secrets or removed tests, and escalate uncertainty.",
+      "mechanism": "Diff → one Jev call returns 14 probabilities → code produces a verdict; critical checks between 0.35 and 0.65 go to a human or larger model.",
+      "advantage": "Explicit checks and escalation rules are easier to inspect than a single overall code-quality score.",
+      "limitation": "Only six PRs are shown; semantic risk classification does not establish comprehensive vulnerability detection.",
+      "reported_result": "The author reports about 0.5 seconds and $0.00007 per PR. This repository has not reproduced the cost comparison.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Split review into 14 specific questions and ask Jev in one call. Code combines the answers; uncertain critical findings go to a person or larger model."
+    },
+    "jev-rabbit": {
+      "title": "jev-rabbit natural-language rules",
+      "summary": "Write code-review rules in plain language and have a bot check changes against them.",
+      "mechanism": "Rules and PR context are assessed by Jev; the post shows a development screenshot.",
+      "advantage": "Can express team conventions that are difficult to capture with types or lint rules.",
+      "limitation": "The post says release is upcoming; availability is unconfirmed. Ambiguous rules can produce inconsistent reviews.",
+      "reported_result": "The author shows a work-in-progress prototype and announces an upcoming GitHub release.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Team conventions that are hard to encode as fixed checks can be assessed by Jev. Clear rules are easier to apply. The source post describes a work-in-progress project."
+    },
+    "codebase-classifier": {
+      "title": "Codebase complexity classifier",
+      "summary": "Explore whether a codebase makes simple things unnecessarily complicated.",
+      "mechanism": "The author demonstrates codebase classification; chunking, criteria and thresholds are not fully disclosed.",
+      "advantage": "Evaluates code structure and may complement line-level PR checks.",
+      "limitation": "Overengineering depends on project context; classification has not been shown to guide safe refactoring.",
+      "reported_result": "The author shares an approximately 99-second demo.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "It classifies code structure, like a preliminary engineering checkup. Overengineering depends on project needs; a label alone is not a sound basis for refactoring."
+    },
+    "fx-safety": {
+      "title": "fx auto mode safety classifier",
+      "summary": "Check a command's potential risk before an agent executes it automatically.",
+      "mechanism": "Jev handles fx auto mode safety classification and is compared with the previous classifier.",
+      "advantage": "A concrete execution gate for studying low-latency prescreening.",
+      "limitation": "The full test set is not published; average accuracy alone is insufficient to authorize risky actions.",
+      "reported_result": "The author reports about 5–18× faster classification than the previously used Luna model, with higher accuracy.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Jev acts as a pre-execution screener, classifying command safety. Fast screening can still miss risks; explicit rules must determine whether execution is allowed."
+    },
+    "jailbreak-screen": {
+      "title": "Jailbreak prompt prescreen",
+      "summary": "Prescreen prompts for attempts to bypass an AI system's rules.",
+      "mechanism": "Prompt → jailbreak-pattern judgment → upstream prescreening; full rules are not published.",
+      "advantage": "A low-cost classifier could be a first stage in a broader security workflow.",
+      "limitation": "Explicitly an early attempt. Approaching 100% is an aspiration, not an achieved result.",
+      "reported_result": "The author shows an initial comparison and claims an advantage over Luna, without a reusable test set.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Jev checks whether a prompt resembles known bypass patterns. It is an initial screen and may miss unfamiliar forms."
+    },
+    "upload-check": {
+      "title": "Document upload checker",
+      "summary": "Before uploading a document, check whether its contents should be shared.",
+      "mechanism": "Document-related context → allow/deny judgment; the complete organizational policy and fields are unknown.",
+      "advantage": "Places classification before a concrete business action, useful for studying sensitive-content screening.",
+      "limitation": "The demo does not establish detection of all sensitive information and cannot replace organizational access rules.",
+      "reported_result": "The author shares an approximately 35-second interaction demo.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "The system asks Jev for an allow/deny judgment. Its usefulness depends on the supplied rules and context; the post does not publish a full organizational confidentiality policy."
+    },
+    "papers": {
+      "title": "1kpapers research classification",
+      "summary": "Organize over a thousand AI papers so readers can browse them by topic.",
+      "mechanism": "DeepSeek V4 Flash summarizes papers → titles, summaries and candidate topics go to Jev → classifications support the site's visualization.",
+      "advantage": "Separates generation and classification costs, useful for research indexes and document catalogs.",
+      "limitation": "At posting, Jev labels were still under evaluation and had not replaced the site's existing labels. Summary quality affects classification.",
+      "reported_result": "The author reports $3.99 for summaries, $0.08 for classification and 256ms median end-to-end classification latency per paper.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Another model summarizes each paper, then Jev picks from 24 topics. Think of making an index card first and then labeling it."
+    },
+    "duckdb": {
+      "title": "DuckDB semantic classification",
+      "summary": "Classify text rows while working with a table.",
+      "mechanism": "A DuckDB extension calls Jev on table data and returns queryable classifications.",
+      "advantage": "Keeps semantic classification inside a SQL analysis workflow.",
+      "limitation": "Throughput depends on concurrency, row length and API limits; it is not directly comparable with single-request latency.",
+      "reported_result": "The author reports roughly 10 seconds for 1,000 rows, without a full reproduction configuration.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "DuckDB processes tabular data. This extension connects it to Jev so queries can include classifications without manually copying rows into a chat window."
+    },
+    "email-batch": {
+      "title": "Batch classification of 500 emails",
+      "summary": "Sort a large batch of emails into categories instead of filing them one by one.",
+      "mechanism": "Email text → Jev classification → results UI; categories and data composition are not fully published.",
+      "advantage": "A bounded use case for organizing many short texts.",
+      "limitation": "No accuracy or confusion matrix; low cost does not establish that important emails are classified correctly.",
+      "reported_result": "The author reports 500 emails classified in seconds for $0.035 total.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Code sends email contents to Jev for category choices and collects the results. It is automated labeling, whose accuracy still needs checking."
+    },
+    "email-fraud": {
+      "title": "Jev + Kimi email fraud detection",
+      "summary": "Screen emails for fraud quickly, then send uncertain cases to a larger model.",
+      "mechanism": "100 emails → Jev → 31 emails below the author's 95% threshold go to Kimi K3 → merge results.",
+      "advantage": "An explicit escalation route and itemized costs support studying a layered classifier.",
+      "limitation": "96/100 is the combined pipeline result. A small 50:50 sample does not represent real-world fraud prevalence or deployment performance.",
+      "reported_result": "The author reports 1.42 seconds for Jev; the full pipeline took 16 seconds, cost about $0.07 and got 96/100 correct.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "It is a two-stage check: Jev screens first and Kimi reviews 31 low-confidence emails. The 96/100 result belongs to the combined pipeline, not Jev alone."
+    },
+    "bank-payee": {
+      "title": "Bank transaction payee cleanup",
+      "summary": "Turn messy bank transaction descriptions into recognizable merchant names.",
+      "mechanism": "Raw descriptions → Jev-assisted judgments → cleaner names; candidate generation and extraction algorithms are unknown.",
+      "advantage": "A practical data-cleaning problem for personal-finance tools; the screenshot shows several input/output pairs.",
+      "limitation": "The author's estimate of about 95% is informal, not accuracy on a labeled evaluation set.",
+      "reported_result": "The author shares a merchant-name result table and describes a promising first attempt.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Transaction descriptions mix names, locations and codes. Jev helps decide what matters, but the post does not explain exactly how the final name is extracted or produced."
+    },
+    "support-intent": {
+      "title": "Japanese support escalation intent",
+      "summary": "Detect whether a Japanese support message asks for a human or mentions repeated contact.",
+      "mechanism": "Ask separate questions about human escalation and prior contacts against the same support message.",
+      "advantage": "Specific, short judgments can be evaluated together for ticket routing.",
+      "limitation": "The 98% and 97% values are model outputs for the example, not overall Japanese support accuracy.",
+      "reported_result": "The author publishes one Japanese example with two judgment results.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Ask two specific yes/no questions about one message. The percentages describe those judgments, not the accuracy of the whole support system."
+    },
+    "live-viral": {
+      "title": "Live post-potential analyzer",
+      "summary": "Get feedback on a post's type and potential reach as you write.",
+      "mechanism": "Edited text → debounce delay → Jev classification/scoring → live feedback.",
+      "advantage": "Fast feedback for comparing wording while writing.",
+      "limitation": "The author says real X data still needs to be collected; predictive ability for future reach is unproven.",
+      "reported_result": "The author demonstrates live classification and calls it an experiment.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "After a half-second pause, code sends the draft to Jev and updates its labels and scores. This is immediate writing feedback, not proof that the post will spread."
+    },
+    "viral-classifier": {
+      "title": "Viral-post classifier",
+      "summary": "Try to identify posts that may attract more attention.",
+      "mechanism": "Post → Jev classification; label definitions, held-out evaluation and code are unknown.",
+      "advantage": "A classification-focused counterpart to live writing feedback.",
+      "limitation": "Claims of matching Fable quality at 100× speed lack published evaluation details.",
+      "reported_result": "The author says it was built in about eight hours and shares a results screenshot.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Jev acts as a fast first-pass classifier. The author does not publish the full criteria or evaluation, so reliable virality prediction is not established."
+    },
+    "x-algorithm-sim": {
+      "title": "X reach-score simulator",
+      "summary": "Simulate reach scores to compare different ways of writing a post.",
+      "mechanism": "Posts and weights enter a scoring pipeline, Jev supplies judgments, and the UI displays simulated results.",
+      "advantage": "Combines scoring with a feed to compare relative changes across text.",
+      "limitation": "Rebuilding the X algorithm is the author's framing; weight provenance and real recommendation accuracy are unverified.",
+      "reported_result": "The author shares an approximately 42-second demo and claims to use real weights.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "The author combines Jev judgments with weights. That scoring formula is a simplified model; resembling X does not establish recreation of its real recommendation system."
+    },
+    "bookmark-prediction": {
+      "title": "Bookmark-percentile prediction",
+      "summary": "Predict whether a post ranks in the top quarter for bookmarks among nearby dates.",
+      "mechanism": "Historical posts → Jev top-percentile prediction → comparison with other models.",
+      "advantage": "A more specific target than vaguely predicting virality; the author describes sample size and objective.",
+      "limitation": "Single-account data with incomplete time-split and leakage details; not a general X ranking model.",
+      "reported_result": "The author reports using about 5,000 personal posts from June–August and plots cost against accuracy.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Replace vague virality with a checkable target: top 25% within a defined date window. Jev predicts that outcome and the author compares predictions with historical data."
+    },
+    "post-analytics": {
+      "title": "Analysis of 3,282 historical posts",
+      "summary": "Review thousands of past posts to see which topics and styles performed well.",
+      "mechanism": "Ask eight questions per post → aggregate labels and historical performance → identify descriptive patterns.",
+      "advantage": "Useful for reviewing one's own archive without claiming to predict each future post.",
+      "limitation": "Correlation is not causation; account, time and sample selection affect results.",
+      "reported_result": "The author reports an 8m 34s run costing $0.1282, with a median of 150 likes for how-to posts versus 44 overall.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Jev labels topics, tone and other features, then code compares historical performance. This summarizes the past; it does not prove that adopting a style causes growth."
+    },
+    "ad-analysis": {
+      "title": "StealAds ad-analysis preview",
+      "summary": "Break many ads into hooks, offers and calls to action for creative research.",
+      "mechanism": "Ad information → Jev multi-dimensional judgments → aggregate creative features and landing-page alignment; preprocessing is unspecified.",
+      "advantage": "Actionable dimensions for organizing marketing material, rather than one quality score.",
+      "limitation": "StealAds + MCP integration was described as upcoming; it is unclear whether cost includes collecting the material.",
+      "reported_result": "The author reports analyzing 724 ads from 37 brands in 40 seconds for about $0.09 in inference.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Think of searchable index cards for ads. Jev judges separate features and code aggregates them. Collection and input preparation are not explained in the post."
+    },
+    "jevmeter": {
+      "title": "JevMeter speech-analysis dashboard",
+      "summary": "Score sentences in debates or interviews to examine speech patterns and content features.",
+      "mechanism": "Sentences → five yes/no questions per sentence → aggregate and display indicators; code was later released.",
+      "advantage": "Fixed questions support applying the same criteria to the material.",
+      "limitation": "The first post explicitly says it is not fact-checking. Later promotional wording does not establish verification of truth.",
+      "reported_result": "The author reports 1,191 calls, 415ms median latency and $0.0497 for the debate experiment.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Ask the same five questions about each sentence and visualize the results. Consistent criteria help comparisons, but without external evidence checks they do not determine truth."
+    },
+    "x-filter": {
+      "title": "Natural-language X content filter",
+      "summary": "Tell the browser in your own words which X posts you would rather not see.",
+      "mechanism": "Browser extension reads posts → Jev checks them against a rule → hide or collapse.",
+      "advantage": "Can express semantic preferences that keyword filters miss.",
+      "limitation": "False-positive rates are unmeasured; vague rules may remove useful content.",
+      "reported_result": "The author shares an extension video and configuration screenshot, without a standardized benchmark.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "The extension asks Jev whether a post matches your filtering rule, then hides or collapses it. The aim is meaning-based filtering rather than a keyword match."
+    },
+    "unclutter": {
+      "title": "Unclutter page cleanup",
+      "summary": "Clear ads, promotional dialogs and similar clutter to make webpages easier to read.",
+      "mechanism": "Candidate page elements → Jev identifies cleanup targets → extension applies changes; extraction details are unknown.",
+      "advantage": "Targets page clutter beyond individual X posts.",
+      "limitation": "Requires the user's API key; mistaken element classification may affect legitimate dialogs or page behavior.",
+      "reported_result": "The author shares an approximately 25-second demo and describes it as free, open source and BYOK.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Code identifies candidate page elements and asks Jev to judge them. The challenge is not only finding clutter but avoiding removal of useful controls such as login dialogs."
+    },
+    "context-compaction": {
+      "title": "Tool-history context compaction",
+      "summary": "Trim an AI assistant's work history to retain what matters now.",
+      "mechanism": "Tool-call records → Jev relevance scores → select records for the context.",
+      "advantage": "Reduces context through selection without rewriting the entire history as a summary.",
+      "limitation": "No long-task retention evaluation; discarded records may be needed later.",
+      "reported_result": "The author shares a short demo claiming instant compaction, without a full quality evaluation.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Rather than rewrite all history as a summary, score tool records for relevance and keep selected ones. This saves context but can omit information needed later."
+    },
+    "memory-retrieval": {
+      "title": "Memory retrieval filtering",
+      "summary": "Filter an AI memory store so the next model sees relevant material.",
+      "mechanism": "Memory candidates → Jev relevance judgments → filtered content for the next model; retrieval details are unknown.",
+      "advantage": "A post-retrieval filter that can complement existing memory systems.",
+      "limitation": "Explicitly a quick test, without recall or long-task accuracy data.",
+      "reported_result": "The author reports 94% fewer tokens and 2–3× faster retrieval, not independently reproduced here.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Retrieve candidate memories, then use Jev for a second filter. It resembles picking useful search results; overly aggressive filtering can miss key evidence."
+    },
+    "doom": {
+      "title": "Official Doom demo",
+      "summary": "Use Jev to choose game actions repeatedly in a Doom demo.",
+      "mechanism": "The official demo combines code and Jev to control Doom; state encoding and the control loop are not fully disclosed in the post.",
+      "advantage": "An official example of frequent action selection in a real-time setting.",
+      "limitation": "The footage alone does not establish direct pixel input; long-run success rates and full hardware settings are absent.",
+      "reported_result": "The author reports about 10 calls/second and $7/hour.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Code connects the game and model while Jev makes choices in a loop. Seeing game footage does not mean Jev reads pixels; the post does not fully describe its input state."
+    },
+    "mario-faadhil": {
+      "title": "Super Mario · @faadilhshaik",
+      "summary": "Let Jev control Super Mario to demonstrate fast action selection.",
+      "mechanism": "Game state enters a decision loop and Jev returns actions; the post does not detail the state format.",
+      "advantage": "A clear game-integration demo with a public-project lead for further investigation.",
+      "limitation": "A short clip does not establish generalization across levels or sustained completion.",
+      "reported_result": "The author shares an approximately 31-second gameplay demo.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "An adapter passes game state to Jev and converts its choice into an action. The state format is not published, so the video alone does not show human-like screen-based play."
+    },
+    "mario-comparison": {
+      "title": "Super Mario · Jev / Qwen comparison",
+      "summary": "Give Jev and Qwen the same Mario information and compare action choices.",
+      "mechanism": "Convert game information to structured data → each model chooses one of five actions → execute in the game.",
+      "advantage": "Explicitly controls input format and action count for comparing model choices.",
+      "limitation": "Not a native-vision comparison; repeated-run success rates and network conditions are absent.",
+      "reported_result": "The author shares a same-condition demo and explicitly says Jev does not receive game images.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Convert the game state to structured data and give both models five choices. They take the same multiple-choice test rather than receiving different kinds of observations."
+    },
+    "mario-ppo": {
+      "title": "Super Mario · World 1-1",
+      "summary": "Demonstrate Jev on Mario's first level alongside the author's earlier game-AI training experience.",
+      "mechanism": "The author integrates Jev into game control; detailed state, actions and supporting logic are not published.",
+      "advantage": "Illustrates implementation effort for a narrow prototype.",
+      "limitation": "A week of PPO work versus half an hour of integration is not a controlled model benchmark; supporting logic may differ.",
+      "reported_result": "The author says PPO took a week of work, while Jev integration reached the same level goal in under 30 minutes.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "The author plugs an existing Jev model into the game, whereas the PPO approach required training a policy. Comparing setup experiences is not a controlled comparison of playing strength."
+    },
+    "pacman": {
+      "title": "Astra + Jev Pac-Man",
+      "summary": "One model plans while Jev chooses quick local moves to play Pac-Man.",
+      "mechanism": "Astra planning → Jev follows the strategy through local decisions → game feedback.",
+      "advantage": "A clear planning/execution split that may apply to longer tasks.",
+      "limitation": "Both models affect outcomes; Jev latency alone does not represent total cost or quality.",
+      "reported_result": "The author shares hierarchical-control footage, without standardized win rates.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Think of a coach and player: Astra supplies the strategy, and Jev handles local choices. Assess the combined system, not just Jev's speed."
+    },
+    "snake": {
+      "title": "Step-by-step Snake",
+      "summary": "Ask Jev for the next move at every step of Snake.",
+      "mechanism": "Current game state → Jev decision → move one step → repeat.",
+      "advantage": "A simple loop for studying action costs and failure conditions.",
+      "limitation": "Request count grows with moves; maximum length and multi-game success rates are absent.",
+      "reported_result": "The author reports $0.02 for 200 requests.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Repeat a simple loop: read the state, ask for a direction, move one step. Each extra move adds a request, so costs grow with game length."
+    },
+    "tetris": {
+      "title": "Tetris",
+      "summary": "Let Jev make Tetris decisions and observe how blocks are placed.",
+      "mechanism": "The game loop calls Jev; board encoding and action granularity are unspecified.",
+      "advantage": "Useful for contrasting landing-position selection with continuous key presses.",
+      "limitation": "The post does not identify which control method is used, so planning ability cannot be inferred.",
+      "reported_result": "The author shares an approximately 28-second demo without score benchmarks.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Code must pass board information to the model and execute its choices. The post does not say whether Jev chooses final placements or individual keys, which matters for comparisons."
+    },
+    "pokemon": {
+      "title": "Jev Plays Pokémon",
+      "summary": "Let Jev play Pokémon over time and track progress and decision costs.",
+      "mechanism": "Game state → Jev decision → action → accumulated progress; memory and navigation details are unknown.",
+      "advantage": "Reports progress over thousands of decisions rather than only a short clip.",
+      "limitation": "The first badge is partial progress, not game completion; additional navigation logic may be involved.",
+      "reported_result": "The author reports over 8,000 decisions for $1.21, the first gym badge and progress into Mt. Moon.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "The game supplies new states and code repeatedly asks Jev for choices. Earning a badge after thousands of decisions provides more progress context than a short highlight clip."
+    },
+    "slay-spire": {
+      "title": "Slay the Spire 2 agent",
+      "summary": "Use Jev to choose card-game actions with less waiting between decisions.",
+      "mechanism": "Game state → Jev action choice → execution; the state interface is unknown.",
+      "advantage": "A setting with discrete legal actions suits studying decision selection.",
+      "limitation": "Fast play does not imply stronger strategy; full-run win rates are absent.",
+      "reported_result": "The author reports roughly 0.7 seconds of decision time per action and shares a video.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Card games usually provide a set of currently legal choices that code can offer to a model. The post does not disclose the interface, and quicker moves do not necessarily win more games."
+    },
+    "chess": {
+      "title": "5+0 blitz chess",
+      "summary": "Compare model playing strength and decision speed in timed chess.",
+      "mechanism": "One model API call per move under a five-minute, no-increment time control.",
+      "advantage": "Exposes the trade-off between speed and playing strength, including a losing game.",
+      "limitation": "Limited games and opponent configurations; winning on time does not establish superior chess strength.",
+      "reported_result": "The author says Jev beat Fable on time from a losing position, then was checkmated by Astra on move 18.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "jev_version": "V13 (as labeled by the author)",
+      "plain_explanation": "Every model call consumes time on the chess clock. Jev wins one game on time but is checkmated in another, separating speed from playing strength."
+    },
+    "subway-runners": {
+      "title": "Parallel Subway Surfers demo",
+      "summary": "Demonstrate Jev controlling multiple runner-style games at once.",
+      "mechanism": "Game environments and Jev form action loops; scheduling and game implementation details are not disclosed.",
+      "advantage": "Shows parallel-environment throughput for studying multi-instance control.",
+      "limitation": "It is unclear whether this uses the original client, a recreation or a simulator; it is not evidence of general phone control.",
+      "reported_result": "The author reports 50 simultaneous games and less than $0.01 for the run.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Several game environments request decisions in parallel and execute them separately. The original client versus recreation is unspecified, so this is not evidence of general phone control."
+    },
+    "rubiks-cube": {
+      "title": "Staged Rubik's Cube solver",
+      "summary": "Code knows the cube-solving methods; Jev identifies which case to apply.",
+      "mechanism": "Code defines solution stages → Jev selects a case → code checks the choice and executes moves.",
+      "advantage": "A clear division between rules and classification illustrates model/code collaboration.",
+      "limitation": "The solution method lives in code; Jev is not independently deriving an optimal solution. The video is slowed down.",
+      "reported_result": "The author reports 94 moves, about four seconds of total model time and roughly 250ms per judgment.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Imagine a prepared solving handbook. Jev identifies the situation; code applies and checks the matching method. The complete solution comes from their combination."
+    },
+    "mario-kart": {
+      "title": "Mario Kart 64",
+      "summary": "Watch Jev control Mario Kart in a continuous-driving demo.",
+      "mechanism": "The author shows racing control; state encoding, auxiliary controllers and simulation speed are unknown.",
+      "advantage": "A continuous-driving contrast to discrete turn-based games.",
+      "limitation": "No lap times, collision counts or controlled comparison; promotional claims do not establish superiority to computer-use models.",
+      "reported_result": "The author shares an approximately 2m 38s demo.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "An adapter must turn racing state into model inputs and choices into controls. State access, driving aids and simulation speed are not explained, leaving important implementation details unknown."
+    },
+    "npc-needs": {
+      "title": "Needs-driven NPCs",
+      "summary": "Let game characters choose objects or activities that meet their needs.",
+      "mechanism": "NPC needs and available objects → Jev choice → character action.",
+      "advantage": "Semantic descriptions could extend behavior in utility-AI / smart-object scenarios.",
+      "limitation": "Need weighting, conflicts and long-term consistency are unspecified; traditional rules may be simpler and cheaper.",
+      "reported_result": "The author shows a game prototype built with Claude and driven by Jev decisions.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Give Jev a character's needs and available options, then execute its choice in the game. The model decides what to do; movement, animation and rules remain in game code."
+    },
+    "npc-500": {
+      "title": "500 agents in a 3D environment",
+      "summary": "Run decisions for many virtual characters in one 3D world.",
+      "mechanism": "Agents request Jev decisions and the simulator executes them; scheduling and batching details are unknown.",
+      "advantage": "Focuses on population scale and throughput under simulation load.",
+      "limitation": "35 calls/second is not 35 updates per second for every agent; per-agent update frequency is absent.",
+      "reported_result": "The author reports 500 agents, 500ms average latency and 35 API calls/second for an initial implementation.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Send characters' questions to Jev and execute their choices in the simulation. An overall rate of 35 requests/second does not mean each of 500 characters updates 35 times/second."
+    },
+    "driving-toy": {
+      "title": "“FSD” driving simulation",
+      "summary": "A small driving simulation that the author calls “rebuilding FSD.”",
+      "mechanism": "Jev participates in virtual driving control; sensors, controllers and state representation are unknown.",
+      "advantage": "A visual example of fast decisions inside a driving simulation.",
+      "limitation": "Not a reproduction of Tesla FSD or a real-road validation; it establishes no road-safety or autonomous-driving capability.",
+      "reported_result": "The author says the prototype took under an hour and shares an approximately two-minute video.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Code and Jev jointly control the simulated car. Driving in this environment is far from demonstrating safe real-road operation or reproducing Tesla FSD."
+    },
+    "realtime-driving": {
+      "title": "Unpaused real-time driving",
+      "summary": "Keep the car moving while Jev thinks to test real-time simulated driving.",
+      "mechanism": "Continuously advancing simulator state → Jev → raw control inputs; physics does not pause during network waits.",
+      "advantage": "Explicitly exposes latency and stale-state constraints rather than pausing the simulation.",
+      "limitation": "Still a simulator, without coverage, crash-rate or long-duration stability data.",
+      "reported_result": "The author explicitly states that the simulator runs without pausing for the model.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Pausing the simulator for every model call hides latency. Here it keeps moving, so the observed state may already be outdated when an answer arrives."
+    },
+    "drone-sim": {
+      "title": "Jev drone simulation",
+      "summary": "Fly through simulated obstacles with Jev choosing tactics and code stabilizing the drone.",
+      "mechanism": "Project README: local code converts camera depth/segmentation buffers to symbolic scenes → Jev judges maneuvers, risk and target loss → ordinary code executes; control and safety run independently at higher rates.",
+      "advantage": "Publishes perception, tactical decision and flight-control layers, including a baseline and failure boundaries.",
+      "limitation": "MuJoCo simulation, not a real flight. The main successful comparison is a single run; an earlier seed-matched test showed no advantage over the baseline.",
+      "reported_result": "The author reports about 15 minutes of setup and $0.10 spent.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "source_notes": "**Repository cross-check (2026-09-18)**: The [pinned README](https://github.com/RomanSlack/jev-drone/blob/cbeb53ce4f17a06ea490ae43effcdad231143610/README.md) specifies MuJoCo, symbolic camera scenes and layered control. Jev does not receive images directly, and safety code can override its actions in the main setup. The author also discloses a single-run result, an earlier comparison with no advantage and an unreliable tunnel experiment. This is a documentation review, not a reproduction.",
+      "plain_explanation": "Like a navigator working with a flight controller, code summarizes camera information, Jev chooses maneuvers, and faster control/safety loops constrain the actions."
+    },
+    "unstable-government": {
+      "title": "Unstable Government town",
+      "summary": "Introduce a law in a fictional town and watch residents react before a newspaper is generated.",
+      "mechanism": "Claude creates reactions and set pieces → Jev chooses residents' responses → town simulation → next-day newspaper.",
+      "advantage": "Separates narrative generation from character choices for interactive storytelling.",
+      "limitation": "Fictional reactions cannot be used as predictions of policy effects in the real world.",
+      "reported_result": "The author demonstrates a mixed-model town with 40 residents.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Claude creates possible reactions and scenes, Jev chooses for each resident, and the simulation acts them out. This is interactive storytelling, not policy forecasting."
+    },
+    "synthetic-personas": {
+      "title": "150 fictional user personas",
+      "summary": "Ask fictional users about product interest to explore early ideas.",
+      "mechanism": "150 fictional people each receive 12 questions for structured Jev judgments.",
+      "advantage": "A quick way to explore persona/product fit and draft interview questions.",
+      "limitation": "Synthetic opinions are not actual user research or market-demand validation.",
+      "reported_result": "The author reports about five seconds and ¥1.8 JPY, including cross-region network latency.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Define personas, then ask Jev fixed questions in their context. These are simulated opinions, not responses from real interview participants."
+    },
+    "typegpu-realtime": {
+      "title": "TypeGPU real-time semantic effects",
+      "summary": "Let camera and microphone input influence lighting and visual effects.",
+      "mechanism": "Camera/microphone → Moonshine, YOLO26 and DepthART → Jev → lights, shadows and bloom; ruNNtime and TypeGPU share GPU resources.",
+      "advantage": "Separates local perception from semantic decisions for interactive media.",
+      "limitation": "Jev is only one part of the pipeline; end-to-end latency and component ablations are absent.",
+      "reported_result": "The author demonstrates three neural-network inference paths running alongside rendering.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Local models process speech, objects and depth; Jev makes semantic judgments; rendering code changes effects. Jev is one decision stage, not the whole perception/rendering pipeline."
+    },
+    "ask-jev": {
+      "title": "Ask Jev",
+      "summary": "Enter a question and see Jev's judgment instead of a long written answer.",
+      "mechanism": "User input → Jev judgment → website result; the author mentions Convex integration.",
+      "advantage": "A public entry point that makes judgment-style output tangible.",
+      "limitation": "An interaction/entertainment example; arbitrary judgments should not be treated as reliable factual answers.",
+      "reported_result": "The author shares the website and an approximately 26-second demo.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "The site takes input, asks Jev for a judgment and displays it. It illustrates decision-style interaction, not a guarantee that arbitrary judgments are factual."
+    },
+    "word-chat": {
+      "title": "Finite-vocabulary chat",
+      "summary": "Give Jev a common-word list and let it build a conversation one word at a time.",
+      "mechanism": "Existing text and a finite vocabulary → choose the next word → append → repeat.",
+      "advantage": "Shows how choice outputs can be composed into a generative interaction.",
+      "limitation": "The vocabulary limits expression; per-word decision costs and latency are not directly comparable with a text model.",
+      "reported_result": "The author demonstrates chat built from common English words and punctuation choices.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Jev chooses the next word from a finite list; code appends it and asks again. The loop constructs the text, and the vocabulary limits what it can say."
+    },
+    "character-chat": {
+      "title": "29-option character generation",
+      "summary": "Let Jev choose one letter or punctuation mark at a time to build text.",
+      "mechanism": "Evaluate a–z, space, comma and period → append the highest-probability character → feed the updated text back.",
+      "advantage": "An explicit control loop with more freedom than a fixed word list.",
+      "limitation": "Character-level loops require many calls and do not establish a native text-generation API.",
+      "reported_result": "The author describes 29 character candidates and shares an approximately 15-second demo.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Each round asks 29 yes/no questions, picks the strongest character and appends it. Producing text this way does not establish an advantage over a dedicated text model."
+    },
+    "pixel-drawing": {
+      "title": "Parallel pixel drawing",
+      "summary": "Combine many pixel-level judgments to experiment with drawing through Jev.",
+      "mechanism": "The author describes predicting pixels in parallel; resolution, color choices and question construction are not disclosed.",
+      "advantage": "An exploratory way to combine classification outputs into a visual artifact.",
+      "limitation": "Not a validated general image generator; quality, resolution and total cost are unknown.",
+      "reported_result": "The author shares an approximately 11-second drawing demo.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Think of deciding picture cells and assembling them in code. The author describes parallel pixel prediction but does not publish color choices, resolution or question construction."
+    },
+    "riscv": {
+      "title": "RISC-jeV logic-gate experiment",
+      "summary": "Use Jev for simple logic decisions and compose them into small computer instructions.",
+      "mechanism": "Jev judges AND/OR-style operations → SERV instruction execution → arithmetic, bit operations and printing.",
+      "advantage": "An explicit hierarchy illustrates how decisions can compose into computation.",
+      "limitation": "A concept experiment, not a computational-efficiency advantage; deterministic code is more appropriate for logic gates.",
+      "reported_result": "The author publishes a live demo and names the SERV implementation.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "Like building a machine from blocks, Jev supplies AND/OR-style decisions that SERV combines into instructions. This illustrates composition rather than efficient computation."
+    },
+    "trading-bot": {
+      "title": "Monad / Kuru trading bot",
+      "summary": "Let Jev choose buy or sell from price information and have code submit the order.",
+      "mechanism": "Asset-pair prices → Jev buy/sell choice → Kuru order book on Monad.",
+      "advantage": "A clear decision-to-execution path for studying event-driven systems.",
+      "limitation": "No return, drawdown or risk-control evaluation; fast execution does not establish profitability. The demo is not investment advice.",
+      "reported_result": "The author says it can execute trades in each roughly 300ms block and provides a demo URL.",
+      "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
+      "plain_explanation": "The model chooses an action and code connects to the blockchain order book. Fast orders do not imply profitable trading; complete returns and risk records are absent."
+    }
+  },
+  "groups": {
+    "browser": {
+      "title": "Browser and computer control",
+      "comparison": "For browser loops, compare Browser Use and Stagehand: the former describes a dynamic DOM action space with text-generation fallback; the latter separates accessibility-tree observation from execution. For native apps, see CoreML/OCR. Cua currently offers a constrained semantic-action preview. agent-desktop retains an LLM for longer context; voice control and QA address different interaction needs.",
+      "flow": "Observe the page or desktop → construct executable candidates → Jev selects → execute → observe again.",
+      "analysis": "DOM, accessibility trees and OCR are different observation interfaces. Keeping pixels local does not mean all content stays local. Browser Use still delegates text generation to an LLM. These designs come from author descriptions; unspecified encoding details remain unknown.",
+      "evaluation": "Compare the same read-only tasks using completion rate, steps, full elapsed time, total cost and recovery. Include unlabeled buttons, dynamic pages, dialogs and window changes. Do not compare one model decision with an entire task."
+    },
+    "routing": {
+      "title": "Model, skill and tool routing",
+      "comparison": "Eve and Ephraim demonstrate model selection; Firstmate and local delegation address agent orchestration. Skillbox searches a skill library, Coding Garden connects everyday tools, and the Eve tool agent substitutes one stage of an existing system. ai-cli is an integration interface. These approaches can be combined.",
+      "flow": "Task text and candidate capabilities → Jev choice or scores → application checks candidates and constraints → invoke the selected model, skill or tool.",
+      "analysis": "Routing reduces the overhead of choosing an executor; the executor still does the work. Firstmate reports a small 25-task agreement study. Skillbox lacks retrieval-recall data. Deterministic invocation does not guarantee correct choices.",
+      "evaluation": "Use identical requests and measure routing suitability, final task quality, fallbacks, quota handling and total cost. Include requests with no suitable candidate."
+    },
+    "review": {
+      "title": "Code quality and safety checks",
+      "comparison": "Compare the 14-check PR reviewer, jev-review and jev-rabbit for explicit risks and escalation, iterative scoring and natural-language team rules respectively. Codebase classification examines overall structure. Command safety, jailbreak screening and upload checks guard different actions and need separate false-negative evaluations.",
+      "flow": "Code or proposed action plus explicit rules → several narrow judgments → combine in code → notify, block or escalate.",
+      "analysis": "The PR reviewer publishes an uncertainty-escalation rule, making it easier to inspect than an overall score. jev-review feedback can guide iterations, but a high score is not a passing test suite. Cheap screening does not remove the need to assess error costs.",
+      "evaluation": "Measure false positives and negatives by risk type against independently labeled data. Test insufficient evidence, adversarial instructions, conflicting rules and uncertain results. Retain human review and static-tool baselines."
+    },
+    "data": {
+      "title": "Data classification and organization",
+      "comparison": "Email classification and DuckDB handle batches of text; the paper example includes generative preprocessing; Jev + Kimi shows uncertainty escalation. Payee cleanup is extraction/normalization and support intent is multi-question judgment. Their metrics are not interchangeable.",
+      "flow": "Raw text or tables → needed cleanup/summaries → Jev judgments → fallback for uncertain items → write results to an index or table.",
+      "analysis": "The paper example separates summary costs from classification. The fraud example escalates uncertain emails to a larger model. Preprocessing and fallback both count toward total system cost. Payee candidate generation is unknown; do not assume Jev freely generates merchant names.",
+      "evaluation": "Fix labeled data and splits. Report per-class precision/recall, throughput, per-item latency, retries and total cost. Fraud evaluation also needs realistic prevalence and separate false-positive/negative analysis."
+    },
+    "content": {
+      "title": "Content and advertising analysis",
+      "comparison": "Live analyzers provide writing feedback; bookmark-percentile prediction defines a more specific target; historical-post analysis supports retrospective review; ad analysis organizes creative material. Viral classifiers and the X-algorithm simulator have limited generalization evidence. JevMeter applies rules to speech, not validated fact-checking.",
+      "flow": "Text plus analysis dimensions → parallel Jev labels/scores → explicit aggregation rules → editing feedback, statistics or an analysis interface.",
+      "analysis": "A low score is not the same as a false claim, and past popularity does not establish future reach. Historical analysis supports correlation; retrospective labels can leak outcomes. Claimed use of real X weights does not establish recreation of the live recommendation system.",
+      "evaluation": "Hold out time periods and accounts; prevent outcome leakage. Check scoring stability, calibration, preprocessing costs and a precise target definition. Fact-checking additionally requires evidence retrieval and source verification."
+    },
+    "filter": {
+      "title": "Webpage and feed filtering",
+      "comparison": "The X filter targets posts in a feed; Unclutter targets ads, banners and upsells across webpages. One classifies content, the other page elements, so their rules cannot necessarily be reused directly.",
+      "flow": "Extract posts/elements → apply user-written semantic rules through Jev → hide, collapse or remove.",
+      "analysis": "Filtering depends on extraction and rule scope. Fast inference does not guarantee no flicker, false removals or broken interactions; page structures can change.",
+      "evaluation": "Compare false removals, missed targets, initial display latency and per-page cost on a fixed page set. Check normal dialogs, login, infinite scroll and undo behavior."
+    },
+    "memory": {
+      "title": "Context and memory filtering",
+      "comparison": "Tool-history compaction filters the current conversation; memory retrieval filtering selects from an external memory store. Both reduce input at different stages. Evaluate retained information and task quality before comparing token reductions.",
+      "flow": "History or memory candidates plus current task → Jev relevance scores → select records → construct downstream context.",
+      "analysis": "Selecting original text and generating a new summary have different failure modes: selection can omit information needed later, while rewriting can distort it. The reported 94% reduction is one quick test, not a default compression target.",
+      "evaluation": "Test delayed information needs, error recovery, old-decision tracing and cross-turn references in long tasks. Track recall, completion quality, filtering overhead and total tokens while retaining recoverable originals."
+    },
+    "games": {
+      "title": "Game decisions and solving",
+      "comparison": "Compare three Mario implementations: basic integration, a controlled structured-state/five-action Jev–Qwen demo, and a PPO implementation-effort anecdote. Pac-Man separates planning and execution; Pokémon reports longer progress; chess separates speed from strength; cube-solving code supplies the method. Other demos explore action spaces rather than establish a general leaderboard.",
+      "flow": "Environment state → adapter and legal action candidates → Jev choice → rule/executor checks → advance the environment.",
+      "analysis": "Games can expose grid state, memory variables or other structured interfaces. The Jev–Qwen Mario post explicitly describes structured conversion and five choices; undocumented details elsewhere remain unknown. Cube algorithms come from code, illustrating how overall capability depends on the whole system.",
+      "evaluation": "Fix environment versions, speed, action granularity and random seeds. Run repeated games and report wins, scores, total cost and stalls. State whether simulation pauses during model waits; separate decision latency from real game progress."
+    },
+    "simulation": {
+      "title": "NPCs, driving and population simulations",
+      "comparison": "Needs-driven NPCs explore behavior; the 500-agent demo explores throughput. Unpaused driving exposes latency constraints. The drone project provides code. Towns and fictional personas are storytelling or ideation tools, not evidence of real-world behavior.",
+      "flow": "Simulation state and character goals → Jev decisions → simulated actions → updated state; an LLM may supply narrative reaction candidates.",
+      "analysis": "FSD is the driving demo author’s label, not a reproduction of Tesla’s product or real-road capability. Overall API throughput differs from per-character update frequency. Fictional adoption intent is not user research. The drone repository specifies MuJoCo and separates fast control from slower model decisions, while disclosing the limits of its single-run comparison.",
+      "evaluation": "Document environments, update rates, pause policy, network jitter and failure criteria. Track collisions, task success and character consistency over time. Compare synthetic-user findings with real research."
+    },
+    "interaction": {
+      "title": "Real-time interaction and composition experiments",
+      "comparison": "TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs.",
+      "flow": "Prepare finite candidates or atomic questions → Jev judges → code composes results → update interaction state or output.",
+      "analysis": "Code assembles word and character choices into text; the API still returns judgments. RISC-jeV stacks logic-gate decisions and instruction interpretation to illustrate composition, not efficiency.",
+      "evaluation": "Record vocabulary size, resolution or character count, loop count and full cost. Compare quality with deterministic code or specialized generators. Measure local perception, remote decisions and rendering separately."
+    },
+    "finance": {
+      "title": "Trading execution demo",
+      "comparison": "Only one trading bot is included, so there is no fair within-category comparison yet. It connects prices, decisions and on-chain execution; this catalog does not assess profitability.",
+      "flow": "Price feed → Jev buy/sell selection → order submission → on-chain order book.",
+      "analysis": "Block interval, confirmation time, execution price and returns are distinct metrics. The author provides a demo and execution frequency but not full returns, drawdowns, slippage, fees or risk controls.",
+      "evaluation": "For offline or simulated reproduction, record time splits, fees, slippage, failed fills, position limits and maximum drawdown. Decisions per second alone have no investment significance."
+    }
+  }
+}

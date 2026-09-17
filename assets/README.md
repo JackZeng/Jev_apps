@@ -1,5 +1,7 @@
 # 图片与附件
 
+**简体中文** | [English](README.en.md)
+
 按案例 ID 建立子目录：`assets/YYYY-MM-DD-short-slug/`。建议使用简短、可读的文件名，如 `workflow.png`、`result.jpg`。
 
 每个附件目录增加 `SOURCES.md`：

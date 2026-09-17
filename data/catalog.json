@@ -6,7 +6,7 @@
       "slug": "browser-use",
       "group": "browser",
       "title": "Browser Use · Ultrafast",
-      "summary": "用 Jev 操作浏览器，演示自动查询航班。",
+      "summary": "告诉它航班需求，它会自己在网页上点选、填写并查找结果。",
       "mechanism": "作者说明：每一步从 DOM 生成新的动作选项，Jev 选动作，小型 LLM 负责必要的文本输入。",
       "advantage": "动作集合随页面更新，公开了代码，适合研究完整浏览器执行循环。",
       "limitation": "仍有 LLM 文本生成；当前 MVP 不覆盖 shadow DOM、iframe、canvas、上传等；少量同任务重复不代表通用跨网站可靠性。",
@@ -39,13 +39,14 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "source_notes": "**代码来源补核（2026-09-18）**：[固定版本 README](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md) 说明操作与目标在同一请求里分别判断，程序仅执行匹配的目标；TYPE_TEXT 才用小型 LLM。文档的 7,073ms 计时从首次页面观测后开始，并披露 MVP 未覆盖的网页类型；不能解读为从打开浏览器到任意任务完成的统一耗时。"
+      "source_notes": "**代码来源补核（2026-09-18）**：[固定版本 README](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md) 说明操作与目标在同一请求里分别判断，程序仅执行匹配的目标；TYPE_TEXT 才用小型 LLM。文档的 7,073ms 计时从首次页面观测后开始，并披露 MVP 未覆盖的网页类型；不能解读为从打开浏览器到任意任务完成的统一耗时。",
+      "plain_explanation": "像给助手一张不断更新的按钮清单：程序先读网页，Jev 选下一步点哪里；需要输入城市名时，再请文字模型帮忙填写。"
     },
     {
       "slug": "stagehand",
       "group": "browser",
       "title": "Stagehand 浏览器控制",
-      "summary": "把页面无障碍树交给 Jev，由 Stagehand 执行选中的动作。",
+      "summary": "让 Jev 决定网页上下一步怎么操作，再由 Stagehand 动手。",
       "mechanism": "观察页面 → a11y tree 作为状态、动作作为问题 → Jev 决策 → Stagehand 执行 → 再观察。",
       "advantage": "输入和执行器分工明确，适合已有 Stagehand 项目。",
       "limitation": "依赖页面无障碍信息；没有公布同一任务集上的成功率。",
@@ -74,13 +75,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "网页会向辅助技术提供按钮名称等信息。这个方案把这些信息整理给 Jev，让它选动作；Stagehand 负责真正点击，然后重新查看页面。"
     },
     {
       "slug": "cua-jev-use",
       "group": "browser",
       "title": "Cua · jev-use",
-      "summary": "Cua Driver 的 Jev 语义动作选择预览，当前公开实现以浏览器表单为例。",
+      "summary": "给 Jev 一份允许执行的网页操作清单，让它选一个，再检查是否做对。",
       "mechanism": "当前 PR #3916 说明：应用读取 DOM/语义信息，构造完整动作候选，Jev 只选候选 ID；本地校验后执行 Driver 动作，并通过独立状态端点验证表单结果。",
       "advantage": "动作候选由本地程序掌控并验证，有 Python/TypeScript 预览和独立结果检查。",
       "limitation": "不是已发布的桌面视觉操控功能；当前预览不含截图感知，也不代表 Windows/Linux 原生桌面能力已认证。",
@@ -111,13 +113,14 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "source_notes": "**代码来源补核（2026-09-18）**：[PR #3916](https://github.com/trycua/cua/pull/3916) 当前说明使用 DOM 与语义证据，Jev 在 Driver 外部选择动作；当前 CI 的 mock E2E 不是 live Jev 全平台认证。[原帖提到的 #3943](https://github.com/trycua/cua/pull/3943) 已缩小为未接入运行路径的感知基础设施草案，不能把它当成已可用的截图感知功能。以上为仓库作者说明，本库未运行。"
+      "source_notes": "**代码来源补核（2026-09-18）**：[PR #3916](https://github.com/trycua/cua/pull/3916) 当前说明使用 DOM 与语义证据，Jev 在 Driver 外部选择动作；当前 CI 的 mock E2E 不是 live Jev 全平台认证。[原帖提到的 #3943](https://github.com/trycua/cua/pull/3943) 已缩小为未接入运行路径的感知基础设施草案，不能把它当成已可用的截图感知功能。以上为仓库作者说明，本库未运行。",
+      "plain_explanation": "像从菜单点菜：Jev 只能选程序事先列出的动作编号。程序检查编号后才操作，并另查表单是否填写成功；当前公开示例还不是“看截图操作任意软件”。"
     },
     {
       "slug": "coreml-ocr",
       "group": "browser",
       "title": "CoreML + OCR 桌面点击",
-      "summary": "本地识别按钮和文字，只把文字候选交给 Jev 选点击目标。",
+      "summary": "先在 Mac 上认出按钮和文字，再让 Jev 选要点击的位置。",
       "mechanism": "本地 CoreML 分割界面元素 → OCR 读标签 → Jev 对元素给概率 → 点击后重新检测。",
       "advantage": "无需 DOM，作者称屏幕像素留在 Mac；有利于覆盖原生应用。",
       "limitation": "OCR 和元素检测会影响结果；标签文字仍发给远端，不能称完全离线。",
@@ -146,13 +149,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "本地识别程序负责“看屏幕”，把按钮上的文字列出来；Jev 负责从列表里做选择。图片留在本机，但识别出的文字仍会发给 Jev。"
     },
     {
       "slug": "agent-desktop",
       "group": "browser",
       "title": "OpenCode + agent-desktop",
-      "summary": "LLM 保留上下文，Jev 负责选择桌面交互目标。",
+      "summary": "一个模型记住任务，Jev 帮它更快地选择桌面操作目标。",
       "mechanism": "LLM 维护记忆并调用 agent-desktop 获取快照，再交给 Jev 选要操作的元素。",
       "advantage": "把长期上下文管理与快速动作选择分开。",
       "limitation": "仍依赖 LLM；原帖未说明快照编码方式，不能推断 Jev 原生看图。",
@@ -181,13 +185,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "像领队与操作员配合：文字模型保留前后文，获取桌面状态后交给 Jev 选目标。原帖没解释这些桌面信息具体怎样编码。"
     },
     {
       "slug": "kernel-browser",
       "group": "browser",
       "title": "Kernel 浏览器演示",
-      "summary": "Jev 配合 Kernel 的在线浏览器操作示例。",
+      "summary": "在网页里体验 Jev 帮忙操作浏览器。",
       "mechanism": "作者公布 Jev + Kernel 集成和在线入口；状态表达、动作约束及回退实现未披露。",
       "advantage": "有在线入口，便于进一步复现交互体验。",
       "limitation": "只有短演示；未说明复杂页面、失败恢复和任务完成率。",
@@ -218,13 +223,14 @@
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "作者把 Jev 接到 Kernel 浏览器服务中，形成“观察、选择、操作”的循环；页面如何变成模型输入、出错怎么恢复，原帖没有展开。"
     },
     {
       "slug": "voice-browser",
       "group": "browser",
       "title": "语音控制浏览器",
-      "summary": "把语音指令转换成文字，让 Jev 选择浏览器动作。",
+      "summary": "说出指令，让浏览器替你点击，例如“返回上一页”。",
       "mechanism": "语音转写 → Jev 判断要执行的操作 → 浏览器执行。",
       "advantage": "减少手动操作，适合明确而短的语音指令。",
       "limitation": "转写、页面定位与浏览器执行都另有成本；决策延迟不等于端到端延迟。",
@@ -253,13 +259,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "先把声音转成文字，再让 Jev 判断指令对应哪个操作，最后由浏览器执行。Jev 在这里负责理解并选择动作，不负责听声音。"
     },
     {
       "slug": "opencode-qa",
       "group": "browser",
       "title": "OpenCode 应用测试",
-      "summary": "把 Jev 用在 OpenCode 的应用测试演示中。",
+      "summary": "让编码助手自己操作应用，帮忙做开发后的检查。",
       "mechanism": "作者展示 Jev + OpenCode 测试应用；具体检查规则、断言及失败恢复未公开。",
       "advantage": "展示了自动化操作用于开发验收的方向。",
       "limitation": "操作速度不能证明断言正确或覆盖充分；目前按演示收录。",
@@ -288,13 +295,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "操作应用与判断应用是否正确是两回事。演示把 Jev 接入 OpenCode 测试流程，但没有公开完整的“怎样算通过”规则。"
     },
     {
       "slug": "eve-router",
       "group": "routing",
       "title": "Eve 条件式模型路由",
-      "summary": "按预设标准选择处理请求的模型。",
+      "summary": "先判断问题需要哪种模型，再把它交给合适的模型处理。",
       "mechanism": "请求及选择标准进入 Jev，输出候选模型选择；随后由应用调用模型。",
       "advantage": "选择标准显式化，适合作为独立路由层。",
       "limitation": "原帖未给路由准确率、配额策略或失败回退；只核验到演示截图。",
@@ -321,13 +329,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "像前台分配来电：给 Jev 请求和各模型的选择标准，它选一个，程序负责转交。选得是否合适，还要看后续任务结果。"
     },
     {
       "slug": "ephraim-router",
       "group": "routing",
       "title": "请求到模型路由器",
-      "summary": "Jev 为输入请求选模型，并把请求转发给它。",
+      "summary": "自动为不同问题挑选回答模型，并直接发送请求。",
       "mechanism": "用户请求 → Jev 选择候选模型 → 应用转发请求。",
       "advantage": "演示包括选模型后的实际调用，比只展示分类更完整。",
       "limitation": "没有公开统一任务集，不能证明总成本或回答质量优于固定模型。",
@@ -356,13 +365,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "Jev 像分诊台，只决定“交给谁”；真正写答案的是被选中的模型。演示把选择和转交两步连在了一起。"
     },
     {
       "slug": "firstmate",
       "group": "routing",
       "title": "Firstmate 任务分派",
-      "summary": "根据用户偏好选择 agent harness、模型和推理强度。",
+      "summary": "按任务难度和用户偏好，挑选合适的 AI 助手及工作档位。",
       "mechanism": "把原先由 LLM 读取规则并分派的环节换成 Jev；上层 agent 仍用工具调用它。",
       "advantage": "同时处理执行环境和模型档位，贴近已有代理编排系统。",
       "limitation": "25 个任务与 Fable 决策一致只说明小样本一致性，并非任务结果正确率。",
@@ -389,13 +399,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "像派工员同时决定“谁来做、用什么工具、花多少力气”。Jev 替换的是这段分配工作，真正执行任务的助手仍然存在。"
     },
     {
       "slug": "local-delegation",
       "group": "routing",
       "title": "本地编码代理分工",
-      "summary": "在 Claude Code、Codex、OpenCode 之间按任务类型分派。",
+      "summary": "把简单活、复杂问题和长时间编程任务分给不同的 AI 助手。",
       "mechanism": "在委派流程加入确定性 hook，由 Jev 判断任务应交给哪个 harness / model。",
       "advantage": "可把机械任务、复杂推理和长实现任务分开。",
       "limitation": "分类规则、回退及长期完成质量没有完整公开；确定性 hook 不等于决策无误。",
@@ -445,13 +456,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "程序在分派任务前先问 Jev 应该交给谁，再按预设路径调用助手。这样能把“选择助手”和“完成任务”分开处理。"
     },
     {
       "slug": "skillbox",
       "group": "routing",
       "title": "Skillbox 技能选择",
-      "summary": "给单一 MCP 技能库加入 Jev，筛选与请求相关的技能。",
+      "summary": "从一大堆 AI 技能中，快速找出当前任务可能用得上的几个。",
       "mechanism": "查询 → Jev 判断相关技能 → 返回给代理；技能库按 bundle / profile 组织。",
       "advantage": "适合技能数量较多、代理频繁寻找工具的场景。",
       "limitation": "没有公开召回率；预览图来自更早的 Skillbox 介绍，不是 Jev 集成实测截图。",
@@ -478,13 +490,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "预览为旧版 Skillbox 介绍截图；Jev 集成由本条新帖陈述。"
+      "media_note": "预览为旧版 Skillbox 介绍截图；Jev 集成由本条新帖陈述。",
+      "plain_explanation": "像在工具箱里挑工具：Jev 根据请求筛选技能，助手再拿这些技能完成工作。筛得快还不够，也要检查有没有漏掉关键技能。"
     },
     {
       "slug": "coding-garden-assistant",
       "group": "routing",
       "title": "Coding Garden 工具助手",
-      "summary": "通过 Jev 选择搜索、天气、待办和 Home Assistant 等工具。",
+      "summary": "用一句话查天气、找资料或处理待办，让助手调用对应工具。",
       "mechanism": "用户问题 → Jev 选工具与参数 → 工具返回结果 → 助手呈现并引用来源。",
       "advantage": "把确定性工具结果接回对话界面，覆盖个人助手常见操作。",
       "limitation": "参数和工具选择仍可能出错；作者“无幻觉”的说法没有充分验证。",
@@ -513,13 +526,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "它像一个工具调度台：Jev 选工具和参数，工具返回真实结果，界面再显示出来。有来源的回答仍可能因为选错工具而出错。"
     },
     {
       "slug": "eve-tool-agent",
       "group": "routing",
       "title": "Eve 工具调用代理",
-      "summary": "把代理选择工具时的 LLM 推理环节换成 Jev。",
+      "summary": "让 Jev 接手“下一步用哪个工具”的判断，减少代理在选择上花的时间和费用。",
       "mechanism": "保留代理执行流程，将工具选择决策交给 Jev，比较多种大模型组合。",
       "advantage": "适合已有工具代理的局部替换，无需重写整个系统。",
       "limitation": "作者称效果接近，但没有公布足够样本或统一质量评分；节省不等于全面替代 LLM。",
@@ -571,13 +585,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "原来的助手先思考再选工具，这个实验把其中的选择环节交给 Jev。工具本身和后续处理仍由原来的程序负责。"
     },
     {
       "slug": "ai-cli",
       "group": "routing",
       "title": "ai-cli 终端决策入口",
-      "summary": "把是非判断、选项选择和评分接入终端代理。",
+      "summary": "让终端里的 AI 助手也能调用 Jev 做判断、选择和评分。",
       "mechanism": "命令行封装 Jev 的判断、选择、评分能力，供 harness 调用。",
       "advantage": "可通过通用命令行接入多个代理，无需各写一套接口。",
       "limitation": "这是接入工具，不是自带任务完成能力的 agent；需核验参数及错误处理。",
@@ -604,13 +619,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "它像一个通用插座，把 Jev 包装成终端命令。它提供调用入口，并不会单靠这个入口自动完成复杂任务。"
     },
     {
       "slug": "jev-review",
       "group": "review",
       "title": "jev-review MCP",
-      "summary": "让编码代理在工作中获取多项质量评分并迭代。",
+      "summary": "给 AI 写出的代码打分，让它根据反馈继续修改。",
       "mechanism": "代理提交上下文 → Jev 多维评分 → 代理修改 → 再评分。",
       "advantage": "质量反馈可以嵌进开发循环，适合观察修改前后变化。",
       "limitation": "实验性插件；优化评分可能迎合评审指标，不能替代测试和人工审查。",
@@ -639,13 +655,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "流程像交作业、拿评语、再修改：Jev 按不同标准评分，编码助手负责改代码。分数提高不一定代表程序真的没问题。"
     },
     {
       "slug": "typed-pr-review",
       "group": "review",
       "title": "14 项 PR 风险检查",
-      "summary": "一次评估 diff 的多种风险，并把不确定项升级复核。",
+      "summary": "快速检查一批代码修改有没有泄密、删测试等风险，不确定时交给人复核。",
       "mechanism": "diff → 一次 Jev 请求返回 14 项概率 → 代码生成结论；关键项在 0.35–0.65 时交给人或大模型。",
       "advantage": "检查项和升级规则明确，比单个“代码好不好”评分更易检查。",
       "limitation": "只展示 6 个 PR；语义风险分类不等于漏洞检测已充分覆盖。",
@@ -674,13 +691,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "把审查拆成 14 个具体问题，让 Jev 一次判断；程序再按结果给建议。关键问题拿不准时，不直接猜，而是转给人或更大模型。"
     },
     {
       "slug": "jev-rabbit",
       "group": "review",
       "title": "jev-rabbit 自然语言规则",
-      "summary": "用自然语言写代码审查规则的 PR bot 原型。",
+      "summary": "把团队的代码审查要求写成人话，让机器人按这些要求检查修改。",
       "mechanism": "规则文本和 PR 上下文交给 Jev 判断；原帖展示开发截图。",
       "advantage": "适合补充类型检查或 lint 难以表达的团队语义约定。",
       "limitation": "发帖时仍称即将公开，发布状态未确认；规则含糊会导致审查不一致。",
@@ -707,13 +725,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "例如团队有难写成固定检查规则的约定，可以交给 Jev 判断是否符合。规则越清楚越容易检查；这个项目在原帖中仍处于开发阶段。"
     },
     {
       "slug": "codebase-classifier",
       "group": "review",
       "title": "代码库复杂度分类器",
-      "summary": "用 Jev 分类代码库，探索识别代理造成的过度设计。",
+      "summary": "帮助发现代码是不是把简单事情做得过于复杂。",
       "mechanism": "作者展示代码库分类；输入切分方式、分类标准及阈值未完整披露。",
       "advantage": "评估对象是代码结构，可与逐行 PR 检查互补。",
       "limitation": "“过度设计”依赖项目背景；没有证明分类结果能指导安全重构。",
@@ -742,13 +761,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "它给代码结构做分类，类似给工程做一次“体检”。但什么算过度设计要结合项目需求，不能仅凭一个标签就直接重构。"
     },
     {
       "slug": "fx-safety",
       "group": "review",
       "title": "fx auto mode 命令安全分类",
-      "summary": "在代理自动模式中评估命令安全分类器。",
+      "summary": "在 AI 自动执行命令前，先判断这条命令可能有多危险。",
       "mechanism": "将 fx auto mode 的安全分类任务交给 Jev，并与原分类模型比较。",
       "advantage": "对应具体的代理执行门槛，适合研究低延迟预筛。",
       "limitation": "原帖没有完整测试集；安全决策不能仅按平均准确率自动放行。",
@@ -775,13 +795,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "Jev 像执行前的检查员，给命令做安全分类。检查很快不等于没有漏报，最终能否执行仍需要明确规则。"
     },
     {
       "slug": "jailbreak-screen",
       "group": "review",
       "title": "越狱提示预筛",
-      "summary": "用 Jev 对疑似越狱提示做初步检测。",
+      "summary": "先筛查输入里是否有试图绕过 AI 规则的内容。",
       "mechanism": "输入提示 → 越狱模式判断 → 供上层系统预筛；具体规则未完整公开。",
       "advantage": "适合把便宜的分类作为安全流程前置步骤。",
       "limitation": "作者明确是早期尝试；“接近 100%”是期望，不是已有结果。",
@@ -808,13 +829,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "把可疑提示交给 Jev，判断是否像已知的绕过套路。它只是前置筛查，遇到没见过的写法仍可能漏掉。"
     },
     {
       "slug": "upload-check",
       "group": "review",
       "title": "资料上传判断器",
-      "summary": "上传资料前，用 Jev 判断是否允许上传。",
+      "summary": "上传资料前先问一句：这份内容适合传出去吗？",
       "mechanism": "资料相关上下文 → 允许上传与否的判断；完整组织策略和字段未知。",
       "advantage": "把判断放在具体业务动作前，可研究敏感内容预筛交互。",
       "limitation": "演示不足以证明能识别所有敏感信息；不能替代组织权限策略。",
@@ -843,13 +865,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "系统让 Jev 对资料做允许或不允许的判断。是否判断得对取决于给它的规则和信息；原帖没有公开完整的公司保密策略。"
     },
     {
       "slug": "papers",
       "group": "data",
       "title": "1kpapers 论文分类",
-      "summary": "先摘要，再把 1,018 篇 AI 论文分入 24 个主题。",
+      "summary": "把一千多篇 AI 论文分门别类，方便按主题浏览。",
       "mechanism": "DeepSeek V4 Flash 生成摘要 → 标题、摘要及候选主题送入 Jev → 分类供网站可视化。",
       "advantage": "清楚分离生成和分类成本，适合资料目录和研究索引。",
       "limitation": "发帖时 Jev 标签还在评估，未替换线上旧标签；摘要质量影响下游分类。",
@@ -880,13 +903,14 @@
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "先让另一个模型把长论文写成摘要，再让 Jev 从 24 个主题里挑类别。相当于先做内容卡片，再给卡片贴标签。"
     },
     {
       "slug": "duckdb",
       "group": "data",
       "title": "DuckDB 语义分类扩展",
-      "summary": "在 CSV、Parquet 或 DuckDB 表中逐行做 Jev 分类。",
+      "summary": "在分析表格时，顺手让 Jev 给每行文字分个类。",
       "mechanism": "表格数据进入 DuckDB 扩展，扩展调用 Jev 分类并返回可查询结果。",
       "advantage": "可以保留 SQL 数据分析流程，比手动导出文本更方便。",
       "limitation": "吞吐取决于并发、行长度和 API 限制；不能直接与单请求延迟比较。",
@@ -913,13 +937,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "DuckDB 是处理表格数据的工具，这个扩展把 Jev 接了进去。查询表格时就能得到分类结果，不必先手动搬到聊天窗口。"
     },
     {
       "slug": "email-batch",
       "group": "data",
       "title": "500 封邮件分类",
-      "summary": "批量判断邮件类别并展示结果。",
+      "summary": "把一大批邮件快速分到不同类别，减少逐封整理。",
       "mechanism": "邮件文本 → Jev 分类 → 界面展示分类；类别定义和数据构成未完整公开。",
       "advantage": "适合大量短文本整理，任务边界相对清晰。",
       "limitation": "没有准确率和混淆矩阵；低成本不代表重要邮件不会分错。",
@@ -948,13 +973,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "程序逐封把邮件内容交给 Jev 选类别，再汇总展示。像自动贴标签，但标签是否准确仍需要人工抽查。"
     },
     {
       "slug": "email-fraud",
       "group": "data",
       "title": "Jev + Kimi 邮件反欺诈",
-      "summary": "先快速分类，再把低置信度邮件交给 Kimi K3。",
+      "summary": "先快速筛查诈骗邮件，再把拿不准的交给更大的模型复核。",
       "mechanism": "100 封邮件 → Jev → 低于作者设定 95% 阈值的 31 封转给 Kimi K3 → 合并结果。",
       "advantage": "给出了明确升级路径和分项成本，适合研究分层分类。",
       "limitation": "96/100 是组合流程结果；50:50 小样本不代表真实欺诈基率和部署效果。",
@@ -983,13 +1009,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "像两级检查：Jev 先分流，置信度不足的 31 封再交给 Kimi。最后的 96/100 是整套流程成绩，不是 Jev 单独的成绩。"
     },
     {
       "slug": "bank-payee",
       "group": "data",
       "title": "银行流水收款方整理",
-      "summary": "从杂乱的银行交易描述中整理商户或收款方名称。",
+      "summary": "把银行流水里杂乱的交易说明，整理成更容易认出的商户名。",
       "mechanism": "原始描述 → Jev 参与判断 → 输出较简洁名称；候选生成与截取算法未知。",
       "advantage": "贴近个人财务工具的实际数据清洗需求；截图提供多组输入输出。",
       "limitation": "作者“约 95%”是粗略评价，并非有标注测试集上的准确率。",
@@ -1016,13 +1043,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "流水里常混着地点、编号和店名，这个实验让 Jev 参与判断哪些信息该留下。原帖没公开具体怎样切出或生成最终名称。"
     },
     {
       "slug": "support-intent",
       "group": "data",
       "title": "日语客服升级意图",
-      "summary": "判断客户是否要求人工服务、是否曾多次咨询。",
+      "summary": "从日语客服消息里判断：用户是不是想找人工、是不是已经问过多次。",
       "mechanism": "同一客服文本上分别询问是否需要人工、是否已有历史咨询。",
       "advantage": "短而明确的问题可以并列评估，适合工单分流。",
       "limitation": "示例中的 98% / 97% 是模型判断值，不是日语客服准确率。",
@@ -1049,13 +1077,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "把一条消息拆成两个清楚的是非问题，分别问 Jev。显示的百分比代表这次判断的倾向，不是整个客服系统的准确率。"
     },
     {
       "slug": "live-viral",
       "group": "content",
       "title": "实时帖子潜力分析器",
-      "summary": "停止输入 0.5 秒后，分析帖子的类别和传播潜力。",
+      "summary": "写帖子时边写边看反馈，了解内容类型和可能的传播潜力。",
       "mechanism": "编辑文本 → 防抖等待 → Jev 分类或评分 → 界面实时反馈。",
       "advantage": "交互反馈快，适合写作过程中比较表达方式。",
       "limitation": "作者承认还要收集真实 X 数据；没有证明能预测未来传播。",
@@ -1084,13 +1113,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "停止输入半秒后，程序把草稿交给 Jev 做分类和评分，再更新界面。它更像即时写作反馈，还不能证明帖子一定会火。"
     },
     {
       "slug": "viral-classifier",
       "group": "content",
       "title": "帖子传播分类器",
-      "summary": "尝试区分更可能传播的帖子。",
+      "summary": "尝试从帖子里挑出更可能引起关注的内容。",
       "mechanism": "帖子 → Jev 分类；标签定义、训练外评估方式及代码未知。",
       "advantage": "可与实时写作分析器对照，关注分类判别而非生成文案。",
       "limitation": "作者“与 Fable 一样好、快 100 倍”缺少公开评估细节。",
@@ -1117,13 +1147,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "Jev 给帖子做分类，类似一个快速初筛员。作者没有公开完整的判分依据和测试过程，所以目前不能把它当成可靠的爆款预测器。"
     },
     {
       "slug": "x-algorithm-sim",
       "group": "content",
       "title": "X 传播评分模拟器",
-      "summary": "根据权重模拟帖子传播评分，并带公共信息流。",
+      "summary": "给帖子做传播效果模拟，看看不同写法可能得到什么评分。",
       "mechanism": "帖子和权重进入评分流程，Jev 参与判断，界面展示模拟结果。",
       "advantage": "把评分与信息流界面结合，便于观察不同文本的相对变化。",
       "limitation": "“重建 X 算法”是作者命名；未验证权重来源或实际推荐预测准确率。",
@@ -1152,13 +1183,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "作者把 Jev 的判断和一组权重结合成评分。评分公式像一个简化模型；即使看起来像 X，也不等于复刻了真实推荐系统。"
     },
     {
       "slug": "bookmark-prediction",
       "group": "content",
       "title": "收藏率分位预测实验",
-      "summary": "预测帖子在前后十天窗口中是否位于收藏量前 25%。",
+      "summary": "预测一条帖子的收藏量，能不能排进附近日期帖子的前四分之一。",
       "mechanism": "历史帖子 → Jev 判断是否进入高收藏分位 → 与其他模型结果对照。",
       "advantage": "标签比笼统的“会不会爆”更具体，作者说明了数据规模和目标。",
       "limitation": "单账号样本，时间划分及泄漏控制未充分公开；不能推广成全 X 排名器。",
@@ -1185,13 +1217,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "先把“会不会火”改成可检查的问题：它是否进入特定时间窗口的前 25%？再让 Jev 预测，并用历史数据比较结果。"
     },
     {
       "slug": "post-analytics",
       "group": "content",
       "title": "3,282 条历史帖子分析",
-      "summary": "给历史内容打标签，比较主题、语气和写作方式与点赞的关系。",
+      "summary": "回看自己的几千条帖子，找出哪些主题和写法过去更受欢迎。",
       "mechanism": "每篇帖子问 8 个问题 → 汇总标签和历史表现 → 找出描述性规律。",
       "advantage": "适合复盘自己的内容库，不要求直接预测单条未来表现。",
       "limitation": "相关性不是因果；结果受账号、时间和选样影响。",
@@ -1220,13 +1253,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "Jev 给每条帖子贴上主题、语气等标签，程序再统计各标签的历史表现。它是在总结过去，不能证明换成这种写法就一定涨粉。"
     },
     {
       "slug": "ad-analysis",
       "group": "content",
       "title": "StealAds 广告拆解预览",
-      "summary": "批量分析广告的钩子、形式、优惠、行动号召等要素。",
+      "summary": "把大量广告拆成开场卖点、优惠和引导动作，方便找创作思路。",
       "mechanism": "广告信息 → Jev 多维判断 → 汇总创意要素及落地页匹配情况；抽取前处理未知。",
       "advantage": "面向营销素材整理，维度比单一质量分更可操作。",
       "limitation": "发帖时称未来集成 StealAds + MCP；总成本是否含素材采集未说明。",
@@ -1255,13 +1289,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "像把广告做成可筛选的资料卡：Jev 分别判断不同要素，程序汇总。素材怎样采集和转成模型输入，原帖没有说明。"
     },
     {
       "slug": "jevmeter",
       "group": "content",
       "title": "JevMeter 言论指标仪表",
-      "summary": "按统一问题分析辩论、访谈等逐句文本。",
+      "summary": "给辩论或访谈逐句打指标，观察说话方式和内容特征。",
       "mechanism": "语句 → 每句 5 个是非问题 → 汇总指标并显示；后续公开代码。",
       "advantage": "问题固定，便于对同一材料按相同标准比较。",
       "limitation": "首帖明确不是事实核查；后续宣传虽称 fact check，不能据此认定观点真伪。",
@@ -1313,13 +1348,14 @@
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "每句话都回答同样五个问题，再把结果画成指标。统一尺子便于比较，但没有查证外部事实，就不能据此判断一句话真假。"
     },
     {
       "slug": "x-filter",
       "group": "filter",
       "title": "自然语言 X 内容过滤器",
-      "summary": "用自然语言规则隐藏或折叠 X 帖子。",
+      "summary": "用自己的话告诉浏览器：哪些 X 帖子我不想看。",
       "mechanism": "浏览器扩展读取帖子 → Jev 判断是否符合规则 → 隐藏或折叠。",
       "advantage": "规则可表达用户语义偏好，适合固定关键词难以覆盖的内容。",
       "limitation": "误杀率未测；规则越含糊越可能过滤掉有价值内容。",
@@ -1354,13 +1390,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "扩展把帖子和过滤要求交给 Jev 判断，符合条件就隐藏或折叠。它按意思筛选，不只是找某个关键词。"
     },
     {
       "slug": "unclutter",
       "group": "filter",
       "title": "Unclutter 页面清理",
-      "summary": "识别并清理广告、Cookie 横幅、追加销售等页面元素。",
+      "summary": "帮网页清掉广告、促销弹窗等干扰，让正文更容易看。",
       "mechanism": "页面候选元素 → Jev 判断是否属于清理目标 → 扩展处理；精确抽取方式未知。",
       "advantage": "针对网页界面噪声，覆盖范围比只过滤 X 帖子更广。",
       "limitation": "需自带 API key；页面识别可能影响正常弹窗或站点功能。",
@@ -1389,13 +1426,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "程序先找出可能要清理的页面元素，再请 Jev 判断。难点不只是认出广告，还要避免误删登录框等正常功能。"
     },
     {
       "slug": "context-compaction",
       "group": "memory",
       "title": "工具调用上下文压缩",
-      "summary": "给历史工具调用评分，删掉与当前任务无关的内容。",
+      "summary": "给 AI 助手的工作记录瘦身，只把眼下有用的内容继续带着。",
       "mechanism": "工具调用记录 → Jev 相关性评分 → 选择保留内容构建上下文。",
       "advantage": "通过筛选减少上下文，不必把整段历史重写成摘要。",
       "limitation": "没有长期任务保真率；过早丢弃记录可能影响后续追溯。",
@@ -1424,13 +1462,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "不是把所有历史重写成一篇摘要，而是先给工具记录评相关性，再选择保留哪些。省下空间的同时，也可能丢掉以后才需要的信息。"
     },
     {
       "slug": "memory-retrieval",
       "group": "memory",
       "title": "记忆系统检索筛选",
-      "summary": "把 Jev 加入自建记忆系统，减少送入模型的内容。",
+      "summary": "从 AI 记忆库里筛出真正相关的内容，减少翻找和阅读负担。",
       "mechanism": "记忆候选 → Jev 相关性判断 → 向后续模型提供筛选后的内容；具体检索算法未知。",
       "advantage": "聚焦检索后的内容筛选，可与现有记忆系统组合。",
       "limitation": "作者明确只是快速测试；缺少召回率和长任务正确率数据。",
@@ -1459,13 +1498,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "先找到一批可能相关的记忆，再由 Jev 做第二轮筛选。像从搜索结果里挑重点；筛得太狠，也可能漏掉关键线索。"
     },
     {
       "slug": "doom",
       "group": "games",
       "title": "官方 Doom 演示",
-      "summary": "用 Jev 在游戏循环里持续做动作决策。",
+      "summary": "让 Jev 持续选择游戏动作，演示快速决策如何接入 Doom。",
       "mechanism": "官方展示代码与模型结合控制 Doom；原帖未完整披露状态编码和控制循环。",
       "advantage": "官方发布的高频动作示例，适合观察实时决策方向。",
       "limitation": "不能仅凭画面认定模型直接看像素；没有长期胜率或硬件完整配置。",
@@ -1494,13 +1534,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "程序负责连接游戏与模型，Jev 在循环中做选择。看到游戏画面不代表 Jev 直接看懂了像素；原帖没有完整说明它实际收到什么状态。"
     },
     {
       "slug": "mario-faadhil",
       "group": "games",
       "title": "Super Mario · @faadilhshaik",
-      "summary": "把快速结构化决策接入超级马里奥。",
+      "summary": "让 Jev 操作超级马里奥，展示快速选择动作的效果。",
       "mechanism": "游戏状态进入决策循环，Jev 输出供游戏执行的动作；原帖未详细展开状态格式。",
       "advantage": "演示直观，公开项目线索可继续研究游戏适配。",
       "limitation": "短片不能说明多关卡泛化或长期稳定通关。",
@@ -1529,13 +1570,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "游戏适配程序把状态交给 Jev，再把选择变成游戏操作。具体状态格式未公开，因此不能只凭视频判断它是否像人一样“看屏幕玩”。"
     },
     {
       "slug": "mario-comparison",
       "group": "games",
       "title": "Super Mario · Jev / Qwen 对照",
-      "summary": "给 Jev 与 Qwen3.8 相同的结构化状态和五个动作选项。",
+      "summary": "给 Jev 和 Qwen 相同的马里奥信息，比较它们怎样选动作。",
       "mechanism": "游戏信息转换成结构化数据 → 两个模型分别五选一 → 游戏执行。",
       "advantage": "明确控制了输入形态和动作数量，便于研究模型选择差异。",
       "limitation": "不是原生视觉比较；未给多次运行成功率和网络环境。",
@@ -1564,13 +1606,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "先把游戏情况变成结构化数据，两种模型都只能五选一。像参加同一份选择题，而不是让一个看画面、另一个读游戏内部数据。"
     },
     {
       "slug": "mario-ppo",
       "group": "games",
       "title": "Super Mario · 1-1 关卡",
-      "summary": "对照自己训练 PPO 的经历，展示 Jev 完成 1-1。",
+      "summary": "展示用 Jev 接入马里奥第一关，与作者之前训练游戏 AI 的经历对照。",
       "mechanism": "作者将 Jev 接入游戏控制流程；详细状态、动作及辅助逻辑未公开。",
       "advantage": "比较了实现投入，说明可以快速搭建窄场景原型。",
       "limitation": "一周 PPO 与半小时接入不是同条件模型性能评测；辅助逻辑可能不同。",
@@ -1599,13 +1642,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "作者把已有 Jev 接入游戏，而 PPO 方案需要训练控制策略。这里比较的是搭建经历，不能直接推出哪个模型在相同条件下更强。"
     },
     {
       "slug": "pacman",
       "group": "games",
       "title": "Astra + Jev 吃豆人",
-      "summary": "Astra 给策略，Jev 快速执行局部动作。",
+      "summary": "一个模型想策略，Jev 负责快速走下一步，合力玩吃豆人。",
       "mechanism": "Astra 规划 → Jev 按策略做局部决策 → 游戏反馈。",
       "advantage": "明确展示规划与执行分层，可借鉴到较长任务。",
       "limitation": "两个模型都影响结果；单看 Jev 延迟不能代表整体成本和质量。",
@@ -1634,13 +1678,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "像教练和球员分工：Astra 提供大方向，Jev 根据方向执行局部动作。两层配合的效果要一起看，不能只算 Jev 的速度。"
     },
     {
       "slug": "snake",
       "group": "games",
       "title": "贪吃蛇逐步决策",
-      "summary": "每移动一步就请求 Jev 选择动作。",
+      "summary": "贪吃蛇每走一步，都先问 Jev 下一步怎么走。",
       "mechanism": "当前游戏状态 → Jev 决策 → 移动一步 → 下一轮。",
       "advantage": "循环简单，适合研究动作成本和失败条件。",
       "limitation": "请求数随步数增长；原帖没有最高长度或多局成功率。",
@@ -1669,13 +1714,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "程序反复执行“读状态、问方向、走一步”。这个小循环很容易理解，但每多走一步就多一次请求，长局的总费用也会增加。"
     },
     {
       "slug": "tetris",
       "group": "games",
       "title": "俄罗斯方块",
-      "summary": "让 Jev 选择俄罗斯方块的游戏操作。",
+      "summary": "让 Jev 决定俄罗斯方块的操作，观察它怎样安排落块。",
       "mechanism": "游戏循环调用 Jev 决策；棋盘编码与动作粒度未披露。",
       "advantage": "体现快速动作选择，可比较落点选择与连续按键两种实现。",
       "limitation": "原帖没有说明采用哪种控制方式，不能据此评价规划能力。",
@@ -1704,13 +1750,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "需要有程序把棋盘状态转给模型，再把选择变成操作。原帖没说明 Jev 是选最终落点，还是逐次选按键，这会影响比较结果。"
     },
     {
       "slug": "pokemon",
       "group": "games",
       "title": "Jev Plays Pokémon",
-      "summary": "持续运行的宝可梦代理，记录长期进展与调用成本。",
+      "summary": "让 Jev 长时间玩宝可梦，并记录打到哪里、用了多少次决策。",
       "mechanism": "游戏状态 → Jev 决策 → 游戏操作 → 累积进度；详细记忆和导航实现未知。",
       "advantage": "相比短视频，报告了数千次决策后的任务进度。",
       "limitation": "初始徽章只是局部进展，不代表通关；可能需要额外导航脚手架。",
@@ -1760,13 +1807,14 @@
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "游戏不断反馈新情况，程序反复向 Jev 请求选择，累积推进剧情。几千步后取得徽章，比一小段精彩剪辑提供了更多进度信息。"
     },
     {
       "slug": "slay-spire",
       "group": "games",
       "title": "杀戮尖塔 2 代打",
-      "summary": "用 Jev 替换较慢模型做卡牌游戏行动决策。",
+      "summary": "让 Jev 代选卡牌游戏中的行动，减少等模型思考的时间。",
       "mechanism": "游戏状态 → Jev 选择行动 → 游戏执行；具体状态接口未知。",
       "advantage": "适合有离散合法行动的回合制游戏。",
       "limitation": "快速出牌不等于策略更优；没有完整对局胜率。",
@@ -1795,13 +1843,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "卡牌游戏通常有一组当前合法的选择，程序可把它们交给模型挑选。原帖没公开接口细节，而且出牌快不一定代表更容易赢。"
     },
     {
       "slug": "chess",
       "group": "games",
       "title": "5+0 国际象棋对局",
-      "summary": "比较 Jev、Fable 与 Astra 在计时棋局中的表现。",
+      "summary": "让几个模型下限时国际象棋，同时比较下棋水平与思考速度。",
       "mechanism": "每一步进行一次模型 API 调用，在 5 分钟无加秒规则下对弈。",
       "advantage": "同时暴露决策耗时与棋力的取舍，结果包含失败局。",
       "limitation": "对手配置与局数有限；时间获胜不能当成棋力超过对手。",
@@ -1831,13 +1880,14 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "jev_version": "V13（作者原帖标注）"
+      "jev_version": "V13（作者原帖标注）",
+      "plain_explanation": "每一步都要请求模型，思考时间也从棋钟里扣。Jev 有一局靠对手超时获胜，但另一局被将死，说明“下得快”和“下得好”是两件事。"
     },
     {
       "slug": "subway-runners",
       "group": "games",
       "title": "Subway Surfers 并行演示",
-      "summary": "展示 Jev 控制跑酷玩法，并行运行多局。",
+      "summary": "展示 Jev 同时控制多局跑酷游戏的效果。",
       "mechanism": "游戏环境与 Jev 形成动作循环；并发调度和游戏实现细节未披露。",
       "advantage": "能观察并行环境吞吐，适合研究多实例控制。",
       "limitation": "没有说明是否原版客户端、改写环境或模拟器；不能等同于通用手机操控。",
@@ -1866,13 +1916,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "多个游戏环境并行请求决策，再各自执行。原帖没有说清是不是原版客户端，所以它证明的是这个演示的控制效果，不是通用手机操作能力。"
     },
     {
       "slug": "rubiks-cube",
       "group": "games",
       "title": "魔方分阶段解法",
-      "summary": "代码实现初学者解法，Jev 判断当前属于哪种情况。",
+      "summary": "程序会魔方公式，Jev 帮它判断当前该用哪一种。",
       "mechanism": "程序编码分层解法 → Jev 选择当前 case → 代码检查选择并执行公式。",
       "advantage": "规则和判别职责清楚，展示模型与确定性算法协作。",
       "limitation": "解法主要来自代码，不是 Jev 独立推导最优解；视频被放慢。",
@@ -1901,13 +1952,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "像先准备一本解法手册：Jev 负责认出眼下的情况，程序查对应公式并检查操作。因此完整解法来自模型与代码合作。"
     },
     {
       "slug": "mario-kart",
       "group": "games",
       "title": "Mario Kart 64",
-      "summary": "用 Jev 进行马里奥赛车驾驶的游戏演示。",
+      "summary": "展示 Jev 玩马里奥赛车，观察连续驾驶时的反应。",
       "mechanism": "作者展示 Jev 控制赛车；状态编码、辅助控制器和模拟速度未知。",
       "advantage": "连续驾驶游戏与离散回合游戏形成对照。",
       "limitation": "没有圈速、碰撞次数或统一对照；不能据宣传语推断优于电脑操作模型。",
@@ -1936,13 +1988,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "程序必须把赛车状态转成模型能判断的信息，再把结果变成操控。原帖没交代状态接口、辅助驾驶逻辑或模拟速度，原理细节仍待补充。"
     },
     {
       "slug": "npc-needs",
       "group": "simulation",
       "title": "按需求行动的 NPC",
-      "summary": "根据 NPC 当前需求，选择环境中合适的物品或工具。",
+      "summary": "让游戏角色根据自己的需求，挑选环境中合适的物品或活动。",
       "mechanism": "NPC 需求及环境候选 → Jev 选择 → 游戏角色执行。",
       "advantage": "可用语义描述扩展 NPC 行为，接近 utility AI / smart objects 场景。",
       "limitation": "需求权重、冲突和长期行为一致性未说明；传统规则可能更简单便宜。",
@@ -1971,13 +2024,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "给 Jev 角色的需求和可用选项，它选一个，再由游戏执行。这里模型决定“做什么”，角色移动、动画和规则仍由游戏负责。"
     },
     {
       "slug": "npc-500",
       "group": "simulation",
       "title": "500 个 3D agents",
-      "summary": "在 3D 环境中测试多代理并行决策。",
+      "summary": "在同一个 3D 世界里，让很多虚拟角色并行做决定。",
       "mechanism": "环境中的 agents 请求 Jev 决策，由仿真执行；调度和批量方式未知。",
       "advantage": "关注群体规模和吞吐，适合研究模拟环境负载。",
       "limitation": "35 次调用/秒不等于每个 agent 每秒 35 次；没有逐角色更新频率。",
@@ -2006,13 +2060,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "把不同角色的问题交给 Jev，再让仿真执行各自选择。整体每秒 35 次请求，并不表示 500 个角色各自每秒都更新 35 次。"
     },
     {
       "slug": "driving-toy",
       "group": "simulation",
       "title": "“FSD”驾驶模拟演示",
-      "summary": "作者以重建 FSD 命名的车辆驾驶原型。",
+      "summary": "一个让 Jev 参与开车的模拟小实验，作者把它称作“重建 FSD”。",
       "mechanism": "Jev 参与虚拟环境中的驾驶控制；传感器、控制器及状态表达未知。",
       "advantage": "直观展示快速决策接入驾驶模拟的可能性。",
       "limitation": "不是 Tesla FSD 复现或实车验证，无法支持道路安全和自动驾驶能力结论。",
@@ -2041,13 +2096,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "画面中的车由程序和 Jev 协作控制。模拟道路上的演示与真实汽车安全驾驶差别很大，不能据此认定重做出了 Tesla FSD。"
     },
     {
       "slug": "realtime-driving",
       "group": "simulation",
       "title": "不暂停的实时驾驶模拟",
-      "summary": "模型思考时车辆仍在运动的驾驶控制实验。",
+      "summary": "模型思考时车也不停，测试 Jev 能否跟上模拟驾驶的节奏。",
       "mechanism": "持续推进的模拟器状态 → Jev → 原始控制输入；等待网络响应时不暂停物理环境。",
       "advantage": "明确关注决策延迟与运动状态过时的问题，比暂停仿真更接近实时约束。",
       "limitation": "仍是模拟器；未给道路覆盖、事故率或长时稳定性数据。",
@@ -2076,13 +2132,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "如果每次等模型时都暂停游戏，就隐藏了延迟问题。这个实验让模拟器持续运行，旧状态可能在回答回来前就过时。"
     },
     {
       "slug": "drone-sim",
       "group": "simulation",
       "title": "Jev 无人机仿真",
-      "summary": "在 MuJoCo 中用 Jev 选择无人机战术动作，飞行控制与安全反射由代码处理。",
+      "summary": "在模拟器里让无人机过障碍，Jev 选路线策略，代码负责稳住飞机。",
       "mechanism": "项目 README：相机深度/分割缓冲经本地代码变成符号场景 → Jev 判断机动、风险和目标是否丢失 → 普通代码执行；控制器和安全反射以更高频率独立运行。",
       "advantage": "公开了感知、战术决策、飞行控制的分层，也披露基线及失败边界。",
       "limitation": "MuJoCo 仿真，不是实机飞行；作者说明主要成功对照是单次运行，早期同种子实验没有优势，不能概括为整体优于传统控制。",
@@ -2115,13 +2172,14 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "source_notes": "**代码来源补核（2026-09-18）**：[固定版本 README](https://github.com/RomanSlack/jev-drone/blob/cbeb53ce4f17a06ea490ae43effcdad231143610/README.md) 明确使用 MuJoCo、符号化相机场景和分层控制，Jev 不直接接收图像；主场景中的安全代码可以否决模型动作。作者还披露单次结果、早期无优势对照及尚不可靠的隧道实验。此处是对文档的核对，不是本库复现。"
+      "source_notes": "**代码来源补核（2026-09-18）**：[固定版本 README](https://github.com/RomanSlack/jev-drone/blob/cbeb53ce4f17a06ea490ae43effcdad231143610/README.md) 明确使用 MuJoCo、符号化相机场景和分层控制，Jev 不直接接收图像；主场景中的安全代码可以否决模型动作。作者还披露单次结果、早期无优势对照及尚不可靠的隧道实验。此处是对文档的核对，不是本库复现。",
+      "plain_explanation": "像领航员与飞控分工：程序先把相机信息变成简洁状态，Jev 选绕行或爬升，速度更快的控制和安全程序随时约束动作。"
     },
     {
       "slug": "unstable-government",
       "group": "simulation",
       "title": "Unstable Government 小镇",
-      "summary": "输入一条法规，让 40 位虚拟居民做出不同反应。",
+      "summary": "给虚构小镇颁布一条法规，看看居民怎样反应并生成一份报纸。",
       "mechanism": "Claude 生成反应内容和场景 → Jev 决定居民响应 → 小镇模拟 → 生成次日报纸。",
       "advantage": "生成叙事与居民选择分工明确，适合互动故事。",
       "limitation": "角色反应是虚构模拟，不能作为社会政策影响预测。",
@@ -2150,13 +2208,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "Claude 编写候选反应和场景，Jev 为每位居民做选择，仿真把结果演出来。它是互动故事，不是预测现实政策效果的工具。"
     },
     {
       "slug": "synthetic-personas",
       "group": "simulation",
       "title": "150 位虚构用户意向",
-      "summary": "对虚构 personas 批量询问产品采用意愿。",
+      "summary": "让一群虚构用户回答产品意向问题，帮助整理早期想法。",
       "mechanism": "150 位设定人物分别回答 12 个问题，由 Jev 进行结构化判断。",
       "advantage": "快速检查人物设定与产品叙述之间的匹配，可用于构思访谈问题。",
       "limitation": "合成意见不是实际用户调查，不能当成市场需求验证。",
@@ -2185,13 +2244,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "先写好人物设定，再让 Jev 代入设定回答固定问题。它能模拟一种意见，但人物不是实际受访者，不能替代真实用户调研。"
     },
     {
       "slug": "typegpu-realtime",
       "group": "interaction",
       "title": "TypeGPU 实时语义特效",
-      "summary": "本地视觉、语音推理后，由 Jev 决定灯光和后期效果。",
+      "summary": "让摄像头和麦克风感知到的内容，影响画面的灯光与特效。",
       "mechanism": "摄像头/麦克风 → Moonshine、YOLO26、DepthART → Jev → 灯光、阴影、bloom；ruNNtime 与 TypeGPU 共享 GPU 资源。",
       "advantage": "将本地感知与语义决策分离，适合实时交互媒体。",
       "limitation": "整个流水线不只包含 Jev；没有端到端延迟和各模块消融结果。",
@@ -2220,13 +2280,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "本地模型先处理声音、物体和深度信息，Jev 再做语义判断，渲染程序改变效果。它像流水线里的决策一站，不包办感知和绘图。"
     },
     {
       "slug": "ask-jev",
       "group": "interaction",
       "title": "Ask Jev",
-      "summary": "让用户输入问题，体验 Jev 的判断式交互。",
+      "summary": "输入一个问题，看看 Jev 会怎样判断，而不是等它写一大段回答。",
       "mechanism": "用户输入 → Jev 判断 → 网站显示结果；作者提到 Convex 集成。",
       "advantage": "有公开体验入口，直观认识判断模型的输出形式。",
       "limitation": "娱乐和产品交互示例，不能将任意判断当成可靠知识回答。",
@@ -2257,13 +2318,14 @@
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "网页收集输入，把判断交给 Jev，再显示结果。它适合体验“选择式 AI”的交互，但不能把随便一个判断都当成正确知识。"
     },
     {
       "slug": "word-chat",
       "group": "interaction",
       "title": "有限词表聊天",
-      "summary": "给 Jev 数百个单词及标点选项，逐步拼成文本。",
+      "summary": "只给 Jev 一份常用词清单，让它一个词一个词拼出对话。",
       "mechanism": "已有文本与有限词表 → 选下一个词 → 追加 → 重复。",
       "advantage": "展示如何用选择能力组合出生成式交互。",
       "limitation": "词表限制表达；每词一次决策的耗时与成本不适合直接类比文本模型。",
@@ -2292,13 +2354,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "每次都让 Jev 从有限词表里选下一个词，程序把它接在末尾继续问。文字是循环拼出来的，表达也受词表限制。"
     },
     {
       "slug": "character-chat",
       "group": "interaction",
       "title": "29 选项字符生成",
-      "summary": "把下一字符拆成 29 个是非判断，再循环拼接文本。",
+      "summary": "让 Jev 每次挑一个字母或标点，慢慢拼成一段话。",
       "mechanism": "对 a–z、空格、逗号、句号提问 → 选概率最高字符 → 把更新文本再次输入。",
       "advantage": "控制循环明确，比有限词表更自由。",
       "limitation": "字符循环调用次数大；不证明模型原生具备文本生成 API。",
@@ -2327,13 +2390,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "每轮问 29 个是非问题，比较哪个字符最合适，再追加到已有文本后。能拼出文字不代表这种办法比专门的文字模型更划算。"
     },
     {
       "slug": "pixel-drawing",
       "group": "interaction",
       "title": "并行像素绘图",
-      "summary": "通过像素层面的并行判断构成图像。",
+      "summary": "把许多小像素的判断拼在一起，尝试让 Jev 画图。",
       "mechanism": "作者称对像素并行预测；分辨率、颜色候选和问题构造未披露。",
       "advantage": "把分类输出组合成视觉结果，具有原理探索价值。",
       "limitation": "不是已验证的通用图像生成器；品质、分辨率和总成本未知。",
@@ -2362,13 +2426,14 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "可以把它理解为逐格决定画面，再由程序拼成图。作者称像素并行预测，但没公开颜色选项、分辨率和问题写法。"
     },
     {
       "slug": "riscv",
       "group": "interaction",
       "title": "RISC-jeV 逻辑门实验",
-      "summary": "让 Jev 模拟逻辑门，接入 SERV RISC-V 实现。",
+      "summary": "让 Jev 判断最简单的逻辑，再把这些判断拼成小型计算机指令。",
       "mechanism": "Jev 判断 AND / OR 等逻辑 → SERV 指令执行 → 加法、位运算和打印。",
       "advantage": "提供明确的组合层次，适合理解“决策如何构成计算”。",
       "limitation": "概念实验，不是计算效率优势；确定性代码完成逻辑运算更合适。",
@@ -2399,13 +2464,14 @@
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "像用积木搭机器：底层先判断 AND、OR 等逻辑，SERV 实现再组合成指令。它是在展示组合原理，并不是高效做计算的新办法。"
     },
     {
       "slug": "trading-bot",
       "group": "finance",
       "title": "Monad / Kuru 交易机器人",
-      "summary": "从行情中选买卖动作，并接入链上订单簿执行。",
+      "summary": "让 Jev 看价格变化后选买或卖，再由程序把订单送出去。",
       "mechanism": "资产对价格流 → Jev 选 buy / sell → Monad 上的 Kuru 订单簿执行。",
       "advantage": "决策到外部执行的链路清晰，适合研究事件驱动系统。",
       "limitation": "没有收益、回撤或风控评估；执行快不代表策略赚钱，演示不构成投资建议。",
@@ -2436,7 +2502,8 @@
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。"
+      "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
+      "plain_explanation": "模型只负责交易选择，程序负责连接区块链订单簿。下单快和交易赚钱没有必然联系，原帖没有给出完整收益与风险记录。"
     }
   ],
   "groups": [

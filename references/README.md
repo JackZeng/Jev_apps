@@ -1,5 +1,7 @@
 # 来源、检索与快照说明
 
+**简体中文** | [English](README.en.md)
+
 本轮收录日期：**2026-09-18，北京时间**。范围为 X 上明确使用 **TypeSafe Jev** 的应用、可运行原型、实现演示与有具体任务的实验。
 
 ## 官方资料
@@ -35,6 +37,8 @@
 - `post.media_source` / `post.media`：媒体所属原帖、原图或视频地址、视频封面与时长（如有）。
 - `supplementary_posts`：同项目补充帖；不叠加其点赞，也不要求补充帖自身过门槛。
 - `reported_result`：对作者报告的原创转述；`advantage` / `limitation`：依据公开信息的分析。
+
+[data/catalog.en.json](../data/catalog.en.json) 只翻译编辑文字。两种语言共享证据、点赞与媒体；翻译不代表重新核对了原帖或刷新了数据。
 
 原帖逐条链接在 [总表](../README.md) 和 [案例详情](../cases/README.md) 中。为了避免重新发布整篇社交媒体内容，仓库不提交完整帖文或个人账号资料，只保留核对所需的公共元数据与原创摘要。
 

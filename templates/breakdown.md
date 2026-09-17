@@ -1,5 +1,7 @@
 # <拆解主题>
 
+**简体中文** | [English](breakdown.en.md)
+
 > 将本模板复制到 `breakdowns/YYYY-MM-DD-short-slug.md`，替换占位内容。不要把合理猜测写成已经确认的内部实现。
 
 ## 基本信息

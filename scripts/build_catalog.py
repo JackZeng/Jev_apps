@@ -8,6 +8,8 @@ import json
 from pathlib import Path
 import sys
 
+from catalog_en import generate_en, validate_translations
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data/catalog.json'
 
@@ -41,7 +43,7 @@ def validate(d):
         for m in p['media']:
             assert m['type'] in ('photo', 'video', 'gif')
             assert m['url'].startswith('https://')
-        for k in ('title', 'summary', 'mechanism', 'advantage', 'limitation', 'reported_result'):
+        for k in ('title', 'summary', 'plain_explanation', 'mechanism', 'advantage', 'limitation', 'reported_result'):
             assert c[k] and '|' not in c[k], (c['slug'], k)
 
 def generate(d):
@@ -52,6 +54,12 @@ def generate(d):
     readme = [f'''# Jev 应用案例与原理拆解
 
 从 X 收集 **TypeSafe Jev** 的真实应用演示，整理用途、实现思路和同类优劣。**首批 {len(cases)} 个案例 · {len(groups)} 类 · 每条主帖收录时均 ≥ {d['minimum_likes']} 赞 · 每条附图或视频**。
+
+## Jev 是什么？先用一句人话理解
+
+可以把 Jev 想成软件里的快速分拣员：程序先把当前情况和问题准备好，Jev 负责判断，程序再把判断变成动作。例如给邮件贴标签、为任务挑一个 AI 助手，或决定网页上下一步点哪个按钮。许多个小判断组合起来，就能构成下面这些应用。
+
+以查航班为例：程序先读网页、列出可操作的按钮，Jev 选下一步，浏览器工具负责点击，然后再看页面有什么变化。读取页面、需要时生成输入文字、检查结果是否正确，都由整套程序配合完成。
 
 更新日期：**{date}（北京时间）**。这是本次检索覆盖到的案例集，不承诺穷尽 X；目前全部**未复现**。正文中的性能、成本与效果均标明为作者报告，优劣是根据公开设计作出的分析，不是本仓库跑分。
 
@@ -84,7 +92,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
         for c in group_cases:
             path = case_dir(c, date)
             p = c['post']
-            readme.append(f'| [**{c["title"]}**]({path}/README.md)<br>{c["summary"]} | [{p["likes"]:,}]({p["url"]}) | {thumb(c)} |\n')
+            readme.append(f'| [**{c["title"]}**]({path}/README.md)<br>{c["summary"]}<br>**原理：** {c["plain_explanation"]} | [{p["likes"]:,}]({p["url"]}) | {thumb(c)} |\n')
             index.append(f'| [{c["title"]}]({date}-{c["slug"]}/README.md) | {c["summary"]} | [{p["likes"]:,}]({p["url"]}) |\n')
             b.append(f'| [{c["title"]}](../{path}/README.md) | {c["advantage"]} | {c["limitation"]} |\n')
             supplement = '\n'.join(f'- [@{s["author"]} 的补充帖]({s["url"]})：{s["published_at"]}；取数时 {s["likes"]:,} 赞，仅作补充、不计入门槛。' for s in c['supplementary_posts']) or '无。'
@@ -96,6 +104,10 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
             files[f'{path}/README.md'] = f'''# {c['title']}
 
 > {c['summary']}
+
+## 用人话解释原理
+
+{c['plain_explanation']}
 
 [返回总表](../../README.md#{group_id}) · [同类优劣与原理](../../{bp})
 
@@ -175,14 +187,14 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
     readme.append('''
 ## 继续维护
 
-新增线索先放 [待整理区](inbox/README.md)。正式案例在 [data/catalog.json](data/catalog.json) 中维护摘要、证据与媒体，再执行：
+新增线索先放 [待整理区](inbox/README.md)。中文内容与共享来源保存在 [data/catalog.json](data/catalog.json)，英文介绍保存在 [data/catalog.en.json](data/catalog.en.json)。点赞、作者和媒体只维护一份，再执行：
 
 ```sh
 python3 scripts/build_catalog.py
 python3 scripts/build_catalog.py --check
 ```
 
-脚本只在本地生成 Markdown，不联网、不需要第三方依赖，不会自动刷新点赞。人工核对新快照后再更新取数时间。详见 [贡献流程](CONTRIBUTING.md) 与 [分类约定](docs/taxonomy.md)。
+脚本同时生成中英文 Markdown，缺英文条目或字段会报错；不联网、不需要第三方依赖，不会自动刷新点赞。人工核对新快照后再更新取数时间。详见 [贡献流程](CONTRIBUTING.md) 与 [分类约定](docs/taxonomy.md)。
 
 所有第三方图片、视频和代码权利归各自作者；收录不表示背书。本库以原创摘要和来源链接为主。
 ''')
@@ -197,7 +209,17 @@ def main():
     args = parser.parse_args()
     d = json.loads(DATA.read_text())
     validate(d)
-    files = generate(d)
+    en = json.loads((ROOT / 'data/catalog.en.json').read_text())
+    validate_translations(d, en)
+    files = {**generate(d), **generate_en(d, en)}
+    for name, content in files.items():
+        filename = Path(name).name
+        if name.endswith('.en.md'):
+            nav = f'[简体中文]({filename.replace(".en.md", ".md")}) | **English**'
+        else:
+            nav = f'**简体中文** | [English]({filename.replace(".md", ".en.md")})'
+        heading, rest = content.split('\n', 1)
+        files[name] = heading + '\n\n' + nav + '\n' + rest
     mismatches = []
     for name, content in files.items():
         p = ROOT / name
@@ -210,7 +232,7 @@ def main():
     if mismatches:
         print('文件不同步：\n' + '\n'.join(mismatches), file=sys.stderr)
         return 1
-    print(f'{"检查通过" if args.check else "已生成"}：{len(d["cases"])} 个案例，{len(d["groups"])} 类，{len(files)} 个 Markdown 文件。')
+    print(f'{"Verified" if args.check else "Generated"}: {len(d["cases"])} cases, {len(d["groups"])} groups, 2 languages, {len(files)} Markdown files.')
     return 0
 
 if __name__ == '__main__':
