@@ -16,6 +16,8 @@
 | [Kernel 浏览器演示](2026-09-18-kernel-browser/README.md) | 在网页里体验 Jev 帮忙操作浏览器。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [235](https://x.com/stevekrouse/status/2100321685081559542) |
 | [语音控制浏览器](2026-09-18-voice-browser/README.md) | 说出指令，让浏览器替你点击，例如“返回上一页”。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 10:50:59 | [1,829](https://x.com/moritzkremb/status/2100577979021832365) |
 | [OpenCode 应用测试](2026-09-18-opencode-qa/README.md) | 让编码助手自己操作应用，帮忙做开发后的检查。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,133](https://x.com/Neriousy/status/2100287208166969746) |
+| [Runlayer · 并行浏览器对抗测试](2026-09-18-runlayer-adversarial-testing/README.md) | 同时打开多路浏览器，尝试找出新版本在操作中会出什么问题。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [820](https://x.com/rafalwilinski/status/2100882207879434359) |
+| [Sac · Codex + Jev 操作 Mac 日历](2026-09-18-sac-calendar-computer-use/README.md) | 给 Codex 的电脑操作加上 Jev 判断层，用创建日历事件做并排对照。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [217](https://x.com/Saccc_c/status/2100864907046768890) |
 
 ## 模型、技能与工具路由
 
@@ -29,6 +31,7 @@
 | [Coding Garden 工具助手](2026-09-18-coding-garden-assistant/README.md) | 用一句话查天气、找资料或处理待办，让助手调用对应工具。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [334](https://x.com/CodingGarden/status/2100665210419950031) |
 | [Eve 工具调用代理](2026-09-18-eve-tool-agent/README.md) | 让 Jev 接手“下一步用哪个工具”的判断，减少代理在选择上花的时间和费用。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,117](https://x.com/oviniciuslana/status/2100457622407168509) |
 | [ai-cli 终端决策入口](2026-09-18-ai-cli/README.md) | 让终端里的 AI 助手也能调用 Jev 做判断、选择和评分。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [874](https://x.com/ctatedev/status/2100584917092409479) |
+| [Hono JevRouter · 按请求含义分流](2026-09-18-hono-semantic-router/README.md) | 根据请求像是来自人还是 AI，选择返回网页或 Markdown 等不同内容。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [405](https://x.com/yusukebe/status/2100871075743859182) |
 
 ## 代码质量与安全检查
 
@@ -57,6 +60,7 @@
 | [日语客服升级意图](2026-09-18-support-intent/README.md) | 从日语客服消息里判断：用户是不是想找人工、是不是已经问过多次。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [351](https://x.com/ku_suke/status/2100392430805856469) |
 | [按列名意图评分的电子表格](2026-09-18-predictive-spreadsheet/README.md) | 给一列起名“紧急程度”，让每行文字自动获得相应评级。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [337](https://x.com/dabit3/status/2100780008193020049) |
 | [邮件分类 · 四模型速度对照](2026-09-18-email-speed-race/README.md) | 让四个模型给一组邮件分类，在同一页面对照完成进度和耗时。<br>**收录到 README：** 2026-09-18 16:17:27<br>**内容更新：** 2026-09-18 16:17:27 | [445](https://x.com/usutaku_channel/status/2100829343954173965) |
+| [Calorie Notebook · 文字饮食记录](2026-09-18-calorie-notebook/README.md) | 用文字记下吃了什么，界面快速显示热量、营养数值和汇总。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [326](https://x.com/thekitze/status/2100857642566758849) |
 
 ## 内容与广告分析
 
@@ -131,6 +135,7 @@
 | [实时表情候选](2026-09-18-emoji-suggestions/README.md) | 输入文字时，自动推荐与意思相符的 emoji。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [230](https://x.com/riku720720/status/2100705558512963602) |
 | [语音与手指指向控制画布](2026-09-18-voice-gesture-canvas/README.md) | 边说边指，在画布里表达“把那个放到这里”。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [915](https://x.com/jackcheng/status/2100729670991802386) |
 | [Probably · 用语义判断控制程序](2026-09-18-probably-language/README.md) | 把“这封邮件是否紧急”这样的判断写进条件分支，再让文字模型按结果起草回复。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [894](https://x.com/southpolesteve/status/2100767781868150938) |
+| [终端历史命令 · 语义补全](2026-09-18-shell-history-suggestions/README.md) | 输入半条命令或一句意图，从用过的命令里推荐下一条。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [396](https://x.com/thorstenball/status/2100858434904109099) |
 
 ## 交易执行演示
 

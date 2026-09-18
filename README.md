@@ -2,9 +2,9 @@
 
 **简体中文** | [English](README.en.md)
 
-从 X 收集 **TypeSafe Jev** 的应用演示，整理用途、实现思路和同类优劣。**当前 79 个案例 · 11 类 · 每条主帖收录时均 ≥ 200 赞 · 每条附图或视频**。
+从 X 收集 **TypeSafe Jev** 的应用演示，整理用途、实现思路和同类优劣。**当前 84 个案例 · 11 类 · 每条主帖收录时均 ≥ 200 赞 · 每条附图或视频**。
 
-最近增量核对：**2026-09-18T08:15:58+00:00（UTC）**；新增 **2** 个独立案例，补充 **0** 个已有条目。[本轮新增、合并与未收录原因](CHANGELOG.md)。已有主帖的点赞快照保持原取数时间。
+最近增量核对：**2026-09-18T11:42:10+00:00（UTC）**；新增 **5** 个独立案例，补充 **0** 个已有条目。[本轮新增、合并与未收录原因](CHANGELOG.md)。已有主帖的点赞快照保持原取数时间。
 
 ## Jev 是什么？先用一句人话理解
 
@@ -28,16 +28,16 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 
 | 类别 | 案例数 | 对比与原理 |
 | --- | ---: | --- |
-| [浏览器与电脑操作](#browser) | 8 | [阅读分析](breakdowns/2026-09-18-browser.md) |
-| [模型、技能与工具路由](#routing) | 8 | [阅读分析](breakdowns/2026-09-18-routing.md) |
+| [浏览器与电脑操作](#browser) | 10 | [阅读分析](breakdowns/2026-09-18-browser.md) |
+| [模型、技能与工具路由](#routing) | 9 | [阅读分析](breakdowns/2026-09-18-routing.md) |
 | [代码质量与安全检查](#review) | 10 | [阅读分析](breakdowns/2026-09-18-review.md) |
-| [数据分类与信息整理](#data) | 8 | [阅读分析](breakdowns/2026-09-18-data.md) |
+| [数据分类与信息整理](#data) | 9 | [阅读分析](breakdowns/2026-09-18-data.md) |
 | [内容与广告分析](#content) | 7 | [阅读分析](breakdowns/2026-09-18-content.md) |
 | [网页与信息流过滤](#filter) | 3 | [阅读分析](breakdowns/2026-09-18-filter.md) |
 | [上下文与记忆筛选](#memory) | 2 | [阅读分析](breakdowns/2026-09-18-memory.md) |
 | [游戏决策与求解](#games) | 14 | [阅读分析](breakdowns/2026-09-18-games.md) |
 | [NPC、驾驶与群体模拟](#simulation) | 7 | [阅读分析](breakdowns/2026-09-18-simulation.md) |
-| [实时交互与组合实验](#interaction) | 11 | [阅读分析](breakdowns/2026-09-18-interaction.md) |
+| [实时交互与组合实验](#interaction) | 12 | [阅读分析](breakdowns/2026-09-18-interaction.md) |
 | [交易执行演示](#finance) | 1 | [阅读分析](breakdowns/2026-09-18-finance.md) |
 
 [案例索引](cases/README.md) · [全部拆解](breakdowns/README.md) · [待补证据](inbox/README.md) · [收录流程](CONTRIBUTING.md)
@@ -46,9 +46,9 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 
 <a id="browser"></a>
 
-### 浏览器与电脑操作（8）
+### 浏览器与电脑操作（10）
 
-要研究浏览器循环，优先看 Browser Use 与 Stagehand：前者明确 DOM 动态动作空间及文本回退，后者明确无障碍树和执行器分工。桌面应用可看 CoreML/OCR，Cua 当前公开预览可用于研究受约束的语义动作执行；需要长任务上下文则看 agent-desktop。语音入口和 QA 演示解决的是交互或验收问题，不宜只按速度排名。
+要研究浏览器循环，优先看 Browser Use 与 Stagehand：前者明确 DOM 动态动作空间及文本回退，后者明确无障碍树和执行器分工。桌面应用可看 CoreML/OCR，Cua 当前公开预览可用于研究受约束的语义动作执行；需要长任务上下文则看 agent-desktop。语音入口和 QA 演示解决的是交互或验收问题，不宜只按速度排名。 Runlayer 强调多会话并行探索，仍缺路径覆盖和缺陷检出证据；Sac 的日历对照聚焦单个桌面任务的流畅度，尚未公开观测接口。两者都不能仅凭操作视频代替验收断言。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-browser.md)
 
@@ -62,12 +62,14 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 | [**Kernel 浏览器演示**](cases/2026-09-18-kernel-browser/README.md)<br>在网页里体验 Jev 帮忙操作浏览器。<br>**原理：** 作者把 Jev 接到 Kernel 浏览器服务中，形成“观察、选择、操作”的循环；页面如何变成模型输入、出错怎么恢复，原帖没有展开。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [235](https://x.com/stevekrouse/status/2100321685081559542) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100321453455425537/img/hVYy_d3Nuw9XhSwg.jpg" width="160" alt="Kernel 浏览器演示预览">](https://x.com/stevekrouse/status/2100321685081559542)<br>[视频](https://x.com/stevekrouse/status/2100321685081559542) |
 | [**语音控制浏览器**](cases/2026-09-18-voice-browser/README.md)<br>说出指令，让浏览器替你点击，例如“返回上一页”。<br>**原理：** 先把声音转成文字，再让 Jev 判断指令对应哪个操作，最后由浏览器执行。Jev 在这里负责理解并选择动作，不负责听声音。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 10:50:59 | [1,829](https://x.com/moritzkremb/status/2100577979021832365) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100577954338373633/img/tbH43kHpUotE3hzK.jpg" width="160" alt="语音控制浏览器预览">](https://x.com/moritzkremb/status/2100577979021832365)<br>[视频](https://x.com/moritzkremb/status/2100577979021832365) |
 | [**OpenCode 应用测试**](cases/2026-09-18-opencode-qa/README.md)<br>让编码助手自己操作应用，帮忙做开发后的检查。<br>**原理：** 操作应用与判断应用是否正确是两回事。演示把 Jev 接入 OpenCode 测试流程，但没有公开完整的“怎样算通过”规则。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,133](https://x.com/Neriousy/status/2100287208166969746) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100286679386873857/img/vlw6EBlSVZ9uAoHc.jpg" width="160" alt="OpenCode 应用测试预览">](https://x.com/Neriousy/status/2100287208166969746)<br>[视频](https://x.com/Neriousy/status/2100287208166969746) |
+| [**Runlayer · 并行浏览器对抗测试**](cases/2026-09-18-runlayer-adversarial-testing/README.md)<br>同时打开多路浏览器，尝试找出新版本在操作中会出什么问题。<br>**原理：** 像让一组测试员同时试用软件：Jev 参与快速判断下一步，代理和浏览器负责操作。真正证明找到了漏洞，还要有清楚的失败判据和可重复步骤。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [820](https://x.com/rafalwilinski/status/2100882207879434359) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100881920343105536/img/c1y4THiGwA2GfXGa.jpg" width="160" alt="Runlayer · 并行浏览器对抗测试预览">](https://x.com/rafalwilinski/status/2100882207879434359)<br>[视频](https://x.com/rafalwilinski/status/2100882207879434359) |
+| [**Sac · Codex + Jev 操作 Mac 日历**](cases/2026-09-18-sac-calendar-computer-use/README.md)<br>给 Codex 的电脑操作加上 Jev 判断层，用创建日历事件做并排对照。<br>**原理：** 像让助手负责看界面和动手，再请反应更快的搭档判断下一步。Jev 在电脑操作流程中负责判断；这不等于它单独看懂屏幕并完成全部动作。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [217](https://x.com/Saccc_c/status/2100864907046768890) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100853279089647616/img/H6altwjZQ28_1bfY.jpg" width="160" alt="Sac · Codex + Jev 操作 Mac 日历预览">](https://x.com/Saccc_c/status/2100864907046768890)<br>[视频](https://x.com/Saccc_c/status/2100864907046768890) |
 
 <a id="routing"></a>
 
-### 模型、技能与工具路由（8）
+### 模型、技能与工具路由（9）
 
-模型选择看 Eve 与 Ephraim 的演示；已有代理编排可以看 Firstmate 和本地分工。技能库检索看 Skillbox；想连接日常工具看 Coding Garden；Eve 工具代理展示局部替换；ai-cli 是统一接入入口。这些方案可以组合，并非互相替代。
+模型选择看 Eve 与 Ephraim 的演示；已有代理编排可以看 Firstmate 和本地分工。技能库检索看 Skillbox；想连接日常工具看 Coding Garden；Eve 工具代理展示局部替换；ai-cli 是统一接入入口。这些方案可以组合，并非互相替代。 Hono JevRouter 选择 HTTP 处理函数，规则用自然语言表达，且按注册顺序取首个达标路由；与选择模型或技能不同，分流错误直接改变响应内容，不能用来代替认证。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-routing.md)
 
@@ -81,6 +83,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 | [**Coding Garden 工具助手**](cases/2026-09-18-coding-garden-assistant/README.md)<br>用一句话查天气、找资料或处理待办，让助手调用对应工具。<br>**原理：** 它像一个工具调度台：Jev 选工具和参数，工具返回真实结果，界面再显示出来。有来源的回答仍可能因为选错工具而出错。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [334](https://x.com/CodingGarden/status/2100665210419950031) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100664410935332864/img/KPApgq0AysL_SFeg.jpg" width="160" alt="Coding Garden 工具助手预览">](https://x.com/CodingGarden/status/2100665210419950031)<br>[视频](https://x.com/CodingGarden/status/2100665210419950031) |
 | [**Eve 工具调用代理**](cases/2026-09-18-eve-tool-agent/README.md)<br>让 Jev 接手“下一步用哪个工具”的判断，减少代理在选择上花的时间和费用。<br>**原理：** 原来的助手先思考再选工具，这个实验把其中的选择环节交给 Jev。工具本身和后续处理仍由原来的程序负责。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,117](https://x.com/oviniciuslana/status/2100457622407168509) | [<img src="https://pbs.twimg.com/media/HSZSqLGXwAA1jSL.jpg?name=orig" width="160" alt="Eve 工具调用代理预览">](https://x.com/oviniciuslana/status/2100457622407168509)<br>[图片](https://x.com/oviniciuslana/status/2100457622407168509) |
 | [**ai-cli 终端决策入口**](cases/2026-09-18-ai-cli/README.md)<br>让终端里的 AI 助手也能调用 Jev 做判断、选择和评分。<br>**原理：** 它像一个通用插座，把 Jev 包装成终端命令。它提供调用入口，并不会单靠这个入口自动完成复杂任务。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [874](https://x.com/ctatedev/status/2100584917092409479) | [<img src="https://pbs.twimg.com/media/HSbG2YLWkAAPqmU.jpg?name=orig" width="160" alt="ai-cli 终端决策入口预览">](https://x.com/ctatedev/status/2100584917092409479)<br>[图片](https://x.com/ctatedev/status/2100584917092409479) |
+| [**Hono JevRouter · 按请求含义分流**](cases/2026-09-18-hono-semantic-router/README.md)<br>根据请求像是来自人还是 AI，选择返回网页或 Markdown 等不同内容。<br>**原理：** 普通路由像看门牌号分信件，这个实验还读信件表达的意思。开发者用文字描述各个处理入口，Jev 逐项判断是否适合，程序按注册顺序选中第一个达标入口。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [405](https://x.com/yusukebe/status/2100871075743859182) | [<img src="https://pbs.twimg.com/media/HSfKgItbcAAwVIl.jpg?name=orig" width="160" alt="Hono JevRouter · 按请求含义分流预览">](https://x.com/yusukebe/status/2100871075743859182)<br>[图片](https://x.com/yusukebe/status/2100871075743859182) |
 
 <a id="review"></a>
 
@@ -105,9 +108,9 @@ PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确
 
 <a id="data"></a>
 
-### 数据分类与信息整理（8）
+### 数据分类与信息整理（9）
 
-整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。
+整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。 饮食记事本将文字记录变成热量与营养数值，和预测性表格同样重视即时反馈，但数值估算还需要可信数据与误差评估，不能用分类响应速度代替数值准确性。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-data.md)
 
@@ -121,6 +124,7 @@ PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确
 | [**日语客服升级意图**](cases/2026-09-18-support-intent/README.md)<br>从日语客服消息里判断：用户是不是想找人工、是不是已经问过多次。<br>**原理：** 把一条消息拆成两个清楚的是非问题，分别问 Jev。显示的百分比代表这次判断的倾向，不是整个客服系统的准确率。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [351](https://x.com/ku_suke/status/2100392430805856469) | [<img src="https://pbs.twimg.com/media/HSYXuW5aoAAghbD.jpg?name=orig" width="160" alt="日语客服升级意图预览">](https://x.com/ku_suke/status/2100392430805856469)<br>[图片](https://x.com/ku_suke/status/2100392430805856469) |
 | [**按列名意图评分的电子表格**](cases/2026-09-18-predictive-spreadsheet/README.md)<br>给一列起名“紧急程度”，让每行文字自动获得相应评级。<br>**原理：** 普通公式按算式处理数字，这个演示让列名表达想问的问题：Jev 结合每行内容判断紧急程度，程序把结果填回表格。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [337](https://x.com/dabit3/status/2100780008193020049) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100779722447667200/img/gvsEg2-3oD6FRZhc.jpg" width="160" alt="按列名意图评分的电子表格预览">](https://x.com/dabit3/status/2100780008193020049)<br>[视频](https://x.com/dabit3/status/2100780008193020049) |
 | [**邮件分类 · 四模型速度对照**](cases/2026-09-18-email-speed-race/README.md)<br>让四个模型给一组邮件分类，在同一页面对照完成进度和耗时。<br>**原理：** 像让四位分拣员处理同一叠信件：每个模型判断邮件属于哪一类，网页记录结果和时间。这个演示关注分拣速度，但跑得快不代表每封都分对。<br>**收录到 README：** 2026-09-18 16:17:27<br>**内容更新：** 2026-09-18 16:17:27 | [445](https://x.com/usutaku_channel/status/2100829343954173965) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100829070514864128/img/V3ix1we5Euhs8DsY.jpg" width="160" alt="邮件分类 · 四模型速度对照预览">](https://x.com/usutaku_channel/status/2100829343954173965)<br>[视频](https://x.com/usutaku_channel/status/2100829343954173965) |
+| [**Calorie Notebook · 文字饮食记录**](cases/2026-09-18-calorie-notebook/README.md)<br>用文字记下吃了什么，界面快速显示热量、营养数值和汇总。<br>**原理：** 像在记事本旁放一台估算器：你写下食物和分量，应用把它们变成数字反馈。作者称使用 Jev，但食物资料从哪来、数字如何算出，这次没有公开。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [326](https://x.com/thekitze/status/2100857642566758849) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100857416984477696/img/RAMEV-YddA05BR1X.jpg" width="160" alt="Calorie Notebook · 文字饮食记录预览">](https://x.com/thekitze/status/2100857642566758849)<br>[视频](https://x.com/thekitze/status/2100857642566758849) |
 
 <a id="content"></a>
 
@@ -212,9 +216,9 @@ NPC 需求选择适合研究角色行为，500 agents 演示关注并发吞吐�
 
 <a id="interaction"></a>
 
-### 实时交互与组合实验（11）
+### 实时交互与组合实验（12）
 
-TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。 Probably 则把判断、分支和文字生成组织成小语言；官网是预录回放，比较实时性时需与真正的本地模型调用区分。
+TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。 Probably 则把判断、分支和文字生成组织成小语言；官网是预录回放，比较实时性时需与真正的本地模型调用区分。 终端历史补全和启动器都是从候选中选下一步：前者可查固定版本文档和门槛逻辑，但只用虚构历史演示；后者侧重文件选择。比较时分开看命中率、接受率和执行风险。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-interaction.md)
 
@@ -231,6 +235,7 @@ TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单�
 | [**实时表情候选**](cases/2026-09-18-emoji-suggestions/README.md)<br>输入文字时，自动推荐与意思相符的 emoji。<br>**原理：** 不是让模型画新表情，而是从已有表情里挑合适的。界面展示候选和分数，输入变化时再判断一次。具体问题格式未公开。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [230](https://x.com/riku720720/status/2100705558512963602) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100705222016520192/img/BxzTN_rxkA_FLvwe.jpg" width="160" alt="实时表情候选预览">](https://x.com/riku720720/status/2100705558512963602)<br>[视频](https://x.com/riku720720/status/2100705558512963602) |
 | [**语音与手指指向控制画布**](cases/2026-09-18-voice-gesture-canvas/README.md)<br>边说边指，在画布里表达“把那个放到这里”。<br>**原理：** 软件先记住你说“那个”和“这里”时指向哪里，再让 Jev 分别确认几个小问题。这样不用把所有物体、动作和位置的组合都列成一张巨大选项表。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [915](https://x.com/jackcheng/status/2100729670991802386) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100729243185324032/img/YNw8njfnSXu-Tbyr.jpg" width="160" alt="语音与手指指向控制画布预览">](https://x.com/jackcheng/status/2100729670991802386)<br>[视频](https://x.com/jackcheng/status/2100729670991802386) |
 | [**Probably · 用语义判断控制程序**](cases/2026-09-18-probably-language/README.md)<br>把“这封邮件是否紧急”这样的判断写进条件分支，再让文字模型按结果起草回复。<br>**原理：** 像把判断题装进程序：Jev 回答条件是否成立或该走哪个分支，解释器安排步骤，另一个模型负责写文字。判断、流程和生成分别由不同组件承担。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [894](https://x.com/southpolesteve/status/2100767781868150938) | [<img src="https://pbs.twimg.com/media/HSdr-ILWUAAN29Y.jpg?name=orig" width="160" alt="Probably · 用语义判断控制程序预览">](https://x.com/southpolesteve/status/2100767781868150938)<br>[图片](https://x.com/southpolesteve/status/2100767781868150938) |
+| [**终端历史命令 · 语义补全**](cases/2026-09-18-shell-history-suggestions/README.md)<br>输入半条命令或一句意图，从用过的命令里推荐下一条。<br>**原理：** 像一份懂意思的历史菜单：程序先列出过去的命令，Jev 挑最像你想输入的一条。候选、匹配和是否显示由程序控制，用户接受建议后才进入命令行。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [396](https://x.com/thorstenball/status/2100858434904109099) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100858390683475969/img/PRKkLSCaQKsfoXRI.jpg" width="160" alt="终端历史命令 · 语义补全预览">](https://x.com/thorstenball/status/2100858434904109099)<br>[视频](https://x.com/thorstenball/status/2100858434904109099) |
 
 <a id="finance"></a>
 

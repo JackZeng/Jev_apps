@@ -3326,13 +3326,322 @@
       "readme_added_at": "2026-09-18T16:17:27+08:00",
       "readme_updated_at": "2026-09-18T16:17:27+08:00",
       "source_notes": "**第四轮补证后转入：** 先前因分类含义不清留在待整理区；本轮读图并核对作者回复，确认是准确性与实用性两个评分维度，且只展示两个样例。按具体任务实验收录，没有把它升级描述成已发布的 linter 或成熟产品；本次未取得可核对的源码入口。"
+    },
+    {
+      "slug": "runlayer-adversarial-testing",
+      "group": "browser",
+      "title": "Runlayer · 并行浏览器对抗测试",
+      "summary": "同时打开多路浏览器，尝试找出新版本在操作中会出什么问题。",
+      "plain_explanation": "像让一组测试员同时试用软件：Jev 参与快速判断下一步，代理和浏览器负责操作。真正证明找到了漏洞，还要有清楚的失败判据和可重复步骤。",
+      "mechanism": "作者说明组合为 Runlayer agents、agent-browser 和 Chromium；主视频展示浏览器窗口矩阵。Jev 参与发布版本的对抗性测试，但观测格式、任务分配、路径去重、断言和缺陷报告结构未公开。",
+      "advantage": "重点是同时探索多条操作路径，可与已有 OpenCode 应用测试对照并发探索和开发后验收的差异。作者补充了具体工具组合，便于追查实现。",
+      "limitation": "窗口多不等于路径覆盖广；并发数、真实缺陷检出率、重试和完整运行成本未说明。“几分钱”是作者概述，不能换算成每次测试的成本保证。",
+      "reported_result": "作者发布约 14 秒多浏览器视频，称用于尝试破坏每次发布，并报告成本很低；未提供独立缺陷检出评测。",
+      "media_note": "原帖自带多窗口视频，两条作者回复补充技术组合；不把窗口数量或工具组件拆成多个应用。",
+      "post": {
+        "id": "2100882207879434359",
+        "url": "https://x.com/rafalwilinski/status/2100882207879434359",
+        "author": "rafalwilinski",
+        "published_at": "2026-09-18T09:38:45+00:00",
+        "likes": 820,
+        "retrieved_at": "2026-09-18T11:39:02+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100882207879434359",
+        "media_source": "https://x.com/rafalwilinski/status/2100882207879434359",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100881920343105536/vid/avc1/2880x2160/xZmdi6NJHSIbX23m.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100881920343105536/img/c1y4THiGwA2GfXGa.jpg",
+            "duration": 14.02,
+            "width": 2880,
+            "height": 2160
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100895961727881256",
+          "url": "https://x.com/rafalwilinski/status/2100895961727881256",
+          "author": "rafalwilinski",
+          "published_at": "2026-09-18T10:33:24+00:00",
+          "likes": 11,
+          "retrieved_at": "2026-09-18T11:39:55+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100895961727881256",
+          "media_source": "https://x.com/rafalwilinski/status/2100895961727881256",
+          "media": []
+        },
+        {
+          "id": "2100907458524852496",
+          "url": "https://x.com/rafalwilinski/status/2100907458524852496",
+          "author": "rafalwilinski",
+          "published_at": "2026-09-18T11:19:05+00:00",
+          "likes": 6,
+          "retrieved_at": "2026-09-18T11:39:55+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100907458524852496",
+          "media_source": "https://x.com/rafalwilinski/status/2100907458524852496",
+          "media": []
+        }
+      ],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T19:44:51+08:00",
+      "readme_updated_at": "2026-09-18T19:44:51+08:00"
+    },
+    {
+      "slug": "hono-semantic-router",
+      "group": "routing",
+      "title": "Hono JevRouter · 按请求含义分流",
+      "summary": "根据请求像是来自人还是 AI，选择返回网页或 Markdown 等不同内容。",
+      "plain_explanation": "普通路由像看门牌号分信件，这个实验还读信件表达的意思。开发者用文字描述各个处理入口，Jev 逐项判断是否适合，程序按注册顺序选中第一个达标入口。",
+      "mechanism": "固定版本代码把方法、URL、请求头和截断后的文本正文组成状态，一次请求为每条路由提出 Noul 是非问题。选择首个概率达到阈值的已注册路由，默认阈值 0.5；不是选择最高分。普通路径路由可先返回，无匹配时走未找到处理。",
+      "advantage": "适合探索按请求意图提供不同响应，语义规则与普通 Hono 路由并存；相比模型路由，它选择的是 HTTP 处理函数，结果更容易检查。",
+      "limitation": "作者明确这是实验，不能用作认证或授权边界。语义分流增加模型调用成本与延迟；请求内容会发给 Jev，默认仅遮盖指定敏感请求头，路由顺序与输入干扰都可能改变结果。",
+      "reported_result": "作者发布代码示例图、playground 和开源包；示例给 AI 请求返回 Markdown，给人类浏览器返回 HTML。本轮 npm 最新版本为 0.2.0，未安装或实测。",
+      "media_note": "原帖图片是用法代码而非性能测试截图；项目仓库由作者回复直接提供。",
+      "post": {
+        "id": "2100871075743859182",
+        "url": "https://x.com/yusukebe/status/2100871075743859182",
+        "author": "yusukebe",
+        "published_at": "2026-09-18T08:54:31+00:00",
+        "likes": 405,
+        "retrieved_at": "2026-09-18T11:39:03+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100871075743859182",
+        "media_source": "https://x.com/yusukebe/status/2100871075743859182",
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HSfKgItbcAAwVIl.jpg?name=orig",
+            "width": 3200,
+            "height": 2456
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100874801850319016",
+          "url": "https://x.com/yusukebe/status/2100874801850319016",
+          "author": "yusukebe",
+          "published_at": "2026-09-18T09:09:19+00:00",
+          "likes": 7,
+          "retrieved_at": "2026-09-18T11:41:51+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100874801850319016",
+          "media_source": "https://x.com/yusukebe/status/2100874801850319016",
+          "media": []
+        }
+      ],
+      "links": [
+        "https://github.com/yusukebe/hono-jev-router",
+        "https://hono-jev-router.yusuke.run"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T19:44:51+08:00",
+      "readme_updated_at": "2026-09-18T19:44:51+08:00",
+      "source_notes": "**代码核对：** 阅读 [04f6e10 的 README](https://github.com/yusukebe/hono-jev-router/blob/04f6e103e1397bca659ab85c042011a1f14b679d/README.md)与 [src/index.ts](https://github.com/yusukebe/hono-jev-router/blob/04f6e103e1397bca659ab85c042011a1f14b679d/src/index.ts)。各路由概率独立，不要求相加等于 1；不能把多项是非判断写成互斥分类。未在 playground 提交请求。"
+    },
+    {
+      "slug": "sac-calendar-computer-use",
+      "group": "browser",
+      "title": "Sac · Codex + Jev 操作 Mac 日历",
+      "summary": "给 Codex 的电脑操作加上 Jev 判断层，用创建日历事件做并排对照。",
+      "plain_explanation": "像让助手负责看界面和动手，再请反应更快的搭档判断下一步。Jev 在电脑操作流程中负责判断；这不等于它单独看懂屏幕并完成全部动作。",
+      "mechanism": "作者称在 Codex computer use 基础上加入 Jev 判断，视频并排展示普通 Computer Use 与作者称为 Jev Use 的版本创建 Mac 日历事件。具体观测接口、状态编码、调度与失败恢复尚未披露。",
+      "advantage": "同一个明确任务的并排演示便于观察操作停顿，补充了现有浏览器和 OCR 案例之外的桌面流程探索。",
+      "limitation": "一次演示不足以确定成功率、平均加速或总成本。主帖称 token 消耗接近；被引用旧帖中的泛化“10 倍、省大量 token”不视为本次实验结果。没有已核实的源码发布入口。",
+      "reported_result": "作者提供约 51 秒视频，画面标注全程 1 倍速，称 Jev 版本更流畅且 token 消耗接近；作者回复说明它用于现有 computer use 的判断层。",
+      "media_note": "使用本帖自己的日历对照视频，不用引用旧帖的通用产品图；“1 倍速”是画面标注，未独立验证计时。",
+      "post": {
+        "id": "2100864907046768890",
+        "url": "https://x.com/Saccc_c/status/2100864907046768890",
+        "author": "Saccc_c",
+        "published_at": "2026-09-18T08:30:00+00:00",
+        "likes": 217,
+        "retrieved_at": "2026-09-18T11:39:03+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100864907046768890",
+        "media_source": "https://x.com/Saccc_c/status/2100864907046768890",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100853279089647616/vid/avc1/2526x1440/_Zz0wSy8BBRjQfh_.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100853279089647616/img/H6altwjZQ28_1bfY.jpg",
+            "duration": 51.107,
+            "width": 2526,
+            "height": 1440
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100895536119488734",
+          "url": "https://x.com/Saccc_c/status/2100895536119488734",
+          "author": "Saccc_c",
+          "published_at": "2026-09-18T10:31:43+00:00",
+          "likes": 0,
+          "retrieved_at": "2026-09-18T11:41:17+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100895536119488734",
+          "media_source": "https://x.com/Saccc_c/status/2100895536119488734",
+          "media": []
+        },
+        {
+          "id": "2100899012727673107",
+          "url": "https://x.com/Saccc_c/status/2100899012727673107",
+          "author": "Saccc_c",
+          "published_at": "2026-09-18T10:45:32+00:00",
+          "likes": 1,
+          "retrieved_at": "2026-09-18T11:41:16+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100899012727673107",
+          "media_source": "https://x.com/Saccc_c/status/2100899012727673107",
+          "media": []
+        }
+      ],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T19:44:51+08:00",
+      "readme_updated_at": "2026-09-18T19:44:51+08:00",
+      "source_notes": "**名称去重：** 本帖自称 Jev Use，但作者和日历视频不同于 [Cua · jev-use](../2026-09-18-cua-jev-use/README.md)；按作者自己的实验单列，不能因名称相似就认定使用 Cua。引用的入门汇总帖也不另建案例。"
+    },
+    {
+      "slug": "shell-history-suggestions",
+      "group": "interaction",
+      "title": "终端历史命令 · 语义补全",
+      "summary": "输入半条命令或一句意图，从用过的命令里推荐下一条。",
+      "plain_explanation": "像一份懂意思的历史菜单：程序先列出过去的命令，Jev 挑最像你想输入的一条。候选、匹配和是否显示由程序控制，用户接受建议后才进入命令行。",
+      "mechanism": "固定版本 README 说明：zsh 插件读取最近 100 条不同历史命令，有前缀匹配时先缩小候选；单一前缀候选无需模型调用。其余用 Choice 选命令 ID、Noul 判断是否有合适候选，按门槛显示建议，并丢弃输入已改变的旧结果。",
+      "advantage": "比字面前缀补全更能处理描述意图的输入，又将结果限制在历史候选里；与预测性启动器一样做候选选择，但对象是命令而非文件。",
+      "limitation": "历史命令可能过时或带敏感内容，并会作为候选发给服务端。选择正确不代表执行安全；仍需用户检查。README 报告请求约 0.7–0.9 秒，不能套用其他演示的毫秒宣传。作者明确是实验，不是其日常使用证明。",
+      "reported_result": "作者发布约 22 秒演示并给出仓库，另说明演示由 Amp 制作；仓库 README 明确演示使用虚构命令历史。",
+      "media_note": "主视频与同作者的 Amp 制作过程视频合并为一个项目；合成历史演示不视为真实用户日志评测。",
+      "post": {
+        "id": "2100858434904109099",
+        "url": "https://x.com/thorstenball/status/2100858434904109099",
+        "author": "thorstenball",
+        "published_at": "2026-09-18T08:04:17+00:00",
+        "likes": 396,
+        "retrieved_at": "2026-09-18T11:39:31+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100858434904109099",
+        "media_source": "https://x.com/thorstenball/status/2100858434904109099",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100858390683475969/vid/avc1/1280x720/12nAuetEpzApPuvX.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100858390683475969/img/PRKkLSCaQKsfoXRI.jpg",
+            "duration": 22.18,
+            "width": 1280,
+            "height": 720
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100860748175921398",
+          "url": "https://x.com/thorstenball/status/2100860748175921398",
+          "author": "thorstenball",
+          "published_at": "2026-09-18T08:13:29+00:00",
+          "likes": 25,
+          "retrieved_at": "2026-09-18T11:41:16+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100860748175921398",
+          "media_source": "https://x.com/thorstenball/status/2100860748175921398",
+          "media": []
+        },
+        {
+          "id": "2100891804136505584",
+          "url": "https://x.com/thorstenball/status/2100891804136505584",
+          "author": "thorstenball",
+          "published_at": "2026-09-18T10:16:53+00:00",
+          "likes": 12,
+          "retrieved_at": "2026-09-18T11:41:16+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100891804136505584",
+          "media_source": "https://x.com/thorstenball/status/2100891804136505584",
+          "media": [
+            {
+              "type": "video",
+              "url": "https://video.twimg.com/amplify_video/2100891117461925888/vid/avc1/3480x2160/LON1FWy2jhqMJuVU.mp4?tag=29",
+              "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100891117461925888/img/PeGBQA_u-ot1eCaA.jpg",
+              "duration": 122.873,
+              "width": 3714,
+              "height": 2304
+            }
+          ]
+        },
+        {
+          "id": "2100867609549848659",
+          "url": "https://x.com/thorstenball/status/2100867609549848659",
+          "author": "thorstenball",
+          "published_at": "2026-09-18T08:40:45+00:00",
+          "likes": 3,
+          "retrieved_at": "2026-09-18T11:41:16+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100867609549848659",
+          "media_source": "https://x.com/thorstenball/status/2100867609549848659",
+          "media": []
+        }
+      ],
+      "links": [
+        "https://github.com/mrnugget/jev-shell-history"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T19:44:51+08:00",
+      "readme_updated_at": "2026-09-18T19:44:51+08:00",
+      "source_notes": "**文档核对：** 读取 [4b2b75d 的 README](https://github.com/mrnugget/jev-shell-history/blob/4b2b75d26c0ccf5726263904514a22a8e11659ea/README.md)，区分前缀过滤、Jev 候选判断与 zsh 接受建议。没有安装插件或发送本机 shell 历史。"
+    },
+    {
+      "slug": "calorie-notebook",
+      "group": "data",
+      "title": "Calorie Notebook · 文字饮食记录",
+      "summary": "用文字记下吃了什么，界面快速显示热量、营养数值和汇总。",
+      "plain_explanation": "像在记事本旁放一台估算器：你写下食物和分量，应用把它们变成数字反馈。作者称使用 Jev，但食物资料从哪来、数字如何算出，这次没有公开。",
+      "mechanism": "视频展示 Calorie Notebook 的食物文本行、对应热量与营养数值、底部汇总。可观察的是文字输入到结构化数值的交互；Jev 使用何种问题、是否查食物数据库、如何处理分量或累加均未核清。",
+      "advantage": "强调随输入反馈，降低手动逐项记录的交互负担；可与预测性表格比较响应体验，但这里还需验证食物分量和数值依据。",
+      "limitation": "未公开数据库、配方处理或与真实标签的误差评测；作者回复也指出模型热量估算有局限。响应快不能证明热量准确，不将此演示作为营养测量工具已经可靠的证据。",
+      "reported_result": "作者发布约 41 秒视频，称饮食记录应用反馈即时；画面可见食物文本、热量及营养汇总，没有完整延迟或估算精度基准。",
+      "media_note": "原帖视频对应独立饮食记录界面；同作者已收录的 Skillbox、过滤器和 PR 工具属于不同用途，不合并或重复计数。",
+      "post": {
+        "id": "2100857642566758849",
+        "url": "https://x.com/thekitze/status/2100857642566758849",
+        "author": "thekitze",
+        "published_at": "2026-09-18T08:01:08+00:00",
+        "likes": 326,
+        "retrieved_at": "2026-09-18T11:39:30+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100857642566758849",
+        "media_source": "https://x.com/thekitze/status/2100857642566758849",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100857416984477696/vid/avc1/1376x1080/bc4k8QWSAXY1dY9J.mp4?tag=16",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100857416984477696/img/RAMEV-YddA05BR1X.jpg",
+            "duration": 41.428,
+            "width": 1376,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100865980788318254",
+          "url": "https://x.com/thekitze/status/2100865980788318254",
+          "author": "thekitze",
+          "published_at": "2026-09-18T08:34:16+00:00",
+          "likes": 4,
+          "retrieved_at": "2026-09-18T11:40:32+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100865980788318254",
+          "media_source": "https://x.com/thekitze/status/2100865980788318254",
+          "media": []
+        }
+      ],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T19:44:51+08:00",
+      "readme_updated_at": "2026-09-18T19:44:51+08:00"
     }
   ],
   "groups": [
     {
       "id": "browser",
       "title": "浏览器与电脑操作",
-      "comparison": "要研究浏览器循环，优先看 Browser Use 与 Stagehand：前者明确 DOM 动态动作空间及文本回退，后者明确无障碍树和执行器分工。桌面应用可看 CoreML/OCR，Cua 当前公开预览可用于研究受约束的语义动作执行；需要长任务上下文则看 agent-desktop。语音入口和 QA 演示解决的是交互或验收问题，不宜只按速度排名。",
+      "comparison": "要研究浏览器循环，优先看 Browser Use 与 Stagehand：前者明确 DOM 动态动作空间及文本回退，后者明确无障碍树和执行器分工。桌面应用可看 CoreML/OCR，Cua 当前公开预览可用于研究受约束的语义动作执行；需要长任务上下文则看 agent-desktop。语音入口和 QA 演示解决的是交互或验收问题，不宜只按速度排名。 Runlayer 强调多会话并行探索，仍缺路径覆盖和缺陷检出证据；Sac 的日历对照聚焦单个桌面任务的流畅度，尚未公开观测接口。两者都不能仅凭操作视频代替验收断言。",
       "flow": "观测页面或桌面 → 构建可执行动作候选 → Jev 选动作 → 执行器操作 → 重新观测。",
       "analysis": "DOM、无障碍树与 OCR 是不同观测接口。CoreML/OCR 方案的“像素留在本地”不等于内容全在本地；Browser Use 的文字输入回退也说明需要生成的环节仍可能交给 LLM。以上架构分别来自作者陈述，其余集成未披露的编码方式保持未知。",
       "evaluation": "用同一组只读任务比较完成率、步骤数、总耗时、全流程费用与失败恢复；覆盖无标签按钮、动态页面、弹窗及桌面窗口变化。不要拿单步推理耗时与整个任务耗时相比。"
@@ -3340,7 +3649,7 @@
     {
       "id": "routing",
       "title": "模型、技能与工具路由",
-      "comparison": "模型选择看 Eve 与 Ephraim 的演示；已有代理编排可以看 Firstmate 和本地分工。技能库检索看 Skillbox；想连接日常工具看 Coding Garden；Eve 工具代理展示局部替换；ai-cli 是统一接入入口。这些方案可以组合，并非互相替代。",
+      "comparison": "模型选择看 Eve 与 Ephraim 的演示；已有代理编排可以看 Firstmate 和本地分工。技能库检索看 Skillbox；想连接日常工具看 Coding Garden；Eve 工具代理展示局部替换；ai-cli 是统一接入入口。这些方案可以组合，并非互相替代。 Hono JevRouter 选择 HTTP 处理函数，规则用自然语言表达，且按注册顺序取首个达标路由；与选择模型或技能不同，分流错误直接改变响应内容，不能用来代替认证。",
       "flow": "任务文本与候选能力描述 → Jev 选择或评分 → 应用检查候选及约束 → 调用模型、技能或工具。",
       "analysis": "路由的价值在于减少“选谁来做”的开销，任务本身仍由被选中的执行器完成。Firstmate 的 25 个一致决策是小样本对照；Skillbox 缺少相关技能召回数据；确定性调用结构并不保证模型判断正确。",
       "evaluation": "使用相同请求集，记录选择是否合适、任务最终质量、错误回退、配额处理与端到端成本；加入没有合适候选的请求。"
@@ -3356,7 +3665,7 @@
     {
       "id": "data",
       "title": "数据分类与信息整理",
-      "comparison": "整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。",
+      "comparison": "整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。 饮食记事本将文字记录变成热量与营养数值，和预测性表格同样重视即时反馈，但数值估算还需要可信数据与误差评估，不能用分类响应速度代替数值准确性。",
       "flow": "原始文本或表格 → 必要的清洗/摘要 → Jev 分类或判断 → 不确定项回退 → 写回索引或表格。",
       "analysis": "论文案例把摘要与分类分开计费；邮件反欺诈把低置信度项升级到大模型。数据预处理和回退费用都属于完整系统成本。银行收款方的候选生成方法未披露，不能直接推断 Jev 在自由生成商户名。",
       "evaluation": "固定标注数据和切分方式，报告每类精确率/召回率、批量吞吐、单条延迟、重试和总成本；欺诈样本还需覆盖真实基率、误报和漏报。"
@@ -3404,7 +3713,7 @@
     {
       "id": "interaction",
       "title": "实时交互与组合实验",
-      "comparison": "TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。 Probably 则把判断、分支和文字生成组织成小语言；官网是预录回放，比较实时性时需与真正的本地模型调用区分。",
+      "comparison": "TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。 Probably 则把判断、分支和文字生成组织成小语言；官网是预录回放，比较实时性时需与真正的本地模型调用区分。 终端历史补全和启动器都是从候选中选下一步：前者可查固定版本文档和门槛逻辑，但只用虚构历史演示；后者侧重文件选择。比较时分开看命中率、接受率和执行风险。",
       "flow": "准备有限候选或原子问题 → Jev 判定 → 程序组合结果 → 更新交互状态或输出。",
       "analysis": "词表聊天与字符聊天都由程序把单步选择拼接成文本；这不改变 API 的判断式输出性质。RISC-jeV 中逻辑门和指令解释层叠加，展示可组合性，不意味着用模型算逻辑门更高效。",
       "evaluation": "记录候选规模、分辨率或字符数、循环次数和全程费用；与确定性代码或专用生成模型比较输出质量。感知流水线需分开测本地模型、网络决策及渲染延迟。"
@@ -3419,10 +3728,13 @@
     }
   ],
   "latest_update": {
-    "reviewed_at": "2026-09-18T08:15:58+00:00",
+    "reviewed_at": "2026-09-18T11:42:10+00:00",
     "new_cases": [
-      "email-speed-race",
-      "code-comment-scoring"
+      "runlayer-adversarial-testing",
+      "hono-semantic-router",
+      "sac-calendar-computer-use",
+      "shell-history-suggestions",
+      "calorie-notebook"
     ],
     "updated_cases": []
   },
@@ -3461,6 +3773,17 @@
       "new_cases": [
         "email-speed-race",
         "code-comment-scoring"
+      ],
+      "updated_cases": []
+    },
+    {
+      "reviewed_at": "2026-09-18T11:42:10+00:00",
+      "new_cases": [
+        "runlayer-adversarial-testing",
+        "hono-semantic-router",
+        "sac-calendar-computer-use",
+        "shell-history-suggestions",
+        "calorie-notebook"
       ],
       "updated_cases": []
     }

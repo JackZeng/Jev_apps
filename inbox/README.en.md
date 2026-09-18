@@ -30,3 +30,5 @@ Second-pass retrieval timestamps: tutorial, 2026-09-18 02:38:04 UTC; RAG suggest
 Promoted on the third pass: [OpenCode intent permissions](../cases/2026-09-18-opencode-intent-permissions/README.en.md). Its main post rose from 160 to 235 likes; it is removed from this pending list.
 
 Promoted on the fourth pass: [code-comment scoring](../cases/2026-09-18-code-comment-scoring/README.en.md). Image inspection and author replies establish accuracy and usefulness dimensions. Included only as a two-example experiment, without implying available source code or a mature product. Foreman still needs media after this review. Cutoff: 2026-09-18 16:15:58 Beijing time.
+
+The fifth pass rechecks only Jev QA tester’s original text and metadata: 756 likes at 2026-09-18 11:39:31 UTC. Assertions and independent implementation remain unresolved, so it is not promoted. The newly included [Runlayer parallel-testing case](../cases/2026-09-18-runlayer-adversarial-testing/README.en.md) has a distinct author, video and stated tool stack; a shared QA purpose does not establish duplicate identity.

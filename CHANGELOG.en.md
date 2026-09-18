@@ -2,6 +2,26 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-18 · Fifth incremental pass
+
+Reviewed through **2026-09-18 19:42:10 Beijing time (11:42:10 UTC)**. The catalog grows from 79 to **84 cases in 11 categories**, adding five independent implementations. All 79 previous cases retain their content, timestamps and main-post like snapshots; none is counted again.
+
+| Newly included | Main-post like snapshot | Evidence and deduplication |
+| --- | ---: | --- |
+| [Runlayer parallel browser testing](cases/2026-09-18-runlayer-adversarial-testing/README.en.md) | [820](https://x.com/rafalwilinski/status/2100882207879434359) | Author replies identify Runlayer agents, agent-browser and Chromium. A distinct multi-window video; sessions are not separate applications |
+| [Hono JevRouter](cases/2026-09-18-hono-semantic-router/README.en.md) | [405](https://x.com/yusukebe/status/2100871075743859182) | Semantic HTTP routing, distinct from model selection. Pinned code selects the first qualifying registered route, not the highest score |
+| [Sac’s Mac Calendar comparison](cases/2026-09-18-sac-calendar-computer-use/README.en.md) | [217](https://x.com/Saccc_c/status/2100864907046768890) | Called Jev Use, but with a different author and video from Cua. This main post reports similar token usage; broader savings in the quoted introductory post are not carried over |
+| [Semantic shell-history suggestions](cases/2026-09-18-shell-history-suggestions/README.en.md) | [396](https://x.com/thorstenball/status/2100858434904109099) | Main demo and Amp production video merged. Pinned documentation explains candidate filtering, two-question gating and fabricated demo history |
+| [Calorie Notebook food logging](cases/2026-09-18-calorie-notebook/README.en.md) | [326](https://x.com/thekitze/status/2100857642566758849) | Distinct text-based food interface. The author’s other projects are not recounted, and undisclosed estimation mechanics remain unknown |
+
+Main-post snapshots were retrieved between 11:39:02 and 11:39:31 UTC; exact timestamps are retained per record. Every addition has bilingual descriptions, plain-language mechanisms, comparisons, media and README timestamps. None was reproduced. No plugin was installed, local history transmitted, external project executed or paid API called.
+
+**Deduplication and exclusions:** [Rob Hallam’s quote](https://x.com/robj3d3/status/2100876506549645608) points to the included [Jack Cheng canvas](cases/2026-09-18-voice-gesture-canvas/README.en.md) and adds opinion only. [Sac’s introductory roundup](https://x.com/Saccc_c/status/2100833094291087773) lists already included browser, compaction, routing and review cases; the roundup is not counted again. Study sessions, article collections, generic use-case suggestions and imitations using other models are not new applications.
+
+**Pending review:** Jev QA tester’s original post has 756 likes in this pass but still provides minimal text and a video without resolving its assertions or implementation relationship to the existing OpenCode demo. It remains pending. Runlayer has explicit author-provided tooling evidence and is not merged solely because both involve QA.
+
+**Scope:** X Latest search `Jev min_faves:200 since:2026-09-18`, reaching the previously reviewed Kun Chen post and Sac roundup area. Read discussions for all five additions, Hono’s pinned README/router implementation, and the shell plugin’s pinned README. Deduplication uses post IDs, quote chains, authors, tasks, repositories and media; coverage is not exhaustive. No test was submitted to the Hono playground; reading code is not runtime verification.
+
 ## 2026-09-18 · Fourth incremental pass
 
 Reviewed through **2026-09-18 16:15:58 Beijing time (08:15:58 UTC)**. The catalog grows from 77 to **79 cases in 11 categories**: two independent experiments, including one promoted after pending-evidence review. No existing project is counted again. Existing case content timestamps and like snapshots remain unchanged.

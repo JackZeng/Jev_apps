@@ -2,6 +2,26 @@
 
 **简体中文** | [English](CHANGELOG.en.md)
 
+## 2026-09-18 · 第五轮增量
+
+核对截止：**2026-09-18 19:42:10 北京时间（11:42:10 UTC）**。由 79 个增加到 **84 个案例，11 类**，新增 5 个独立实现。旧案例未重复建立，79 条原有内容、时间与主帖点赞快照保持不变。
+
+| 新收录 | 主帖点赞快照 | 去重与证据要点 |
+| --- | ---: | --- |
+| [Runlayer 并行浏览器测试](cases/2026-09-18-runlayer-adversarial-testing/README.md) | [820](https://x.com/rafalwilinski/status/2100882207879434359) | 作者回复确认 Runlayer agents、agent-browser、Chromium；独立多窗口视频，不把每个会话当应用 |
+| [Hono JevRouter](cases/2026-09-18-hono-semantic-router/README.md) | [405](https://x.com/yusukebe/status/2100871075743859182) | HTTP 请求语义分流，区别于模型路由；核对固定版本代码，按注册顺序取首个达标路由，不是最高分 |
+| [Sac 的 Mac 日历操作对照](cases/2026-09-18-sac-calendar-computer-use/README.md) | [217](https://x.com/Saccc_c/status/2100864907046768890) | 虽也叫 Jev Use，但作者和视频不同于 Cua；主帖称 token 消耗接近，不沿用引用旧帖的泛化节省主张 |
+| [终端历史命令语义补全](cases/2026-09-18-shell-history-suggestions/README.md) | [396](https://x.com/thorstenball/status/2100858434904109099) | 主演示与 Amp 制作过程合并；固定版本文档说明候选筛选、双问题门控，以及演示使用虚构历史 |
+| [Calorie Notebook 饮食记录](cases/2026-09-18-calorie-notebook/README.md) | [326](https://x.com/thekitze/status/2100857642566758849) | 独立文字饮食记录界面；同作者的其他项目不重复加入，未披露的估算机制保持未知 |
+
+主帖取数时间为 11:39:02–11:39:31 UTC，精确值见各条记录。全部新增条目同步中英文简介、通俗原理、同类优缺点、媒体与 README 时间，仍未复现。未安装插件、发送本机历史、运行外部项目或调用付费 API。
+
+**合并判断与排除：** [Rob Hallam 的引用](https://x.com/robj3d3/status/2100876506549645608)指向已收录的 [Jack Cheng 画布](cases/2026-09-18-voice-gesture-canvas/README.md)，仅表达观点，不新增条目。[Sac 的入门汇总](https://x.com/Saccc_c/status/2100833094291087773)列举的浏览器、压缩、路由和审核案例均已存在，不把汇总再算一遍。学习会、文章合集、泛用法建议和其他模型的仿制项目不计为新应用。
+
+**待整理复查：** Jev QA tester 原帖本轮 756 赞，仍只有简短文字和视频，具体断言及与现有 OpenCode 演示的实现关系没有补齐；保留待整理。本轮 Runlayer 有明确作者工具说明，不与它仅按“QA”这个用途词合并。
+
+**范围与核对：** X 最新搜索 `Jev min_faves:200 since:2026-09-18`，回看到上轮检索过的 Kun Chen 帖及 Sac 汇总附近；读取五个新案例讨论串、Hono 的固定版本 README/路由实现和 shell 插件的固定版本 README。以原帖 ID、引用链、作者、用途、仓库和媒体去重；不是 X 全量覆盖。Hono playground 未提交测试，源码阅读不等于运行验证。
+
 ## 2026-09-18 · 第四轮增量
 
 核对截止：**2026-09-18 16:15:58 北京时间（08:15:58 UTC）**。由 77 个增加到 **79 个案例，11 类**：新增 2 个独立实验，其中 1 个来自待整理区补证；没有重复建立已有项目。旧条目的内容时间与点赞快照保持不变。

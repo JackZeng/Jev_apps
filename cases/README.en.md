@@ -16,6 +16,8 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Kernel browser demo](2026-09-18-kernel-browser/README.en.md) | Try a web demo of Jev controlling a browser.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [235](https://x.com/stevekrouse/status/2100321685081559542) |
 | [Voice-controlled browser](2026-09-18-voice-browser/README.en.md) | Speak a command, such as “go back,” and let the browser act.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 10:50:59 | [1,829](https://x.com/moritzkremb/status/2100577979021832365) |
 | [OpenCode app testing](2026-09-18-opencode-qa/README.en.md) | Let a coding assistant interact with an app to help check it after development.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [1,133](https://x.com/Neriousy/status/2100287208166969746) |
+| [Runlayer: parallel adversarial browser testing](2026-09-18-runlayer-adversarial-testing/README.en.md) | Run multiple browser sessions to explore how a new release might fail during use.<br>**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 | [820](https://x.com/rafalwilinski/status/2100882207879434359) |
+| [Sac: Codex + Jev for Mac Calendar](2026-09-18-sac-calendar-computer-use/README.en.md) | Add a Jev decision layer to Codex computer use and compare creating a calendar event side by side.<br>**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 | [217](https://x.com/Saccc_c/status/2100864907046768890) |
 
 ## Model, skill and tool routing
 
@@ -29,6 +31,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Coding Garden tool assistant](2026-09-18-coding-garden-assistant/README.en.md) | Ask for weather, information or to-do actions and let an assistant call the right tool.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [334](https://x.com/CodingGarden/status/2100665210419950031) |
 | [Eve tool-calling agent](2026-09-18-eve-tool-agent/README.en.md) | Let Jev choose an agent's next tool to reduce selection overhead.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [1,117](https://x.com/oviniciuslana/status/2100457622407168509) |
 | [ai-cli decision interface](2026-09-18-ai-cli/README.en.md) | Give terminal-based assistants access to Jev judgments, choices and scores.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [874](https://x.com/ctatedev/status/2100584917092409479) |
+| [Hono JevRouter: route requests by meaning](2026-09-18-hono-semantic-router/README.en.md) | Choose responses such as HTML or Markdown based on whether a request appears to come from a person or an AI.<br>**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 | [405](https://x.com/yusukebe/status/2100871075743859182) |
 
 ## Code quality and safety checks
 
@@ -57,6 +60,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Japanese support escalation intent](2026-09-18-support-intent/README.en.md) | Detect whether a Japanese support message asks for a human or mentions repeated contact.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [351](https://x.com/ku_suke/status/2100392430805856469) |
 | [Intent-driven spreadsheet ratings](2026-09-18-predictive-spreadsheet/README.en.md) | Name a column “Urgency” and have the text in each row receive a corresponding rating.<br>**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 | [337](https://x.com/dabit3/status/2100780008193020049) |
 | [Email classification: four-model speed comparison](2026-09-18-email-speed-race/README.en.md) | Classify a set of emails with four models and compare progress and elapsed time on one screen.<br>**Added to README:** 2026-09-18 16:17:27<br>**Content updated:** 2026-09-18 16:17:27 | [445](https://x.com/usutaku_channel/status/2100829343954173965) |
+| [Calorie Notebook: text-based food logging](2026-09-18-calorie-notebook/README.en.md) | Write down what you ate and receive quick calorie, nutrient and total values in the interface.<br>**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 | [326](https://x.com/thekitze/status/2100857642566758849) |
 
 ## Content and advertising analysis
 
@@ -131,6 +135,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Live emoji suggestions](2026-09-18-emoji-suggestions/README.en.md) | Suggest emoji that fit the meaning of text as it is entered.<br>**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-18 10:50:59 | [230](https://x.com/riku720720/status/2100705558512963602) |
 | [Voice-and-pointing canvas control](2026-09-18-voice-gesture-canvas/README.en.md) | Use speech and pointing together to say “put that over there” on a canvas.<br>**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-18 10:50:59 | [915](https://x.com/jackcheng/status/2100729670991802386) |
 | [Probably: semantic judgments as program control](2026-09-18-probably-language/README.en.md) | Write judgments such as “is this email urgent?” into branches, then ask a text model to draft a reply.<br>**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 | [894](https://x.com/southpolesteve/status/2100767781868150938) |
+| [Shell history: semantic command suggestions](2026-09-18-shell-history-suggestions/README.en.md) | Type part of a command or describe an intent to select a suggestion from past commands.<br>**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 | [396](https://x.com/thorstenball/status/2100858434904109099) |
 
 ## Trading execution demo
 

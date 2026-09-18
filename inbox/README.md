@@ -30,3 +30,5 @@
 第三轮已转入正式目录：[OpenCode 意图权限插件](../cases/2026-09-18-opencode-intent-permissions/README.md)。作者原帖由 160 赞升至 235 赞，已从待整理表移除。
 
 第四轮已转入正式目录：[代码注释评分](../cases/2026-09-18-code-comment-scoring/README.md)。读图和作者回复明确了准确性、实用性两个维度；只按两个样例的实验收录，没有源码或成熟产品的保证。Foreman 同轮复查后仍待补媒体。核对截止 2026-09-18 16:15:58 北京时间。
+
+第五轮仅复查 Jev QA tester 原帖正文与元数据：2026-09-18 11:39:31 UTC 快照为 756 赞，仍需核清断言和独立实现，未转入正式目录。本轮新收 [Runlayer 并行测试](../cases/2026-09-18-runlayer-adversarial-testing/README.md)有独立作者、视频和工具组合说明，不因同属 QA 就认定是同一项目。

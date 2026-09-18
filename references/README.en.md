@@ -62,7 +62,11 @@ The second pass on 2026-09-18 adds 5 cases and supplements 4 existing entries, f
 
 ## Fourth incremental pass
 
-2026-09-18 08:15:58 UTC: added the four-model email comparison and promoted code-comment scoring after pending-evidence review, for **79 current cases**. Reviewed source interfaces/images and author discussion. Both main posts were retrieved at 08:11:40 UTC; comment-scoring replies at 08:15:58 UTC. Foreman received a pinned-documentation and file-tree review but still lacks runtime media, so it does not increase the total. See the [fourth-pass log](../CHANGELOG.en.md) for search scope and exclusions.
+2026-09-18 08:15:58 UTC: added the four-model email comparison and promoted code-comment scoring after pending-evidence review, for **79 cases at the end of that pass**. Reviewed source interfaces/images and author discussion. Both main posts were retrieved at 08:11:40 UTC; comment-scoring replies at 08:15:58 UTC. Foreman received a pinned-documentation and file-tree review but still lacks runtime media, so it does not increase the total. See the [fourth-pass log](../CHANGELOG.en.md) for search scope and exclusions.
+
+## Fifth incremental pass
+
+2026-09-18 11:42:10 UTC: five additions bring the catalog to **84 current cases**. Source searches and discussions establish parallel testing, HTTP routing, Mac Calendar, shell-history suggestions and food logging. Hono router code is pinned to `04f6e103e1397bca659ab85c042011a1f14b679d`; shell documentation to `4b2b75d26c0ccf5726263904514a22a8e11659ea`, linked in the case details. Jev QA tester received only an original-post metadata recheck and remains pending. Main-post snapshots span 11:39:02–11:39:31 UTC; existing case snapshots were not refreshed. See the [fifth-pass log](../CHANGELOG.en.md).
 
 <a id="readme-times"></a>
 
