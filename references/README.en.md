@@ -56,9 +56,13 @@ The second pass on 2026-09-18 adds 5 cases and supplements 4 existing entries, f
 
 ## Third pass and tutorial reference
 
-2026-09-18 06:12 UTC: 5 new cases and 1 existing entry supplemented, for 77 current cases. The permissions plugin moved from the inbox after its main post qualified. See the [third-pass update](../CHANGELOG.en.md).
+2026-09-18 06:12 UTC: 5 new cases and 1 existing entry supplemented, for 77 cases at the end of that pass. The permissions plugin moved from the inbox after its main post qualified. See the [third-pass update](../CHANGELOG.en.md).
 
 [Sydney Runkle: Building a Harness with Jev](https://x.com/sydneyrunkle/status/2100754364545761643) explains LangChain classification calls, model routing and tool-risk gating. The main-post snapshot was 855 likes (2026-09-18T06:09:05+00:00 (UTC), FxTwitter). The article and its quotes are one tutorial reference, not multiple applications or an independent performance benchmark.
+
+## Fourth incremental pass
+
+2026-09-18 08:15:58 UTC: added the four-model email comparison and promoted code-comment scoring after pending-evidence review, for **79 current cases**. Reviewed source interfaces/images and author discussion. Both main posts were retrieved at 08:11:40 UTC; comment-scoring replies at 08:15:58 UTC. Foreman received a pinned-documentation and file-tree review but still lacks runtime media, so it does not increase the total. See the [fourth-pass log](../CHANGELOG.en.md) for search scope and exclusions.
 
 <a id="readme-times"></a>
 
@@ -66,7 +70,7 @@ The second pass on 2026-09-18 adds 5 cases and supplements 4 existing entries, f
 
 Each project has `readme_added_at` for its first addition to this repository’s README and `readme_updated_at` for its latest introduction, mechanism, evidence or bilingual-text edit. Both languages share the project timeline and display Beijing time (UTC+08:00), to the second. These values are separate from post publication and metric retrieval.
 
-The existing 77 entries were backfilled from Git content commits:
+The 77 entries present when timestamp fields were introduced were backfilled from Git content commits; subsequent additions record their actual editing times:
 
 | Commit time (Beijing) | Content |
 | --- | --- |

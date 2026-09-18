@@ -3227,6 +3227,105 @@
       "source_notes": "**从待整理区转入：** 上轮 2026-09-18 02:38:04 UTC 快照为 160 赞；本轮 06:07:34 UTC 为 235 赞，才满足正式门槛。[作者回复](https://x.com/OpeOginni/status/2100705405013754312)给出包地址；核对 [npm 元数据及 README](https://registry.npmjs.org/oc-auto-perms)，当时 latest 为 0.1.0。仅阅读文档，未安装插件。",
       "readme_added_at": "2026-09-18T14:17:58+08:00",
       "readme_updated_at": "2026-09-18T14:17:58+08:00"
+    },
+    {
+      "slug": "email-speed-race",
+      "group": "data",
+      "title": "邮件分类 · 四模型速度对照",
+      "summary": "让四个模型给一组邮件分类，在同一页面对照完成进度和耗时。",
+      "plain_explanation": "像让四位分拣员处理同一叠信件：每个模型判断邮件属于哪一类，网页记录结果和时间。这个演示关注分拣速度，但跑得快不代表每封都分对。",
+      "mechanism": "原帖视频的 JEV Speed Race 界面并排显示 Jev、GPT Luna、Claude Sonnet、Gemini 3.5 Flash，展示相同的邮件行、完成进度和计时。由此可确认任务级速度对照；调用参数、完整模型版本与分类规则尚未核清。",
+      "advantage": "比单模型批量演示更直观地展示不同模型处理同类任务的等待差异；可与 500 封邮件分类案例对照，分别观察跨模型响应和批量吞吐。",
+      "limitation": "尚无独立准确率、混淆矩阵或完整成本评测，也未核清各模型的并发、批处理及计时条件。界面名称不能替代完整 API 版本信息，不能据此给出通用速度排名或倍数。",
+      "reported_result": "作者发布约 30 秒分类对照视频，并报告 Jev 明显更快；本库未复现该结论，也未将演示时长当成分类耗时。",
+      "media_note": "使用本帖自己的视频及封面；已查看原帖界面和讨论，不是既有 500 封邮件视频的转载。",
+      "post": {
+        "id": "2100829343954173965",
+        "url": "https://x.com/usutaku_channel/status/2100829343954173965",
+        "author": "usutaku_channel",
+        "published_at": "2026-09-18T06:08:41+00:00",
+        "likes": 445,
+        "retrieved_at": "2026-09-18T08:11:40+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100829343954173965",
+        "media_source": "https://x.com/usutaku_channel/status/2100829343954173965",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100829070514864128/vid/avc1/3024x1964/ru396ddS-QlRgpgZ.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100829070514864128/img/V3ix1we5Euhs8DsY.jpg",
+            "duration": 30.021,
+            "width": 3024,
+            "height": 1964
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T16:17:27+08:00",
+      "readme_updated_at": "2026-09-18T16:17:27+08:00",
+      "source_notes": "**去重与比较：** 作者、演示界面和原视频均不同于 Riley Brown 的批量邮件案例，因此作为独立实验收录到同一类别。两者没有共享的完整测试协议，不直接比较宣传中的秒数或成本。"
+    },
+    {
+      "slug": "code-comment-scoring",
+      "group": "review",
+      "title": "代码注释 · 准确性与实用性评分",
+      "summary": "分别检查注释有没有说错，以及它是否提供了代码之外的有用信息。",
+      "plain_explanation": "给注释两张成绩单：一句话可以正确复述代码，却没有解释为什么这样写；另一句话则可能连代码做什么都说错。Jev 分别评分，帮助开发者找到值得复核的注释。",
+      "mechanism": "原帖命令行截图展示两个代码与注释的小样本，并输出 Accuracy、Usefulness 两个维度的 0–100 分及描述。可观察流程是代码片段和注释进入判断，再显示分数；具体提示、解析方法和分数映射没有公开到本次证据中。",
+      "advantage": "把事实正确与信息价值拆开，比单一代码总分更容易看出问题；与 ESLint 规则实验同属局部代码判断，但这里评的是注释质量，不是规则是否合规。",
+      "limitation": "只有两个简单样例，不能证明复杂代码的判断效果；评分不是独立测试准确率，也没有自动删除或改写注释的证据。作者把它定位为可能减少大模型复核次数的初筛，而非完整审查方案。",
+      "reported_result": "截图中，正确但只是复述乘法的注释得到准确性 99/100、实用性 2/100；把除法说成乘法的注释得到 1/100、11/100。作者回复确认两条都缺乏信息价值，第二条还描述错误。",
+      "media_note": "原帖图片是作者的命令行实验输出；两条作者回复补充了分数含义和初筛定位。",
+      "post": {
+        "id": "2100359340087501296",
+        "url": "https://x.com/markjaquith/status/2100359340087501296",
+        "author": "markjaquith",
+        "published_at": "2026-09-16T23:01:04+00:00",
+        "likes": 1777,
+        "retrieved_at": "2026-09-18T08:11:40+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100359340087501296",
+        "media_source": "https://x.com/markjaquith/status/2100359340087501296",
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HSX4qrBWcAAA3K4.jpg?name=orig",
+            "width": 1256,
+            "height": 864
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100567922552742323",
+          "url": "https://x.com/markjaquith/status/2100567922552742323",
+          "author": "markjaquith",
+          "published_at": "2026-09-17T12:49:54+00:00",
+          "likes": 1,
+          "retrieved_at": "2026-09-18T08:15:58+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100567922552742323",
+          "media_source": "https://x.com/markjaquith/status/2100567922552742323",
+          "media": []
+        },
+        {
+          "id": "2100617693778923533",
+          "url": "https://x.com/markjaquith/status/2100617693778923533",
+          "author": "markjaquith",
+          "published_at": "2026-09-17T16:07:40+00:00",
+          "likes": 3,
+          "retrieved_at": "2026-09-18T08:15:58+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100617693778923533",
+          "media_source": "https://x.com/markjaquith/status/2100617693778923533",
+          "media": []
+        }
+      ],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T16:17:27+08:00",
+      "readme_updated_at": "2026-09-18T16:17:27+08:00",
+      "source_notes": "**第四轮补证后转入：** 先前因分类含义不清留在待整理区；本轮读图并核对作者回复，确认是准确性与实用性两个评分维度，且只展示两个样例。按具体任务实验收录，没有把它升级描述成已发布的 linter 或成熟产品；本次未取得可核对的源码入口。"
     }
   ],
   "groups": [
@@ -3249,7 +3348,7 @@
     {
       "id": "review",
       "title": "代码质量与安全检查",
-      "comparison": "PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。 ESLint 规则实验判断小代码片段是否合规；OpenCode 权限插件在工具运行前决定放行、询问或拒绝。两者分别检查代码与操作，不能互相替代。",
+      "comparison": "PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。 ESLint 规则实验判断小代码片段是否合规；OpenCode 权限插件在工具运行前决定放行、询问或拒绝。两者分别检查代码与操作，不能互相替代。 注释评分把准确性和实用性拆开，解释性强于单一总分，但目前只有两个简单样例；ESLint 实验按规则检查片段，PR 工具覆盖更广的改动。三者应按任务范围和证据规模比较。",
       "flow": "代码或待执行内容 + 明确规则 → 多个窄判断 → 程序合并结果 → 提示、拦截或转交复核。",
       "analysis": "14 项 PR 检查公开了概率区间升级策略，是比单一总分更可检查的设计。jev-review 的评分可用于反馈，但高分不等于测试通过。安全预筛的低费用不能替代错误代价评估。",
       "evaluation": "按风险分别统计误报和漏报，保留独立标注样本；测试信息不足、输入含恶意指令、规则冲突和不确定结果。复现时保留人工评审与静态工具对照。"
@@ -3257,7 +3356,7 @@
     {
       "id": "data",
       "title": "数据分类与信息整理",
-      "comparison": "整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。",
+      "comparison": "整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。",
       "flow": "原始文本或表格 → 必要的清洗/摘要 → Jev 分类或判断 → 不确定项回退 → 写回索引或表格。",
       "analysis": "论文案例把摘要与分类分开计费；邮件反欺诈把低置信度项升级到大模型。数据预处理和回退费用都属于完整系统成本。银行收款方的候选生成方法未披露，不能直接推断 Jev 在自由生成商户名。",
       "evaluation": "固定标注数据和切分方式，报告每类精确率/召回率、批量吞吐、单条延迟、重试和总成本；欺诈样本还需覆盖真实基率、误报和漏报。"
@@ -3320,17 +3419,12 @@
     }
   ],
   "latest_update": {
-    "reviewed_at": "2026-09-18T06:12:09+00:00",
+    "reviewed_at": "2026-09-18T08:15:58+00:00",
     "new_cases": [
-      "youtube-sponsor-skip",
-      "predictive-spreadsheet",
-      "probably-language",
-      "eslint-rule-judgments",
-      "opencode-intent-permissions"
+      "email-speed-race",
+      "code-comment-scoring"
     ],
-    "updated_cases": [
-      "cua-jev-use"
-    ]
+    "updated_cases": []
   },
   "updates": [
     {
@@ -3361,6 +3455,14 @@
       "updated_cases": [
         "cua-jev-use"
       ]
+    },
+    {
+      "reviewed_at": "2026-09-18T08:15:58+00:00",
+      "new_cases": [
+        "email-speed-race",
+        "code-comment-scoring"
+      ],
+      "updated_cases": []
     }
   ]
 }

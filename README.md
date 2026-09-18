@@ -2,9 +2,9 @@
 
 **简体中文** | [English](README.en.md)
 
-从 X 收集 **TypeSafe Jev** 的应用演示，整理用途、实现思路和同类优劣。**当前 77 个案例 · 11 类 · 每条主帖收录时均 ≥ 200 赞 · 每条附图或视频**。
+从 X 收集 **TypeSafe Jev** 的应用演示，整理用途、实现思路和同类优劣。**当前 79 个案例 · 11 类 · 每条主帖收录时均 ≥ 200 赞 · 每条附图或视频**。
 
-最近增量核对：**2026-09-18T06:12:09+00:00（UTC）**；新增 **5** 个独立案例，补充 **1** 个已有条目。[本轮新增、合并与未收录原因](CHANGELOG.md)。已有主帖的点赞快照保持原取数时间。
+最近增量核对：**2026-09-18T08:15:58+00:00（UTC）**；新增 **2** 个独立案例，补充 **0** 个已有条目。[本轮新增、合并与未收录原因](CHANGELOG.md)。已有主帖的点赞快照保持原取数时间。
 
 ## Jev 是什么？先用一句人话理解
 
@@ -30,8 +30,8 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 | --- | ---: | --- |
 | [浏览器与电脑操作](#browser) | 8 | [阅读分析](breakdowns/2026-09-18-browser.md) |
 | [模型、技能与工具路由](#routing) | 8 | [阅读分析](breakdowns/2026-09-18-routing.md) |
-| [代码质量与安全检查](#review) | 9 | [阅读分析](breakdowns/2026-09-18-review.md) |
-| [数据分类与信息整理](#data) | 7 | [阅读分析](breakdowns/2026-09-18-data.md) |
+| [代码质量与安全检查](#review) | 10 | [阅读分析](breakdowns/2026-09-18-review.md) |
+| [数据分类与信息整理](#data) | 8 | [阅读分析](breakdowns/2026-09-18-data.md) |
 | [内容与广告分析](#content) | 7 | [阅读分析](breakdowns/2026-09-18-content.md) |
 | [网页与信息流过滤](#filter) | 3 | [阅读分析](breakdowns/2026-09-18-filter.md) |
 | [上下文与记忆筛选](#memory) | 2 | [阅读分析](breakdowns/2026-09-18-memory.md) |
@@ -84,9 +84,9 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 
 <a id="review"></a>
 
-### 代码质量与安全检查（9）
+### 代码质量与安全检查（10）
 
-PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。 ESLint 规则实验判断小代码片段是否合规；OpenCode 权限插件在工具运行前决定放行、询问或拒绝。两者分别检查代码与操作，不能互相替代。
+PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。 ESLint 规则实验判断小代码片段是否合规；OpenCode 权限插件在工具运行前决定放行、询问或拒绝。两者分别检查代码与操作，不能互相替代。 注释评分把准确性和实用性拆开，解释性强于单一总分，但目前只有两个简单样例；ESLint 实验按规则检查片段，PR 工具覆盖更广的改动。三者应按任务范围和证据规模比较。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-review.md)
 
@@ -101,12 +101,13 @@ PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确
 | [**资料上传判断器**](cases/2026-09-18-upload-check/README.md)<br>上传资料前先问一句：这份内容适合传出去吗？<br>**原理：** 系统让 Jev 对资料做允许或不允许的判断。是否判断得对取决于给它的规则和信息；原帖没有公开完整的公司保密策略。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [284](https://x.com/iwasakoya/status/2100471523358474709) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100471095627591680/img/jQewHJZ85th2EEv3.jpg" width="160" alt="资料上传判断器预览">](https://x.com/iwasakoya/status/2100471523358474709)<br>[视频](https://x.com/iwasakoya/status/2100471523358474709) |
 | [**按 ESLint 规则说明判断代码**](cases/2026-09-18-eslint-rule-judgments/README.md)<br>只给规则的文字说明，让 Jev 判断小段代码是否符合规则。<br>**原理：** 类似给阅卷者一张评分标准，再给一段待检查代码；Jev 判断是否违反要求。它学的是规则描述的含义，不是在这个实验里执行 ESLint 的规则实现。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [351](https://x.com/mizchi/status/2100765201385869434) | [<img src="https://pbs.twimg.com/media/HSdqjcJa8AAGjPE.jpg?name=orig" width="160" alt="按 ESLint 规则说明判断代码预览">](https://x.com/mizchi/status/2100765201385869434)<br>[图片](https://x.com/mizchi/status/2100765201385869434) |
 | [**OpenCode · 意图感知权限插件**](cases/2026-09-18-opencode-intent-permissions/README.md)<br>用“只访问 Google”等自然语言规则，检查代理换着工具发起的操作。<br>**原理：** 像门卫既看通行规则也听你要办什么事：Jev 判断工具输入的意图，插件再决定放行、询问或拒绝。OpenCode 原有权限仍在外层控制。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [235](https://x.com/OpeOginni/status/2100702649834188855) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100701224920129536/img/-vzxHYoZxMjXKOKh.jpg" width="160" alt="OpenCode · 意图感知权限插件预览">](https://x.com/OpeOginni/status/2100702649834188855)<br>[视频](https://x.com/OpeOginni/status/2100702649834188855) |
+| [**代码注释 · 准确性与实用性评分**](cases/2026-09-18-code-comment-scoring/README.md)<br>分别检查注释有没有说错，以及它是否提供了代码之外的有用信息。<br>**原理：** 给注释两张成绩单：一句话可以正确复述代码，却没有解释为什么这样写；另一句话则可能连代码做什么都说错。Jev 分别评分，帮助开发者找到值得复核的注释。<br>**收录到 README：** 2026-09-18 16:17:27<br>**内容更新：** 2026-09-18 16:17:27 | [1,777](https://x.com/markjaquith/status/2100359340087501296) | [<img src="https://pbs.twimg.com/media/HSX4qrBWcAAA3K4.jpg?name=orig" width="160" alt="代码注释 · 准确性与实用性评分预览">](https://x.com/markjaquith/status/2100359340087501296)<br>[图片](https://x.com/markjaquith/status/2100359340087501296) |
 
 <a id="data"></a>
 
-### 数据分类与信息整理（7）
+### 数据分类与信息整理（8）
 
-整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。
+整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-data.md)
 
@@ -119,6 +120,7 @@ PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确
 | [**银行流水收款方整理**](cases/2026-09-18-bank-payee/README.md)<br>把银行流水里杂乱的交易说明，整理成更容易认出的商户名。<br>**原理：** 流水里常混着地点、编号和店名，这个实验让 Jev 参与判断哪些信息该留下。原帖没公开具体怎样切出或生成最终名称。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [633](https://x.com/jlongster/status/2100179852053639236) | [<img src="https://pbs.twimg.com/media/HSVWcZ9WcAAcwPe.jpg?name=orig" width="160" alt="银行流水收款方整理预览">](https://x.com/jlongster/status/2100179852053639236)<br>[图片](https://x.com/jlongster/status/2100179852053639236) |
 | [**日语客服升级意图**](cases/2026-09-18-support-intent/README.md)<br>从日语客服消息里判断：用户是不是想找人工、是不是已经问过多次。<br>**原理：** 把一条消息拆成两个清楚的是非问题，分别问 Jev。显示的百分比代表这次判断的倾向，不是整个客服系统的准确率。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [351](https://x.com/ku_suke/status/2100392430805856469) | [<img src="https://pbs.twimg.com/media/HSYXuW5aoAAghbD.jpg?name=orig" width="160" alt="日语客服升级意图预览">](https://x.com/ku_suke/status/2100392430805856469)<br>[图片](https://x.com/ku_suke/status/2100392430805856469) |
 | [**按列名意图评分的电子表格**](cases/2026-09-18-predictive-spreadsheet/README.md)<br>给一列起名“紧急程度”，让每行文字自动获得相应评级。<br>**原理：** 普通公式按算式处理数字，这个演示让列名表达想问的问题：Jev 结合每行内容判断紧急程度，程序把结果填回表格。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [337](https://x.com/dabit3/status/2100780008193020049) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100779722447667200/img/gvsEg2-3oD6FRZhc.jpg" width="160" alt="按列名意图评分的电子表格预览">](https://x.com/dabit3/status/2100780008193020049)<br>[视频](https://x.com/dabit3/status/2100780008193020049) |
+| [**邮件分类 · 四模型速度对照**](cases/2026-09-18-email-speed-race/README.md)<br>让四个模型给一组邮件分类，在同一页面对照完成进度和耗时。<br>**原理：** 像让四位分拣员处理同一叠信件：每个模型判断邮件属于哪一类，网页记录结果和时间。这个演示关注分拣速度，但跑得快不代表每封都分对。<br>**收录到 README：** 2026-09-18 16:17:27<br>**内容更新：** 2026-09-18 16:17:27 | [445](https://x.com/usutaku_channel/status/2100829343954173965) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100829070514864128/img/V3ix1we5Euhs8DsY.jpg" width="160" alt="邮件分类 · 四模型速度对照预览">](https://x.com/usutaku_channel/status/2100829343954173965)<br>[视频](https://x.com/usutaku_channel/status/2100829343954173965) |
 
 <a id="content"></a>
 

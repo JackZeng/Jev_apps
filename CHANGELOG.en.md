@@ -2,6 +2,25 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-18 · Fourth incremental pass
+
+Reviewed through **2026-09-18 16:15:58 Beijing time (08:15:58 UTC)**. The catalog grows from 77 to **79 cases in 11 categories**: two independent experiments, including one promoted after pending-evidence review. No existing project is counted again. Existing case content timestamps and like snapshots remain unchanged.
+
+| Newly included | Main-post like snapshot | Evidence and deduplication |
+| --- | ---: | --- |
+| [Email classification: four-model speed comparison](cases/2026-09-18-email-speed-race/README.en.md) | [445](https://x.com/usutaku_channel/status/2100829343954173965) | Distinct author, interface and video; compared within the same category as the 500-email case. The author reports Jev as faster, but accuracy, version and configuration evidence is incomplete; no universal speed ranking is claimed |
+| [Code comments: accuracy and usefulness scores](cases/2026-09-18-code-comment-scoring/README.en.md) | [1,777](https://x.com/markjaquith/status/2100359340087501296) | An earlier lead now supported by image inspection and two author replies establishing the scoring dimensions and screening role; distinct from ESLint-rule judgments and full PR review |
+
+Both main-post snapshots were retrieved at **08:11:40 UTC**; the comment-scoring replies at **08:15:58 UTC**. Both cases include bilingual descriptions, plain-language mechanisms, trade-offs, original media and README inclusion/content-update timestamps. Neither was reproduced. A 99/100 example score is not treated as 99% test accuracy, and video length is not treated as execution time.
+
+**Duplicates and exclusions:**
+
+- [Tony’s sponsor-skipping video](https://x.com/tdinh_me/status/2100793777103466615) is already included; resurfacing in search does not add a case.
+- The [OpenCode local-classifier discussion](https://x.com/thdxr/status/2100814192919929259) proposes Jev as a possible substitute without an implemented integration. An [access tutorial](https://x.com/harrisonitsme/status/2100799749192569167), learning materials, opinions and jokes do not become separate applications.
+- Foreman’s main post had 685 likes in this pass. Reading its [pinned README](https://github.com/thruwire/foreman/blob/2c439828b9fe45ee5d40f6f57be81f7ff1f8a140/README.md) and repository tree clarified the supervision loop, but corresponding runtime image/video evidence was still not found; it remains pending.
+
+**Scope:** X Latest search `Jev min_faves:200 since:2026-09-18`, reaching the previously included sponsor-skipping post, plus focused follow-up on Foreman and code-comment leads. New discoveries and older evidence promotions are identified separately; this is not exhaustive coverage of X. Deduplication checks main-post IDs, authors, tasks, videos and the existing catalog. Category comparisons are updated in both languages.
+
 ## 2026-09-18 · README timestamps
 
 Added first-inclusion and latest-content-update times to all 77 bilingual introductions, indexes and detail pages, using Beijing time. Historical values come from Git content commits; regeneration does not advance them. No new cases or metric refreshes in this change. [Provenance](references/README.en.md#readme-times)

@@ -43,6 +43,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Document upload checker](2026-09-18-upload-check/README.en.md) | Before uploading a document, check whether its contents should be shared.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [284](https://x.com/iwasakoya/status/2100471523358474709) |
 | [Code judgments from ESLint rule descriptions](2026-09-18-eslint-rule-judgments/README.en.md) | Give Jev a rule’s text description and ask whether a small code snippet complies.<br>**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 | [351](https://x.com/mizchi/status/2100765201385869434) |
 | [OpenCode intent-aware permissions](2026-09-18-opencode-intent-permissions/README.en.md) | Check an agent’s actions across tools using policies such as “only access Google.”<br>**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 | [235](https://x.com/OpeOginni/status/2100702649834188855) |
+| [Code comments: accuracy and usefulness scores](2026-09-18-code-comment-scoring/README.en.md) | Check whether a comment is correct and whether it adds useful information beyond the code.<br>**Added to README:** 2026-09-18 16:17:27<br>**Content updated:** 2026-09-18 16:17:27 | [1,777](https://x.com/markjaquith/status/2100359340087501296) |
 
 ## Data classification and organization
 
@@ -55,6 +56,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Bank transaction payee cleanup](2026-09-18-bank-payee/README.en.md) | Turn messy bank transaction descriptions into recognizable merchant names.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [633](https://x.com/jlongster/status/2100179852053639236) |
 | [Japanese support escalation intent](2026-09-18-support-intent/README.en.md) | Detect whether a Japanese support message asks for a human or mentions repeated contact.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [351](https://x.com/ku_suke/status/2100392430805856469) |
 | [Intent-driven spreadsheet ratings](2026-09-18-predictive-spreadsheet/README.en.md) | Name a column “Urgency” and have the text in each row receive a corresponding rating.<br>**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 | [337](https://x.com/dabit3/status/2100780008193020049) |
+| [Email classification: four-model speed comparison](2026-09-18-email-speed-race/README.en.md) | Classify a set of emails with four models and compare progress and elapsed time on one screen.<br>**Added to README:** 2026-09-18 16:17:27<br>**Content updated:** 2026-09-18 16:17:27 | [445](https://x.com/usutaku_channel/status/2100829343954173965) |
 
 ## Content and advertising analysis
 

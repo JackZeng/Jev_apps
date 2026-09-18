@@ -7,8 +7,8 @@ Analysis of public sources; no reproduction experiments have been run here.
 - [How Jev apps work: judgments and software composition](2026-09-18-how-jev-apps-work.en.md)
 - [Browser and computer control](2026-09-18-browser.en.md): 8 examples.
 - [Model, skill and tool routing](2026-09-18-routing.en.md): 8 examples.
-- [Code quality and safety checks](2026-09-18-review.en.md): 9 examples.
-- [Data classification and organization](2026-09-18-data.en.md): 7 examples.
+- [Code quality and safety checks](2026-09-18-review.en.md): 10 examples.
+- [Data classification and organization](2026-09-18-data.en.md): 8 examples.
 - [Content and advertising analysis](2026-09-18-content.en.md): 7 examples.
 - [Webpage and feed filtering](2026-09-18-filter.en.md): 3 examples.
 - [Context and memory filtering](2026-09-18-memory.en.md): 2 examples.
