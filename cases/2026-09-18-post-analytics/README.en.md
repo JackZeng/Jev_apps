@@ -4,6 +4,8 @@
 
 > Review thousands of past posts to see which topics and styles performed well.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Jev labels topics, tone and other features, then code compares historical performance. This summarizes the past; it does not prove that adopting a style causes growth.
@@ -18,7 +20,7 @@ Jev labels topics, tone and other features, then code compares historical perfor
 | Platform / author | X / [@iannuttall](https://x.com/iannuttall) |
 | Main post | [Source post](https://x.com/iannuttall/status/2100668908227162567) |
 | Published (UTC) | 2026-09-17T19:31:10+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **262** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.351271+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100668908227162567); may be cached |

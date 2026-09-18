@@ -4,6 +4,8 @@
 
 > Describe a flight search and let the agent click, type and find results on the website.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Think of an assistant with a constantly updated list of buttons. Code reads the page, Jev chooses the next action, and a text model helps fill in details such as city names.
@@ -18,7 +20,7 @@ Think of an assistant with a constantly updated list of buttons. Code reads the 
 | Platform / author | X / [@gregpr07](https://x.com/gregpr07) |
 | Main post | [Source post](https://x.com/gregpr07/status/2100411066966749359) |
 | Published (UTC) | 2026-09-17T02:26:36+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **6,891** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:32:51.243200+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100411066966749359); may be cached |

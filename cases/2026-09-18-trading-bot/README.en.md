@@ -4,6 +4,8 @@
 
 > Let Jev choose buy or sell from price information and have code submit the order.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 The model chooses an action and code connects to the blockchain order book. Fast orders do not imply profitable trading; complete returns and risk records are absent.
@@ -18,7 +20,7 @@ The model chooses an action and code connects to the blockchain order book. Fast
 | Platform / author | X / [@jarrodwatts](https://x.com/jarrodwatts) |
 | Main post | [Source post](https://x.com/jarrodwatts/status/2100356151468585346) |
 | Published (UTC) | 2026-09-16T22:48:23+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **4,142** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:32:51.243553+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100356151468585346); may be cached |

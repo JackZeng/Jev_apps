@@ -4,6 +4,8 @@
 
 > Use Jev to choose card-game actions with less waiting between decisions.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Card games usually provide a set of currently legal choices that code can offer to a model. The post does not disclose the interface, and quicker moves do not necessarily win more games.
@@ -18,7 +20,7 @@ Card games usually provide a set of currently legal choices that code can offer 
 | Platform / author | X / [@coolish](https://x.com/coolish) |
 | Main post | [Source post](https://x.com/coolish/status/2100570517954838897) |
 | Published (UTC) | 2026-09-17T13:00:12+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **598** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.210633+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100570517954838897); may be cached |

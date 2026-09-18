@@ -4,6 +4,8 @@
 
 > Let Jev choose an agent's next tool to reduce selection overhead.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 The original agent reasons about which tool to use. This experiment hands that choice to Jev while retaining the tools and downstream processing.
@@ -18,7 +20,7 @@ The original agent reasons about which tool to use. This experiment hands that c
 | Platform / author | X / [@oviniciuslana](https://x.com/oviniciuslana) |
 | Main post | [Source post](https://x.com/oviniciuslana/status/2100457622407168509) |
 | Published (UTC) | 2026-09-17T05:31:36+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **1,117** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:23.913443+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100457622407168509); may be cached |

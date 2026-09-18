@@ -4,6 +4,8 @@
 
 > Simulate reach scores to compare different ways of writing a post.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 The author combines Jev judgments with weights. That scoring formula is a simplified model; resembling X does not establish recreation of its real recommendation system.
@@ -18,7 +20,7 @@ The author combines Jev judgments with weights. That scoring formula is a simpli
 | Platform / author | X / [@leojrr](https://x.com/leojrr) |
 | Main post | [Source post](https://x.com/leojrr/status/2100470174130250127) |
 | Published (UTC) | 2026-09-17T06:21:29+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **877** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.298301+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100470174130250127); may be cached |

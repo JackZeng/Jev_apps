@@ -4,6 +4,8 @@
 
 > Let Jev make Tetris decisions and observe how blocks are placed.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Code must pass board information to the model and execute its choices. The post does not say whether Jev chooses final placements or individual keys, which matters for comparisons.
@@ -18,7 +20,7 @@ Code must pass board information to the model and execute its choices. The post 
 | Platform / author | X / [@marcus_lowe](https://x.com/marcus_lowe) |
 | Main post | [Source post](https://x.com/marcus_lowe/status/2100315518930661861) |
 | Published (UTC) | 2026-09-16T20:06:56+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **956** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.080664+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100315518930661861); may be cached |

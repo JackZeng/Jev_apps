@@ -4,6 +4,8 @@
 
 > Find files without remembering names: type “the PDF I just downloaded” and rank relevant matches first.
 
+**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-18 10:50:59 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Like asking an assistant for the document you just downloaded: the app prepares candidates and context, Jev interprets the request, and the interface updates its ranking as you type. Indexing details are undisclosed.
@@ -18,7 +20,7 @@ Like asking an assistant for the document you just downloaded: the app prepares 
 | Platform / author | X / [@dabit3](https://x.com/dabit3) |
 | Main post | [Source post](https://x.com/dabit3/status/2100756930054504776) |
 | Published (UTC) | 2026-09-18T01:20:56+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 10:50:59 / 2026-09-18 10:50:59 |
 | Main-post likes snapshot | **252** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T02:36:40+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100756930054504776); may be cached |

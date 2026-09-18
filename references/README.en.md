@@ -59,3 +59,20 @@ The second pass on 2026-09-18 adds 5 cases and supplements 4 existing entries, f
 2026-09-18 06:12 UTC: 5 new cases and 1 existing entry supplemented, for 77 current cases. The permissions plugin moved from the inbox after its main post qualified. See the [third-pass update](../CHANGELOG.en.md).
 
 [Sydney Runkle: Building a Harness with Jev](https://x.com/sydneyrunkle/status/2100754364545761643) explains LangChain classification calls, model routing and tool-risk gating. The main-post snapshot was 855 likes (2026-09-18T06:09:05+00:00 (UTC), FxTwitter). The article and its quotes are one tutorial reference, not multiple applications or an independent performance benchmark.
+
+<a id="readme-times"></a>
+
+## README entry timestamps
+
+Each project has `readme_added_at` for its first addition to this repository’s README and `readme_updated_at` for its latest introduction, mechanism, evidence or bilingual-text edit. Both languages share the project timeline and display Beijing time (UTC+08:00), to the second. These values are separate from post publication and metric retrieval.
+
+The existing 77 entries were backfilled from Git content commits:
+
+| Commit time (Beijing) | Content |
+| --- | --- |
+| [2026-09-18 06:58:16 · 7bb2c99](https://github.com/JackZeng/Jev_apps/commit/7bb2c9996dd412a98fff99229c2f3e2403c439be) | First 67 projects added to README |
+| [2026-09-18 07:24:03 · 9f5db32](https://github.com/JackZeng/Jev_apps/commit/9f5db320122e196c38fe2e84f578e47baeab7fc5) | Bilingual introductions and plain-language mechanisms updated |
+| [2026-09-18 10:50:59 · f5eb3ab](https://github.com/JackZeng/Jev_apps/commit/f5eb3ab775f853ac3e0f1e8bc44258fcd57f3805) | Five additions and four supplemented cases |
+| [2026-09-18 14:17:58 · e2f80f9](https://github.com/JackZeng/Jev_apps/commit/e2f80f933bc7f74701af518440b720ec0b4ed70a) | Five additions and a Cua update |
+
+Backfills use the timestamps of commits containing the content, comparing each case’s shared and English editorial data. Category-only edits and generic formatting do not make every project in the group “newly updated.” Adding these timestamp fields also preserves existing content times. Future edits should record actual times under the [contribution workflow](../CONTRIBUTING.en.md); generation only renders the values and never replaces them with the current clock.

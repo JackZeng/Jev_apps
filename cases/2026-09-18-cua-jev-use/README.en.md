@@ -4,6 +4,8 @@
 
 > Give Jev a list of allowed browser actions, execute its choice, then check the result.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 14:17:58 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Like ordering from a menu, Jev selects only an action ID prepared by the application. Code checks it, executes it and independently verifies the form. The current preview does not operate arbitrary software from screenshots.
@@ -18,7 +20,7 @@ Like ordering from a menu, Jev selects only an action ID prepared by the applica
 | Platform / author | X / [@trycua](https://x.com/trycua) |
 | Main post | [Source post](https://x.com/trycua/status/2100649543079502213) |
 | Published (UTC) | 2026-09-17T18:14:13+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 14:17:58 |
 | Main-post likes snapshot | **1,162** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:22.751882+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100649543079502213); may be cached |

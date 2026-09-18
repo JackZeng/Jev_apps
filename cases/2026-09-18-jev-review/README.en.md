@@ -4,6 +4,8 @@
 
 > Score AI-written code and let the coding agent revise it using feedback.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 The loop resembles submitting work, receiving feedback and revising it. Jev scores criteria; the coding agent edits. A higher score does not guarantee a correct program.
@@ -18,7 +20,7 @@ The loop resembles submitting work, receiving feedback and revising it. Jev scor
 | Platform / author | X / [@niazmorshed_](https://x.com/niazmorshed_) |
 | Main post | [Source post](https://x.com/niazmorshed_/status/2100465662867218857) |
 | Published (UTC) | 2026-09-17T06:03:33+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **445** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:24.558848+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100465662867218857); may be cached |

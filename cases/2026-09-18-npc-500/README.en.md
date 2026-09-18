@@ -4,6 +4,8 @@
 
 > Run decisions for many virtual characters in one 3D world.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Send characters' questions to Jev and execute their choices in the simulation. An overall rate of 35 requests/second does not mean each of 500 characters updates 35 times/second.
@@ -18,7 +20,7 @@ Send characters' questions to Jev and execute their choices in the simulation. A
 | Platform / author | X / [@crislenta](https://x.com/crislenta) |
 | Main post | [Source post](https://x.com/crislenta/status/2100457614073327754) |
 | Published (UTC) | 2026-09-17T05:31:34+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **572** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.758741+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100457614073327754); may be cached |

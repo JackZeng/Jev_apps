@@ -4,6 +4,8 @@
 
 > Find useful skills for the current task in a large AI skill library.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Like choosing tools from a toolbox, Jev filters skills for the request and the agent uses them. Speed matters, but so does avoiding missed essential skills.
@@ -18,7 +20,7 @@ Like choosing tools from a toolbox, Jev filters skills for the request and the a
 | Platform / author | X / [@thekitze](https://x.com/thekitze) |
 | Main post | [Source post](https://x.com/thekitze/status/2100556122570792999) |
 | Published (UTC) | 2026-09-17T12:03:00+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **724** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:23.946379+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100556122570792999); may be cached |

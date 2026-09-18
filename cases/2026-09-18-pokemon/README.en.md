@@ -4,6 +4,8 @@
 
 > Let Jev play Pokémon over time and track progress and decision costs.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 The game supplies new states and code repeatedly asks Jev for choices. Earning a badge after thousands of decisions provides more progress context than a short highlight clip.
@@ -18,7 +20,7 @@ The game supplies new states and code repeatedly asks Jev for choices. Earning a
 | Platform / author | X / [@0xBOYD](https://x.com/0xBOYD) |
 | Main post | [Source post](https://x.com/0xBOYD/status/2100539883836018697) |
 | Published (UTC) | 2026-09-17T10:58:29+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **220** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.134254+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100539883836018697); may be cached |

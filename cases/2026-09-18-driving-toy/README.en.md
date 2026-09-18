@@ -4,6 +4,8 @@
 
 > A small driving simulation that the author calls “rebuilding FSD.”
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Code and Jev jointly control the simulated car. Driving in this environment is far from demonstrating safe real-road operation or reproducing Tesla FSD.
@@ -18,7 +20,7 @@ Code and Jev jointly control the simulated car. Driving in this environment is f
 | Platform / author | X / [@jpschroeder](https://x.com/jpschroeder) |
 | Main post | [Source post](https://x.com/jpschroeder/status/2100347770867458384) |
 | Published (UTC) | 2026-09-16T22:15:05+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **3,993** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.791819+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100347770867458384); may be cached |

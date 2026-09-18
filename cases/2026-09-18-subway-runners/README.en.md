@@ -4,6 +4,8 @@
 
 > Demonstrate Jev controlling multiple runner-style games at once.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Several game environments request decisions in parallel and execute them separately. The original client versus recreation is unspecified, so this is not evidence of general phone control.
@@ -18,7 +20,7 @@ Several game environments request decisions in parallel and execute them separat
 | Platform / author | X / [@_MaxBlade](https://x.com/_MaxBlade) |
 | Main post | [Source post](https://x.com/_MaxBlade/status/2100634359099232678) |
 | Published (UTC) | 2026-09-17T17:13:53+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **1,474** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.213323+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100634359099232678); may be cached |

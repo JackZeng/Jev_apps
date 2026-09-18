@@ -40,7 +40,9 @@
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
       "source_notes": "**代码来源补核（2026-09-18）**：[固定版本 README](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md) 说明操作与目标在同一请求里分别判断，程序仅执行匹配的目标；TYPE_TEXT 才用小型 LLM。文档的 7,073ms 计时从首次页面观测后开始，并披露 MVP 未覆盖的网页类型；不能解读为从打开浏览器到任意任务完成的统一耗时。",
-      "plain_explanation": "像给助手一张不断更新的按钮清单：程序先读网页，Jev 选下一步点哪里；需要输入城市名时，再请文字模型帮忙填写。"
+      "plain_explanation": "像给助手一张不断更新的按钮清单：程序先读网页，Jev 选下一步点哪里；需要输入城市名时，再请文字模型帮忙填写。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "stagehand",
@@ -76,7 +78,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "网页会向辅助技术提供按钮名称等信息。这个方案把这些信息整理给 Jev，让它选动作；Stagehand 负责真正点击，然后重新查看页面。"
+      "plain_explanation": "网页会向辅助技术提供按钮名称等信息。这个方案把这些信息整理给 Jev，让它选动作；Stagehand 负责真正点击，然后重新查看页面。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "cua-jev-use",
@@ -126,7 +130,9 @@
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
       "source_notes": "**代码来源补核（2026-09-18）**：[PR #3916](https://github.com/trycua/cua/pull/3916) 当前说明使用 DOM 与语义证据，Jev 在 Driver 外部选择动作；当前 CI 的 mock E2E 不是 live Jev 全平台认证。[原帖提到的 #3943](https://github.com/trycua/cua/pull/3943) 已缩小为未接入运行路径的感知基础设施草案，不能把它当成已可用的截图感知功能。以上为仓库作者说明，本库未运行。\n\n**第三轮补核（2026-09-18 06:12 UTC）：** [Teknium 的引用帖](https://x.com/Teknium/status/2100783833419505941)只表示计划未来几周测试，并未发布测试结果，合并到已有 Cua 条目。GitHub API 复查 #3916 仍 open、未合并，#3943 仍为 open draft、未合并；本次仅刷新 PR 状态，没有把未来测试计划当成已经支持的新集成。",
-      "plain_explanation": "像从菜单点菜：Jev 只能选程序事先列出的动作编号。程序检查编号后才操作，并另查表单是否填写成功；当前公开示例还不是“看截图操作任意软件”。"
+      "plain_explanation": "像从菜单点菜：Jev 只能选程序事先列出的动作编号。程序检查编号后才操作，并另查表单是否填写成功；当前公开示例还不是“看截图操作任意软件”。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T14:17:58+08:00"
     },
     {
       "slug": "coreml-ocr",
@@ -162,7 +168,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "本地识别程序负责“看屏幕”，把按钮上的文字列出来；Jev 负责从列表里做选择。图片留在本机，但识别出的文字仍会发给 Jev。"
+      "plain_explanation": "本地识别程序负责“看屏幕”，把按钮上的文字列出来；Jev 负责从列表里做选择。图片留在本机，但识别出的文字仍会发给 Jev。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "agent-desktop",
@@ -198,7 +206,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "像领队与操作员配合：文字模型保留前后文，获取桌面状态后交给 Jev 选目标。原帖没解释这些桌面信息具体怎样编码。"
+      "plain_explanation": "像领队与操作员配合：文字模型保留前后文，获取桌面状态后交给 Jev 选目标。原帖没解释这些桌面信息具体怎样编码。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "kernel-browser",
@@ -236,7 +246,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "作者把 Jev 接到 Kernel 浏览器服务中，形成“观察、选择、操作”的循环；页面如何变成模型输入、出错怎么恢复，原帖没有展开。"
+      "plain_explanation": "作者把 Jev 接到 Kernel 浏览器服务中，形成“观察、选择、操作”的循环；页面如何变成模型输入、出错怎么恢复，原帖没有展开。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "voice-browser",
@@ -294,7 +306,9 @@
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
       "plain_explanation": "先把声音转成文字，再让 Jev 判断指令对应哪个操作，最后由浏览器执行。Jev 在这里负责理解并选择动作，不负责听声音。",
-      "source_notes": "**教程补充：** [作者完整教程](https://x.com/moritzkremb/status/2100715237267660873)的 5:59 章节对应本条语音浏览器演示，按同作者、同用途合并为补充来源。教程同时涉及其他演示，不把整条教程再算一个应用。章节定位来自作者目录；本次未逐帧复核教程或运行代码。"
+      "source_notes": "**教程补充：** [作者完整教程](https://x.com/moritzkremb/status/2100715237267660873)的 5:59 章节对应本条语音浏览器演示，按同作者、同用途合并为补充来源。教程同时涉及其他演示，不把整条教程再算一个应用。章节定位来自作者目录；本次未逐帧复核教程或运行代码。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T10:50:59+08:00"
     },
     {
       "slug": "opencode-qa",
@@ -330,7 +344,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "操作应用与判断应用是否正确是两回事。演示把 Jev 接入 OpenCode 测试流程，但没有公开完整的“怎样算通过”规则。"
+      "plain_explanation": "操作应用与判断应用是否正确是两回事。演示把 Jev 接入 OpenCode 测试流程，但没有公开完整的“怎样算通过”规则。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "eve-router",
@@ -364,7 +380,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "像前台分配来电：给 Jev 请求和各模型的选择标准，它选一个，程序负责转交。选得是否合适，还要看后续任务结果。"
+      "plain_explanation": "像前台分配来电：给 Jev 请求和各模型的选择标准，它选一个，程序负责转交。选得是否合适，还要看后续任务结果。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "ephraim-router",
@@ -400,7 +418,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "Jev 像分诊台，只决定“交给谁”；真正写答案的是被选中的模型。演示把选择和转交两步连在了一起。"
+      "plain_explanation": "Jev 像分诊台，只决定“交给谁”；真正写答案的是被选中的模型。演示把选择和转交两步连在了一起。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "firstmate",
@@ -434,7 +454,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "像派工员同时决定“谁来做、用什么工具、花多少力气”。Jev 替换的是这段分配工作，真正执行任务的助手仍然存在。"
+      "plain_explanation": "像派工员同时决定“谁来做、用什么工具、花多少力气”。Jev 替换的是这段分配工作，真正执行任务的助手仍然存在。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "local-delegation",
@@ -491,7 +513,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "程序在分派任务前先问 Jev 应该交给谁，再按预设路径调用助手。这样能把“选择助手”和“完成任务”分开处理。"
+      "plain_explanation": "程序在分派任务前先问 Jev 应该交给谁，再按预设路径调用助手。这样能把“选择助手”和“完成任务”分开处理。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "skillbox",
@@ -525,7 +549,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "预览为旧版 Skillbox 介绍截图；Jev 集成由本条新帖陈述。",
-      "plain_explanation": "像在工具箱里挑工具：Jev 根据请求筛选技能，助手再拿这些技能完成工作。筛得快还不够，也要检查有没有漏掉关键技能。"
+      "plain_explanation": "像在工具箱里挑工具：Jev 根据请求筛选技能，助手再拿这些技能完成工作。筛得快还不够，也要检查有没有漏掉关键技能。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "coding-garden-assistant",
@@ -561,7 +587,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "它像一个工具调度台：Jev 选工具和参数，工具返回真实结果，界面再显示出来。有来源的回答仍可能因为选错工具而出错。"
+      "plain_explanation": "它像一个工具调度台：Jev 选工具和参数，工具返回真实结果，界面再显示出来。有来源的回答仍可能因为选错工具而出错。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "eve-tool-agent",
@@ -620,7 +648,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "原来的助手先思考再选工具，这个实验把其中的选择环节交给 Jev。工具本身和后续处理仍由原来的程序负责。"
+      "plain_explanation": "原来的助手先思考再选工具，这个实验把其中的选择环节交给 Jev。工具本身和后续处理仍由原来的程序负责。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "ai-cli",
@@ -654,7 +684,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "它像一个通用插座，把 Jev 包装成终端命令。它提供调用入口，并不会单靠这个入口自动完成复杂任务。"
+      "plain_explanation": "它像一个通用插座，把 Jev 包装成终端命令。它提供调用入口，并不会单靠这个入口自动完成复杂任务。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "jev-review",
@@ -690,7 +722,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "流程像交作业、拿评语、再修改：Jev 按不同标准评分，编码助手负责改代码。分数提高不一定代表程序真的没问题。"
+      "plain_explanation": "流程像交作业、拿评语、再修改：Jev 按不同标准评分，编码助手负责改代码。分数提高不一定代表程序真的没问题。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "typed-pr-review",
@@ -726,7 +760,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "把审查拆成 14 个具体问题，让 Jev 一次判断；程序再按结果给建议。关键问题拿不准时，不直接猜，而是转给人或更大模型。"
+      "plain_explanation": "把审查拆成 14 个具体问题，让 Jev 一次判断；程序再按结果给建议。关键问题拿不准时，不直接猜，而是转给人或更大模型。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "jev-rabbit",
@@ -760,7 +796,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "例如团队有难写成固定检查规则的约定，可以交给 Jev 判断是否符合。规则越清楚越容易检查；这个项目在原帖中仍处于开发阶段。"
+      "plain_explanation": "例如团队有难写成固定检查规则的约定，可以交给 Jev 判断是否符合。规则越清楚越容易检查；这个项目在原帖中仍处于开发阶段。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "codebase-classifier",
@@ -796,7 +834,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "它给代码结构做分类，类似给工程做一次“体检”。但什么算过度设计要结合项目需求，不能仅凭一个标签就直接重构。"
+      "plain_explanation": "它给代码结构做分类，类似给工程做一次“体检”。但什么算过度设计要结合项目需求，不能仅凭一个标签就直接重构。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "fx-safety",
@@ -830,7 +870,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "Jev 像执行前的检查员，给命令做安全分类。检查很快不等于没有漏报，最终能否执行仍需要明确规则。"
+      "plain_explanation": "Jev 像执行前的检查员，给命令做安全分类。检查很快不等于没有漏报，最终能否执行仍需要明确规则。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "jailbreak-screen",
@@ -864,7 +906,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "把可疑提示交给 Jev，判断是否像已知的绕过套路。它只是前置筛查，遇到没见过的写法仍可能漏掉。"
+      "plain_explanation": "把可疑提示交给 Jev，判断是否像已知的绕过套路。它只是前置筛查，遇到没见过的写法仍可能漏掉。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "upload-check",
@@ -900,7 +944,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "系统让 Jev 对资料做允许或不允许的判断。是否判断得对取决于给它的规则和信息；原帖没有公开完整的公司保密策略。"
+      "plain_explanation": "系统让 Jev 对资料做允许或不允许的判断。是否判断得对取决于给它的规则和信息；原帖没有公开完整的公司保密策略。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "papers",
@@ -938,7 +984,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "先让另一个模型把长论文写成摘要，再让 Jev 从 24 个主题里挑类别。相当于先做内容卡片，再给卡片贴标签。"
+      "plain_explanation": "先让另一个模型把长论文写成摘要，再让 Jev 从 24 个主题里挑类别。相当于先做内容卡片，再给卡片贴标签。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "duckdb",
@@ -972,7 +1020,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "DuckDB 是处理表格数据的工具，这个扩展把 Jev 接了进去。查询表格时就能得到分类结果，不必先手动搬到聊天窗口。"
+      "plain_explanation": "DuckDB 是处理表格数据的工具，这个扩展把 Jev 接了进去。查询表格时就能得到分类结果，不必先手动搬到聊天窗口。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "email-batch",
@@ -1008,7 +1058,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "程序逐封把邮件内容交给 Jev 选类别，再汇总展示。像自动贴标签，但标签是否准确仍需要人工抽查。"
+      "plain_explanation": "程序逐封把邮件内容交给 Jev 选类别，再汇总展示。像自动贴标签，但标签是否准确仍需要人工抽查。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "email-fraud",
@@ -1044,7 +1096,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "像两级检查：Jev 先分流，置信度不足的 31 封再交给 Kimi。最后的 96/100 是整套流程成绩，不是 Jev 单独的成绩。"
+      "plain_explanation": "像两级检查：Jev 先分流，置信度不足的 31 封再交给 Kimi。最后的 96/100 是整套流程成绩，不是 Jev 单独的成绩。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "bank-payee",
@@ -1078,7 +1132,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "流水里常混着地点、编号和店名，这个实验让 Jev 参与判断哪些信息该留下。原帖没公开具体怎样切出或生成最终名称。"
+      "plain_explanation": "流水里常混着地点、编号和店名，这个实验让 Jev 参与判断哪些信息该留下。原帖没公开具体怎样切出或生成最终名称。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "support-intent",
@@ -1112,7 +1168,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "把一条消息拆成两个清楚的是非问题，分别问 Jev。显示的百分比代表这次判断的倾向，不是整个客服系统的准确率。"
+      "plain_explanation": "把一条消息拆成两个清楚的是非问题，分别问 Jev。显示的百分比代表这次判断的倾向，不是整个客服系统的准确率。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "live-viral",
@@ -1148,7 +1206,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "停止输入半秒后，程序把草稿交给 Jev 做分类和评分，再更新界面。它更像即时写作反馈，还不能证明帖子一定会火。"
+      "plain_explanation": "停止输入半秒后，程序把草稿交给 Jev 做分类和评分，再更新界面。它更像即时写作反馈，还不能证明帖子一定会火。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "viral-classifier",
@@ -1204,7 +1264,9 @@
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
       "plain_explanation": "Jev 给帖子做分类，类似一个快速初筛员。作者没有公开完整的判分依据和测试过程，所以目前不能把它当成可靠的爆款预测器。",
-      "source_notes": "**同项目新增演示：** [作者更新](https://x.com/robj3d3/status/2100722975645598191)引用原主帖，称使用 207 位创作者的 9,481 篇帖子拟合、每篇回答 61 个问题，约 1 秒 / 0.0004 美元，并报告约三次选对两次。以上是作者报告；45 秒新视频已合并为补充媒体，不另计一个“SuperX 应用”。"
+      "source_notes": "**同项目新增演示：** [作者更新](https://x.com/robj3d3/status/2100722975645598191)引用原主帖，称使用 207 位创作者的 9,481 篇帖子拟合、每篇回答 61 个问题，约 1 秒 / 0.0004 美元，并报告约三次选对两次。以上是作者报告；45 秒新视频已合并为补充媒体，不另计一个“SuperX 应用”。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T10:50:59+08:00"
     },
     {
       "slug": "x-algorithm-sim",
@@ -1240,7 +1302,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "作者把 Jev 的判断和一组权重结合成评分。评分公式像一个简化模型；即使看起来像 X，也不等于复刻了真实推荐系统。"
+      "plain_explanation": "作者把 Jev 的判断和一组权重结合成评分。评分公式像一个简化模型；即使看起来像 X，也不等于复刻了真实推荐系统。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "bookmark-prediction",
@@ -1274,7 +1338,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "先把“会不会火”改成可检查的问题：它是否进入特定时间窗口的前 25%？再让 Jev 预测，并用历史数据比较结果。"
+      "plain_explanation": "先把“会不会火”改成可检查的问题：它是否进入特定时间窗口的前 25%？再让 Jev 预测，并用历史数据比较结果。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "post-analytics",
@@ -1310,7 +1376,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "Jev 给每条帖子贴上主题、语气等标签，程序再统计各标签的历史表现。它是在总结过去，不能证明换成这种写法就一定涨粉。"
+      "plain_explanation": "Jev 给每条帖子贴上主题、语气等标签，程序再统计各标签的历史表现。它是在总结过去，不能证明换成这种写法就一定涨粉。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "ad-analysis",
@@ -1346,7 +1414,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "像把广告做成可筛选的资料卡：Jev 分别判断不同要素，程序汇总。素材怎样采集和转成模型输入，原帖没有说明。"
+      "plain_explanation": "像把广告做成可筛选的资料卡：Jev 分别判断不同要素，程序汇总。素材怎样采集和转成模型输入，原帖没有说明。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "jevmeter",
@@ -1405,7 +1475,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "每句话都回答同样五个问题，再把结果画成指标。统一尺子便于比较，但没有查证外部事实，就不能据此判断一句话真假。"
+      "plain_explanation": "每句话都回答同样五个问题，再把结果画成指标。统一尺子便于比较，但没有查证外部事实，就不能据此判断一句话真假。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "x-filter",
@@ -1447,7 +1519,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "扩展把帖子和过滤要求交给 Jev 判断，符合条件就隐藏或折叠。它按意思筛选，不只是找某个关键词。"
+      "plain_explanation": "扩展把帖子和过滤要求交给 Jev 判断，符合条件就隐藏或折叠。它按意思筛选，不只是找某个关键词。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "unclutter",
@@ -1483,7 +1557,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "程序先找出可能要清理的页面元素，再请 Jev 判断。难点不只是认出广告，还要避免误删登录框等正常功能。"
+      "plain_explanation": "程序先找出可能要清理的页面元素，再请 Jev 判断。难点不只是认出广告，还要避免误删登录框等正常功能。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "context-compaction",
@@ -1569,7 +1645,9 @@
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
       "plain_explanation": "不是把所有历史重写成一篇摘要，而是先给工具记录评相关性，再选择保留哪些。省下空间的同时，也可能丢掉以后才需要的信息。",
-      "source_notes": "**2026-09-18 增量核对（同一项目，不新增案例）：**\n\n- [Alex 的使用报告](https://x.com/altryne/status/2100739055923425589)引用原帖及同一仓库，报告约 1 秒将接近 100 万 token 缩至约 8.6 万；这是另一位使用者的单次报告，不是本库复测。\n- [Theo 的质疑](https://x.com/theo/status/2100762304862384257)讨论上下文丢失、推理信息和缓存成本。它是评论者的分析，不能把其全部结论当成已验证事实。\n- 对照[固定版本 README](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/README.md)与 [state.ts](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/src/state.ts)：模型能看到经过裁剪的对话上下文，并非完全孤立地看每条调用；但工具输出正文确实被替换为状态/长度说明。不能把“看到整段对话”理解为“看到全部原始信息”。\n- 同版本文档明确说明 `demo/JevDemo` 是用预设记录制作的录屏动画，不调用 API。因此该动画本身不是实时推理测量；也不能仅凭此否定库中另有真实 API 调用实现。未运行插件。"
+      "source_notes": "**2026-09-18 增量核对（同一项目，不新增案例）：**\n\n- [Alex 的使用报告](https://x.com/altryne/status/2100739055923425589)引用原帖及同一仓库，报告约 1 秒将接近 100 万 token 缩至约 8.6 万；这是另一位使用者的单次报告，不是本库复测。\n- [Theo 的质疑](https://x.com/theo/status/2100762304862384257)讨论上下文丢失、推理信息和缓存成本。它是评论者的分析，不能把其全部结论当成已验证事实。\n- 对照[固定版本 README](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/README.md)与 [state.ts](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/src/state.ts)：模型能看到经过裁剪的对话上下文，并非完全孤立地看每条调用；但工具输出正文确实被替换为状态/长度说明。不能把“看到整段对话”理解为“看到全部原始信息”。\n- 同版本文档明确说明 `demo/JevDemo` 是用预设记录制作的录屏动画，不调用 API。因此该动画本身不是实时推理测量；也不能仅凭此否定库中另有真实 API 调用实现。未运行插件。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T10:50:59+08:00"
     },
     {
       "slug": "memory-retrieval",
@@ -1627,7 +1705,9 @@
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
       "plain_explanation": "先找到一批可能相关的记忆，再由 Jev 做第二轮筛选。像从搜索结果里挑重点；筛得太狠，也可能漏掉关键线索。",
-      "source_notes": "**教程补充：** [作者完整教程](https://x.com/moritzkremb/status/2100715237267660873)的 11:33 章节对应本条AI 记忆演示，按同作者、同用途合并为补充来源。教程同时涉及其他演示，不把整条教程再算一个应用。章节定位来自作者目录；本次未逐帧复核教程或运行代码。"
+      "source_notes": "**教程补充：** [作者完整教程](https://x.com/moritzkremb/status/2100715237267660873)的 11:33 章节对应本条AI 记忆演示，按同作者、同用途合并为补充来源。教程同时涉及其他演示，不把整条教程再算一个应用。章节定位来自作者目录；本次未逐帧复核教程或运行代码。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T10:50:59+08:00"
     },
     {
       "slug": "doom",
@@ -1663,7 +1743,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "程序负责连接游戏与模型，Jev 在循环中做选择。看到游戏画面不代表 Jev 直接看懂了像素；原帖没有完整说明它实际收到什么状态。"
+      "plain_explanation": "程序负责连接游戏与模型，Jev 在循环中做选择。看到游戏画面不代表 Jev 直接看懂了像素；原帖没有完整说明它实际收到什么状态。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "mario-faadhil",
@@ -1699,7 +1781,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "游戏适配程序把状态交给 Jev，再把选择变成游戏操作。具体状态格式未公开，因此不能只凭视频判断它是否像人一样“看屏幕玩”。"
+      "plain_explanation": "游戏适配程序把状态交给 Jev，再把选择变成游戏操作。具体状态格式未公开，因此不能只凭视频判断它是否像人一样“看屏幕玩”。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "mario-comparison",
@@ -1735,7 +1819,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "先把游戏情况变成结构化数据，两种模型都只能五选一。像参加同一份选择题，而不是让一个看画面、另一个读游戏内部数据。"
+      "plain_explanation": "先把游戏情况变成结构化数据，两种模型都只能五选一。像参加同一份选择题，而不是让一个看画面、另一个读游戏内部数据。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "mario-ppo",
@@ -1771,7 +1857,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "作者把已有 Jev 接入游戏，而 PPO 方案需要训练控制策略。这里比较的是搭建经历，不能直接推出哪个模型在相同条件下更强。"
+      "plain_explanation": "作者把已有 Jev 接入游戏，而 PPO 方案需要训练控制策略。这里比较的是搭建经历，不能直接推出哪个模型在相同条件下更强。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "pacman",
@@ -1807,7 +1895,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "像教练和球员分工：Astra 提供大方向，Jev 根据方向执行局部动作。两层配合的效果要一起看，不能只算 Jev 的速度。"
+      "plain_explanation": "像教练和球员分工：Astra 提供大方向，Jev 根据方向执行局部动作。两层配合的效果要一起看，不能只算 Jev 的速度。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "snake",
@@ -1843,7 +1933,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "程序反复执行“读状态、问方向、走一步”。这个小循环很容易理解，但每多走一步就多一次请求，长局的总费用也会增加。"
+      "plain_explanation": "程序反复执行“读状态、问方向、走一步”。这个小循环很容易理解，但每多走一步就多一次请求，长局的总费用也会增加。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "tetris",
@@ -1879,7 +1971,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "需要有程序把棋盘状态转给模型，再把选择变成操作。原帖没说明 Jev 是选最终落点，还是逐次选按键，这会影响比较结果。"
+      "plain_explanation": "需要有程序把棋盘状态转给模型，再把选择变成操作。原帖没说明 Jev 是选最终落点，还是逐次选按键，这会影响比较结果。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "pokemon",
@@ -1936,7 +2030,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "游戏不断反馈新情况，程序反复向 Jev 请求选择，累积推进剧情。几千步后取得徽章，比一小段精彩剪辑提供了更多进度信息。"
+      "plain_explanation": "游戏不断反馈新情况，程序反复向 Jev 请求选择，累积推进剧情。几千步后取得徽章，比一小段精彩剪辑提供了更多进度信息。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "slay-spire",
@@ -1972,7 +2068,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "卡牌游戏通常有一组当前合法的选择，程序可把它们交给模型挑选。原帖没公开接口细节，而且出牌快不一定代表更容易赢。"
+      "plain_explanation": "卡牌游戏通常有一组当前合法的选择，程序可把它们交给模型挑选。原帖没公开接口细节，而且出牌快不一定代表更容易赢。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "chess",
@@ -2009,7 +2107,9 @@
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
       "jev_version": "V13（作者原帖标注）",
-      "plain_explanation": "每一步都要请求模型，思考时间也从棋钟里扣。Jev 有一局靠对手超时获胜，但另一局被将死，说明“下得快”和“下得好”是两件事。"
+      "plain_explanation": "每一步都要请求模型，思考时间也从棋钟里扣。Jev 有一局靠对手超时获胜，但另一局被将死，说明“下得快”和“下得好”是两件事。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "subway-runners",
@@ -2045,7 +2145,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "多个游戏环境并行请求决策，再各自执行。原帖没有说清是不是原版客户端，所以它证明的是这个演示的控制效果，不是通用手机操作能力。"
+      "plain_explanation": "多个游戏环境并行请求决策，再各自执行。原帖没有说清是不是原版客户端，所以它证明的是这个演示的控制效果，不是通用手机操作能力。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "rubiks-cube",
@@ -2081,7 +2183,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "像先准备一本解法手册：Jev 负责认出眼下的情况，程序查对应公式并检查操作。因此完整解法来自模型与代码合作。"
+      "plain_explanation": "像先准备一本解法手册：Jev 负责认出眼下的情况，程序查对应公式并检查操作。因此完整解法来自模型与代码合作。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "mario-kart",
@@ -2117,7 +2221,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "程序必须把赛车状态转成模型能判断的信息，再把结果变成操控。原帖没交代状态接口、辅助驾驶逻辑或模拟速度，原理细节仍待补充。"
+      "plain_explanation": "程序必须把赛车状态转成模型能判断的信息，再把结果变成操控。原帖没交代状态接口、辅助驾驶逻辑或模拟速度，原理细节仍待补充。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "npc-needs",
@@ -2153,7 +2259,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "给 Jev 角色的需求和可用选项，它选一个，再由游戏执行。这里模型决定“做什么”，角色移动、动画和规则仍由游戏负责。"
+      "plain_explanation": "给 Jev 角色的需求和可用选项，它选一个，再由游戏执行。这里模型决定“做什么”，角色移动、动画和规则仍由游戏负责。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "npc-500",
@@ -2189,7 +2297,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "把不同角色的问题交给 Jev，再让仿真执行各自选择。整体每秒 35 次请求，并不表示 500 个角色各自每秒都更新 35 次。"
+      "plain_explanation": "把不同角色的问题交给 Jev，再让仿真执行各自选择。整体每秒 35 次请求，并不表示 500 个角色各自每秒都更新 35 次。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "driving-toy",
@@ -2225,7 +2335,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "画面中的车由程序和 Jev 协作控制。模拟道路上的演示与真实汽车安全驾驶差别很大，不能据此认定重做出了 Tesla FSD。"
+      "plain_explanation": "画面中的车由程序和 Jev 协作控制。模拟道路上的演示与真实汽车安全驾驶差别很大，不能据此认定重做出了 Tesla FSD。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "realtime-driving",
@@ -2261,7 +2373,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "如果每次等模型时都暂停游戏，就隐藏了延迟问题。这个实验让模拟器持续运行，旧状态可能在回答回来前就过时。"
+      "plain_explanation": "如果每次等模型时都暂停游戏，就隐藏了延迟问题。这个实验让模拟器持续运行，旧状态可能在回答回来前就过时。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "drone-sim",
@@ -2301,7 +2415,9 @@
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
       "source_notes": "**代码来源补核（2026-09-18）**：[固定版本 README](https://github.com/RomanSlack/jev-drone/blob/cbeb53ce4f17a06ea490ae43effcdad231143610/README.md) 明确使用 MuJoCo、符号化相机场景和分层控制，Jev 不直接接收图像；主场景中的安全代码可以否决模型动作。作者还披露单次结果、早期无优势对照及尚不可靠的隧道实验。此处是对文档的核对，不是本库复现。",
-      "plain_explanation": "像领航员与飞控分工：程序先把相机信息变成简洁状态，Jev 选绕行或爬升，速度更快的控制和安全程序随时约束动作。"
+      "plain_explanation": "像领航员与飞控分工：程序先把相机信息变成简洁状态，Jev 选绕行或爬升，速度更快的控制和安全程序随时约束动作。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "unstable-government",
@@ -2337,7 +2453,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "Claude 编写候选反应和场景，Jev 为每位居民做选择，仿真把结果演出来。它是互动故事，不是预测现实政策效果的工具。"
+      "plain_explanation": "Claude 编写候选反应和场景，Jev 为每位居民做选择，仿真把结果演出来。它是互动故事，不是预测现实政策效果的工具。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "synthetic-personas",
@@ -2373,7 +2491,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "先写好人物设定，再让 Jev 代入设定回答固定问题。它能模拟一种意见，但人物不是实际受访者，不能替代真实用户调研。"
+      "plain_explanation": "先写好人物设定，再让 Jev 代入设定回答固定问题。它能模拟一种意见，但人物不是实际受访者，不能替代真实用户调研。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "typegpu-realtime",
@@ -2409,7 +2529,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "本地模型先处理声音、物体和深度信息，Jev 再做语义判断，渲染程序改变效果。它像流水线里的决策一站，不包办感知和绘图。"
+      "plain_explanation": "本地模型先处理声音、物体和深度信息，Jev 再做语义判断，渲染程序改变效果。它像流水线里的决策一站，不包办感知和绘图。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "ask-jev",
@@ -2447,7 +2569,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "网页收集输入，把判断交给 Jev，再显示结果。它适合体验“选择式 AI”的交互，但不能把随便一个判断都当成正确知识。"
+      "plain_explanation": "网页收集输入，把判断交给 Jev，再显示结果。它适合体验“选择式 AI”的交互，但不能把随便一个判断都当成正确知识。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "word-chat",
@@ -2483,7 +2607,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "每次都让 Jev 从有限词表里选下一个词，程序把它接在末尾继续问。文字是循环拼出来的，表达也受词表限制。"
+      "plain_explanation": "每次都让 Jev 从有限词表里选下一个词，程序把它接在末尾继续问。文字是循环拼出来的，表达也受词表限制。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "character-chat",
@@ -2519,7 +2645,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "每轮问 29 个是非问题，比较哪个字符最合适，再追加到已有文本后。能拼出文字不代表这种办法比专门的文字模型更划算。"
+      "plain_explanation": "每轮问 29 个是非问题，比较哪个字符最合适，再追加到已有文本后。能拼出文字不代表这种办法比专门的文字模型更划算。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "pixel-drawing",
@@ -2555,7 +2683,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "可以把它理解为逐格决定画面，再由程序拼成图。作者称像素并行预测，但没公开颜色选项、分辨率和问题写法。"
+      "plain_explanation": "可以把它理解为逐格决定画面，再由程序拼成图。作者称像素并行预测，但没公开颜色选项、分辨率和问题写法。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "riscv",
@@ -2593,7 +2723,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "像用积木搭机器：底层先判断 AND、OR 等逻辑，SERV 实现再组合成指令。它是在展示组合原理，并不是高效做计算的新办法。"
+      "plain_explanation": "像用积木搭机器：底层先判断 AND、OR 等逻辑，SERV 实现再组合成指令。它是在展示组合原理，并不是高效做计算的新办法。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "trading-bot",
@@ -2631,7 +2763,9 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "模型只负责交易选择，程序负责连接区块链订单簿。下单快和交易赚钱没有必然联系，原帖没有给出完整收益与风险记录。"
+      "plain_explanation": "模型只负责交易选择，程序负责连接区块链订单簿。下单快和交易赚钱没有必然联系，原帖没有给出完整收益与风险记录。",
+      "readme_added_at": "2026-09-18T06:58:16+08:00",
+      "readme_updated_at": "2026-09-18T07:24:03+08:00"
     },
     {
       "slug": "predictive-launcher",
@@ -2667,7 +2801,9 @@
       "supplementary_posts": [],
       "links": [],
       "verification": "未复现",
-      "availability": "未知（未运行验证）"
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T10:50:59+08:00",
+      "readme_updated_at": "2026-09-18T10:50:59+08:00"
     },
     {
       "slug": "live-commerce-assistant",
@@ -2703,7 +2839,9 @@
       "supplementary_posts": [],
       "links": [],
       "verification": "未复现",
-      "availability": "未知（未运行验证）"
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T10:50:59+08:00",
+      "readme_updated_at": "2026-09-18T10:50:59+08:00"
     },
     {
       "slug": "minecraft-hybrid",
@@ -2771,7 +2909,9 @@
       ],
       "links": [],
       "verification": "未复现",
-      "availability": "未知（未运行验证）"
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T10:50:59+08:00",
+      "readme_updated_at": "2026-09-18T10:50:59+08:00"
     },
     {
       "slug": "emoji-suggestions",
@@ -2807,7 +2947,9 @@
       "supplementary_posts": [],
       "links": [],
       "verification": "未复现",
-      "availability": "未知（未运行验证）"
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T10:50:59+08:00",
+      "readme_updated_at": "2026-09-18T10:50:59+08:00"
     },
     {
       "slug": "voice-gesture-canvas",
@@ -2855,7 +2997,9 @@
       ],
       "links": [],
       "verification": "未复现",
-      "availability": "未知（未运行验证）"
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T10:50:59+08:00",
+      "readme_updated_at": "2026-09-18T10:50:59+08:00"
     },
     {
       "slug": "youtube-sponsor-skip",
@@ -2894,7 +3038,9 @@
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "source_notes": "**代码核对：** 阅读固定版本 [de01f05 的 README](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/README.md)与 [src/jev.js](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/src/jev.js)。文档按每小时区分三种模式的费用，并明确 Deepgram 按听到的分钟收费；没有将原帖的每视频报价视为总成本保证。未安装扩展或调用 API。"
+      "source_notes": "**代码核对：** 阅读固定版本 [de01f05 的 README](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/README.md)与 [src/jev.js](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/src/jev.js)。文档按每小时区分三种模式的费用，并明确 Deepgram 按听到的分钟收费；没有将原帖的每视频报价视为总成本保证。未安装扩展或调用 API。",
+      "readme_added_at": "2026-09-18T14:17:58+08:00",
+      "readme_updated_at": "2026-09-18T14:17:58+08:00"
     },
     {
       "slug": "predictive-spreadsheet",
@@ -2931,7 +3077,9 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "source_notes": "**去重判断：** 本帖引用了同作者的启动器实验，但新视频、输入对象和输出任务均不同：一个排序文件，一个为表格行评分。保留独立案例，归入数据分类；不把“同一作者”或“引用旧帖”自动等同于同一个应用。"
+      "source_notes": "**去重判断：** 本帖引用了同作者的启动器实验，但新视频、输入对象和输出任务均不同：一个排序文件，一个为表格行评分。保留独立案例，归入数据分类；不把“同一作者”或“引用旧帖”自动等同于同一个应用。",
+      "readme_added_at": "2026-09-18T14:17:58+08:00",
+      "readme_updated_at": "2026-09-18T14:17:58+08:00"
     },
     {
       "slug": "probably-language",
@@ -2968,7 +3116,9 @@
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "source_notes": "**官网补核：** [Probably 0.1](https://probably-lang.southpolesteve.workers.dev)写明托管 Worker 只回放内置案例的记录；自定义输入或代码没有缓存时会拒绝，不调用模型。解释器每次运行还有模型调用与循环次数限制。以上是产品文档说明，未运行本地解释器。"
+      "source_notes": "**官网补核：** [Probably 0.1](https://probably-lang.southpolesteve.workers.dev)写明托管 Worker 只回放内置案例的记录；自定义输入或代码没有缓存时会拒绝，不调用模型。解释器每次运行还有模型调用与循环次数限制。以上是产品文档说明，未运行本地解释器。",
+      "readme_added_at": "2026-09-18T14:17:58+08:00",
+      "readme_updated_at": "2026-09-18T14:17:58+08:00"
     },
     {
       "slug": "eslint-rule-judgments",
@@ -3014,7 +3164,9 @@
       ],
       "links": [],
       "verification": "未复现",
-      "availability": "未知（未运行验证）"
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-18T14:17:58+08:00",
+      "readme_updated_at": "2026-09-18T14:17:58+08:00"
     },
     {
       "slug": "opencode-intent-permissions",
@@ -3072,7 +3224,9 @@
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
-      "source_notes": "**从待整理区转入：** 上轮 2026-09-18 02:38:04 UTC 快照为 160 赞；本轮 06:07:34 UTC 为 235 赞，才满足正式门槛。[作者回复](https://x.com/OpeOginni/status/2100705405013754312)给出包地址；核对 [npm 元数据及 README](https://registry.npmjs.org/oc-auto-perms)，当时 latest 为 0.1.0。仅阅读文档，未安装插件。"
+      "source_notes": "**从待整理区转入：** 上轮 2026-09-18 02:38:04 UTC 快照为 160 赞；本轮 06:07:34 UTC 为 235 赞，才满足正式门槛。[作者回复](https://x.com/OpeOginni/status/2100705405013754312)给出包地址；核对 [npm 元数据及 README](https://registry.npmjs.org/oc-auto-perms)，当时 latest 为 0.1.0。仅阅读文档，未安装插件。",
+      "readme_added_at": "2026-09-18T14:17:58+08:00",
+      "readme_updated_at": "2026-09-18T14:17:58+08:00"
     }
   ],
   "groups": [

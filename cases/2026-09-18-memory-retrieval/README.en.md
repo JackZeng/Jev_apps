@@ -4,6 +4,8 @@
 
 > Filter an AI memory store so the next model sees relevant material.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 10:50:59 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Retrieve candidate memories, then use Jev for a second filter. It resembles picking useful search results; overly aggressive filtering can miss key evidence.
@@ -18,7 +20,7 @@ Retrieve candidate memories, then use Jev for a second filter. It resembles pick
 | Platform / author | X / [@moritzkremb](https://x.com/moritzkremb) |
 | Main post | [Source post](https://x.com/moritzkremb/status/2100566009312940457) |
 | Published (UTC) | 2026-09-17T12:42:17+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 10:50:59 |
 | Main-post likes snapshot | **335** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:27.020275+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100566009312940457); may be cached |

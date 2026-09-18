@@ -4,6 +4,8 @@
 
 > Choose which model should handle a request before sending it there.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Like a receptionist routing calls, Jev sees the request and selection criteria, chooses a model, and lets code forward the work. The final task result is needed to judge the choice.
@@ -18,7 +20,7 @@ Like a receptionist routing calls, Jev sees the request and selection criteria, 
 | Platform / author | X / [@eve](https://x.com/eve) |
 | Main post | [Source post](https://x.com/eve/status/2100430918762832180) |
 | Published (UTC) | 2026-09-17T03:45:29+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **821** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:32:51.243424+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100430918762832180); may be cached |

@@ -4,6 +4,8 @@
 
 > Use Jev to choose game actions repeatedly in a Doom demo.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Code connects the game and model while Jev makes choices in a loop. Seeing game footage does not mean Jev reads pixels; the post does not fully describe its input state.
@@ -18,7 +20,7 @@ Code connects the game and model while Jev makes choices in a loop. Seeing game 
 | Platform / author | X / [@CompleteSkeptic](https://x.com/CompleteSkeptic) |
 | Main post | [Source post](https://x.com/CompleteSkeptic/status/2099925687465570372) |
 | Published (UTC) | 2026-09-15T18:17:53+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **4,585** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:27.477992+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2099925687465570372); may be cached |

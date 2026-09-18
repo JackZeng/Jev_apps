@@ -4,6 +4,8 @@
 
 > Organize over a thousand AI papers so readers can browse them by topic.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Another model summarizes each paper, then Jev picks from 24 topics. Think of making an index card first and then labeling it.
@@ -18,7 +20,7 @@ Another model summarizes each paper, then Jev picks from 24 topics. Think of mak
 | Platform / author | X / [@nutlope](https://x.com/nutlope) |
 | Main post | [Source post](https://x.com/nutlope/status/2100426999546184123) |
 | Published (UTC) | 2026-09-17T03:29:55+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **1,684** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:32:51.161171+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100426999546184123); may be cached |

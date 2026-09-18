@@ -4,6 +4,8 @@
 
 > Let camera and microphone input influence lighting and visual effects.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Local models process speech, objects and depth; Jev makes semantic judgments; rendering code changes effects. Jev is one decision stage, not the whole perception/rendering pipeline.
@@ -18,7 +20,7 @@ Local models process speech, objects and depth; Jev makes semantic judgments; re
 | Platform / author | X / [@reczko_konrad](https://x.com/reczko_konrad) |
 | Main post | [Source post](https://x.com/reczko_konrad/status/2100646448324833512) |
 | Published (UTC) | 2026-09-17T18:01:56+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **251** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:29.437362+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100646448324833512); may be cached |

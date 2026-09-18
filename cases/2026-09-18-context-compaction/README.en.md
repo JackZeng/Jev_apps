@@ -4,6 +4,8 @@
 
 > Trim an AI assistant's work history to retain what matters now.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 10:50:59 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Rather than rewrite all history as a summary, score tool records for relevance and keep selected ones. This saves context but can omit information needed later.
@@ -18,7 +20,7 @@ Rather than rewrite all history as a summary, score tool records for relevance a
 | Platform / author | X / [@tamarajtran](https://x.com/tamarajtran) |
 | Main post | [Source post](https://x.com/tamarajtran/status/2100694549362553153) |
 | Published (UTC) | 2026-09-17T21:13:04+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 10:50:59 |
 | Main-post likes snapshot | **1,646** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.956952+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100694549362553153); may be cached |

@@ -2,6 +2,10 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-18 · README timestamps
+
+Added first-inclusion and latest-content-update times to all 77 bilingual introductions, indexes and detail pages, using Beijing time. Historical values come from Git content commits; regeneration does not advance them. No new cases or metric refreshes in this change. [Provenance](references/README.en.md#readme-times)
+
 ## 2026-09-18 · Third collection pass
 
 Source-review cutoff: **2026-09-18 06:12:09 UTC (14:12:09 Asia/Shanghai)**. The catalog grows from 72 to **77 cases across 11 categories**: 5 new cases and 1 existing entry supplemented. The second-pass record below remains historical evidence rather than being overwritten.

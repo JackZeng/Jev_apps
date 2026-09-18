@@ -4,6 +4,8 @@
 
 > Write judgments such as “is this email urgent?” into branches, then ask a text model to draft a reply.
 
+**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Put a judgment inside a program: Jev decides whether a condition holds or which branch fits, an interpreter coordinates the steps, and a separate model writes text.
@@ -18,7 +20,7 @@ Put a judgment inside a program: Jev decides whether a condition holds or which 
 | Platform / author | X / [@southpolesteve](https://x.com/southpolesteve) |
 | Main post | [Source post](https://x.com/southpolesteve/status/2100767781868150938) |
 | Published (UTC) | 2026-09-18T02:04:04+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 14:17:58 / 2026-09-18 14:17:58 |
 | Main-post likes snapshot | **894** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T06:08:49+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100767781868150938); may be cached |

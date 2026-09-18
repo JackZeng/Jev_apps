@@ -4,6 +4,8 @@
 
 > One model remembers the task while Jev helps choose desktop targets quickly.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Think of a coordinator and an operator: the language model keeps context and passes desktop information to Jev for target selection. The post does not explain the exact representation.
@@ -18,7 +20,7 @@ Think of a coordinator and an operator: the language model keeps context and pas
 | Platform / author | X / [@mdlahfir](https://x.com/mdlahfir) |
 | Main post | [Source post](https://x.com/mdlahfir/status/2100359236924637349) |
 | Published (UTC) | 2026-09-16T23:00:39+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **870** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:22.762217+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100359236924637349); may be cached |

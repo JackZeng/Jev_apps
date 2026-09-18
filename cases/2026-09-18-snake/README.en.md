@@ -4,6 +4,8 @@
 
 > Ask Jev for the next move at every step of Snake.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Repeat a simple loop: read the state, ask for a direction, move one step. Each extra move adds a request, so costs grow with game length.
@@ -18,7 +20,7 @@ Repeat a simple loop: read the state, ask for a direction, move one step. Each e
 | Platform / author | X / [@chenchengpro](https://x.com/chenchengpro) |
 | Main post | [Source post](https://x.com/chenchengpro/status/2100516953496670430) |
 | Published (UTC) | 2026-09-17T09:27:22+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **204** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:27.634923+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100516953496670430); may be cached |

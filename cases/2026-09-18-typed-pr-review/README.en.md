@@ -4,6 +4,8 @@
 
 > Screen code changes for risks such as exposed secrets or removed tests, and escalate uncertainty.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Split review into 14 specific questions and ask Jev in one call. Code combines the answers; uncertain critical findings go to a person or larger model.
@@ -18,7 +20,7 @@ Split review into 14 specific questions and ask Jev in one call. Code combines t
 | Platform / author | X / [@redp314](https://x.com/redp314) |
 | Main post | [Source post](https://x.com/redp314/status/2100585126652481915) |
 | Published (UTC) | 2026-09-17T13:58:15+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **1,927** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:24.549579+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100585126652481915); may be cached |

@@ -4,6 +4,8 @@
 
 > Ask fictional users about product interest to explore early ideas.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Define personas, then ask Jev fixed questions in their context. These are simulated opinions, not responses from real interview participants.
@@ -18,7 +20,7 @@ Define personas, then ask Jev fixed questions in their context. These are simula
 | Platform / author | X / [@ytiskw](https://x.com/ytiskw) |
 | Main post | [Source post](https://x.com/ytiskw/status/2100474943154827344) |
 | Published (UTC) | 2026-09-17T06:40:26+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **792** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:29.403444+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100474943154827344); may be cached |

@@ -4,6 +4,8 @@
 
 > Let Jev control Super Mario to demonstrate fast action selection.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 An adapter passes game state to Jev and converts its choice into an action. The state format is not published, so the video alone does not show human-like screen-based play.
@@ -18,7 +20,7 @@ An adapter passes game state to Jev and converts its choice into an action. The 
 | Platform / author | X / [@faadilhshaik](https://x.com/faadilhshaik) |
 | Main post | [Source post](https://x.com/faadilhshaik/status/2100086301894881578) |
 | Published (UTC) | 2026-09-16T04:56:06+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **2,686** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:27.518932+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100086301894881578); may be cached |

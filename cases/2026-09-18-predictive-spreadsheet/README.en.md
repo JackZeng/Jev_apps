@@ -4,6 +4,8 @@
 
 > Name a column “Urgency” and have the text in each row receive a corresponding rating.
 
+**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Ordinary formulas calculate numbers; this demo uses a column name to express a question. Jev judges each row’s urgency, and the app writes the result into the table.
@@ -18,7 +20,7 @@ Ordinary formulas calculate numbers; this demo uses a column name to express a q
 | Platform / author | X / [@dabit3](https://x.com/dabit3) |
 | Main post | [Source post](https://x.com/dabit3/status/2100780008193020049) |
 | Published (UTC) | 2026-09-18T02:52:39+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 14:17:58 / 2026-09-18 14:17:58 |
 | Main-post likes snapshot | **337** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T06:08:50+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100780008193020049); may be cached |

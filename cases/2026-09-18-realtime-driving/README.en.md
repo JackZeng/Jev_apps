@@ -4,6 +4,8 @@
 
 > Keep the car moving while Jev thinks to test real-time simulated driving.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Pausing the simulator for every model call hides latency. Here it keeps moving, so the observed state may already be outdated when an answer arrives.
@@ -18,7 +20,7 @@ Pausing the simulator for every model call hides latency. Here it keeps moving, 
 | Platform / author | X / [@SigGravitas](https://x.com/SigGravitas) |
 | Main post | [Source post](https://x.com/SigGravitas/status/2100325221932958134) |
 | Published (UTC) | 2026-09-16T20:45:29+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **270** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:29.336350+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100325221932958134); may be cached |

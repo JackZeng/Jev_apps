@@ -4,6 +4,8 @@
 
 > Give Jev and Qwen the same Mario information and compare action choices.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Convert the game state to structured data and give both models five choices. They take the same multiple-choice test rather than receiving different kinds of observations.
@@ -18,7 +20,7 @@ Convert the game state to structured data and give both models five choices. The
 | Platform / author | X / [@karaage0703](https://x.com/karaage0703) |
 | Main post | [Source post](https://x.com/karaage0703/status/2100569924238471355) |
 | Published (UTC) | 2026-09-17T12:57:51+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **284** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:27.523986+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100569924238471355); may be cached |

@@ -4,6 +4,8 @@
 
 > Combine many pixel-level judgments to experiment with drawing through Jev.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Think of deciding picture cells and assembling them in code. The author describes parallel pixel prediction but does not publish color choices, resolution or question construction.
@@ -18,7 +20,7 @@ Think of deciding picture cells and assembling them in code. The author describe
 | Platform / author | X / [@anshuc](https://x.com/anshuc) |
 | Main post | [Source post](https://x.com/anshuc/status/2100246929611411501) |
 | Published (UTC) | 2026-09-16T15:34:23+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **1,461** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:29.975468+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100246929611411501); may be cached |

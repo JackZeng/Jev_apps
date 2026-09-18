@@ -4,6 +4,8 @@
 
 > Detect spoken sponsor segments while watching YouTube and jump past them.
 
+**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Like marking up captions: Jev identifies sponsor lines, code maps their IDs to playback times, then seeks the player. Listening modes first use a separate speech service to turn audio into text.
@@ -18,7 +20,7 @@ Like marking up captions: Jev identifies sponsor lines, code maps their IDs to p
 | Platform / author | X / [@tdinh_me](https://x.com/tdinh_me) |
 | Main post | [Source post](https://x.com/tdinh_me/status/2100793777103466615) |
 | Published (UTC) | 2026-09-18T03:47:21+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 14:17:58 / 2026-09-18 14:17:58 |
 | Main-post likes snapshot | **238** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T06:08:49+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100793777103466615); may be cached |

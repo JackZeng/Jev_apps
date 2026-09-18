@@ -4,6 +4,8 @@
 
 > Ask for weather, information or to-do actions and let an assistant call the right tool.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Jev selects a tool and its arguments; the tool returns results and the interface displays them. Even sourced answers can be wrong if the wrong tool or arguments are chosen.
@@ -18,7 +20,7 @@ Jev selects a tool and its arguments; the tool returns results and the interface
 | Platform / author | X / [@CodingGarden](https://x.com/CodingGarden) |
 | Main post | [Source post](https://x.com/CodingGarden/status/2100665210419950031) |
 | Published (UTC) | 2026-09-17T19:16:29+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **334** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:23.899501+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100665210419950031); may be cached |

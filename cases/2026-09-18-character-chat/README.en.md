@@ -4,6 +4,8 @@
 
 > Let Jev choose one letter or punctuation mark at a time to build text.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Each round asks 29 yes/no questions, picks the strongest character and appends it. Producing text this way does not establish an advantage over a dedicated text model.
@@ -18,7 +20,7 @@ Each round asks 29 yes/no questions, picks the strongest character and appends i
 | Platform / author | X / [@ryanvogel](https://x.com/ryanvogel) |
 | Main post | [Source post](https://x.com/ryanvogel/status/2100218045549412499) |
 | Published (UTC) | 2026-09-16T13:39:36+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **866** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:29.946918+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100218045549412499); may be cached |

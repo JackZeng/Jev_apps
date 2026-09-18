@@ -4,6 +4,8 @@
 
 > Try to identify posts that may attract more attention.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 10:50:59 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Jev acts as a fast first-pass classifier. The author does not publish the full criteria or evaluation, so reliable virality prediction is not established.
@@ -18,7 +20,7 @@ Jev acts as a fast first-pass classifier. The author does not publish the full c
 | Platform / author | X / [@robj3d3](https://x.com/robj3d3) |
 | Main post | [Source post](https://x.com/robj3d3/status/2100631889585606959) |
 | Published (UTC) | 2026-09-17T17:04:04+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 10:50:59 |
 | Main-post likes snapshot | **387** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.294732+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100631889585606959); may be cached |

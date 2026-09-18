@@ -4,6 +4,8 @@
 
 > Suggest emoji that fit the meaning of text as it is entered.
 
+**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-18 10:50:59 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 The model selects from existing emoji rather than drawing new ones. The interface displays candidates and scores and asks again when the input changes. The exact question format is undisclosed.
@@ -18,7 +20,7 @@ The model selects from existing emoji rather than drawing new ones. The interfac
 | Platform / author | X / [@riku720720](https://x.com/riku720720) |
 | Main post | [Source post](https://x.com/riku720720/status/2100705558512963602) |
 | Published (UTC) | 2026-09-17T21:56:49+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 10:50:59 / 2026-09-18 10:50:59 |
 | Main-post likes snapshot | **230** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T02:39:18+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100705558512963602); may be cached |

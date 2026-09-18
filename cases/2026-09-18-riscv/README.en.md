@@ -4,6 +4,8 @@
 
 > Use Jev for simple logic decisions and compose them into small computer instructions.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Like building a machine from blocks, Jev supplies AND/OR-style decisions that SERV combines into instructions. This illustrates composition rather than efficient computation.
@@ -18,7 +20,7 @@ Like building a machine from blocks, Jev supplies AND/OR-style decisions that SE
 | Platform / author | X / [@i2cjak](https://x.com/i2cjak) |
 | Main post | [Source post](https://x.com/i2cjak/status/2100454307405365673) |
 | Published (UTC) | 2026-09-17T05:18:26+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **208** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:30.049692+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100454307405365673); may be cached |

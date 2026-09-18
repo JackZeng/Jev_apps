@@ -4,6 +4,8 @@
 
 > Sort a large batch of emails into categories instead of filing them one by one.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Code sends email contents to Jev for category choices and collects the results. It is automated labeling, whose accuracy still needs checking.
@@ -18,7 +20,7 @@ Code sends email contents to Jev for category choices and collects the results. 
 | Platform / author | X / [@rileybrown](https://x.com/rileybrown) |
 | Main post | [Source post](https://x.com/rileybrown/status/2100404532119269426) |
 | Published (UTC) | 2026-09-17T02:00:38+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **3,161** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:25.713874+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100404532119269426); may be cached |

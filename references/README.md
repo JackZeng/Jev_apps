@@ -59,3 +59,20 @@
 2026-09-18 14:12 北京时间：新增 5 个、补充 1 个，当前共 77 个案例。权限插件本轮原帖达标后从待整理区转入。详见 [第三轮更新记录](../CHANGELOG.md)。
 
 [Sydney Runkle：Building a Harness with Jev](https://x.com/sydneyrunkle/status/2100754364545761643)介绍 LangChain 中的分类调用、模型路由和工具风险门控；原帖本轮快照为 855 赞（2026-09-18T06:09:05+00:00 (UTC)，FxTwitter）。文章与转发按同一教程处理，作为原理参考，不拆成多个应用或当作独立性能评测。
+
+<a id="readme-times"></a>
+
+## README 条目时间
+
+每个项目记录两个时间：`readme_added_at` 是第一次加入本库 README 的时间，`readme_updated_at` 是最近一次修改该条简介、原理、来源证据或中英文文字的时间。中英文共享项目时间线，统一展示为北京时间（UTC+08:00），精确到秒；它们不是原帖发布日期，也不是点赞取数时间。
+
+现有 77 条根据 Git 内容提交记录回填：
+
+| 提交（北京时间） | 对应内容 |
+| --- | --- |
+| [2026-09-18 06:58:16 · 7bb2c99](https://github.com/JackZeng/Jev_apps/commit/7bb2c9996dd412a98fff99229c2f3e2403c439be) | 首批 67 条首次加入 README |
+| [2026-09-18 07:24:03 · 9f5db32](https://github.com/JackZeng/Jev_apps/commit/9f5db320122e196c38fe2e84f578e47baeab7fc5) | 双语介绍及通俗原理更新 |
+| [2026-09-18 10:50:59 · f5eb3ab](https://github.com/JackZeng/Jev_apps/commit/f5eb3ab775f853ac3e0f1e8bc44258fcd57f3805) | 新增 5 条，补充 4 条 |
+| [2026-09-18 14:17:58 · e2f80f9](https://github.com/JackZeng/Jev_apps/commit/e2f80f933bc7f74701af518440b720ec0b4ed70a) | 新增 5 条，补充 Cua 条目 |
+
+回填使用实际承载条目内容的提交时间，逐条比较中英文编辑数据；只修改分类说明或通用页面样式不会让该类所有项目都变成“刚更新”。本次补齐时间字段也不改变既有内容时间。后续编辑按 [贡献流程](../CONTRIBUTING.md) 记录实际时间，生成器只读取并展示，不会以运行时钟覆盖历史。

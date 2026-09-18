@@ -4,6 +4,8 @@
 
 > Split Minecraft play across models: long-term planning, quick reactions, and local movement and aiming.
 
+**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-18 10:50:59 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Like a captain, field coordinator and players sharing work: Astra plans, Jev reacts to immediate events, and local policies turn decisions into movement and aiming. The footage reflects the entire system.
@@ -18,7 +20,7 @@ Like a captain, field coordinator and players sharing work: Astra plans, Jev rea
 | Platform / author | X / [@wuyang_zhou](https://x.com/wuyang_zhou) |
 | Main post | [Source post](https://x.com/wuyang_zhou/status/2100727660875808913) |
 | Published (UTC) | 2026-09-17T23:24:38+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 10:50:59 / 2026-09-18 10:50:59 |
 | Main-post likes snapshot | **354** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T02:36:40+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100727660875808913); may be cached |

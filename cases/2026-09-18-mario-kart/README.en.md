@@ -4,6 +4,8 @@
 
 > Watch Jev control Mario Kart in a continuous-driving demo.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 An adapter must turn racing state into model inputs and choices into controls. State access, driving aids and simulation speed are not explained, leaving important implementation details unknown.
@@ -18,7 +20,7 @@ An adapter must turn racing state into model inputs and choices into controls. S
 | Platform / author | X / [@shreypandya](https://x.com/shreypandya) |
 | Main post | [Source post](https://x.com/shreypandya/status/2100606445758898287) |
 | Published (UTC) | 2026-09-17T15:22:58+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **204** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.713001+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100606445758898287); may be cached |

@@ -4,6 +4,8 @@
 
 > Screen emails for fraud quickly, then send uncertain cases to a larger model.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 It is a two-stage check: Jev screens first and Kimi reviews 31 low-confidence emails. The 96/100 result belongs to the combined pipeline, not Jev alone.
@@ -18,7 +20,7 @@ It is a two-stage check: Jev screens first and Kimi reviews 31 low-confidence em
 | Platform / author | X / [@nutlope](https://x.com/nutlope) |
 | Main post | [Source post](https://x.com/nutlope/status/2100614659690713543) |
 | Published (UTC) | 2026-09-17T15:55:37+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **542** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:25.698324+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100614659690713543); may be cached |

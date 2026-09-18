@@ -2,136 +2,136 @@
 
 **简体中文** | [English](README.en.md)
 
-全部条目未复现；点赞为各自主帖的取数快照。图文总览见 [首页](../README.md)。
+全部条目未复现；点赞为各自主帖的取数快照。收录与内容更新时间统一为北京时间（UTC+08:00）。图文总览见 [首页](../README.md)。
 
 ## 浏览器与电脑操作
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [Browser Use · Ultrafast](2026-09-18-browser-use/README.md) | 告诉它航班需求，它会自己在网页上点选、填写并查找结果。 | [6,891](https://x.com/gregpr07/status/2100411066966749359) |
-| [Stagehand 浏览器控制](2026-09-18-stagehand/README.md) | 让 Jev 决定网页上下一步怎么操作，再由 Stagehand 动手。 | [393](https://x.com/kylejeong/status/2100622054945095934) |
-| [Cua · jev-use](2026-09-18-cua-jev-use/README.md) | 给 Jev 一份允许执行的网页操作清单，让它选一个，再检查是否做对。 | [1,162](https://x.com/trycua/status/2100649543079502213) |
-| [CoreML + OCR 桌面点击](2026-09-18-coreml-ocr/README.md) | 先在 Mac 上认出按钮和文字，再让 Jev 选要点击的位置。 | [564](https://x.com/milindlabs/status/2100631847155994852) |
-| [OpenCode + agent-desktop](2026-09-18-agent-desktop/README.md) | 一个模型记住任务，Jev 帮它更快地选择桌面操作目标。 | [870](https://x.com/mdlahfir/status/2100359236924637349) |
-| [Kernel 浏览器演示](2026-09-18-kernel-browser/README.md) | 在网页里体验 Jev 帮忙操作浏览器。 | [235](https://x.com/stevekrouse/status/2100321685081559542) |
-| [语音控制浏览器](2026-09-18-voice-browser/README.md) | 说出指令，让浏览器替你点击，例如“返回上一页”。 | [1,829](https://x.com/moritzkremb/status/2100577979021832365) |
-| [OpenCode 应用测试](2026-09-18-opencode-qa/README.md) | 让编码助手自己操作应用，帮忙做开发后的检查。 | [1,133](https://x.com/Neriousy/status/2100287208166969746) |
+| [Browser Use · Ultrafast](2026-09-18-browser-use/README.md) | 告诉它航班需求，它会自己在网页上点选、填写并查找结果。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [6,891](https://x.com/gregpr07/status/2100411066966749359) |
+| [Stagehand 浏览器控制](2026-09-18-stagehand/README.md) | 让 Jev 决定网页上下一步怎么操作，再由 Stagehand 动手。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [393](https://x.com/kylejeong/status/2100622054945095934) |
+| [Cua · jev-use](2026-09-18-cua-jev-use/README.md) | 给 Jev 一份允许执行的网页操作清单，让它选一个，再检查是否做对。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 14:17:58 | [1,162](https://x.com/trycua/status/2100649543079502213) |
+| [CoreML + OCR 桌面点击](2026-09-18-coreml-ocr/README.md) | 先在 Mac 上认出按钮和文字，再让 Jev 选要点击的位置。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [564](https://x.com/milindlabs/status/2100631847155994852) |
+| [OpenCode + agent-desktop](2026-09-18-agent-desktop/README.md) | 一个模型记住任务，Jev 帮它更快地选择桌面操作目标。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [870](https://x.com/mdlahfir/status/2100359236924637349) |
+| [Kernel 浏览器演示](2026-09-18-kernel-browser/README.md) | 在网页里体验 Jev 帮忙操作浏览器。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [235](https://x.com/stevekrouse/status/2100321685081559542) |
+| [语音控制浏览器](2026-09-18-voice-browser/README.md) | 说出指令，让浏览器替你点击，例如“返回上一页”。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 10:50:59 | [1,829](https://x.com/moritzkremb/status/2100577979021832365) |
+| [OpenCode 应用测试](2026-09-18-opencode-qa/README.md) | 让编码助手自己操作应用，帮忙做开发后的检查。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,133](https://x.com/Neriousy/status/2100287208166969746) |
 
 ## 模型、技能与工具路由
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [Eve 条件式模型路由](2026-09-18-eve-router/README.md) | 先判断问题需要哪种模型，再把它交给合适的模型处理。 | [821](https://x.com/eve/status/2100430918762832180) |
-| [请求到模型路由器](2026-09-18-ephraim-router/README.md) | 自动为不同问题挑选回答模型，并直接发送请求。 | [1,503](https://x.com/ephraimduncan/status/2100454070536351824) |
-| [Firstmate 任务分派](2026-09-18-firstmate/README.md) | 按任务难度和用户偏好，挑选合适的 AI 助手及工作档位。 | [1,615](https://x.com/kunchenguid/status/2100468943853085061) |
-| [本地编码代理分工](2026-09-18-local-delegation/README.md) | 把简单活、复杂问题和长时间编程任务分给不同的 AI 助手。 | [777](https://x.com/mdlahfir/status/2100314182201802811) |
-| [Skillbox 技能选择](2026-09-18-skillbox/README.md) | 从一大堆 AI 技能中，快速找出当前任务可能用得上的几个。 | [724](https://x.com/thekitze/status/2100556122570792999) |
-| [Coding Garden 工具助手](2026-09-18-coding-garden-assistant/README.md) | 用一句话查天气、找资料或处理待办，让助手调用对应工具。 | [334](https://x.com/CodingGarden/status/2100665210419950031) |
-| [Eve 工具调用代理](2026-09-18-eve-tool-agent/README.md) | 让 Jev 接手“下一步用哪个工具”的判断，减少代理在选择上花的时间和费用。 | [1,117](https://x.com/oviniciuslana/status/2100457622407168509) |
-| [ai-cli 终端决策入口](2026-09-18-ai-cli/README.md) | 让终端里的 AI 助手也能调用 Jev 做判断、选择和评分。 | [874](https://x.com/ctatedev/status/2100584917092409479) |
+| [Eve 条件式模型路由](2026-09-18-eve-router/README.md) | 先判断问题需要哪种模型，再把它交给合适的模型处理。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [821](https://x.com/eve/status/2100430918762832180) |
+| [请求到模型路由器](2026-09-18-ephraim-router/README.md) | 自动为不同问题挑选回答模型，并直接发送请求。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,503](https://x.com/ephraimduncan/status/2100454070536351824) |
+| [Firstmate 任务分派](2026-09-18-firstmate/README.md) | 按任务难度和用户偏好，挑选合适的 AI 助手及工作档位。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,615](https://x.com/kunchenguid/status/2100468943853085061) |
+| [本地编码代理分工](2026-09-18-local-delegation/README.md) | 把简单活、复杂问题和长时间编程任务分给不同的 AI 助手。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [777](https://x.com/mdlahfir/status/2100314182201802811) |
+| [Skillbox 技能选择](2026-09-18-skillbox/README.md) | 从一大堆 AI 技能中，快速找出当前任务可能用得上的几个。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [724](https://x.com/thekitze/status/2100556122570792999) |
+| [Coding Garden 工具助手](2026-09-18-coding-garden-assistant/README.md) | 用一句话查天气、找资料或处理待办，让助手调用对应工具。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [334](https://x.com/CodingGarden/status/2100665210419950031) |
+| [Eve 工具调用代理](2026-09-18-eve-tool-agent/README.md) | 让 Jev 接手“下一步用哪个工具”的判断，减少代理在选择上花的时间和费用。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,117](https://x.com/oviniciuslana/status/2100457622407168509) |
+| [ai-cli 终端决策入口](2026-09-18-ai-cli/README.md) | 让终端里的 AI 助手也能调用 Jev 做判断、选择和评分。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [874](https://x.com/ctatedev/status/2100584917092409479) |
 
 ## 代码质量与安全检查
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [jev-review MCP](2026-09-18-jev-review/README.md) | 给 AI 写出的代码打分，让它根据反馈继续修改。 | [445](https://x.com/niazmorshed_/status/2100465662867218857) |
-| [14 项 PR 风险检查](2026-09-18-typed-pr-review/README.md) | 快速检查一批代码修改有没有泄密、删测试等风险，不确定时交给人复核。 | [1,927](https://x.com/redp314/status/2100585126652481915) |
-| [jev-rabbit 自然语言规则](2026-09-18-jev-rabbit/README.md) | 把团队的代码审查要求写成人话，让机器人按这些要求检查修改。 | [327](https://x.com/thekitze/status/2100616530275029139) |
-| [代码库复杂度分类器](2026-09-18-codebase-classifier/README.md) | 帮助发现代码是不是把简单事情做得过于复杂。 | [1,165](https://x.com/ryanvogel/status/2100068006592123055) |
-| [fx auto mode 命令安全分类](2026-09-18-fx-safety/README.md) | 在 AI 自动执行命令前，先判断这条命令可能有多危险。 | [591](https://x.com/fazxes/status/2100300097695232164) |
-| [越狱提示预筛](2026-09-18-jailbreak-screen/README.md) | 先筛查输入里是否有试图绕过 AI 规则的内容。 | [264](https://x.com/mayfer/status/2100343452865265747) |
-| [资料上传判断器](2026-09-18-upload-check/README.md) | 上传资料前先问一句：这份内容适合传出去吗？ | [284](https://x.com/iwasakoya/status/2100471523358474709) |
-| [按 ESLint 规则说明判断代码](2026-09-18-eslint-rule-judgments/README.md) | 只给规则的文字说明，让 Jev 判断小段代码是否符合规则。 | [351](https://x.com/mizchi/status/2100765201385869434) |
-| [OpenCode · 意图感知权限插件](2026-09-18-opencode-intent-permissions/README.md) | 用“只访问 Google”等自然语言规则，检查代理换着工具发起的操作。 | [235](https://x.com/OpeOginni/status/2100702649834188855) |
+| [jev-review MCP](2026-09-18-jev-review/README.md) | 给 AI 写出的代码打分，让它根据反馈继续修改。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [445](https://x.com/niazmorshed_/status/2100465662867218857) |
+| [14 项 PR 风险检查](2026-09-18-typed-pr-review/README.md) | 快速检查一批代码修改有没有泄密、删测试等风险，不确定时交给人复核。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,927](https://x.com/redp314/status/2100585126652481915) |
+| [jev-rabbit 自然语言规则](2026-09-18-jev-rabbit/README.md) | 把团队的代码审查要求写成人话，让机器人按这些要求检查修改。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [327](https://x.com/thekitze/status/2100616530275029139) |
+| [代码库复杂度分类器](2026-09-18-codebase-classifier/README.md) | 帮助发现代码是不是把简单事情做得过于复杂。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,165](https://x.com/ryanvogel/status/2100068006592123055) |
+| [fx auto mode 命令安全分类](2026-09-18-fx-safety/README.md) | 在 AI 自动执行命令前，先判断这条命令可能有多危险。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [591](https://x.com/fazxes/status/2100300097695232164) |
+| [越狱提示预筛](2026-09-18-jailbreak-screen/README.md) | 先筛查输入里是否有试图绕过 AI 规则的内容。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [264](https://x.com/mayfer/status/2100343452865265747) |
+| [资料上传判断器](2026-09-18-upload-check/README.md) | 上传资料前先问一句：这份内容适合传出去吗？<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [284](https://x.com/iwasakoya/status/2100471523358474709) |
+| [按 ESLint 规则说明判断代码](2026-09-18-eslint-rule-judgments/README.md) | 只给规则的文字说明，让 Jev 判断小段代码是否符合规则。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [351](https://x.com/mizchi/status/2100765201385869434) |
+| [OpenCode · 意图感知权限插件](2026-09-18-opencode-intent-permissions/README.md) | 用“只访问 Google”等自然语言规则，检查代理换着工具发起的操作。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [235](https://x.com/OpeOginni/status/2100702649834188855) |
 
 ## 数据分类与信息整理
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [1kpapers 论文分类](2026-09-18-papers/README.md) | 把一千多篇 AI 论文分门别类，方便按主题浏览。 | [1,684](https://x.com/nutlope/status/2100426999546184123) |
-| [DuckDB 语义分类扩展](2026-09-18-duckdb/README.md) | 在分析表格时，顺手让 Jev 给每行文字分个类。 | [1,310](https://x.com/hamiltonulmer/status/2100370557405667768) |
-| [500 封邮件分类](2026-09-18-email-batch/README.md) | 把一大批邮件快速分到不同类别，减少逐封整理。 | [3,161](https://x.com/rileybrown/status/2100404532119269426) |
-| [Jev + Kimi 邮件反欺诈](2026-09-18-email-fraud/README.md) | 先快速筛查诈骗邮件，再把拿不准的交给更大的模型复核。 | [542](https://x.com/nutlope/status/2100614659690713543) |
-| [银行流水收款方整理](2026-09-18-bank-payee/README.md) | 把银行流水里杂乱的交易说明，整理成更容易认出的商户名。 | [633](https://x.com/jlongster/status/2100179852053639236) |
-| [日语客服升级意图](2026-09-18-support-intent/README.md) | 从日语客服消息里判断：用户是不是想找人工、是不是已经问过多次。 | [351](https://x.com/ku_suke/status/2100392430805856469) |
-| [按列名意图评分的电子表格](2026-09-18-predictive-spreadsheet/README.md) | 给一列起名“紧急程度”，让每行文字自动获得相应评级。 | [337](https://x.com/dabit3/status/2100780008193020049) |
+| [1kpapers 论文分类](2026-09-18-papers/README.md) | 把一千多篇 AI 论文分门别类，方便按主题浏览。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,684](https://x.com/nutlope/status/2100426999546184123) |
+| [DuckDB 语义分类扩展](2026-09-18-duckdb/README.md) | 在分析表格时，顺手让 Jev 给每行文字分个类。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,310](https://x.com/hamiltonulmer/status/2100370557405667768) |
+| [500 封邮件分类](2026-09-18-email-batch/README.md) | 把一大批邮件快速分到不同类别，减少逐封整理。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [3,161](https://x.com/rileybrown/status/2100404532119269426) |
+| [Jev + Kimi 邮件反欺诈](2026-09-18-email-fraud/README.md) | 先快速筛查诈骗邮件，再把拿不准的交给更大的模型复核。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [542](https://x.com/nutlope/status/2100614659690713543) |
+| [银行流水收款方整理](2026-09-18-bank-payee/README.md) | 把银行流水里杂乱的交易说明，整理成更容易认出的商户名。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [633](https://x.com/jlongster/status/2100179852053639236) |
+| [日语客服升级意图](2026-09-18-support-intent/README.md) | 从日语客服消息里判断：用户是不是想找人工、是不是已经问过多次。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [351](https://x.com/ku_suke/status/2100392430805856469) |
+| [按列名意图评分的电子表格](2026-09-18-predictive-spreadsheet/README.md) | 给一列起名“紧急程度”，让每行文字自动获得相应评级。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [337](https://x.com/dabit3/status/2100780008193020049) |
 
 ## 内容与广告分析
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [实时帖子潜力分析器](2026-09-18-live-viral/README.md) | 写帖子时边写边看反馈，了解内容类型和可能的传播潜力。 | [830](https://x.com/rileybrown/status/2100425868053008758) |
-| [帖子传播分类器](2026-09-18-viral-classifier/README.md) | 尝试从帖子里挑出更可能引起关注的内容。 | [387](https://x.com/robj3d3/status/2100631889585606959) |
-| [X 传播评分模拟器](2026-09-18-x-algorithm-sim/README.md) | 给帖子做传播效果模拟，看看不同写法可能得到什么评分。 | [877](https://x.com/leojrr/status/2100470174130250127) |
-| [收藏率分位预测实验](2026-09-18-bookmark-prediction/README.md) | 预测一条帖子的收藏量，能不能排进附近日期帖子的前四分之一。 | [287](https://x.com/AM09_21/status/2100430480642642395) |
-| [3,282 条历史帖子分析](2026-09-18-post-analytics/README.md) | 回看自己的几千条帖子，找出哪些主题和写法过去更受欢迎。 | [262](https://x.com/iannuttall/status/2100668908227162567) |
-| [StealAds 广告拆解预览](2026-09-18-ad-analysis/README.md) | 把大量广告拆成开场卖点、优惠和引导动作，方便找创作思路。 | [1,678](https://x.com/TheMattBerman/status/2100654891756589230) |
-| [JevMeter 言论指标仪表](2026-09-18-jevmeter/README.md) | 给辩论或访谈逐句打指标，观察说话方式和内容特征。 | [1,017](https://x.com/chetaslua/status/2100473581251748216) |
+| [实时帖子潜力分析器](2026-09-18-live-viral/README.md) | 写帖子时边写边看反馈，了解内容类型和可能的传播潜力。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [830](https://x.com/rileybrown/status/2100425868053008758) |
+| [帖子传播分类器](2026-09-18-viral-classifier/README.md) | 尝试从帖子里挑出更可能引起关注的内容。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 10:50:59 | [387](https://x.com/robj3d3/status/2100631889585606959) |
+| [X 传播评分模拟器](2026-09-18-x-algorithm-sim/README.md) | 给帖子做传播效果模拟，看看不同写法可能得到什么评分。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [877](https://x.com/leojrr/status/2100470174130250127) |
+| [收藏率分位预测实验](2026-09-18-bookmark-prediction/README.md) | 预测一条帖子的收藏量，能不能排进附近日期帖子的前四分之一。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [287](https://x.com/AM09_21/status/2100430480642642395) |
+| [3,282 条历史帖子分析](2026-09-18-post-analytics/README.md) | 回看自己的几千条帖子，找出哪些主题和写法过去更受欢迎。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [262](https://x.com/iannuttall/status/2100668908227162567) |
+| [StealAds 广告拆解预览](2026-09-18-ad-analysis/README.md) | 把大量广告拆成开场卖点、优惠和引导动作，方便找创作思路。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,678](https://x.com/TheMattBerman/status/2100654891756589230) |
+| [JevMeter 言论指标仪表](2026-09-18-jevmeter/README.md) | 给辩论或访谈逐句打指标，观察说话方式和内容特征。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,017](https://x.com/chetaslua/status/2100473581251748216) |
 
 ## 网页与信息流过滤
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [自然语言 X 内容过滤器](2026-09-18-x-filter/README.md) | 用自己的话告诉浏览器：哪些 X 帖子我不想看。 | [950](https://x.com/marcelpociot/status/2100520134481735729) |
-| [Unclutter 页面清理](2026-09-18-unclutter/README.md) | 帮网页清掉广告、促销弹窗等干扰，让正文更容易看。 | [497](https://x.com/thekitze/status/2100595129874817340) |
-| [YouTube 赞助片段跳过](2026-09-18-youtube-sponsor-skip/README.md) | 观看 YouTube 时识别口播赞助片段，自动跳到后面的内容。 | [238](https://x.com/tdinh_me/status/2100793777103466615) |
+| [自然语言 X 内容过滤器](2026-09-18-x-filter/README.md) | 用自己的话告诉浏览器：哪些 X 帖子我不想看。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [950](https://x.com/marcelpociot/status/2100520134481735729) |
+| [Unclutter 页面清理](2026-09-18-unclutter/README.md) | 帮网页清掉广告、促销弹窗等干扰，让正文更容易看。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [497](https://x.com/thekitze/status/2100595129874817340) |
+| [YouTube 赞助片段跳过](2026-09-18-youtube-sponsor-skip/README.md) | 观看 YouTube 时识别口播赞助片段，自动跳到后面的内容。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [238](https://x.com/tdinh_me/status/2100793777103466615) |
 
 ## 上下文与记忆筛选
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [工具调用上下文压缩](2026-09-18-context-compaction/README.md) | 给 AI 助手的工作记录瘦身，只把眼下有用的内容继续带着。 | [1,646](https://x.com/tamarajtran/status/2100694549362553153) |
-| [记忆系统检索筛选](2026-09-18-memory-retrieval/README.md) | 从 AI 记忆库里筛出真正相关的内容，减少翻找和阅读负担。 | [335](https://x.com/moritzkremb/status/2100566009312940457) |
+| [工具调用上下文压缩](2026-09-18-context-compaction/README.md) | 给 AI 助手的工作记录瘦身，只把眼下有用的内容继续带着。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 10:50:59 | [1,646](https://x.com/tamarajtran/status/2100694549362553153) |
+| [记忆系统检索筛选](2026-09-18-memory-retrieval/README.md) | 从 AI 记忆库里筛出真正相关的内容，减少翻找和阅读负担。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 10:50:59 | [335](https://x.com/moritzkremb/status/2100566009312940457) |
 
 ## 游戏决策与求解
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [官方 Doom 演示](2026-09-18-doom/README.md) | 让 Jev 持续选择游戏动作，演示快速决策如何接入 Doom。 | [4,585](https://x.com/CompleteSkeptic/status/2099925687465570372) |
-| [Super Mario · @faadilhshaik](2026-09-18-mario-faadhil/README.md) | 让 Jev 操作超级马里奥，展示快速选择动作的效果。 | [2,686](https://x.com/faadilhshaik/status/2100086301894881578) |
-| [Super Mario · Jev / Qwen 对照](2026-09-18-mario-comparison/README.md) | 给 Jev 和 Qwen 相同的马里奥信息，比较它们怎样选动作。 | [284](https://x.com/karaage0703/status/2100569924238471355) |
-| [Super Mario · 1-1 关卡](2026-09-18-mario-ppo/README.md) | 展示用 Jev 接入马里奥第一关，与作者之前训练游戏 AI 的经历对照。 | [248](https://x.com/shantanugoel/status/2100455295801827769) |
-| [Astra + Jev 吃豆人](2026-09-18-pacman/README.md) | 一个模型想策略，Jev 负责快速走下一步，合力玩吃豆人。 | [860](https://x.com/daniel_mac8/status/2100335929273524541) |
-| [贪吃蛇逐步决策](2026-09-18-snake/README.md) | 贪吃蛇每走一步，都先问 Jev 下一步怎么走。 | [204](https://x.com/chenchengpro/status/2100516953496670430) |
-| [俄罗斯方块](2026-09-18-tetris/README.md) | 让 Jev 决定俄罗斯方块的操作，观察它怎样安排落块。 | [956](https://x.com/marcus_lowe/status/2100315518930661861) |
-| [Jev Plays Pokémon](2026-09-18-pokemon/README.md) | 让 Jev 长时间玩宝可梦，并记录打到哪里、用了多少次决策。 | [220](https://x.com/0xBOYD/status/2100539883836018697) |
-| [杀戮尖塔 2 代打](2026-09-18-slay-spire/README.md) | 让 Jev 代选卡牌游戏中的行动，减少等模型思考的时间。 | [598](https://x.com/coolish/status/2100570517954838897) |
-| [5+0 国际象棋对局](2026-09-18-chess/README.md) | 让几个模型下限时国际象棋，同时比较下棋水平与思考速度。 | [1,985](https://x.com/aimlapi/status/2100372930282573876) |
-| [Subway Surfers 并行演示](2026-09-18-subway-runners/README.md) | 展示 Jev 同时控制多局跑酷游戏的效果。 | [1,474](https://x.com/_MaxBlade/status/2100634359099232678) |
-| [魔方分阶段解法](2026-09-18-rubiks-cube/README.md) | 程序会魔方公式，Jev 帮它判断当前该用哪一种。 | [494](https://x.com/redp314/status/2100489858951073858) |
-| [Mario Kart 64](2026-09-18-mario-kart/README.md) | 展示 Jev 玩马里奥赛车，观察连续驾驶时的反应。 | [204](https://x.com/shreypandya/status/2100606445758898287) |
-| [Minecraft · Jev、Astra 与本地策略](2026-09-18-minecraft-hybrid/README.md) | 让不同模型分工玩 Minecraft：一个管长远计划，一个应急，本地模型负责走路和瞄准。 | [354](https://x.com/wuyang_zhou/status/2100727660875808913) |
+| [官方 Doom 演示](2026-09-18-doom/README.md) | 让 Jev 持续选择游戏动作，演示快速决策如何接入 Doom。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [4,585](https://x.com/CompleteSkeptic/status/2099925687465570372) |
+| [Super Mario · @faadilhshaik](2026-09-18-mario-faadhil/README.md) | 让 Jev 操作超级马里奥，展示快速选择动作的效果。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [2,686](https://x.com/faadilhshaik/status/2100086301894881578) |
+| [Super Mario · Jev / Qwen 对照](2026-09-18-mario-comparison/README.md) | 给 Jev 和 Qwen 相同的马里奥信息，比较它们怎样选动作。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [284](https://x.com/karaage0703/status/2100569924238471355) |
+| [Super Mario · 1-1 关卡](2026-09-18-mario-ppo/README.md) | 展示用 Jev 接入马里奥第一关，与作者之前训练游戏 AI 的经历对照。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [248](https://x.com/shantanugoel/status/2100455295801827769) |
+| [Astra + Jev 吃豆人](2026-09-18-pacman/README.md) | 一个模型想策略，Jev 负责快速走下一步，合力玩吃豆人。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [860](https://x.com/daniel_mac8/status/2100335929273524541) |
+| [贪吃蛇逐步决策](2026-09-18-snake/README.md) | 贪吃蛇每走一步，都先问 Jev 下一步怎么走。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [204](https://x.com/chenchengpro/status/2100516953496670430) |
+| [俄罗斯方块](2026-09-18-tetris/README.md) | 让 Jev 决定俄罗斯方块的操作，观察它怎样安排落块。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [956](https://x.com/marcus_lowe/status/2100315518930661861) |
+| [Jev Plays Pokémon](2026-09-18-pokemon/README.md) | 让 Jev 长时间玩宝可梦，并记录打到哪里、用了多少次决策。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [220](https://x.com/0xBOYD/status/2100539883836018697) |
+| [杀戮尖塔 2 代打](2026-09-18-slay-spire/README.md) | 让 Jev 代选卡牌游戏中的行动，减少等模型思考的时间。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [598](https://x.com/coolish/status/2100570517954838897) |
+| [5+0 国际象棋对局](2026-09-18-chess/README.md) | 让几个模型下限时国际象棋，同时比较下棋水平与思考速度。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,985](https://x.com/aimlapi/status/2100372930282573876) |
+| [Subway Surfers 并行演示](2026-09-18-subway-runners/README.md) | 展示 Jev 同时控制多局跑酷游戏的效果。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,474](https://x.com/_MaxBlade/status/2100634359099232678) |
+| [魔方分阶段解法](2026-09-18-rubiks-cube/README.md) | 程序会魔方公式，Jev 帮它判断当前该用哪一种。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [494](https://x.com/redp314/status/2100489858951073858) |
+| [Mario Kart 64](2026-09-18-mario-kart/README.md) | 展示 Jev 玩马里奥赛车，观察连续驾驶时的反应。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [204](https://x.com/shreypandya/status/2100606445758898287) |
+| [Minecraft · Jev、Astra 与本地策略](2026-09-18-minecraft-hybrid/README.md) | 让不同模型分工玩 Minecraft：一个管长远计划，一个应急，本地模型负责走路和瞄准。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [354](https://x.com/wuyang_zhou/status/2100727660875808913) |
 
 ## NPC、驾驶与群体模拟
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [按需求行动的 NPC](2026-09-18-npc-needs/README.md) | 让游戏角色根据自己的需求，挑选环境中合适的物品或活动。 | [201](https://x.com/m_iraji/status/2100394212743159944) |
-| [500 个 3D agents](2026-09-18-npc-500/README.md) | 在同一个 3D 世界里，让很多虚拟角色并行做决定。 | [572](https://x.com/crislenta/status/2100457614073327754) |
-| [“FSD”驾驶模拟演示](2026-09-18-driving-toy/README.md) | 一个让 Jev 参与开车的模拟小实验，作者把它称作“重建 FSD”。 | [3,993](https://x.com/jpschroeder/status/2100347770867458384) |
-| [不暂停的实时驾驶模拟](2026-09-18-realtime-driving/README.md) | 模型思考时车也不停，测试 Jev 能否跟上模拟驾驶的节奏。 | [270](https://x.com/SigGravitas/status/2100325221932958134) |
-| [Jev 无人机仿真](2026-09-18-drone-sim/README.md) | 在模拟器里让无人机过障碍，Jev 选路线策略，代码负责稳住飞机。 | [330](https://x.com/RomanSlack1/status/2100335978229690683) |
-| [Unstable Government 小镇](2026-09-18-unstable-government/README.md) | 给虚构小镇颁布一条法规，看看居民怎样反应并生成一份报纸。 | [395](https://x.com/threepointone/status/2100576921629163848) |
-| [150 位虚构用户意向](2026-09-18-synthetic-personas/README.md) | 让一群虚构用户回答产品意向问题，帮助整理早期想法。 | [792](https://x.com/ytiskw/status/2100474943154827344) |
+| [按需求行动的 NPC](2026-09-18-npc-needs/README.md) | 让游戏角色根据自己的需求，挑选环境中合适的物品或活动。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [201](https://x.com/m_iraji/status/2100394212743159944) |
+| [500 个 3D agents](2026-09-18-npc-500/README.md) | 在同一个 3D 世界里，让很多虚拟角色并行做决定。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [572](https://x.com/crislenta/status/2100457614073327754) |
+| [“FSD”驾驶模拟演示](2026-09-18-driving-toy/README.md) | 一个让 Jev 参与开车的模拟小实验，作者把它称作“重建 FSD”。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [3,993](https://x.com/jpschroeder/status/2100347770867458384) |
+| [不暂停的实时驾驶模拟](2026-09-18-realtime-driving/README.md) | 模型思考时车也不停，测试 Jev 能否跟上模拟驾驶的节奏。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [270](https://x.com/SigGravitas/status/2100325221932958134) |
+| [Jev 无人机仿真](2026-09-18-drone-sim/README.md) | 在模拟器里让无人机过障碍，Jev 选路线策略，代码负责稳住飞机。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [330](https://x.com/RomanSlack1/status/2100335978229690683) |
+| [Unstable Government 小镇](2026-09-18-unstable-government/README.md) | 给虚构小镇颁布一条法规，看看居民怎样反应并生成一份报纸。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [395](https://x.com/threepointone/status/2100576921629163848) |
+| [150 位虚构用户意向](2026-09-18-synthetic-personas/README.md) | 让一群虚构用户回答产品意向问题，帮助整理早期想法。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [792](https://x.com/ytiskw/status/2100474943154827344) |
 
 ## 实时交互与组合实验
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [TypeGPU 实时语义特效](2026-09-18-typegpu-realtime/README.md) | 让摄像头和麦克风感知到的内容，影响画面的灯光与特效。 | [251](https://x.com/reczko_konrad/status/2100646448324833512) |
-| [Ask Jev](2026-09-18-ask-jev/README.md) | 输入一个问题，看看 Jev 会怎样判断，而不是等它写一大段回答。 | [423](https://x.com/waynesutton/status/2100487878992388279) |
-| [有限词表聊天](2026-09-18-word-chat/README.md) | 只给 Jev 一份常用词清单，让它一个词一个词拼出对话。 | [2,644](https://x.com/hi_im_isaac_/status/2100408276949385668) |
-| [29 选项字符生成](2026-09-18-character-chat/README.md) | 让 Jev 每次挑一个字母或标点，慢慢拼成一段话。 | [866](https://x.com/ryanvogel/status/2100218045549412499) |
-| [并行像素绘图](2026-09-18-pixel-drawing/README.md) | 把许多小像素的判断拼在一起，尝试让 Jev 画图。 | [1,461](https://x.com/anshuc/status/2100246929611411501) |
-| [RISC-jeV 逻辑门实验](2026-09-18-riscv/README.md) | 让 Jev 判断最简单的逻辑，再把这些判断拼成小型计算机指令。 | [208](https://x.com/i2cjak/status/2100454307405365673) |
-| [意图预测启动器](2026-09-18-predictive-launcher/README.md) | 不记文件名也能找文件：输入“刚下载的 PDF”，让相关文件排到前面。 | [252](https://x.com/dabit3/status/2100756930054504776) |
-| [实时电商导购与头像表情](2026-09-18-live-commerce-assistant/README.md) | 一边聊天一边推荐商品，让虚拟店员的表情跟着对话变化。 | [217](https://x.com/rinte0321/status/2100736454850908344) |
-| [实时表情候选](2026-09-18-emoji-suggestions/README.md) | 输入文字时，自动推荐与意思相符的 emoji。 | [230](https://x.com/riku720720/status/2100705558512963602) |
-| [语音与手指指向控制画布](2026-09-18-voice-gesture-canvas/README.md) | 边说边指，在画布里表达“把那个放到这里”。 | [915](https://x.com/jackcheng/status/2100729670991802386) |
-| [Probably · 用语义判断控制程序](2026-09-18-probably-language/README.md) | 把“这封邮件是否紧急”这样的判断写进条件分支，再让文字模型按结果起草回复。 | [894](https://x.com/southpolesteve/status/2100767781868150938) |
+| [TypeGPU 实时语义特效](2026-09-18-typegpu-realtime/README.md) | 让摄像头和麦克风感知到的内容，影响画面的灯光与特效。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [251](https://x.com/reczko_konrad/status/2100646448324833512) |
+| [Ask Jev](2026-09-18-ask-jev/README.md) | 输入一个问题，看看 Jev 会怎样判断，而不是等它写一大段回答。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [423](https://x.com/waynesutton/status/2100487878992388279) |
+| [有限词表聊天](2026-09-18-word-chat/README.md) | 只给 Jev 一份常用词清单，让它一个词一个词拼出对话。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [2,644](https://x.com/hi_im_isaac_/status/2100408276949385668) |
+| [29 选项字符生成](2026-09-18-character-chat/README.md) | 让 Jev 每次挑一个字母或标点，慢慢拼成一段话。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [866](https://x.com/ryanvogel/status/2100218045549412499) |
+| [并行像素绘图](2026-09-18-pixel-drawing/README.md) | 把许多小像素的判断拼在一起，尝试让 Jev 画图。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,461](https://x.com/anshuc/status/2100246929611411501) |
+| [RISC-jeV 逻辑门实验](2026-09-18-riscv/README.md) | 让 Jev 判断最简单的逻辑，再把这些判断拼成小型计算机指令。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [208](https://x.com/i2cjak/status/2100454307405365673) |
+| [意图预测启动器](2026-09-18-predictive-launcher/README.md) | 不记文件名也能找文件：输入“刚下载的 PDF”，让相关文件排到前面。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [252](https://x.com/dabit3/status/2100756930054504776) |
+| [实时电商导购与头像表情](2026-09-18-live-commerce-assistant/README.md) | 一边聊天一边推荐商品，让虚拟店员的表情跟着对话变化。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [217](https://x.com/rinte0321/status/2100736454850908344) |
+| [实时表情候选](2026-09-18-emoji-suggestions/README.md) | 输入文字时，自动推荐与意思相符的 emoji。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [230](https://x.com/riku720720/status/2100705558512963602) |
+| [语音与手指指向控制画布](2026-09-18-voice-gesture-canvas/README.md) | 边说边指，在画布里表达“把那个放到这里”。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [915](https://x.com/jackcheng/status/2100729670991802386) |
+| [Probably · 用语义判断控制程序](2026-09-18-probably-language/README.md) | 把“这封邮件是否紧急”这样的判断写进条件分支，再让文字模型按结果起草回复。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [894](https://x.com/southpolesteve/status/2100767781868150938) |
 
 ## 交易执行演示
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [Monad / Kuru 交易机器人](2026-09-18-trading-bot/README.md) | 让 Jev 看价格变化后选买或卖，再由程序把订单送出去。 | [4,142](https://x.com/jarrodwatts/status/2100356151468585346) |
+| [Monad / Kuru 交易机器人](2026-09-18-trading-bot/README.md) | 让 Jev 看价格变化后选买或卖，再由程序把订单送出去。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [4,142](https://x.com/jarrodwatts/status/2100356151468585346) |

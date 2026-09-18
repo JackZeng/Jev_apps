@@ -4,6 +4,8 @@
 
 > Prescreen prompts for attempts to bypass an AI system's rules.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Jev checks whether a prompt resembles known bypass patterns. It is an initial screen and may miss unfamiliar forms.
@@ -18,7 +20,7 @@ Jev checks whether a prompt resembles known bypass patterns. It is an initial sc
 | Platform / author | X / [@mayfer](https://x.com/mayfer) |
 | Main post | [Source post](https://x.com/mayfer/status/2100343452865265747) |
 | Published (UTC) | 2026-09-16T21:57:56+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **264** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:25.158271+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100343452865265747); may be cached |

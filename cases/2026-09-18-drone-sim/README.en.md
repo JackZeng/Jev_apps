@@ -4,6 +4,8 @@
 
 > Fly through simulated obstacles with Jev choosing tactics and code stabilizing the drone.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Like a navigator working with a flight controller, code summarizes camera information, Jev chooses maneuvers, and faster control/safety loops constrain the actions.
@@ -18,7 +20,7 @@ Like a navigator working with a flight controller, code summarizes camera inform
 | Platform / author | X / [@RomanSlack1](https://x.com/RomanSlack1) |
 | Main post | [Source post](https://x.com/RomanSlack1/status/2100335978229690683) |
 | Published (UTC) | 2026-09-16T21:28:14+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **330** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:29.328700+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100335978229690683); may be cached |

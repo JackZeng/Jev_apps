@@ -4,6 +4,8 @@
 
 > Let a coding assistant interact with an app to help check it after development.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Interacting with an app and knowing whether it is correct are separate jobs. The demo integrates Jev into OpenCode testing but does not publish the full pass/fail rules.
@@ -18,7 +20,7 @@ Interacting with an app and knowing whether it is correct are separate jobs. The
 | Platform / author | X / [@Neriousy](https://x.com/Neriousy) |
 | Main post | [Source post](https://x.com/Neriousy/status/2100287208166969746) |
 | Published (UTC) | 2026-09-16T18:14:26+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **1,133** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:43:27.168123+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100287208166969746); may be cached |

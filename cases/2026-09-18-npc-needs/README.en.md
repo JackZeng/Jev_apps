@@ -4,6 +4,8 @@
 
 > Let game characters choose objects or activities that meet their needs.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Give Jev a character's needs and available options, then execute its choice in the game. The model decides what to do; movement, animation and rules remain in game code.
@@ -18,7 +20,7 @@ Give Jev a character's needs and available options, then execute its choice in t
 | Platform / author | X / [@m_iraji](https://x.com/m_iraji) |
 | Main post | [Source post](https://x.com/m_iraji/status/2100394212743159944) |
 | Published (UTC) | 2026-09-17T01:19:38+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **201** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.761907+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100394212743159944); may be cached |

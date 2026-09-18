@@ -17,7 +17,8 @@
 | Main-post likes | <Observed snapshot; at least 200 for inclusion> |
 | Metrics retrieved / source | <ISO timestamp with timezone / URL> |
 | Media source | <Owning post and direct media; explain quoted media> |
-| Collected / updated | <YYYY-MM-DD> |
+| Added to README | <readme_added_at: first addition, ISO timestamp with timezone> |
+| README content updated | <readme_updated_at: latest content edit, ISO timestamp with timezone; display Beijing time> |
 | Last reviewed | Not reviewed |
 | Jev version / entry point | Unknown |
 | Reproduction / availability | Not independently reproduced / unknown |

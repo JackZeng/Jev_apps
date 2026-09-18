@@ -4,6 +4,8 @@
 
 > Pick a model for each question and send the request automatically.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Jev acts like a triage desk: it decides who handles the request. The selected model writes the answer. The demo connects selection and forwarding.
@@ -18,7 +20,7 @@ Jev acts like a triage desk: it decides who handles the request. The selected mo
 | Platform / author | X / [@ephraimduncan](https://x.com/ephraimduncan) |
 | Main post | [Source post](https://x.com/ephraimduncan/status/2100454070536351824) |
 | Published (UTC) | 2026-09-17T05:17:29+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **1,503** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:23.348238+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100454070536351824); may be cached |

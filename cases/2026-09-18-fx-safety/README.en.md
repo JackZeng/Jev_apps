@@ -4,6 +4,8 @@
 
 > Check a command's potential risk before an agent executes it automatically.
 
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Jev acts as a pre-execution screener, classifying command safety. Fast screening can still miss risks; explicit rules must determine whether execution is allowed.
@@ -18,7 +20,7 @@ Jev acts as a pre-execution screener, classifying command safety. Fast screening
 | Platform / author | X / [@fazxes](https://x.com/fazxes) |
 | Main post | [Source post](https://x.com/fazxes/status/2100300097695232164) |
 | Published (UTC) | 2026-09-16T19:05:39+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
 | Main-post likes snapshot | **591** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:25.117433+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100300097695232164); may be cached |

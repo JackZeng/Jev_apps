@@ -4,6 +4,8 @@
 
 > Give Jev a rule’s text description and ask whether a small code snippet complies.
 
+**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 (Beijing time, UTC+08:00)
+
 ## How it works, in plain English
 
 Like handing a reviewer a marking guide and a snippet: Jev judges whether the rule is violated. The experiment interprets the rule’s meaning rather than executing its ESLint implementation.
@@ -18,7 +20,7 @@ Like handing a reviewer a marking guide and a snippet: Jev judges whether the ru
 | Platform / author | X / [@mizchi](https://x.com/mizchi) |
 | Main post | [Source post](https://x.com/mizchi/status/2100765201385869434) |
 | Published (UTC) | 2026-09-18T01:53:48+00:00 |
-| Collected / record updated | 2026-09-18 / 2026-09-18 |
+| Added to README / content updated (Beijing time) | 2026-09-18 14:17:58 / 2026-09-18 14:17:58 |
 | Main-post likes snapshot | **351** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T06:08:49+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100765201385869434); may be cached |
