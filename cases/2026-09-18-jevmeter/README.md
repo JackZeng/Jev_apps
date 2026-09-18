@@ -59,7 +59,7 @@
 
 补充更新与去重来源：
 
-- [@chetaslua 的补充帖](https://x.com/chetaslua/status/2100602714204049588)：2026-09-17T15:08:09+00:00；取数时 231 赞，仅作补充、不计入门槛。
+- [@chetaslua 的补充帖](https://x.com/chetaslua/status/2100602714204049588)：发布于 2026-09-17T15:08:09+00:00；2026-09-17T22:42:26.950354+00:00 取数时 231 赞，仅作补充、不计入门槛。[取数来源](https://api.fxtwitter.com/status/2100602714204049588)。 [补充媒体 1](https://video.twimg.com/amplify_video/2100602569987121152/vid/avc1/1920x1080/fvF0p2eL9x5cK2yn.mp4?tag=29)
 
 公开项目 / 体验入口（存在入口不等于本仓库已验证可用）：
 

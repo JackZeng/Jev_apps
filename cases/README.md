@@ -96,6 +96,7 @@
 | [Subway Surfers 并行演示](2026-09-18-subway-runners/README.md) | 展示 Jev 同时控制多局跑酷游戏的效果。 | [1,474](https://x.com/_MaxBlade/status/2100634359099232678) |
 | [魔方分阶段解法](2026-09-18-rubiks-cube/README.md) | 程序会魔方公式，Jev 帮它判断当前该用哪一种。 | [494](https://x.com/redp314/status/2100489858951073858) |
 | [Mario Kart 64](2026-09-18-mario-kart/README.md) | 展示 Jev 玩马里奥赛车，观察连续驾驶时的反应。 | [204](https://x.com/shreypandya/status/2100606445758898287) |
+| [Minecraft · Jev、Astra 与本地策略](2026-09-18-minecraft-hybrid/README.md) | 让不同模型分工玩 Minecraft：一个管长远计划，一个应急，本地模型负责走路和瞄准。 | [354](https://x.com/wuyang_zhou/status/2100727660875808913) |
 
 ## NPC、驾驶与群体模拟
 
@@ -119,6 +120,10 @@
 | [29 选项字符生成](2026-09-18-character-chat/README.md) | 让 Jev 每次挑一个字母或标点，慢慢拼成一段话。 | [866](https://x.com/ryanvogel/status/2100218045549412499) |
 | [并行像素绘图](2026-09-18-pixel-drawing/README.md) | 把许多小像素的判断拼在一起，尝试让 Jev 画图。 | [1,461](https://x.com/anshuc/status/2100246929611411501) |
 | [RISC-jeV 逻辑门实验](2026-09-18-riscv/README.md) | 让 Jev 判断最简单的逻辑，再把这些判断拼成小型计算机指令。 | [208](https://x.com/i2cjak/status/2100454307405365673) |
+| [意图预测启动器](2026-09-18-predictive-launcher/README.md) | 不记文件名也能找文件：输入“刚下载的 PDF”，让相关文件排到前面。 | [252](https://x.com/dabit3/status/2100756930054504776) |
+| [实时电商导购与头像表情](2026-09-18-live-commerce-assistant/README.md) | 一边聊天一边推荐商品，让虚拟店员的表情跟着对话变化。 | [217](https://x.com/rinte0321/status/2100736454850908344) |
+| [实时表情候选](2026-09-18-emoji-suggestions/README.md) | 输入文字时，自动推荐与意思相符的 emoji。 | [230](https://x.com/riku720720/status/2100705558512963602) |
+| [语音与手指指向控制画布](2026-09-18-voice-gesture-canvas/README.md) | 边说边指，在画布里表达“把那个放到这里”。 | [915](https://x.com/jackcheng/status/2100729670991802386) |
 
 ## 交易执行演示
 

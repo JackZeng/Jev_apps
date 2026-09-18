@@ -12,7 +12,7 @@ Analysis of public sources; no reproduction experiments have been run here.
 - [Content and advertising analysis](2026-09-18-content.en.md): 7 examples.
 - [Webpage and feed filtering](2026-09-18-filter.en.md): 2 examples.
 - [Context and memory filtering](2026-09-18-memory.en.md): 2 examples.
-- [Game decisions and solving](2026-09-18-games.en.md): 13 examples.
+- [Game decisions and solving](2026-09-18-games.en.md): 14 examples.
 - [NPCs, driving and population simulations](2026-09-18-simulation.en.md): 7 examples.
-- [Real-time interaction and composition experiments](2026-09-18-interaction.en.md): 6 examples.
+- [Real-time interaction and composition experiments](2026-09-18-interaction.en.md): 10 examples.
 - [Trading execution demo](2026-09-18-finance.en.md): 1 examples.

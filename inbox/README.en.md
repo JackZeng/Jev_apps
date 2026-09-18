@@ -18,3 +18,13 @@ These leads are excluded from the formal README count. Likes on a repost do not 
 | Live-scoring playground | [@stevekrouse](https://x.com/stevekrouse/status/2100287368221659289) | Demo and URL exist; document scoring dimensions and inputs/outputs before creating a case |
 
 Revisit these gaps first. Once a main post meets the 200-like threshold and the concrete use, original source and media are documented, add the entry in both languages and remove it here. Unsupported ideas remain pending.
+
+## Leads added in the second pass on 2026-09-18
+
+| Lead | Source | Missing evidence / next step |
+| --- | --- | --- |
+| OpenCode intent-aware permissions | [@OpeOginni](https://x.com/OpeOginni/status/2100702649834188855) | 160 likes at the 2026-09-18 02:38 UTC retrieval, below 200; repost likes do not replace the author’s main-post threshold. Once eligible, examine policy behavior and bypass tests |
+| YouTube predictor | [@moritzkremb tutorial](https://x.com/moritzkremb/status/2100715237267660873) | 293 likes; outline identifies 17:27. Clarify inputs, outputs, prediction target and differences from existing content analyzers. Browser and memory chapters are already merged into existing cases |
+| RAG candidate-chunk filtering | [@kushbhuwalka](https://x.com/kushbhuwalka/status/2100731050075050485) | 405 likes, but only a proposal without implementation media. Obtain code, data and precision/recall evaluation |
+
+Retrieval timestamps: permissions plugin and tutorial, 2026-09-18 02:38:04 UTC; RAG suggestion, 02:36:40 UTC. See the [update log](../CHANGELOG.en.md) for sources and deduplication decisions. These leads are excluded from the 72 formal cases.

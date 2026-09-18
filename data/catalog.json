@@ -255,12 +255,34 @@
           }
         ]
       },
-      "supplementary_posts": [],
+      "supplementary_posts": [
+        {
+          "id": "2100715237267660873",
+          "url": "https://x.com/moritzkremb/status/2100715237267660873",
+          "author": "moritzkremb",
+          "published_at": "2026-09-17T22:35:16+00:00",
+          "likes": 293,
+          "retrieved_at": "2026-09-18T02:38:04+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100715237267660873",
+          "media_source": "https://x.com/moritzkremb/status/2100715237267660873",
+          "media": [
+            {
+              "type": "video",
+              "url": "https://video.twimg.com/amplify_video/2100714561389129730/vid/avc1/1920x1080/jKadt8Mu-oZVRUu0.mp4?tag=29",
+              "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100714561389129730/img/mHB9NznquD7-VkyS.jpg",
+              "duration": 1361,
+              "width": 1920,
+              "height": 1080
+            }
+          ]
+        }
+      ],
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "先把声音转成文字，再让 Jev 判断指令对应哪个操作，最后由浏览器执行。Jev 在这里负责理解并选择动作，不负责听声音。"
+      "plain_explanation": "先把声音转成文字，再让 Jev 判断指令对应哪个操作，最后由浏览器执行。Jev 在这里负责理解并选择动作，不负责听声音。",
+      "source_notes": "**教程补充：** [作者完整教程](https://x.com/moritzkremb/status/2100715237267660873)的 5:59 章节对应本条语音浏览器演示，按同作者、同用途合并为补充来源。教程同时涉及其他演示，不把整条教程再算一个应用。章节定位来自作者目录；本次未逐帧复核教程或运行代码。"
     },
     {
       "slug": "opencode-qa",
@@ -1121,9 +1143,9 @@
       "group": "content",
       "title": "帖子传播分类器",
       "summary": "尝试从帖子里挑出更可能引起关注的内容。",
-      "mechanism": "帖子 → Jev 分类；标签定义、训练外评估方式及代码未知。",
+      "mechanism": "新增说明：每篇帖子用 Jev 回答 61 个问题，再用基于 SuperX 帖子数据拟合的判别方案评分；用户按反馈改写再评分。具体特征、拟合方法与独立测试划分仍未公开。",
       "advantage": "可与实时写作分析器对照，关注分类判别而非生成文案。",
-      "limitation": "作者“与 Fable 一样好、快 100 倍”缺少公开评估细节。",
+      "limitation": "作者新增了样本规模和每次成本，但“约三次选对两次”缺少独立测试划分、基线及跨作者验证；不能据此保证爆款，也不能把拟合数据等同于 Jev 训练数据。",
       "reported_result": "作者称用约 8 小时完成，并发布结果截图。",
       "post": {
         "id": "2100631889585606959",
@@ -1143,12 +1165,34 @@
           }
         ]
       },
-      "supplementary_posts": [],
+      "supplementary_posts": [
+        {
+          "id": "2100722975645598191",
+          "url": "https://x.com/robj3d3/status/2100722975645598191",
+          "author": "robj3d3",
+          "published_at": "2026-09-17T23:06:01+00:00",
+          "likes": 250,
+          "retrieved_at": "2026-09-18T02:38:04+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100722975645598191",
+          "media_source": "https://x.com/robj3d3/status/2100722975645598191",
+          "media": [
+            {
+              "type": "video",
+              "url": "https://video.twimg.com/amplify_video/2100722766362406912/vid/avc1/3840x2160/QJqYHBR15YiMvQC8.mp4?tag=29",
+              "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100722766362406912/img/pH0lahpfd-qTj_nE.jpg",
+              "duration": 45.054,
+              "width": 3840,
+              "height": 2160
+            }
+          ]
+        }
+      ],
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "Jev 给帖子做分类，类似一个快速初筛员。作者没有公开完整的判分依据和测试过程，所以目前不能把它当成可靠的爆款预测器。"
+      "plain_explanation": "Jev 给帖子做分类，类似一个快速初筛员。作者没有公开完整的判分依据和测试过程，所以目前不能把它当成可靠的爆款预测器。",
+      "source_notes": "**同项目新增演示：** [作者更新](https://x.com/robj3d3/status/2100722975645598191)引用原主帖，称使用 207 位创作者的 9,481 篇帖子拟合、每篇回答 61 个问题，约 1 秒 / 0.0004 美元，并报告约三次选对两次。以上是作者报告；45 秒新视频已合并为补充媒体，不另计一个“SuperX 应用”。"
     },
     {
       "slug": "x-algorithm-sim",
@@ -1434,9 +1478,9 @@
       "group": "memory",
       "title": "工具调用上下文压缩",
       "summary": "给 AI 助手的工作记录瘦身，只把眼下有用的内容继续带着。",
-      "mechanism": "工具调用记录 → Jev 相关性评分 → 选择保留内容构建上下文。",
+      "mechanism": "按源码版本 e3f262a：配对工具调用与结果，保护首条及最近消息，将对话压进状态预算；工具输出正文替换为结果状态和长度。Jev 分别判断是否保留调用及结果，程序据阈值保留、截断或删除。Claude Code hook 在报错或压缩不足时退回内置摘要。",
       "advantage": "通过筛选减少上下文，不必把整段历史重写成摘要。",
-      "limitation": "没有长期任务保真率；过早丢弃记录可能影响后续追溯。",
+      "limitation": "尚无长任务保真率或总费用对照。源码给 Jev 的状态省略工具输出正文，因此筛选可能漏掉重要结果；历史改写还需评估缓存重建。新增使用报告不能证明后续任务质量，仓库的录屏演示程序明确不调用 API。",
       "reported_result": "作者发布短演示，称可实现即时压缩，未提供完整质量评估。",
       "post": {
         "id": "2100694549362553153",
@@ -1458,12 +1502,62 @@
           }
         ]
       },
-      "supplementary_posts": [],
-      "links": [],
+      "supplementary_posts": [
+        {
+          "id": "2100694552369897539",
+          "url": "https://x.com/tamarajtran/status/2100694552369897539",
+          "author": "tamarajtran",
+          "published_at": "2026-09-17T21:13:04+00:00",
+          "likes": 500,
+          "retrieved_at": "2026-09-18T02:41:19+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100694552369897539",
+          "media_source": "https://x.com/tamarajtran/status/2100694552369897539",
+          "media": []
+        },
+        {
+          "id": "2100739055923425589",
+          "url": "https://x.com/altryne/status/2100739055923425589",
+          "author": "altryne",
+          "published_at": "2026-09-18T00:09:55+00:00",
+          "likes": 1836,
+          "retrieved_at": "2026-09-18T02:36:40+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100739055923425589",
+          "media_source": "https://x.com/altryne/status/2100739055923425589",
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://pbs.twimg.com/media/HSdTBk8bAAAPtk8.png?name=orig",
+              "width": 816,
+              "height": 400
+            },
+            {
+              "type": "photo",
+              "url": "https://pbs.twimg.com/media/HSdTCa_a0AAKYLw.png?name=orig",
+              "width": 820,
+              "height": 594
+            }
+          ]
+        },
+        {
+          "id": "2100762304862384257",
+          "url": "https://x.com/theo/status/2100762304862384257",
+          "author": "theo",
+          "published_at": "2026-09-18T01:42:18+00:00",
+          "likes": 347,
+          "retrieved_at": "2026-09-18T02:36:40+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100762304862384257",
+          "media_source": "https://x.com/theo/status/2100762304862384257",
+          "media": []
+        }
+      ],
+      "links": [
+        "https://github.com/tamaratran/fast-jev-compaction"
+      ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "不是把所有历史重写成一篇摘要，而是先给工具记录评相关性，再选择保留哪些。省下空间的同时，也可能丢掉以后才需要的信息。"
+      "plain_explanation": "不是把所有历史重写成一篇摘要，而是先给工具记录评相关性，再选择保留哪些。省下空间的同时，也可能丢掉以后才需要的信息。",
+      "source_notes": "**2026-09-18 增量核对（同一项目，不新增案例）：**\n\n- [Alex 的使用报告](https://x.com/altryne/status/2100739055923425589)引用原帖及同一仓库，报告约 1 秒将接近 100 万 token 缩至约 8.6 万；这是另一位使用者的单次报告，不是本库复测。\n- [Theo 的质疑](https://x.com/theo/status/2100762304862384257)讨论上下文丢失、推理信息和缓存成本。它是评论者的分析，不能把其全部结论当成已验证事实。\n- 对照[固定版本 README](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/README.md)与 [state.ts](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/src/state.ts)：模型能看到经过裁剪的对话上下文，并非完全孤立地看每条调用；但工具输出正文确实被替换为状态/长度说明。不能把“看到整段对话”理解为“看到全部原始信息”。\n- 同版本文档明确说明 `demo/JevDemo` 是用预设记录制作的录屏动画，不调用 API。因此该动画本身不是实时推理测量；也不能仅凭此否定库中另有真实 API 调用实现。未运行插件。"
     },
     {
       "slug": "memory-retrieval",
@@ -1494,12 +1588,34 @@
           }
         ]
       },
-      "supplementary_posts": [],
+      "supplementary_posts": [
+        {
+          "id": "2100715237267660873",
+          "url": "https://x.com/moritzkremb/status/2100715237267660873",
+          "author": "moritzkremb",
+          "published_at": "2026-09-17T22:35:16+00:00",
+          "likes": 293,
+          "retrieved_at": "2026-09-18T02:38:04+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100715237267660873",
+          "media_source": "https://x.com/moritzkremb/status/2100715237267660873",
+          "media": [
+            {
+              "type": "video",
+              "url": "https://video.twimg.com/amplify_video/2100714561389129730/vid/avc1/1920x1080/jKadt8Mu-oZVRUu0.mp4?tag=29",
+              "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100714561389129730/img/mHB9NznquD7-VkyS.jpg",
+              "duration": 1361,
+              "width": 1920,
+              "height": 1080
+            }
+          ]
+        }
+      ],
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "plain_explanation": "先找到一批可能相关的记忆，再由 Jev 做第二轮筛选。像从搜索结果里挑重点；筛得太狠，也可能漏掉关键线索。"
+      "plain_explanation": "先找到一批可能相关的记忆，再由 Jev 做第二轮筛选。像从搜索结果里挑重点；筛得太狠，也可能漏掉关键线索。",
+      "source_notes": "**教程补充：** [作者完整教程](https://x.com/moritzkremb/status/2100715237267660873)的 11:33 章节对应本条AI 记忆演示，按同作者、同用途合并为补充来源。教程同时涉及其他演示，不把整条教程再算一个应用。章节定位来自作者目录；本次未逐帧复核教程或运行代码。"
     },
     {
       "slug": "doom",
@@ -2504,6 +2620,230 @@
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
       "plain_explanation": "模型只负责交易选择，程序负责连接区块链订单簿。下单快和交易赚钱没有必然联系，原帖没有给出完整收益与风险记录。"
+    },
+    {
+      "slug": "predictive-launcher",
+      "group": "interaction",
+      "title": "意图预测启动器",
+      "summary": "不记文件名也能找文件：输入“刚下载的 PDF”，让相关文件排到前面。",
+      "plain_explanation": "像跟助理说“把刚才那份资料找出来”：应用准备文件候选和相关信息，Jev 判断你的意思，界面随输入调整排序。具体索引方法尚未公开。",
+      "mechanism": "按作者描述，输入中的查询文字由 Jev 做意图判断，启动器更新命中排序；文件索引、上下文拼装、请求节流和权限范围未公开。",
+      "advantage": "相比按文件名或别名匹配，尝试处理“刚下载”等带情境的表达；适合小范围文件候选选择。",
+      "limitation": "约 100ms 来自作者陈述；缺少文件规模、重名文件和模糊指代测试。模型高置信度不等于一定找对文件。",
+      "reported_result": "作者展示 20 秒启动器视频，称逐次按键判断约 100ms，可将最新下载的 PDF 排在首位。",
+      "media_note": "原帖的 20 秒演示视频；保留原始封面与视频链接。",
+      "post": {
+        "id": "2100756930054504776",
+        "url": "https://x.com/dabit3/status/2100756930054504776",
+        "author": "dabit3",
+        "published_at": "2026-09-18T01:20:56+00:00",
+        "likes": 252,
+        "retrieved_at": "2026-09-18T02:36:40+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100756930054504776",
+        "media_source": "https://x.com/dabit3/status/2100756930054504776",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100756324845862913/vid/avc1/1920x1080/h60Z77ixV33yGs9V.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100756324845862913/img/8ew1NdHs6k5cReoF.jpg",
+            "duration": 20,
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）"
+    },
+    {
+      "slug": "live-commerce-assistant",
+      "group": "interaction",
+      "title": "实时电商导购与头像表情",
+      "summary": "一边聊天一边推荐商品，让虚拟店员的表情跟着对话变化。",
+      "plain_explanation": "像店员边听需求边拿商品：对话系统负责交谈，Jev 参与快速判断，应用更新推荐和表情。作者展示了两种模型搭配，但没有公开每一步的接口。",
+      "mechanism": "作者使用 Jev 与 gpt-live-1，在对话过程中根据用户发言更新商品推荐，并按内容切换头像表情。语音处理、推荐排序及表情映射的具体职责划分未公开。",
+      "advantage": "将推荐放进实时对话，适合探索边说边选的购物体验；比离线意图标签更接近面向顾客的交互。",
+      "limitation": "只是简易演示；没有推荐相关性、库存一致性或端到端延迟评估。表情映射是演示设计，不能推断为 Jev 独有能力。",
+      "reported_result": "作者分享约 65 秒实时接客演示，说明使用 Jev 和 gpt-live-1，并表示表情功能只做了简单实现。",
+      "media_note": "主帖附带的约 65 秒视频；演示效果不是商品推荐质量或转化率的验证。",
+      "post": {
+        "id": "2100736454850908344",
+        "url": "https://x.com/rinte0321/status/2100736454850908344",
+        "author": "rinte0321",
+        "published_at": "2026-09-17T23:59:35+00:00",
+        "likes": 217,
+        "retrieved_at": "2026-09-18T02:36:40+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100736454850908344",
+        "media_source": "https://x.com/rinte0321/status/2100736454850908344",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100735518963355648/vid/avc1/1572x1080/729stTM98GihHYmI.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100735518963355648/img/o0S0IxXnxWjnlNOG.jpg",
+            "duration": 65.109,
+            "width": 1572,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）"
+    },
+    {
+      "slug": "minecraft-hybrid",
+      "group": "games",
+      "title": "Minecraft · Jev、Astra 与本地策略",
+      "summary": "让不同模型分工玩 Minecraft：一个管长远计划，一个应急，本地模型负责走路和瞄准。",
+      "plain_explanation": "像队长、现场指挥和队员分工：Astra 规划目标，Jev 应对眼前变化，本地策略把指令变成移动和瞄准。画面中的表现来自整套系统。",
+      "mechanism": "作者补充：GPT-6 Astra 负责较长远目标，Jev 快速应对僵尸攻击等事件，本地策略模型控制移动与瞄准；感知编码、模型频率和具体执行库未公开。",
+      "advantage": "比单一动作选择器更明确地展示规划、即时判断和底层控制的分工；可与吃豆人的分层实现比较。",
+      "limitation": "不能把战斗效果全归于 Jev；没有 Jev 单独、Astra 单独及组合系统的对照。主视频加速约 2 倍，作者另贴原速版本；尚无通关或速通证据。",
+      "reported_result": "作者展示多个僵尸场景，并在回复说明三层分工及提供同一视频的原速版本。",
+      "media_note": "主视频元数据约 192 秒；作者标注的原速补充视频约 384 秒。比较反应速度时应查看原速来源，不能直接以主视频节奏推算。",
+      "post": {
+        "id": "2100727660875808913",
+        "url": "https://x.com/wuyang_zhou/status/2100727660875808913",
+        "author": "wuyang_zhou",
+        "published_at": "2026-09-17T23:24:38+00:00",
+        "likes": 354,
+        "retrieved_at": "2026-09-18T02:36:40+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100727660875808913",
+        "media_source": "https://x.com/wuyang_zhou/status/2100727660875808913",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100727359569530880/vid/avc1/1276x648/GRtnLHSbO6-kzVjo.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100727359569530880/img/IGuQpzilRkIsw1Wb.jpg",
+            "duration": 192.011,
+            "width": 1276,
+            "height": 648
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100727859400622158",
+          "url": "https://x.com/wuyang_zhou/status/2100727859400622158",
+          "author": "wuyang_zhou",
+          "published_at": "2026-09-17T23:25:25+00:00",
+          "likes": 34,
+          "retrieved_at": "2026-09-18T02:41:19+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100727859400622158",
+          "media_source": "https://x.com/wuyang_zhou/status/2100727859400622158",
+          "media": []
+        },
+        {
+          "id": "2100741909790490764",
+          "url": "https://x.com/wuyang_zhou/status/2100741909790490764",
+          "author": "wuyang_zhou",
+          "published_at": "2026-09-18T00:21:15+00:00",
+          "likes": 7,
+          "retrieved_at": "2026-09-18T02:41:19+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100741909790490764",
+          "media_source": "https://x.com/wuyang_zhou/status/2100741909790490764",
+          "media": [
+            {
+              "type": "video",
+              "url": "https://video.twimg.com/amplify_video/2100741480226721792/vid/avc1/1276x648/Je0yf35SKPhCagLO.mp4?tag=29",
+              "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100741480226721792/img/ZSctTnE6RLXWXeXk.jpg",
+              "duration": 384,
+              "width": 1276,
+              "height": 648
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）"
+    },
+    {
+      "slug": "emoji-suggestions",
+      "group": "interaction",
+      "title": "实时表情候选",
+      "summary": "输入文字时，自动推荐与意思相符的 emoji。",
+      "plain_explanation": "不是让模型画新表情，而是从已有表情里挑合适的。界面展示候选和分数，输入变化时再判断一次。具体问题格式未公开。",
+      "mechanism": "演示将输入文字映射到 emoji 候选和分数；作者比较 3 个与 200 个候选时的响应。API 原语、缓存与请求策略未公开。",
+      "advantage": "输出范围有限、容易展示；相比字符聊天的长循环，更适合把一次判断直接变成界面反馈。",
+      "limitation": "100–200ms 及候选数不影响速度是该演示的作者报告，不能推广到任意规模；缺少语言、语境歧义及表情准确率评估。",
+      "reported_result": "发布者报告响应约 100–200ms，并称 3 种与 200 种候选速度相近；视频约 13 秒。",
+      "media_note": "主帖视频展示文字输入、emoji 候选和分数；原作者未提供已核对的代码入口。",
+      "post": {
+        "id": "2100705558512963602",
+        "url": "https://x.com/riku720720/status/2100705558512963602",
+        "author": "riku720720",
+        "published_at": "2026-09-17T21:56:49+00:00",
+        "likes": 230,
+        "retrieved_at": "2026-09-18T02:39:18+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100705558512963602",
+        "media_source": "https://x.com/riku720720/status/2100705558512963602",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100705222016520192/vid/avc1/1708x1080/iDOstcDZwqY9kkDN.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100705222016520192/img/BxzTN_rxkA_FLvwe.jpg",
+            "duration": 13.933,
+            "width": 1708,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）"
+    },
+    {
+      "slug": "voice-gesture-canvas",
+      "group": "interaction",
+      "title": "语音与手指指向控制画布",
+      "summary": "边说边指，在画布里表达“把那个放到这里”。",
+      "plain_explanation": "软件先记住你说“那个”和“这里”时指向哪里，再让 Jev 分别确认几个小问题。这样不用把所有物体、动作和位置的组合都列成一张巨大选项表。",
+      "mechanism": "按作者回复，应用记录特定词语出现时的指向，每句话拆成少量独立问题让 Jev 确认；画布程序执行结果。视频界面显示 speech、finger 与 canvas 状态；具体感知库未披露。",
+      "advantage": "把自然语言与指向结合，补足“那个”“那里”在纯文字指令里的歧义；与 TypeGPU 的语义特效相比，关注画布对象操作。",
+      "limitation": "作者明确表示并不完美，仍是可行性探索；没有指向误差、语音错识或操作成功率数据。多个小判断一致性仍需校验。",
+      "reported_result": "作者展示约 39 秒画布交互视频，并在回复解释指向记录与问题拆分。",
+      "media_note": "主视频界面可见画布、摄像头和分开的输入/判断面板；具体实现依据作者补充说明，不推断为 Jev 直接识别视频。",
+      "post": {
+        "id": "2100729670991802386",
+        "url": "https://x.com/jackcheng/status/2100729670991802386",
+        "author": "jackcheng",
+        "published_at": "2026-09-17T23:32:37+00:00",
+        "likes": 915,
+        "retrieved_at": "2026-09-18T02:36:40+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100729670991802386",
+        "media_source": "https://x.com/jackcheng/status/2100729670991802386",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100729243185324032/vid/avc1/2316x1756/H3toCH4Ykl3HBkxA.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100729243185324032/img/YNw8njfnSXu-Tbyr.jpg",
+            "duration": 38.95,
+            "width": 2316,
+            "height": 1756
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100769017115902136",
+          "url": "https://x.com/jackcheng/status/2100769017115902136",
+          "author": "jackcheng",
+          "published_at": "2026-09-18T02:08:58+00:00",
+          "likes": 0,
+          "retrieved_at": "2026-09-18T02:43:03+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100769017115902136",
+          "media_source": "https://x.com/jackcheng/status/2100769017115902136",
+          "media": []
+        }
+      ],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）"
     }
   ],
   "groups": [
@@ -2560,13 +2900,13 @@
       "title": "上下文与记忆筛选",
       "comparison": "工具调用压缩处理当前会话的历史；记忆检索筛选处理外部记忆的召回候选。两者都以减少输入为目标，适用位置不同。优先观察信息保留与任务质量，再比较 token 降幅。",
       "flow": "历史记录或记忆候选 + 当前任务 → Jev 相关性评分 → 程序筛选 → 构造后续模型上下文。",
-      "analysis": "筛选保留原文与重新生成摘要的误差形态不同：前者可能漏掉将来需要的信息，后者可能改写错事实。94% token 降幅来自作者一次快速测试，不能作为默认压缩比例。",
+      "analysis": "筛选保留原文与重新生成摘要的误差形态不同：前者可能漏掉将来需要的信息，后者可能改写错事实。94% token 降幅来自作者一次快速测试，不能作为默认压缩比例。 最新压缩插件资料显示：提供经过预算裁剪的对话上下文，但省略工具输出正文；其录屏动画不调用 API。压缩体积、后续任务质量、缓存重建和总费用应分别评估，新增使用报告与评论者质疑见原案例。",
       "evaluation": "在长任务中测试延迟需求、错误恢复、旧决策追溯和跨轮指代；同时记录召回率、完成质量、筛选开销与总 token，保留可恢复的原始记录。"
     },
     {
       "id": "games",
       "title": "游戏决策与求解",
-      "comparison": "马里奥三个实现并排比较：@faadilhshaik 展示基本接入，Jev/Qwen 版本明确相同结构化状态与五选一，PPO 对照展示实现投入。吃豆人体现规划/执行分层；宝可梦体现长期进度；棋局显示速度与棋力分离；魔方的确定性代码承担解法。其余演示适合研究动作空间，而不是据短片排通用能力榜。",
+      "comparison": "马里奥三个实现并排比较：@faadilhshaik 展示基本接入，Jev/Qwen 版本明确相同结构化状态与五选一，PPO 对照展示实现投入。吃豆人体现规划/执行分层；宝可梦体现长期进度；棋局显示速度与棋力分离；魔方的确定性代码承担解法。其余演示适合研究动作空间，而不是据短片排通用能力榜。 Minecraft 同样分层，但增加了本地移动/瞄准策略，不能把整个系统的表现归给 Jev；比较速度请看作者原速补充视频。",
       "flow": "环境状态 → 状态适配和合法动作集合 → Jev 选择 → 规则/执行器校验 → 环境推进。",
       "analysis": "不同游戏可能采用格子状态、内存变量或其他结构化接口。只有 Jev/Qwen 马里奥帖明确说明其转换与五选一条件，其余没有公开的部分不推断。魔方的公式由代码提供，字符或像素实验也类似：最终能力取决于组合系统。",
       "evaluation": "固定环境版本、速度、动作粒度和随机种子；进行多局对照，报告胜率、得分、总成本与卡住次数。记录模拟器在模型等待时是否暂停，区分单步延迟与真实每秒游戏进度。"
@@ -2582,7 +2922,7 @@
     {
       "id": "interaction",
       "title": "实时交互与组合实验",
-      "comparison": "TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。",
+      "comparison": "TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 本次新增的启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。",
       "flow": "准备有限候选或原子问题 → Jev 判定 → 程序组合结果 → 更新交互状态或输出。",
       "analysis": "词表聊天与字符聊天都由程序把单步选择拼接成文本；这不改变 API 的判断式输出性质。RISC-jeV 中逻辑门和指令解释层叠加，展示可组合性，不意味着用模型算逻辑门更高效。",
       "evaluation": "记录候选规模、分辨率或字符数、循环次数和全程费用；与确定性代码或专用生成模型比较输出质量。感知流水线需分开测本地模型、网络决策及渲染延迟。"
@@ -2595,5 +2935,21 @@
       "analysis": "区块间隔与交易确认、成交价格、策略收益是不同指标。作者给出演示和执行频率，但未公开完整收益、回撤、滑点、手续费与风险控制结果。",
       "evaluation": "只做离线或模拟复现时，记录时间切分、手续费、滑点、成交失败、头寸约束和最大回撤；单看每秒决策次数没有投资意义。"
     }
-  ]
+  ],
+  "latest_update": {
+    "reviewed_at": "2026-09-18T02:43:33+00:00",
+    "new_cases": [
+      "predictive-launcher",
+      "live-commerce-assistant",
+      "minecraft-hybrid",
+      "emoji-suggestions",
+      "voice-gesture-canvas"
+    ],
+    "updated_cases": [
+      "context-compaction",
+      "viral-classifier",
+      "voice-browser",
+      "memory-retrieval"
+    ]
+  }
 }

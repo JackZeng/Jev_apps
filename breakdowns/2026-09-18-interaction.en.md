@@ -6,7 +6,7 @@ Collected / source-reviewed: 2026-09-18. Status: **not independently reproduced*
 
 ## Choosing an approach
 
-TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs.
+TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs. New entries cover file selection, emoji suggestions, live shopping and voice-and-pointing canvas control. Their distinct tasks warrant separate cases. Both the canvas and TypeGPU combine perception with decisions, but one manipulates objects while the other changes audiovisual effects.
 
 ## Individual comparisons
 
@@ -20,6 +20,10 @@ These are analytical strengths and limitations based on public descriptions, not
 | [29-option character generation](../cases/2026-09-18-character-chat/README.en.md) | An explicit control loop with more freedom than a fixed word list. | Character-level loops require many calls and do not establish a native text-generation API. |
 | [Parallel pixel drawing](../cases/2026-09-18-pixel-drawing/README.en.md) | An exploratory way to combine classification outputs into a visual artifact. | Not a validated general image generator; quality, resolution and total cost are unknown. |
 | [RISC-jeV logic-gate experiment](../cases/2026-09-18-riscv/README.en.md) | An explicit hierarchy illustrates how decisions can compose into computation. | A concept experiment, not a computational-efficiency advantage; deterministic code is more appropriate for logic gates. |
+| [Intent-aware predictive launcher](../cases/2026-09-18-predictive-launcher/README.en.md) | Explores contextual requests such as “just downloaded” beyond filename or alias matching; useful for selecting among file candidates. | The roughly 100ms figure is author-reported. No evaluation covers large file collections, duplicate names or ambiguous references. High model confidence does not guarantee a correct match. |
+| [Live shopping assistant and avatar expressions](../cases/2026-09-18-live-commerce-assistant/README.en.md) | Places recommendations inside a live conversation; closer to a customer-facing shopping experience than offline intent labeling. | A simple demo without recommendation-relevance, inventory-consistency or end-to-end latency evaluation. Expression mapping does not establish a capability exclusive to Jev. |
+| [Live emoji suggestions](../cases/2026-09-18-emoji-suggestions/README.en.md) | A bounded output space with immediately visible feedback; simpler than the repeated selection loop in character-by-character chat. | The 100–200ms and candidate-count claims describe this demo, not arbitrary scales. No language, ambiguity or emoji-relevance evaluation is available. |
+| [Voice-and-pointing canvas control](../cases/2026-09-18-voice-gesture-canvas/README.en.md) | Combines language and pointing to resolve references missing from text alone. Compared with TypeGPU’s semantic effects, this example focuses on manipulating canvas objects. | The author explicitly describes an imperfect feasibility experiment. No pointing-error, speech-error or action-success evaluation is available, and separate decisions still require consistency checks. |
 
 ## Workflow and mechanism
 

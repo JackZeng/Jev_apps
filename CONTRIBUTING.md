@@ -29,7 +29,7 @@
 
 ## 4. 维护正式目录
 
-`data/catalog.json` 是首批案例及专题分析的编辑来源，`scripts/build_catalog.py` 同时生成中英文 README、案例详情、案例索引和各类对比。不要只修改生成后的 Markdown，否则下一次生成会覆盖它。
+`data/catalog.json` 是案例及专题分析的编辑来源，`scripts/build_catalog.py` 同时生成中英文 README、案例详情、案例索引和各类对比。不要只修改生成后的 Markdown，否则下一次生成会覆盖它。
 
 以现有条目为样本增加 `cases` 记录，并根据 [案例模板](templates/case.md) 补齐：摘要、通俗原理、输入输出机制、相对优势、限制、作者报告结果、主帖快照、媒体及公开项目入口。`groups` 保存类别选择建议、共同流程、分析与建议实验。
 

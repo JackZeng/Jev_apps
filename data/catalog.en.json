@@ -70,7 +70,8 @@
       "limitation": "Transcription, targeting and browser execution add overhead; decision latency is not end-to-end latency.",
       "reported_result": "The author reports about 300ms and $0.0002 per decision.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Speech is first transcribed. Jev maps the text to an action, then the browser executes it. Jev chooses what to do; a separate component handles the audio."
+      "plain_explanation": "Speech is first transcribed. Jev maps the text to an action, then the browser executes it. Jev chooses what to do; a separate component handles the audio.",
+      "source_notes": "**Tutorial supplement:** The author’s [full tutorial](https://x.com/moritzkremb/status/2100715237267660873) identifies the 5:59 chapter as this voice-browser demonstration. It is merged by author and use case, not counted as another application. The tutorial also covers other demos. Chapter identification comes from the author’s outline; this update did not review every frame or run the code."
     },
     "opencode-qa": {
       "title": "OpenCode app testing",
@@ -305,12 +306,13 @@
     "viral-classifier": {
       "title": "Viral-post classifier",
       "summary": "Try to identify posts that may attract more attention.",
-      "mechanism": "Post → Jev classification; label definitions, held-out evaluation and code are unknown.",
+      "mechanism": "The update describes 61 Jev questions per post and a scoring approach fitted using SuperX post data, followed by a write–score–rewrite loop. Exact features, fitting method and independent test split remain undisclosed.",
       "advantage": "A classification-focused counterpart to live writing feedback.",
-      "limitation": "Claims of matching Fable quality at 100× speed lack published evaluation details.",
+      "limitation": "The update provides sample size and per-post cost, but “two out of three” lacks a disclosed independent test split, baseline and cross-author validation. It does not guarantee virality; fitting data should not be described as Jev’s training data.",
       "reported_result": "The author says it was built in about eight hours and shares a results screenshot.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Jev acts as a fast first-pass classifier. The author does not publish the full criteria or evaluation, so reliable virality prediction is not established."
+      "plain_explanation": "Jev acts as a fast first-pass classifier. The author does not publish the full criteria or evaluation, so reliable virality prediction is not established.",
+      "source_notes": "**Same-project demonstration update:** [The author’s new post](https://x.com/robj3d3/status/2100722975645598191) quotes the original and reports fitting on 9,481 posts from 207 creators, 61 questions per post, roughly one second / $0.0004, and selecting the viral post about two out of three times. These are author reports. The new 45-second video is supplementary media, not a separately counted “SuperX app.”"
     },
     "x-algorithm-sim": {
       "title": "X reach-score simulator",
@@ -385,12 +387,13 @@
     "context-compaction": {
       "title": "Tool-history context compaction",
       "summary": "Trim an AI assistant's work history to retain what matters now.",
-      "mechanism": "Tool-call records → Jev relevance scores → select records for the context.",
+      "mechanism": "At source revision e3f262a: pair tool calls with results, pin the first and recent messages, and fit conversation state to a budget. Tool-output bodies become status/length notes. Jev judges whether to retain each call and result; code keeps, truncates or removes them by thresholds. The Claude Code hook falls back to built-in summarization on errors or insufficient reduction.",
       "advantage": "Reduces context through selection without rewriting the entire history as a summary.",
-      "limitation": "No long-task retention evaluation; discarded records may be needed later.",
+      "limitation": "No long-task retention or total-cost comparison is available. The state shown to Jev omits tool-output bodies, so filtering may miss important results; history edits also need cache-rebuild evaluation. The new usage report does not establish downstream task quality, and the repository’s recording demo explicitly makes no API calls.",
       "reported_result": "The author shares a short demo claiming instant compaction, without a full quality evaluation.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Rather than rewrite all history as a summary, score tool records for relevance and keep selected ones. This saves context but can omit information needed later."
+      "plain_explanation": "Rather than rewrite all history as a summary, score tool records for relevance and keep selected ones. This saves context but can omit information needed later.",
+      "source_notes": "**2026-09-18 update — merged into the same project:**\n\n- [Alex’s usage report](https://x.com/altryne/status/2100739055923425589) cites the original post and repository, reporting about one second to reduce nearly one million tokens to roughly 86,000. This is another user’s single report, not our reproduction.\n- [Theo’s critique](https://x.com/theo/status/2100762304862384257) raises information-loss, reasoning-state and cache-cost concerns. These are a reviewer’s arguments, not uniformly verified findings.\n- The [pinned README](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/README.md) and [state.ts](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/src/state.ts) show budget-fitted conversation context rather than completely isolated calls. However, tool-output bodies are replaced by status/length notes. “Whole conversation” does not mean every original detail is visible.\n- That revision explicitly describes `demo/JevDemo` as a scripted recording animation with no API calls. The animation alone is not a live-inference measurement; this also does not negate the separate real API implementation in the library. The plugin was not run."
     },
     "memory-retrieval": {
       "title": "Memory retrieval filtering",
@@ -400,7 +403,8 @@
       "limitation": "Explicitly a quick test, without recall or long-task accuracy data.",
       "reported_result": "The author reports 94% fewer tokens and 2–3× faster retrieval, not independently reproduced here.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Retrieve candidate memories, then use Jev for a second filter. It resembles picking useful search results; overly aggressive filtering can miss key evidence."
+      "plain_explanation": "Retrieve candidate memories, then use Jev for a second filter. It resembles picking useful search results; overly aggressive filtering can miss key evidence.",
+      "source_notes": "**Tutorial supplement:** The author’s [full tutorial](https://x.com/moritzkremb/status/2100715237267660873) identifies the 11:33 chapter as this AI-memory demonstration. It is merged by author and use case, not counted as another application. The tutorial also covers other demos. Chapter identification comes from the author’s outline; this update did not review every frame or run the code."
     },
     "doom": {
       "title": "Official Doom demo",
@@ -673,6 +677,56 @@
       "reported_result": "The author says it can execute trades in each roughly 300ms block and provides a demo URL.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
       "plain_explanation": "The model chooses an action and code connects to the blockchain order book. Fast orders do not imply profitable trading; complete returns and risk records are absent."
+    },
+    "predictive-launcher": {
+      "title": "Intent-aware predictive launcher",
+      "summary": "Find files without remembering names: type “the PDF I just downloaded” and rank relevant matches first.",
+      "plain_explanation": "Like asking an assistant for the document you just downloaded: the app prepares candidates and context, Jev interprets the request, and the interface updates its ranking as you type. Indexing details are undisclosed.",
+      "mechanism": "The author describes Jev interpreting a query while it is typed and the launcher updating its ranked matches. File indexing, context construction, request throttling and permission scope are undisclosed.",
+      "advantage": "Explores contextual requests such as “just downloaded” beyond filename or alias matching; useful for selecting among file candidates.",
+      "limitation": "The roughly 100ms figure is author-reported. No evaluation covers large file collections, duplicate names or ambiguous references. High model confidence does not guarantee a correct match.",
+      "reported_result": "The author shares a 20-second launcher demo and reports roughly 100ms decisions per keystroke, ranking the newest downloaded PDF first.",
+      "media_note": "The original 20-second demo video, with its source cover and direct video link."
+    },
+    "live-commerce-assistant": {
+      "title": "Live shopping assistant and avatar expressions",
+      "summary": "Recommend products during a conversation and change a virtual shop assistant’s expression with the dialogue.",
+      "plain_explanation": "Like a shop assistant listening and bringing over products: the conversation system talks, Jev contributes quick judgments, and the app updates recommendations and expressions. The author demonstrates two models together but does not disclose every interface.",
+      "mechanism": "The author combines Jev and gpt-live-1 to update product recommendations during a conversation and change avatar expressions with its content. The exact speech, ranking and expression-mapping responsibilities are undisclosed.",
+      "advantage": "Places recommendations inside a live conversation; closer to a customer-facing shopping experience than offline intent labeling.",
+      "limitation": "A simple demo without recommendation-relevance, inventory-consistency or end-to-end latency evaluation. Expression mapping does not establish a capability exclusive to Jev.",
+      "reported_result": "The author shares a roughly 65-second live shopping demo using Jev and gpt-live-1, describing the expression feature as a simple implementation.",
+      "media_note": "The main post’s roughly 65-second video; demonstration footage does not establish recommendation quality or conversion gains."
+    },
+    "minecraft-hybrid": {
+      "title": "Minecraft with Jev, Astra and local policies",
+      "summary": "Split Minecraft play across models: long-term planning, quick reactions, and local movement and aiming.",
+      "plain_explanation": "Like a captain, field coordinator and players sharing work: Astra plans, Jev reacts to immediate events, and local policies turn decisions into movement and aiming. The footage reflects the entire system.",
+      "mechanism": "The author explains that GPT-6 Astra handles longer-term goals, Jev reacts to events such as zombie attacks, and local policy models handle movement and aiming. Observation encoding, model frequencies and execution libraries are undisclosed.",
+      "advantage": "Makes the planning, reactive-decision and low-level-control split explicit; useful to compare with the layered Pac-Man implementation.",
+      "limitation": "Combat performance cannot be attributed to Jev alone. No Jev-only, Astra-only or combined-system comparison is available. The main video is approximately 2× speed; an original-speed version is supplied separately. No completion or speedrun result is established.",
+      "reported_result": "The author demonstrates encounters with multiple zombies, explains the three layers in a reply and posts an original-speed version of the same footage.",
+      "media_note": "The main video is about 192 seconds; the author-labeled original-speed version is about 384 seconds. Use the latter when judging responsiveness rather than inferring speed from the main clip."
+    },
+    "emoji-suggestions": {
+      "title": "Live emoji suggestions",
+      "summary": "Suggest emoji that fit the meaning of text as it is entered.",
+      "plain_explanation": "The model selects from existing emoji rather than drawing new ones. The interface displays candidates and scores and asks again when the input changes. The exact question format is undisclosed.",
+      "mechanism": "The demo maps entered text to emoji candidates and scores. Its publisher compares response times with 3 and 200 candidates; API primitives, caching and request strategy are undisclosed.",
+      "advantage": "A bounded output space with immediately visible feedback; simpler than the repeated selection loop in character-by-character chat.",
+      "limitation": "The 100–200ms and candidate-count claims describe this demo, not arbitrary scales. No language, ambiguity or emoji-relevance evaluation is available.",
+      "reported_result": "The publisher reports roughly 100–200ms responses and similar speed with 3 or 200 candidates, in a roughly 13-second video.",
+      "media_note": "The main video shows text entry, emoji candidates and scores. No verified code entry point is recorded."
+    },
+    "voice-gesture-canvas": {
+      "title": "Voice-and-pointing canvas control",
+      "summary": "Use speech and pointing together to say “put that over there” on a canvas.",
+      "plain_explanation": "The app records where you point when saying words such as “that” and “there,” then asks Jev a few separate questions. It avoids enumerating every object, action and position combination as one huge choice list.",
+      "mechanism": "According to the author’s reply, the app captures pointing at key words and splits each sentence into a few small questions for Jev to confirm, then executes canvas actions. The video interface displays speech, finger and canvas state; perception libraries are undisclosed.",
+      "advantage": "Combines language and pointing to resolve references missing from text alone. Compared with TypeGPU’s semantic effects, this example focuses on manipulating canvas objects.",
+      "limitation": "The author explicitly describes an imperfect feasibility experiment. No pointing-error, speech-error or action-success evaluation is available, and separate decisions still require consistency checks.",
+      "reported_result": "The author shares a roughly 39-second canvas demo and explains pointing capture and question decomposition in a reply.",
+      "media_note": "The video interface shows a canvas, camera and separate input/decision panels. Implementation details come from the author’s reply; this is not evidence that Jev directly recognizes video."
     }
   },
   "groups": {
@@ -722,12 +776,12 @@
       "title": "Context and memory filtering",
       "comparison": "Tool-history compaction filters the current conversation; memory retrieval filtering selects from an external memory store. Both reduce input at different stages. Evaluate retained information and task quality before comparing token reductions.",
       "flow": "History or memory candidates plus current task → Jev relevance scores → select records → construct downstream context.",
-      "analysis": "Selecting original text and generating a new summary have different failure modes: selection can omit information needed later, while rewriting can distort it. The reported 94% reduction is one quick test, not a default compression target.",
+      "analysis": "Selecting original text and generating a new summary have different failure modes: selection can omit information needed later, while rewriting can distort it. The reported 94% reduction is one quick test, not a default compression target. Updated compaction-plugin sources show budget-fitted conversation context with tool-output bodies omitted; its recording animation makes no API calls. Evaluate size reduction, downstream task quality, cache rebuilding and total cost separately. The case includes the new usage report and reviewer critique.",
       "evaluation": "Test delayed information needs, error recovery, old-decision tracing and cross-turn references in long tasks. Track recall, completion quality, filtering overhead and total tokens while retaining recoverable originals."
     },
     "games": {
       "title": "Game decisions and solving",
-      "comparison": "Compare three Mario implementations: basic integration, a controlled structured-state/five-action Jev–Qwen demo, and a PPO implementation-effort anecdote. Pac-Man separates planning and execution; Pokémon reports longer progress; chess separates speed from strength; cube-solving code supplies the method. Other demos explore action spaces rather than establish a general leaderboard.",
+      "comparison": "Compare three Mario implementations: basic integration, a controlled structured-state/five-action Jev–Qwen demo, and a PPO implementation-effort anecdote. Pac-Man separates planning and execution; Pokémon reports longer progress; chess separates speed from strength; cube-solving code supplies the method. Other demos explore action spaces rather than establish a general leaderboard. Minecraft also uses layers, with local movement/aiming policies. Its performance belongs to the combined system; use the author’s original-speed supplement when comparing responsiveness.",
       "flow": "Environment state → adapter and legal action candidates → Jev choice → rule/executor checks → advance the environment.",
       "analysis": "Games can expose grid state, memory variables or other structured interfaces. The Jev–Qwen Mario post explicitly describes structured conversion and five choices; undocumented details elsewhere remain unknown. Cube algorithms come from code, illustrating how overall capability depends on the whole system.",
       "evaluation": "Fix environment versions, speed, action granularity and random seeds. Run repeated games and report wins, scores, total cost and stalls. State whether simulation pauses during model waits; separate decision latency from real game progress."
@@ -741,7 +795,7 @@
     },
     "interaction": {
       "title": "Real-time interaction and composition experiments",
-      "comparison": "TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs.",
+      "comparison": "TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs. New entries cover file selection, emoji suggestions, live shopping and voice-and-pointing canvas control. Their distinct tasks warrant separate cases. Both the canvas and TypeGPU combine perception with decisions, but one manipulates objects while the other changes audiovisual effects.",
       "flow": "Prepare finite candidates or atomic questions → Jev judges → code composes results → update interaction state or output.",
       "analysis": "Code assembles word and character choices into text; the API still returns judgments. RISC-jeV stacks logic-gate decisions and instruction interpretation to illustrate composition, not efficiency.",
       "evaluation": "Record vocabulary size, resolution or character count, loop count and full cost. Compare quality with deterministic code or specialized generators. Measure local perception, remote decisions and rendering separately."

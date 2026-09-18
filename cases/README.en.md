@@ -96,6 +96,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Parallel Subway Surfers demo](2026-09-18-subway-runners/README.en.md) | Demonstrate Jev controlling multiple runner-style games at once. | [1,474](https://x.com/_MaxBlade/status/2100634359099232678) |
 | [Staged Rubik's Cube solver](2026-09-18-rubiks-cube/README.en.md) | Code knows the cube-solving methods; Jev identifies which case to apply. | [494](https://x.com/redp314/status/2100489858951073858) |
 | [Mario Kart 64](2026-09-18-mario-kart/README.en.md) | Watch Jev control Mario Kart in a continuous-driving demo. | [204](https://x.com/shreypandya/status/2100606445758898287) |
+| [Minecraft with Jev, Astra and local policies](2026-09-18-minecraft-hybrid/README.en.md) | Split Minecraft play across models: long-term planning, quick reactions, and local movement and aiming. | [354](https://x.com/wuyang_zhou/status/2100727660875808913) |
 
 ## NPCs, driving and population simulations
 
@@ -119,6 +120,10 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [29-option character generation](2026-09-18-character-chat/README.en.md) | Let Jev choose one letter or punctuation mark at a time to build text. | [866](https://x.com/ryanvogel/status/2100218045549412499) |
 | [Parallel pixel drawing](2026-09-18-pixel-drawing/README.en.md) | Combine many pixel-level judgments to experiment with drawing through Jev. | [1,461](https://x.com/anshuc/status/2100246929611411501) |
 | [RISC-jeV logic-gate experiment](2026-09-18-riscv/README.en.md) | Use Jev for simple logic decisions and compose them into small computer instructions. | [208](https://x.com/i2cjak/status/2100454307405365673) |
+| [Intent-aware predictive launcher](2026-09-18-predictive-launcher/README.en.md) | Find files without remembering names: type “the PDF I just downloaded” and rank relevant matches first. | [252](https://x.com/dabit3/status/2100756930054504776) |
+| [Live shopping assistant and avatar expressions](2026-09-18-live-commerce-assistant/README.en.md) | Recommend products during a conversation and change a virtual shop assistant’s expression with the dialogue. | [217](https://x.com/rinte0321/status/2100736454850908344) |
+| [Live emoji suggestions](2026-09-18-emoji-suggestions/README.en.md) | Suggest emoji that fit the meaning of text as it is entered. | [230](https://x.com/riku720720/status/2100705558512963602) |
+| [Voice-and-pointing canvas control](2026-09-18-voice-gesture-canvas/README.en.md) | Use speech and pointing together to say “put that over there” on a canvas. | [915](https://x.com/jackcheng/status/2100729670991802386) |
 
 ## Trading execution demo
 

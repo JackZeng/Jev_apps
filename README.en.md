@@ -2,7 +2,9 @@
 
 [简体中文](README.md) | **English**
 
-A bilingual field guide to **TypeSafe Jev** applications found on X: what they do, how they work, and the strengths and limits of similar approaches. **67 examples · 11 categories · each main post had ≥ 200 likes when collected · every entry includes an image or video.**
+A bilingual field guide to **TypeSafe Jev** applications found on X: what they do, how they work, and the strengths and limits of similar approaches. **72 examples · 11 categories · each main post had ≥ 200 likes when collected · every entry includes an image or video.**
+
+Latest incremental source review: **2026-09-18T02:43:33+00:00 (UTC)**; **5 new cases**, **4 existing entries updated**. [Additions, merges and exclusions](CHANGELOG.en.md). Existing main-post metric snapshots retain their original retrieval times.
 
 ## What is Jev, in plain English?
 
@@ -30,9 +32,9 @@ For example, a flight-search agent reads the webpage and lists available control
 | [Content and advertising analysis](#content) | 7 | [Read analysis](breakdowns/2026-09-18-content.en.md) |
 | [Webpage and feed filtering](#filter) | 2 | [Read analysis](breakdowns/2026-09-18-filter.en.md) |
 | [Context and memory filtering](#memory) | 2 | [Read analysis](breakdowns/2026-09-18-memory.en.md) |
-| [Game decisions and solving](#games) | 13 | [Read analysis](breakdowns/2026-09-18-games.en.md) |
+| [Game decisions and solving](#games) | 14 | [Read analysis](breakdowns/2026-09-18-games.en.md) |
 | [NPCs, driving and population simulations](#simulation) | 7 | [Read analysis](breakdowns/2026-09-18-simulation.en.md) |
-| [Real-time interaction and composition experiments](#interaction) | 6 | [Read analysis](breakdowns/2026-09-18-interaction.en.md) |
+| [Real-time interaction and composition experiments](#interaction) | 10 | [Read analysis](breakdowns/2026-09-18-interaction.en.md) |
 | [Trading execution demo](#finance) | 1 | [Read analysis](breakdowns/2026-09-18-finance.en.md) |
 
 [Case index](cases/README.en.md) · [All explanations](breakdowns/README.en.md) · [Pending evidence](inbox/README.en.md) · [Contributing](CONTRIBUTING.en.md)
@@ -158,9 +160,9 @@ Tool-history compaction filters the current conversation; memory retrieval filte
 
 <a id="games"></a>
 
-### Game decisions and solving (13)
+### Game decisions and solving (14)
 
-Compare three Mario implementations: basic integration, a controlled structured-state/five-action Jev–Qwen demo, and a PPO implementation-effort anecdote. Pac-Man separates planning and execution; Pokémon reports longer progress; chess separates speed from strength; cube-solving code supplies the method. Other demos explore action spaces rather than establish a general leaderboard.
+Compare three Mario implementations: basic integration, a controlled structured-state/five-action Jev–Qwen demo, and a PPO implementation-effort anecdote. Pac-Man separates planning and execution; Pokémon reports longer progress; chess separates speed from strength; cube-solving code supplies the method. Other demos explore action spaces rather than establish a general leaderboard. Minecraft also uses layers, with local movement/aiming policies. Its performance belongs to the combined system; use the author’s original-speed supplement when comparing responsiveness.
 
 [Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-games.en.md)
 
@@ -179,6 +181,7 @@ Compare three Mario implementations: basic integration, a controlled structured-
 | [**Parallel Subway Surfers demo**](cases/2026-09-18-subway-runners/README.en.md)<br>Demonstrate Jev controlling multiple runner-style games at once.<br>**How it works:** Several game environments request decisions in parallel and execute them separately. The original client versus recreation is unspecified, so this is not evidence of general phone control. | [1,474](https://x.com/_MaxBlade/status/2100634359099232678) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100633400717565952/img/KlytLNSLCQA-yY2E.jpg" width="160" alt="Parallel Subway Surfers demo preview">](https://x.com/_MaxBlade/status/2100634359099232678)<br>[Video](https://x.com/_MaxBlade/status/2100634359099232678) |
 | [**Staged Rubik's Cube solver**](cases/2026-09-18-rubiks-cube/README.en.md)<br>Code knows the cube-solving methods; Jev identifies which case to apply.<br>**How it works:** Imagine a prepared solving handbook. Jev identifies the situation; code applies and checks the matching method. The complete solution comes from their combination. | [494](https://x.com/redp314/status/2100489858951073858) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100479486382809088/img/r6daGpDnvsCr3LyL.jpg" width="160" alt="Staged Rubik&#x27;s Cube solver preview">](https://x.com/redp314/status/2100489858951073858)<br>[Video](https://x.com/redp314/status/2100489858951073858) |
 | [**Mario Kart 64**](cases/2026-09-18-mario-kart/README.en.md)<br>Watch Jev control Mario Kart in a continuous-driving demo.<br>**How it works:** An adapter must turn racing state into model inputs and choices into controls. State access, driving aids and simulation speed are not explained, leaving important implementation details unknown. | [204](https://x.com/shreypandya/status/2100606445758898287) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100605130869784576/img/gdGysXaHMdzFOU8W.jpg" width="160" alt="Mario Kart 64 preview">](https://x.com/shreypandya/status/2100606445758898287)<br>[Video](https://x.com/shreypandya/status/2100606445758898287) |
+| [**Minecraft with Jev, Astra and local policies**](cases/2026-09-18-minecraft-hybrid/README.en.md)<br>Split Minecraft play across models: long-term planning, quick reactions, and local movement and aiming.<br>**How it works:** Like a captain, field coordinator and players sharing work: Astra plans, Jev reacts to immediate events, and local policies turn decisions into movement and aiming. The footage reflects the entire system. | [354](https://x.com/wuyang_zhou/status/2100727660875808913) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100727359569530880/img/IGuQpzilRkIsw1Wb.jpg" width="160" alt="Minecraft with Jev, Astra and local policies preview">](https://x.com/wuyang_zhou/status/2100727660875808913)<br>[Video](https://x.com/wuyang_zhou/status/2100727660875808913) |
 
 <a id="simulation"></a>
 
@@ -200,9 +203,9 @@ Needs-driven NPCs explore behavior; the 500-agent demo explores throughput. Unpa
 
 <a id="interaction"></a>
 
-### Real-time interaction and composition experiments (6)
+### Real-time interaction and composition experiments (10)
 
-TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs.
+TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs. New entries cover file selection, emoji suggestions, live shopping and voice-and-pointing canvas control. Their distinct tasks warrant separate cases. Both the canvas and TypeGPU combine perception with decisions, but one manipulates objects while the other changes audiovisual effects.
 
 [Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-interaction.en.md)
 
@@ -214,6 +217,10 @@ TypeGPU combines local perception with remote semantic decisions. Ask Jev expose
 | [**29-option character generation**](cases/2026-09-18-character-chat/README.en.md)<br>Let Jev choose one letter or punctuation mark at a time to build text.<br>**How it works:** Each round asks 29 yes/no questions, picks the strongest character and appends it. Producing text this way does not establish an advantage over a dedicated text model. | [866](https://x.com/ryanvogel/status/2100218045549412499) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100217973000617984/img/AFareJummI08B_QB.jpg" width="160" alt="29-option character generation preview">](https://x.com/ryanvogel/status/2100218045549412499)<br>[Video](https://x.com/ryanvogel/status/2100218045549412499) |
 | [**Parallel pixel drawing**](cases/2026-09-18-pixel-drawing/README.en.md)<br>Combine many pixel-level judgments to experiment with drawing through Jev.<br>**How it works:** Think of deciding picture cells and assembling them in code. The author describes parallel pixel prediction but does not publish color choices, resolution or question construction. | [1,461](https://x.com/anshuc/status/2100246929611411501) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100245288183066624/img/ARkl8CTLZxp1KXSa.jpg" width="160" alt="Parallel pixel drawing preview">](https://x.com/anshuc/status/2100246929611411501)<br>[Video](https://x.com/anshuc/status/2100246929611411501) |
 | [**RISC-jeV logic-gate experiment**](cases/2026-09-18-riscv/README.en.md)<br>Use Jev for simple logic decisions and compose them into small computer instructions.<br>**How it works:** Like building a machine from blocks, Jev supplies AND/OR-style decisions that SERV combines into instructions. This illustrates composition rather than efficient computation. | [208](https://x.com/i2cjak/status/2100454307405365673) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100454137695469568/img/pGRTotN_ZQaAuc4V.jpg" width="160" alt="RISC-jeV logic-gate experiment preview">](https://x.com/i2cjak/status/2100454307405365673)<br>[Video](https://x.com/i2cjak/status/2100454307405365673) |
+| [**Intent-aware predictive launcher**](cases/2026-09-18-predictive-launcher/README.en.md)<br>Find files without remembering names: type “the PDF I just downloaded” and rank relevant matches first.<br>**How it works:** Like asking an assistant for the document you just downloaded: the app prepares candidates and context, Jev interprets the request, and the interface updates its ranking as you type. Indexing details are undisclosed. | [252](https://x.com/dabit3/status/2100756930054504776) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100756324845862913/img/8ew1NdHs6k5cReoF.jpg" width="160" alt="Intent-aware predictive launcher preview">](https://x.com/dabit3/status/2100756930054504776)<br>[Video](https://x.com/dabit3/status/2100756930054504776) |
+| [**Live shopping assistant and avatar expressions**](cases/2026-09-18-live-commerce-assistant/README.en.md)<br>Recommend products during a conversation and change a virtual shop assistant’s expression with the dialogue.<br>**How it works:** Like a shop assistant listening and bringing over products: the conversation system talks, Jev contributes quick judgments, and the app updates recommendations and expressions. The author demonstrates two models together but does not disclose every interface. | [217](https://x.com/rinte0321/status/2100736454850908344) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100735518963355648/img/o0S0IxXnxWjnlNOG.jpg" width="160" alt="Live shopping assistant and avatar expressions preview">](https://x.com/rinte0321/status/2100736454850908344)<br>[Video](https://x.com/rinte0321/status/2100736454850908344) |
+| [**Live emoji suggestions**](cases/2026-09-18-emoji-suggestions/README.en.md)<br>Suggest emoji that fit the meaning of text as it is entered.<br>**How it works:** The model selects from existing emoji rather than drawing new ones. The interface displays candidates and scores and asks again when the input changes. The exact question format is undisclosed. | [230](https://x.com/riku720720/status/2100705558512963602) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100705222016520192/img/BxzTN_rxkA_FLvwe.jpg" width="160" alt="Live emoji suggestions preview">](https://x.com/riku720720/status/2100705558512963602)<br>[Video](https://x.com/riku720720/status/2100705558512963602) |
+| [**Voice-and-pointing canvas control**](cases/2026-09-18-voice-gesture-canvas/README.en.md)<br>Use speech and pointing together to say “put that over there” on a canvas.<br>**How it works:** The app records where you point when saying words such as “that” and “there,” then asks Jev a few separate questions. It avoids enumerating every object, action and position combination as one huge choice list. | [915](https://x.com/jackcheng/status/2100729670991802386) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100729243185324032/img/YNw8njfnSXu-Tbyr.jpg" width="160" alt="Voice-and-pointing canvas control preview">](https://x.com/jackcheng/status/2100729670991802386)<br>[Video](https://x.com/jackcheng/status/2100729670991802386) |
 
 <a id="finance"></a>
 

@@ -44,7 +44,7 @@ Trim an AI assistant's work history to retain what matters now.
 
 ## Inputs, steps and outputs
 
-Tool-call records → Jev relevance scores → select records for the context.
+At source revision e3f262a: pair tool calls with results, pin the first and recent messages, and fit conversation state to a budget. Tool-output bodies become status/length notes. Jev judges whether to retain each call and result; code keeps, truncates or removes them by thresholds. The Claude Code hook falls back to built-in summarization on errors or insufficient reduction.
 
 Undisclosed prompts, state formats, thresholds and recovery logic remain unknown. Inclusion of a demo does not establish a stable release.
 
@@ -55,19 +55,26 @@ Undisclosed prompts, state formats, thresholds and recovery logic remain unknown
 | The author shares a short demo claiming instant compaction, without a full quality evaluation. | Author report | [Post and attached media](https://x.com/tamarajtran/status/2100694549362553153) | Not reproduced here; a demo does not establish general performance |
 | Main post meets the threshold and has media | Metadata check | [Retrieval endpoint](https://api.fxtwitter.com/status/2100694549362553153) | Snapshot at the recorded time, not a live count |
 
+**2026-09-18 update — merged into the same project:**
 
+- [Alex’s usage report](https://x.com/altryne/status/2100739055923425589) cites the original post and repository, reporting about one second to reduce nearly one million tokens to roughly 86,000. This is another user’s single report, not our reproduction.
+- [Theo’s critique](https://x.com/theo/status/2100762304862384257) raises information-loss, reasoning-state and cache-cost concerns. These are a reviewer’s arguments, not uniformly verified findings.
+- The [pinned README](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/README.md) and [state.ts](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/src/state.ts) show budget-fitted conversation context rather than completely isolated calls. However, tool-output bodies are replaced by status/length notes. “Whole conversation” does not mean every original detail is visible.
+- That revision explicitly describes `demo/JevDemo` as a scripted recording animation with no API calls. The animation alone is not a live-inference measurement; this also does not negate the separate real API implementation in the library. The plugin was not run.
 
 Updates and deduplicated supporting sources:
 
-None.
+- [Supporting post by @tamarajtran](https://x.com/tamarajtran/status/2100694552369897539): published 2026-09-17T21:13:04+00:00; 500 likes retrieved 2026-09-18T02:41:19+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100694552369897539).
+- [Supporting post by @altryne](https://x.com/altryne/status/2100739055923425589): published 2026-09-18T00:09:55+00:00; 1,836 likes retrieved 2026-09-18T02:36:40+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100739055923425589). [Supplementary media 1](https://pbs.twimg.com/media/HSdTBk8bAAAPtk8.png?name=orig) [Supplementary media 2](https://pbs.twimg.com/media/HSdTCa_a0AAKYLw.png?name=orig)
+- [Supporting post by @theo](https://x.com/theo/status/2100762304862384257): published 2026-09-18T01:42:18+00:00; 347 likes retrieved 2026-09-18T02:36:40+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100762304862384257).
 
 Public project / demo links (a link does not mean availability has been tested here):
 
-No separately verified project entry point recorded from the post; the thread may provide further leads.
+- [Project / demo link 1](https://github.com/tamaratran/fast-jev-compaction)
 
 ## Mechanism and comparison
 
-No long-task retention evaluation; discarded records may be needed later.
+No long-task retention or total-cost comparison is available. The state shown to Jev omits tool-output bodies, so filtering may miss important results; history edits also need cache-rebuild evaluation. The new usage report does not establish downstream task quality, and the repository’s recording demo explicitly makes no API calls.
 
 See the [category analysis](../../breakdowns/2026-09-18-memory.en.md) for comparisons, common patterns and suggested experiments. Implementation statements come from public sources; the strengths and missing-evidence assessment are our analysis, not verification of model internals.
 
@@ -80,3 +87,4 @@ See the [category analysis](../../breakdowns/2026-09-18-memory.en.md) for compar
 | Date | Change |
 | --- | --- |
 | 2026-09-18 | First collection; checked the main post, metric snapshot and media; added to category comparisons |
+| 2026-09-18T02:43:33+00:00 | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |

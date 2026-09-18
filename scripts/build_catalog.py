@@ -31,8 +31,16 @@ def validate(d):
     groups = {g['id'] for g in d['groups']}
     assert len(groups) == len(d['groups']), '分组重复'
     assert d['minimum_likes'] >= 200
+    update = d.get('latest_update')
+    if update:
+        assert datetime.fromisoformat(update['reviewed_at']).tzinfo
+        changed = update['new_cases'] + update['updated_cases']
+        assert len(changed) == len(set(changed)), '增量记录重复'
+        assert set(changed) <= {c['slug'] for c in cases}, '增量记录引用未知案例'
     for c in cases:
         p = c['post']
+        source_ids = [p['id']] + [s['id'] for s in c['supplementary_posts']]
+        assert len(source_ids) == len(set(source_ids)), f'{c["slug"]} 来源重复，请合并'
         assert c['group'] in groups
         assert p['likes'] >= d['minimum_likes'], c['slug']
         assert p['media'], f'{c["slug"]} 缺媒体'
@@ -51,11 +59,13 @@ def generate(d):
     groups = {g['id']: g for g in d['groups']}
     counts = Counter(c['group'] for c in cases)
     files = {}
+    update = d.get('latest_update')
+    update_notice = (f"最近增量核对：**{update['reviewed_at']}（UTC）**；新增 **{len(update['new_cases'])}** 个独立案例，补充 **{len(update['updated_cases'])}** 个已有条目。[本轮新增、合并与未收录原因](CHANGELOG.md)。已有主帖的点赞快照保持原取数时间。\n\n" if update else '')
     readme = [f'''# Jev 应用案例与原理拆解
 
-从 X 收集 **TypeSafe Jev** 的真实应用演示，整理用途、实现思路和同类优劣。**首批 {len(cases)} 个案例 · {len(groups)} 类 · 每条主帖收录时均 ≥ {d['minimum_likes']} 赞 · 每条附图或视频**。
+从 X 收集 **TypeSafe Jev** 的应用演示，整理用途、实现思路和同类优劣。**当前 {len(cases)} 个案例 · {len(groups)} 类 · 每条主帖收录时均 ≥ {d['minimum_likes']} 赞 · 每条附图或视频**。
 
-## Jev 是什么？先用一句人话理解
+{update_notice}## Jev 是什么？先用一句人话理解
 
 可以把 Jev 想成软件里的快速分拣员：程序先把当前情况和问题准备好，Jev 负责判断，程序再把判断变成动作。例如给邮件贴标签、为任务挑一个 AI 助手，或决定网页上下一步点哪个按钮。许多个小判断组合起来，就能构成下面这些应用。
 
@@ -95,7 +105,8 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
             readme.append(f'| [**{c["title"]}**]({path}/README.md)<br>{c["summary"]}<br>**原理：** {c["plain_explanation"]} | [{p["likes"]:,}]({p["url"]}) | {thumb(c)} |\n')
             index.append(f'| [{c["title"]}]({date}-{c["slug"]}/README.md) | {c["summary"]} | [{p["likes"]:,}]({p["url"]}) |\n')
             b.append(f'| [{c["title"]}](../{path}/README.md) | {c["advantage"]} | {c["limitation"]} |\n')
-            supplement = '\n'.join(f'- [@{s["author"]} 的补充帖]({s["url"]})：{s["published_at"]}；取数时 {s["likes"]:,} 赞，仅作补充、不计入门槛。' for s in c['supplementary_posts']) or '无。'
+            supplement = '\n'.join(f'- [@{s["author"]} 的补充帖]({s["url"]})：发布于 {s["published_at"]}；{s["retrieved_at"]} 取数时 {s["likes"]:,} 赞，仅作补充、不计入门槛。[取数来源]({s["metrics_source"]})。' + ''.join(f' [补充媒体 {i}]({m["url"]})' for i, m in enumerate(s.get('media', []), 1)) for s in c['supplementary_posts']) or '无。'
+            update_entry = (f"| {update['reviewed_at']} | 合并补充来源，完善原理、证据或教程说明；[本轮去重记录](../../CHANGELOG.md) |\n" if update and c['slug'] in update['updated_cases'] else '')
             links = '\n'.join(f'- [项目入口 {i}]({url})' for i, url in enumerate(c['links'], 1)) or '原帖未提供已核对的独立入口；后续可继续从讨论串补充。'
             media = []
             for i, m in enumerate(p['media'], 1):
@@ -181,7 +192,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 | 日期 | 更新内容 |
 | --- | --- |
 | {date} | 首次收录；核对主帖、点赞与媒体，加入同类对比 |
-'''
+{update_entry}'''
         b.append(f'\n## 可观察流程与机制\n\n{g["flow"]}\n\n{g["analysis"]}\n\n各案例的输入和实现差异见上表链接的来源记录。该流程是应用层归纳，不代表每个项目都采用完全相同的实现，也不是对 Jev 内部训练架构的推断。\n\n## 复现实验建议\n\n{g["evaluation"]}\n\n**尚未执行实验。** 当前没有本仓库产生的耗时、准确率或成本结果。\n\n## 更新记录\n\n- {date}：整理首批案例，合并同项目更新，建立对比。\n\n[返回首页](../README.md#{group_id}) · [拆解索引](README.md)\n')
         files[bp] = ''.join(b)
     readme.append('''

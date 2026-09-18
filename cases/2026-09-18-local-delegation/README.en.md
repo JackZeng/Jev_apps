@@ -59,7 +59,7 @@ Undisclosed prompts, state formats, thresholds and recovery logic remain unknown
 
 Updates and deduplicated supporting sources:
 
-- [Update by @mdlahfir](https://x.com/mdlahfir/status/2100381962162843779): 2026-09-17T00:30:57+00:00; 428 likes at retrieval. Supporting source only; not counted toward the threshold.
+- [Supporting post by @mdlahfir](https://x.com/mdlahfir/status/2100381962162843779): published 2026-09-17T00:30:57+00:00; 428 likes retrieved 2026-09-17T22:42:23.946132+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100381962162843779). [Supplementary media 1](https://video.twimg.com/amplify_video/2100381914049949696/vid/avc1/2992x1682/_8ERgPjt_8yzE9Bd.mp4?tag=29)
 
 Public project / demo links (a link does not mean availability has been tested here):
 

@@ -55,11 +55,11 @@ Undisclosed prompts, state formats, thresholds and recovery logic remain unknown
 | The author reports 94% fewer tokens and 2–3× faster retrieval, not independently reproduced here. | Author report | [Post and attached media](https://x.com/moritzkremb/status/2100566009312940457) | Not reproduced here; a demo does not establish general performance |
 | Main post meets the threshold and has media | Metadata check | [Retrieval endpoint](https://api.fxtwitter.com/status/2100566009312940457) | Snapshot at the recorded time, not a live count |
 
-
+**Tutorial supplement:** The author’s [full tutorial](https://x.com/moritzkremb/status/2100715237267660873) identifies the 11:33 chapter as this AI-memory demonstration. It is merged by author and use case, not counted as another application. The tutorial also covers other demos. Chapter identification comes from the author’s outline; this update did not review every frame or run the code.
 
 Updates and deduplicated supporting sources:
 
-None.
+- [Supporting post by @moritzkremb](https://x.com/moritzkremb/status/2100715237267660873): published 2026-09-17T22:35:16+00:00; 293 likes retrieved 2026-09-18T02:38:04+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100715237267660873). [Supplementary media 1](https://video.twimg.com/amplify_video/2100714561389129730/vid/avc1/1920x1080/jKadt8Mu-oZVRUu0.mp4?tag=29)
 
 Public project / demo links (a link does not mean availability has been tested here):
 
@@ -80,3 +80,4 @@ See the [category analysis](../../breakdowns/2026-09-18-memory.en.md) for compar
 | Date | Change |
 | --- | --- |
 | 2026-09-18 | First collection; checked the main post, metric snapshot and media; added to category comparisons |
+| 2026-09-18T02:43:33+00:00 | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |

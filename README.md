@@ -2,7 +2,9 @@
 
 **简体中文** | [English](README.en.md)
 
-从 X 收集 **TypeSafe Jev** 的真实应用演示，整理用途、实现思路和同类优劣。**首批 67 个案例 · 11 类 · 每条主帖收录时均 ≥ 200 赞 · 每条附图或视频**。
+从 X 收集 **TypeSafe Jev** 的应用演示，整理用途、实现思路和同类优劣。**当前 72 个案例 · 11 类 · 每条主帖收录时均 ≥ 200 赞 · 每条附图或视频**。
+
+最近增量核对：**2026-09-18T02:43:33+00:00（UTC）**；新增 **5** 个独立案例，补充 **4** 个已有条目。[本轮新增、合并与未收录原因](CHANGELOG.md)。已有主帖的点赞快照保持原取数时间。
 
 ## Jev 是什么？先用一句人话理解
 
@@ -32,9 +34,9 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 | [内容与广告分析](#content) | 7 | [阅读分析](breakdowns/2026-09-18-content.md) |
 | [网页与信息流过滤](#filter) | 2 | [阅读分析](breakdowns/2026-09-18-filter.md) |
 | [上下文与记忆筛选](#memory) | 2 | [阅读分析](breakdowns/2026-09-18-memory.md) |
-| [游戏决策与求解](#games) | 13 | [阅读分析](breakdowns/2026-09-18-games.md) |
+| [游戏决策与求解](#games) | 14 | [阅读分析](breakdowns/2026-09-18-games.md) |
 | [NPC、驾驶与群体模拟](#simulation) | 7 | [阅读分析](breakdowns/2026-09-18-simulation.md) |
-| [实时交互与组合实验](#interaction) | 6 | [阅读分析](breakdowns/2026-09-18-interaction.md) |
+| [实时交互与组合实验](#interaction) | 10 | [阅读分析](breakdowns/2026-09-18-interaction.md) |
 | [交易执行演示](#finance) | 1 | [阅读分析](breakdowns/2026-09-18-finance.md) |
 
 [案例索引](cases/README.md) · [全部拆解](breakdowns/README.md) · [待补证据](inbox/README.md) · [收录流程](CONTRIBUTING.md)
@@ -160,9 +162,9 @@ PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确
 
 <a id="games"></a>
 
-### 游戏决策与求解（13）
+### 游戏决策与求解（14）
 
-马里奥三个实现并排比较：@faadilhshaik 展示基本接入，Jev/Qwen 版本明确相同结构化状态与五选一，PPO 对照展示实现投入。吃豆人体现规划/执行分层；宝可梦体现长期进度；棋局显示速度与棋力分离；魔方的确定性代码承担解法。其余演示适合研究动作空间，而不是据短片排通用能力榜。
+马里奥三个实现并排比较：@faadilhshaik 展示基本接入，Jev/Qwen 版本明确相同结构化状态与五选一，PPO 对照展示实现投入。吃豆人体现规划/执行分层；宝可梦体现长期进度；棋局显示速度与棋力分离；魔方的确定性代码承担解法。其余演示适合研究动作空间，而不是据短片排通用能力榜。 Minecraft 同样分层，但增加了本地移动/瞄准策略，不能把整个系统的表现归给 Jev；比较速度请看作者原速补充视频。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-games.md)
 
@@ -181,6 +183,7 @@ PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确
 | [**Subway Surfers 并行演示**](cases/2026-09-18-subway-runners/README.md)<br>展示 Jev 同时控制多局跑酷游戏的效果。<br>**原理：** 多个游戏环境并行请求决策，再各自执行。原帖没有说清是不是原版客户端，所以它证明的是这个演示的控制效果，不是通用手机操作能力。 | [1,474](https://x.com/_MaxBlade/status/2100634359099232678) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100633400717565952/img/KlytLNSLCQA-yY2E.jpg" width="160" alt="Subway Surfers 并行演示预览">](https://x.com/_MaxBlade/status/2100634359099232678)<br>[视频](https://x.com/_MaxBlade/status/2100634359099232678) |
 | [**魔方分阶段解法**](cases/2026-09-18-rubiks-cube/README.md)<br>程序会魔方公式，Jev 帮它判断当前该用哪一种。<br>**原理：** 像先准备一本解法手册：Jev 负责认出眼下的情况，程序查对应公式并检查操作。因此完整解法来自模型与代码合作。 | [494](https://x.com/redp314/status/2100489858951073858) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100479486382809088/img/r6daGpDnvsCr3LyL.jpg" width="160" alt="魔方分阶段解法预览">](https://x.com/redp314/status/2100489858951073858)<br>[视频](https://x.com/redp314/status/2100489858951073858) |
 | [**Mario Kart 64**](cases/2026-09-18-mario-kart/README.md)<br>展示 Jev 玩马里奥赛车，观察连续驾驶时的反应。<br>**原理：** 程序必须把赛车状态转成模型能判断的信息，再把结果变成操控。原帖没交代状态接口、辅助驾驶逻辑或模拟速度，原理细节仍待补充。 | [204](https://x.com/shreypandya/status/2100606445758898287) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100605130869784576/img/gdGysXaHMdzFOU8W.jpg" width="160" alt="Mario Kart 64预览">](https://x.com/shreypandya/status/2100606445758898287)<br>[视频](https://x.com/shreypandya/status/2100606445758898287) |
+| [**Minecraft · Jev、Astra 与本地策略**](cases/2026-09-18-minecraft-hybrid/README.md)<br>让不同模型分工玩 Minecraft：一个管长远计划，一个应急，本地模型负责走路和瞄准。<br>**原理：** 像队长、现场指挥和队员分工：Astra 规划目标，Jev 应对眼前变化，本地策略把指令变成移动和瞄准。画面中的表现来自整套系统。 | [354](https://x.com/wuyang_zhou/status/2100727660875808913) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100727359569530880/img/IGuQpzilRkIsw1Wb.jpg" width="160" alt="Minecraft · Jev、Astra 与本地策略预览">](https://x.com/wuyang_zhou/status/2100727660875808913)<br>[视频](https://x.com/wuyang_zhou/status/2100727660875808913) |
 
 <a id="simulation"></a>
 
@@ -202,9 +205,9 @@ NPC 需求选择适合研究角色行为，500 agents 演示关注并发吞吐�
 
 <a id="interaction"></a>
 
-### 实时交互与组合实验（6）
+### 实时交互与组合实验（10）
 
-TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。
+TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 本次新增的启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-interaction.md)
 
@@ -216,6 +219,10 @@ TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单�
 | [**29 选项字符生成**](cases/2026-09-18-character-chat/README.md)<br>让 Jev 每次挑一个字母或标点，慢慢拼成一段话。<br>**原理：** 每轮问 29 个是非问题，比较哪个字符最合适，再追加到已有文本后。能拼出文字不代表这种办法比专门的文字模型更划算。 | [866](https://x.com/ryanvogel/status/2100218045549412499) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100217973000617984/img/AFareJummI08B_QB.jpg" width="160" alt="29 选项字符生成预览">](https://x.com/ryanvogel/status/2100218045549412499)<br>[视频](https://x.com/ryanvogel/status/2100218045549412499) |
 | [**并行像素绘图**](cases/2026-09-18-pixel-drawing/README.md)<br>把许多小像素的判断拼在一起，尝试让 Jev 画图。<br>**原理：** 可以把它理解为逐格决定画面，再由程序拼成图。作者称像素并行预测，但没公开颜色选项、分辨率和问题写法。 | [1,461](https://x.com/anshuc/status/2100246929611411501) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100245288183066624/img/ARkl8CTLZxp1KXSa.jpg" width="160" alt="并行像素绘图预览">](https://x.com/anshuc/status/2100246929611411501)<br>[视频](https://x.com/anshuc/status/2100246929611411501) |
 | [**RISC-jeV 逻辑门实验**](cases/2026-09-18-riscv/README.md)<br>让 Jev 判断最简单的逻辑，再把这些判断拼成小型计算机指令。<br>**原理：** 像用积木搭机器：底层先判断 AND、OR 等逻辑，SERV 实现再组合成指令。它是在展示组合原理，并不是高效做计算的新办法。 | [208](https://x.com/i2cjak/status/2100454307405365673) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100454137695469568/img/pGRTotN_ZQaAuc4V.jpg" width="160" alt="RISC-jeV 逻辑门实验预览">](https://x.com/i2cjak/status/2100454307405365673)<br>[视频](https://x.com/i2cjak/status/2100454307405365673) |
+| [**意图预测启动器**](cases/2026-09-18-predictive-launcher/README.md)<br>不记文件名也能找文件：输入“刚下载的 PDF”，让相关文件排到前面。<br>**原理：** 像跟助理说“把刚才那份资料找出来”：应用准备文件候选和相关信息，Jev 判断你的意思，界面随输入调整排序。具体索引方法尚未公开。 | [252](https://x.com/dabit3/status/2100756930054504776) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100756324845862913/img/8ew1NdHs6k5cReoF.jpg" width="160" alt="意图预测启动器预览">](https://x.com/dabit3/status/2100756930054504776)<br>[视频](https://x.com/dabit3/status/2100756930054504776) |
+| [**实时电商导购与头像表情**](cases/2026-09-18-live-commerce-assistant/README.md)<br>一边聊天一边推荐商品，让虚拟店员的表情跟着对话变化。<br>**原理：** 像店员边听需求边拿商品：对话系统负责交谈，Jev 参与快速判断，应用更新推荐和表情。作者展示了两种模型搭配，但没有公开每一步的接口。 | [217](https://x.com/rinte0321/status/2100736454850908344) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100735518963355648/img/o0S0IxXnxWjnlNOG.jpg" width="160" alt="实时电商导购与头像表情预览">](https://x.com/rinte0321/status/2100736454850908344)<br>[视频](https://x.com/rinte0321/status/2100736454850908344) |
+| [**实时表情候选**](cases/2026-09-18-emoji-suggestions/README.md)<br>输入文字时，自动推荐与意思相符的 emoji。<br>**原理：** 不是让模型画新表情，而是从已有表情里挑合适的。界面展示候选和分数，输入变化时再判断一次。具体问题格式未公开。 | [230](https://x.com/riku720720/status/2100705558512963602) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100705222016520192/img/BxzTN_rxkA_FLvwe.jpg" width="160" alt="实时表情候选预览">](https://x.com/riku720720/status/2100705558512963602)<br>[视频](https://x.com/riku720720/status/2100705558512963602) |
+| [**语音与手指指向控制画布**](cases/2026-09-18-voice-gesture-canvas/README.md)<br>边说边指，在画布里表达“把那个放到这里”。<br>**原理：** 软件先记住你说“那个”和“这里”时指向哪里，再让 Jev 分别确认几个小问题。这样不用把所有物体、动作和位置的组合都列成一张巨大选项表。 | [915](https://x.com/jackcheng/status/2100729670991802386) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100729243185324032/img/YNw8njfnSXu-Tbyr.jpg" width="160" alt="语音与手指指向控制画布预览">](https://x.com/jackcheng/status/2100729670991802386)<br>[视频](https://x.com/jackcheng/status/2100729670991802386) |
 
 <a id="finance"></a>
 

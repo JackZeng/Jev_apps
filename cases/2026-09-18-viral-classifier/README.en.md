@@ -44,7 +44,7 @@ Try to identify posts that may attract more attention.
 
 ## Inputs, steps and outputs
 
-Post → Jev classification; label definitions, held-out evaluation and code are unknown.
+The update describes 61 Jev questions per post and a scoring approach fitted using SuperX post data, followed by a write–score–rewrite loop. Exact features, fitting method and independent test split remain undisclosed.
 
 Undisclosed prompts, state formats, thresholds and recovery logic remain unknown. Inclusion of a demo does not establish a stable release.
 
@@ -55,11 +55,11 @@ Undisclosed prompts, state formats, thresholds and recovery logic remain unknown
 | The author says it was built in about eight hours and shares a results screenshot. | Author report | [Post and attached media](https://x.com/robj3d3/status/2100631889585606959) | Not reproduced here; a demo does not establish general performance |
 | Main post meets the threshold and has media | Metadata check | [Retrieval endpoint](https://api.fxtwitter.com/status/2100631889585606959) | Snapshot at the recorded time, not a live count |
 
-
+**Same-project demonstration update:** [The author’s new post](https://x.com/robj3d3/status/2100722975645598191) quotes the original and reports fitting on 9,481 posts from 207 creators, 61 questions per post, roughly one second / $0.0004, and selecting the viral post about two out of three times. These are author reports. The new 45-second video is supplementary media, not a separately counted “SuperX app.”
 
 Updates and deduplicated supporting sources:
 
-None.
+- [Supporting post by @robj3d3](https://x.com/robj3d3/status/2100722975645598191): published 2026-09-17T23:06:01+00:00; 250 likes retrieved 2026-09-18T02:38:04+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100722975645598191). [Supplementary media 1](https://video.twimg.com/amplify_video/2100722766362406912/vid/avc1/3840x2160/QJqYHBR15YiMvQC8.mp4?tag=29)
 
 Public project / demo links (a link does not mean availability has been tested here):
 
@@ -67,7 +67,7 @@ No separately verified project entry point recorded from the post; the thread ma
 
 ## Mechanism and comparison
 
-Claims of matching Fable quality at 100× speed lack published evaluation details.
+The update provides sample size and per-post cost, but “two out of three” lacks a disclosed independent test split, baseline and cross-author validation. It does not guarantee virality; fitting data should not be described as Jev’s training data.
 
 See the [category analysis](../../breakdowns/2026-09-18-content.en.md) for comparisons, common patterns and suggested experiments. Implementation statements come from public sources; the strengths and missing-evidence assessment are our analysis, not verification of model internals.
 
@@ -80,3 +80,4 @@ See the [category analysis](../../breakdowns/2026-09-18-content.en.md) for compa
 | Date | Change |
 | --- | --- |
 | 2026-09-18 | First collection; checked the main post, metric snapshot and media; added to category comparisons |
+| 2026-09-18T02:43:33+00:00 | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |

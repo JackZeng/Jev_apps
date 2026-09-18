@@ -60,7 +60,7 @@
 
 补充更新与去重来源：
 
-- [@oviniciuslana 的补充帖](https://x.com/oviniciuslana/status/2100423271128715387)：2026-09-17T03:15:06+00:00；取数时 223 赞，仅作补充、不计入门槛。
+- [@oviniciuslana 的补充帖](https://x.com/oviniciuslana/status/2100423271128715387)：发布于 2026-09-17T03:15:06+00:00；2026-09-17T22:42:24.020491+00:00 取数时 223 赞，仅作补充、不计入门槛。[取数来源](https://api.fxtwitter.com/status/2100423271128715387)。 [补充媒体 1](https://pbs.twimg.com/media/HSYzx4UXIAAzwwy.jpg?name=orig)
 
 公开项目 / 体验入口（存在入口不等于本仓库已验证可用）：
 

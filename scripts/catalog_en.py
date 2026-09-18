@@ -35,11 +35,13 @@ def generate_en(d, en):
     groups = [{**g, **en['groups'][g['id']]} for g in d['groups']]
     counts = Counter(c['group'] for c in cases)
     files = {}
+    update = d.get('latest_update')
+    update_notice = (f"Latest incremental source review: **{update['reviewed_at']} (UTC)**; **{len(update['new_cases'])} new cases**, **{len(update['updated_cases'])} existing entries updated**. [Additions, merges and exclusions](CHANGELOG.en.md). Existing main-post metric snapshots retain their original retrieval times.\n\n" if update else '')
     readme = [f'''# Jev Apps: Examples and How They Work
 
 A bilingual field guide to **TypeSafe Jev** applications found on X: what they do, how they work, and the strengths and limits of similar approaches. **{len(cases)} examples · {len(groups)} categories · each main post had ≥ {d['minimum_likes']} likes when collected · every entry includes an image or video.**
 
-## What is Jev, in plain English?
+{update_notice}## What is Jev, in plain English?
 
 Think of Jev as a fast sorting assistant inside software. The application prepares the current situation and a set of questions or choices. Jev makes judgments, and code turns them into actions: label an email, choose an AI worker, or pick the next browser button. Larger applications combine many such small decisions.
 
@@ -78,7 +80,8 @@ For example, a flight-search agent reads the webpage and lists available control
             readme.append(f'| [**{c["title"]}**]({path}/README.en.md)<br>{c["summary"]}<br>**How it works:** {c["plain_explanation"]} | [{p["likes"]:,}]({p["url"]}) | {preview(c)} |\n')
             index.append(f'| [{c["title"]}]({date}-{c["slug"]}/README.en.md) | {c["summary"]} | [{p["likes"]:,}]({p["url"]}) |\n')
             b.append(f'| [{c["title"]}](../{path}/README.en.md) | {c["advantage"]} | {c["limitation"]} |\n')
-            supplement = '\n'.join(f'- [Update by @{s["author"]}]({s["url"]}): {s["published_at"]}; {s["likes"]:,} likes at retrieval. Supporting source only; not counted toward the threshold.' for s in c['supplementary_posts']) or 'None.'
+            supplement = '\n'.join(f'- [Supporting post by @{s["author"]}]({s["url"]}): published {s["published_at"]}; {s["likes"]:,} likes retrieved {s["retrieved_at"]}. Supporting source only; not counted toward the threshold. [Metadata source]({s["metrics_source"]}).' + ''.join(f' [Supplementary media {i}]({m["url"]})' for i, m in enumerate(s.get('media', []), 1)) for s in c['supplementary_posts']) or 'None.'
+            update_entry = (f"| {update['reviewed_at']} | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |\n" if update and c['slug'] in update['updated_cases'] else '')
             links = '\n'.join(f'- [Project / demo link {i}]({url})' for i, url in enumerate(c['links'], 1)) or 'No separately verified project entry point recorded from the post; the thread may provide further leads.'
             media = []
             for i, m in enumerate(p['media'], 1):
@@ -164,7 +167,7 @@ See the [category analysis](../../{bp}) for comparisons, common patterns and sug
 | Date | Change |
 | --- | --- |
 | {date} | First collection; checked the main post, metric snapshot and media; added to category comparisons |
-'''
+{update_entry}'''
         b.append(f'\n## Workflow and mechanism\n\n{g["flow"]}\n\n{g["analysis"]}\n\nIndividual input and implementation differences are documented in the linked cases. This is an application-level synthesis, not a claim that every implementation is identical or an account of Jev’s internal training architecture.\n\n## Suggested reproduction experiments\n\n{g["evaluation"]}\n\n**Not run.** There are no timing, accuracy or cost results produced by this repository.\n\n## Change log\n\n- {date}: collected the first batch, merged same-project updates and added comparisons.\n\n[Homepage](../README.en.md#{gid}) · [Explanation index](README.en.md)\n')
         files[bp] = ''.join(b)
     readme.append('''

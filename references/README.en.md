@@ -22,7 +22,7 @@ Namesake accounts, unrelated products and local models imitating Jev's interface
 2. Author searches and quote chains helped locate originals and exclude opinions, news reposts, ideas and unrelated names.
 3. For concrete applications, the main post, author, publication time, media and likes were reviewed. Same-project updates and reposts were merged.
 4. Public metadata from `https://api.fxtwitter.com/status/<post-id>` provided exact counts and media addresses. This is a third-party mirror, not the official X API, and may cache, lag or omit data.
-5. The resulting 67 cases each have a main-post snapshot of at least 200 likes and corresponding media. Leads needing further evidence remain in the [inbox](../inbox/README.en.md).
+5. The initial 67 cases each have a main-post snapshot of at least 200 likes and corresponding media. Leads needing further evidence remain in the [inbox](../inbox/README.en.md).
 
 This covers a batch from the launch period through collection, not a full export of X. Ranking, indexing, visibility, wording and language affect coverage. Exhaustiveness is not claimed, and no automatic monitoring has been set up.
 
@@ -49,3 +49,7 @@ Previews are source photos or video covers. A photo may show code or an author's
 Media remains externally hosted. Clicking a preview opens its X source; detail pages also preserve direct URLs. CDN and video addresses can change, and GitHub's image proxy can cache content. Original-post links provide a recovery path. Rights remain with the creators.
 
 Public descriptions and media metadata have been reviewed; the applications have not been individually run. Reading a post is not reproduction. README numbers are not independent benchmarks, and application availability still requires a runtime check.
+
+## Latest incremental review
+
+The second pass on 2026-09-18 adds 5 cases and supplements 4 existing entries, for 72 total. See the [update log](../CHANGELOG.en.md) for search scope, main-post eligibility, merge decisions and exclusions. Original main-post retrieval times are unchanged; an incremental review does not imply every source was checked again.
