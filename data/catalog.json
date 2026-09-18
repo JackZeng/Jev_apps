@@ -105,7 +105,19 @@
           }
         ]
       },
-      "supplementary_posts": [],
+      "supplementary_posts": [
+        {
+          "id": "2100783833419505941",
+          "url": "https://x.com/Teknium/status/2100783833419505941",
+          "author": "Teknium",
+          "published_at": "2026-09-18T03:07:51+00:00",
+          "likes": 652,
+          "retrieved_at": "2026-09-18T06:08:49+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100783833419505941",
+          "media_source": "https://x.com/Teknium/status/2100783833419505941",
+          "media": []
+        }
+      ],
       "links": [
         "https://github.com/trycua/cua/pull/3916",
         "https://github.com/trycua/cua/pull/3943"
@@ -113,7 +125,7 @@
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "source_notes": "**代码来源补核（2026-09-18）**：[PR #3916](https://github.com/trycua/cua/pull/3916) 当前说明使用 DOM 与语义证据，Jev 在 Driver 外部选择动作；当前 CI 的 mock E2E 不是 live Jev 全平台认证。[原帖提到的 #3943](https://github.com/trycua/cua/pull/3943) 已缩小为未接入运行路径的感知基础设施草案，不能把它当成已可用的截图感知功能。以上为仓库作者说明，本库未运行。",
+      "source_notes": "**代码来源补核（2026-09-18）**：[PR #3916](https://github.com/trycua/cua/pull/3916) 当前说明使用 DOM 与语义证据，Jev 在 Driver 外部选择动作；当前 CI 的 mock E2E 不是 live Jev 全平台认证。[原帖提到的 #3943](https://github.com/trycua/cua/pull/3943) 已缩小为未接入运行路径的感知基础设施草案，不能把它当成已可用的截图感知功能。以上为仓库作者说明，本库未运行。\n\n**第三轮补核（2026-09-18 06:12 UTC）：** [Teknium 的引用帖](https://x.com/Teknium/status/2100783833419505941)只表示计划未来几周测试，并未发布测试结果，合并到已有 Cua 条目。GitHub API 复查 #3916 仍 open、未合并，#3943 仍为 open draft、未合并；本次仅刷新 PR 状态，没有把未来测试计划当成已经支持的新集成。",
       "plain_explanation": "像从菜单点菜：Jev 只能选程序事先列出的动作编号。程序检查编号后才操作，并另查表单是否填写成功；当前公开示例还不是“看截图操作任意软件”。"
     },
     {
@@ -2844,6 +2856,223 @@
       "links": [],
       "verification": "未复现",
       "availability": "未知（未运行验证）"
+    },
+    {
+      "slug": "youtube-sponsor-skip",
+      "group": "filter",
+      "title": "YouTube 赞助片段跳过",
+      "summary": "观看 YouTube 时识别口播赞助片段，自动跳到后面的内容。",
+      "plain_explanation": "像给字幕做标记：Jev 判断哪些句子是赞助内容，程序把句子编号换成播放时间，再执行跳转。需要听声音时，先由另一家语音服务转成文字。",
+      "mechanism": "固定版本源码把字幕切成带编号的行，分窗口询问 Jev 是否出现赞助及边界行，程序映射到时间。Smart/Listen 模式使用 Deepgram 转写，再由 Jev 判断当前是否仍在赞助段落；时间计算和播放器跳转由代码完成。",
+      "advantage": "相比隐藏网页广告，能处理视频内部的口播；提供字幕、混合和纯监听模式，可按字幕可用性选择。",
+      "limitation": "字幕获取可能失效；纯监听按步长跳转，可能误跳正常内容。约 0.005 美元/视频是作者报告，不能套用所有模式；语音转写另有费用。没有本库准确率或省时实测。",
+      "reported_result": "作者发布约 21 秒 Chrome 扩展视频，称实时检测并跳过赞助、约 0.005 美元/视频，明确是需要自备 API key 的开源原型。",
+      "media_note": "原帖视频展示扩展原型；源码仓库中的 Web 页面和扩展属于同一项目，不拆成两个案例。",
+      "post": {
+        "id": "2100793777103466615",
+        "url": "https://x.com/tdinh_me/status/2100793777103466615",
+        "author": "tdinh_me",
+        "published_at": "2026-09-18T03:47:21+00:00",
+        "likes": 238,
+        "retrieved_at": "2026-09-18T06:08:49+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100793777103466615",
+        "media_source": "https://x.com/tdinh_me/status/2100793777103466615",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100792834526007296/vid/avc1/2440x1538/xKVx6zmwMQpQOfMS.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100792834526007296/img/8AFbjqEeZrJUEHid.jpg",
+            "duration": 21.286,
+            "width": 2440,
+            "height": 1538
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [
+        "https://github.com/trungdq88/youtube-sponsor-detection"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "source_notes": "**代码核对：** 阅读固定版本 [de01f05 的 README](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/README.md)与 [src/jev.js](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/src/jev.js)。文档按每小时区分三种模式的费用，并明确 Deepgram 按听到的分钟收费；没有将原帖的每视频报价视为总成本保证。未安装扩展或调用 API。"
+    },
+    {
+      "slug": "predictive-spreadsheet",
+      "group": "data",
+      "title": "按列名意图评分的电子表格",
+      "summary": "给一列起名“紧急程度”，让每行文字自动获得相应评级。",
+      "plain_explanation": "普通公式按算式处理数字，这个演示让列名表达想问的问题：Jev 结合每行内容判断紧急程度，程序把结果填回表格。",
+      "mechanism": "按作者说明，列名与行内容形成判断需求，Jev 为各行评级，界面随输入更新。具体问题生成、评分范围、批量策略及缓存未披露。",
+      "advantage": "把语义分类放进熟悉的表格界面，适合探索工单或文字记录的快速分级；比固定标签的批量分类更强调交互。",
+      "limitation": "约 100ms 是作者报告，未说明行数和计时范围；列名歧义、评分一致性及大表成本尚未评估。不能认定任意列名都能自动产生可靠公式。",
+      "reported_result": "作者分享约 18 秒视频，称输入 Urgency 后，行内容会被分到从无需跟进到紧急的等级，约 100ms。",
+      "media_note": "使用这条表格帖自己的视频，不使用被引用的启动器视频。",
+      "post": {
+        "id": "2100780008193020049",
+        "url": "https://x.com/dabit3/status/2100780008193020049",
+        "author": "dabit3",
+        "published_at": "2026-09-18T02:52:39+00:00",
+        "likes": 337,
+        "retrieved_at": "2026-09-18T06:08:50+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100780008193020049",
+        "media_source": "https://x.com/dabit3/status/2100780008193020049",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100779722447667200/vid/avc1/1920x1080/z3QL0T2eNCZYQJ6N.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100779722447667200/img/gvsEg2-3oD6FRZhc.jpg",
+            "duration": 17.9,
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "source_notes": "**去重判断：** 本帖引用了同作者的启动器实验，但新视频、输入对象和输出任务均不同：一个排序文件，一个为表格行评分。保留独立案例，归入数据分类；不把“同一作者”或“引用旧帖”自动等同于同一个应用。"
+    },
+    {
+      "slug": "probably-language",
+      "group": "interaction",
+      "title": "Probably · 用语义判断控制程序",
+      "summary": "把“这封邮件是否紧急”这样的判断写进条件分支，再让文字模型按结果起草回复。",
+      "plain_explanation": "像把判断题装进程序：Jev 回答条件是否成立或该走哪个分支，解释器安排步骤，另一个模型负责写文字。判断、流程和生成分别由不同组件承担。",
+      "mechanism": "官网 Probably 0.1 说明：TypeScript 解释器执行程序，feels 调用 Jev 做条件判断，match 选择描述对应分支，while 可重复判断；llm 调用独立文字模型。条件判断可配置置信门槛，match 在该版本没有置信门槛。",
+      "advantage": "把分类、分支和改写循环放进可读的小语言，方便理解 Jev 与生成模型怎样协作；可与词表聊天、RISC-jeV 的组合实验对照。",
+      "limitation": "作者明确是玩具语言；没有数组、函数等通用语言能力。官网托管演示仅播放预录结果，任意自定义程序要在本地连接真实模型运行；不能用页面回放速度当成推理性能。",
+      "reported_result": "作者发布语言示例图和体验地址，介绍 feels、match 和 while，并说明 Jev 做判断、LLM 做写作。",
+      "media_note": "原帖为语言示例图片。已阅读官网说明，未点击执行或将缓存演示当成实时 API 测试。",
+      "post": {
+        "id": "2100767781868150938",
+        "url": "https://x.com/southpolesteve/status/2100767781868150938",
+        "author": "southpolesteve",
+        "published_at": "2026-09-18T02:04:04+00:00",
+        "likes": 894,
+        "retrieved_at": "2026-09-18T06:08:49+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100767781868150938",
+        "media_source": "https://x.com/southpolesteve/status/2100767781868150938",
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HSdr-ILWUAAN29Y.jpg?name=orig",
+            "width": 2096,
+            "height": 1228
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [
+        "https://probably-lang.southpolesteve.workers.dev"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "source_notes": "**官网补核：** [Probably 0.1](https://probably-lang.southpolesteve.workers.dev)写明托管 Worker 只回放内置案例的记录；自定义输入或代码没有缓存时会拒绝，不调用模型。解释器每次运行还有模型调用与循环次数限制。以上是产品文档说明，未运行本地解释器。"
+    },
+    {
+      "slug": "eslint-rule-judgments",
+      "group": "review",
+      "title": "按 ESLint 规则说明判断代码",
+      "summary": "只给规则的文字说明，让 Jev 判断小段代码是否符合规则。",
+      "plain_explanation": "类似给阅卷者一张评分标准，再给一段待检查代码；Jev 判断是否违反要求。它学的是规则描述的含义，不是在这个实验里执行 ESLint 的规则实现。",
+      "mechanism": "作者称未向 Jev 提供 ESLint 规则实现，只提供规则说明做判断；后续回复说明测试使用生成的小代码片段，代码仍在整理。完整输入、样本构造与判定协议尚未核清。",
+      "advantage": "适合探索自然语言规则能否转成快速代码判断；比通用 PR 打分更聚焦单条规则，可与确定性 lint 结果对照。",
+      "limitation": "约九成正确来自作者的小片段实验，不是整个仓库或真实 PR 的可靠性；仍需公开样本、独立测试与各类误报漏报。不具备确定性 lint 的保证。",
+      "reported_result": "作者发布实验结果截图并报告约九成判断正确；补充回复明确是生成的小代码片段，不是整仓库评测。",
+      "media_note": "原帖附结果截图；图片是作者的实验报告，不是本仓库运行输出。",
+      "post": {
+        "id": "2100765201385869434",
+        "url": "https://x.com/mizchi/status/2100765201385869434",
+        "author": "mizchi",
+        "published_at": "2026-09-18T01:53:48+00:00",
+        "likes": 351,
+        "retrieved_at": "2026-09-18T06:08:49+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100765201385869434",
+        "media_source": "https://x.com/mizchi/status/2100765201385869434",
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HSdqjcJa8AAGjPE.jpg?name=orig",
+            "width": 1622,
+            "height": 1154
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100811641537650899",
+          "url": "https://x.com/mizchi/status/2100811641537650899",
+          "author": "mizchi",
+          "published_at": "2026-09-18T04:58:21+00:00",
+          "likes": 1,
+          "retrieved_at": "2026-09-18T06:10:46+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100811641537650899",
+          "media_source": "https://x.com/mizchi/status/2100811641537650899",
+          "media": []
+        }
+      ],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）"
+    },
+    {
+      "slug": "opencode-intent-permissions",
+      "group": "review",
+      "title": "OpenCode · 意图感知权限插件",
+      "summary": "用“只访问 Google”等自然语言规则，检查代理换着工具发起的操作。",
+      "plain_explanation": "像门卫既看通行规则也听你要办什么事：Jev 判断工具输入的意图，插件再决定放行、询问或拒绝。OpenCode 原有权限仍在外层控制。",
+      "mechanism": "oc-auto-perms 0.1.0 文档说明：选定工具的输入、策略和最近请求交给 Jev 判断，按有序规则输出 allow/ask/deny；低置信或 API 错误转为 ask。原生 deny 保持拒绝，原生 ask 保持确认；Jev 只进一步收紧原生 allow。",
+      "advantage": "能对 shell、webfetch 等不同工具表达相同的语义限制，减少逐条穷举命令；与命令危险性评分相比，进一步接入权限决策。",
+      "limitation": "视频中的拦截不证明无法绕过；应保留确定性硬边界。0.1.0 明确不支持 Code Mode execute，策略、近期用户消息及工具输入会送至 TypeSafe；本库未执行攻击或权限测试。",
+      "reported_result": "作者演示以自然语言限制只能访问 Google，称挡住了视频中的不同访问尝试；原帖本轮已达 235 赞。",
+      "media_note": "主帖含约 91 秒演示视频和配置图；正式收录依据作者原帖，不累计转发点赞。",
+      "post": {
+        "id": "2100702649834188855",
+        "url": "https://x.com/OpeOginni/status/2100702649834188855",
+        "author": "OpeOginni",
+        "published_at": "2026-09-17T21:45:15+00:00",
+        "likes": 235,
+        "retrieved_at": "2026-09-18T06:07:34+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100702649834188855",
+        "media_source": "https://x.com/OpeOginni/status/2100702649834188855",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100701224920129536/vid/avc1/1112x720/ghw0VjLAOMM6qB14.mp4?tag=14",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100701224920129536/img/-vzxHYoZxMjXKOKh.jpg",
+            "duration": 90.578,
+            "width": 4096,
+            "height": 2648
+          },
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HScw-Q-XEAA2AMF.jpg?name=orig",
+            "width": 3680,
+            "height": 2756
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100705405013754312",
+          "url": "https://x.com/OpeOginni/status/2100705405013754312",
+          "author": "OpeOginni",
+          "published_at": "2026-09-17T21:56:12+00:00",
+          "likes": 5,
+          "retrieved_at": "2026-09-18T06:11:15+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100705405013754312",
+          "media_source": "https://x.com/OpeOginni/status/2100705405013754312",
+          "media": []
+        }
+      ],
+      "links": [
+        "https://www.npmjs.com/package/oc-auto-perms",
+        "https://github.com/OpeOginni/oc-plugins/tree/main/packages/oc-auto-perms"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "source_notes": "**从待整理区转入：** 上轮 2026-09-18 02:38:04 UTC 快照为 160 赞；本轮 06:07:34 UTC 为 235 赞，才满足正式门槛。[作者回复](https://x.com/OpeOginni/status/2100705405013754312)给出包地址；核对 [npm 元数据及 README](https://registry.npmjs.org/oc-auto-perms)，当时 latest 为 0.1.0。仅阅读文档，未安装插件。"
     }
   ],
   "groups": [
@@ -2866,7 +3095,7 @@
     {
       "id": "review",
       "title": "代码质量与安全检查",
-      "comparison": "PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。",
+      "comparison": "PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。 ESLint 规则实验判断小代码片段是否合规；OpenCode 权限插件在工具运行前决定放行、询问或拒绝。两者分别检查代码与操作，不能互相替代。",
       "flow": "代码或待执行内容 + 明确规则 → 多个窄判断 → 程序合并结果 → 提示、拦截或转交复核。",
       "analysis": "14 项 PR 检查公开了概率区间升级策略，是比单一总分更可检查的设计。jev-review 的评分可用于反馈，但高分不等于测试通过。安全预筛的低费用不能替代错误代价评估。",
       "evaluation": "按风险分别统计误报和漏报，保留独立标注样本；测试信息不足、输入含恶意指令、规则冲突和不确定结果。复现时保留人工评审与静态工具对照。"
@@ -2874,7 +3103,7 @@
     {
       "id": "data",
       "title": "数据分类与信息整理",
-      "comparison": "整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。",
+      "comparison": "整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。",
       "flow": "原始文本或表格 → 必要的清洗/摘要 → Jev 分类或判断 → 不确定项回退 → 写回索引或表格。",
       "analysis": "论文案例把摘要与分类分开计费；邮件反欺诈把低置信度项升级到大模型。数据预处理和回退费用都属于完整系统成本。银行收款方的候选生成方法未披露，不能直接推断 Jev 在自由生成商户名。",
       "evaluation": "固定标注数据和切分方式，报告每类精确率/召回率、批量吞吐、单条延迟、重试和总成本；欺诈样本还需覆盖真实基率、误报和漏报。"
@@ -2890,7 +3119,7 @@
     {
       "id": "filter",
       "title": "网页与信息流过滤",
-      "comparison": "只想控制 X 信息流，比较自然语言 X 过滤器；想清理整个网页的广告、横幅和追加销售区域，看 Unclutter。前者分类帖子内容，后者判断页面元素；同一条规则很难在两个层次直接复用。",
+      "comparison": "只想控制 X 信息流，比较自然语言 X 过滤器；想清理整个网页的广告、横幅和追加销售区域，看 Unclutter。前者分类帖子内容，后者判断页面元素；同一条规则很难在两个层次直接复用。 新增 Sponsor Skip 处理视频时间轴上的口播赞助，不是网页广告元素；字幕获取、语音转写和边界误判是它独有的比较维度。",
       "flow": "浏览器提取帖子/元素 → 用户语义规则 → Jev 判断 → 隐藏、折叠或清理。",
       "analysis": "过滤效果取决于内容抽取和规则范围。推理速度快并不能保证不闪屏、不错删或不破坏网页操作；页面元素还可能随站点改版变化。",
       "evaluation": "固定页面集比较误删率、漏删率、首屏延迟和单页费用；检查正常弹窗、登录流程、滚动加载以及撤销过滤体验。"
@@ -2922,7 +3151,7 @@
     {
       "id": "interaction",
       "title": "实时交互与组合实验",
-      "comparison": "TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 本次新增的启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。",
+      "comparison": "TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。 Probably 则把判断、分支和文字生成组织成小语言；官网是预录回放，比较实时性时需与真正的本地模型调用区分。",
       "flow": "准备有限候选或原子问题 → Jev 判定 → 程序组合结果 → 更新交互状态或输出。",
       "analysis": "词表聊天与字符聊天都由程序把单步选择拼接成文本；这不改变 API 的判断式输出性质。RISC-jeV 中逻辑门和指令解释层叠加，展示可组合性，不意味着用模型算逻辑门更高效。",
       "evaluation": "记录候选规模、分辨率或字符数、循环次数和全程费用；与确定性代码或专用生成模型比较输出质量。感知流水线需分开测本地模型、网络决策及渲染延迟。"
@@ -2937,19 +3166,47 @@
     }
   ],
   "latest_update": {
-    "reviewed_at": "2026-09-18T02:43:33+00:00",
+    "reviewed_at": "2026-09-18T06:12:09+00:00",
     "new_cases": [
-      "predictive-launcher",
-      "live-commerce-assistant",
-      "minecraft-hybrid",
-      "emoji-suggestions",
-      "voice-gesture-canvas"
+      "youtube-sponsor-skip",
+      "predictive-spreadsheet",
+      "probably-language",
+      "eslint-rule-judgments",
+      "opencode-intent-permissions"
     ],
     "updated_cases": [
-      "context-compaction",
-      "viral-classifier",
-      "voice-browser",
-      "memory-retrieval"
+      "cua-jev-use"
     ]
-  }
+  },
+  "updates": [
+    {
+      "reviewed_at": "2026-09-18T02:43:33+00:00",
+      "new_cases": [
+        "predictive-launcher",
+        "live-commerce-assistant",
+        "minecraft-hybrid",
+        "emoji-suggestions",
+        "voice-gesture-canvas"
+      ],
+      "updated_cases": [
+        "context-compaction",
+        "viral-classifier",
+        "voice-browser",
+        "memory-retrieval"
+      ]
+    },
+    {
+      "reviewed_at": "2026-09-18T06:12:09+00:00",
+      "new_cases": [
+        "youtube-sponsor-skip",
+        "predictive-spreadsheet",
+        "probably-language",
+        "eslint-rule-judgments",
+        "opencode-intent-permissions"
+      ],
+      "updated_cases": [
+        "cua-jev-use"
+      ]
+    }
+  ]
 }

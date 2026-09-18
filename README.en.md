@@ -2,9 +2,9 @@
 
 [简体中文](README.md) | **English**
 
-A bilingual field guide to **TypeSafe Jev** applications found on X: what they do, how they work, and the strengths and limits of similar approaches. **72 examples · 11 categories · each main post had ≥ 200 likes when collected · every entry includes an image or video.**
+A bilingual field guide to **TypeSafe Jev** applications found on X: what they do, how they work, and the strengths and limits of similar approaches. **77 examples · 11 categories · each main post had ≥ 200 likes when collected · every entry includes an image or video.**
 
-Latest incremental source review: **2026-09-18T02:43:33+00:00 (UTC)**; **5 new cases**, **4 existing entries updated**. [Additions, merges and exclusions](CHANGELOG.en.md). Existing main-post metric snapshots retain their original retrieval times.
+Latest incremental source review: **2026-09-18T06:12:09+00:00 (UTC)**; **5 new cases**, **1 existing entries updated**. [Additions, merges and exclusions](CHANGELOG.en.md). Existing main-post metric snapshots retain their original retrieval times.
 
 ## What is Jev, in plain English?
 
@@ -27,14 +27,14 @@ For example, a flight-search agent reads the webpage and lists available control
 | --- | ---: | --- |
 | [Browser and computer control](#browser) | 8 | [Read analysis](breakdowns/2026-09-18-browser.en.md) |
 | [Model, skill and tool routing](#routing) | 8 | [Read analysis](breakdowns/2026-09-18-routing.en.md) |
-| [Code quality and safety checks](#review) | 7 | [Read analysis](breakdowns/2026-09-18-review.en.md) |
-| [Data classification and organization](#data) | 6 | [Read analysis](breakdowns/2026-09-18-data.en.md) |
+| [Code quality and safety checks](#review) | 9 | [Read analysis](breakdowns/2026-09-18-review.en.md) |
+| [Data classification and organization](#data) | 7 | [Read analysis](breakdowns/2026-09-18-data.en.md) |
 | [Content and advertising analysis](#content) | 7 | [Read analysis](breakdowns/2026-09-18-content.en.md) |
-| [Webpage and feed filtering](#filter) | 2 | [Read analysis](breakdowns/2026-09-18-filter.en.md) |
+| [Webpage and feed filtering](#filter) | 3 | [Read analysis](breakdowns/2026-09-18-filter.en.md) |
 | [Context and memory filtering](#memory) | 2 | [Read analysis](breakdowns/2026-09-18-memory.en.md) |
 | [Game decisions and solving](#games) | 14 | [Read analysis](breakdowns/2026-09-18-games.en.md) |
 | [NPCs, driving and population simulations](#simulation) | 7 | [Read analysis](breakdowns/2026-09-18-simulation.en.md) |
-| [Real-time interaction and composition experiments](#interaction) | 10 | [Read analysis](breakdowns/2026-09-18-interaction.en.md) |
+| [Real-time interaction and composition experiments](#interaction) | 11 | [Read analysis](breakdowns/2026-09-18-interaction.en.md) |
 | [Trading execution demo](#finance) | 1 | [Read analysis](breakdowns/2026-09-18-finance.en.md) |
 
 [Case index](cases/README.en.md) · [All explanations](breakdowns/README.en.md) · [Pending evidence](inbox/README.en.md) · [Contributing](CONTRIBUTING.en.md)
@@ -81,9 +81,9 @@ Eve and Ephraim demonstrate model selection; Firstmate and local delegation addr
 
 <a id="review"></a>
 
-### Code quality and safety checks (7)
+### Code quality and safety checks (9)
 
-Compare the 14-check PR reviewer, jev-review and jev-rabbit for explicit risks and escalation, iterative scoring and natural-language team rules respectively. Codebase classification examines overall structure. Command safety, jailbreak screening and upload checks guard different actions and need separate false-negative evaluations.
+Compare the 14-check PR reviewer, jev-review and jev-rabbit for explicit risks and escalation, iterative scoring and natural-language team rules respectively. Codebase classification examines overall structure. Command safety, jailbreak screening and upload checks guard different actions and need separate false-negative evaluations. The ESLint experiment judges snippet compliance; OpenCode permissions decide whether a tool action is allowed, questioned or denied before execution. They check different things and are not substitutes.
 
 [Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-review.en.md)
 
@@ -96,12 +96,14 @@ Compare the 14-check PR reviewer, jev-review and jev-rabbit for explicit risks a
 | [**fx auto mode safety classifier**](cases/2026-09-18-fx-safety/README.en.md)<br>Check a command's potential risk before an agent executes it automatically.<br>**How it works:** Jev acts as a pre-execution screener, classifying command safety. Fast screening can still miss risks; explicit rules must determine whether execution is allowed. | [591](https://x.com/fazxes/status/2100300097695232164) | [<img src="https://pbs.twimg.com/media/HSW-E8wWgAAyw9O.jpg?name=orig" width="160" alt="fx auto mode safety classifier preview">](https://x.com/fazxes/status/2100300097695232164)<br>[Image](https://x.com/fazxes/status/2100300097695232164) |
 | [**Jailbreak prompt prescreen**](cases/2026-09-18-jailbreak-screen/README.en.md)<br>Prescreen prompts for attempts to bypass an AI system's rules.<br>**How it works:** Jev checks whether a prompt resembles known bypass patterns. It is an initial screen and may miss unfamiliar forms. | [264](https://x.com/mayfer/status/2100343452865265747) | [<img src="https://pbs.twimg.com/media/HSXq9mqbsAAtHoT.jpg?name=orig" width="160" alt="Jailbreak prompt prescreen preview">](https://x.com/mayfer/status/2100343452865265747)<br>[Image](https://x.com/mayfer/status/2100343452865265747) |
 | [**Document upload checker**](cases/2026-09-18-upload-check/README.en.md)<br>Before uploading a document, check whether its contents should be shared.<br>**How it works:** The system asks Jev for an allow/deny judgment. Its usefulness depends on the supplied rules and context; the post does not publish a full organizational confidentiality policy. | [284](https://x.com/iwasakoya/status/2100471523358474709) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100471095627591680/img/jQewHJZ85th2EEv3.jpg" width="160" alt="Document upload checker preview">](https://x.com/iwasakoya/status/2100471523358474709)<br>[Video](https://x.com/iwasakoya/status/2100471523358474709) |
+| [**Code judgments from ESLint rule descriptions**](cases/2026-09-18-eslint-rule-judgments/README.en.md)<br>Give Jev a rule’s text description and ask whether a small code snippet complies.<br>**How it works:** Like handing a reviewer a marking guide and a snippet: Jev judges whether the rule is violated. The experiment interprets the rule’s meaning rather than executing its ESLint implementation. | [351](https://x.com/mizchi/status/2100765201385869434) | [<img src="https://pbs.twimg.com/media/HSdqjcJa8AAGjPE.jpg?name=orig" width="160" alt="Code judgments from ESLint rule descriptions preview">](https://x.com/mizchi/status/2100765201385869434)<br>[Image](https://x.com/mizchi/status/2100765201385869434) |
+| [**OpenCode intent-aware permissions**](cases/2026-09-18-opencode-intent-permissions/README.en.md)<br>Check an agent’s actions across tools using policies such as “only access Google.”<br>**How it works:** Like a gatekeeper considering both access rules and the purpose of a request: Jev judges tool-input intent, and the plugin allows, asks or denies. Native OpenCode permissions remain the outer layer. | [235](https://x.com/OpeOginni/status/2100702649834188855) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100701224920129536/img/-vzxHYoZxMjXKOKh.jpg" width="160" alt="OpenCode intent-aware permissions preview">](https://x.com/OpeOginni/status/2100702649834188855)<br>[Video](https://x.com/OpeOginni/status/2100702649834188855) |
 
 <a id="data"></a>
 
-### Data classification and organization (6)
+### Data classification and organization (7)
 
-Email classification and DuckDB handle batches of text; the paper example includes generative preprocessing; Jev + Kimi shows uncertainty escalation. Payee cleanup is extraction/normalization and support intent is multi-question judgment. Their metrics are not interchangeable.
+Email classification and DuckDB handle batches of text; the paper example includes generative preprocessing; Jev + Kimi shows uncertainty escalation. Payee cleanup is extraction/normalization and support intent is multi-question judgment. Their metrics are not interchangeable. Predictive spreadsheets put classification intent in column headings and emphasize live feedback. Compare interface response separately from full-table processing costs when considering DuckDB-style batching.
 
 [Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-data.en.md)
 
@@ -113,6 +115,7 @@ Email classification and DuckDB handle batches of text; the paper example includ
 | [**Jev + Kimi email fraud detection**](cases/2026-09-18-email-fraud/README.en.md)<br>Screen emails for fraud quickly, then send uncertain cases to a larger model.<br>**How it works:** It is a two-stage check: Jev screens first and Kimi reviews 31 low-confidence emails. The 96/100 result belongs to the combined pipeline, not Jev alone. | [542](https://x.com/nutlope/status/2100614659690713543) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100608348219478016/img/23vFEVMegwLrMa8g.jpg" width="160" alt="Jev + Kimi email fraud detection preview">](https://x.com/nutlope/status/2100614659690713543)<br>[Video](https://x.com/nutlope/status/2100614659690713543) |
 | [**Bank transaction payee cleanup**](cases/2026-09-18-bank-payee/README.en.md)<br>Turn messy bank transaction descriptions into recognizable merchant names.<br>**How it works:** Transaction descriptions mix names, locations and codes. Jev helps decide what matters, but the post does not explain exactly how the final name is extracted or produced. | [633](https://x.com/jlongster/status/2100179852053639236) | [<img src="https://pbs.twimg.com/media/HSVWcZ9WcAAcwPe.jpg?name=orig" width="160" alt="Bank transaction payee cleanup preview">](https://x.com/jlongster/status/2100179852053639236)<br>[Image](https://x.com/jlongster/status/2100179852053639236) |
 | [**Japanese support escalation intent**](cases/2026-09-18-support-intent/README.en.md)<br>Detect whether a Japanese support message asks for a human or mentions repeated contact.<br>**How it works:** Ask two specific yes/no questions about one message. The percentages describe those judgments, not the accuracy of the whole support system. | [351](https://x.com/ku_suke/status/2100392430805856469) | [<img src="https://pbs.twimg.com/media/HSYXuW5aoAAghbD.jpg?name=orig" width="160" alt="Japanese support escalation intent preview">](https://x.com/ku_suke/status/2100392430805856469)<br>[Image](https://x.com/ku_suke/status/2100392430805856469) |
+| [**Intent-driven spreadsheet ratings**](cases/2026-09-18-predictive-spreadsheet/README.en.md)<br>Name a column “Urgency” and have the text in each row receive a corresponding rating.<br>**How it works:** Ordinary formulas calculate numbers; this demo uses a column name to express a question. Jev judges each row’s urgency, and the app writes the result into the table. | [337](https://x.com/dabit3/status/2100780008193020049) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100779722447667200/img/gvsEg2-3oD6FRZhc.jpg" width="160" alt="Intent-driven spreadsheet ratings preview">](https://x.com/dabit3/status/2100780008193020049)<br>[Video](https://x.com/dabit3/status/2100780008193020049) |
 
 <a id="content"></a>
 
@@ -134,9 +137,9 @@ Live analyzers provide writing feedback; bookmark-percentile prediction defines 
 
 <a id="filter"></a>
 
-### Webpage and feed filtering (2)
+### Webpage and feed filtering (3)
 
-The X filter targets posts in a feed; Unclutter targets ads, banners and upsells across webpages. One classifies content, the other page elements, so their rules cannot necessarily be reused directly.
+The X filter targets posts in a feed; Unclutter targets ads, banners and upsells across webpages. One classifies content, the other page elements, so their rules cannot necessarily be reused directly. Sponsor Skip targets spoken sponsorship along a video timeline rather than webpage elements; caption availability, transcription and boundary errors are distinct comparison dimensions.
 
 [Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-filter.en.md)
 
@@ -144,6 +147,7 @@ The X filter targets posts in a feed; Unclutter targets ads, banners and upsells
 | --- | ---: | --- |
 | [**Natural-language X content filter**](cases/2026-09-18-x-filter/README.en.md)<br>Tell the browser in your own words which X posts you would rather not see.<br>**How it works:** The extension asks Jev whether a post matches your filtering rule, then hides or collapses it. The aim is meaning-based filtering rather than a keyword match. | [950](https://x.com/marcelpociot/status/2100520134481735729) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100519256425140224/img/-A44e4qCo8mVP8ws.jpg" width="160" alt="Natural-language X content filter preview">](https://x.com/marcelpociot/status/2100520134481735729)<br>[Video](https://x.com/marcelpociot/status/2100520134481735729) |
 | [**Unclutter page cleanup**](cases/2026-09-18-unclutter/README.en.md)<br>Clear ads, promotional dialogs and similar clutter to make webpages easier to read.<br>**How it works:** Code identifies candidate page elements and asks Jev to judge them. The challenge is not only finding clutter but avoiding removal of useful controls such as login dialogs. | [497](https://x.com/thekitze/status/2100595129874817340) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100595059041370112/img/cyfF5qMMKBPQTMAG.jpg" width="160" alt="Unclutter page cleanup preview">](https://x.com/thekitze/status/2100595129874817340)<br>[Video](https://x.com/thekitze/status/2100595129874817340) |
+| [**YouTube sponsor-segment skipping**](cases/2026-09-18-youtube-sponsor-skip/README.en.md)<br>Detect spoken sponsor segments while watching YouTube and jump past them.<br>**How it works:** Like marking up captions: Jev identifies sponsor lines, code maps their IDs to playback times, then seeks the player. Listening modes first use a separate speech service to turn audio into text. | [238](https://x.com/tdinh_me/status/2100793777103466615) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100792834526007296/img/8AFbjqEeZrJUEHid.jpg" width="160" alt="YouTube sponsor-segment skipping preview">](https://x.com/tdinh_me/status/2100793777103466615)<br>[Video](https://x.com/tdinh_me/status/2100793777103466615) |
 
 <a id="memory"></a>
 
@@ -203,9 +207,9 @@ Needs-driven NPCs explore behavior; the 500-agent demo explores throughput. Unpa
 
 <a id="interaction"></a>
 
-### Real-time interaction and composition experiments (10)
+### Real-time interaction and composition experiments (11)
 
-TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs. New entries cover file selection, emoji suggestions, live shopping and voice-and-pointing canvas control. Their distinct tasks warrant separate cases. Both the canvas and TypeGPU combine perception with decisions, but one manipulates objects while the other changes audiovisual effects.
+TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs. Other entries cover file selection, emoji suggestions, live shopping and voice-and-pointing canvas control. Their distinct tasks warrant separate cases. Both the canvas and TypeGPU combine perception with decisions, but one manipulates objects while the other changes audiovisual effects. Probably organizes judgments, branches and text generation into a small language. Its hosted site uses recorded playback, which must be distinguished from live local model calls when discussing responsiveness.
 
 [Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-interaction.en.md)
 
@@ -221,6 +225,7 @@ TypeGPU combines local perception with remote semantic decisions. Ask Jev expose
 | [**Live shopping assistant and avatar expressions**](cases/2026-09-18-live-commerce-assistant/README.en.md)<br>Recommend products during a conversation and change a virtual shop assistant’s expression with the dialogue.<br>**How it works:** Like a shop assistant listening and bringing over products: the conversation system talks, Jev contributes quick judgments, and the app updates recommendations and expressions. The author demonstrates two models together but does not disclose every interface. | [217](https://x.com/rinte0321/status/2100736454850908344) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100735518963355648/img/o0S0IxXnxWjnlNOG.jpg" width="160" alt="Live shopping assistant and avatar expressions preview">](https://x.com/rinte0321/status/2100736454850908344)<br>[Video](https://x.com/rinte0321/status/2100736454850908344) |
 | [**Live emoji suggestions**](cases/2026-09-18-emoji-suggestions/README.en.md)<br>Suggest emoji that fit the meaning of text as it is entered.<br>**How it works:** The model selects from existing emoji rather than drawing new ones. The interface displays candidates and scores and asks again when the input changes. The exact question format is undisclosed. | [230](https://x.com/riku720720/status/2100705558512963602) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100705222016520192/img/BxzTN_rxkA_FLvwe.jpg" width="160" alt="Live emoji suggestions preview">](https://x.com/riku720720/status/2100705558512963602)<br>[Video](https://x.com/riku720720/status/2100705558512963602) |
 | [**Voice-and-pointing canvas control**](cases/2026-09-18-voice-gesture-canvas/README.en.md)<br>Use speech and pointing together to say “put that over there” on a canvas.<br>**How it works:** The app records where you point when saying words such as “that” and “there,” then asks Jev a few separate questions. It avoids enumerating every object, action and position combination as one huge choice list. | [915](https://x.com/jackcheng/status/2100729670991802386) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100729243185324032/img/YNw8njfnSXu-Tbyr.jpg" width="160" alt="Voice-and-pointing canvas control preview">](https://x.com/jackcheng/status/2100729670991802386)<br>[Video](https://x.com/jackcheng/status/2100729670991802386) |
+| [**Probably: semantic judgments as program control**](cases/2026-09-18-probably-language/README.en.md)<br>Write judgments such as “is this email urgent?” into branches, then ask a text model to draft a reply.<br>**How it works:** Put a judgment inside a program: Jev decides whether a condition holds or which branch fits, an interpreter coordinates the steps, and a separate model writes text. | [894](https://x.com/southpolesteve/status/2100767781868150938) | [<img src="https://pbs.twimg.com/media/HSdr-ILWUAAN29Y.jpg?name=orig" width="160" alt="Probably: semantic judgments as program control preview">](https://x.com/southpolesteve/status/2100767781868150938)<br>[Image](https://x.com/southpolesteve/status/2100767781868150938) |
 
 <a id="finance"></a>
 

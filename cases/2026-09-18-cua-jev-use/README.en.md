@@ -57,9 +57,11 @@ Undisclosed prompts, state formats, thresholds and recovery logic remain unknown
 
 **Repository cross-check (2026-09-18)**: [PR #3916](https://github.com/trycua/cua/pull/3916) describes DOM/semantic evidence and Jev selecting actions outside Driver. Mock E2E CI is not live Jev certification across platforms. [PR #3943, mentioned in the post](https://github.com/trycua/cua/pull/3943), has been narrowed to an unwired perception-foundations draft and should not be treated as an available screenshot-perception feature. These are repository statements, not tests run here.
 
+**Third-pass review (2026-09-18 06:12 UTC):** [Teknium’s quote](https://x.com/Teknium/status/2100783833419505941) announces testing planned for the next few weeks, not results; it is merged into the existing Cua case. GitHub API checks show #3916 still open and unmerged, and #3943 still an open, unmerged draft. This pass refreshes PR status only; planned testing is not treated as a shipped integration.
+
 Updates and deduplicated supporting sources:
 
-None.
+- [Supporting post by @Teknium](https://x.com/Teknium/status/2100783833419505941): published 2026-09-18T03:07:51+00:00; 652 likes retrieved 2026-09-18T06:08:49+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100783833419505941).
 
 Public project / demo links (a link does not mean availability has been tested here):
 
@@ -81,3 +83,4 @@ See the [category analysis](../../breakdowns/2026-09-18-browser.en.md) for compa
 | Date | Change |
 | --- | --- |
 | 2026-09-18 | First collection; checked the main post, metric snapshot and media; added to category comparisons |
+| 2026-09-18T06:12:09+00:00 | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |

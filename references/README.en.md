@@ -52,4 +52,10 @@ Public descriptions and media metadata have been reviewed; the applications have
 
 ## Latest incremental review
 
-The second pass on 2026-09-18 adds 5 cases and supplements 4 existing entries, for 72 total. See the [update log](../CHANGELOG.en.md) for search scope, main-post eligibility, merge decisions and exclusions. Original main-post retrieval times are unchanged; an incremental review does not imply every source was checked again.
+The second pass on 2026-09-18 adds 5 cases and supplements 4 existing entries, for 72 total at the end of that pass. See the [update log](../CHANGELOG.en.md) for search scope, main-post eligibility, merge decisions and exclusions. Original main-post retrieval times are unchanged; an incremental review does not imply every source was checked again.
+
+## Third pass and tutorial reference
+
+2026-09-18 06:12 UTC: 5 new cases and 1 existing entry supplemented, for 77 current cases. The permissions plugin moved from the inbox after its main post qualified. See the [third-pass update](../CHANGELOG.en.md).
+
+[Sydney Runkle: Building a Harness with Jev](https://x.com/sydneyrunkle/status/2100754364545761643) explains LangChain classification calls, model routing and tool-risk gating. The main-post snapshot was 855 likes (2026-09-18T06:09:05+00:00 (UTC), FxTwitter). The article and its quotes are one tutorial reference, not multiple applications or an independent performance benchmark.

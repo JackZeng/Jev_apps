@@ -32,9 +32,14 @@ def validate(d):
     assert len(groups) == len(d['groups']), '分组重复'
     assert d['minimum_likes'] >= 200
     update = d.get('latest_update')
-    if update:
-        assert datetime.fromisoformat(update['reviewed_at']).tzinfo
-        changed = update['new_cases'] + update['updated_cases']
+    updates = d.get('updates', [update] if update else [])
+    if updates:
+        assert updates[-1] == update, '最近增量与历史末项不一致'
+        timestamps = [datetime.fromisoformat(u['reviewed_at']) for u in updates]
+        assert all(t.tzinfo for t in timestamps), '增量时间缺时区'
+        assert timestamps == sorted(set(timestamps)), '增量时间重复或未排序'
+    for entry in updates:
+        changed = entry['new_cases'] + entry['updated_cases']
         assert len(changed) == len(set(changed)), '增量记录重复'
         assert set(changed) <= {c['slug'] for c in cases}, '增量记录引用未知案例'
     for c in cases:
@@ -106,7 +111,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
             index.append(f'| [{c["title"]}]({date}-{c["slug"]}/README.md) | {c["summary"]} | [{p["likes"]:,}]({p["url"]}) |\n')
             b.append(f'| [{c["title"]}](../{path}/README.md) | {c["advantage"]} | {c["limitation"]} |\n')
             supplement = '\n'.join(f'- [@{s["author"]} 的补充帖]({s["url"]})：发布于 {s["published_at"]}；{s["retrieved_at"]} 取数时 {s["likes"]:,} 赞，仅作补充、不计入门槛。[取数来源]({s["metrics_source"]})。' + ''.join(f' [补充媒体 {i}]({m["url"]})' for i, m in enumerate(s.get('media', []), 1)) for s in c['supplementary_posts']) or '无。'
-            update_entry = (f"| {update['reviewed_at']} | 合并补充来源，完善原理、证据或教程说明；[本轮去重记录](../../CHANGELOG.md) |\n" if update and c['slug'] in update['updated_cases'] else '')
+            update_entry = ''.join(f"| {u['reviewed_at']} | 合并补充来源，完善原理、证据或教程说明；[去重记录](../../CHANGELOG.md) |\n" for u in d.get('updates', [update] if update else []) if c['slug'] in u['updated_cases'])
             links = '\n'.join(f'- [项目入口 {i}]({url})' for i, url in enumerate(c['links'], 1)) or '原帖未提供已核对的独立入口；后续可继续从讨论串补充。'
             media = []
             for i, m in enumerate(p['media'], 1):

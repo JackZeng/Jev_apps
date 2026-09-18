@@ -2,6 +2,32 @@
 
 **简体中文** | [English](CHANGELOG.en.md)
 
+## 2026-09-18 · 第三轮增量
+
+核对截止：**2026-09-18 14:12:09 北京时间（06:12:09 UTC）**。由 72 个增加到 **77 个案例，11 类**；新增 5 个独立案例，补充 1 个已有条目。下方第二轮记录保留为历史，不覆盖先前的取数事实。
+
+| 新增应用 | 主帖点赞快照 | 去重与证据要点 |
+| --- | ---: | --- |
+| [YouTube 赞助片段跳过](cases/2026-09-18-youtube-sponsor-skip/README.md) | [238](https://x.com/tdinh_me/status/2100793777103466615) | 扩展和同仓库 Web 页面合为一个项目；区别于隐藏网页广告。核对固定代码版本，语音转写另有成本 |
+| [按列名意图评分的表格](cases/2026-09-18-predictive-spreadsheet/README.md) | [337](https://x.com/dabit3/status/2100780008193020049) | 虽引用同作者启动器，但使用独立新视频，任务是给行评级，不能只按作者或引用关系去重 |
+| [Probably 实验语言](cases/2026-09-18-probably-language/README.md) | [894](https://x.com/southpolesteve/status/2100767781868150938) | 判断、分支与生成的语言实验；官网托管版是预录回放，自定义程序需本地连接模型 |
+| [ESLint 规则说明判断](cases/2026-09-18-eslint-rule-judgments/README.md) | [351](https://x.com/mizchi/status/2100765201385869434) | 新的规则级小片段实验，区别于 PR 审查；作者回复限定了测试规模 |
+| [OpenCode 意图权限插件](cases/2026-09-18-opencode-intent-permissions/README.md) | [235](https://x.com/OpeOginni/status/2100702649834188855) | 上轮 160 赞暂缓；本轮作者主帖达标，从待整理区转入。不将高赞转发重复收录 |
+
+新主帖取数时间：权限插件为 06:07:34 UTC；赞助跳过、Probably、ESLint 为 06:08:49 UTC；表格为 06:08:50 UTC。精确来源与补充帖时间见各条目及共享目录。主帖和媒体均无重复，所有新案例仍未复现。
+
+**合并到已有案例：** [Teknium 对 Cua 的引用](https://x.com/Teknium/status/2100783833419505941)仅宣布计划测试，补入 [Cua · jev-use](cases/2026-09-18-cua-jev-use/README.md)，不另建“新集成”。GitHub API 复查 #3916 仍 open、未合并，#3943 仍 open draft、未合并。
+
+**不增加计数的线索：**
+
+- [中文](https://x.com/SUOHA_AI/status/2100780634734002230)与[日文](https://x.com/k_matsumaru/status/2100767258415157493)压缩插件转述都指向已收录的 `fast-jev-compaction`，没有新增独立实现。
+- [Sydney 的 LangChain 教程](https://x.com/sydneyrunkle/status/2100754364545761643)及 [Harrison 的引用](https://x.com/hwchase17/status/2100773130041950570)为同一教程来源，归入参考资料，不把文章、分类示例、路由示例逐个包装成应用。
+- 泛观点、直播预告和不使用 TypeSafe Jev 的其他模型介绍不计入正式目录。
+
+**检索范围：** 使用 X 最新搜索 `Jev min_faves:200 since:2026-09-18`，回看到上轮已收录的启动器附近；复查上轮未达门槛的权限插件，读取 ESLint 与权限插件讨论串、Sponsor Skip 固定版本源码、Probably 官网和 npm 包说明。包含此前已发布但本轮才发现或达标的帖子，不承诺全量覆盖。
+
+本轮保留了旧案例的全部主帖快照，并增加 `updates` 历史字段，避免后续生成时抹掉前一轮案例更新记录。
+
 ## 2026-09-18 · 第二轮增量
 
 核对截止：**2026-09-18 10:43:33 北京时间（02:43:33 UTC）**。从 67 个增加到 **72 个案例，仍为 11 类**：新增 5 个独立案例，补充 4 个已有条目。点赞是各原帖的取数快照，不是此刻的实时值；旧条目的主帖点赞没有批量刷新。

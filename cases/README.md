@@ -41,6 +41,8 @@
 | [fx auto mode 命令安全分类](2026-09-18-fx-safety/README.md) | 在 AI 自动执行命令前，先判断这条命令可能有多危险。 | [591](https://x.com/fazxes/status/2100300097695232164) |
 | [越狱提示预筛](2026-09-18-jailbreak-screen/README.md) | 先筛查输入里是否有试图绕过 AI 规则的内容。 | [264](https://x.com/mayfer/status/2100343452865265747) |
 | [资料上传判断器](2026-09-18-upload-check/README.md) | 上传资料前先问一句：这份内容适合传出去吗？ | [284](https://x.com/iwasakoya/status/2100471523358474709) |
+| [按 ESLint 规则说明判断代码](2026-09-18-eslint-rule-judgments/README.md) | 只给规则的文字说明，让 Jev 判断小段代码是否符合规则。 | [351](https://x.com/mizchi/status/2100765201385869434) |
+| [OpenCode · 意图感知权限插件](2026-09-18-opencode-intent-permissions/README.md) | 用“只访问 Google”等自然语言规则，检查代理换着工具发起的操作。 | [235](https://x.com/OpeOginni/status/2100702649834188855) |
 
 ## 数据分类与信息整理
 
@@ -52,6 +54,7 @@
 | [Jev + Kimi 邮件反欺诈](2026-09-18-email-fraud/README.md) | 先快速筛查诈骗邮件，再把拿不准的交给更大的模型复核。 | [542](https://x.com/nutlope/status/2100614659690713543) |
 | [银行流水收款方整理](2026-09-18-bank-payee/README.md) | 把银行流水里杂乱的交易说明，整理成更容易认出的商户名。 | [633](https://x.com/jlongster/status/2100179852053639236) |
 | [日语客服升级意图](2026-09-18-support-intent/README.md) | 从日语客服消息里判断：用户是不是想找人工、是不是已经问过多次。 | [351](https://x.com/ku_suke/status/2100392430805856469) |
+| [按列名意图评分的电子表格](2026-09-18-predictive-spreadsheet/README.md) | 给一列起名“紧急程度”，让每行文字自动获得相应评级。 | [337](https://x.com/dabit3/status/2100780008193020049) |
 
 ## 内容与广告分析
 
@@ -71,6 +74,7 @@
 | --- | --- | ---: |
 | [自然语言 X 内容过滤器](2026-09-18-x-filter/README.md) | 用自己的话告诉浏览器：哪些 X 帖子我不想看。 | [950](https://x.com/marcelpociot/status/2100520134481735729) |
 | [Unclutter 页面清理](2026-09-18-unclutter/README.md) | 帮网页清掉广告、促销弹窗等干扰，让正文更容易看。 | [497](https://x.com/thekitze/status/2100595129874817340) |
+| [YouTube 赞助片段跳过](2026-09-18-youtube-sponsor-skip/README.md) | 观看 YouTube 时识别口播赞助片段，自动跳到后面的内容。 | [238](https://x.com/tdinh_me/status/2100793777103466615) |
 
 ## 上下文与记忆筛选
 
@@ -124,6 +128,7 @@
 | [实时电商导购与头像表情](2026-09-18-live-commerce-assistant/README.md) | 一边聊天一边推荐商品，让虚拟店员的表情跟着对话变化。 | [217](https://x.com/rinte0321/status/2100736454850908344) |
 | [实时表情候选](2026-09-18-emoji-suggestions/README.md) | 输入文字时，自动推荐与意思相符的 emoji。 | [230](https://x.com/riku720720/status/2100705558512963602) |
 | [语音与手指指向控制画布](2026-09-18-voice-gesture-canvas/README.md) | 边说边指，在画布里表达“把那个放到这里”。 | [915](https://x.com/jackcheng/status/2100729670991802386) |
+| [Probably · 用语义判断控制程序](2026-09-18-probably-language/README.md) | 把“这封邮件是否紧急”这样的判断写进条件分支，再让文字模型按结果起草回复。 | [894](https://x.com/southpolesteve/status/2100767781868150938) |
 
 ## 交易执行演示
 

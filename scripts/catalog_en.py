@@ -81,7 +81,7 @@ For example, a flight-search agent reads the webpage and lists available control
             index.append(f'| [{c["title"]}]({date}-{c["slug"]}/README.en.md) | {c["summary"]} | [{p["likes"]:,}]({p["url"]}) |\n')
             b.append(f'| [{c["title"]}](../{path}/README.en.md) | {c["advantage"]} | {c["limitation"]} |\n')
             supplement = '\n'.join(f'- [Supporting post by @{s["author"]}]({s["url"]}): published {s["published_at"]}; {s["likes"]:,} likes retrieved {s["retrieved_at"]}. Supporting source only; not counted toward the threshold. [Metadata source]({s["metrics_source"]}).' + ''.join(f' [Supplementary media {i}]({m["url"]})' for i, m in enumerate(s.get('media', []), 1)) for s in c['supplementary_posts']) or 'None.'
-            update_entry = (f"| {update['reviewed_at']} | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |\n" if update and c['slug'] in update['updated_cases'] else '')
+            update_entry = ''.join(f"| {u['reviewed_at']} | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |\n" for u in d.get('updates', [update] if update else []) if c['slug'] in u['updated_cases'])
             links = '\n'.join(f'- [Project / demo link {i}]({url})' for i, url in enumerate(c['links'], 1)) or 'No separately verified project entry point recorded from the post; the thread may provide further leads.'
             media = []
             for i, m in enumerate(p['media'], 1):

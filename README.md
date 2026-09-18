@@ -2,9 +2,9 @@
 
 **简体中文** | [English](README.en.md)
 
-从 X 收集 **TypeSafe Jev** 的应用演示，整理用途、实现思路和同类优劣。**当前 72 个案例 · 11 类 · 每条主帖收录时均 ≥ 200 赞 · 每条附图或视频**。
+从 X 收集 **TypeSafe Jev** 的应用演示，整理用途、实现思路和同类优劣。**当前 77 个案例 · 11 类 · 每条主帖收录时均 ≥ 200 赞 · 每条附图或视频**。
 
-最近增量核对：**2026-09-18T02:43:33+00:00（UTC）**；新增 **5** 个独立案例，补充 **4** 个已有条目。[本轮新增、合并与未收录原因](CHANGELOG.md)。已有主帖的点赞快照保持原取数时间。
+最近增量核对：**2026-09-18T06:12:09+00:00（UTC）**；新增 **5** 个独立案例，补充 **1** 个已有条目。[本轮新增、合并与未收录原因](CHANGELOG.md)。已有主帖的点赞快照保持原取数时间。
 
 ## Jev 是什么？先用一句人话理解
 
@@ -29,14 +29,14 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 | --- | ---: | --- |
 | [浏览器与电脑操作](#browser) | 8 | [阅读分析](breakdowns/2026-09-18-browser.md) |
 | [模型、技能与工具路由](#routing) | 8 | [阅读分析](breakdowns/2026-09-18-routing.md) |
-| [代码质量与安全检查](#review) | 7 | [阅读分析](breakdowns/2026-09-18-review.md) |
-| [数据分类与信息整理](#data) | 6 | [阅读分析](breakdowns/2026-09-18-data.md) |
+| [代码质量与安全检查](#review) | 9 | [阅读分析](breakdowns/2026-09-18-review.md) |
+| [数据分类与信息整理](#data) | 7 | [阅读分析](breakdowns/2026-09-18-data.md) |
 | [内容与广告分析](#content) | 7 | [阅读分析](breakdowns/2026-09-18-content.md) |
-| [网页与信息流过滤](#filter) | 2 | [阅读分析](breakdowns/2026-09-18-filter.md) |
+| [网页与信息流过滤](#filter) | 3 | [阅读分析](breakdowns/2026-09-18-filter.md) |
 | [上下文与记忆筛选](#memory) | 2 | [阅读分析](breakdowns/2026-09-18-memory.md) |
 | [游戏决策与求解](#games) | 14 | [阅读分析](breakdowns/2026-09-18-games.md) |
 | [NPC、驾驶与群体模拟](#simulation) | 7 | [阅读分析](breakdowns/2026-09-18-simulation.md) |
-| [实时交互与组合实验](#interaction) | 10 | [阅读分析](breakdowns/2026-09-18-interaction.md) |
+| [实时交互与组合实验](#interaction) | 11 | [阅读分析](breakdowns/2026-09-18-interaction.md) |
 | [交易执行演示](#finance) | 1 | [阅读分析](breakdowns/2026-09-18-finance.md) |
 
 [案例索引](cases/README.md) · [全部拆解](breakdowns/README.md) · [待补证据](inbox/README.md) · [收录流程](CONTRIBUTING.md)
@@ -83,9 +83,9 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 
 <a id="review"></a>
 
-### 代码质量与安全检查（7）
+### 代码质量与安全检查（9）
 
-PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。
+PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。 ESLint 规则实验判断小代码片段是否合规；OpenCode 权限插件在工具运行前决定放行、询问或拒绝。两者分别检查代码与操作，不能互相替代。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-review.md)
 
@@ -98,12 +98,14 @@ PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确
 | [**fx auto mode 命令安全分类**](cases/2026-09-18-fx-safety/README.md)<br>在 AI 自动执行命令前，先判断这条命令可能有多危险。<br>**原理：** Jev 像执行前的检查员，给命令做安全分类。检查很快不等于没有漏报，最终能否执行仍需要明确规则。 | [591](https://x.com/fazxes/status/2100300097695232164) | [<img src="https://pbs.twimg.com/media/HSW-E8wWgAAyw9O.jpg?name=orig" width="160" alt="fx auto mode 命令安全分类预览">](https://x.com/fazxes/status/2100300097695232164)<br>[图片](https://x.com/fazxes/status/2100300097695232164) |
 | [**越狱提示预筛**](cases/2026-09-18-jailbreak-screen/README.md)<br>先筛查输入里是否有试图绕过 AI 规则的内容。<br>**原理：** 把可疑提示交给 Jev，判断是否像已知的绕过套路。它只是前置筛查，遇到没见过的写法仍可能漏掉。 | [264](https://x.com/mayfer/status/2100343452865265747) | [<img src="https://pbs.twimg.com/media/HSXq9mqbsAAtHoT.jpg?name=orig" width="160" alt="越狱提示预筛预览">](https://x.com/mayfer/status/2100343452865265747)<br>[图片](https://x.com/mayfer/status/2100343452865265747) |
 | [**资料上传判断器**](cases/2026-09-18-upload-check/README.md)<br>上传资料前先问一句：这份内容适合传出去吗？<br>**原理：** 系统让 Jev 对资料做允许或不允许的判断。是否判断得对取决于给它的规则和信息；原帖没有公开完整的公司保密策略。 | [284](https://x.com/iwasakoya/status/2100471523358474709) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100471095627591680/img/jQewHJZ85th2EEv3.jpg" width="160" alt="资料上传判断器预览">](https://x.com/iwasakoya/status/2100471523358474709)<br>[视频](https://x.com/iwasakoya/status/2100471523358474709) |
+| [**按 ESLint 规则说明判断代码**](cases/2026-09-18-eslint-rule-judgments/README.md)<br>只给规则的文字说明，让 Jev 判断小段代码是否符合规则。<br>**原理：** 类似给阅卷者一张评分标准，再给一段待检查代码；Jev 判断是否违反要求。它学的是规则描述的含义，不是在这个实验里执行 ESLint 的规则实现。 | [351](https://x.com/mizchi/status/2100765201385869434) | [<img src="https://pbs.twimg.com/media/HSdqjcJa8AAGjPE.jpg?name=orig" width="160" alt="按 ESLint 规则说明判断代码预览">](https://x.com/mizchi/status/2100765201385869434)<br>[图片](https://x.com/mizchi/status/2100765201385869434) |
+| [**OpenCode · 意图感知权限插件**](cases/2026-09-18-opencode-intent-permissions/README.md)<br>用“只访问 Google”等自然语言规则，检查代理换着工具发起的操作。<br>**原理：** 像门卫既看通行规则也听你要办什么事：Jev 判断工具输入的意图，插件再决定放行、询问或拒绝。OpenCode 原有权限仍在外层控制。 | [235](https://x.com/OpeOginni/status/2100702649834188855) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100701224920129536/img/-vzxHYoZxMjXKOKh.jpg" width="160" alt="OpenCode · 意图感知权限插件预览">](https://x.com/OpeOginni/status/2100702649834188855)<br>[视频](https://x.com/OpeOginni/status/2100702649834188855) |
 
 <a id="data"></a>
 
-### 数据分类与信息整理（6）
+### 数据分类与信息整理（7）
 
-整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。
+整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-data.md)
 
@@ -115,6 +117,7 @@ PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确
 | [**Jev + Kimi 邮件反欺诈**](cases/2026-09-18-email-fraud/README.md)<br>先快速筛查诈骗邮件，再把拿不准的交给更大的模型复核。<br>**原理：** 像两级检查：Jev 先分流，置信度不足的 31 封再交给 Kimi。最后的 96/100 是整套流程成绩，不是 Jev 单独的成绩。 | [542](https://x.com/nutlope/status/2100614659690713543) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100608348219478016/img/23vFEVMegwLrMa8g.jpg" width="160" alt="Jev + Kimi 邮件反欺诈预览">](https://x.com/nutlope/status/2100614659690713543)<br>[视频](https://x.com/nutlope/status/2100614659690713543) |
 | [**银行流水收款方整理**](cases/2026-09-18-bank-payee/README.md)<br>把银行流水里杂乱的交易说明，整理成更容易认出的商户名。<br>**原理：** 流水里常混着地点、编号和店名，这个实验让 Jev 参与判断哪些信息该留下。原帖没公开具体怎样切出或生成最终名称。 | [633](https://x.com/jlongster/status/2100179852053639236) | [<img src="https://pbs.twimg.com/media/HSVWcZ9WcAAcwPe.jpg?name=orig" width="160" alt="银行流水收款方整理预览">](https://x.com/jlongster/status/2100179852053639236)<br>[图片](https://x.com/jlongster/status/2100179852053639236) |
 | [**日语客服升级意图**](cases/2026-09-18-support-intent/README.md)<br>从日语客服消息里判断：用户是不是想找人工、是不是已经问过多次。<br>**原理：** 把一条消息拆成两个清楚的是非问题，分别问 Jev。显示的百分比代表这次判断的倾向，不是整个客服系统的准确率。 | [351](https://x.com/ku_suke/status/2100392430805856469) | [<img src="https://pbs.twimg.com/media/HSYXuW5aoAAghbD.jpg?name=orig" width="160" alt="日语客服升级意图预览">](https://x.com/ku_suke/status/2100392430805856469)<br>[图片](https://x.com/ku_suke/status/2100392430805856469) |
+| [**按列名意图评分的电子表格**](cases/2026-09-18-predictive-spreadsheet/README.md)<br>给一列起名“紧急程度”，让每行文字自动获得相应评级。<br>**原理：** 普通公式按算式处理数字，这个演示让列名表达想问的问题：Jev 结合每行内容判断紧急程度，程序把结果填回表格。 | [337](https://x.com/dabit3/status/2100780008193020049) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100779722447667200/img/gvsEg2-3oD6FRZhc.jpg" width="160" alt="按列名意图评分的电子表格预览">](https://x.com/dabit3/status/2100780008193020049)<br>[视频](https://x.com/dabit3/status/2100780008193020049) |
 
 <a id="content"></a>
 
@@ -136,9 +139,9 @@ PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确
 
 <a id="filter"></a>
 
-### 网页与信息流过滤（2）
+### 网页与信息流过滤（3）
 
-只想控制 X 信息流，比较自然语言 X 过滤器；想清理整个网页的广告、横幅和追加销售区域，看 Unclutter。前者分类帖子内容，后者判断页面元素；同一条规则很难在两个层次直接复用。
+只想控制 X 信息流，比较自然语言 X 过滤器；想清理整个网页的广告、横幅和追加销售区域，看 Unclutter。前者分类帖子内容，后者判断页面元素；同一条规则很难在两个层次直接复用。 新增 Sponsor Skip 处理视频时间轴上的口播赞助，不是网页广告元素；字幕获取、语音转写和边界误判是它独有的比较维度。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-filter.md)
 
@@ -146,6 +149,7 @@ PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确
 | --- | ---: | --- |
 | [**自然语言 X 内容过滤器**](cases/2026-09-18-x-filter/README.md)<br>用自己的话告诉浏览器：哪些 X 帖子我不想看。<br>**原理：** 扩展把帖子和过滤要求交给 Jev 判断，符合条件就隐藏或折叠。它按意思筛选，不只是找某个关键词。 | [950](https://x.com/marcelpociot/status/2100520134481735729) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100519256425140224/img/-A44e4qCo8mVP8ws.jpg" width="160" alt="自然语言 X 内容过滤器预览">](https://x.com/marcelpociot/status/2100520134481735729)<br>[视频](https://x.com/marcelpociot/status/2100520134481735729) |
 | [**Unclutter 页面清理**](cases/2026-09-18-unclutter/README.md)<br>帮网页清掉广告、促销弹窗等干扰，让正文更容易看。<br>**原理：** 程序先找出可能要清理的页面元素，再请 Jev 判断。难点不只是认出广告，还要避免误删登录框等正常功能。 | [497](https://x.com/thekitze/status/2100595129874817340) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100595059041370112/img/cyfF5qMMKBPQTMAG.jpg" width="160" alt="Unclutter 页面清理预览">](https://x.com/thekitze/status/2100595129874817340)<br>[视频](https://x.com/thekitze/status/2100595129874817340) |
+| [**YouTube 赞助片段跳过**](cases/2026-09-18-youtube-sponsor-skip/README.md)<br>观看 YouTube 时识别口播赞助片段，自动跳到后面的内容。<br>**原理：** 像给字幕做标记：Jev 判断哪些句子是赞助内容，程序把句子编号换成播放时间，再执行跳转。需要听声音时，先由另一家语音服务转成文字。 | [238](https://x.com/tdinh_me/status/2100793777103466615) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100792834526007296/img/8AFbjqEeZrJUEHid.jpg" width="160" alt="YouTube 赞助片段跳过预览">](https://x.com/tdinh_me/status/2100793777103466615)<br>[视频](https://x.com/tdinh_me/status/2100793777103466615) |
 
 <a id="memory"></a>
 
@@ -205,9 +209,9 @@ NPC 需求选择适合研究角色行为，500 agents 演示关注并发吞吐�
 
 <a id="interaction"></a>
 
-### 实时交互与组合实验（10）
+### 实时交互与组合实验（11）
 
-TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 本次新增的启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。
+TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。 Probably 则把判断、分支和文字生成组织成小语言；官网是预录回放，比较实时性时需与真正的本地模型调用区分。
 
 [逐项优劣与原理对比](breakdowns/2026-09-18-interaction.md)
 
@@ -223,6 +227,7 @@ TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单�
 | [**实时电商导购与头像表情**](cases/2026-09-18-live-commerce-assistant/README.md)<br>一边聊天一边推荐商品，让虚拟店员的表情跟着对话变化。<br>**原理：** 像店员边听需求边拿商品：对话系统负责交谈，Jev 参与快速判断，应用更新推荐和表情。作者展示了两种模型搭配，但没有公开每一步的接口。 | [217](https://x.com/rinte0321/status/2100736454850908344) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100735518963355648/img/o0S0IxXnxWjnlNOG.jpg" width="160" alt="实时电商导购与头像表情预览">](https://x.com/rinte0321/status/2100736454850908344)<br>[视频](https://x.com/rinte0321/status/2100736454850908344) |
 | [**实时表情候选**](cases/2026-09-18-emoji-suggestions/README.md)<br>输入文字时，自动推荐与意思相符的 emoji。<br>**原理：** 不是让模型画新表情，而是从已有表情里挑合适的。界面展示候选和分数，输入变化时再判断一次。具体问题格式未公开。 | [230](https://x.com/riku720720/status/2100705558512963602) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100705222016520192/img/BxzTN_rxkA_FLvwe.jpg" width="160" alt="实时表情候选预览">](https://x.com/riku720720/status/2100705558512963602)<br>[视频](https://x.com/riku720720/status/2100705558512963602) |
 | [**语音与手指指向控制画布**](cases/2026-09-18-voice-gesture-canvas/README.md)<br>边说边指，在画布里表达“把那个放到这里”。<br>**原理：** 软件先记住你说“那个”和“这里”时指向哪里，再让 Jev 分别确认几个小问题。这样不用把所有物体、动作和位置的组合都列成一张巨大选项表。 | [915](https://x.com/jackcheng/status/2100729670991802386) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100729243185324032/img/YNw8njfnSXu-Tbyr.jpg" width="160" alt="语音与手指指向控制画布预览">](https://x.com/jackcheng/status/2100729670991802386)<br>[视频](https://x.com/jackcheng/status/2100729670991802386) |
+| [**Probably · 用语义判断控制程序**](cases/2026-09-18-probably-language/README.md)<br>把“这封邮件是否紧急”这样的判断写进条件分支，再让文字模型按结果起草回复。<br>**原理：** 像把判断题装进程序：Jev 回答条件是否成立或该走哪个分支，解释器安排步骤，另一个模型负责写文字。判断、流程和生成分别由不同组件承担。 | [894](https://x.com/southpolesteve/status/2100767781868150938) | [<img src="https://pbs.twimg.com/media/HSdr-ILWUAAN29Y.jpg?name=orig" width="160" alt="Probably · 用语义判断控制程序预览">](https://x.com/southpolesteve/status/2100767781868150938)<br>[图片](https://x.com/southpolesteve/status/2100767781868150938) |
 
 <a id="finance"></a>
 

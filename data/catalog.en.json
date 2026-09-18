@@ -29,7 +29,7 @@
       "limitation": "Not a released visual desktop-control feature. The current preview has no screenshot perception and does not certify native Windows/Linux desktop capability.",
       "reported_result": "The post advertises a macOS/Windows/Linux development preview and mentions #3943. Repository review identified #3916 as the semantic jev-use preview, still unmerged at collection.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "source_notes": "**Repository cross-check (2026-09-18)**: [PR #3916](https://github.com/trycua/cua/pull/3916) describes DOM/semantic evidence and Jev selecting actions outside Driver. Mock E2E CI is not live Jev certification across platforms. [PR #3943, mentioned in the post](https://github.com/trycua/cua/pull/3943), has been narrowed to an unwired perception-foundations draft and should not be treated as an available screenshot-perception feature. These are repository statements, not tests run here.",
+      "source_notes": "**Repository cross-check (2026-09-18)**: [PR #3916](https://github.com/trycua/cua/pull/3916) describes DOM/semantic evidence and Jev selecting actions outside Driver. Mock E2E CI is not live Jev certification across platforms. [PR #3943, mentioned in the post](https://github.com/trycua/cua/pull/3943), has been narrowed to an unwired perception-foundations draft and should not be treated as an available screenshot-perception feature. These are repository statements, not tests run here.\n\n**Third-pass review (2026-09-18 06:12 UTC):** [Teknium’s quote](https://x.com/Teknium/status/2100783833419505941) announces testing planned for the next few weeks, not results; it is merged into the existing Cua case. GitHub API checks show #3916 still open and unmerged, and #3943 still an open, unmerged draft. This pass refreshes PR status only; planned testing is not treated as a shipped integration.",
       "plain_explanation": "Like ordering from a menu, Jev selects only an action ID prepared by the application. Code checks it, executes it and independently verifies the form. The current preview does not operate arbitrary software from screenshots."
     },
     "coreml-ocr": {
@@ -727,6 +727,60 @@
       "limitation": "The author explicitly describes an imperfect feasibility experiment. No pointing-error, speech-error or action-success evaluation is available, and separate decisions still require consistency checks.",
       "reported_result": "The author shares a roughly 39-second canvas demo and explains pointing capture and question decomposition in a reply.",
       "media_note": "The video interface shows a canvas, camera and separate input/decision panels. Implementation details come from the author’s reply; this is not evidence that Jev directly recognizes video."
+    },
+    "youtube-sponsor-skip": {
+      "title": "YouTube sponsor-segment skipping",
+      "summary": "Detect spoken sponsor segments while watching YouTube and jump past them.",
+      "plain_explanation": "Like marking up captions: Jev identifies sponsor lines, code maps their IDs to playback times, then seeks the player. Listening modes first use a separate speech service to turn audio into text.",
+      "mechanism": "The pinned source labels caption lines, scans windows for sponsor presence and boundaries with Jev, and maps selected lines to timestamps in code. Smart/Listen modes use Deepgram transcription and Jev judgments about the current segment. Code owns timestamp calculation and playback seeking.",
+      "advantage": "Handles spoken sponsorship inside a video rather than hiding webpage ads. Transcript, hybrid and listening modes accommodate different caption availability.",
+      "limitation": "Caption fetching can break; stepwise listening-mode seeks may overshoot into normal content. The author’s roughly $0.005/video claim is not universal across modes, and transcription adds cost. No accuracy or time-saving benchmark was run here.",
+      "reported_result": "The author shares a roughly 21-second Chrome-extension demo, reports real-time detection at about $0.005/video, and calls it an open-source BYOK prototype.",
+      "media_note": "The source video demonstrates the extension prototype. The repository’s web app and extension are one project, not two catalog entries.",
+      "source_notes": "**Source review:** Read the pinned [README at de01f05](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/README.md) and [src/jev.js](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/src/jev.js). Documentation distinguishes hourly costs across modes and Deepgram’s per-minute charge. The post’s per-video estimate is not treated as a total-cost guarantee. No extension was installed or API called."
+    },
+    "predictive-spreadsheet": {
+      "title": "Intent-driven spreadsheet ratings",
+      "summary": "Name a column “Urgency” and have the text in each row receive a corresponding rating.",
+      "plain_explanation": "Ordinary formulas calculate numbers; this demo uses a column name to express a question. Jev judges each row’s urgency, and the app writes the result into the table.",
+      "mechanism": "The author describes column intent and row content driving Jev ratings that update with typing. Question construction, score ranges, batching and caching are undisclosed.",
+      "advantage": "Brings semantic judgments into a familiar spreadsheet interface for experiments with ticket or text-record triage; emphasizes interaction beyond fixed-label batch classification.",
+      "limitation": "The roughly 100ms claim lacks row-count and timing-scope details. Ambiguous column names, rating consistency and large-table costs are unevaluated. Arbitrary headings are not proven to become reliable formulas.",
+      "reported_result": "The author shares a roughly 18-second video, reporting ratings from no follow-up needed to urgent after entering Urgency, in roughly 100ms.",
+      "media_note": "Uses this spreadsheet post’s own video, not the launcher video it quotes.",
+      "source_notes": "**Deduplication:** This post quotes the same author’s launcher, but has its own video and a different task: rating spreadsheet rows rather than ranking files. It is a separate data-classification case; common authorship or a quote alone does not establish duplicate identity."
+    },
+    "probably-language": {
+      "title": "Probably: semantic judgments as program control",
+      "summary": "Write judgments such as “is this email urgent?” into branches, then ask a text model to draft a reply.",
+      "plain_explanation": "Put a judgment inside a program: Jev decides whether a condition holds or which branch fits, an interpreter coordinates the steps, and a separate model writes text.",
+      "mechanism": "The Probably 0.1 website describes a TypeScript interpreter: feels asks Jev about conditions, match selects a descriptive branch, while repeats judgments, and llm calls a separate text model. Conditions support confidence gates; match has no confidence gate in this version.",
+      "advantage": "Combines classification, branching and revision loops in a readable small language. Useful alongside vocabulary-chat and RISC-jeV experiments for understanding composition.",
+      "limitation": "Explicitly a toy language without general-purpose features such as arrays or functions. The hosted playground replays recorded results; custom programs require local execution with live model providers. Playback speed is not an inference benchmark.",
+      "reported_result": "The author posts a language-example image and playground URL, describing feels, match and while, with Jev making judgments and an LLM writing.",
+      "media_note": "The main post includes a language-example image. The website was read; programs were not executed and cached demonstrations were not treated as live API tests.",
+      "source_notes": "**Website review:** [Probably 0.1](https://probably-lang.southpolesteve.workers.dev) states that its hosted Worker replays bundled recordings and rejects uncached custom code or inputs without model calls. The interpreter also limits model calls and loop iterations per run. These are documented behaviors, not results from running the local interpreter."
+    },
+    "eslint-rule-judgments": {
+      "title": "Code judgments from ESLint rule descriptions",
+      "summary": "Give Jev a rule’s text description and ask whether a small code snippet complies.",
+      "plain_explanation": "Like handing a reviewer a marking guide and a snippet: Jev judges whether the rule is violated. The experiment interprets the rule’s meaning rather than executing its ESLint implementation.",
+      "mechanism": "The author says Jev receives ESLint descriptions without their implementations. A later reply clarifies that the experiment uses generated small snippets and the code is being organized. Complete inputs, sample construction and evaluation protocol remain unverified.",
+      "advantage": "Explores turning written rules into quick code judgments. More focused than general PR scoring and suitable for comparison with deterministic lint results.",
+      "limitation": "The roughly 90% correctness claim concerns the author’s snippet experiment, not whole repositories or real PRs. Public samples, independent evaluation and per-rule false positives/negatives are still needed. It provides no deterministic-linter guarantee.",
+      "reported_result": "The author posts a results screenshot claiming roughly 90% correct judgments, then clarifies that the inputs are generated small snippets rather than whole repositories.",
+      "media_note": "The source image is the author’s experimental report, not output generated by this repository."
+    },
+    "opencode-intent-permissions": {
+      "title": "OpenCode intent-aware permissions",
+      "summary": "Check an agent’s actions across tools using policies such as “only access Google.”",
+      "plain_explanation": "Like a gatekeeper considering both access rules and the purpose of a request: Jev judges tool-input intent, and the plugin allows, asks or denies. Native OpenCode permissions remain the outer layer.",
+      "mechanism": "The oc-auto-perms 0.1.0 documentation sends selected tool inputs, policies and recent requests to Jev, using ordered rules for allow/ask/deny. Low confidence or API failure becomes ask. Native deny stays denied and native ask still prompts; Jev further restricts native allow.",
+      "advantage": "Expresses a shared semantic restriction across shell, webfetch and other tools without enumerating every command. Goes beyond risk scoring by participating in permission decisions.",
+      "limitation": "The video does not establish bypass resistance; deterministic hard boundaries remain necessary. Version 0.1.0 explicitly excludes Code Mode execute and sends policies, recent user messages and tool inputs to TypeSafe. No adversarial or permission tests were run here.",
+      "reported_result": "The author demonstrates a Google-only policy and reports blocking the shown attempts; the main post now has 235 likes at retrieval.",
+      "media_note": "The main post includes a roughly 91-second video and configuration image. Eligibility uses the author’s post, without adding repost likes.",
+      "source_notes": "**Promoted from the inbox:** The 2026-09-18 02:38:04 UTC snapshot had 160 likes; the 06:07:34 UTC snapshot has 235 and now qualifies. The [author’s reply](https://x.com/OpeOginni/status/2100705405013754312) links the package. Read [npm metadata and README](https://registry.npmjs.org/oc-auto-perms), whose latest version was 0.1.0. The plugin was not installed."
     }
   },
   "groups": {
@@ -746,14 +800,14 @@
     },
     "review": {
       "title": "Code quality and safety checks",
-      "comparison": "Compare the 14-check PR reviewer, jev-review and jev-rabbit for explicit risks and escalation, iterative scoring and natural-language team rules respectively. Codebase classification examines overall structure. Command safety, jailbreak screening and upload checks guard different actions and need separate false-negative evaluations.",
+      "comparison": "Compare the 14-check PR reviewer, jev-review and jev-rabbit for explicit risks and escalation, iterative scoring and natural-language team rules respectively. Codebase classification examines overall structure. Command safety, jailbreak screening and upload checks guard different actions and need separate false-negative evaluations. The ESLint experiment judges snippet compliance; OpenCode permissions decide whether a tool action is allowed, questioned or denied before execution. They check different things and are not substitutes.",
       "flow": "Code or proposed action plus explicit rules → several narrow judgments → combine in code → notify, block or escalate.",
       "analysis": "The PR reviewer publishes an uncertainty-escalation rule, making it easier to inspect than an overall score. jev-review feedback can guide iterations, but a high score is not a passing test suite. Cheap screening does not remove the need to assess error costs.",
       "evaluation": "Measure false positives and negatives by risk type against independently labeled data. Test insufficient evidence, adversarial instructions, conflicting rules and uncertain results. Retain human review and static-tool baselines."
     },
     "data": {
       "title": "Data classification and organization",
-      "comparison": "Email classification and DuckDB handle batches of text; the paper example includes generative preprocessing; Jev + Kimi shows uncertainty escalation. Payee cleanup is extraction/normalization and support intent is multi-question judgment. Their metrics are not interchangeable.",
+      "comparison": "Email classification and DuckDB handle batches of text; the paper example includes generative preprocessing; Jev + Kimi shows uncertainty escalation. Payee cleanup is extraction/normalization and support intent is multi-question judgment. Their metrics are not interchangeable. Predictive spreadsheets put classification intent in column headings and emphasize live feedback. Compare interface response separately from full-table processing costs when considering DuckDB-style batching.",
       "flow": "Raw text or tables → needed cleanup/summaries → Jev judgments → fallback for uncertain items → write results to an index or table.",
       "analysis": "The paper example separates summary costs from classification. The fraud example escalates uncertain emails to a larger model. Preprocessing and fallback both count toward total system cost. Payee candidate generation is unknown; do not assume Jev freely generates merchant names.",
       "evaluation": "Fix labeled data and splits. Report per-class precision/recall, throughput, per-item latency, retries and total cost. Fraud evaluation also needs realistic prevalence and separate false-positive/negative analysis."
@@ -767,7 +821,7 @@
     },
     "filter": {
       "title": "Webpage and feed filtering",
-      "comparison": "The X filter targets posts in a feed; Unclutter targets ads, banners and upsells across webpages. One classifies content, the other page elements, so their rules cannot necessarily be reused directly.",
+      "comparison": "The X filter targets posts in a feed; Unclutter targets ads, banners and upsells across webpages. One classifies content, the other page elements, so their rules cannot necessarily be reused directly. Sponsor Skip targets spoken sponsorship along a video timeline rather than webpage elements; caption availability, transcription and boundary errors are distinct comparison dimensions.",
       "flow": "Extract posts/elements → apply user-written semantic rules through Jev → hide, collapse or remove.",
       "analysis": "Filtering depends on extraction and rule scope. Fast inference does not guarantee no flicker, false removals or broken interactions; page structures can change.",
       "evaluation": "Compare false removals, missed targets, initial display latency and per-page cost on a fixed page set. Check normal dialogs, login, infinite scroll and undo behavior."
@@ -795,7 +849,7 @@
     },
     "interaction": {
       "title": "Real-time interaction and composition experiments",
-      "comparison": "TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs. New entries cover file selection, emoji suggestions, live shopping and voice-and-pointing canvas control. Their distinct tasks warrant separate cases. Both the canvas and TypeGPU combine perception with decisions, but one manipulates objects while the other changes audiovisual effects.",
+      "comparison": "TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs. Other entries cover file selection, emoji suggestions, live shopping and voice-and-pointing canvas control. Their distinct tasks warrant separate cases. Both the canvas and TypeGPU combine perception with decisions, but one manipulates objects while the other changes audiovisual effects. Probably organizes judgments, branches and text generation into a small language. Its hosted site uses recorded playback, which must be distinguished from live local model calls when discussing responsiveness.",
       "flow": "Prepare finite candidates or atomic questions → Jev judges → code composes results → update interaction state or output.",
       "analysis": "Code assembles word and character choices into text; the API still returns judgments. RISC-jeV stacks logic-gate decisions and instruction interpretation to illustrate composition, not efficiency.",
       "evaluation": "Record vocabulary size, resolution or character count, loop count and full cost. Compare quality with deterministic code or specialized generators. Measure local perception, remote decisions and rendering separately."

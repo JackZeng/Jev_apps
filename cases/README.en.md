@@ -41,6 +41,8 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [fx auto mode safety classifier](2026-09-18-fx-safety/README.en.md) | Check a command's potential risk before an agent executes it automatically. | [591](https://x.com/fazxes/status/2100300097695232164) |
 | [Jailbreak prompt prescreen](2026-09-18-jailbreak-screen/README.en.md) | Prescreen prompts for attempts to bypass an AI system's rules. | [264](https://x.com/mayfer/status/2100343452865265747) |
 | [Document upload checker](2026-09-18-upload-check/README.en.md) | Before uploading a document, check whether its contents should be shared. | [284](https://x.com/iwasakoya/status/2100471523358474709) |
+| [Code judgments from ESLint rule descriptions](2026-09-18-eslint-rule-judgments/README.en.md) | Give Jev a rule’s text description and ask whether a small code snippet complies. | [351](https://x.com/mizchi/status/2100765201385869434) |
+| [OpenCode intent-aware permissions](2026-09-18-opencode-intent-permissions/README.en.md) | Check an agent’s actions across tools using policies such as “only access Google.” | [235](https://x.com/OpeOginni/status/2100702649834188855) |
 
 ## Data classification and organization
 
@@ -52,6 +54,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Jev + Kimi email fraud detection](2026-09-18-email-fraud/README.en.md) | Screen emails for fraud quickly, then send uncertain cases to a larger model. | [542](https://x.com/nutlope/status/2100614659690713543) |
 | [Bank transaction payee cleanup](2026-09-18-bank-payee/README.en.md) | Turn messy bank transaction descriptions into recognizable merchant names. | [633](https://x.com/jlongster/status/2100179852053639236) |
 | [Japanese support escalation intent](2026-09-18-support-intent/README.en.md) | Detect whether a Japanese support message asks for a human or mentions repeated contact. | [351](https://x.com/ku_suke/status/2100392430805856469) |
+| [Intent-driven spreadsheet ratings](2026-09-18-predictive-spreadsheet/README.en.md) | Name a column “Urgency” and have the text in each row receive a corresponding rating. | [337](https://x.com/dabit3/status/2100780008193020049) |
 
 ## Content and advertising analysis
 
@@ -71,6 +74,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | --- | --- | ---: |
 | [Natural-language X content filter](2026-09-18-x-filter/README.en.md) | Tell the browser in your own words which X posts you would rather not see. | [950](https://x.com/marcelpociot/status/2100520134481735729) |
 | [Unclutter page cleanup](2026-09-18-unclutter/README.en.md) | Clear ads, promotional dialogs and similar clutter to make webpages easier to read. | [497](https://x.com/thekitze/status/2100595129874817340) |
+| [YouTube sponsor-segment skipping](2026-09-18-youtube-sponsor-skip/README.en.md) | Detect spoken sponsor segments while watching YouTube and jump past them. | [238](https://x.com/tdinh_me/status/2100793777103466615) |
 
 ## Context and memory filtering
 
@@ -124,6 +128,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Live shopping assistant and avatar expressions](2026-09-18-live-commerce-assistant/README.en.md) | Recommend products during a conversation and change a virtual shop assistant’s expression with the dialogue. | [217](https://x.com/rinte0321/status/2100736454850908344) |
 | [Live emoji suggestions](2026-09-18-emoji-suggestions/README.en.md) | Suggest emoji that fit the meaning of text as it is entered. | [230](https://x.com/riku720720/status/2100705558512963602) |
 | [Voice-and-pointing canvas control](2026-09-18-voice-gesture-canvas/README.en.md) | Use speech and pointing together to say “put that over there” on a canvas. | [915](https://x.com/jackcheng/status/2100729670991802386) |
+| [Probably: semantic judgments as program control](2026-09-18-probably-language/README.en.md) | Write judgments such as “is this email urgent?” into branches, then ask a text model to draft a reply. | [894](https://x.com/southpolesteve/status/2100767781868150938) |
 
 ## Trading execution demo
 
