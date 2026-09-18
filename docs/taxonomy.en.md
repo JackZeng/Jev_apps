@@ -18,7 +18,7 @@ The current focus is TypeSafe Jev applications on X. Give each case one main cat
 | games | Game decisions and solving | Mario, chess, cards, action games, Rubik's Cube and others |
 | simulation | NPCs, driving and population simulations | Characters, vehicles, drones, synthetic personas and narratives |
 | interaction | Real-time interaction and composition experiments | Perception, judgment interfaces, text/pixel composition and computing experiments |
-| finance | Trading execution demo | Price-based decisions and order submission; no inference of profitability |
+| finance | Trading and historical backtests | Market decisions, order submission and historical strategy experiments; no inference of profitability |
 
 Place close substitutes together within categories, such as the Mario implementations and model routers. The generator computes counts. If there is only one example, state that there is no same-category comparison.
 

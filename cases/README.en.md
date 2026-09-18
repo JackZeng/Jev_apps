@@ -8,7 +8,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 
 | Application | What it does | Main-post likes |
 | --- | --- | ---: |
-| [Browser Use · Ultrafast](2026-09-18-browser-use/README.en.md) | Describe a flight search and let the agent click, type and find results on the website.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [6,891](https://x.com/gregpr07/status/2100411066966749359) |
+| [Browser Use · Ultrafast](2026-09-18-browser-use/README.en.md) | Describe a flight search and let the agent click, type and find results on the website.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 07:04:48 | [6,891](https://x.com/gregpr07/status/2100411066966749359) |
 | [Stagehand browser control](2026-09-18-stagehand/README.en.md) | Let Jev choose the next browser action and Stagehand carry it out.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [393](https://x.com/kylejeong/status/2100622054945095934) |
 | [Cua · jev-use](2026-09-18-cua-jev-use/README.en.md) | Give Jev a list of allowed browser actions, execute its choice, then check the result.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 14:17:58 | [1,162](https://x.com/trycua/status/2100649543079502213) |
 | [CoreML + OCR desktop clicks](2026-09-18-coreml-ocr/README.en.md) | Recognize buttons and labels on a Mac, then ask Jev which one to click.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [564](https://x.com/milindlabs/status/2100631847155994852) |
@@ -18,6 +18,8 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [OpenCode app testing](2026-09-18-opencode-qa/README.en.md) | Let a coding assistant interact with an app to help check it after development.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [1,133](https://x.com/Neriousy/status/2100287208166969746) |
 | [Runlayer: parallel adversarial browser testing](2026-09-18-runlayer-adversarial-testing/README.en.md) | Run multiple browser sessions to explore how a new release might fail during use.<br>**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 | [820](https://x.com/rafalwilinski/status/2100882207879434359) |
 | [Sac: Codex + Jev for Mac Calendar](2026-09-18-sac-calendar-computer-use/README.en.md) | Add a Jev decision layer to Codex computer use and compare creating a calendar event side by side.<br>**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 | [217](https://x.com/Saccc_c/status/2100864907046768890) |
+| [ego lite: filter Amazon products](2026-09-19-ego-product-decisions/README.en.md) | Combine browser tooling and models to filter products on a webpage.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [366](https://x.com/ego_agent/status/2100970015977804008) |
+| [Tester Army: web and mobile end-to-end testing](2026-09-19-tester-army-e2e/README.en.md) | Explore agent-driven interface tests in a framework targeting web and mobile.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [505](https://x.com/o_kwasniewski/status/2100966838905585687) |
 
 ## Model, skill and tool routing
 
@@ -32,6 +34,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Eve tool-calling agent](2026-09-18-eve-tool-agent/README.en.md) | Let Jev choose an agent's next tool to reduce selection overhead.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [1,117](https://x.com/oviniciuslana/status/2100457622407168509) |
 | [ai-cli decision interface](2026-09-18-ai-cli/README.en.md) | Give terminal-based assistants access to Jev judgments, choices and scores.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [874](https://x.com/ctatedev/status/2100584917092409479) |
 | [Hono JevRouter: route requests by meaning](2026-09-18-hono-semantic-router/README.en.md) | Choose responses such as HTML or Markdown based on whether a request appears to come from a person or an AI.<br>**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 | [405](https://x.com/yusukebe/status/2100871075743859182) |
+| [Codex Model Router: choose a model each turn](2026-09-19-codex-model-router/README.en.md) | Select a model and reasoning settings for each Codex task.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [437](https://x.com/antonioleivag/status/2100962426439000484) |
 
 ## Code quality and safety checks
 
@@ -47,6 +50,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Code judgments from ESLint rule descriptions](2026-09-18-eslint-rule-judgments/README.en.md) | Give Jev a rule’s text description and ask whether a small code snippet complies.<br>**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 | [351](https://x.com/mizchi/status/2100765201385869434) |
 | [OpenCode intent-aware permissions](2026-09-18-opencode-intent-permissions/README.en.md) | Check an agent’s actions across tools using policies such as “only access Google.”<br>**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 | [235](https://x.com/OpeOginni/status/2100702649834188855) |
 | [Code comments: accuracy and usefulness scores](2026-09-18-code-comment-scoring/README.en.md) | Check whether a comment is correct and whether it adds useful information beyond the code.<br>**Added to README:** 2026-09-18 16:17:27<br>**Content updated:** 2026-09-18 16:17:27 | [1,777](https://x.com/markjaquith/status/2100359340087501296) |
+| [Script.it: flag issues before writing review comments](2026-09-19-script-code-review/README.en.md) | Score a git diff first, then ask a language model for explanations only when issues are flagged.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [202](https://x.com/liorshkiller/status/2100936106615140757) |
 
 ## Data classification and organization
 
@@ -61,6 +65,12 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Intent-driven spreadsheet ratings](2026-09-18-predictive-spreadsheet/README.en.md) | Name a column “Urgency” and have the text in each row receive a corresponding rating.<br>**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 | [337](https://x.com/dabit3/status/2100780008193020049) |
 | [Email classification: four-model speed comparison](2026-09-18-email-speed-race/README.en.md) | Classify a set of emails with four models and compare progress and elapsed time on one screen.<br>**Added to README:** 2026-09-18 16:17:27<br>**Content updated:** 2026-09-18 16:17:27 | [445](https://x.com/usutaku_channel/status/2100829343954173965) |
 | [Calorie Notebook: text-based food logging](2026-09-18-calorie-notebook/README.en.md) | Write down what you ate and receive quick calorie, nutrient and total values in the interface.<br>**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 | [326](https://x.com/thekitze/status/2100857642566758849) |
+| [Box: triage and file incident reports](2026-09-19-box-incident-triage/README.en.md) | Read incident reports, judge impact and severity, and route them to handling folders.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [317](https://x.com/levie/status/2101007708044574906) |
+| [NoSugarForKids: multi-criterion snack scoring](2026-09-19-snack-scoring/README.en.md) | Score children’s snacks in batches to organize a product catalog.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [312](https://x.com/nikunj/status/2101006585481073093) |
+| [Tax Doc Classifier: label tax PDF pages](2026-09-19-tax-doc-classifier/README.en.md) | Identify which tax form each PDF page belongs to for downstream organization.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:08:57 | [1,506](https://x.com/nedwize/status/2100973868324417852) |
+| [Gmail: search by intent](2026-09-19-gmail-intent-search/README.en.md) | Filter relevant messages from a natural-language request instead of relying only on keywords.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [574](https://x.com/dabit3/status/2100960281769738433) |
+| [OCR + Jev: organize images](2026-09-19-ocr-image-organizer/README.en.md) | Read text from images, then categorize them by content.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [246](https://x.com/fayazara/status/2100953838891192789) |
+| [macOS Downloads: organize files by rules](2026-09-19-downloads-organizer/README.en.md) | Watch Downloads and move matching files to destinations defined by custom rules.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [889](https://x.com/marcelpociot/status/2100906882365788167) |
 
 ## Content and advertising analysis
 
@@ -73,6 +83,8 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Analysis of 3,282 historical posts](2026-09-18-post-analytics/README.en.md) | Review thousands of past posts to see which topics and styles performed well.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [262](https://x.com/iannuttall/status/2100668908227162567) |
 | [StealAds ad-analysis preview](2026-09-18-ad-analysis/README.en.md) | Break many ads into hooks, offers and calls to action for creative research.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [1,678](https://x.com/TheMattBerman/status/2100654891756589230) |
 | [JevMeter speech-analysis dashboard](2026-09-18-jevmeter/README.en.md) | Score sentences in debates or interviews to examine speech patterns and content features.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [1,017](https://x.com/chetaslua/status/2100473581251748216) |
+| [SEO internal links: match existing text to relevant pages](2026-09-19-seo-internal-links/README.en.md) | Scan site articles and suggest relevant internal links using text already present.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [721](https://x.com/borjafat/status/2101018783976722479) |
+| [MaxFusion: classify advertising creatives](2026-09-19-maxfusion-ad-classifier/README.en.md) | Label ads by style and customer-journey stage for account-level analysis.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [320](https://x.com/OriSilver/status/2100941251478458871) |
 
 ## Webpage and feed filtering
 
@@ -81,6 +93,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Natural-language X content filter](2026-09-18-x-filter/README.en.md) | Tell the browser in your own words which X posts you would rather not see.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [950](https://x.com/marcelpociot/status/2100520134481735729) |
 | [Unclutter page cleanup](2026-09-18-unclutter/README.en.md) | Clear ads, promotional dialogs and similar clutter to make webpages easier to read.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [497](https://x.com/thekitze/status/2100595129874817340) |
 | [YouTube sponsor-segment skipping](2026-09-18-youtube-sponsor-skip/README.en.md) | Detect spoken sponsor segments while watching YouTube and jump past them.<br>**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 | [238](https://x.com/tdinh_me/status/2100793777103466615) |
+| [X reply cleanup: flag low-value comments](2026-09-19-x-reply-cleanup/README.en.md) | Identify suspected low-value replies to help clean up a post’s discussion.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [223](https://x.com/iannuttall/status/2100888635943883244) |
 
 ## Context and memory filtering
 
@@ -88,6 +101,7 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | --- | --- | ---: |
 | [Tool-history context compaction](2026-09-18-context-compaction/README.en.md) | Trim an AI assistant's work history to retain what matters now.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 10:50:59 | [1,646](https://x.com/tamarajtran/status/2100694549362553153) |
 | [Memory retrieval filtering](2026-09-18-memory-retrieval/README.en.md) | Filter an AI memory store so the next model sees relevant material.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 10:50:59 | [335](https://x.com/moritzkremb/status/2100566009312940457) |
+| [Compact Adviser: choose when to compact](2026-09-19-compact-adviser/README.en.md) | Suggest when a coding conversation has reached a suitable point for context compaction.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:08:57 | [242](https://x.com/kunchenguid/status/2101032677940117875) |
 
 ## Game decisions and solving
 
@@ -107,6 +121,8 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Staged Rubik's Cube solver](2026-09-18-rubiks-cube/README.en.md) | Code knows the cube-solving methods; Jev identifies which case to apply.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [494](https://x.com/redp314/status/2100489858951073858) |
 | [Mario Kart 64](2026-09-18-mario-kart/README.en.md) | Watch Jev control Mario Kart in a continuous-driving demo.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [204](https://x.com/shreypandya/status/2100606445758898287) |
 | [Minecraft with Jev, Astra and local policies](2026-09-18-minecraft-hybrid/README.en.md) | Split Minecraft play across models: long-term planning, quick reactions, and local movement and aiming.<br>**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-18 10:50:59 | [354](https://x.com/wuyang_zhou/status/2100727660875808913) |
+| [Sprite Fusion: generate runner terrain in real time](2026-09-19-game-level-generation/README.en.md) | Select new platforms and gaps ahead of a moving player.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:08:57 | [1,289](https://x.com/HugoDuprez/status/2100953089003921543) |
+| [Flappy Bird: navigate obstacles](2026-09-19-flappy-bird/README.en.md) | Use Jev in controlling a bird through obstacles.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [254](https://x.com/thymikee/status/2100937960115838984) |
 
 ## NPCs, driving and population simulations
 
@@ -136,9 +152,15 @@ All examples are not independently reproduced. Likes are snapshots of individual
 | [Voice-and-pointing canvas control](2026-09-18-voice-gesture-canvas/README.en.md) | Use speech and pointing together to say “put that over there” on a canvas.<br>**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-18 10:50:59 | [915](https://x.com/jackcheng/status/2100729670991802386) |
 | [Probably: semantic judgments as program control](2026-09-18-probably-language/README.en.md) | Write judgments such as “is this email urgent?” into branches, then ask a text model to draft a reply.<br>**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 | [894](https://x.com/southpolesteve/status/2100767781868150938) |
 | [Shell history: semantic command suggestions](2026-09-18-shell-history-suggestions/README.en.md) | Type part of a command or describe an intent to select a suggestion from past commands.<br>**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 | [396](https://x.com/thorstenball/status/2100858434904109099) |
+| [json-render: assemble interfaces from component choices](2026-09-19-json-render-ui/README.en.md) | Turn interface requests into constrained component layouts, including additions, removals and moves.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [3,341](https://x.com/ctatedev/status/2101022101750571357) |
+| [CNVS: gate voice commands without a wake word](2026-09-19-cnvs-voice-gate/README.en.md) | Decide whether a spoken utterance is directed at the computer.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [1,053](https://x.com/_MaxBlade/status/2100967959879471519) |
+| [Words and colors: visualize 16-color judgments](2026-09-19-color-judgments/README.en.md) | Enter words and visualize the model’s judgments about colors.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [3,441](https://x.com/mattdesl/status/2100899669802963060) |
 
-## Trading execution demo
+## Trading and historical backtests
 
 | Application | What it does | Main-post likes |
 | --- | --- | ---: |
 | [Monad / Kuru trading bot](2026-09-18-trading-bot/README.en.md) | Let Jev choose buy or sell from price information and have code submit the order.<br>**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 | [4,142](https://x.com/jarrodwatts/status/2100356151468585346) |
+| [AI Hedge Fund: strategy backtesting](2026-09-19-ai-hedge-fund-backtest/README.en.md) | Choose a strategy and stock tickers to run an experiment on historical data.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [613](https://x.com/virattt/status/2100959848623899005) |
+| [Danish equities: a full-year historical strategy experiment](2026-09-19-danish-stock-backtest/README.en.md) | Experiment with trading decisions on 2025 market data using news and other signals.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [269](https://x.com/tommy_jepsen/status/2100939646653903063) |
+| [Nifty intraday trading: an account demo with a stop-loss report](2026-09-19-nifty-trading/README.en.md) | Demonstrate Jev-connected Nifty trading and report a triggered stop loss.<br>**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 | [673](https://x.com/IndraVahan/status/2100929105382564113) |

@@ -2,7 +2,7 @@
 
 **简体中文** | [English](README.en.md)
 
-本页不计入 README 正式案例总数，也不把转载点赞替代原作者的应用主帖门槛。发现日期均为 2026-09-18。
+本页不计入 README 正式案例总数，也不把转载点赞替代原作者的应用主帖门槛。以下首批线索发现于 2026-09-18；后续发现按小节日期标注。
 
 | 线索 | 原帖 | 当前缺口 / 下一步 |
 | --- | --- | --- |
@@ -32,3 +32,17 @@
 第四轮已转入正式目录：[代码注释评分](../cases/2026-09-18-code-comment-scoring/README.md)。读图和作者回复明确了准确性、实用性两个维度；只按两个样例的实验收录，没有源码或成熟产品的保证。Foreman 同轮复查后仍待补媒体。核对截止 2026-09-18 16:15:58 北京时间。
 
 第五轮仅复查 Jev QA tester 原帖正文与元数据：2026-09-18 11:39:31 UTC 快照为 756 赞，仍需核清断言和独立实现，未转入正式目录。本轮新收 [Runlayer 并行测试](../cases/2026-09-18-runlayer-adversarial-testing/README.md)有独立作者、视频和工具组合说明，不因同属 QA 就认定是同一项目。
+
+## 2026-09-19 · 第六轮待补证据
+
+| 线索 | 来源 / 点赞快照 | 待补证据 |
+| --- | --- | --- |
+| Flowsery 回放分析 | [@tarasshyn · 398](https://x.com/tarasshyn/status/2101012033340571952) | 需说明 Jev 分类、事件解析与 PR 生成的分工；213 个草稿 PR 不能直接写成 Jev 生成代码。 |
+| Backdoor 求职匹配 | [@sarvagya_kul · 875](https://x.com/sarvagya_kul/status/2100980770206879849) | 需明确匹配输入、评分含义及结果展示；模型分数不能当真实录用概率。 |
+| Gojiberry 线索评分 | [@romanbuildsaas · 2,391](https://x.com/romanbuildsaas/status/2100891604735099103) | 需明确评分标准和输入字段，区分兴趣评分、转化概率与未来 MCP 计划。 |
+| 幽默判断 | [@rafalwilinski · 651](https://x.com/rafalwilinski/status/2100959576682012988) | 文字极简，需核清输入、候选和评分任务，才能写可靠的原理介绍。 |
+| 表单自动填充 | [@ctnicholasdev · 458](https://x.com/ctnicholasdev/status/2100928133608472817) | 需补字段类型、候选内容来源与 Jev / 其他组件分工。 |
+| DeepAPI 滥用判断 | [@DavidOndrej1 · 287](https://x.com/DavidOndrej1/status/2100902217515454507) | 需核清被测行为、标签和基准范围，不能只按“完美”结果图比较。 |
+| Skittles 分拣 | [@ForwardFuture · 103](https://x.com/ForwardFuture/status/2100853837288407365) | 原应用帖 103 赞，未达门槛；转帖点赞不替代。还需原作者与实现说明。 |
+
+点赞来自本轮 FxTwitter 取数，可能有缓存。以上不计入 106 个正式案例；Skittles 按原应用帖判断门槛，不用引用帖代替。

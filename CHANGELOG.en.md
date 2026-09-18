@@ -2,6 +2,45 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-19 · Sixth increment
+
+Review cutoff: **2026-09-19 07:03:22 Beijing time (2026-09-18 23:03:22 UTC)**. The catalog grows from 84 to **106 cases in 11 categories**: 22 independent additions and one existing entry supplemented. Every new main post had at least 200 likes and associated media at retrieval. Exact retrieval times are recorded per case; later visible increases do not overwrite snapshots.
+
+| Addition | Main-post likes snapshot |
+| --- | ---: |
+| [Compact Adviser: choose when to compact](cases/2026-09-19-compact-adviser/README.en.md) | [242](https://x.com/kunchenguid/status/2101032677940117875) |
+| [json-render: assemble interfaces from component choices](cases/2026-09-19-json-render-ui/README.en.md) | [3,341](https://x.com/ctatedev/status/2101022101750571357) |
+| [SEO internal links: match existing text to relevant pages](cases/2026-09-19-seo-internal-links/README.en.md) | [721](https://x.com/borjafat/status/2101018783976722479) |
+| [Box: triage and file incident reports](cases/2026-09-19-box-incident-triage/README.en.md) | [317](https://x.com/levie/status/2101007708044574906) |
+| [NoSugarForKids: multi-criterion snack scoring](cases/2026-09-19-snack-scoring/README.en.md) | [312](https://x.com/nikunj/status/2101006585481073093) |
+| [Tax Doc Classifier: label tax PDF pages](cases/2026-09-19-tax-doc-classifier/README.en.md) | [1,506](https://x.com/nedwize/status/2100973868324417852) |
+| [ego lite: filter Amazon products](cases/2026-09-19-ego-product-decisions/README.en.md) | [366](https://x.com/ego_agent/status/2100970015977804008) |
+| [CNVS: gate voice commands without a wake word](cases/2026-09-19-cnvs-voice-gate/README.en.md) | [1,053](https://x.com/_MaxBlade/status/2100967959879471519) |
+| [Tester Army: web and mobile end-to-end testing](cases/2026-09-19-tester-army-e2e/README.en.md) | [505](https://x.com/o_kwasniewski/status/2100966838905585687) |
+| [Codex Model Router: choose a model each turn](cases/2026-09-19-codex-model-router/README.en.md) | [437](https://x.com/antonioleivag/status/2100962426439000484) |
+| [Gmail: search by intent](cases/2026-09-19-gmail-intent-search/README.en.md) | [574](https://x.com/dabit3/status/2100960281769738433) |
+| [AI Hedge Fund: strategy backtesting](cases/2026-09-19-ai-hedge-fund-backtest/README.en.md) | [613](https://x.com/virattt/status/2100959848623899005) |
+| [OCR + Jev: organize images](cases/2026-09-19-ocr-image-organizer/README.en.md) | [246](https://x.com/fayazara/status/2100953838891192789) |
+| [Sprite Fusion: generate runner terrain in real time](cases/2026-09-19-game-level-generation/README.en.md) | [1,289](https://x.com/HugoDuprez/status/2100953089003921543) |
+| [MaxFusion: classify advertising creatives](cases/2026-09-19-maxfusion-ad-classifier/README.en.md) | [320](https://x.com/OriSilver/status/2100941251478458871) |
+| [Danish equities: a full-year historical strategy experiment](cases/2026-09-19-danish-stock-backtest/README.en.md) | [269](https://x.com/tommy_jepsen/status/2100939646653903063) |
+| [Flappy Bird: navigate obstacles](cases/2026-09-19-flappy-bird/README.en.md) | [254](https://x.com/thymikee/status/2100937960115838984) |
+| [Script.it: flag issues before writing review comments](cases/2026-09-19-script-code-review/README.en.md) | [202](https://x.com/liorshkiller/status/2100936106615140757) |
+| [Nifty intraday trading: an account demo with a stop-loss report](cases/2026-09-19-nifty-trading/README.en.md) | [673](https://x.com/IndraVahan/status/2100929105382564113) |
+| [macOS Downloads: organize files by rules](cases/2026-09-19-downloads-organizer/README.en.md) | [889](https://x.com/marcelpociot/status/2100906882365788167) |
+| [Words and colors: visualize 16-color judgments](cases/2026-09-19-color-judgments/README.en.md) | [3,441](https://x.com/mattdesl/status/2100899669802963060) |
+| [X reply cleanup: flag low-value comments](cases/2026-09-19-x-reply-cleanup/README.en.md) | [223](https://x.com/iannuttall/status/2100888635943883244) |
+
+**Merging and deduplication:** The [WebMCP post](https://x.com/0xidanlevin/status/2100937437325205568) explicitly uses modified Ultrafast and is merged into [Browser Use](cases/2026-09-18-browser-use/README.en.md). Its original main-post snapshot and first-added timestamp remain; only its content timestamp advances. json-render quote-posts are not counted again. NoSugarForKids launch history remains one project. Color, reply-cleanup and terrain-generation follow-ups are merged with their main posts. Independent implementations are grouped and compared, without counting components, windows or platforms separately.
+
+**Evidence boundaries:** WebMCP’s 49/49 task coverage includes 141/147 successful attempts, not success on every attempt. Tax classification retains 38 low-confidence strict-mode failures. SEO full-site comparator costs are extrapolated. Script.it retains its 75% bug recall. Trading entries distinguish historical experiments, author-claimed live use and the reported stop loss. Every case remains unreproduced.
+
+**Deferred and excluded:** Flowsery replay analysis, Backdoor job matching, Gojiberry lead scoring, humor judgments, form autofill and DeepAPI abuse screening need clearer task definitions or component roles; see the [inbox](inbox/README.en.md). The Skittles-sorting repost exceeds 200 likes but its original application post has only **103** in this snapshot, so it is not admitted using repost engagement. Other models (including CUA-S1, Kev, SimpleJev, djev, Bespoke Nimble and GLiFormer), tutorials, opinions and roundups are not new Jev applications.
+
+**Scope and method:** X latest search `Jev min_faves:200 since:2026-09-18`, from the newest results back toward the previous review window around Ian’s reply filter, Gojiberry and Runlayer. Reviewed posts, author replies, original media metadata and selected interface screenshots. Read pinned Compact Adviser, json-render, tax-classifier and Codex Router documentation, the Sprite Fusion article and WebMCP benchmark. Deduplication uses IDs, authors, purpose, repositories, quote chains and media, without claiming exhaustive X coverage.
+
+**Maintenance:** New paths use each case’s first-added Beijing date; old paths stay stable. The homepage shows the new review date without refreshing unreviewed cases. Bilingual timestamps, lists, previews and comparisons are synchronized, with cross-midnight generation checks. Raw research stays ignored. No media was downloaded, external application executed, account connected or paid model API called.
+
 ## 2026-09-18 · Fifth incremental pass
 
 Reviewed through **2026-09-18 19:42:10 Beijing time (11:42:10 UTC)**. The catalog grows from 79 to **84 cases in 11 categories**, adding five independent implementations. All 79 previous cases retain their content, timestamps and main-post like snapshots; none is counted again.

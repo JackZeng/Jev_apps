@@ -54,6 +54,10 @@ Before recording a real reproduction, extend the catalog and renderer with repro
 
 Official documentation, author self-tests, viewing a demo and independent reproduction are different evidence levels. Include preprocessing, fallback, retries and executors in cost comparisons; distinguish per-decision latency from full-task time.
 
+Cross-day publishing: case directories use the Beijing date of `readme_added_at`. Keep `collected_on` as the original collection/category-path date to preserve existing URLs. Add an actual source-review event to `updates` and mirror its last entry in `latest_update`; only cases named in an event advance their source-review date. Translation-only edits advance content time without inventing a source review. Check date/path behavior with `python3 -m unittest discover -s scripts -p 'test_*.py'`.
+
+When a reported result comes from documentation instead of the main post, set the shared `reported_result_source` URL so the evidence table links directly to it.
+
 ## 5. Media and maintenance
 
 Prefer links to original posts and media URLs; rights remain with creators. For small files you have permission to publish, follow the [asset policy](assets/README.en.md) and add `SOURCES.md`. Do not commit large videos or private raw material.

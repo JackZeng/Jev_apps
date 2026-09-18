@@ -2,7 +2,7 @@
 
 [简体中文](README.md) | **English**
 
-Collection date: **2026-09-18, Asia/Shanghai**. The scope is concrete applications, prototypes, implementation demos and task-specific experiments using **TypeSafe Jev** on X.
+Initial collection date: **2026-09-18, Asia/Shanghai**. The scope is concrete applications, prototypes, implementation demos and task-specific experiments using **TypeSafe Jev** on X.
 
 ## Official references
 
@@ -66,7 +66,11 @@ The second pass on 2026-09-18 adds 5 cases and supplements 4 existing entries, f
 
 ## Fifth incremental pass
 
-2026-09-18 11:42:10 UTC: five additions bring the catalog to **84 current cases**. Source searches and discussions establish parallel testing, HTTP routing, Mac Calendar, shell-history suggestions and food logging. Hono router code is pinned to `04f6e103e1397bca659ab85c042011a1f14b679d`; shell documentation to `4b2b75d26c0ccf5726263904514a22a8e11659ea`, linked in the case details. Jev QA tester received only an original-post metadata recheck and remains pending. Main-post snapshots span 11:39:02–11:39:31 UTC; existing case snapshots were not refreshed. See the [fifth-pass log](../CHANGELOG.en.md).
+2026-09-18 11:42:10 UTC: five additions bring the catalog to **84 cases at the end of that pass**. Source searches and discussions establish parallel testing, HTTP routing, Mac Calendar, shell-history suggestions and food logging. Hono router code is pinned to `04f6e103e1397bca659ab85c042011a1f14b679d`; shell documentation to `4b2b75d26c0ccf5726263904514a22a8e11659ea`, linked in the case details. Jev QA tester received only an original-post metadata recheck and remains pending. Main-post snapshots span 11:39:02–11:39:31 UTC; existing case snapshots were not refreshed. See the [fifth-pass log](../CHANGELOG.en.md).
+
+## Sixth increment
+
+2026-09-19 07:03:22 Beijing time: 22 additions and one Browser Use source update bring the catalog to **106 cases**. Existing main-post snapshots and first-added times remain unchanged. New entries include pinned documentation reviews and source videos, with author claims distinguished from independent reproduction. See the [sixth-pass log](../CHANGELOG.en.md) for all sources, merges, excluded reposts and deferred leads. New case paths use September 19; category paths retain their original September 18 date.
 
 <a id="readme-times"></a>
 

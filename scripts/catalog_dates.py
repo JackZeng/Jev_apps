@@ -4,6 +4,25 @@ from datetime import datetime, timedelta, timezone
 BEIJING = timezone(timedelta(hours=8))
 
 
+def beijing_day(value):
+    return datetime.fromisoformat(value).astimezone(BEIJING).date().isoformat()
+
+
+def case_day(c):
+    return beijing_day(c['readme_added_at'])
+
+
+def latest_review_day(d):
+    update = d.get('latest_update')
+    return beijing_day(update['reviewed_at']) if update else d['collected_on']
+
+
+def case_review_day(c, d):
+    days = [beijing_day(u['reviewed_at']) for u in d.get('updates', [])
+            if c['slug'] in u['new_cases'] + u['updated_cases']]
+    return max(days, default=case_day(c))
+
+
 def format_readme_time(value):
     return datetime.fromisoformat(value).astimezone(BEIJING).strftime('%Y-%m-%d %H:%M:%S')
 

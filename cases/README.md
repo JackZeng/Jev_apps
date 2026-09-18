@@ -8,7 +8,7 @@
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
-| [Browser Use · Ultrafast](2026-09-18-browser-use/README.md) | 告诉它航班需求，它会自己在网页上点选、填写并查找结果。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [6,891](https://x.com/gregpr07/status/2100411066966749359) |
+| [Browser Use · Ultrafast](2026-09-18-browser-use/README.md) | 告诉它航班需求，它会自己在网页上点选、填写并查找结果。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-19 07:04:48 | [6,891](https://x.com/gregpr07/status/2100411066966749359) |
 | [Stagehand 浏览器控制](2026-09-18-stagehand/README.md) | 让 Jev 决定网页上下一步怎么操作，再由 Stagehand 动手。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [393](https://x.com/kylejeong/status/2100622054945095934) |
 | [Cua · jev-use](2026-09-18-cua-jev-use/README.md) | 给 Jev 一份允许执行的网页操作清单，让它选一个，再检查是否做对。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 14:17:58 | [1,162](https://x.com/trycua/status/2100649543079502213) |
 | [CoreML + OCR 桌面点击](2026-09-18-coreml-ocr/README.md) | 先在 Mac 上认出按钮和文字，再让 Jev 选要点击的位置。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [564](https://x.com/milindlabs/status/2100631847155994852) |
@@ -18,6 +18,8 @@
 | [OpenCode 应用测试](2026-09-18-opencode-qa/README.md) | 让编码助手自己操作应用，帮忙做开发后的检查。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,133](https://x.com/Neriousy/status/2100287208166969746) |
 | [Runlayer · 并行浏览器对抗测试](2026-09-18-runlayer-adversarial-testing/README.md) | 同时打开多路浏览器，尝试找出新版本在操作中会出什么问题。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [820](https://x.com/rafalwilinski/status/2100882207879434359) |
 | [Sac · Codex + Jev 操作 Mac 日历](2026-09-18-sac-calendar-computer-use/README.md) | 给 Codex 的电脑操作加上 Jev 判断层，用创建日历事件做并排对照。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [217](https://x.com/Saccc_c/status/2100864907046768890) |
+| [ego lite · Amazon 商品筛选](2026-09-19-ego-product-decisions/README.md) | 组合浏览器工具和模型，筛选网页上的商品。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [366](https://x.com/ego_agent/status/2100970015977804008) |
+| [Tester Army · Web / 手机端测试演示](2026-09-19-tester-army-e2e/README.md) | 用代理执行界面测试，探索 Web 和移动端的端到端测试框架。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [505](https://x.com/o_kwasniewski/status/2100966838905585687) |
 
 ## 模型、技能与工具路由
 
@@ -32,6 +34,7 @@
 | [Eve 工具调用代理](2026-09-18-eve-tool-agent/README.md) | 让 Jev 接手“下一步用哪个工具”的判断，减少代理在选择上花的时间和费用。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,117](https://x.com/oviniciuslana/status/2100457622407168509) |
 | [ai-cli 终端决策入口](2026-09-18-ai-cli/README.md) | 让终端里的 AI 助手也能调用 Jev 做判断、选择和评分。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [874](https://x.com/ctatedev/status/2100584917092409479) |
 | [Hono JevRouter · 按请求含义分流](2026-09-18-hono-semantic-router/README.md) | 根据请求像是来自人还是 AI，选择返回网页或 Markdown 等不同内容。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [405](https://x.com/yusukebe/status/2100871075743859182) |
+| [Codex Model Router · 每轮选择模型](2026-09-19-codex-model-router/README.md) | 按当前任务复杂程度，为 Codex 选择模型和推理配置。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [437](https://x.com/antonioleivag/status/2100962426439000484) |
 
 ## 代码质量与安全检查
 
@@ -47,6 +50,7 @@
 | [按 ESLint 规则说明判断代码](2026-09-18-eslint-rule-judgments/README.md) | 只给规则的文字说明，让 Jev 判断小段代码是否符合规则。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [351](https://x.com/mizchi/status/2100765201385869434) |
 | [OpenCode · 意图感知权限插件](2026-09-18-opencode-intent-permissions/README.md) | 用“只访问 Google”等自然语言规则，检查代理换着工具发起的操作。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [235](https://x.com/OpeOginni/status/2100702649834188855) |
 | [代码注释 · 准确性与实用性评分](2026-09-18-code-comment-scoring/README.md) | 分别检查注释有没有说错，以及它是否提供了代码之外的有用信息。<br>**收录到 README：** 2026-09-18 16:17:27<br>**内容更新：** 2026-09-18 16:17:27 | [1,777](https://x.com/markjaquith/status/2100359340087501296) |
+| [Script.it · 先筛问题再写评审](2026-09-19-script-code-review/README.md) | 先判断 git diff 有没有问题，命中后才让文字模型写解释。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [202](https://x.com/liorshkiller/status/2100936106615140757) |
 
 ## 数据分类与信息整理
 
@@ -61,6 +65,12 @@
 | [按列名意图评分的电子表格](2026-09-18-predictive-spreadsheet/README.md) | 给一列起名“紧急程度”，让每行文字自动获得相应评级。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [337](https://x.com/dabit3/status/2100780008193020049) |
 | [邮件分类 · 四模型速度对照](2026-09-18-email-speed-race/README.md) | 让四个模型给一组邮件分类，在同一页面对照完成进度和耗时。<br>**收录到 README：** 2026-09-18 16:17:27<br>**内容更新：** 2026-09-18 16:17:27 | [445](https://x.com/usutaku_channel/status/2100829343954173965) |
 | [Calorie Notebook · 文字饮食记录](2026-09-18-calorie-notebook/README.md) | 用文字记下吃了什么，界面快速显示热量、营养数值和汇总。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [326](https://x.com/thekitze/status/2100857642566758849) |
+| [Box · 事故报告分级归档](2026-09-19-box-incident-triage/README.md) | 读事故报告，判断影响与严重程度，再放进对应处理文件夹。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [317](https://x.com/levie/status/2101007708044574906) |
+| [NoSugarForKids · 零食多维评分](2026-09-19-snack-scoring/README.md) | 批量给儿童零食打分，帮助整理商品目录。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [312](https://x.com/nikunj/status/2101006585481073093) |
+| [Tax Doc Classifier · 税务 PDF 页面识别](2026-09-19-tax-doc-classifier/README.md) | 识别税务 PDF 每页属于哪种表格，给后续整理提供标签。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:08:57 | [1,506](https://x.com/nedwize/status/2100973868324417852) |
+| [Gmail · 按意图找邮件](2026-09-19-gmail-intent-search/README.md) | 用一句需求筛出相关邮件，减少只靠关键词搜索的限制。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [574](https://x.com/dabit3/status/2100960281769738433) |
+| [OCR + Jev · 图片归类](2026-09-19-ocr-image-organizer/README.md) | 先读出图片里的文字，再按内容整理图片。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [246](https://x.com/fayazara/status/2100953838891192789) |
+| [macOS Downloads · 按规则归档文件](2026-09-19-downloads-organizer/README.md) | 监控下载目录，把符合自定义规则的文件移动到对应位置。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [889](https://x.com/marcelpociot/status/2100906882365788167) |
 
 ## 内容与广告分析
 
@@ -73,6 +83,8 @@
 | [3,282 条历史帖子分析](2026-09-18-post-analytics/README.md) | 回看自己的几千条帖子，找出哪些主题和写法过去更受欢迎。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [262](https://x.com/iannuttall/status/2100668908227162567) |
 | [StealAds 广告拆解预览](2026-09-18-ad-analysis/README.md) | 把大量广告拆成开场卖点、优惠和引导动作，方便找创作思路。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,678](https://x.com/TheMattBerman/status/2100654891756589230) |
 | [JevMeter 言论指标仪表](2026-09-18-jevmeter/README.md) | 给辩论或访谈逐句打指标，观察说话方式和内容特征。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [1,017](https://x.com/chetaslua/status/2100473581251748216) |
+| [SEO 内链推荐 · 从已有文字找链接](2026-09-19-seo-internal-links/README.md) | 扫描网站文章，挑选相关页面和已有文字作为内部链接。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [721](https://x.com/borjafat/status/2101018783976722479) |
+| [MaxFusion · 广告素材分类](2026-09-19-maxfusion-ad-classifier/README.md) | 给广告标注风格和用户旅程阶段，方便按维度分析账号素材。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [320](https://x.com/OriSilver/status/2100941251478458871) |
 
 ## 网页与信息流过滤
 
@@ -81,6 +93,7 @@
 | [自然语言 X 内容过滤器](2026-09-18-x-filter/README.md) | 用自己的话告诉浏览器：哪些 X 帖子我不想看。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [950](https://x.com/marcelpociot/status/2100520134481735729) |
 | [Unclutter 页面清理](2026-09-18-unclutter/README.md) | 帮网页清掉广告、促销弹窗等干扰，让正文更容易看。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [497](https://x.com/thekitze/status/2100595129874817340) |
 | [YouTube 赞助片段跳过](2026-09-18-youtube-sponsor-skip/README.md) | 观看 YouTube 时识别口播赞助片段，自动跳到后面的内容。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [238](https://x.com/tdinh_me/status/2100793777103466615) |
+| [X 回复清理 · 标记低价值评论](2026-09-19-x-reply-cleanup/README.md) | 识别帖子下面疑似低价值回复，帮助用户清理评论区。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [223](https://x.com/iannuttall/status/2100888635943883244) |
 
 ## 上下文与记忆筛选
 
@@ -88,6 +101,7 @@
 | --- | --- | ---: |
 | [工具调用上下文压缩](2026-09-18-context-compaction/README.md) | 给 AI 助手的工作记录瘦身，只把眼下有用的内容继续带着。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 10:50:59 | [1,646](https://x.com/tamarajtran/status/2100694549362553153) |
 | [记忆系统检索筛选](2026-09-18-memory-retrieval/README.md) | 从 AI 记忆库里筛出真正相关的内容，减少翻找和阅读负担。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 10:50:59 | [335](https://x.com/moritzkremb/status/2100566009312940457) |
+| [Compact Adviser · 判断何时压缩上下文](2026-09-19-compact-adviser/README.md) | 在编码会话接近合适停顿点时，提示是否该整理上下文。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:08:57 | [242](https://x.com/kunchenguid/status/2101032677940117875) |
 
 ## 游戏决策与求解
 
@@ -107,6 +121,8 @@
 | [魔方分阶段解法](2026-09-18-rubiks-cube/README.md) | 程序会魔方公式，Jev 帮它判断当前该用哪一种。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [494](https://x.com/redp314/status/2100489858951073858) |
 | [Mario Kart 64](2026-09-18-mario-kart/README.md) | 展示 Jev 玩马里奥赛车，观察连续驾驶时的反应。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [204](https://x.com/shreypandya/status/2100606445758898287) |
 | [Minecraft · Jev、Astra 与本地策略](2026-09-18-minecraft-hybrid/README.md) | 让不同模型分工玩 Minecraft：一个管长远计划，一个应急，本地模型负责走路和瞄准。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [354](https://x.com/wuyang_zhou/status/2100727660875808913) |
+| [Sprite Fusion · 实时生成跑酷地形](2026-09-19-game-level-generation/README.md) | 玩家向前跑时，为前方地图选择新的平台和间隙。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:08:57 | [1,289](https://x.com/HugoDuprez/status/2100953089003921543) |
+| [Flappy Bird · 飞行避障](2026-09-19-flappy-bird/README.md) | 让 Jev 参与控制小鸟穿过障碍。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [254](https://x.com/thymikee/status/2100937960115838984) |
 
 ## NPC、驾驶与群体模拟
 
@@ -136,9 +152,15 @@
 | [语音与手指指向控制画布](2026-09-18-voice-gesture-canvas/README.md) | 边说边指，在画布里表达“把那个放到这里”。<br>**收录到 README：** 2026-09-18 10:50:59<br>**内容更新：** 2026-09-18 10:50:59 | [915](https://x.com/jackcheng/status/2100729670991802386) |
 | [Probably · 用语义判断控制程序](2026-09-18-probably-language/README.md) | 把“这封邮件是否紧急”这样的判断写进条件分支，再让文字模型按结果起草回复。<br>**收录到 README：** 2026-09-18 14:17:58<br>**内容更新：** 2026-09-18 14:17:58 | [894](https://x.com/southpolesteve/status/2100767781868150938) |
 | [终端历史命令 · 语义补全](2026-09-18-shell-history-suggestions/README.md) | 输入半条命令或一句意图，从用过的命令里推荐下一条。<br>**收录到 README：** 2026-09-18 19:44:51<br>**内容更新：** 2026-09-18 19:44:51 | [396](https://x.com/thorstenball/status/2100858434904109099) |
+| [json-render · 用组件选择拼出界面](2026-09-19-json-render-ui/README.md) | 把界面需求变成受约束的组件布局，支持增删和移动组件。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [3,341](https://x.com/ctatedev/status/2101022101750571357) |
+| [CNVS · 无唤醒词语音指令门控](2026-09-19-cnvs-voice-gate/README.md) | 一直听候选语音，判断这句话是不是在给电脑下指令。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [1,053](https://x.com/_MaxBlade/status/2100967959879471519) |
+| [词语与颜色 · 16 色概率可视化](2026-09-19-color-judgments/README.md) | 输入词语，把模型对颜色的判断画成配色结果。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [3,441](https://x.com/mattdesl/status/2100899669802963060) |
 
-## 交易执行演示
+## 交易与历史回测
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
 | [Monad / Kuru 交易机器人](2026-09-18-trading-bot/README.md) | 让 Jev 看价格变化后选买或卖，再由程序把订单送出去。<br>**收录到 README：** 2026-09-18 06:58:16<br>**内容更新：** 2026-09-18 07:24:03 | [4,142](https://x.com/jarrodwatts/status/2100356151468585346) |
+| [AI Hedge Fund · 策略回测](2026-09-19-ai-hedge-fund-backtest/README.md) | 选择策略和股票代码，在历史数据上运行策略实验。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [613](https://x.com/virattt/status/2100959848623899005) |
+| [丹麦股票 · 全年历史策略实验](2026-09-19-danish-stock-backtest/README.md) | 用市场、新闻等信息，在 2025 年行情上做交易策略实验。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [269](https://x.com/tommy_jepsen/status/2100939646653903063) |
+| [Nifty 日内交易 · 含止损的账户演示](2026-09-19-nifty-trading/README.md) | 展示将 Jev 接入 Nifty 日内交易，并报告触发止损。<br>**收录到 README：** 2026-09-19 07:04:48<br>**内容更新：** 2026-09-19 07:04:48 | [673](https://x.com/IndraVahan/status/2100929105382564113) |

@@ -2,7 +2,7 @@
 
 [简体中文](2026-09-18-simulation.md) | **English**
 
-Collected / source-reviewed: 2026-09-18. Status: **not independently reproduced**.
+First compiled: 2026-09-18; see each case for its source-review date. Status: **not independently reproduced**.
 
 ## Choosing an approach
 

@@ -31,18 +31,39 @@
           }
         ]
       },
-      "supplementary_posts": [],
+      "supplementary_posts": [
+        {
+          "id": "2100937437325205568",
+          "url": "https://x.com/0xidanlevin/status/2100937437325205568",
+          "author": "0xidanlevin",
+          "published_at": "2026-09-18T13:18:13+00:00",
+          "likes": 1407,
+          "retrieved_at": "2026-09-18T22:50:12+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100937437325205568",
+          "media_source": "https://x.com/0xidanlevin/status/2100937437325205568",
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://pbs.twimg.com/media/HSf2OSVWQAAYUAE.jpg?name=orig",
+              "width": 1199,
+              "height": 813
+            }
+          ]
+        }
+      ],
       "links": [
         "https://github.com/browser-use/jev-ultrafast",
-        "https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md"
+        "https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md",
+        "https://webmcp.com/benchmark",
+        "https://github.com/nekuda-ai/WindTunnel"
       ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "media_note": "原帖附带图片或视频；预览图不代表已验证其全部实现与效果。",
-      "source_notes": "**代码来源补核（2026-09-18）**：[固定版本 README](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md) 说明操作与目标在同一请求里分别判断，程序仅执行匹配的目标；TYPE_TEXT 才用小型 LLM。文档的 7,073ms 计时从首次页面观测后开始，并披露 MVP 未覆盖的网页类型；不能解读为从打开浏览器到任意任务完成的统一耗时。",
+      "source_notes": "**代码来源补核（2026-09-18）**：[固定版本 README](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md) 说明操作与目标在同一请求里分别判断，程序仅执行匹配的目标；TYPE_TEXT 才用小型 LLM。文档的 7,073ms 计时从首次页面观测后开始，并披露 MVP 未覆盖的网页类型；不能解读为从打开浏览器到任意任务完成的统一耗时。\n\n**2026-09-19 合并 WebMCP 对照：** 作者基于改版 Ultrafast，让 Jev 选网站工具、Mercury 2.5 生成所需参数；这是同一基础项目的测试变体，未重复建条目。[基准页](https://webmcp.com/benchmark)覆盖 8 个网站、49 个任务，各试 3 次：WebMCP 完成 49/49 个任务，但单次尝试成功为 141/147；DOM 变体完成 25/49。页面费用中位数分别为 0.0011 与 0.0008 美元，不能直接用帖子所称“降费 18%”解释这个中位数。结果只适用于该测试及实现，未独立复现。",
       "plain_explanation": "像给助手一张不断更新的按钮清单：程序先读网页，Jev 选下一步点哪里；需要输入城市名时，再请文字模型帮忙填写。",
       "readme_added_at": "2026-09-18T06:58:16+08:00",
-      "readme_updated_at": "2026-09-18T07:24:03+08:00"
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
     },
     {
       "slug": "stagehand",
@@ -3635,13 +3656,949 @@
       "availability": "未知（未运行验证）",
       "readme_added_at": "2026-09-18T19:44:51+08:00",
       "readme_updated_at": "2026-09-18T19:44:51+08:00"
+    },
+    {
+      "slug": "compact-adviser",
+      "group": "memory",
+      "title": "Compact Adviser · 判断何时压缩上下文",
+      "summary": "在编码会话接近合适停顿点时，提示是否该整理上下文。",
+      "plain_explanation": "像会议秘书挑一个话题结束的时刻做纪要：Jev 判断时机，宿主工具负责真正压缩；它不决定删除哪一段。",
+      "mechanism": "固定版本文档用两个是非问题判断工作单元是否结束、当前属于动手还是协调阶段；代码结合上下文占用率、最小 token 数和冷却条件决定提示。Pi、Claude 可选自动模式，Codex CLI 仅提示。",
+      "advantage": "补充已有工具输出压缩的上游环节：先选择时机，再由宿主执行；公开门槛与回退说明便于检查。",
+      "limitation": "私有人工标签未公开，无法独立验证泛化；对话片段会送到服务端，文档的尽力脱敏并非完整保证。",
+      "reported_result": "作者报告用 40 个会话、96 个检查点评估，讨论低占用时的精确率与高占用时的召回率；并非公共基准。",
+      "media_note": "主帖附图，固定版本文档提供流程与评估范围。",
+      "post": {
+        "id": "2101032677940117875",
+        "url": "https://x.com/kunchenguid/status/2101032677940117875",
+        "author": "kunchenguid",
+        "published_at": "2026-09-18T19:36:40+00:00",
+        "likes": 242,
+        "retrieved_at": "2026-09-18T22:48:32+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101032677940117875",
+        "media_source": "https://x.com/kunchenguid/status/2101032677940117875",
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HShbIHcbcAAJvsR.jpg?name=orig",
+            "width": 1078,
+            "height": 1078
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [
+        "https://github.com/kunchenguid/compact-adviser",
+        "https://github.com/kunchenguid/compact-adviser/blob/17e441a81e9dbacfef15756b7d0cca66461a9b98/README.md"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:08:57+08:00",
+      "source_notes": "**文档核对：** 本轮阅读[固定版本文档](https://github.com/kunchenguid/compact-adviser/blob/17e441a81e9dbacfef15756b7d0cca66461a9b98/README.md)；以上实现说明来自文档，未安装、执行或独立复现。",
+      "reported_result_source": "https://github.com/kunchenguid/compact-adviser/blob/17e441a81e9dbacfef15756b7d0cca66461a9b98/README.md"
+    },
+    {
+      "slug": "json-render-ui",
+      "group": "interaction",
+      "title": "json-render · 用组件选择拼出界面",
+      "summary": "把界面需求变成受约束的组件布局，支持增删和移动组件。",
+      "plain_explanation": "像从积木盒里选形状再安排位置：Jev 做选择，程序把结果装成合法的界面描述并渲染。",
+      "mechanism": "项目文档说明第一批判断选择组件和数量，第二批安排父子关系与顺序；代码生成并验证 JSON。使用应用提供的 17 类组件、绑定与动作，不是预制整页模板，也不依赖另一个生成模型写 JSON。",
+      "advantage": "比逐字符输出更容易约束结构；相对像素绘图，输出可交互的组件树，结构错误可由代码拦截。",
+      "limitation": "文档限制单批新增 14 个元素、每请求 14 次评估、最大深度 4；结构合法不保证内容正确或设计好看。",
+      "reported_result": "作者发布可编辑 UI 视频和代码入口；文档明确没有自由文本生成调用，尚无独立质量对照。",
+      "media_note": "主视频与同作者代码回复合并；对该视频的引用转载不另计。",
+      "post": {
+        "id": "2101022101750571357",
+        "url": "https://x.com/ctatedev/status/2101022101750571357",
+        "author": "ctatedev",
+        "published_at": "2026-09-18T18:54:38+00:00",
+        "likes": 3341,
+        "retrieved_at": "2026-09-18T22:48:32+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101022101750571357",
+        "media_source": "https://x.com/ctatedev/status/2101022101750571357",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2101022081810911232/vid/avc1/1080x1080/B52suCKnBqA9pt2e.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2101022081810911232/img/3tKdQ3Y2_ZGSg3Q7.jpg",
+            "duration": 18.516,
+            "width": 1080,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2101022105647157442",
+          "url": "https://x.com/ctatedev/status/2101022105647157442",
+          "author": "ctatedev",
+          "published_at": "2026-09-18T18:54:39+00:00",
+          "likes": 390,
+          "retrieved_at": "2026-09-18T22:51:25+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2101022105647157442",
+          "media_source": "https://x.com/ctatedev/status/2101022105647157442",
+          "media": []
+        }
+      ],
+      "links": [
+        "https://github.com/vercel-labs/json-render",
+        "https://github.com/vercel-labs/json-render/blob/3ad381881194e7011ad3ccd6d668033495a06c29/apps/web/lib/jev/README.md"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00",
+      "source_notes": "**文档核对：** 本轮阅读[固定版本文档](https://github.com/vercel-labs/json-render/blob/3ad381881194e7011ad3ccd6d668033495a06c29/apps/web/lib/jev/README.md)；以上实现说明来自文档，未安装、执行或独立复现。"
+    },
+    {
+      "slug": "seo-internal-links",
+      "group": "content",
+      "title": "SEO 内链推荐 · 从已有文字找链接",
+      "summary": "扫描网站文章，挑选相关页面和已有文字作为内部链接。",
+      "plain_explanation": "像编辑读完文章后圈出“这里可以链接到另一篇”：Jev 判断关联，程序将现成文字和目标页面配对。",
+      "mechanism": "作者为页面相关性及现有锚文本提出是非判断，共处理 586 页、8,790 次判断；未披露完整候选召回和写回实现。",
+      "advantage": "相对内容传播评分，它输出可供编辑检查的具体链接建议；可选择不加链接，避免每页硬塞。",
+      "limitation": "没有独立相关性评测或 SEO 收益证明；Opus 对照只运行到 Jev 完成时，整站费用是外推值。",
+      "reported_result": "作者报告 584 条链接、139 页不推荐链接，用时 45.1 秒、费用 0.21 美元；对照模型只完成 21 页，不能当作完成整站的公平比价。",
+      "media_note": "主帖附操作视频；未来 Distribb/MCP 接入声明不视为已发布功能。",
+      "post": {
+        "id": "2101018783976722479",
+        "url": "https://x.com/borjafat/status/2101018783976722479",
+        "author": "borjafat",
+        "published_at": "2026-09-18T18:41:27+00:00",
+        "likes": 721,
+        "retrieved_at": "2026-09-18T22:48:32+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101018783976722479",
+        "media_source": "https://x.com/borjafat/status/2101018783976722479",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2101018477087592448/vid/avc1/1920x1080/XQVS3nTZM5Wzpwfe.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2101018477087592448/img/9YlAHKLLo_h6rgtK.jpg",
+            "duration": 24.516,
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "box-incident-triage",
+      "group": "data",
+      "title": "Box · 事故报告分级归档",
+      "summary": "读事故报告，判断影响与严重程度，再放进对应处理文件夹。",
+      "plain_explanation": "像收件员先看“是否影响客户、严重到什么程度”，再把材料送到升级处理、监控或复核队列。",
+      "mechanism": "作者展示从 Box 取报告，以客户影响和严重程度为判断问题，再由工作流移动文件并写入元数据模板；Jev 判断，Box 流程执行。",
+      "advantage": "比通用下载目录整理更贴近业务分级，判断结果留在元数据中便于后续查看。",
+      "limitation": "严重程度标准、误判代价和权限控制未公开；一次演示不能证明事故处置可靠。",
+      "reported_result": "作者发布约 46 秒视频，描述快速、低成本，未提供可重复的量化评测。",
+      "media_note": "只收录已展示的事故报告流程；帖子提及的保险、贷款等设想不另建案例。",
+      "post": {
+        "id": "2101007708044574906",
+        "url": "https://x.com/levie/status/2101007708044574906",
+        "author": "levie",
+        "published_at": "2026-09-18T17:57:27+00:00",
+        "likes": 317,
+        "retrieved_at": "2026-09-18T22:48:56+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101007708044574906",
+        "media_source": "https://x.com/levie/status/2101007708044574906",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100999115949953024/vid/avc1/3304x2160/aSB_JMB8sLOMHle3.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100999115949953024/img/6D1_NvmSfMLGDstw.jpg",
+            "duration": 46.15,
+            "width": 3304,
+            "height": 2160
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "snack-scoring",
+      "group": "data",
+      "title": "NoSugarForKids · 零食多维评分",
+      "summary": "批量给儿童零食打分，帮助整理商品目录。",
+      "plain_explanation": "像给货架上的商品填多列表格：每列问一个问题，Jev 返回判断，再由网站汇总展示。具体评分问题尚未公开。",
+      "mechanism": "作者说明用 Jev 对 3,000 个零食做多标准评分。网站展示按糖分浏览的商品目录，但不能据此认定所有营养分级都由 Jev 计算。",
+      "advantage": "比饮食记事本更侧重商品批量整理，而非估算一餐；多维结果比单一总分更容易逐项检查。",
+      "limitation": "缺少公开提示、标注样本与评分校准；模型评分不能替代包装标签或营养数据核验。网站商品数量与本次批次大小也不应混同。",
+      "reported_result": "作者报告 3,000 项、28 秒、0.11 美元，尚未独立复现。",
+      "media_note": "使用本次评分视频；该网站此前的上线帖归为同项目历史，不重复计数。",
+      "post": {
+        "id": "2101006585481073093",
+        "url": "https://x.com/nikunj/status/2101006585481073093",
+        "author": "nikunj",
+        "published_at": "2026-09-18T17:52:59+00:00",
+        "likes": 312,
+        "retrieved_at": "2026-09-18T22:48:56+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101006585481073093",
+        "media_source": "https://x.com/nikunj/status/2101006585481073093",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2101005796603809792/vid/avc1/1920x1080/Xo3cUlRIFKqT3Um_.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2101005796603809792/img/19SyyiWW5wotfFfW.jpg",
+            "duration": 36.466,
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [
+        "https://nosugarforkids.com"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "tax-doc-classifier",
+      "group": "data",
+      "title": "Tax Doc Classifier · 税务 PDF 页面识别",
+      "summary": "识别税务 PDF 每页属于哪种表格，给后续整理提供标签。",
+      "plain_explanation": "像先看每页页眉、正文和页脚，再给它贴表格标签；不确定就报出低置信度，而不是假装都认识。",
+      "mechanism": "固定版本文档先用 pdftotext 提取文本，再在表格与页面类型候选中分类；企业表格有后续问题，默认置信度门槛 0.95，空白文本跳过模型。",
+      "advantage": "比泛用文件整理更明确：有 261 种表格覆盖说明、公开测试计数和拒绝条件。",
+      "limitation": "扫描件需另做 OCR；无文本页可能被当作空白。测试主要为英文联邦表格，低置信度失败不应从“100%”标题中消失。",
+      "reported_result": "文档报告 314 张已填页面、15 种表格无错误；另测 753 张空白表格、261 种类型，无错分但有 38 次低置信度严格模式失败。",
+      "media_note": "原帖附视频；测试范围以固定版本 README 为准，识别页面不等于完成税务申报。",
+      "post": {
+        "id": "2100973868324417852",
+        "url": "https://x.com/nedwize/status/2100973868324417852",
+        "author": "nedwize",
+        "published_at": "2026-09-18T15:42:59+00:00",
+        "likes": 1506,
+        "retrieved_at": "2026-09-18T22:49:18+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100973868324417852",
+        "media_source": "https://x.com/nedwize/status/2100973868324417852",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100973360989773825/vid/avc1/2360x1864/9o-fXACEXud024Pi.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100973360989773825/img/yMtL6CxrKMVXQEHV.jpg",
+            "duration": 12.6,
+            "width": 2360,
+            "height": 1864
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [
+        "https://github.com/kyotofin/tax-doc-classifier",
+        "https://github.com/kyotofin/tax-doc-classifier/blob/6afcf701395466d7c936ec8178daf017b9d96b0c/README.md"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:08:57+08:00",
+      "source_notes": "**文档核对：** 本轮阅读[固定版本文档](https://github.com/kyotofin/tax-doc-classifier/blob/6afcf701395466d7c936ec8178daf017b9d96b0c/README.md)；以上实现说明来自文档，未安装、执行或独立复现。",
+      "reported_result_source": "https://github.com/kyotofin/tax-doc-classifier/blob/6afcf701395466d7c936ec8178daf017b9d96b0c/README.md"
+    },
+    {
+      "slug": "ego-product-decisions",
+      "group": "browser",
+      "title": "ego lite · Amazon 商品筛选",
+      "summary": "组合浏览器工具和模型，筛选网页上的商品。",
+      "plain_explanation": "像一个助手读商品列表，另一个快速判断哪些符合要求；浏览器和周围模型一起完成流程，不能把全部表现归给 Jev。",
+      "mechanism": "主帖说明组合为 ego lite、Jev 与 DeepSeek Flash，视频标题为筛选 Amazon 商品；具体候选表示、模型分工和批处理方式未披露。",
+      "advantage": "与通用网页操作相比，它演示一个明确的商品筛选任务，便于按选中结果比较。",
+      "limitation": "评分依据、重复次数与完整费用未公开；20 个决策和界面 10/10 结果是不同口径，不代表 20 次完整购物或下单。",
+      "reported_result": "作者报告 20 个决策用时 3.71 秒，对照 GPT-5.6 Sol 为 54.45 秒，两者显示 10/10；属于单次作者对照。",
+      "media_note": "主视频标题和结果面板支持商品筛选用途；没有据此宣称完成购买。",
+      "post": {
+        "id": "2100970015977804008",
+        "url": "https://x.com/ego_agent/status/2100970015977804008",
+        "author": "ego_agent",
+        "published_at": "2026-09-18T15:27:40+00:00",
+        "likes": 366,
+        "retrieved_at": "2026-09-18T22:49:18+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100970015977804008",
+        "media_source": "https://x.com/ego_agent/status/2100970015977804008",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100969567715790848/vid/avc1/1920x1080/FOoPB1WzIs4-biOs.mp4?tag=16",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100969567715790848/img/IXAgXZrtsLGyeYRA.jpg",
+            "duration": 30.334,
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "cnvs-voice-gate",
+      "group": "interaction",
+      "title": "CNVS · 无唤醒词语音指令门控",
+      "summary": "一直听候选语音，判断这句话是不是在给电脑下指令。",
+      "plain_explanation": "像旁听者分辨你是在聊天还是叫它做事：判断通过才把话交给执行流程。语音识别和动作执行仍是周围系统的工作。",
+      "mechanism": "作者用 Jev 概率区分指令与顺口说的话，演示不依赖唤醒词的 CNVS；转写组件、门槛与具体执行接口未披露。",
+      "advantage": "相对语音加手势画布，本例聚焦是否响应这一步，不要求用户先说固定口令。",
+      "limitation": "误触发、漏触发、录音处理和端到端延迟缺少评测；不能把文本判断模型写成直接理解原始音频。",
+      "reported_result": "作者发布约 84 秒连续交互视频，无独立唤醒准确率对照。",
+      "media_note": "与同作者的游戏演示、其他作者的语音画布分开记录，任务与视频不同。",
+      "post": {
+        "id": "2100967959879471519",
+        "url": "https://x.com/_MaxBlade/status/2100967959879471519",
+        "author": "_MaxBlade",
+        "published_at": "2026-09-18T15:19:30+00:00",
+        "likes": 1053,
+        "retrieved_at": "2026-09-18T22:49:18+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100967959879471519",
+        "media_source": "https://x.com/_MaxBlade/status/2100967959879471519",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100966551826444288/vid/avc1/3808x2160/-l1FkaXsmJs5BGfK.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100966551826444288/img/i2s52ZeMNTOO-IRD.jpg",
+            "duration": 83.626,
+            "width": 3808,
+            "height": 2160
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "tester-army-e2e",
+      "group": "browser",
+      "title": "Tester Army · Web / 手机端测试演示",
+      "summary": "用代理执行界面测试，探索 Web 和移动端的端到端测试框架。",
+      "plain_explanation": "像测试员从入口一路操作到结果：Jev 参与下一步判断，执行器操作界面；判断测试通过还需要明确检查点。",
+      "mechanism": "作者展示使用 Jev 构建的测试框架，目标覆盖 Web 和移动端；状态输入、断言、失败恢复与移动端接口尚未公开核清。",
+      "advantage": "与 Runlayer 的并发探索同属测试工具，但强调跨 Web / 手机的测试框架，适合比较支持平台和断言设计。",
+      "limitation": "演示不能证明稳定检出缺陷；作者称即将提供，未核实可运行的开源发布，不能写成已可安装产品。",
+      "reported_result": "主帖提供约 70 秒演示和 Tester Army 入口，未给出独立缺陷检出评测。",
+      "media_note": "同类测试目标相似，但作者和视频不同；不按窗口或平台数量拆分。",
+      "post": {
+        "id": "2100966838905585687",
+        "url": "https://x.com/o_kwasniewski/status/2100966838905585687",
+        "author": "o_kwasniewski",
+        "published_at": "2026-09-18T15:15:03+00:00",
+        "likes": 505,
+        "retrieved_at": "2026-09-18T22:49:18+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100966838905585687",
+        "media_source": "https://x.com/o_kwasniewski/status/2100966838905585687",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100966360192868352/vid/avc1/2896x2160/mWs8EARIlrqcCt7H.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100966360192868352/img/8GCSVzX1AYF4caav.jpg",
+            "duration": 69.516,
+            "width": 2896,
+            "height": 2160
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [
+        "https://tester.army/e2e"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "codex-model-router",
+      "group": "routing",
+      "title": "Codex Model Router · 每轮选择模型",
+      "summary": "按当前任务复杂程度，为 Codex 选择模型和推理配置。",
+      "plain_explanation": "像把简单工单分给轻量助手、复杂工单分给更强助手：Jev 做分类，代理按策略改写实际请求。",
+      "mechanism": "作者链接的固定版本仓库通过本地代理逐轮分类，再选择 Luna、Sol、Astra 及推理配置；低置信度默认走中档，异常有回退。",
+      "advantage": "比通用模型选择演示更具体地嵌入 Codex 工作流，公开策略和回退；用户报告也暴露了过度选强模型的问题。",
+      "limitation": "作者仍在调提示，缓存收益和上下文影响未定；仓库回放节省数字不等于这个用户的实测节省。",
+      "reported_result": "作者称初始路由对简单任务也偏向 Sol，随后调整提示；尚无其个人工作流的完整费用、质量对照。",
+      "media_note": "主帖截图、项目仓库与调参 gist 合并为一个案例。",
+      "post": {
+        "id": "2100962426439000484",
+        "url": "https://x.com/antonioleivag/status/2100962426439000484",
+        "author": "antonioleivag",
+        "published_at": "2026-09-18T14:57:31+00:00",
+        "likes": 437,
+        "retrieved_at": "2026-09-18T22:49:18+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100962426439000484",
+        "media_source": "https://x.com/antonioleivag/status/2100962426439000484",
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HSgeLlIX0AAjedL.png?name=orig",
+            "width": 638,
+            "height": 344
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [
+        "https://github.com/0xNatoshi/jev-codex-router",
+        "https://github.com/0xNatoshi/jev-codex-router/blob/8292b519659280884627a962c826ac7721136a64/README.md",
+        "https://gist.github.com/antoniolg/62f82f2a5d191fe074e3f5065501993d"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00",
+      "source_notes": "**文档核对：** 本轮阅读[固定版本文档](https://github.com/0xNatoshi/jev-codex-router/blob/8292b519659280884627a962c826ac7721136a64/README.md)；以上实现说明来自文档，未安装、执行或独立复现。"
+    },
+    {
+      "slug": "gmail-intent-search",
+      "group": "data",
+      "title": "Gmail · 按意图找邮件",
+      "summary": "用一句需求筛出相关邮件，减少只靠关键词搜索的限制。",
+      "plain_explanation": "像告诉助理“找我要处理的那类邮件”：程序提供候选邮件，Jev 判断它们是否符合意思。候选怎样获取仍未公开。",
+      "mechanism": "主帖演示意图驱动的 Gmail 搜索；作者建议大收件箱先用 embeddings 缩小范围，但这是扩展建议，不是已验证的当前步骤。",
+      "advantage": "相对邮件批量分类，本例回答一次检索需求，无需先为所有邮件维护固定标签。",
+      "limitation": "检索召回、邮件权限、候选范围和敏感内容处理未披露；漏掉候选时，再好的判断也找不回它。",
+      "reported_result": "作者发布约 22 秒演示，未提供大收件箱规模或检索精度测试。",
+      "media_note": "引用的同作者表格项目已收录；本次邮件搜索有独立任务和视频，保留为新案例。",
+      "post": {
+        "id": "2100960281769738433",
+        "url": "https://x.com/dabit3/status/2100960281769738433",
+        "author": "dabit3",
+        "published_at": "2026-09-18T14:48:59+00:00",
+        "likes": 574,
+        "retrieved_at": "2026-09-18T22:50:12+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100960281769738433",
+        "media_source": "https://x.com/dabit3/status/2100960281769738433",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100959260616151040/vid/avc1/1920x1080/bNkiMfxjhro8uncw.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100959260616151040/img/nb1GFqB_cwNesugB.jpg",
+            "duration": 21.666,
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "ai-hedge-fund-backtest",
+      "group": "finance",
+      "title": "AI Hedge Fund · 策略回测",
+      "summary": "选择策略和股票代码，在历史数据上运行策略实验。",
+      "plain_explanation": "像拿过去的行情做练习卷：系统反复作出策略判断，再统计模拟表现；跑得快不代表未来能赚钱。",
+      "mechanism": "作者展示配置策略、标的并回测的流程，称加入 Jev 后更快、更便宜；特征、决策候选和与其他模型的分工未完整披露。",
+      "advantage": "与链上交易机器人相比更适合先做离线策略实验，避免把回测和真实下单混为一谈。",
+      "limitation": "缺少同条件基准、数据切分和完整费用；速度不证明策略收益，历史数据可能存在前视偏差。",
+      "reported_result": "作者报告约 100 倍速度和成本改善，但未提供足以复核该倍率的完整实验条件。",
+      "media_note": "原帖约 7 秒视频是回测流程演示，不作为实盘盈利证据。",
+      "post": {
+        "id": "2100959848623899005",
+        "url": "https://x.com/virattt/status/2100959848623899005",
+        "author": "virattt",
+        "published_at": "2026-09-18T14:47:16+00:00",
+        "likes": 613,
+        "retrieved_at": "2026-09-18T22:50:11+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100959848623899005",
+        "media_source": "https://x.com/virattt/status/2100959848623899005",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100959729350561792/vid/avc1/1646x1080/Si_vKAFAL0A7N7jQ.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100959729350561792/img/wc-JtyIBGa_9qgNL.jpg",
+            "duration": 6.966,
+            "width": 1646,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "ocr-image-organizer",
+      "group": "data",
+      "title": "OCR + Jev · 图片归类",
+      "summary": "先读出图片里的文字，再按内容整理图片。",
+      "plain_explanation": "像先把照片上的字抄到卡片，再按卡片内容分堆：OCR 负责读字，Jev 判断类别。",
+      "mechanism": "作者明确组合 OCR 与 Jev，对 900 张图片分类；具体 OCR 引擎、类别表、置信度策略和文件操作规则未披露。",
+      "advantage": "与 CoreML/OCR 桌面点击共用文字识别思路，但本例产出是图片分类，不是操作坐标。",
+      "limitation": "没有文字的图像或 OCR 错误会限制分类；不能称为 Jev 直接看图，也缺跨类型准确率评估。",
+      "reported_result": "作者报告 900 张图片约 40 秒完成；费用和全流程计时边界不明确。",
+      "media_note": "原帖提供约 62 秒整理演示，视频长度不等于作者报告的处理耗时。",
+      "post": {
+        "id": "2100953838891192789",
+        "url": "https://x.com/fayazara/status/2100953838891192789",
+        "author": "fayazara",
+        "published_at": "2026-09-18T14:23:23+00:00",
+        "likes": 246,
+        "retrieved_at": "2026-09-18T22:50:11+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100953838891192789",
+        "media_source": "https://x.com/fayazara/status/2100953838891192789",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100953271238320128/vid/avc1/3200x2160/jacV5iwxBLUeVKni.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100953271238320128/img/vzUjAo15Bg8tVa_q.jpg",
+            "duration": 61.616,
+            "width": 3760,
+            "height": 2538
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "game-level-generation",
+      "group": "games",
+      "title": "Sprite Fusion · 实时生成跑酷地形",
+      "summary": "玩家向前跑时，为前方地图选择新的平台和间隙。",
+      "plain_explanation": "像给关卡设计师一盒固定尺寸的地块：Jev 选宽度、间隔、高度和表面类型，游戏代码负责摆放。",
+      "mechanism": "作者文章说明将玩家位置、速度、冲刺状态和现有地形作为输入，一次提出多项选择题，为接下来的四个表面选择参数；PhaserJS 构建地形，图像素材另由 Sprite Fusion 制作。",
+      "advantage": "与马里奥、Flappy Bird 的玩家动作选择不同，它生成环境；有限地块选项便于做碰撞与可达性检查。",
+      "limitation": "仅是简单跑酷原型；没有长程可玩性或难度适配评测。素材生成与关卡决策是不同环节。",
+      "reported_result": "作者记录 5 次请求，Jev 延迟 319–375 毫秒，估算每次 0.00057 美元；不是低于 100 毫秒的实测。",
+      "media_note": "原帖视频与作者实现文章、状态说明合为一个案例。",
+      "post": {
+        "id": "2100953089003921543",
+        "url": "https://x.com/HugoDuprez/status/2100953089003921543",
+        "author": "HugoDuprez",
+        "published_at": "2026-09-18T14:20:24+00:00",
+        "likes": 1289,
+        "retrieved_at": "2026-09-18T22:50:12+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100953089003921543",
+        "media_source": "https://x.com/HugoDuprez/status/2100953089003921543",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100952449661992960/vid/avc1/960x640/PpGr_QrlTEiPpCeb.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100952449661992960/img/GEVdw9BvAW7Dv2Gx.jpg",
+            "duration": 10.229,
+            "width": 960,
+            "height": 640
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100960962392018992",
+          "url": "https://x.com/HugoDuprez/status/2100960962392018992",
+          "author": "HugoDuprez",
+          "published_at": "2026-09-18T14:51:42+00:00",
+          "likes": 47,
+          "retrieved_at": "2026-09-18T22:56:39+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100960962392018992",
+          "media_source": "https://x.com/HugoDuprez/status/2100960962392018992",
+          "media": []
+        },
+        {
+          "id": "2101011373136200058",
+          "url": "https://x.com/HugoDuprez/status/2101011373136200058",
+          "author": "HugoDuprez",
+          "published_at": "2026-09-18T18:12:00+00:00",
+          "likes": 2,
+          "retrieved_at": "2026-09-18T22:56:40+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2101011373136200058",
+          "media_source": "https://x.com/HugoDuprez/status/2101011373136200058",
+          "media": []
+        }
+      ],
+      "links": [
+        "https://www.spritefusion.com/blog/generating-game-level-in-real-time-with-jev"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:08:57+08:00",
+      "source_notes": "**作者文章：** [实现拆解](https://www.spritefusion.com/blog/generating-game-level-in-real-time-with-jev)给出允许的地块类型、宽度、间隔、高度以及一次响应示例。本文是公开设计分析，未运行游戏。",
+      "reported_result_source": "https://www.spritefusion.com/blog/generating-game-level-in-real-time-with-jev"
+    },
+    {
+      "slug": "maxfusion-ad-classifier",
+      "group": "content",
+      "title": "MaxFusion · 广告素材分类",
+      "summary": "给广告标注风格和用户旅程阶段，方便按维度分析账号素材。",
+      "plain_explanation": "像把广告放进带标签的素材柜：Jev 判断各个维度，程序再统计和展示；标签不等于投放效果。",
+      "mechanism": "作者报告对 Resilia 的 1,891 条广告按旅程阶段和风格等维度分类；广告文本提取、视觉处理和标签定义未完整披露。",
+      "advantage": "与已有 StealAds 同类比较：二者都整理广告，本例报告更大批次，但数据、标签和前处理不同，不能直接比秒数。",
+      "limitation": "没有人工标签一致率、投放成效或完整采集成本；宣布即将接入 MCP 不代表功能已上线。",
+      "reported_result": "作者报告 1,891 条、19 秒、0.12 美元，未独立复现。",
+      "media_note": "原帖独立视频和作者产品不同于 StealAds，不因同为广告分析而合并。",
+      "post": {
+        "id": "2100941251478458871",
+        "url": "https://x.com/OriSilver/status/2100941251478458871",
+        "author": "OriSilver",
+        "published_at": "2026-09-18T13:33:22+00:00",
+        "likes": 320,
+        "retrieved_at": "2026-09-18T22:50:11+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100941251478458871",
+        "media_source": "https://x.com/OriSilver/status/2100941251478458871",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100940464870301696/vid/avc1/1922x1080/dyNsfOA79ntApMBM.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100940464870301696/img/g-uzVt-FDP21an26.jpg",
+            "duration": 22.366,
+            "width": 1922,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "danish-stock-backtest",
+      "group": "finance",
+      "title": "丹麦股票 · 全年历史策略实验",
+      "summary": "用市场、新闻等信息，在 2025 年行情上做交易策略实验。",
+      "plain_explanation": "像翻阅一整年的旧行情逐日做选择；只有严格使用当时可获得的信息，回测才不等于提前看答案。",
+      "mechanism": "作者称依据市场数据、新闻、Wikipedia 与 Google Trends 情绪进行决策。发布于 2026 年而覆盖 2025 年，因此按历史实验收录，具体时间截断和执行方式未知。",
+      "advantage": "相比配置型回测界面，本例说明了多种输入来源和一年跨度，便于讨论信息时效。",
+      "limitation": "没有披露前视偏差控制、手续费、滑点或可靠收益统计；token 费用不是完整策略成本。",
+      "reported_result": "作者报告 239 个交易日、810 万 token、0.32 美元，未独立复现。",
+      "media_note": "原帖约 22 秒视频；不把历史实验表述为当前真实账户交易。",
+      "post": {
+        "id": "2100939646653903063",
+        "url": "https://x.com/tommy_jepsen/status/2100939646653903063",
+        "author": "tommy_jepsen",
+        "published_at": "2026-09-18T13:26:59+00:00",
+        "likes": 269,
+        "retrieved_at": "2026-09-18T22:50:12+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100939646653903063",
+        "media_source": "https://x.com/tommy_jepsen/status/2100939646653903063",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100938100272746496/vid/avc1/1280x720/ZHdU2ZBesgIKs-XO.mp4?tag=14",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100938100272746496/img/8yisuerchTVTcFTn.jpg",
+            "duration": 22,
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "flappy-bird",
+      "group": "games",
+      "title": "Flappy Bird · 飞行避障",
+      "summary": "让 Jev 参与控制小鸟穿过障碍。",
+      "plain_explanation": "可把这类游戏理解为不断回答“现在该不该拍翅膀”。这是帮助理解的动作选择类比；该演示如何提供状态、何时调用，尚未公开。",
+      "mechanism": "作者发布 Jev 玩 Flappy Bird 的视频，但未说明观测格式、动作频率或环境是否等待模型；这些保持未知。",
+      "advantage": "比复杂角色游戏的动作空间更简单，适合观察动作时机，但不因此证明实现更可靠。",
+      "limitation": "缺少多局得分、失败片段、费用和可复现代码；不能用顺利的一段视频推断通关率。",
+      "reported_result": "作者提供约 49 秒游戏演示，没有可核验的量化成功率。",
+      "media_note": "按独立游戏任务收录，与马里奥等放在游戏决策类比较。",
+      "post": {
+        "id": "2100937960115838984",
+        "url": "https://x.com/thymikee/status/2100937960115838984",
+        "author": "thymikee",
+        "published_at": "2026-09-18T13:20:17+00:00",
+        "likes": 254,
+        "retrieved_at": "2026-09-18T22:50:12+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100937960115838984",
+        "media_source": "https://x.com/thymikee/status/2100937960115838984",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100937854813700096/vid/avc1/2560x1440/UbfnCoOpsvGk3KH5.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100937854813700096/img/AlsBUETn77dLd0r8.jpg",
+            "duration": 48.546,
+            "width": 2560,
+            "height": 1440
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "script-code-review",
+      "group": "review",
+      "title": "Script.it · 先筛问题再写评审",
+      "summary": "先判断 git diff 有没有问题，命中后才让文字模型写解释。",
+      "plain_explanation": "像先用检查清单圈出可疑改动，再请评审员说明原因；省掉无问题时的长篇探索，也可能少找出一些深层问题。",
+      "mechanism": "作者将原 GLM、Grok、Gemini 多轮组合改成 Jev 直接评分原始 diff，标记问题后才调用 LLM 组织解释。",
+      "advantage": "与整段代理式评审相比，更明确地把发现问题与文字说明分开；作者同时披露了召回损失。",
+      "limitation": "私有测试集规模和标注未公开；“零误报”只指该批开发者曾反驳的问题，不能推广为生产环境永不误报。",
+      "reported_result": "作者报告约 50 倍更快、100 倍更便宜、75% 已确认 bug 召回率；原多模型方案发现的 bug 更多。",
+      "media_note": "原帖附图和完整工作流说明；按作者内部评测记录，不作为独立性能认证。",
+      "post": {
+        "id": "2100936106615140757",
+        "url": "https://x.com/liorshkiller/status/2100936106615140757",
+        "author": "liorshkiller",
+        "published_at": "2026-09-18T13:12:55+00:00",
+        "likes": 202,
+        "retrieved_at": "2026-09-18T22:50:12+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100936106615140757",
+        "media_source": "https://x.com/liorshkiller/status/2100936106615140757",
+        "media": [
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HSgGI1wWQAAY5zl.jpg?name=orig",
+            "width": 962,
+            "height": 638
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "nifty-trading",
+      "group": "finance",
+      "title": "Nifty 日内交易 · 含止损的账户演示",
+      "summary": "展示将 Jev 接入 Nifty 日内交易，并报告触发止损。",
+      "plain_explanation": "像把判断接到下单流程，同时设一条停止线；模型判断、券商执行和风控各有职责，视频不证明策略会盈利。",
+      "mechanism": "作者称使用真实 Kotak 账户、10 万卢比资金和 5 倍杠杆；策略输入、Jev 的候选和下单代码未公开，实盘身份未独立核验。",
+      "advantage": "相对只展示速度的交易帖，本例披露当天触发止损，提供了实际失败结果的作者陈述。",
+      "limitation": "未验证账户、成交及净收益；高杠杆会放大损失，一次止损报告不能证明长期风控有效。",
+      "reported_result": "作者说早盘盈利后，当天触及 1,000 卢比硬止损；没有将“早盘盈利”写成全天盈利。",
+      "media_note": "原帖约 38 秒视频；与 Monad/Kuru 机器人作者、市场和执行入口均不同。",
+      "post": {
+        "id": "2100929105382564113",
+        "url": "https://x.com/IndraVahan/status/2100929105382564113",
+        "author": "IndraVahan",
+        "published_at": "2026-09-18T12:45:06+00:00",
+        "likes": 673,
+        "retrieved_at": "2026-09-18T22:50:12+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100929105382564113",
+        "media_source": "https://x.com/IndraVahan/status/2100929105382564113",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100928264831410176/vid/avc1/1920x1080/IsI9fz3yTp8KOeDw.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100928264831410176/img/VP6eszCSb95ePMo4.jpg",
+            "duration": 37.733,
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "downloads-organizer",
+      "group": "data",
+      "title": "macOS Downloads · 按规则归档文件",
+      "summary": "监控下载目录，把符合自定义规则的文件移动到对应位置。",
+      "plain_explanation": "像收件员看一眼文件是不是发票，再送进发票柜；Jev 判断规则，应用负责移动和命名。",
+      "mechanism": "作者演示 macOS 目录监控与可配置规则，举例识别发票、移到指定文件夹并使用合适文件名；称没有其他 LLM 调用，内容读取和命名构造方法未披露。",
+      "advantage": "比批量分类更贴近日常文件流；与 Box 报告分流相比，本例处理本地下载文件和用户规则。",
+      "limitation": "错误移动或命名可能影响找回文件；撤销、冲突处理、文件权限和分类准确率尚无说明。",
+      "reported_result": "作者提供约 9 秒演示，未报告长期运行或定量分类结果。",
+      "media_note": "虽与 X 信息流过滤器同作者，但本地文件任务和视频独立，分别归组。",
+      "post": {
+        "id": "2100906882365788167",
+        "url": "https://x.com/marcelpociot/status/2100906882365788167",
+        "author": "marcelpociot",
+        "published_at": "2026-09-18T11:16:48+00:00",
+        "likes": 889,
+        "retrieved_at": "2026-09-18T22:50:13+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100906882365788167",
+        "media_source": "https://x.com/marcelpociot/status/2100906882365788167",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100906588626173952/vid/avc1/1920x1080/p7WvcyoTkxLFXeJK.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100906588626173952/img/1KnNI3B3aUJEwFvI.jpg",
+            "duration": 8.576,
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "color-judgments",
+      "group": "interaction",
+      "title": "词语与颜色 · 16 色概率可视化",
+      "summary": "输入词语，把模型对颜色的判断画成配色结果。",
+      "plain_explanation": "像把“番茄”投进一个有 16 支彩笔的盒子：Jev 给候选颜色权重，程序把权重画出来；它不是在看照片识色。",
+      "mechanism": "作者回复确认本次使用 16 个预设静态颜色，并提供调色板链接。概率加权后如何完整映射显示未公开；另试过 RGB 混色，属于同实验探索。",
+      "advantage": "相比逐像素绘图，候选更小、语义反馈直观，适合研究词语与视觉反馈的关系。",
+      "limitation": "受限于调色板与提示，主观颜色联想没有统一正确答案；不是图像识别或色彩科学准确性评测。",
+      "reported_result": "作者提供约 65 秒交互视频与调色板说明，没有公开量化评估。",
+      "media_note": "同作者的 16 色解释与后续混色讨论合并，不拆成多款应用。",
+      "post": {
+        "id": "2100899669802963060",
+        "url": "https://x.com/mattdesl/status/2100899669802963060",
+        "author": "mattdesl",
+        "published_at": "2026-09-18T10:48:08+00:00",
+        "likes": 3441,
+        "retrieved_at": "2026-09-18T22:50:13+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100899669802963060",
+        "media_source": "https://x.com/mattdesl/status/2100899669802963060",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100898643117068288/vid/avc1/1654x1168/LZjuNC5oAH_esX2U.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100898643117068288/img/p9Jp61lJyiq-UoWK.jpg",
+            "duration": 65.289,
+            "width": 1654,
+            "height": 1168
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100907712984883362",
+          "url": "https://x.com/mattdesl/status/2100907712984883362",
+          "author": "mattdesl",
+          "published_at": "2026-09-18T11:20:06+00:00",
+          "likes": 97,
+          "retrieved_at": "2026-09-18T22:52:47+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100907712984883362",
+          "media_source": "https://x.com/mattdesl/status/2100907712984883362",
+          "media": []
+        },
+        {
+          "id": "2101018650824106068",
+          "url": "https://x.com/mattdesl/status/2101018650824106068",
+          "author": "mattdesl",
+          "published_at": "2026-09-18T18:40:56+00:00",
+          "likes": 0,
+          "retrieved_at": "2026-09-18T22:52:47+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2101018650824106068",
+          "media_source": "https://x.com/mattdesl/status/2101018650824106068",
+          "media": []
+        }
+      ],
+      "links": [
+        "https://github.com/mattdesl/bitframes/blob/main/docs/palette.md"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
+    },
+    {
+      "slug": "x-reply-cleanup",
+      "group": "filter",
+      "title": "X 回复清理 · 标记低价值评论",
+      "summary": "识别帖子下面疑似低价值回复，帮助用户清理评论区。",
+      "plain_explanation": "像先圈出疑似灌水评论，再允许用户纠正误判；作者说更正会在下次判断时被考虑，具体保存方式未知。",
+      "mechanism": "主视频显示回复检查与已标记计数，作者称用 Jev 清理评论，补充支持撤销误判。未核清动作是本地隐藏、账户屏蔽还是其他处理，不据此声称能删除他人评论。",
+      "advantage": "比通用信息流过滤更聚焦帖子回复，并展示了纠正误判的设计；独立于同作者的历史帖子分析。",
+      "limitation": "低价值判断主观，缺误删率与漏检率；更正反馈不等于模型已经训练或跨用户学习。",
+      "reported_result": "作者提供约 15 秒视频，称搭建很快，没有正式过滤效果评测。",
+      "media_note": "主视频与误判纠正补充帖合为一个应用，不计作两项。",
+      "post": {
+        "id": "2100888635943883244",
+        "url": "https://x.com/iannuttall/status/2100888635943883244",
+        "author": "iannuttall",
+        "published_at": "2026-09-18T10:04:18+00:00",
+        "likes": 223,
+        "retrieved_at": "2026-09-18T22:50:13+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2100888635943883244",
+        "media_source": "https://x.com/iannuttall/status/2100888635943883244",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2100888448118759424/vid/avc1/1288x1080/pMof_YFauweJujBF.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2100888448118759424/img/MafhEAfm3BlPst1X.jpg",
+            "duration": 14.616,
+            "width": 1288,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2100896325290074606",
+          "url": "https://x.com/iannuttall/status/2100896325290074606",
+          "author": "iannuttall",
+          "published_at": "2026-09-18T10:34:51+00:00",
+          "likes": 7,
+          "retrieved_at": "2026-09-18T22:57:26+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2100896325290074606",
+          "media_source": "https://x.com/iannuttall/status/2100896325290074606",
+          "media": [
+            {
+              "type": "photo",
+              "url": "https://pbs.twimg.com/media/HSfh5C_XsAAPBTT.jpg?name=orig",
+              "width": 1492,
+              "height": 850
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T07:04:48+08:00",
+      "readme_updated_at": "2026-09-19T07:04:48+08:00"
     }
   ],
   "groups": [
     {
       "id": "browser",
       "title": "浏览器与电脑操作",
-      "comparison": "要研究浏览器循环，优先看 Browser Use 与 Stagehand：前者明确 DOM 动态动作空间及文本回退，后者明确无障碍树和执行器分工。桌面应用可看 CoreML/OCR，Cua 当前公开预览可用于研究受约束的语义动作执行；需要长任务上下文则看 agent-desktop。语音入口和 QA 演示解决的是交互或验收问题，不宜只按速度排名。 Runlayer 强调多会话并行探索，仍缺路径覆盖和缺陷检出证据；Sac 的日历对照聚焦单个桌面任务的流畅度，尚未公开观测接口。两者都不能仅凭操作视频代替验收断言。",
+      "comparison": "要研究浏览器循环，优先看 Browser Use 与 Stagehand：前者明确 DOM 动态动作空间及文本回退，后者明确无障碍树和执行器分工。桌面应用可看 CoreML/OCR，Cua 当前公开预览可用于研究受约束的语义动作执行；需要长任务上下文则看 agent-desktop。语音入口和 QA 演示解决的是交互或验收问题，不宜只按速度排名。 Runlayer 强调多会话并行探索，仍缺路径覆盖和缺陷检出证据；Sac 的日历对照聚焦单个桌面任务的流畅度，尚未公开观测接口。两者都不能仅凭操作视频代替验收断言。 Tester Army 侧重 Web / 移动端框架，尚未核实开源发布；ego lite 聚焦商品筛选，混合模型的效果不能归给 Jev 一项。Browser Use 新增 WebMCP 同源对照，需区分任务覆盖和每次尝试成功率。",
       "flow": "观测页面或桌面 → 构建可执行动作候选 → Jev 选动作 → 执行器操作 → 重新观测。",
       "analysis": "DOM、无障碍树与 OCR 是不同观测接口。CoreML/OCR 方案的“像素留在本地”不等于内容全在本地；Browser Use 的文字输入回退也说明需要生成的环节仍可能交给 LLM。以上架构分别来自作者陈述，其余集成未披露的编码方式保持未知。",
       "evaluation": "用同一组只读任务比较完成率、步骤数、总耗时、全流程费用与失败恢复；覆盖无标签按钮、动态页面、弹窗及桌面窗口变化。不要拿单步推理耗时与整个任务耗时相比。"
@@ -3649,7 +4606,7 @@
     {
       "id": "routing",
       "title": "模型、技能与工具路由",
-      "comparison": "模型选择看 Eve 与 Ephraim 的演示；已有代理编排可以看 Firstmate 和本地分工。技能库检索看 Skillbox；想连接日常工具看 Coding Garden；Eve 工具代理展示局部替换；ai-cli 是统一接入入口。这些方案可以组合，并非互相替代。 Hono JevRouter 选择 HTTP 处理函数，规则用自然语言表达，且按注册顺序取首个达标路由；与选择模型或技能不同，分流错误直接改变响应内容，不能用来代替认证。",
+      "comparison": "模型选择看 Eve 与 Ephraim 的演示；已有代理编排可以看 Firstmate 和本地分工。技能库检索看 Skillbox；想连接日常工具看 Coding Garden；Eve 工具代理展示局部替换；ai-cli 是统一接入入口。这些方案可以组合，并非互相替代。 Hono JevRouter 选择 HTTP 处理函数，规则用自然语言表达，且按注册顺序取首个达标路由；与选择模型或技能不同，分流错误直接改变响应内容，不能用来代替认证。 Codex Model Router 逐轮选择模型和推理配置，公开回退策略，但用户已观察到简单任务过度选强模型；应对比任务质量、缓存和整体账单，而非只看分类速度。",
       "flow": "任务文本与候选能力描述 → Jev 选择或评分 → 应用检查候选及约束 → 调用模型、技能或工具。",
       "analysis": "路由的价值在于减少“选谁来做”的开销，任务本身仍由被选中的执行器完成。Firstmate 的 25 个一致决策是小样本对照；Skillbox 缺少相关技能召回数据；确定性调用结构并不保证模型判断正确。",
       "evaluation": "使用相同请求集，记录选择是否合适、任务最终质量、错误回退、配额处理与端到端成本；加入没有合适候选的请求。"
@@ -3657,7 +4614,7 @@
     {
       "id": "review",
       "title": "代码质量与安全检查",
-      "comparison": "PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。 ESLint 规则实验判断小代码片段是否合规；OpenCode 权限插件在工具运行前决定放行、询问或拒绝。两者分别检查代码与操作，不能互相替代。 注释评分把准确性和实用性拆开，解释性强于单一总分，但目前只有两个简单样例；ESLint 实验按规则检查片段，PR 工具覆盖更广的改动。三者应按任务范围和证据规模比较。",
+      "comparison": "PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。 ESLint 规则实验判断小代码片段是否合规；OpenCode 权限插件在工具运行前决定放行、询问或拒绝。两者分别检查代码与操作，不能互相替代。 注释评分把准确性和实用性拆开，解释性强于单一总分，但目前只有两个简单样例；ESLint 实验按规则检查片段，PR 工具覆盖更广的改动。三者应按任务范围和证据规模比较。 Script.it 先给 diff 评分、命中后再写解释，减少长流程开销，但作者仅召回 75% 已确认 bug。与探索型评审相比，应把少误报和多漏报同时列出。",
       "flow": "代码或待执行内容 + 明确规则 → 多个窄判断 → 程序合并结果 → 提示、拦截或转交复核。",
       "analysis": "14 项 PR 检查公开了概率区间升级策略，是比单一总分更可检查的设计。jev-review 的评分可用于反馈，但高分不等于测试通过。安全预筛的低费用不能替代错误代价评估。",
       "evaluation": "按风险分别统计误报和漏报，保留独立标注样本；测试信息不足、输入含恶意指令、规则冲突和不确定结果。复现时保留人工评审与静态工具对照。"
@@ -3665,7 +4622,7 @@
     {
       "id": "data",
       "title": "数据分类与信息整理",
-      "comparison": "整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。 饮食记事本将文字记录变成热量与营养数值，和预测性表格同样重视即时反馈，但数值估算还需要可信数据与误差评估，不能用分类响应速度代替数值准确性。",
+      "comparison": "整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。 饮食记事本将文字记录变成热量与营养数值，和预测性表格同样重视即时反馈，但数值估算还需要可信数据与误差评估，不能用分类响应速度代替数值准确性。 新案例分别覆盖税表页面识别、Box 事故分流、本地下载归档、OCR 图片整理、Gmail 意图检索和零食评分。税表有明确拒绝门槛和分项测试，其他演示主要只有作者计时；不能跨数据类型给准确率排名。",
       "flow": "原始文本或表格 → 必要的清洗/摘要 → Jev 分类或判断 → 不确定项回退 → 写回索引或表格。",
       "analysis": "论文案例把摘要与分类分开计费；邮件反欺诈把低置信度项升级到大模型。数据预处理和回退费用都属于完整系统成本。银行收款方的候选生成方法未披露，不能直接推断 Jev 在自由生成商户名。",
       "evaluation": "固定标注数据和切分方式，报告每类精确率/召回率、批量吞吐、单条延迟、重试和总成本；欺诈样本还需覆盖真实基率、误报和漏报。"
@@ -3673,7 +4630,7 @@
     {
       "id": "content",
       "title": "内容与广告分析",
-      "comparison": "实时分析器适合写作反馈；收藏分位实验把预测目标定义得更具体；历史帖子分析适合描述性复盘；广告拆解服务素材整理。传播分类器与 X 算法模拟器的泛化证据较少。JevMeter 是按规则分析言论的仪表，不能当成已验证的事实核查器。",
+      "comparison": "实时分析器适合写作反馈；收藏分位实验把预测目标定义得更具体；历史帖子分析适合描述性复盘；广告拆解服务素材整理。传播分类器与 X 算法模拟器的泛化证据较少。JevMeter 是按规则分析言论的仪表，不能当成已验证的事实核查器。 MaxFusion 与 StealAds 都做广告标签，批次和维度不同；SEO 内链推荐则选择相关文章与现成锚文本。广告标签、链接相关性和最终业务收益需要分别验证。",
       "flow": "内容文本及分析维度 → Jev 并行标签/评分 → 按显式规则汇总 → 编辑反馈、统计或分析界面。",
       "analysis": "“评分低”与“事实错误”、“历史上高赞”与“未来会传播”是不同问题。历史数据分析只支持相关性；后验标签可能受到信息泄漏影响。作者称使用真实 X 权重，也不能证明重建了实际线上推荐系统。",
       "evaluation": "留出时间段和账号作为测试集，禁止把结果指标泄漏给模型；比较评分稳定性与校准，并记录前处理、采集费用及明确的目标定义。事实核查另需证据检索与来源核验。"
@@ -3681,7 +4638,7 @@
     {
       "id": "filter",
       "title": "网页与信息流过滤",
-      "comparison": "只想控制 X 信息流，比较自然语言 X 过滤器；想清理整个网页的广告、横幅和追加销售区域，看 Unclutter。前者分类帖子内容，后者判断页面元素；同一条规则很难在两个层次直接复用。 新增 Sponsor Skip 处理视频时间轴上的口播赞助，不是网页广告元素；字幕获取、语音转写和边界误判是它独有的比较维度。",
+      "comparison": "只想控制 X 信息流，比较自然语言 X 过滤器；想清理整个网页的广告、横幅和追加销售区域，看 Unclutter。前者分类帖子内容，后者判断页面元素；同一条规则很难在两个层次直接复用。 新增 Sponsor Skip 处理视频时间轴上的口播赞助，不是网页广告元素；字幕获取、语音转写和边界误判是它独有的比较维度。 X 回复清理专注评论区，支持作者所述的误判纠正；与信息流过滤相比，需额外核清清理动作及反馈保存方式，不能将标记等同于删除。",
       "flow": "浏览器提取帖子/元素 → 用户语义规则 → Jev 判断 → 隐藏、折叠或清理。",
       "analysis": "过滤效果取决于内容抽取和规则范围。推理速度快并不能保证不闪屏、不错删或不破坏网页操作；页面元素还可能随站点改版变化。",
       "evaluation": "固定页面集比较误删率、漏删率、首屏延迟和单页费用；检查正常弹窗、登录流程、滚动加载以及撤销过滤体验。"
@@ -3689,7 +4646,7 @@
     {
       "id": "memory",
       "title": "上下文与记忆筛选",
-      "comparison": "工具调用压缩处理当前会话的历史；记忆检索筛选处理外部记忆的召回候选。两者都以减少输入为目标，适用位置不同。优先观察信息保留与任务质量，再比较 token 降幅。",
+      "comparison": "工具调用压缩处理当前会话的历史；记忆检索筛选处理外部记忆的召回候选。两者都以减少输入为目标，适用位置不同。优先观察信息保留与任务质量，再比较 token 降幅。 Compact Adviser 选择“什么时候压缩”，已有压缩工具选择“压缩哪些内容”，记忆筛选选择“召回哪些材料”。三者位置不同，可组合，比较时需看后续任务质量。",
       "flow": "历史记录或记忆候选 + 当前任务 → Jev 相关性评分 → 程序筛选 → 构造后续模型上下文。",
       "analysis": "筛选保留原文与重新生成摘要的误差形态不同：前者可能漏掉将来需要的信息，后者可能改写错事实。94% token 降幅来自作者一次快速测试，不能作为默认压缩比例。 最新压缩插件资料显示：提供经过预算裁剪的对话上下文，但省略工具输出正文；其录屏动画不调用 API。压缩体积、后续任务质量、缓存重建和总费用应分别评估，新增使用报告与评论者质疑见原案例。",
       "evaluation": "在长任务中测试延迟需求、错误恢复、旧决策追溯和跨轮指代；同时记录召回率、完成质量、筛选开销与总 token，保留可恢复的原始记录。"
@@ -3697,7 +4654,7 @@
     {
       "id": "games",
       "title": "游戏决策与求解",
-      "comparison": "马里奥三个实现并排比较：@faadilhshaik 展示基本接入，Jev/Qwen 版本明确相同结构化状态与五选一，PPO 对照展示实现投入。吃豆人体现规划/执行分层；宝可梦体现长期进度；棋局显示速度与棋力分离；魔方的确定性代码承担解法。其余演示适合研究动作空间，而不是据短片排通用能力榜。 Minecraft 同样分层，但增加了本地移动/瞄准策略，不能把整个系统的表现归给 Jev；比较速度请看作者原速补充视频。",
+      "comparison": "马里奥三个实现并排比较：@faadilhshaik 展示基本接入，Jev/Qwen 版本明确相同结构化状态与五选一，PPO 对照展示实现投入。吃豆人体现规划/执行分层；宝可梦体现长期进度；棋局显示速度与棋力分离；魔方的确定性代码承担解法。其余演示适合研究动作空间，而不是据短片排通用能力榜。 Minecraft 同样分层，但增加了本地移动/瞄准策略，不能把整个系统的表现归给 Jev；比较速度请看作者原速补充视频。 Flappy Bird 聚焦动作时机但实现细节少；Sprite Fusion 选择下一段地形而非玩家动作，公开参数和请求计时。后者还需要可达性与可玩性测试，不能按玩家得分衡量。",
       "flow": "环境状态 → 状态适配和合法动作集合 → Jev 选择 → 规则/执行器校验 → 环境推进。",
       "analysis": "不同游戏可能采用格子状态、内存变量或其他结构化接口。只有 Jev/Qwen 马里奥帖明确说明其转换与五选一条件，其余没有公开的部分不推断。魔方的公式由代码提供，字符或像素实验也类似：最终能力取决于组合系统。",
       "evaluation": "固定环境版本、速度、动作粒度和随机种子；进行多局对照，报告胜率、得分、总成本与卡住次数。记录模拟器在模型等待时是否暂停，区分单步延迟与真实每秒游戏进度。"
@@ -3713,30 +4670,49 @@
     {
       "id": "interaction",
       "title": "实时交互与组合实验",
-      "comparison": "TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。 Probably 则把判断、分支和文字生成组织成小语言；官网是预录回放，比较实时性时需与真正的本地模型调用区分。 终端历史补全和启动器都是从候选中选下一步：前者可查固定版本文档和门槛逻辑，但只用虚构历史演示；后者侧重文件选择。比较时分开看命中率、接受率和执行风险。",
+      "comparison": "TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。 Probably 则把判断、分支和文字生成组织成小语言；官网是预录回放，比较实时性时需与真正的本地模型调用区分。 终端历史补全和启动器都是从候选中选下一步：前者可查固定版本文档和门槛逻辑，但只用虚构历史演示；后者侧重文件选择。比较时分开看命中率、接受率和执行风险。 json-render 从组件目录组合可交互界面，颜色实验从 16 色候选给视觉反馈，CNVS 判断一句话是否值得响应。三者分别需要检查结构与语义、主观匹配、误触发，不能只比较响应速度。",
       "flow": "准备有限候选或原子问题 → Jev 判定 → 程序组合结果 → 更新交互状态或输出。",
       "analysis": "词表聊天与字符聊天都由程序把单步选择拼接成文本；这不改变 API 的判断式输出性质。RISC-jeV 中逻辑门和指令解释层叠加，展示可组合性，不意味着用模型算逻辑门更高效。",
       "evaluation": "记录候选规模、分辨率或字符数、循环次数和全程费用；与确定性代码或专用生成模型比较输出质量。感知流水线需分开测本地模型、网络决策及渲染延迟。"
     },
     {
       "id": "finance",
-      "title": "交易执行演示",
-      "comparison": "目前收录一个交易机器人，尚无同类样本可公平对比。它展示行情、决策和链上执行的连接方式；本库不据此评价盈利能力。",
-      "flow": "价格流 → Jev 选择买卖 → 交易执行器发单 → 链上订单簿。",
-      "analysis": "区块间隔与交易确认、成交价格、策略收益是不同指标。作者给出演示和执行频率，但未公开完整收益、回撤、滑点、手续费与风险控制结果。",
+      "title": "交易与历史回测",
+      "comparison": "Monad/Kuru 展示链上执行，Nifty 作者称用真实账户并披露止损；AI Hedge Fund 与丹麦股票实验展示历史回测。前两者需要核验订单、成交和风控，后两者需要控制数据时序与前视偏差。四者都不能凭速度或 token 账单证明盈利。",
+      "flow": "市场或历史资料 → 策略输入与 Jev 判断 → 模拟器或执行器 → 记录结果和风险。",
+      "analysis": "历史回测与实盘成交不是同一证据。快照时间、标的选择、生成模型、费用及止损规则会影响结果；本库未连接账户、执行交易或验证收益。",
       "evaluation": "只做离线或模拟复现时，记录时间切分、手续费、滑点、成交失败、头寸约束和最大回撤；单看每秒决策次数没有投资意义。"
     }
   ],
   "latest_update": {
-    "reviewed_at": "2026-09-18T11:42:10+00:00",
+    "reviewed_at": "2026-09-18T23:03:22+00:00",
     "new_cases": [
-      "runlayer-adversarial-testing",
-      "hono-semantic-router",
-      "sac-calendar-computer-use",
-      "shell-history-suggestions",
-      "calorie-notebook"
+      "compact-adviser",
+      "json-render-ui",
+      "seo-internal-links",
+      "box-incident-triage",
+      "snack-scoring",
+      "tax-doc-classifier",
+      "ego-product-decisions",
+      "cnvs-voice-gate",
+      "tester-army-e2e",
+      "codex-model-router",
+      "gmail-intent-search",
+      "ai-hedge-fund-backtest",
+      "ocr-image-organizer",
+      "game-level-generation",
+      "maxfusion-ad-classifier",
+      "danish-stock-backtest",
+      "flappy-bird",
+      "script-code-review",
+      "nifty-trading",
+      "downloads-organizer",
+      "color-judgments",
+      "x-reply-cleanup"
     ],
-    "updated_cases": []
+    "updated_cases": [
+      "browser-use"
+    ]
   },
   "updates": [
     {
@@ -3786,6 +4762,36 @@
         "calorie-notebook"
       ],
       "updated_cases": []
+    },
+    {
+      "reviewed_at": "2026-09-18T23:03:22+00:00",
+      "new_cases": [
+        "compact-adviser",
+        "json-render-ui",
+        "seo-internal-links",
+        "box-incident-triage",
+        "snack-scoring",
+        "tax-doc-classifier",
+        "ego-product-decisions",
+        "cnvs-voice-gate",
+        "tester-army-e2e",
+        "codex-model-router",
+        "gmail-intent-search",
+        "ai-hedge-fund-backtest",
+        "ocr-image-organizer",
+        "game-level-generation",
+        "maxfusion-ad-classifier",
+        "danish-stock-backtest",
+        "flappy-bird",
+        "script-code-review",
+        "nifty-trading",
+        "downloads-organizer",
+        "color-judgments",
+        "x-reply-cleanup"
+      ],
+      "updated_cases": [
+        "browser-use"
+      ]
     }
   ]
 }

@@ -4,7 +4,7 @@
 
 > Describe a flight search and let the agent click, type and find results on the website.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 07:04:48 (Beijing time, UTC+08:00)
 
 ## How it works, in plain English
 
@@ -20,11 +20,11 @@ Think of an assistant with a constantly updated list of buttons. Code reads the 
 | Platform / author | X / [@gregpr07](https://x.com/gregpr07) |
 | Main post | [Source post](https://x.com/gregpr07/status/2100411066966749359) |
 | Published (UTC) | 2026-09-17T02:26:36+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 07:04:48 |
 | Main-post likes snapshot | **6,891** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:32:51.243200+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100411066966749359); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 
@@ -59,14 +59,18 @@ Undisclosed prompts, state formats, thresholds and recovery logic remain unknown
 
 **Repository cross-check (2026-09-18)**: The [pinned README](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md) describes separate operation and target judgments in one request, with code executing only the matching target. A small LLM is used for TYPE_TEXT. Its 7,073ms measurement starts after the initial page observation and lists unsupported page types; it is not a general time from browser launch to arbitrary task completion.
 
+**2026-09-19 WebMCP comparison merged:** The author modifies Ultrafast: Jev selects website tools and Mercury 2.5 generates arguments. This is a benchmark variant of the existing project, not another entry. The [benchmark](https://webmcp.com/benchmark) covers 49 tasks on eight sites, with three attempts each. WebMCP solves 49/49 tasks but succeeds in 141/147 attempts; the DOM variant solves 25/49. Displayed median costs are $0.0011 and $0.0008 respectively, so the post’s 18% reduction does not directly describe those medians. These findings apply to this harness and test, without independent reproduction.
+
 Updates and deduplicated supporting sources:
 
-None.
+- [Supporting post by @0xidanlevin](https://x.com/0xidanlevin/status/2100937437325205568): published 2026-09-18T13:18:13+00:00; 1,407 likes retrieved 2026-09-18T22:50:12+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100937437325205568). [Supplementary media 1](https://pbs.twimg.com/media/HSf2OSVWQAAYUAE.jpg?name=orig)
 
 Public project / demo links (a link does not mean availability has been tested here):
 
 - [Project / demo link 1](https://github.com/browser-use/jev-ultrafast)
 - [Project / demo link 2](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md)
+- [Project / demo link 3](https://webmcp.com/benchmark)
+- [Project / demo link 4](https://github.com/nekuda-ai/WindTunnel)
 
 ## Mechanism and comparison
 
@@ -83,3 +87,4 @@ See the [category analysis](../../breakdowns/2026-09-18-browser.en.md) for compa
 | Date | Change |
 | --- | --- |
 | 2026-09-18 | First collection; checked the main post, metric snapshot and media; added to category comparisons |
+| 2026-09-18T23:03:22+00:00 | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |

@@ -2,6 +2,45 @@
 
 **简体中文** | [English](CHANGELOG.en.md)
 
+## 2026-09-19 · 第六轮增量
+
+核对截止：**2026-09-19 07:03:22 北京时间（2026-09-18 23:03:22 UTC）**。由 84 个增加到 **106 个案例，11 类**：新增 22 个独立案例，补充 1 个已有条目。新案例主帖取数时均 ≥ 200 赞且有对应媒体；精确取数时间见详情，不把浏览时上涨的点赞回写为旧快照。
+
+| 新收录 | 主帖点赞快照 |
+| --- | ---: |
+| [Compact Adviser · 判断何时压缩上下文](cases/2026-09-19-compact-adviser/README.md) | [242](https://x.com/kunchenguid/status/2101032677940117875) |
+| [json-render · 用组件选择拼出界面](cases/2026-09-19-json-render-ui/README.md) | [3,341](https://x.com/ctatedev/status/2101022101750571357) |
+| [SEO 内链推荐 · 从已有文字找链接](cases/2026-09-19-seo-internal-links/README.md) | [721](https://x.com/borjafat/status/2101018783976722479) |
+| [Box · 事故报告分级归档](cases/2026-09-19-box-incident-triage/README.md) | [317](https://x.com/levie/status/2101007708044574906) |
+| [NoSugarForKids · 零食多维评分](cases/2026-09-19-snack-scoring/README.md) | [312](https://x.com/nikunj/status/2101006585481073093) |
+| [Tax Doc Classifier · 税务 PDF 页面识别](cases/2026-09-19-tax-doc-classifier/README.md) | [1,506](https://x.com/nedwize/status/2100973868324417852) |
+| [ego lite · Amazon 商品筛选](cases/2026-09-19-ego-product-decisions/README.md) | [366](https://x.com/ego_agent/status/2100970015977804008) |
+| [CNVS · 无唤醒词语音指令门控](cases/2026-09-19-cnvs-voice-gate/README.md) | [1,053](https://x.com/_MaxBlade/status/2100967959879471519) |
+| [Tester Army · Web / 手机端测试演示](cases/2026-09-19-tester-army-e2e/README.md) | [505](https://x.com/o_kwasniewski/status/2100966838905585687) |
+| [Codex Model Router · 每轮选择模型](cases/2026-09-19-codex-model-router/README.md) | [437](https://x.com/antonioleivag/status/2100962426439000484) |
+| [Gmail · 按意图找邮件](cases/2026-09-19-gmail-intent-search/README.md) | [574](https://x.com/dabit3/status/2100960281769738433) |
+| [AI Hedge Fund · 策略回测](cases/2026-09-19-ai-hedge-fund-backtest/README.md) | [613](https://x.com/virattt/status/2100959848623899005) |
+| [OCR + Jev · 图片归类](cases/2026-09-19-ocr-image-organizer/README.md) | [246](https://x.com/fayazara/status/2100953838891192789) |
+| [Sprite Fusion · 实时生成跑酷地形](cases/2026-09-19-game-level-generation/README.md) | [1,289](https://x.com/HugoDuprez/status/2100953089003921543) |
+| [MaxFusion · 广告素材分类](cases/2026-09-19-maxfusion-ad-classifier/README.md) | [320](https://x.com/OriSilver/status/2100941251478458871) |
+| [丹麦股票 · 全年历史策略实验](cases/2026-09-19-danish-stock-backtest/README.md) | [269](https://x.com/tommy_jepsen/status/2100939646653903063) |
+| [Flappy Bird · 飞行避障](cases/2026-09-19-flappy-bird/README.md) | [254](https://x.com/thymikee/status/2100937960115838984) |
+| [Script.it · 先筛问题再写评审](cases/2026-09-19-script-code-review/README.md) | [202](https://x.com/liorshkiller/status/2100936106615140757) |
+| [Nifty 日内交易 · 含止损的账户演示](cases/2026-09-19-nifty-trading/README.md) | [673](https://x.com/IndraVahan/status/2100929105382564113) |
+| [macOS Downloads · 按规则归档文件](cases/2026-09-19-downloads-organizer/README.md) | [889](https://x.com/marcelpociot/status/2100906882365788167) |
+| [词语与颜色 · 16 色概率可视化](cases/2026-09-19-color-judgments/README.md) | [3,441](https://x.com/mattdesl/status/2100899669802963060) |
+| [X 回复清理 · 标记低价值评论](cases/2026-09-19-x-reply-cleanup/README.md) | [223](https://x.com/iannuttall/status/2100888635943883244) |
+
+**合并与去重：** [WebMCP 测试帖](https://x.com/0xidanlevin/status/2100937437325205568)明确基于修改版 Ultrafast，合并到 [Browser Use](cases/2026-09-18-browser-use/README.md)，不新建应用。保留旧主帖和首次收录时间，仅更新此案例内容时间。json-render 引用转载不重复；NoSugarForKids 的旧上线帖与评分演示同属一项目；颜色实验、评论过滤和地形生成的作者补充归入各自主帖。独立作者的同类实现保留并比较，未按模型组件、窗口或平台拆分计数。
+
+**证据边界：** WebMCP 的 49/49 任务覆盖对应 141/147 次尝试成功，不写成每次都成功；税表分类保留 38 次低置信度严格模式失败；SEO 对照的整站费用为外推；Script.it 同时保留 75% bug 召回率；交易条目区分历史实验、作者声称的实盘以及触发止损的结果。所有案例仍未复现。
+
+**暂缓与排除：** Flowsery 回放分析、Backdoor 求职匹配、Gojiberry 线索评分、幽默判断、表单自动填充、DeepAPI 滥用判断待补明确任务或组件分工，见 [待整理区](inbox/README.md)。Skittles 分拣的转帖虽然超过 200 赞，但原应用帖快照只有 **103 赞**，不借用转帖热度入库。其他模型（含 CUA-S1、Kev、SimpleJev、djev、Bespoke Nimble、GLiFormer）、纯教程、观点及合集不算 Jev 新应用。
+
+**范围与方法：** 使用 X 最新搜索 `Jev min_faves:200 since:2026-09-18`，从最新结果回看到上一轮附近的 Ian 回复过滤、Gojiberry 和 Runlayer 时段；核对原帖正文、作者回复、原始媒体元数据，以及关键界面截图。补读 Compact Adviser、json-render、税表分类器、Codex Router 的固定版本文档、Sprite Fusion 实现文章和 WebMCP 基准。按主帖 ID、作者、用途、仓库、引用链和媒体去重；不宣称全量覆盖 X。
+
+**维护改进：** 新条目路径使用北京时间首次收录日，旧路径保持稳定；首页显示本轮日期，旧案例来源复查日期不随全库生成刷新。中英文时间、列表、预览和同类对比同步；以跨午夜生成检查验证。原始帖子与文档只存忽略目录，未下载媒体、运行外部应用、连接账户或调用付费模型接口。
+
 ## 2026-09-18 · 第五轮增量
 
 核对截止：**2026-09-18 19:42:10 北京时间（11:42:10 UTC）**。由 79 个增加到 **84 个案例，11 类**，新增 5 个独立实现。旧案例未重复建立，79 条原有内容、时间与主帖点赞快照保持不变。

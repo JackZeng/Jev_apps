@@ -9,13 +9,13 @@ from pathlib import Path
 import sys
 
 from catalog_en import generate_en, validate_translations
-from catalog_dates import readme_dates, format_readme_time
+from catalog_dates import readme_dates, format_readme_time, case_day, case_review_day, latest_review_day
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data/catalog.json'
 
 def case_dir(c, date):
-    return f'cases/{date}-{c["slug"]}'
+    return f'cases/{case_day(c)}-{c["slug"]}'
 
 def thumb(c, width=160):
     p = c['post']
@@ -81,7 +81,7 @@ def generate(d):
 
 以查航班为例：程序先读网页、列出可操作的按钮，Jev 选下一步，浏览器工具负责点击，然后再看页面有什么变化。读取页面、需要时生成输入文字、检查结果是否正确，都由整套程序配合完成。
 
-更新日期：**{date}（北京时间）**。这是本次检索覆盖到的案例集，不承诺穷尽 X；目前全部**未复现**。正文中的性能、成本与效果均标明为作者报告，优劣是根据公开设计作出的分析，不是本仓库跑分。
+更新日期：**{latest_review_day(d)}（北京时间）**。这是本次检索覆盖到的案例集，不承诺穷尽 X；目前全部**未复现**。正文中的性能、成本与效果均标明为作者报告，优劣是根据公开设计作出的分析，不是本仓库跑分。
 
 Jev 接收状态与类型化问题，输出可供代码使用的选择、评分或是非判断。它在下面许多应用中充当决策组件，周围仍需要观测、执行器，有时也需要 LLM。[官方介绍](https://docs.typesafe.ai/introduction) · [基本原理与阅读方法](breakdowns/2026-09-18-how-jev-apps-work.md)
 
@@ -109,12 +109,12 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
         readme.append(f'\n<a id="{group_id}"></a>\n\n### {g["title"]}（{len(group_cases)}）\n\n{g["comparison"]}\n\n[逐项优劣与原理对比]({bp})\n\n| 应用与简介 | 主帖点赞 | 图片 / 视频 |\n| --- | ---: | --- |\n')
         index.append(f'\n## {g["title"]}\n\n| 应用 | 简介 | 主帖点赞 |\n| --- | --- | ---: |\n')
         breakdowns.append(f'- [{g["title"]}]({date}-{group_id}.md)：{len(group_cases)} 个案例。\n')
-        b = [f'# {g["title"]}：原理与对比\n\n收录 / 更新 / 来源复查：{date}。验证状态：**未复现**。\n\n## 选择建议\n\n{g["comparison"]}\n\n## 同类逐项对比\n\n以下优势和限制是基于作者公开说明的技术分析；不构成同条件实验结论。\n\n| 案例 | 相对优势 / 适用场景 | 限制 / 尚缺证据 |\n| --- | --- | --- |\n']
+        b = [f'# {g["title"]}：原理与对比\n\n首次整理：{date}；各案例来源复查时间见详情。验证状态：**未复现**。\n\n## 选择建议\n\n{g["comparison"]}\n\n## 同类逐项对比\n\n以下优势和限制是基于作者公开说明的技术分析；不构成同条件实验结论。\n\n| 案例 | 相对优势 / 适用场景 | 限制 / 尚缺证据 |\n| --- | --- | --- |\n']
         for c in group_cases:
             path = case_dir(c, date)
             p = c['post']
             readme.append(f'| [**{c["title"]}**]({path}/README.md)<br>{c["summary"]}<br>**原理：** {c["plain_explanation"]}<br>{readme_dates(c)} | [{p["likes"]:,}]({p["url"]}) | {thumb(c)} |\n')
-            index.append(f'| [{c["title"]}]({date}-{c["slug"]}/README.md) | {c["summary"]}<br>{readme_dates(c)} | [{p["likes"]:,}]({p["url"]}) |\n')
+            index.append(f'| [{c["title"]}]({case_day(c)}-{c["slug"]}/README.md) | {c["summary"]}<br>{readme_dates(c)} | [{p["likes"]:,}]({p["url"]}) |\n')
             b.append(f'| [{c["title"]}](../{path}/README.md) | {c["advantage"]} | {c["limitation"]} |\n')
             supplement = '\n'.join(f'- [@{s["author"]} 的补充帖]({s["url"]})：发布于 {s["published_at"]}；{s["retrieved_at"]} 取数时 {s["likes"]:,} 赞，仅作补充、不计入门槛。[取数来源]({s["metrics_source"]})。' + ''.join(f' [补充媒体 {i}]({m["url"]})' for i, m in enumerate(s.get('media', []), 1)) for s in c['supplementary_posts']) or '无。'
             update_entry = ''.join(f"| {u['reviewed_at']} | 合并补充来源，完善原理、证据或教程说明；[去重记录](../../CHANGELOG.md) |\n" for u in d.get('updates', [update] if update else []) if c['slug'] in u['updated_cases'])
@@ -147,7 +147,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 | 主帖点赞快照 | **{p['likes']:,}**（门槛 ≥ {d['minimum_likes']}） |
 | 点赞与媒体取数时间（UTC） | {p['retrieved_at']} |
 | 元数据核验渠道 | [FxTwitter 公共接口]({p['metrics_source']})；可能有缓存 |
-| 最后来源复查 | {date}，核对公开说明与元数据；未运行应用 |
+| 最后来源复查 | {case_review_day(c, d)}，核对公开说明与元数据；未运行应用 |
 | Jev 版本 | {c.get('jev_version', '原帖未明确固定版本，未知')} |
 | 验证状态 / 可用性 | {c['verification']} / {c['availability']} |
 
@@ -177,7 +177,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 
 | 主张 | 依据类型 | 来源 | 适用范围 |
 | --- | --- | --- | --- |
-| {c['reported_result']} | 作者陈述 | [主帖正文及附带媒体]({p['url']}) | 本仓库未复测，演示不证明普遍性能 |
+| {c['reported_result']} | 作者陈述 | [{"结果文档" if c.get('reported_result_source') else "主帖正文及附带媒体"}]({c.get('reported_result_source', p['url'])}) | 本仓库未复测，演示不证明普遍性能 |
 | 主帖达到收录门槛、附带媒体 | 元数据核对 | [取数接口]({p['metrics_source']}) | 仅上述时间快照，非实时数值 |
 
 {c.get('source_notes', '')}
@@ -204,7 +204,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 
 | 日期 | 更新内容 |
 | --- | --- |
-| {date} | 首次收录；核对主帖、点赞与媒体，加入同类对比 |
+| {case_day(c)} | 首次收录；核对主帖、点赞与媒体，加入同类对比 |
 {update_entry}'''
         b.append(f'\n## 可观察流程与机制\n\n{g["flow"]}\n\n{g["analysis"]}\n\n各案例的输入和实现差异见上表链接的来源记录。该流程是应用层归纳，不代表每个项目都采用完全相同的实现，也不是对 Jev 内部训练架构的推断。\n\n## 复现实验建议\n\n{g["evaluation"]}\n\n**尚未执行实验。** 当前没有本仓库产生的耗时、准确率或成本结果。\n\n## 更新记录\n\n- {date}：整理首批案例，合并同项目更新，建立对比。\n\n[返回首页](../README.md#{group_id}) · [拆解索引](README.md)\n')
         files[bp] = ''.join(b)

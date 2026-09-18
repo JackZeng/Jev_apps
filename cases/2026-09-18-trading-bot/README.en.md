@@ -16,7 +16,7 @@ The model chooses an action and code connects to the blockchain order book. Fast
 
 | Field | Value |
 | --- | --- |
-| Category | Trading execution demo |
+| Category | Trading and historical backtests |
 | Platform / author | X / [@jarrodwatts](https://x.com/jarrodwatts) |
 | Main post | [Source post](https://x.com/jarrodwatts/status/2100356151468585346) |
 | Published (UTC) | 2026-09-16T22:48:23+00:00 |
