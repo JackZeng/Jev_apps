@@ -52,6 +52,29 @@ def render_homepage(d, en=None):
                 f'[{"How it works & evidence" if english else "原理与依据"}]({details(c)})\n\n'
                 f'**{"Content updated:" if english else "内容更新："}** {beijing_day(c["readme_updated_at"])}\n')
 
+    def card(c):
+        # GitHub strips custom CSS; a two-cell HTML table preserves the layout.
+        def link(label, url):
+            return f'<a href="{html.escape(url, quote=True)}">{html.escape(label)}</a>'
+
+        p = c['post']
+        m = p['media'][0]
+        image = (f'<a href="{html.escape(p["media_source"], quote=True)}">'
+                 f'<img src="{html.escape(m.get("thumbnail_url") or m["url"], quote=True)}" '
+                 f'width="320" alt="{html.escape(c["title"], quote=True)}"></a>')
+        review = c.get('claim_review')
+        badge = 'Not assessed' if english else '尚未审核'
+        if review:
+            badge = link(LABELS[review['tier']][english],
+                         review['report'].replace('.md', f'{suffix}.md') + '#' + c['slug'])
+        more = link('Details' if english else '详情', details(c))
+        source = link(f'X · {p["likes"]:,} ' + ('likes snapshot' if english else '赞快照'), p['url'])
+        date = ('Content updated: ' if english else '内容更新：') + beijing_day(c['readme_updated_at'])
+        return (f'<td width="50%" valign="top">\n<p>{image}</p>\n'
+                f'<p><strong>{link(c["title"], details(c))}</strong><br>'
+                f'{html.escape(c["summary"])}</p>\n'
+                f'<p>{badge} · {more}<br>{source}<br><sub>{date}</sub></p>\n</td>\n')
+
     if english:
         out = [f'''# Jev: small decisions, surprising applications
 
@@ -97,9 +120,14 @@ Start with examples that have clear uses and inspectable mechanisms. Click an im
         out += [f'<a id="{gid}"></a>\n\n<details>\n<summary><strong>{html.escape(text["title"])}</strong> · {len(cs)}</summary>\n\n',
                 text['intro'] + '\n\n',
                 f'[{"Compare approaches" if english else "同类优劣对比"}](breakdowns/{d["collected_on"]}-{gid}{suffix}.md)\n']
-        for c in cs:
-            out += [f'\n### [{c["title"]}]({details(c)})\n\n', c['summary'] + '\n\n',
-                    preview(c, 320) + '\n\n', footer(c)]
+        out.append('\n<table>\n')
+        for start in range(0, len(cs), 2):
+            pair = cs[start:start + 2]
+            out.append('<tr>\n' + ''.join(card(c) for c in pair))
+            if len(pair) == 1:
+                out.append('<td width="50%"></td>\n')
+            out.append('</tr>\n')
+        out.append('</table>\n')
         out.append('\n</details>\n\n')
     if english:
         out.append('''## About this collection

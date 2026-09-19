@@ -2,6 +2,10 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-19 · Two-column application cards
+
+Changed the 11 collapsible categories to two-column cards. Each card places its thumbnail above the application name and purpose, followed by evidence, details, source and content-update date. Odd categories leave the final cell empty; images retain their aspect ratios. Both languages retain all 112 cases and existing historical data.
+
 ## 2026-09-19 · Field-guide homepage
 
 Redesigned the homepage as a field guide: three introductory sentences, six highlights, 11 collapsible categories and a short collection policy. All 112 cases retain summaries, media, evidence links and content-update dates; exact timestamps, technical details and A/B/C reports remain in the records. Added bilingual homepage copy and a shared renderer. This presentation change adds no cases and changes no recorded assessments or content timestamps.
