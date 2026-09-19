@@ -3953,10 +3953,10 @@
       "title": "Sac · Codex + Jev 操作 Mac 日历",
       "summary": "给 Codex 的电脑操作加上 Jev 判断层，用创建日历事件做并排对照。",
       "plain_explanation": "像让助手负责看界面和动手，再请反应更快的搭档判断下一步。Jev 在电脑操作流程中负责判断；这不等于它单独看懂屏幕并完成全部动作。",
-      "mechanism": "作者称在 Codex computer use 基础上加入 Jev 判断，视频并排展示普通 Computer Use 与作者称为 Jev Use 的版本创建 Mac 日历事件。具体观测接口、状态编码、调度与失败恢复尚未披露。",
+      "mechanism": "新增开源版本从无障碍树提取文字候选，Jev 判断元素、动作、完成度及风险，Codex Computer Use 负责观测和执行。代码检查候选有效性、置信度与策略门槛；传文字而非截图，不等于全程离线。",
       "advantage": "同一个明确任务的并排演示便于观察操作停顿，补充了现有浏览器和 OCR 案例之外的桌面流程探索。",
-      "limitation": "一次演示不足以确定成功率、平均加速或总成本。主帖称 token 消耗接近；被引用旧帖中的泛化“10 倍、省大量 token”不视为本次实验结果。没有已核实的源码发布入口。",
-      "reported_result": "作者提供约 51 秒视频，画面标注全程 1 倍速，称 Jev 版本更流畅且 token 消耗接近；作者回复说明它用于现有 computer use 的判断层。",
+      "limitation": "一次日历演示不足以确定平均加速、成功率或总成本。开源代码增加了可检查性，但最新“Codex 里最快”的说法缺统一任务基准；本库未运行该工具。",
+      "reported_result": "作者提供约 51 秒视频，画面标注全程 1 倍速，称 Jev 版本更流畅且 token 消耗接近；作者回复说明它用于现有 computer use 的判断层。 新补充帖公开 Jev-cu，作者称判断和调用工具频繁的任务提速更明显；未提供新的可复核计时对照。",
       "media_note": "使用本帖自己的日历对照视频，不用引用旧帖的通用产品图；“1 倍速”是画面标注，未独立验证计时。",
       "post": {
         "id": "2100864907046768890",
@@ -4000,20 +4000,36 @@
           "metrics_source": "https://api.fxtwitter.com/status/2100899012727673107",
           "media_source": "https://x.com/Saccc_c/status/2100899012727673107",
           "media": []
+        },
+        {
+          "id": "2101152089598791845",
+          "url": "https://x.com/Saccc_c/status/2101152089598791845",
+          "author": "Saccc_c",
+          "published_at": "2026-09-19T03:31:10+00:00",
+          "likes": 402,
+          "retrieved_at": "2026-09-19T09:41:40+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2101152089598791845",
+          "media_source": "https://x.com/Saccc_c/status/2101152089598791845",
+          "media": []
         }
       ],
-      "links": [],
+      "links": [
+        "https://github.com/Sac-Y/Jev-cu",
+        "https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/README.md",
+        "https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/scripts/loop.mjs",
+        "https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/scripts/policy.mjs"
+      ],
       "verification": "未复现",
       "availability": "未知（未运行验证）",
       "readme_added_at": "2026-09-18T19:44:51+08:00",
-      "readme_updated_at": "2026-09-19T16:55:36+08:00",
+      "readme_updated_at": "2026-09-19T17:48:49+08:00",
       "source_notes": "**名称去重：** 本帖自称 Jev Use，但作者和日历视频不同于 [Cua · jev-use](../2026-09-18-cua-jev-use/README.md)；按作者自己的实验单列，不能因名称相似就认定使用 Cua。引用的入门汇总帖也不另建案例。",
       "claim_review": {
-        "tier": "B",
-        "reviewed_at": "2026-09-19T11:30:00+08:00",
-        "report": "references/2026-09-19-claims-audit.md"
+        "tier": "C",
+        "reviewed_at": "2026-09-19T17:48:49+08:00",
+        "report": "references/2026-09-19-increment7-audit.md"
       },
-      "review_summary": "只是一轮，观测编码、计时起点、模型配置和重复次数未知；不能把被引用的通用十倍说法当本例实测。"
+      "review_summary": "已能检查文字候选与执行分工，但新帖“Codex 里最快”的比较没有统一基准；C 针对此最强比较，不否定原型存在。"
     },
     {
       "slug": "shell-history-suggestions",
@@ -5228,13 +5244,357 @@
         "report": "references/2026-09-19-claims-audit.md"
       },
       "review_summary": "实际处理是隐藏还是屏蔽未核清；更正进入下一次上下文不等于训练模型，也没有准确率证明。"
+    },
+    {
+      "slug": "claude-code-jev-router",
+      "group": "routing",
+      "title": "Claude Code Mod · 模型与推理力度路由",
+      "summary": "按任务选择子代理模型，并调整主会话的推理力度。",
+      "plain_explanation": "像工单分诊：Jev 判断工作难度，插件把任务交给对应助手；真正写代码的仍是被选中的模型。",
+      "mechanism": "固定版本源码在提交提示时分类、在请求和子代理创建时应用结果。默认开启子代理模型和主会话推理力度路由，主模型切换默认关闭；与原帖“只在会话开始选主模型”的描述不同，以该版本代码为准。",
+      "advantage": "相对 Codex Model Router，本例直接接入 Claude Code 的 hooks，并区分主会话与子代理，方便检查缓存和回退策略。",
+      "limitation": "尚无完整任务质量、缓存费用和节省对照；无 Jev 密钥时会回退到宿主分类器，此路径不能算 Jev 效果。",
+      "reported_result": "原帖附约 25 秒视频；公开代码支持 TypeSafe 或 Vercel Gateway，展示的是路由机制，不证明更便宜且同等质量。",
+      "media_note": "与已有 Codex 路由用途相近，但仓库、宿主、作者及视频不同，按独立实现归入同类对比。",
+      "review_summary": "固定源码可核对 hooks、默认开关和回退；主帖与当前版本的主模型路由描述有差异，费用收益仍未验证。",
+      "post": {
+        "id": "2101176629745561686",
+        "url": "https://x.com/dani_avila7/status/2101176629745561686",
+        "author": "dani_avila7",
+        "published_at": "2026-09-19T05:08:41+00:00",
+        "likes": 417,
+        "retrieved_at": "2026-09-19T09:41:40+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101176629745561686",
+        "media_source": "https://x.com/dani_avila7/status/2101176629745561686",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2101176234411425792/vid/avc1/2278x1632/cdyZyiAMhglYXq-s.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2101176234411425792/img/UgEWGdQPunczzXcv.jpg",
+            "duration": 25.097,
+            "width": 2278,
+            "height": 1632
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [
+        "https://github.com/davila7/claude-code-templates/blob/61bfcd1586bf1076f6d3cfa0436317c912811e6c/cli-tool/components/mods/productivity/jev-model-router/README.md",
+        "https://github.com/davila7/claude-code-templates/blob/61bfcd1586bf1076f6d3cfa0436317c912811e6c/cli-tool/components/mods/productivity/jev-model-router/hooks/jev-model-router.ts"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T17:48:49+08:00",
+      "readme_updated_at": "2026-09-19T17:48:49+08:00",
+      "claim_review": {
+        "tier": "A",
+        "reviewed_at": "2026-09-19T17:48:49+08:00",
+        "report": "references/2026-09-19-increment7-audit.md"
+      }
+    },
+    {
+      "slug": "synthetic-interview-classifier",
+      "group": "data",
+      "title": "虚构面试记录 · 批量分类与评分",
+      "summary": "将 100 份虚构面试记录分为通过、保留、暂不考虑，并给出分项评分。",
+      "plain_explanation": "像用一张检查表读模拟面试笔记：按技能、沟通和意愿分别判断，再由程序整理成表。得分不等于真实工作能力。",
+      "mechanism": "作者描述了三类结果、三个评分维度及重大疑虑标记；完整提示、评分标准和参考答案未公开核清。",
+      "advantage": "与通用邮件分类相比，将单标签扩展为多维评估；虚构数据便于先观察处理流程。",
+      "limitation": "没有真实招聘有效性、公平性或标注一致性证据；不能据此把自动分类当成人员录用依据。",
+      "reported_result": "作者报告 100 份虚构记录用时 12.8 秒、总费用 0.005 美元；这是一批作者自测，不是准确率评测。",
+      "media_note": "主帖约 24 秒视频；部门匹配等是作者提出的后续用途，不作为已实现功能。",
+      "review_summary": "明确使用虚构记录，支持批量分类演示；缺独立标签与误判统计，不能推断真实招聘效果。",
+      "post": {
+        "id": "2101206603240477030",
+        "url": "https://x.com/masa_okamura108/status/2101206603240477030",
+        "author": "masa_okamura108",
+        "published_at": "2026-09-19T07:07:47+00:00",
+        "likes": 278,
+        "retrieved_at": "2026-09-19T09:41:40+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101206603240477030",
+        "media_source": "https://x.com/masa_okamura108/status/2101206603240477030",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2101206578284380160/vid/avc1/1186x720/OQYQuUv0g2n1CMG3.mp4?tag=16",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2101206578284380160/img/WUIj3LeQ4Nrch8yD.jpg",
+            "duration": 23.938,
+            "width": 1310,
+            "height": 794
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T17:48:49+08:00",
+      "readme_updated_at": "2026-09-19T17:48:49+08:00",
+      "claim_review": {
+        "tier": "B",
+        "reviewed_at": "2026-09-19T17:48:49+08:00",
+        "report": "references/2026-09-19-increment7-audit.md"
+      }
+    },
+    {
+      "slug": "traffic-light-city",
+      "group": "simulation",
+      "title": "Jev City · 九路口交通灯模拟",
+      "summary": "在虚拟路网中选择交通灯方向，观察车辆排队与等待时间。",
+      "plain_explanation": "像沙盘里的交通调度员：程序提供路口状态，Jev 选放行方向，模拟器让车辆继续行驶。",
+      "mechanism": "画面展示九个路口、南北/东西方向决策及置信度，另有开启/关闭控制和等待曲线；完整状态编码和关闭后的对照策略未核清。",
+      "advantage": "相比驾驶模拟中控制一辆车，本例协调路口放行，便于探索多处决策对拥堵的影响。",
+      "limitation": "缺少同等车流、随机种子、多次运行与固定/自适应规则基线；虚拟路网结果不能直接外推真实城市。",
+      "reported_result": "作者称关闭 Jev 后平均等待增加超过 600%；约 73 秒视频和在线入口不足以复核该倍率。",
+      "media_note": "本帖自己的城市模拟视频与作者入口回复合并；不同于同作者的 X 算法模拟。",
+      "review_summary": "“等待增加超过 600%”缺同条件控制器基线与重复统计；可确认模拟界面，不能认定真实交通改善幅度。",
+      "post": {
+        "id": "2101161666410893328",
+        "url": "https://x.com/leojrr/status/2101161666410893328",
+        "author": "leojrr",
+        "published_at": "2026-09-19T04:09:13+00:00",
+        "likes": 1081,
+        "retrieved_at": "2026-09-19T09:41:40+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101161666410893328",
+        "media_source": "https://x.com/leojrr/status/2101161666410893328",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2101161072447180800/vid/avc1/2154x1864/la5a3xiJ95P9d7RI.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2101161072447180800/img/sRIOALT11TUpdAdU.jpg",
+            "duration": 73.25,
+            "width": 2154,
+            "height": 1864
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2101165998086783170",
+          "url": "https://x.com/leojrr/status/2101165998086783170",
+          "author": "leojrr",
+          "published_at": "2026-09-19T04:26:26+00:00",
+          "likes": 5,
+          "retrieved_at": "2026-09-19T09:44:59+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2101165998086783170",
+          "media_source": "https://x.com/leojrr/status/2101165998086783170",
+          "media": []
+        }
+      ],
+      "links": [
+        "https://01a0b7a9-5619-7ec6-a0d8-fb357ed42aa3.skydive.app/"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T17:48:49+08:00",
+      "readme_updated_at": "2026-09-19T17:48:49+08:00",
+      "claim_review": {
+        "tier": "C",
+        "reviewed_at": "2026-09-19T17:48:49+08:00",
+        "report": "references/2026-09-19-increment7-audit.md"
+      }
+    },
+    {
+      "slug": "vital-signs-simulator",
+      "group": "simulation",
+      "title": "生命体征模拟 · 状态变化判断",
+      "summary": "用正常状态和心率偏慢的模拟场景，对照规则报警与 Jev 判断。",
+      "plain_explanation": "像给监测器做模拟练习：输入虚构场景的指标，比较两种判断。模型的自信分数不是经过临床验证的发病概率。",
+      "mechanism": "作者展示两个模拟视频，包含体动干扰与心率偏慢场景；完整输入、预警时间窗、参考标签和阈值未披露。",
+      "advantage": "相对交通与机器人仿真，本例探讨状态判别和误报；场景设置可帮助提出后续评测问题。",
+      "limitation": "未见临床数据、独立验证或漏报统计；演示不能支持部署到实际患者监测。作者将校准解释为重复回答稳定，也未建立风险概率的有效性。",
+      "reported_result": "作者称模拟中比机械报警表现好，并在回复中称可用于实际工作；现有证据仅为两个约 44/46 秒的模拟片段。",
+      "media_note": "两个视频同属一个模拟器；作者关于实用性和校准的回复作为审核依据，不拆分案例。",
+      "review_summary": "两段模拟不能支持“可用于实际工作”；回答一致性、置信度和临床事件概率并非同一验证目标。",
+      "post": {
+        "id": "2101130711067431018",
+        "url": "https://x.com/roiyaruRIZ/status/2101130711067431018",
+        "author": "roiyaruRIZ",
+        "published_at": "2026-09-19T02:06:13+00:00",
+        "likes": 216,
+        "retrieved_at": "2026-09-19T09:41:40+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101130711067431018",
+        "media_source": "https://x.com/roiyaruRIZ/status/2101130711067431018",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2101125501234630656/vid/avc1/1920x1080/xuiPCOamd2CeqyKA.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2101125501234630656/img/pxMddfrpMLTvBhaR.jpg",
+            "duration": 44.028,
+            "width": 1920,
+            "height": 1080
+          },
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2101125604217442304/vid/avc1/1920x1080/J2CRrrXoNgVF0g-P.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2101125604217442304/img/ET0-Zc0D5JUmFwBK.jpg",
+            "duration": 45.909,
+            "width": 1920,
+            "height": 1080
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2101131147346690267",
+          "url": "https://x.com/roiyaruRIZ/status/2101131147346690267",
+          "author": "roiyaruRIZ",
+          "published_at": "2026-09-19T02:07:57+00:00",
+          "likes": 2,
+          "retrieved_at": "2026-09-19T09:45:18+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2101131147346690267",
+          "media_source": "https://x.com/roiyaruRIZ/status/2101131147346690267",
+          "media": []
+        },
+        {
+          "id": "2101179451291947185",
+          "url": "https://x.com/roiyaruRIZ/status/2101179451291947185",
+          "author": "roiyaruRIZ",
+          "published_at": "2026-09-19T05:19:53+00:00",
+          "likes": 4,
+          "retrieved_at": "2026-09-19T09:45:18+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2101179451291947185",
+          "media_source": "https://x.com/roiyaruRIZ/status/2101179451291947185",
+          "media": []
+        }
+      ],
+      "links": [
+        "https://docs.typesafe.ai/confidence"
+      ],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T17:48:49+08:00",
+      "readme_updated_at": "2026-09-19T17:48:49+08:00",
+      "claim_review": {
+        "tier": "C",
+        "reviewed_at": "2026-09-19T17:48:49+08:00",
+        "report": "references/2026-09-19-increment7-audit.md"
+      }
+    },
+    {
+      "slug": "dual-arm-robot-sim",
+      "group": "simulation",
+      "title": "双臂机器人仿真 · 分层动作决策",
+      "summary": "在模拟环境中按指令操作积木，由 Jev 承担中间层决策。",
+      "plain_explanation": "像让领班决定先搬哪块积木，机械工程师负责算手臂怎样伸过去：决策、关节求解和物理运动分开。",
+      "mechanism": "作者说明三层控制中第二层用 Jev，逆运动学（IK）与物理计算留在代码；媒体展示双臂、积木和指令面板，属于仿真画面。",
+      "advantage": "与无人机仿真同样分离决策和运动计算，但任务变成双臂操作与物体选择，便于研究分层控制。",
+      "limitation": "没有真实机器人运行证据或完整成功率评估；约 500ms 的响应不能当作关节控制周期或全部任务时长。",
+      "reported_result": "作者报告约 500ms 响应、每次试验约 0.5 日元；未独立核实计时与完整费用。",
+      "media_note": "原帖约 87 秒视频及三张说明图一并保留为同一案例；不写成实体双臂部署。",
+      "review_summary": "分层结构和仿真画面支持原型存在；速度、费用与实体迁移效果仍是未验证的作者报告。",
+      "post": {
+        "id": "2101091398447505567",
+        "url": "https://x.com/Raptor_zip/status/2101091398447505567",
+        "author": "Raptor_zip",
+        "published_at": "2026-09-18T23:30:00+00:00",
+        "likes": 229,
+        "retrieved_at": "2026-09-19T09:42:43+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101091398447505567",
+        "media_source": "https://x.com/Raptor_zip/status/2101091398447505567",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2101070240444772353/vid/avc1/1280x610/Euxtwn2wm6-HBwU3.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2101070240444772353/img/Ci_PCLcMigmoAdks.jpg",
+            "duration": 87.09,
+            "width": 1280,
+            "height": 610
+          },
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HSiAQHCawAALmiU.jpg?name=orig",
+            "width": 848,
+            "height": 1199
+          },
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HSiAQHLbIAAHYLu.jpg?name=orig",
+            "width": 848,
+            "height": 1199
+          },
+          {
+            "type": "photo",
+            "url": "https://pbs.twimg.com/media/HSiAQGyagAAlj5V.jpg?name=orig",
+            "width": 848,
+            "height": 1199
+          }
+        ]
+      },
+      "supplementary_posts": [],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T17:48:49+08:00",
+      "readme_updated_at": "2026-09-19T17:48:49+08:00",
+      "claim_review": {
+        "tier": "B",
+        "reviewed_at": "2026-09-19T17:48:49+08:00",
+        "report": "references/2026-09-19-increment7-audit.md"
+      }
+    },
+    {
+      "slug": "ryze-seo-geo",
+      "group": "content",
+      "title": "Ryze AI · SEO/GEO 审核与修复",
+      "summary": "把 Jev 加入网站搜索可见性审核，分析页面及 AI 搜索引用并提出修复。",
+      "plain_explanation": "像编辑检查网站为何不容易被找到：系统收集页面和引用资料，判断问题再安排修改；生成新文章仍需其他生成环节。",
+      "mechanism": "作者列出数据读取、引用来源分析、内容缺口和页面修复等环节，但未公开每一步如何调用 Jev，以及采集、判断、生成和执行的分工。",
+      "advantage": "比单独推荐内链范围更广，涉及诊断和修复流程；也因此更难把整体效果归因于单个模型。",
+      "limitation": "缺完整基线、任务质量、端到端账单和搜索效果数据；分类模型本身不证明网页生成更快或 AI 一定引用页面。",
+      "reported_result": "作者称费用较约 250 美元基线下降 90%，多环节提速 30 倍、页面创建提速 20 倍；六秒界面视频未提供可复核对照。",
+      "media_note": "主帖视频与作者产品链接回复合并；与内链推荐项目同组对比，不按九个流程环节拆成九项。",
+      "review_summary": "90% 降费、20–30 倍提速和获得 AI 引用的主张缺完整对照；短视频不足以支持这些具体效果。",
+      "post": {
+        "id": "2101090579127951694",
+        "url": "https://x.com/irabukht/status/2101090579127951694",
+        "author": "irabukht",
+        "published_at": "2026-09-18T23:26:45+00:00",
+        "likes": 790,
+        "retrieved_at": "2026-09-19T09:42:43+00:00",
+        "metrics_source": "https://api.fxtwitter.com/status/2101090579127951694",
+        "media_source": "https://x.com/irabukht/status/2101090579127951694",
+        "media": [
+          {
+            "type": "video",
+            "url": "https://video.twimg.com/amplify_video/2101089408099516416/vid/avc1/3760x2160/9GZuLjWJuFg5dWis.mp4?tag=29",
+            "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2101089408099516416/img/Smzn-jtE8prvdY90.jpg",
+            "duration": 6.016,
+            "width": 3760,
+            "height": 2160
+          }
+        ]
+      },
+      "supplementary_posts": [
+        {
+          "id": "2101123317327372487",
+          "url": "https://x.com/irabukht/status/2101123317327372487",
+          "author": "irabukht",
+          "published_at": "2026-09-19T01:36:50+00:00",
+          "likes": 18,
+          "retrieved_at": "2026-09-19T09:48:39+00:00",
+          "metrics_source": "https://api.fxtwitter.com/status/2101123317327372487",
+          "media_source": "https://x.com/irabukht/status/2101123317327372487",
+          "media": []
+        }
+      ],
+      "links": [],
+      "verification": "未复现",
+      "availability": "未知（未运行验证）",
+      "readme_added_at": "2026-09-19T17:48:49+08:00",
+      "readme_updated_at": "2026-09-19T17:48:49+08:00",
+      "claim_review": {
+        "tier": "C",
+        "reviewed_at": "2026-09-19T17:48:49+08:00",
+        "report": "references/2026-09-19-increment7-audit.md"
+      }
     }
   ],
   "groups": [
     {
       "id": "browser",
       "title": "浏览器与电脑操作",
-      "comparison": "要研究浏览器循环，优先看 Browser Use 与 Stagehand：前者明确 DOM 动态动作空间及文本回退，后者明确无障碍树和执行器分工。桌面应用可看 CoreML/OCR，Cua 当前公开预览可用于研究受约束的语义动作执行；需要长任务上下文则看 agent-desktop。语音入口和 QA 演示解决的是交互或验收问题，不宜只按速度排名。 Runlayer 强调多会话并行探索，仍缺路径覆盖和缺陷检出证据；Sac 的日历对照聚焦单个桌面任务的流畅度，尚未公开观测接口。两者都不能仅凭操作视频代替验收断言。 Tester Army 侧重 Web / 移动端框架，尚未核实开源发布；ego lite 聚焦商品筛选，混合模型的效果不能归给 Jev 一项。Browser Use 新增 WebMCP 同源对照，需区分任务覆盖和每次尝试成功率。",
+      "comparison": "要研究浏览器循环，优先看 Browser Use 与 Stagehand：前者明确 DOM 动态动作空间及文本回退，后者明确无障碍树和执行器分工。桌面应用可看 CoreML/OCR，Cua 当前公开预览可用于研究受约束的语义动作执行；需要长任务上下文则看 agent-desktop。语音入口和 QA 演示解决的是交互或验收问题，不宜只按速度排名。 Runlayer 强调多会话并行探索，仍缺路径覆盖和缺陷检出证据；Sac 的日历对照聚焦单个桌面任务，后续已公开无障碍树文字候选与执行器分工；“最快”仍缺统一基准。两者都不能仅凭操作视频代替验收断言。 Tester Army 侧重 Web / 移动端框架，尚未核实开源发布；ego lite 聚焦商品筛选，混合模型的效果不能归给 Jev 一项。Browser Use 新增 WebMCP 同源对照，需区分任务覆盖和每次尝试成功率。",
       "flow": "观测页面或桌面 → 构建可执行动作候选 → Jev 选动作 → 执行器操作 → 重新观测。",
       "analysis": "DOM、无障碍树与 OCR 是不同观测接口。CoreML/OCR 方案的“像素留在本地”不等于内容全在本地；Browser Use 的文字输入回退也说明需要生成的环节仍可能交给 LLM。以上架构分别来自作者陈述，其余集成未披露的编码方式保持未知。",
       "evaluation": "用同一组只读任务比较完成率、步骤数、总耗时、全流程费用与失败恢复；覆盖无标签按钮、动态页面、弹窗及桌面窗口变化。不要拿单步推理耗时与整个任务耗时相比。"
@@ -5242,7 +5602,7 @@
     {
       "id": "routing",
       "title": "模型、技能与工具路由",
-      "comparison": "模型选择看 Eve 与 Ephraim 的演示；已有代理编排可以看 Firstmate 和本地分工。技能库检索看 Skillbox；想连接日常工具看 Coding Garden；Eve 工具代理展示局部替换；ai-cli 是统一接入入口。这些方案可以组合，并非互相替代。 Hono JevRouter 选择 HTTP 处理函数，规则用自然语言表达，且按注册顺序取首个达标路由；与选择模型或技能不同，分流错误直接改变响应内容，不能用来代替认证。 Codex Model Router 逐轮选择模型和推理配置，公开回退策略，但用户已观察到简单任务过度选强模型；应对比任务质量、缓存和整体账单，而非只看分类速度。",
+      "comparison": "模型选择看 Eve 与 Ephraim 的演示；已有代理编排可以看 Firstmate 和本地分工。技能库检索看 Skillbox；想连接日常工具看 Coding Garden；Eve 工具代理展示局部替换；ai-cli 是统一接入入口。这些方案可以组合，并非互相替代。 Hono JevRouter 选择 HTTP 处理函数，规则用自然语言表达，且按注册顺序取首个达标路由；与选择模型或技能不同，分流错误直接改变响应内容，不能用来代替认证。 Codex Model Router 逐轮选择模型和推理配置，公开回退策略，但用户已观察到简单任务过度选强模型；应对比任务质量、缓存和整体账单，而非只看分类速度。 Claude Code Mod 默认路由子代理和主会话推理力度，关闭主模型切换；相对 Codex 的逐轮模型路由，更应分别检查缓存、回退与最终任务质量。",
       "flow": "任务文本与候选能力描述 → Jev 选择或评分 → 应用检查候选及约束 → 调用模型、技能或工具。",
       "analysis": "路由的价值在于减少“选谁来做”的开销，任务本身仍由被选中的执行器完成。Firstmate 的 25 个一致决策是小样本对照；Skillbox 缺少相关技能召回数据；确定性调用结构并不保证模型判断正确。",
       "evaluation": "使用相同请求集，记录选择是否合适、任务最终质量、错误回退、配额处理与端到端成本；加入没有合适候选的请求。"
@@ -5258,7 +5618,7 @@
     {
       "id": "data",
       "title": "数据分类与信息整理",
-      "comparison": "整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。 饮食记事本将文字记录变成热量与营养数值，和预测性表格同样重视即时反馈，但数值估算还需要可信数据与误差评估，不能用分类响应速度代替数值准确性。 新案例分别覆盖税表页面识别、Box 事故分流、本地下载归档、OCR 图片整理、Gmail 意图检索和零食评分。税表有明确拒绝门槛和分项测试，其他演示主要只有作者计时；不能跨数据类型给准确率排名。",
+      "comparison": "整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。 饮食记事本将文字记录变成热量与营养数值，和预测性表格同样重视即时反馈，但数值估算还需要可信数据与误差评估，不能用分类响应速度代替数值准确性。 新案例分别覆盖税表页面识别、Box 事故分流、本地下载归档、OCR 图片整理、Gmail 意图检索和零食评分。税表有明确拒绝门槛和分项测试，其他演示主要只有作者计时；不能跨数据类型给准确率排名。 虚构面试记录展示多维分类，适合比较处理流程；不能把每人费用与真实招聘有效性或公平性混为一谈。",
       "flow": "原始文本或表格 → 必要的清洗/摘要 → Jev 分类或判断 → 不确定项回退 → 写回索引或表格。",
       "analysis": "论文案例把摘要与分类分开计费；邮件反欺诈把低置信度项升级到大模型。数据预处理和回退费用都属于完整系统成本。银行收款方的候选生成方法未披露，不能直接推断 Jev 在自由生成商户名。",
       "evaluation": "固定标注数据和切分方式，报告每类精确率/召回率、批量吞吐、单条延迟、重试和总成本；欺诈样本还需覆盖真实基率、误报和漏报。"
@@ -5266,7 +5626,7 @@
     {
       "id": "content",
       "title": "内容与广告分析",
-      "comparison": "实时分析器适合写作反馈；收藏分位实验把预测目标定义得更具体；历史帖子分析适合描述性复盘；广告拆解服务素材整理。传播分类器与 X 算法模拟器的泛化证据较少。JevMeter 是按规则分析言论的仪表，不能当成已验证的事实核查器。 MaxFusion 与 StealAds 都做广告标签，批次和维度不同；SEO 内链推荐则选择相关文章与现成锚文本。广告标签、链接相关性和最终业务收益需要分别验证。",
+      "comparison": "实时分析器适合写作反馈；收藏分位实验把预测目标定义得更具体；历史帖子分析适合描述性复盘；广告拆解服务素材整理。传播分类器与 X 算法模拟器的泛化证据较少。JevMeter 是按规则分析言论的仪表，不能当成已验证的事实核查器。 MaxFusion 与 StealAds 都做广告标签，批次和维度不同；SEO 内链推荐则选择相关文章与现成锚文本。广告标签、链接相关性和最终业务收益需要分别验证。 Ryze 涵盖 SEO/GEO 多环节审核修复，内链项目只选择相关页面和锚文本。前者范围广但归因证据弱；两者的提速数字都缺完整同条件对照，不能直接比较倍率。",
       "flow": "内容文本及分析维度 → Jev 并行标签/评分 → 按显式规则汇总 → 编辑反馈、统计或分析界面。",
       "analysis": "“评分低”与“事实错误”、“历史上高赞”与“未来会传播”是不同问题。历史数据分析只支持相关性；后验标签可能受到信息泄漏影响。作者称使用真实 X 权重，也不能证明重建了实际线上推荐系统。",
       "evaluation": "留出时间段和账号作为测试集，禁止把结果指标泄漏给模型；比较评分稳定性与校准，并记录前处理、采集费用及明确的目标定义。事实核查另需证据检索与来源核验。"
@@ -5298,7 +5658,7 @@
     {
       "id": "simulation",
       "title": "NPC、驾驶与群体模拟",
-      "comparison": "NPC 需求选择适合研究角色行为，500 agents 演示关注并发吞吐。驾驶原型中，不暂停的模拟器更明确暴露延迟约束；无人机原型有代码线索。小镇与虚构 personas 属于叙事和构思工具，不能据合成人物反应预测真实世界。",
+      "comparison": "NPC 需求选择适合研究角色行为，500 agents 演示关注并发吞吐。驾驶原型中，不暂停的模拟器更明确暴露延迟约束；无人机原型有代码线索。小镇与虚构 personas 属于叙事和构思工具，不能据合成人物反应预测真实世界。 新增交通灯、双臂机器人和生命体征模拟：分别选择放行方向、分层动作和状态标签。机器人明确把 IK/物理留给代码；交通的 600% 和监测的实际可用性缺对应验证。应按各自任务评测，不把所有模拟都当成现实部署。",
       "flow": "模拟状态与角色目标 → Jev 决策 → 仿真执行 → 更新状态；叙事场景可由 LLM 提供候选反应。",
       "analysis": "驾驶视频中的“FSD”是原作者命名，不是对 Tesla 产品或实车能力的复现认定。群体演示的总 API 吞吐必须与单角色更新频率分开。虚构用户的采用意向不能代替实际访谈或实验。 无人机仓库明确了 MuJoCo 仿真与高频控制/低频模型决策的分层，并主动披露了单次成功对照的限制。",
       "evaluation": "公开环境、状态更新频率、暂停策略、网络抖动及失败定义；长期统计碰撞、任务成功和单角色行为一致性。合成用户实验应再与真实调查结果对照。"
@@ -5321,33 +5681,17 @@
     }
   ],
   "latest_update": {
-    "reviewed_at": "2026-09-18T23:03:22+00:00",
+    "reviewed_at": "2026-09-19T09:48:49+00:00",
     "new_cases": [
-      "compact-adviser",
-      "json-render-ui",
-      "seo-internal-links",
-      "box-incident-triage",
-      "snack-scoring",
-      "tax-doc-classifier",
-      "ego-product-decisions",
-      "cnvs-voice-gate",
-      "tester-army-e2e",
-      "codex-model-router",
-      "gmail-intent-search",
-      "ai-hedge-fund-backtest",
-      "ocr-image-organizer",
-      "game-level-generation",
-      "maxfusion-ad-classifier",
-      "danish-stock-backtest",
-      "flappy-bird",
-      "script-code-review",
-      "nifty-trading",
-      "downloads-organizer",
-      "color-judgments",
-      "x-reply-cleanup"
+      "claude-code-jev-router",
+      "synthetic-interview-classifier",
+      "traffic-light-city",
+      "vital-signs-simulator",
+      "dual-arm-robot-sim",
+      "ryze-seo-geo"
     ],
     "updated_cases": [
-      "browser-use"
+      "sac-calendar-computer-use"
     ]
   },
   "updates": [
@@ -5427,6 +5771,20 @@
       ],
       "updated_cases": [
         "browser-use"
+      ]
+    },
+    {
+      "reviewed_at": "2026-09-19T09:48:49+00:00",
+      "new_cases": [
+        "claude-code-jev-router",
+        "synthetic-interview-classifier",
+        "traffic-light-city",
+        "vital-signs-simulator",
+        "dual-arm-robot-sim",
+        "ryze-seo-geo"
+      ],
+      "updated_cases": [
+        "sac-calendar-computer-use"
       ]
     }
   ]

@@ -2,6 +2,21 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-19 · Increment 7
+
+Checked through **2026-09-19 17:48:49 Beijing time**. Added **6** cases and merged **1** existing project update: **112 cases, 11 categories**. A 19 / B 79 / C 14. All new main posts have ≥200 likes and media at their recorded snapshots.
+
+| Case | Likes |
+| --- | ---: |
+| [Claude Code Mod: model and effort routing](cases/2026-09-19-claude-code-jev-router/README.en.md) | [417](https://x.com/dani_avila7/status/2101176629745561686) |
+| [Synthetic interview notes: batch classification and scoring](cases/2026-09-19-synthetic-interview-classifier/README.en.md) | [278](https://x.com/masa_okamura108/status/2101206603240477030) |
+| [Jev City: nine-intersection traffic simulation](cases/2026-09-19-traffic-light-city/README.en.md) | [1081](https://x.com/leojrr/status/2101161666410893328) |
+| [Vital-sign simulation: judging state changes](cases/2026-09-19-vital-signs-simulator/README.en.md) | [216](https://x.com/roiyaruRIZ/status/2101130711067431018) |
+| [Dual-arm robot simulation: layered action decisions](cases/2026-09-19-dual-arm-robot-sim/README.en.md) | [229](https://x.com/Raptor_zip/status/2101091398447505567) |
+| [Ryze AI: SEO/GEO audits and fixes](cases/2026-09-19-ryze-seo-geo/README.en.md) | [790](https://x.com/irabukht/status/2101090579127951694) |
+
+Sac’s Jev-cu release is merged into its Calendar case. Original timestamps and evidence snapshots remain intact; only the six new cases and Sac update receive new content-update times. Both languages include mechanisms, comparisons, media and evidence labels. See [sources and assessments](references/2026-09-19-increment7-audit.en.md)。
+
 ## 2026-09-19 · Simpler application timestamps
 
 Application introductions now display only **Content updated**, consistently across both homepages, indexes and detail pages. First-added and per-case assessment timestamps no longer appear beside introductions. Historical data and existing content-update values are preserved; this is a presentation-only change.

@@ -910,13 +910,13 @@
       "title": "Sac: Codex + Jev for Mac Calendar",
       "summary": "Add a Jev decision layer to Codex computer use and compare creating a calendar event side by side.",
       "plain_explanation": "Like an assistant observing and operating the interface with a quicker partner choosing the next step. Jev supplies judgments within the workflow; that does not mean it independently sees the screen and performs every action.",
-      "mechanism": "The author describes adding Jev judgments to Codex computer use. A side-by-side video compares ordinary Computer Use with the author’s Jev Use while creating a Mac Calendar event. Observation interfaces, state encoding, scheduling and recovery are undisclosed.",
+      "mechanism": "The newly published version extracts text candidates from the accessibility tree. Jev judges targets, actions, completion and risk; Codex Computer Use observes and executes. Code checks candidate validity, confidence and policy gates. Sending text instead of screenshots does not mean offline processing.",
       "advantage": "A concrete shared task makes pauses easy to observe and adds a desktop-workflow experiment alongside existing browser and OCR examples.",
-      "limitation": "One demo does not establish success rate, average speedup or total cost. This main post reports similar token usage; its quoted earlier post’s broad “10×” and token-saving claims are not results of this comparison. No verified source-code release link was obtained.",
-      "reported_result": "The author shares a roughly 51-second video labeled 1× playback, reports smoother operation with similar token usage, and clarifies in a reply that Jev makes judgments within existing computer use.",
+      "limitation": "One calendar demo does not establish average speedup, success rate or total cost. Source improves inspectability, but the new fastest-in-Codex claim lacks a matched task benchmark. This catalog has not run the tool.",
+      "reported_result": "The author shares a roughly 51-second video labeled 1× playback, reports smoother operation with similar token usage, and clarifies in a reply that Jev makes judgments within existing computer use. The update publishes Jev-cu and claims larger gains for tasks with frequent decisions and tool calls, without a new reproducible timing comparison.",
       "media_note": "Uses this post’s own Calendar comparison video, not the quoted post’s generic product image. The 1× label is shown on screen; timing was not independently verified.",
       "source_notes": "**Name deduplication:** The author calls this Jev Use, but the author and Calendar video differ from [Cua · jev-use](../2026-09-18-cua-jev-use/README.en.md). Cataloged as this author’s experiment; a similar name does not establish Cua usage. The quoted introductory roundup is not a separate case.",
-      "review_summary": "A side-by-side calendar demo supports a narrow anecdote. It does not establish average speedup, equal settings or broad computer-use performance."
+      "review_summary": "Text candidates and execution roles are inspectable, but the new fastest-in-Codex comparison lacks a matched benchmark. C addresses that superlative, not prototype existence."
     },
     "shell-history-suggestions": {
       "title": "Shell history: semantic command suggestions",
@@ -1187,19 +1187,85 @@
       "reported_result": "The author supplies roughly 15 seconds of video and a quick-build claim, without formal filtering evaluation.",
       "media_note": "The main video and correction follow-up form one application.",
       "review_summary": "The demo supports reply flagging and correction, but the precise action is unclear; using feedback on a later call is not evidence of model training or measured accuracy."
+    },
+    "claude-code-jev-router": {
+      "title": "Claude Code Mod: model and effort routing",
+      "summary": "Choose subagent models and adjust reasoning effort in the main conversation.",
+      "plain_explanation": "Like ticket triage: Jev judges task difficulty and the plugin assigns an assistant; the selected model still writes the code.",
+      "mechanism": "Pinned code classifies at prompt submission and applies decisions at model requests and subagent creation. Subagent-model and main-effort routing default on; main-model switching defaults off. This differs from the post’s session-start-only description; the pinned implementation takes precedence.",
+      "advantage": "Unlike the Codex router, this uses Claude Code hooks and separates main-session and subagent decisions, making cache and fallback policies inspectable.",
+      "limitation": "No complete quality, cache-cost or savings comparison. Without a Jev key, the host classifier is used, so that path is not evidence of Jev performance.",
+      "reported_result": "The post includes a roughly 25-second video; source supports TypeSafe or Vercel Gateway. It establishes a routing mechanism, not cheaper equivalent-quality completion.",
+      "media_note": "Same purpose as the Codex router but a distinct repository, host, author and video; grouped as an independent implementation.",
+      "review_summary": "Pinned source exposes hooks, defaults and fallback. Main-model behavior differs from the post’s description; savings remain unverified."
+    },
+    "synthetic-interview-classifier": {
+      "title": "Synthetic interview notes: batch classification and scoring",
+      "summary": "Sort 100 fictional interview records into advance, hold or decline and assign component scores.",
+      "plain_explanation": "Like applying a checklist to fictional interview notes: judge skills, communication and interest, then organize the results. Scores do not establish real job performance.",
+      "mechanism": "The author describes three outcomes, three scoring dimensions and serious-concern flags. Full prompts, rubrics and reference labels were not established.",
+      "advantage": "Extends ordinary single-label text classification to several dimensions; synthetic records make the workflow easier to explore first.",
+      "limitation": "No evidence of real hiring validity, fairness or label agreement; the demo does not justify automated personnel selection.",
+      "reported_result": "The author reports 12.8 seconds and $0.005 for 100 fictional records: one batch test, not an accuracy evaluation.",
+      "media_note": "The main post includes roughly 24 seconds of video. Department matching is a suggested future use, not an established feature.",
+      "review_summary": "Explicitly fictional data supports a batch-classification demo; independent labels and error statistics are missing."
+    },
+    "traffic-light-city": {
+      "title": "Jev City: nine-intersection traffic simulation",
+      "summary": "Choose signal directions in a virtual road network and observe queues and waiting time.",
+      "plain_explanation": "Like a dispatcher in a model city: code supplies junction state, Jev chooses a direction, and the simulator moves vehicles.",
+      "mechanism": "The display shows nine junctions, north/south versus east/west decisions and confidence, an on/off control and wait curves. Full state encoding and the off-mode baseline were not established.",
+      "advantage": "Unlike controlling one simulated car, this coordinates junctions to explore network-level congestion effects.",
+      "limitation": "Matched traffic demand, seeds, repeated trials and fixed/adaptive rule baselines are missing. A virtual network does not establish real-city outcomes.",
+      "reported_result": "The author claims average waiting rises by over 600% when Jev is switched off; a 73-second clip and public entry point do not verify that ratio.",
+      "media_note": "The original simulation video and author’s entry-point reply form one case, distinct from this author’s X algorithm simulation.",
+      "review_summary": "The over-600% claim lacks matched controller baselines and repeated statistics. The simulation interface does not establish real-world traffic gains."
+    },
+    "vital-signs-simulator": {
+      "title": "Vital-sign simulation: judging state changes",
+      "summary": "Compare rule alarms with Jev judgments in normal-state and slow-heart-rate simulations.",
+      "plain_explanation": "Like a practice drill for a monitor: compare judgments on simulated measurements. Model confidence is not a clinically validated event probability.",
+      "mechanism": "Two clips include movement artifacts and a slow-heart-rate scenario. Complete inputs, prediction horizon, reference labels and thresholds are undisclosed.",
+      "advantage": "Unlike traffic or robotics control, this explores state assessment and false alarms; scenarios can inform later evaluation questions.",
+      "limitation": "No clinical dataset, independent validation or missed-event statistics was provided. The author’s repeatability-based explanation of calibration does not establish risk-probability validity.",
+      "reported_result": "The author reports better simulated behavior and says in a reply that it could be used in practice. Evidence is limited to two roughly 44/46-second simulation clips.",
+      "media_note": "Both videos belong to one simulator. Replies about practical use and calibration support the assessment, not separate cases.",
+      "review_summary": "Two simulations do not support readiness for practical use. Repeatability, confidence and clinical event probability are different validation targets."
+    },
+    "dual-arm-robot-sim": {
+      "title": "Dual-arm robot simulation: layered action decisions",
+      "summary": "Manipulate blocks in simulation, with Jev handling the middle decision layer.",
+      "plain_explanation": "Like a supervisor choosing which block to move while an engineer calculates arm motion: decisions, joint solving and physics have separate roles.",
+      "mechanism": "The author assigns layer two of three to Jev, with inverse kinematics and physics in code. Media shows simulated arms, blocks and an instruction panel.",
+      "advantage": "Like drone simulation, this separates decisions from motion computation, but explores object selection and dual-arm manipulation.",
+      "limitation": "No physical-robot deployment or complete success-rate evaluation. A roughly 500ms response is not a joint-control period or full task duration.",
+      "reported_result": "The author reports roughly 500ms response and ¥0.5 per trial; timing and full cost were not independently checked.",
+      "media_note": "An approximately 87-second video and three explanatory images form one case; physical deployment is not claimed by this catalog.",
+      "review_summary": "Layer descriptions and simulation media support a prototype; speed, cost and transfer to hardware remain unverified."
+    },
+    "ryze-seo-geo": {
+      "title": "Ryze AI: SEO/GEO audits and fixes",
+      "summary": "Add Jev to website visibility audits, analyzing pages and AI-search citations to guide fixes.",
+      "plain_explanation": "Like an editor investigating why a site is hard to find: gather pages and citations, judge gaps and arrange edits. New prose still requires a generation stage.",
+      "mechanism": "The author lists data reads, citation-source analysis, content gaps and page fixes, without specifying Jev calls or the division among retrieval, judgment, generation and execution.",
+      "advantage": "Broader than internal-link suggestions, covering diagnosis and fixes; the broader scope also makes single-model attribution harder.",
+      "limitation": "Complete baselines, quality checks, end-to-end bills and search outcomes are absent. Classification alone does not establish faster page generation or guaranteed AI citations.",
+      "reported_result": "The author claims a 90% cost reduction from roughly $250, 30-fold gains across several stages and 20-fold faster page creation. A six-second interface clip does not establish those comparisons.",
+      "media_note": "The original clip and author’s product-link reply form one case. Compare with internal linking; do not count nine workflow stages as nine apps.",
+      "review_summary": "The 90% savings, 20–30-fold speedups and citation claims lack complete controlled evidence; the short clip does not establish these outcomes."
     }
   },
   "groups": {
     "browser": {
       "title": "Browser and computer control",
-      "comparison": "For browser loops, compare Browser Use and Stagehand: the former describes a dynamic DOM action space with text-generation fallback; the latter separates accessibility-tree observation from execution. For native apps, see CoreML/OCR. Cua currently offers a constrained semantic-action preview. agent-desktop retains an LLM for longer context; voice control and QA address different interaction needs. Runlayer emphasizes parallel sessions but lacks coverage and defect-detection evidence; Sac’s Calendar comparison focuses on one desktop task with an undisclosed observation interface. Neither action video substitutes for acceptance assertions. Tester Army targets web/mobile testing but its open-source release is unverified; ego lite focuses on product filtering with a hybrid stack. Browser Use now includes a same-project WebMCP comparison: task coverage and per-attempt success are distinct.",
+      "comparison": "For browser loops, compare Browser Use and Stagehand: the former describes a dynamic DOM action space with text-generation fallback; the latter separates accessibility-tree observation from execution. For native apps, see CoreML/OCR. Cua currently offers a constrained semantic-action preview. agent-desktop retains an LLM for longer context; voice control and QA address different interaction needs. Runlayer emphasizes parallel sessions but lacks coverage and defect-detection evidence; Sac’s Calendar comparison focuses on one desktop task. Neither action video substitutes for acceptance assertions. Tester Army targets web/mobile testing but its open-source release is unverified; ego lite focuses on product filtering with a hybrid stack. Browser Use now includes a same-project WebMCP comparison: task coverage and per-attempt success are distinct. Sac’s new Jev-cu source now exposes accessibility-text observation and executor roles, resolving the earlier missing-interface detail; the fastest-in-Codex claim remains unverified.",
       "flow": "Observe the page or desktop → construct executable candidates → Jev selects → execute → observe again.",
       "analysis": "DOM, accessibility trees and OCR are different observation interfaces. Keeping pixels local does not mean all content stays local. Browser Use still delegates text generation to an LLM. These designs come from author descriptions; unspecified encoding details remain unknown.",
       "evaluation": "Compare the same read-only tasks using completion rate, steps, full elapsed time, total cost and recovery. Include unlabeled buttons, dynamic pages, dialogs and window changes. Do not compare one model decision with an entire task."
     },
     "routing": {
       "title": "Model, skill and tool routing",
-      "comparison": "Eve and Ephraim demonstrate model selection; Firstmate and local delegation address agent orchestration. Skillbox searches a skill library, Coding Garden connects everyday tools, and the Eve tool agent substitutes one stage of an existing system. ai-cli is an integration interface. These approaches can be combined. Hono JevRouter selects HTTP handlers using descriptions and the first qualifying route in registration order. Unlike model or skill selection, a routing error changes the response directly; it must not replace authentication. Codex Model Router selects a model and reasoning configuration each turn with documented fallback, but a user observed over-routing on easy tasks. Compare final quality, cache behavior and total bills, not classification speed alone.",
+      "comparison": "Eve and Ephraim demonstrate model selection; Firstmate and local delegation address agent orchestration. Skillbox searches a skill library, Coding Garden connects everyday tools, and the Eve tool agent substitutes one stage of an existing system. ai-cli is an integration interface. These approaches can be combined. Hono JevRouter selects HTTP handlers using descriptions and the first qualifying route in registration order. Unlike model or skill selection, a routing error changes the response directly; it must not replace authentication. Codex Model Router selects a model and reasoning configuration each turn with documented fallback, but a user observed over-routing on easy tasks. Compare final quality, cache behavior and total bills, not classification speed alone. The Claude Code Mod defaults to subagent-model and main-effort routing, leaving main-model switching off. Compare cache effects, fallback and final quality separately from the Codex per-turn router.",
       "flow": "Task text and candidate capabilities → Jev choice or scores → application checks candidates and constraints → invoke the selected model, skill or tool.",
       "analysis": "Routing reduces the overhead of choosing an executor; the executor still does the work. Firstmate reports a small 25-task agreement study. Skillbox lacks retrieval-recall data. Deterministic invocation does not guarantee correct choices.",
       "evaluation": "Use identical requests and measure routing suitability, final task quality, fallbacks, quota handling and total cost. Include requests with no suitable candidate."
@@ -1213,14 +1279,14 @@
     },
     "data": {
       "title": "Data classification and organization",
-      "comparison": "Email classification and DuckDB handle batches of text; the paper example includes generative preprocessing; Jev + Kimi shows uncertainty escalation. Payee cleanup is extraction/normalization and support intent is multi-question judgment. Their metrics are not interchangeable. Predictive spreadsheets put classification intent in column headings and emphasize live feedback. Compare interface response separately from full-table processing costs when considering DuckDB-style batching. The four-model email demo exposes differences in waiting time, while the 500-email case emphasizes batch scale and reported cost. The former lacks standardized accuracy and configuration evidence; the latter lacks a cross-model comparison. Times from separate demonstrations do not establish a ranking. The food notebook turns text into calorie and nutrient values. Like predictive spreadsheets it prioritizes immediate feedback, but numerical estimates also require trustworthy data and error evaluation; classification speed is not numerical accuracy. New cases cover tax-page identification, Box incident triage, Downloads filing, OCR-based image organization, Gmail intent search and snack scoring. Tax classification documents rejection gates and separate test sets; most others offer author timings. Accuracy cannot be ranked across unrelated datasets.",
+      "comparison": "Email classification and DuckDB handle batches of text; the paper example includes generative preprocessing; Jev + Kimi shows uncertainty escalation. Payee cleanup is extraction/normalization and support intent is multi-question judgment. Their metrics are not interchangeable. Predictive spreadsheets put classification intent in column headings and emphasize live feedback. Compare interface response separately from full-table processing costs when considering DuckDB-style batching. The four-model email demo exposes differences in waiting time, while the 500-email case emphasizes batch scale and reported cost. The former lacks standardized accuracy and configuration evidence; the latter lacks a cross-model comparison. Times from separate demonstrations do not establish a ranking. The food notebook turns text into calorie and nutrient values. Like predictive spreadsheets it prioritizes immediate feedback, but numerical estimates also require trustworthy data and error evaluation; classification speed is not numerical accuracy. New cases cover tax-page identification, Box incident triage, Downloads filing, OCR-based image organization, Gmail intent search and snack scoring. Tax classification documents rejection gates and separate test sets; most others offer author timings. Accuracy cannot be ranked across unrelated datasets. Fictional interview notes demonstrate multidimensional classification. Per-record cost does not establish real hiring validity or fairness.",
       "flow": "Raw text or tables → needed cleanup/summaries → Jev judgments → fallback for uncertain items → write results to an index or table.",
       "analysis": "The paper example separates summary costs from classification. The fraud example escalates uncertain emails to a larger model. Preprocessing and fallback both count toward total system cost. Payee candidate generation is unknown; do not assume Jev freely generates merchant names.",
       "evaluation": "Fix labeled data and splits. Report per-class precision/recall, throughput, per-item latency, retries and total cost. Fraud evaluation also needs realistic prevalence and separate false-positive/negative analysis."
     },
     "content": {
       "title": "Content and advertising analysis",
-      "comparison": "Live analyzers provide writing feedback; bookmark-percentile prediction defines a more specific target; historical-post analysis supports retrospective review; ad analysis organizes creative material. Viral classifiers and the X-algorithm simulator have limited generalization evidence. JevMeter applies rules to speech, not validated fact-checking. MaxFusion and StealAds label ads with different batches and dimensions; SEO linking instead selects related pages and existing anchors. Labels, link relevance and business impact require separate evaluation.",
+      "comparison": "Live analyzers provide writing feedback; bookmark-percentile prediction defines a more specific target; historical-post analysis supports retrospective review; ad analysis organizes creative material. Viral classifiers and the X-algorithm simulator have limited generalization evidence. JevMeter applies rules to speech, not validated fact-checking. MaxFusion and StealAds label ads with different batches and dimensions; SEO linking instead selects related pages and existing anchors. Labels, link relevance and business impact require separate evaluation. Ryze spans SEO/GEO audits and fixes; internal linking selects pages and anchor text. Ryze has broader scope but weaker attribution. Neither speed claim provides a complete matched comparison, so their ratios cannot be ranked.",
       "flow": "Text plus analysis dimensions → parallel Jev labels/scores → explicit aggregation rules → editing feedback, statistics or an analysis interface.",
       "analysis": "A low score is not the same as a false claim, and past popularity does not establish future reach. Historical analysis supports correlation; retrospective labels can leak outcomes. Claimed use of real X weights does not establish recreation of the live recommendation system.",
       "evaluation": "Hold out time periods and accounts; prevent outcome leakage. Check scoring stability, calibration, preprocessing costs and a precise target definition. Fact-checking additionally requires evidence retrieval and source verification."
@@ -1248,7 +1314,7 @@
     },
     "simulation": {
       "title": "NPCs, driving and population simulations",
-      "comparison": "Needs-driven NPCs explore behavior; the 500-agent demo explores throughput. Unpaused driving exposes latency constraints. The drone project provides code. Towns and fictional personas are storytelling or ideation tools, not evidence of real-world behavior.",
+      "comparison": "Needs-driven NPCs explore behavior; the 500-agent demo explores throughput. Unpaused driving exposes latency constraints. The drone project provides code. Towns and fictional personas are storytelling or ideation tools, not evidence of real-world behavior. Traffic signals, dual-arm manipulation and vital signs respectively concern signal direction, layered actions and state labels. Robotics explicitly leaves IK/physics to code; the traffic ratio and practical monitoring claims lack matching validation. Evaluate each task separately from real deployment.",
       "flow": "Simulation state and character goals → Jev decisions → simulated actions → updated state; an LLM may supply narrative reaction candidates.",
       "analysis": "FSD is the driving demo author’s label, not a reproduction of Tesla’s product or real-road capability. Overall API throughput differs from per-character update frequency. Fictional adoption intent is not user research. The drone repository specifies MuJoCo and separates fast control from slower model decisions, while disclosing the limits of its single-run comparison.",
       "evaluation": "Document environments, update rates, pause policy, network jitter and failure criteria. Track collisions, task success and character consistency over time. Compare synthetic-user findings with real research."

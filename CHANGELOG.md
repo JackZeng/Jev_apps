@@ -2,6 +2,21 @@
 
 **简体中文** | [English](CHANGELOG.en.md)
 
+## 2026-09-19 · 第七轮增量
+
+核对截止 **2026-09-19 17:48:49 北京时间**。新增 **6** 项、合并 **1** 项更新，共 **112 项、11 类**。A 19 / B 79 / C 14；新增主帖快照均 ≥200 赞且附媒体。
+
+| 新增案例 | 点赞快照 |
+| --- | ---: |
+| [Claude Code Mod · 模型与推理力度路由](cases/2026-09-19-claude-code-jev-router/README.md) | [417](https://x.com/dani_avila7/status/2101176629745561686) |
+| [虚构面试记录 · 批量分类与评分](cases/2026-09-19-synthetic-interview-classifier/README.md) | [278](https://x.com/masa_okamura108/status/2101206603240477030) |
+| [Jev City · 九路口交通灯模拟](cases/2026-09-19-traffic-light-city/README.md) | [1081](https://x.com/leojrr/status/2101161666410893328) |
+| [生命体征模拟 · 状态变化判断](cases/2026-09-19-vital-signs-simulator/README.md) | [216](https://x.com/roiyaruRIZ/status/2101130711067431018) |
+| [双臂机器人仿真 · 分层动作决策](cases/2026-09-19-dual-arm-robot-sim/README.md) | [229](https://x.com/Raptor_zip/status/2101091398447505567) |
+| [Ryze AI · SEO/GEO 审核与修复](cases/2026-09-19-ryze-seo-geo/README.md) | [790](https://x.com/irabukht/status/2101090579127951694) |
+
+Sac 的 Jev-cu 开源发布并入原日历案例。保留既有首次收录与证据快照，仅六个新案例及 Sac 更新刷新“内容更新”。中英文同步原理、同类对比、媒体和证据标记。详见 [来源与审核说明](references/2026-09-19-increment7-audit.md)。
+
 ## 2026-09-19 · 精简项目时间标注
 
 中英文首页、案例索引和详情页的项目简介仅显示 **内容更新**，移除并列的首次收录和逐项审核时间。历史数据与既有内容更新时间保留，本次仅调整展示。

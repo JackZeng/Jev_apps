@@ -46,3 +46,7 @@ The fifth pass rechecks only Jev QA tester’s original text and metadata: 756 l
 | Skittles sorting | [@ForwardFuture · 103](https://x.com/ForwardFuture/status/2100853837288407365) | Original application post has 103 likes, below threshold; repost likes do not substitute. Original authorship and implementation also need clarification. |
 
 Snapshots were retrieved in this review via FxTwitter; they may be cached. These leads are excluded from the 106 formal cases. The original Skittles post, not its quote-post, determines the likes threshold.
+
+## 2026-09-19 · Increment 7 pending attribution
+
+[Alan Daitch voice-control clip](https://x.com/AlanDaitch/status/2101090570110169547): 238 likes in the current public snapshot. A 48-second clip exists, but its implementation author and relationship to existing voice-control cases are unclear. Do not count it until attribution and deduplication are resolved.

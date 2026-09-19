@@ -94,3 +94,7 @@ The 77 entries present when timestamp fields were introduced were backfilled fro
 | [2026-09-18 14:17:58 · e2f80f9](https://github.com/JackZeng/Jev_apps/commit/e2f80f933bc7f74701af518440b720ec0b4ed70a) | Five additions and a Cua update |
 
 Backfills use the timestamps of commits containing the content, comparing each case’s shared and English editorial data. Category-only edits and generic formatting do not make every project in the group “newly updated.” Adding these timestamp fields also preserves existing content times. Future edits should record actual times under the [contribution workflow](../CONTRIBUTING.en.md); generation only renders the values and never replaces them with the current clock.
+
+## Increment 7
+
+[Six additions and one update: sources, exclusions and assessment rationale](2026-09-19-increment7-audit.en.md).

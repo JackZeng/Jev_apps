@@ -4,9 +4,9 @@
 
 > Add a Jev decision layer to Codex computer use and compare creating a calendar event side by side.
 
-**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 17:48:49 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>A side-by-side calendar demo supports a narrow anecdote. It does not establish average speedup, equal settings or broad computer-use performance.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#sac-calendar-computer-use)
+**🟠 C · Claims exceed evidence**<br>Text candidates and execution roles are inspectable, but the new fastest-in-Codex comparison lacks a matched benchmark. C addresses that superlative, not prototype existence.<br>[Assessment and sources](../../references/2026-09-19-increment7-audit.en.md#sac-calendar-computer-use)
 
 ## How it works, in plain English
 
@@ -47,7 +47,7 @@ Add a Jev decision layer to Codex computer use and compare creating a calendar e
 
 ## Inputs, steps and outputs
 
-The author describes adding Jev judgments to Codex computer use. A side-by-side video compares ordinary Computer Use with the author’s Jev Use while creating a Mac Calendar event. Observation interfaces, state encoding, scheduling and recovery are undisclosed.
+The newly published version extracts text candidates from the accessibility tree. Jev judges targets, actions, completion and risk; Codex Computer Use observes and executes. Code checks candidate validity, confidence and policy gates. Sending text instead of screenshots does not mean offline processing.
 
 Undisclosed prompts, state formats, thresholds and recovery logic remain unknown. Inclusion of a demo does not establish a stable release.
 
@@ -55,7 +55,7 @@ Undisclosed prompts, state formats, thresholds and recovery logic remain unknown
 
 | Claim | Evidence type | Source | Scope |
 | --- | --- | --- | --- |
-| The author shares a roughly 51-second video labeled 1× playback, reports smoother operation with similar token usage, and clarifies in a reply that Jev makes judgments within existing computer use. | Author report | [Post and attached media](https://x.com/Saccc_c/status/2100864907046768890) | Not reproduced here; a demo does not establish general performance |
+| The author shares a roughly 51-second video labeled 1× playback, reports smoother operation with similar token usage, and clarifies in a reply that Jev makes judgments within existing computer use. The update publishes Jev-cu and claims larger gains for tasks with frequent decisions and tool calls, without a new reproducible timing comparison. | Author report | [Post and attached media](https://x.com/Saccc_c/status/2100864907046768890) | Not reproduced here; a demo does not establish general performance |
 | Main post meets the threshold and has media | Metadata check | [Retrieval endpoint](https://api.fxtwitter.com/status/2100864907046768890) | Snapshot at the recorded time, not a live count |
 
 **Name deduplication:** The author calls this Jev Use, but the author and Calendar video differ from [Cua · jev-use](../2026-09-18-cua-jev-use/README.en.md). Cataloged as this author’s experiment; a similar name does not establish Cua usage. The quoted introductory roundup is not a separate case.
@@ -64,14 +64,18 @@ Updates and deduplicated supporting sources:
 
 - [Supporting post by @Saccc_c](https://x.com/Saccc_c/status/2100895536119488734): published 2026-09-18T10:31:43+00:00; 0 likes retrieved 2026-09-18T11:41:17+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100895536119488734).
 - [Supporting post by @Saccc_c](https://x.com/Saccc_c/status/2100899012727673107): published 2026-09-18T10:45:32+00:00; 1 likes retrieved 2026-09-18T11:41:16+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100899012727673107).
+- [Supporting post by @Saccc_c](https://x.com/Saccc_c/status/2101152089598791845): published 2026-09-19T03:31:10+00:00; 402 likes retrieved 2026-09-19T09:41:40+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2101152089598791845).
 
 Public project / demo links (a link does not mean availability has been tested here):
 
-No separately verified project entry point recorded from the post; the thread may provide further leads.
+- [Project / demo link 1](https://github.com/Sac-Y/Jev-cu)
+- [Project / demo link 2](https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/README.md)
+- [Project / demo link 3](https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/scripts/loop.mjs)
+- [Project / demo link 4](https://github.com/Sac-Y/Jev-cu/blob/38fb31de7dfe6209bbe6e04057c00c6e885ba577/scripts/policy.mjs)
 
 ## Mechanism and comparison
 
-One demo does not establish success rate, average speedup or total cost. This main post reports similar token usage; its quoted earlier post’s broad “10×” and token-saving claims are not results of this comparison. No verified source-code release link was obtained.
+One calendar demo does not establish average speedup, success rate or total cost. Source improves inspectability, but the new fastest-in-Codex claim lacks a matched task benchmark. This catalog has not run the tool.
 
 See the [category analysis](../../breakdowns/2026-09-18-browser.en.md) for comparisons, common patterns and suggested experiments. Implementation statements come from public sources; the strengths and missing-evidence assessment are our analysis, not verification of model internals.
 
@@ -84,3 +88,4 @@ See the [category analysis](../../breakdowns/2026-09-18-browser.en.md) for compa
 | Date | Change |
 | --- | --- |
 | 2026-09-18 | First collection; checked the main post, metric snapshot and media; added to category comparisons |
+| 2026-09-19T09:48:49+00:00 | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |
