@@ -4,9 +4,9 @@
 
 > Tell the browser in your own words which X posts you would rather not see.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>A credible natural-language filtering demo; false positives, misses and ongoing cost are unmeasured, and the future-of-ad-blockers framing is a vision.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#x-filter) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>A credible natural-language filtering demo; false positives, misses and ongoing cost are unmeasured, and the future-of-ad-blockers framing is a vision.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#x-filter)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ The extension asks Jev whether a post matches your filtering rule, then hides or
 | Platform / author | X / [@marcelpociot](https://x.com/marcelpociot) |
 | Main post | [Source post](https://x.com/marcelpociot/status/2100520134481735729) |
 | Published (UTC) | 2026-09-17T09:40:00+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **950** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.919857+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100520134481735729); may be cached |

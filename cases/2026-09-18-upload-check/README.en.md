@@ -4,9 +4,9 @@
 
 > Before uploading a document, check whether its contents should be shared.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The bounded upload-check prototype is plausible, but policy coverage and sensitive-data false negatives are unmeasured.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#upload-check) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The bounded upload-check prototype is plausible, but policy coverage and sensitive-data false negatives are unmeasured.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#upload-check)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ The system asks Jev for an allow/deny judgment. Its usefulness depends on the su
 | Platform / author | X / [@iwasakoya](https://x.com/iwasakoya) |
 | Main post | [Source post](https://x.com/iwasakoya/status/2100471523358474709) |
 | Published (UTC) | 2026-09-17T06:26:50+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **284** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:25.168477+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100471523358474709); may be cached |

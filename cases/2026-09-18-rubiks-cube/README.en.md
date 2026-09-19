@@ -4,9 +4,9 @@
 
 > Code knows the cube-solving methods; Jev identifies which case to apply.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟢 A · Clearer evidence for function/mechanism**<br>Transparent composition: a coded beginner solver supplies moves and Jev classifies cases with code checks. Model time is not wall-clock mechanical solving, and the model does not independently derive the solution.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#rubiks-cube) · 2026-09-19 11:30:00 Beijing time
+**🟢 A · Clearer evidence for function/mechanism**<br>Transparent composition: a coded beginner solver supplies moves and Jev classifies cases with code checks. Model time is not wall-clock mechanical solving, and the model does not independently derive the solution.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#rubiks-cube)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Imagine a prepared solving handbook. Jev identifies the situation; code applies 
 | Platform / author | X / [@redp314](https://x.com/redp314) |
 | Main post | [Source post](https://x.com/redp314/status/2100489858951073858) |
 | Published (UTC) | 2026-09-17T07:39:42+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **494** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.707293+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100489858951073858); may be cached |

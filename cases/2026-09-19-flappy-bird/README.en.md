@@ -4,9 +4,9 @@
 
 > Use Jev in controlling a bird through obstacles.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>A plausible short game-control demo. The effortless framing is impressionistic; observation format, timing, failures and repeated scores are not available.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#flappy-bird) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>A plausible short game-control demo. The effortless framing is impressionistic; observation format, timing, failures and repeated scores are not available.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#flappy-bird)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Think of repeatedly asking whether to flap now. This is an explanatory analogy; 
 | Platform / author | X / [@thymikee](https://x.com/thymikee) |
 | Main post | [Source post](https://x.com/thymikee/status/2100937960115838984) |
 | Published (UTC) | 2026-09-18T13:20:17+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **254** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:50:12+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100937960115838984); may be cached |

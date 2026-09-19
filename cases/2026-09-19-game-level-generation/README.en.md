@@ -4,9 +4,9 @@
 
 > Select new platforms and gaps ahead of a moving player.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟢 A · Clearer evidence for function/mechanism**<br>The implementation article specifies state, finite terrain choices and code placement, with five measured requests at 319–375ms. This supports bounded terrain assembly, not asset generation, unrestricted game creation or long-term playability.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#game-level-generation) · 2026-09-19 11:30:00 Beijing time
+**🟢 A · Clearer evidence for function/mechanism**<br>The implementation article specifies state, finite terrain choices and code placement, with five measured requests at 319–375ms. This supports bounded terrain assembly, not asset generation, unrestricted game creation or long-term playability.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#game-level-generation)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like giving a level designer a box of fixed-size tiles: Jev chooses width, gap, 
 | Platform / author | X / [@HugoDuprez](https://x.com/HugoDuprez) |
 | Main post | [Source post](https://x.com/HugoDuprez/status/2100953089003921543) |
 | Published (UTC) | 2026-09-18T14:20:24+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,289** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:50:12+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100953089003921543); may be cached |

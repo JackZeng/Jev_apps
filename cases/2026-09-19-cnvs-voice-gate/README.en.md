@@ -4,9 +4,9 @@
 
 > Decide whether a spoken utterance is directed at the computer.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The video supports an intent-gating experiment within a speech/action pipeline. Long-term false activations, missed commands and transcription details are unknown; an ambient Jarvis remains a vision rather than demonstrated full autonomy.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#cnvs-voice-gate) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The video supports an intent-gating experiment within a speech/action pipeline. Long-term false activations, missed commands and transcription details are unknown; an ambient Jarvis remains a vision rather than demonstrated full autonomy.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#cnvs-voice-gate)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like a listener distinguishing conversation from a request: only accepted uttera
 | Platform / author | X / [@_MaxBlade](https://x.com/_MaxBlade) |
 | Main post | [Source post](https://x.com/_MaxBlade/status/2100967959879471519) |
 | Published (UTC) | 2026-09-18T15:19:30+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,053** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:49:18+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100967959879471519); may be cached |

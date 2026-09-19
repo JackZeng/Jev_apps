@@ -4,9 +4,9 @@
 
 > Use speech and pointing together to say “put that over there” on a canvas.
 
-**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The author explains keyword-timed pointing and several small judgments, explicitly admitting imperfect behavior. Perception libraries, success rates and recovery are unreported; the demo is a feasibility experiment.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#voice-gesture-canvas) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The author explains keyword-timed pointing and several small judgments, explicitly admitting imperfect behavior. Perception libraries, success rates and recovery are unreported; the demo is a feasibility experiment.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#voice-gesture-canvas)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ The app records where you point when saying words such as “that” and “ther
 | Platform / author | X / [@jackcheng](https://x.com/jackcheng) |
 | Main post | [Source post](https://x.com/jackcheng/status/2100729670991802386) |
 | Published (UTC) | 2026-09-17T23:32:37+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 10:50:59 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **915** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T02:36:40+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100729670991802386); may be cached |

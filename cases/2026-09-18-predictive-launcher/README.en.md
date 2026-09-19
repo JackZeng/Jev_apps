@@ -4,9 +4,9 @@
 
 > Find files without remembering names: type “the PDF I just downloaded” and rank relevant matches first.
 
-**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>A specific intent-based file query is demonstrated. The reported ~100 ms lacks scale, timing boundaries and error cases; high model confidence is not perfect retrieval accuracy.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#predictive-launcher) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>A specific intent-based file query is demonstrated. The reported ~100 ms lacks scale, timing boundaries and error cases; high model confidence is not perfect retrieval accuracy.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#predictive-launcher)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like asking an assistant for the document you just downloaded: the app prepares 
 | Platform / author | X / [@dabit3](https://x.com/dabit3) |
 | Main post | [Source post](https://x.com/dabit3/status/2100756930054504776) |
 | Published (UTC) | 2026-09-18T01:20:56+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 10:50:59 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **252** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T02:36:40+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100756930054504776); may be cached |

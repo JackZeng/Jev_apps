@@ -4,9 +4,9 @@
 
 > Identify suspected low-value replies to help clean up a post’s discussion.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The demo supports reply flagging and correction, but the precise action is unclear; using feedback on a later call is not evidence of model training or measured accuracy.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#x-reply-cleanup) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The demo supports reply flagging and correction, but the precise action is unclear; using feedback on a later call is not evidence of model training or measured accuracy.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#x-reply-cleanup)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like marking likely spam while letting the user correct mistakes. The author say
 | Platform / author | X / [@iannuttall](https://x.com/iannuttall) |
 | Main post | [Source post](https://x.com/iannuttall/status/2100888635943883244) |
 | Published (UTC) | 2026-09-18T10:04:18+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **223** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:50:13+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100888635943883244); may be cached |

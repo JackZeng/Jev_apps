@@ -4,9 +4,9 @@
 
 > Explore whether a codebase makes simple things unnecessarily complicated.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The demo supports a classifier experiment. The suggested benefit for overengineering remains a hypothesis, not an established result.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#codebase-classifier) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The demo supports a classifier experiment. The suggested benefit for overengineering remains a hypothesis, not an established result.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#codebase-classifier)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ It classifies code structure, like a preliminary engineering checkup. Overengine
 | Platform / author | X / [@ryanvogel](https://x.com/ryanvogel) |
 | Main post | [Source post](https://x.com/ryanvogel/status/2100068006592123055) |
 | Published (UTC) | 2026-09-16T03:43:24+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,165** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:24.649590+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100068006592123055); may be cached |

@@ -4,9 +4,9 @@
 
 > Combine many pixel-level judgments to experiment with drawing through Jev.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>A small drawing demo is compatible with composing pixel judgments. Resolution, palette, prompts and total cost are undisclosed; general-purpose image-generation quality is unestablished.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#pixel-drawing) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>A small drawing demo is compatible with composing pixel judgments. Resolution, palette, prompts and total cost are undisclosed; general-purpose image-generation quality is unestablished.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#pixel-drawing)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Think of deciding picture cells and assembling them in code. The author describe
 | Platform / author | X / [@anshuc](https://x.com/anshuc) |
 | Main post | [Source post](https://x.com/anshuc/status/2100246929611411501) |
 | Published (UTC) | 2026-09-16T15:34:23+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,461** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:29.975468+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100246929611411501); may be cached |

@@ -4,9 +4,9 @@
 
 > Simulate reach scores to compare different ways of writing a post.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟠 C · Claims exceed evidence**<br>A scoring UI is demonstrated, but the claims of rebuilding X’s actual algorithm and exceptional accuracy lack model-equivalence and prediction evidence.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#x-algorithm-sim) · 2026-09-19 11:30:00 Beijing time
+**🟠 C · Claims exceed evidence**<br>A scoring UI is demonstrated, but the claims of rebuilding X’s actual algorithm and exceptional accuracy lack model-equivalence and prediction evidence.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#x-algorithm-sim)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ The author combines Jev judgments with weights. That scoring formula is a simpli
 | Platform / author | X / [@leojrr](https://x.com/leojrr) |
 | Main post | [Source post](https://x.com/leojrr/status/2100470174130250127) |
 | Published (UTC) | 2026-09-17T06:21:29+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **877** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.298301+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100470174130250127); may be cached |

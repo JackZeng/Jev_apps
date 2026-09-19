@@ -4,9 +4,9 @@
 
 > Prescreen prompts for attempts to bypass an AI system's rules.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The author distinguishes an initial comparison from a future near-perfect target. Current evidence is limited and does not establish robustness to unseen attacks.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#jailbreak-screen) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The author distinguishes an initial comparison from a future near-perfect target. Current evidence is limited and does not establish robustness to unseen attacks.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#jailbreak-screen)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Jev checks whether a prompt resembles known bypass patterns. It is an initial sc
 | Platform / author | X / [@mayfer](https://x.com/mayfer) |
 | Main post | [Source post](https://x.com/mayfer/status/2100343452865265747) |
 | Published (UTC) | 2026-09-16T21:57:56+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **264** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:25.158271+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100343452865265747); may be cached |

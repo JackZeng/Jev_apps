@@ -80,6 +80,8 @@ The second pass on 2026-09-18 adds 5 cases and supplements 4 existing entries, f
 
 ## README entry timestamps
 
+Project introductions display only **Content updated**. Both historical fields described below remain in the data for provenance and stable paths; individual assessment timestamps are available in the audit report.
+
 Each project has `readme_added_at` for its first addition to this repository’s README and `readme_updated_at` for its latest introduction, mechanism, evidence or bilingual-text edit. Both languages share the project timeline and display Beijing time (UTC+08:00), to the second. These values are separate from post publication and metric retrieval.
 
 The 77 entries present when timestamp fields were introduced were backfilled from Git content commits; subsequent additions record their actual editing times:

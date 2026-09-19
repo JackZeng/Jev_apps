@@ -4,9 +4,9 @@
 
 > Detect whether a Japanese support message asks for a human or mentions repeated contact.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟢 A · Clearer evidence for function/mechanism**<br>A directly inspectable, unambiguous Japanese example supports the narrow capability claim; its two scores are not an accuracy benchmark.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#support-intent) · 2026-09-19 11:30:00 Beijing time
+**🟢 A · Clearer evidence for function/mechanism**<br>A directly inspectable, unambiguous Japanese example supports the narrow capability claim; its two scores are not an accuracy benchmark.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#support-intent)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Ask two specific yes/no questions about one message. The percentages describe th
 | Platform / author | X / [@ku_suke](https://x.com/ku_suke) |
 | Main post | [Source post](https://x.com/ku_suke/status/2100392430805856469) |
 | Published (UTC) | 2026-09-17T01:12:33+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **351** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:25.789282+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100392430805856469); may be cached |

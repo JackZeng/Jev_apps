@@ -4,9 +4,9 @@
 
 > Recommend products during a conversation and change a virtual shop assistant’s expression with the dialogue.
 
-**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The author identifies a simple demo using Jev plus gpt-live-1. End-to-end behavior is not solely attributable to Jev, expression mapping is not proven unique to it, and recommendation/inventory accuracy is unmeasured.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#live-commerce-assistant) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The author identifies a simple demo using Jev plus gpt-live-1. End-to-end behavior is not solely attributable to Jev, expression mapping is not proven unique to it, and recommendation/inventory accuracy is unmeasured.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#live-commerce-assistant)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like a shop assistant listening and bringing over products: the conversation sys
 | Platform / author | X / [@rinte0321](https://x.com/rinte0321) |
 | Main post | [Source post](https://x.com/rinte0321/status/2100736454850908344) |
 | Published (UTC) | 2026-09-17T23:59:35+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 10:50:59 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **217** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T02:36:40+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100736454850908344); may be cached |

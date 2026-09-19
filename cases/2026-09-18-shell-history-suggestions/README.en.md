@@ -4,9 +4,9 @@
 
 > Type part of a command or describe an intent to select a suggestion from past commands.
 
-**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟢 A · Clearer evidence for function/mechanism**<br>Pinned docs specify history candidates, prefix filtering, Choice/Noul gates and stale-result rejection. The demo uses fabricated history and reports 0.7–0.9 s latency; everyday adoption and long-term acceptance are not established.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#shell-history-suggestions) · 2026-09-19 11:30:00 Beijing time
+**🟢 A · Clearer evidence for function/mechanism**<br>Pinned docs specify history candidates, prefix filtering, Choice/Noul gates and stale-result rejection. The demo uses fabricated history and reports 0.7–0.9 s latency; everyday adoption and long-term acceptance are not established.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#shell-history-suggestions)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like a history menu that understands meaning: code lists previous commands and J
 | Platform / author | X / [@thorstenball](https://x.com/thorstenball) |
 | Main post | [Source post](https://x.com/thorstenball/status/2100858434904109099) |
 | Published (UTC) | 2026-09-18T08:04:17+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 19:44:51 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **396** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T11:39:31+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100858434904109099); may be cached |

@@ -4,9 +4,9 @@
 
 > Get feedback on a post's type and potential reach as you write.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The interactive scoring demo is plausible and explicitly experimental. No evidence establishes predictive validity for future reach.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#live-viral) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The interactive scoring demo is plausible and explicitly experimental. No evidence establishes predictive validity for future reach.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#live-viral)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ After a half-second pause, code sends the draft to Jev and updates its labels an
 | Platform / author | X / [@rileybrown](https://x.com/rileybrown) |
 | Main post | [Source post](https://x.com/rileybrown/status/2100425868053008758) |
 | Published (UTC) | 2026-09-17T03:25:25+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **830** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.282636+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100425868053008758); may be cached |

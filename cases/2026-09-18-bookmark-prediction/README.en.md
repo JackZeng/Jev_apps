@@ -4,9 +4,9 @@
 
 > Predict whether a post ranks in the top quarter for bookmarks among nearby dates.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The personal historical benchmark has a concrete label, but undisclosed splits and configurations prevent validating generalization or the 200-fold cost comparison; a future-looking label alone is not proof of leakage.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#bookmark-prediction) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The personal historical benchmark has a concrete label, but undisclosed splits and configurations prevent validating generalization or the 200-fold cost comparison; a future-looking label alone is not proof of leakage.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#bookmark-prediction)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Replace vague virality with a checkable target: top 25% within a defined date wi
 | Platform / author | X / [@AM09_21](https://x.com/AM09_21) |
 | Main post | [Source post](https://x.com/AM09_21/status/2100430480642642395) |
 | Published (UTC) | 2026-09-17T03:43:45+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **287** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.368585+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100430480642642395); may be cached |

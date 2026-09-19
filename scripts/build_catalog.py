@@ -10,7 +10,7 @@ import sys
 
 from catalog_en import generate_en, validate_translations
 from catalog_reviews import review_line, review_legend, validate_review
-from catalog_dates import readme_dates, format_readme_time, case_day, case_review_day, latest_review_day
+from catalog_dates import readme_dates, case_day, case_review_day, latest_review_day
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data/catalog.json'
@@ -93,7 +93,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 - **数字是快照**：检索来自 X；精确点赞与媒体元数据通过 FxTwitter 公共接口复核，可能有缓存或延迟。每篇保留原帖时间、取数时间和来源。[检索与证据说明](references/README.md) · [结构化目录与点赞快照](data/catalog.json)
 - **预览可点击**：表中的图来自原帖图片或视频封面，点击打开对应来源。详情保留视频直链/原图；X 图片 CDN、视频直链或帖子可能失效，优先回原帖查看。Skillbox 的图来自它被引用的旧版介绍，已单独说明。
 - **同类放一起**：每组下面给选择建议，详细对比逐项列出优势与限制。类别内按用途排列，不按点赞排名。视频只是演示证据，不证明长期可靠性。
-- **简介旁的时间**：每条标注收录到 README 和最近内容更新的时间，统一为**北京时间（UTC+08:00）**；与原帖发布时间、点赞取数时间分别记录。[时间依据](references/README.md#readme-times)
+- **简介旁的时间**：每条仅显示最近内容更新的时间，统一为**北京时间（UTC+08:00）**；与原帖发布时间、点赞取数时间分别记录。[时间依据](references/README.md#readme-times)
 
 {review_legend(cases)}## 分类导航
 
@@ -103,7 +103,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
     for g in groups.values():
         readme.append(f'| [{g["title"]}](#{g["id"]}) | {counts[g["id"]]} | [阅读分析](breakdowns/{date}-{g["id"]}.md) |\n')
     readme.append('\n[案例索引](cases/README.md) · [全部拆解](breakdowns/README.md) · [待补证据](inbox/README.md) · [收录流程](CONTRIBUTING.md)\n\n## 全部应用列表\n')
-    index = ['# 案例索引\n\n全部条目未复现；点赞为各自主帖的取数快照。收录与内容更新时间统一为北京时间（UTC+08:00）。图文总览见 [首页](../README.md)。\n']
+    index = ['# 案例索引\n\n全部条目未复现；点赞为各自主帖的取数快照。内容更新时间统一为北京时间（UTC+08:00）。图文总览见 [首页](../README.md)。\n']
     breakdowns = ['# 原理拆解与同类对比\n\n这些是公开资料分析，尚未执行复现实验。\n\n- [Jev 应用如何工作：三种原语与应用组合](2026-09-18-how-jev-apps-work.md)\n']
     for group_id, g in groups.items():
         group_cases = [c for c in cases if c['group'] == group_id]
@@ -147,7 +147,6 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 | 来源平台 / 原作者 | X / [@{p['author']}](https://x.com/{p['author']}) |
 | 原帖 | [查看原帖]({p['url']}) |
 | 原帖发布时间（UTC） | {p['published_at']} |
-| README 收录 / 内容更新（北京时间） | {format_readme_time(c['readme_added_at'])} / {format_readme_time(c['readme_updated_at'])} |
 | 主帖点赞快照 | **{p['likes']:,}**（门槛 ≥ {d['minimum_likes']}） |
 | 点赞与媒体取数时间（UTC） | {p['retrieved_at']} |
 | 元数据核验渠道 | [FxTwitter 公共接口]({p['metrics_source']})；可能有缓存 |

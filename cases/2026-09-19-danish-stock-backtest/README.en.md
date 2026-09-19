@@ -4,9 +4,9 @@
 
 > Experiment with trading decisions on 2025 market data using news and other signals.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The dated 2025 run is a historical experiment with self-reported token cost. Point-in-time inputs, leakage controls, trading costs and validated returns are unspecified; it is not evidence of profitable live trading.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#danish-stock-backtest) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The dated 2025 run is a historical experiment with self-reported token cost. Point-in-time inputs, leakage controls, trading costs and validated returns are unspecified; it is not evidence of profitable live trading.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#danish-stock-backtest)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like working through an old market diary one day at a time. A valid backtest mus
 | Platform / author | X / [@tommy_jepsen](https://x.com/tommy_jepsen) |
 | Main post | [Source post](https://x.com/tommy_jepsen/status/2100939646653903063) |
 | Published (UTC) | 2026-09-18T13:26:59+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **269** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:50:12+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100939646653903063); may be cached |

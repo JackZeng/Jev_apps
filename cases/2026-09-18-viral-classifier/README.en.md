@@ -4,9 +4,9 @@
 
 > Try to identify posts that may attract more attention.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟠 C · Claims exceed evidence**<br>The claims that virality is solved and reply bait is never rewarded exceed a self-reported two-in-three result with no disclosed held-out split or fair model baseline.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#viral-classifier) · 2026-09-19 11:30:00 Beijing time
+**🟠 C · Claims exceed evidence**<br>The claims that virality is solved and reply bait is never rewarded exceed a self-reported two-in-three result with no disclosed held-out split or fair model baseline.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#viral-classifier)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Jev acts as a fast first-pass classifier. The author does not publish the full c
 | Platform / author | X / [@robj3d3](https://x.com/robj3d3) |
 | Main post | [Source post](https://x.com/robj3d3/status/2100631889585606959) |
 | Published (UTC) | 2026-09-17T17:04:04+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **387** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.294732+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100631889585606959); may be cached |

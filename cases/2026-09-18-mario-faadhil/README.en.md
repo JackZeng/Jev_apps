@@ -4,9 +4,9 @@
 
 > Let Jev control Super Mario to demonstrate fast action selection.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>A plausible Mario integration demo; unspecified observations, timing and repeated outcomes prevent a general gameplay claim.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#mario-faadhil) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>A plausible Mario integration demo; unspecified observations, timing and repeated outcomes prevent a general gameplay claim.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#mario-faadhil)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ An adapter passes game state to Jev and converts its choice into an action. The 
 | Platform / author | X / [@faadilhshaik](https://x.com/faadilhshaik) |
 | Main post | [Source post](https://x.com/faadilhshaik/status/2100086301894881578) |
 | Published (UTC) | 2026-09-16T04:56:06+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **2,686** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:27.518932+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100086301894881578); may be cached |

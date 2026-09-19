@@ -2,6 +2,10 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-19 · Simpler application timestamps
+
+Application introductions now display only **Content updated**, consistently across both homepages, indexes and detail pages. First-added and per-case assessment timestamps no longer appear beside introductions. Historical data and existing content-update values are preserved; this is a presentation-only change.
+
 ## 2026-09-19 · Claim assessment labels
 
 Added the completed 106-case audit to both READMEs, case indexes and detail pages: **A 18, B 78, C 10**. Each case shows its assessment, a short reason and a direct link to its evidence row in the [audit report](references/2026-09-19-claims-audit.en.md). Labels assess public claims and do not change reproduction status.

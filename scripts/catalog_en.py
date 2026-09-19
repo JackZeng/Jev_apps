@@ -2,7 +2,7 @@
 from collections import Counter
 from catalog_reviews import review_line, review_legend
 import html
-from catalog_dates import readme_dates, format_readme_time, case_day, case_review_day, latest_review_day
+from catalog_dates import readme_dates, case_day, case_review_day, latest_review_day
 
 CASE_FIELDS = {'title', 'summary', 'plain_explanation', 'mechanism', 'advantage', 'limitation', 'reported_result', 'media_note'}
 GROUP_FIELDS = {'title', 'comparison', 'flow', 'analysis', 'evaluation'}
@@ -57,7 +57,7 @@ For example, a flight-search agent reads the webpage and lists available control
 - **Counts are snapshots:** discovery used X; exact metrics and media metadata were cross-checked through the public FxTwitter API, which may cache or lag. Each detail page records timestamps and sources. [Evidence method](references/README.en.md) · [Shared source data](data/catalog.json)
 - **Clickable previews:** images come from source photos or video covers. Details retain original media URLs; links and CDN content can change. Skillbox explicitly uses an older quoted product image.
 - **Similar examples stay together:** each group has guidance and a detailed strengths/limitations table. Entries are organized by use, not ranked by likes. Demonstration footage does not establish long-term reliability.
-- **Dates beside each introduction:** first addition to README and the latest content update, both in **Beijing time (UTC+08:00)**. Post publication and metric retrieval times are recorded separately. [Timestamp provenance](references/README.en.md#readme-times)
+- **Dates beside each introduction:** only the latest content update, in **Beijing time (UTC+08:00)**. Post publication and metric retrieval times are recorded separately. [Timestamp provenance](references/README.en.md#readme-times)
 
 {review_legend(cases, english=True)}## Categories
 
@@ -67,7 +67,7 @@ For example, a flight-search agent reads the webpage and lists available control
     for g in groups:
         readme.append(f'| [{g["title"]}](#{g["id"]}) | {counts[g["id"]]} | [Read analysis](breakdowns/{date}-{g["id"]}.en.md) |\n')
     readme.append('\n[Case index](cases/README.en.md) · [All explanations](breakdowns/README.en.md) · [Pending evidence](inbox/README.en.md) · [Contributing](CONTRIBUTING.en.md)\n\n## All applications\n')
-    index = ['# Case index\n\nAll examples are not independently reproduced. Likes are snapshots of individual main posts. Addition and content-update times use Beijing time (UTC+08:00). See the [homepage](../README.en.md) for previews and plain-language explanations.\n']
+    index = ['# Case index\n\nAll examples are not independently reproduced. Likes are snapshots of individual main posts. Content-update times use Beijing time (UTC+08:00). See the [homepage](../README.en.md) for previews and plain-language explanations.\n']
     breakdowns = [f'# Explanations and comparisons\n\nAnalysis of public sources; no reproduction experiments have been run here.\n\n- [How Jev apps work: judgments and software composition]({date}-how-jev-apps-work.en.md)\n']
     for g in groups:
         gid = g['id']
@@ -112,7 +112,6 @@ For example, a flight-search agent reads the webpage and lists available control
 | Platform / author | X / [@{p['author']}](https://x.com/{p['author']}) |
 | Main post | [Source post]({p['url']}) |
 | Published (UTC) | {p['published_at']} |
-| Added to README / content updated (Beijing time) | {format_readme_time(c['readme_added_at'])} / {format_readme_time(c['readme_updated_at'])} |
 | Main-post likes snapshot | **{p['likes']:,}** (threshold ≥ {d['minimum_likes']}) |
 | Metrics/media retrieved (UTC) | {p['retrieved_at']} |
 | Metadata source | [Public FxTwitter API]({p['metrics_source']}); may be cached |

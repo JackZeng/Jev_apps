@@ -29,10 +29,8 @@ def review_line(c, prefix='', english=False):
     report = review['report'].replace('.md', '.en.md') if english else review['report']
     label = LABELS[review['tier']][english]
     source_label = 'Assessment and sources' if english else '判断依据与来源'
-    reviewed = format_readme_time(review['reviewed_at'])
     return (f'**{label}**<br>{c["review_summary"]}<br>'
-            f'[{source_label}]({prefix}{report}#{c["slug"]}) · {reviewed} '
-            + ('Beijing time' if english else '北京时间'))
+            f'[{source_label}]({prefix}{report}#{c["slug"]})')
 
 
 def review_legend(cases, english=False):

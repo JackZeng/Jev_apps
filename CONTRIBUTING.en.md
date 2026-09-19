@@ -60,6 +60,8 @@ When a reported result comes from documentation instead of the main post, set th
 
 Claim assessments: put `tier` (A/B/C), the actual `reviewed_at` timestamp and the Chinese report path in the shared `claim_review` object; translate `review_summary` in both catalogs. Reports need matching case-slug anchors in both languages. A concerns bounded functional/mechanistic evidence, B means unverified effectiveness, and C identifies a claim exceeding evidence, not a fake project. Missing assessments render as “Not assessed”. Changing a judgment or its explanation advances content time but not first-added time; report the real evidence-review date, not the rendering time.
 
+Display only **Content updated** beside each application, with no first-added or per-case assessment timestamp. Preserve `readme_added_at`, source snapshots and audit timestamps in the data and evidence records. Formatting-only changes do not advance content timestamps.
+
 ## 5. Media and maintenance
 
 Prefer links to original posts and media URLs; rights remain with creators. For small files you have permission to publish, follow the [asset policy](assets/README.en.md) and add `SOURCES.md`. Do not commit large videos or private raw material.

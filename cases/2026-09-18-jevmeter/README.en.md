@@ -4,9 +4,9 @@
 
 > Score sentences in debates or interviews to examine speech patterns and content features.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟠 C · Claims exceed evidence**<br>The implementation supports rhetorical sentence scoring, while the follow-up fact-checking claim contradicts its own README disclaimer. The 200 authored-sentence evaluation measures preset classification, not truth verification.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#jevmeter) · 2026-09-19 11:30:00 Beijing time
+**🟠 C · Claims exceed evidence**<br>The implementation supports rhetorical sentence scoring, while the follow-up fact-checking claim contradicts its own README disclaimer. The 200 authored-sentence evaluation measures preset classification, not truth verification.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#jevmeter)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Ask the same five questions about each sentence and visualize the results. Consi
 | Platform / author | X / [@chetaslua](https://x.com/chetaslua) |
 | Main post | [Source post](https://x.com/chetaslua/status/2100473581251748216) |
 | Published (UTC) | 2026-09-17T06:35:01+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,017** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.874127+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100473581251748216); may be cached |

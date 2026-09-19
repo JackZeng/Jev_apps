@@ -4,9 +4,9 @@
 
 > Choose an AI worker and effort level based on the task and user preferences.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The author discloses 25 matching dispatch decisions and separates dispatch overhead. This is bounded self-reported evidence, not proof of equivalent task quality or whole-agent savings.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#firstmate) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The author discloses 25 matching dispatch decisions and separates dispatch overhead. This is bounded self-reported evidence, not proof of equivalent task quality or whole-agent savings.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#firstmate)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ A dispatcher chooses the worker, tool setup and effort level. Jev replaces that 
 | Platform / author | X / [@kunchenguid](https://x.com/kunchenguid) |
 | Main post | [Source post](https://x.com/kunchenguid/status/2100468943853085061) |
 | Published (UTC) | 2026-09-17T06:16:35+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,615** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:23.394737+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100468943853085061); may be cached |

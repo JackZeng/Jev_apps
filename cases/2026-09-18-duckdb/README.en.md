@@ -4,9 +4,9 @@
 
 > Classify text rows while working with a table.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>A plausible SQL classification integration; a screenshot and a throughput claim do not establish accuracy or general superiority over LLMs.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#duckdb) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>A plausible SQL classification integration; a screenshot and a throughput claim do not establish accuracy or general superiority over LLMs.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#duckdb)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ DuckDB processes tabular data. This extension connects it to Jev so queries can 
 | Platform / author | X / [@hamiltonulmer](https://x.com/hamiltonulmer) |
 | Main post | [Source post](https://x.com/hamiltonulmer/status/2100370557405667768) |
 | Published (UTC) | 2026-09-16T23:45:38+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,310** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:25.668728+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100370557405667768); may be cached |

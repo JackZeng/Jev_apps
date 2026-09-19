@@ -4,9 +4,9 @@
 
 > Detect spoken sponsor segments while watching YouTube and jump past them.
 
-**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟢 A · Clearer evidence for function/mechanism**<br>Pinned code supports the transcript-line and audio-transcription implementation. This does not verify accuracy: audio modes incur extra costs and may overshoot, and the advertised per-video cost is not universal.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#youtube-sponsor-skip) · 2026-09-19 11:30:00 Beijing time
+**🟢 A · Clearer evidence for function/mechanism**<br>Pinned code supports the transcript-line and audio-transcription implementation. This does not verify accuracy: audio modes incur extra costs and may overshoot, and the advertised per-video cost is not universal.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#youtube-sponsor-skip)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like marking up captions: Jev identifies sponsor lines, code maps their IDs to p
 | Platform / author | X / [@tdinh_me](https://x.com/tdinh_me) |
 | Main post | [Source post](https://x.com/tdinh_me/status/2100793777103466615) |
 | Published (UTC) | 2026-09-18T03:47:21+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 14:17:58 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **238** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T06:08:49+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100793777103466615); may be cached |

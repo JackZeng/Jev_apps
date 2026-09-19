@@ -4,9 +4,9 @@
 
 > Keep the car moving while Jev thinks to test real-time simulated driving.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The author explicitly bounds the work to an unpaused driving simulator. Timing logs and broad reliability are missing, but the source does not claim validated physical autonomy.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#realtime-driving) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The author explicitly bounds the work to an unpaused driving simulator. Timing logs and broad reliability are missing, but the source does not claim validated physical autonomy.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#realtime-driving)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Pausing the simulator for every model call hides latency. Here it keeps moving, 
 | Platform / author | X / [@SigGravitas](https://x.com/SigGravitas) |
 | Main post | [Source post](https://x.com/SigGravitas/status/2100325221932958134) |
 | Published (UTC) | 2026-09-16T20:45:29+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **270** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:29.336350+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100325221932958134); may be cached |

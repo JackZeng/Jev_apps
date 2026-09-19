@@ -4,9 +4,9 @@
 
 > Turn interface requests into constrained component layouts, including additions, removals and moves.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟢 A · Clearer evidence for function/mechanism**<br>Pinned docs substantiate component selection, staged layout and JSON assembly in code, without full-page templates or freeform generation. “Instant” is not established for arbitrary UIs: candidates, text, batch size and depth are bounded, with no matched-quality end-to-end benchmark.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#json-render-ui) · 2026-09-19 11:30:00 Beijing time
+**🟢 A · Clearer evidence for function/mechanism**<br>Pinned docs substantiate component selection, staged layout and JSON assembly in code, without full-page templates or freeform generation. “Instant” is not established for arbitrary UIs: candidates, text, batch size and depth are bounded, with no matched-quality end-to-end benchmark.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#json-render-ui)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like choosing blocks and arranging them: Jev makes selections, while code builds
 | Platform / author | X / [@ctatedev](https://x.com/ctatedev) |
 | Main post | [Source post](https://x.com/ctatedev/status/2101022101750571357) |
 | Published (UTC) | 2026-09-18T18:54:38+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **3,341** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:48:32+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2101022101750571357); may be cached |

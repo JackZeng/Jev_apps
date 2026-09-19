@@ -4,9 +4,9 @@
 
 > Choose responses such as HTML or Markdown based on whether a request appears to come from a person or an AI.
 
-**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟢 A · Clearer evidence for function/mechanism**<br>The source directly supports first-matching semantic routing and explicitly states its limits. It is an inspectable routing experiment, not an authentication guarantee.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#hono-semantic-router) · 2026-09-19 11:30:00 Beijing time
+**🟢 A · Clearer evidence for function/mechanism**<br>The source directly supports first-matching semantic routing and explicitly states its limits. It is an inspectable routing experiment, not an authentication guarantee.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#hono-semantic-router)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Ordinary routing sorts letters by address; this experiment also considers their 
 | Platform / author | X / [@yusukebe](https://x.com/yusukebe) |
 | Main post | [Source post](https://x.com/yusukebe/status/2100871075743859182) |
 | Published (UTC) | 2026-09-18T08:54:31+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 19:44:51 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **405** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T11:39:03+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100871075743859182); may be cached |

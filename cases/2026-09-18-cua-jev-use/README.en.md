@@ -4,9 +4,9 @@
 
 > Give Jev a list of allowed browser actions, execute its choice, then check the result.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟠 C · Claims exceed evidence**<br>The semantic recipe is real and now merged, but the launch claim that fast computer use is solved across platforms exceeds its explicitly bounded, non-certifying scope. The visual extension has advanced but remains a draft; old catalog merge status is stale.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#cua-jev-use) · 2026-09-19 11:30:00 Beijing time
+**🟠 C · Claims exceed evidence**<br>The semantic recipe is real and now merged, but the launch claim that fast computer use is solved across platforms exceeds its explicitly bounded, non-certifying scope. The visual extension has advanced but remains a draft; old catalog merge status is stale.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#cua-jev-use)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like ordering from a menu, Jev selects only an action ID prepared by the applica
 | Platform / author | X / [@trycua](https://x.com/trycua) |
 | Main post | [Source post](https://x.com/trycua/status/2100649543079502213) |
 | Published (UTC) | 2026-09-17T18:14:13+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,162** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:22.751882+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100649543079502213); may be cached |

@@ -4,9 +4,9 @@
 
 > Send routine work, hard questions and long coding tasks to different AI assistants.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The task-category routing scheme is plausible. A deterministic hook does not guarantee correct routing, and no downstream task benchmark is supplied.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#local-delegation) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The task-category routing scheme is plausible. A deterministic hook does not guarantee correct routing, and no downstream task benchmark is supplied.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#local-delegation)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Before delegation, code asks Jev who should handle the task, then invokes that a
 | Platform / author | X / [@mdlahfir](https://x.com/mdlahfir) |
 | Main post | [Source post](https://x.com/mdlahfir/status/2100314182201802811) |
 | Published (UTC) | 2026-09-16T20:01:37+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **777** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:23.937608+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100314182201802811); may be cached |

@@ -4,9 +4,9 @@
 
 > Identify which tax form each PDF page belongs to for downstream organization.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟢 A · Clearer evidence for function/mechanism**<br>The pinned documentation provides a bounded corpus result, strict-failure counts and the old baseline. Its 100% claim must not hide 38 low-confidence rejections in the separate blank-form set or imply universal tax-document reliability.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#tax-doc-classifier) · 2026-09-19 11:30:00 Beijing time
+**🟢 A · Clearer evidence for function/mechanism**<br>The pinned documentation provides a bounded corpus result, strict-failure counts and the old baseline. Its 100% claim must not hide 38 low-confidence rejections in the separate blank-form set or imply universal tax-document reliability.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#tax-doc-classifier)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like reading the header, body and footer before attaching a form label, while re
 | Platform / author | X / [@nedwize](https://x.com/nedwize) |
 | Main post | [Source post](https://x.com/nedwize/status/2100973868324417852) |
 | Published (UTC) | 2026-09-18T15:42:59+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,506** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:49:18+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100973868324417852); may be cached |

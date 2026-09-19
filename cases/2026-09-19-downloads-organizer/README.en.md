@@ -4,9 +4,9 @@
 
 > Watch Downloads and move matching files to destinations defined by custom rules.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>A plausible file-rule automation; extraction and filename construction are undisclosed, and no-other-LLM does not imply free-form generation by Jev.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#downloads-organizer) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>A plausible file-rule automation; extraction and filename construction are undisclosed, and no-other-LLM does not imply free-form generation by Jev.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#downloads-organizer)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Like a clerk recognizing an invoice and filing it: Jev judges rules, while the a
 | Platform / author | X / [@marcelpociot](https://x.com/marcelpociot) |
 | Main post | [Source post](https://x.com/marcelpociot/status/2100906882365788167) |
 | Published (UTC) | 2026-09-18T11:16:48+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **889** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:50:13+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100906882365788167); may be cached |

@@ -4,9 +4,9 @@
 
 > Recognize buttons and labels on a Mac, then ask Jev which one to click.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>Local OCR plus remote text decisions is technically coherent. The reported 90 ms is per decision, not end-to-end latency; the short demo and author report do not establish general desktop reliability.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#coreml-ocr) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>Local OCR plus remote text decisions is technically coherent. The reported 90 ms is per decision, not end-to-end latency; the short demo and author report do not establish general desktop reliability.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#coreml-ocr)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Local recognition software does the screen-reading and lists the button labels. 
 | Platform / author | X / [@milindlabs](https://x.com/milindlabs) |
 | Main post | [Source post](https://x.com/milindlabs/status/2100631847155994852) |
 | Published (UTC) | 2026-09-17T17:03:54+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **564** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:22.793465+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100631847155994852); may be cached |

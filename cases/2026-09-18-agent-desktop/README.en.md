@@ -4,9 +4,9 @@
 
 > One model remembers the task while Jev helps choose desktop targets quickly.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The video and described division of labor support a hybrid prototype. Input encoding and a reproducible speed comparison remain undisclosed.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#agent-desktop) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The video and described division of labor support a hybrid prototype. Input encoding and a reproducible speed comparison remain undisclosed.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#agent-desktop)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Think of a coordinator and an operator: the language model keeps context and pas
 | Platform / author | X / [@mdlahfir](https://x.com/mdlahfir) |
 | Main post | [Source post](https://x.com/mdlahfir/status/2100359236924637349) |
 | Published (UTC) | 2026-09-16T23:00:39+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **870** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:22.762217+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100359236924637349); may be cached |

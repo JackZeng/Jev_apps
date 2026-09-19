@@ -4,9 +4,9 @@
 
 > Give Jev a common-word list and let it build a conversation one word at a time.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟢 A · Clearer evidence for function/mechanism**<br>The author explicitly discloses a small word vocabulary and a selection loop, a bounded mechanism compatible with the demo. It does not establish a general text-generation API or competitive quality and efficiency.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#word-chat) · 2026-09-19 11:30:00 Beijing time
+**🟢 A · Clearer evidence for function/mechanism**<br>The author explicitly discloses a small word vocabulary and a selection loop, a bounded mechanism compatible with the demo. It does not establish a general text-generation API or competitive quality and efficiency.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#word-chat)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ Jev chooses the next word from a finite list; code appends it and asks again. Th
 | Platform / author | X / [@hi_im_isaac_](https://x.com/hi_im_isaac_) |
 | Main post | [Source post](https://x.com/hi_im_isaac_/status/2100408276949385668) |
 | Published (UTC) | 2026-09-17T02:15:31+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **2,644** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:29.953529+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100408276949385668); may be cached |

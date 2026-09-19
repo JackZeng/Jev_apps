@@ -4,9 +4,9 @@
 
 > Let Jev play Pokémon over time and track progress and decision costs.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>The claim is appropriately bounded to the first badge and Mt. Moon, with reported decisions and cost. Full completion, scaffolding and independent verification remain unknown.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#pokemon) · 2026-09-19 11:30:00 Beijing time
+**🟡 B · Effectiveness unverified**<br>The claim is appropriately bounded to the first badge and Mt. Moon, with reported decisions and cost. Full completion, scaffolding and independent verification remain unknown.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#pokemon)
 
 ## How it works, in plain English
 
@@ -22,7 +22,6 @@ The game supplies new states and code repeatedly asks Jev for choices. Earning a
 | Platform / author | X / [@0xBOYD](https://x.com/0xBOYD) |
 | Main post | [Source post](https://x.com/0xBOYD/status/2100539883836018697) |
 | Published (UTC) | 2026-09-17T10:58:29+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **220** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.134254+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100539883836018697); may be cached |
