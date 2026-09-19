@@ -4,7 +4,9 @@
 
 > Write judgments such as “is this email urgent?” into branches, then ask a text model to draft a reply.
 
-**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟢 A · Clearer evidence for function/mechanism**<br>The site documents interpreter, Jev and text-model responsibilities and toy-language limits. Hosted examples replay cached results; custom inputs require local live calls. This disclosed replay is not a live speed benchmark.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#probably-language) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Put a judgment inside a program: Jev decides whether a condition holds or which 
 | Platform / author | X / [@southpolesteve](https://x.com/southpolesteve) |
 | Main post | [Source post](https://x.com/southpolesteve/status/2100767781868150938) |
 | Published (UTC) | 2026-09-18T02:04:04+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 14:17:58 / 2026-09-18 14:17:58 |
+| Added to README / content updated (Beijing time) | 2026-09-18 14:17:58 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **894** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T06:08:49+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100767781868150938); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

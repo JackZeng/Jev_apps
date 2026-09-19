@@ -4,7 +4,9 @@
 
 > Review thousands of past posts to see which topics and styles performed well.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>A plausible descriptive analysis of historical posts; unavailable raw labels limit verification, and historical association does not establish a causal growth formula.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#post-analytics) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Jev labels topics, tone and other features, then code compares historical perfor
 | Platform / author | X / [@iannuttall](https://x.com/iannuttall) |
 | Main post | [Source post](https://x.com/iannuttall/status/2100668908227162567) |
 | Published (UTC) | 2026-09-17T19:31:10+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **262** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.351271+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100668908227162567); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

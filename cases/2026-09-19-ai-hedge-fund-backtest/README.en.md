@@ -4,7 +4,9 @@
 
 > Choose a strategy and stock tickers to run an experiment on historical data.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟠 C · Claims exceed evidence**<br>A backtesting interface does not establish frontier-level decision quality or matched 100x speed and cost improvements. The comparative baseline, quality metric and complete measurements are absent; historical testing is not live profit.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#ai-hedge-fund-backtest) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,7 +22,7 @@ Like practicing on past market data: the system makes repeated decisions and mea
 | Platform / author | X / [@virattt](https://x.com/virattt) |
 | Main post | [Source post](https://x.com/virattt/status/2100959848623899005) |
 | Published (UTC) | 2026-09-18T14:47:16+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 07:04:48 |
+| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **613** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:50:11+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100959848623899005); may be cached |

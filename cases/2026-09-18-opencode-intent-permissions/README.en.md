@@ -4,7 +4,9 @@
 
 > Check an agent’s actions across tools using policies such as “only access Google.”
 
-**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-18 14:17:58 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 14:17:58<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The every-route wording refers to the demonstrated attempts, so B rather than C. Published docs explicitly expose a Code Mode bypass and preserve native permission controls; the demo is not a universal network boundary.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#opencode-intent-permissions) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Like a gatekeeper considering both access rules and the purpose of a request: Je
 | Platform / author | X / [@OpeOginni](https://x.com/OpeOginni) |
 | Main post | [Source post](https://x.com/OpeOginni/status/2100702649834188855) |
 | Published (UTC) | 2026-09-17T21:45:15+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 14:17:58 / 2026-09-18 14:17:58 |
+| Added to README / content updated (Beijing time) | 2026-09-18 14:17:58 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **235** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T06:07:34+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100702649834188855); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

@@ -4,7 +4,9 @@
 
 > Suggest when a coding conversation has reached a suitable point for context compaction.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:08:57 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The two-question policy, usage-dependent thresholds and 96-checkpoint evaluation are documented. The author tuned prompts on a private evaluation set; an independent held-out set and unseen-session safety are not established.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#compact-adviser) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,7 +22,7 @@ Like a secretary choosing a pause between topics for meeting notes: Jev judges t
 | Platform / author | X / [@kunchenguid](https://x.com/kunchenguid) |
 | Main post | [Source post](https://x.com/kunchenguid/status/2101032677940117875) |
 | Published (UTC) | 2026-09-18T19:36:40+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 07:08:57 |
+| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **242** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:48:32+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2101032677940117875); may be cached |

@@ -4,7 +4,9 @@
 
 > Ask fictional users about product interest to explore early ideas.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The source explicitly uses fictional personas and reports a single runtime/cost. This can illustrate synthetic responses, not real demand, willingness to pay or validated market research.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#synthetic-personas) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Define personas, then ask Jev fixed questions in their context. These are simula
 | Platform / author | X / [@ytiskw](https://x.com/ytiskw) |
 | Main post | [Source post](https://x.com/ytiskw/status/2100474943154827344) |
 | Published (UTC) | 2026-09-17T06:40:26+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **792** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:29.403444+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100474943154827344); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

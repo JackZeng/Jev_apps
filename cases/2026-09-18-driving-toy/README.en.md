@@ -4,7 +4,9 @@
 
 > A small driving simulation that the author calls “rebuilding FSD.”
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟠 C · Claims exceed evidence**<br>Rebuilding Tesla FSD is a materially broader claim than a toy driving demo. Real-world perception, road testing, reliability and a matched system comparison are not provided; the prototype need not be false for the headline to overstate it.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#driving-toy) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Code and Jev jointly control the simulated car. Driving in this environment is f
 | Platform / author | X / [@jpschroeder](https://x.com/jpschroeder) |
 | Main post | [Source post](https://x.com/jpschroeder/status/2100347770867458384) |
 | Published (UTC) | 2026-09-16T22:15:05+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **3,993** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.791819+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100347770867458384); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

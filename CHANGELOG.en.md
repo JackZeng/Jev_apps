@@ -2,6 +2,12 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-19 · Claim assessment labels
+
+Added the completed 106-case audit to both READMEs, case indexes and detail pages: **A 18, B 78, C 10**. Each case shows its assessment, a short reason and a direct link to its evidence row in the [audit report](references/2026-09-19-claims-audit.en.md). Labels assess public claims and do not change reproduction status.
+
+The underlying audit was completed at 11:30 Beijing time; publishing the annotations updates content timestamps while preserving first-added times, main-post snapshots and media. No cases were added or removed. Shared assessment metadata and bilingual explanations are generated from the catalog; future unassessed additions receive an explicit neutral label.
+
 ## 2026-09-19 · Sixth increment
 
 Review cutoff: **2026-09-19 07:03:22 Beijing time (2026-09-18 23:03:22 UTC)**. The catalog grows from 84 to **106 cases in 11 categories**: 22 independent additions and one existing entry supplemented. Every new main post had at least 200 likes and associated media at retrieval. Exact retrieval times are recorded per case; later visible increases do not overwrite snapshots.

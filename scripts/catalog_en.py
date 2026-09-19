@@ -1,5 +1,6 @@
 """English presentation; source metrics and media are shared with catalog.json."""
 from collections import Counter
+from catalog_reviews import review_line, review_legend
 import html
 from catalog_dates import readme_dates, format_readme_time, case_day, case_review_day, latest_review_day
 
@@ -12,7 +13,7 @@ def validate_translations(d, en):
     assert set(en['cases']) == {c['slug'] for c in d['cases']}, 'Missing or extra English cases'
     assert set(en['groups']) == {g['id'] for g in d['groups']}, 'Missing or extra English groups'
     for c in d['cases']:
-        required = CASE_FIELDS | {k for k in ('source_notes', 'jev_version') if k in c}
+        required = CASE_FIELDS | {k for k in ('source_notes', 'jev_version', 'review_summary') if k in c}
         t = en['cases'][c['slug']]
         assert set(t) == required, f'Translation fields differ: {c["slug"]}'
         assert all(isinstance(v, str) and v.strip() and '|' not in v for v in t.values()), c['slug']
@@ -58,7 +59,7 @@ For example, a flight-search agent reads the webpage and lists available control
 - **Similar examples stay together:** each group has guidance and a detailed strengths/limitations table. Entries are organized by use, not ranked by likes. Demonstration footage does not establish long-term reliability.
 - **Dates beside each introduction:** first addition to README and the latest content update, both in **Beijing time (UTC+08:00)**. Post publication and metric retrieval times are recorded separately. [Timestamp provenance](references/README.en.md#readme-times)
 
-## Categories
+{review_legend(cases, english=True)}## Categories
 
 | Category | Examples | Comparison |
 | --- | ---: | --- |
@@ -79,8 +80,8 @@ For example, a flight-search agent reads the webpage and lists available control
         for c in cs:
             p = c['post']
             path = f'cases/{case_day(c)}-{c["slug"]}'
-            readme.append(f'| [**{c["title"]}**]({path}/README.en.md)<br>{c["summary"]}<br>**How it works:** {c["plain_explanation"]}<br>{readme_dates(c, english=True)} | [{p["likes"]:,}]({p["url"]}) | {preview(c)} |\n')
-            index.append(f'| [{c["title"]}]({case_day(c)}-{c["slug"]}/README.en.md) | {c["summary"]}<br>{readme_dates(c, english=True)} | [{p["likes"]:,}]({p["url"]}) |\n')
+            readme.append(f'| [**{c["title"]}**]({path}/README.en.md)<br>{c["summary"]}<br>**How it works:** {c["plain_explanation"]}<br>{review_line(c, english=True)}<br>{readme_dates(c, english=True)} | [{p["likes"]:,}]({p["url"]}) | {preview(c)} |\n')
+            index.append(f'| [{c["title"]}]({case_day(c)}-{c["slug"]}/README.en.md) | {c["summary"]}<br>{review_line(c, prefix="../", english=True)}<br>{readme_dates(c, english=True)} | [{p["likes"]:,}]({p["url"]}) |\n')
             b.append(f'| [{c["title"]}](../{path}/README.en.md) | {c["advantage"]} | {c["limitation"]} |\n')
             supplement = '\n'.join(f'- [Supporting post by @{s["author"]}]({s["url"]}): published {s["published_at"]}; {s["likes"]:,} likes retrieved {s["retrieved_at"]}. Supporting source only; not counted toward the threshold. [Metadata source]({s["metrics_source"]}).' + ''.join(f' [Supplementary media {i}]({m["url"]})' for i, m in enumerate(s.get('media', []), 1)) for s in c['supplementary_posts']) or 'None.'
             update_entry = ''.join(f"| {u['reviewed_at']} | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |\n" for u in d.get('updates', [update] if update else []) if c['slug'] in u['updated_cases'])
@@ -94,6 +95,8 @@ For example, a flight-search agent reads the webpage and lists available control
 > {c['summary']}
 
 {readme_dates(c, english=True)} (Beijing time, UTC+08:00)
+
+{review_line(c, prefix="../../", english=True)}
 
 ## How it works, in plain English
 

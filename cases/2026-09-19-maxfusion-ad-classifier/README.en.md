@@ -4,7 +4,9 @@
 
 > Label ads by style and customer-journey stage for account-level analysis.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>A specific ad-classification demo, with no validated label accuracy or complete preprocessing costs; batch size does not prove superiority over another tool.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#maxfusion-ad-classifier) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,7 +22,7 @@ Like arranging ads in a labeled cabinet: Jev judges dimensions and code aggregat
 | Platform / author | X / [@OriSilver](https://x.com/OriSilver) |
 | Main post | [Source post](https://x.com/OriSilver/status/2100941251478458871) |
 | Published (UTC) | 2026-09-18T13:33:22+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 07:04:48 |
+| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **320** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:50:11+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100941251478458871); may be cached |

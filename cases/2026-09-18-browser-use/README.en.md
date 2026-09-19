@@ -4,7 +4,9 @@
 
 > Describe a flight search and let the agent click, type and find results on the website.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 07:04:48 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟢 A · Clearer evidence for function/mechanism**<br>Bounded flight demo and inspectable implementation support A. The WebMCP result is 49/49 tasks but 141/147 attempts, with Mercury helping; neither establishes universal reliability or an end-to-end seven-second guarantee.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#browser-use) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,7 +22,7 @@ Think of an assistant with a constantly updated list of buttons. Code reads the 
 | Platform / author | X / [@gregpr07](https://x.com/gregpr07) |
 | Main post | [Source post](https://x.com/gregpr07/status/2100411066966749359) |
 | Published (UTC) | 2026-09-17T02:26:36+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 07:04:48 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **6,891** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:32:51.243200+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100411066966749359); may be cached |

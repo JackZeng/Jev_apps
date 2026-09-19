@@ -4,7 +4,9 @@
 
 > Screen emails for fraud quickly, then send uncertain cases to a larger model.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>A transparent small-sample cascade, but 96/100 belongs to Jev plus Kimi; the confidence threshold and balanced sample do not establish production fraud detection.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#email-fraud) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ It is a two-stage check: Jev screens first and Kimi reviews 31 low-confidence em
 | Platform / author | X / [@nutlope](https://x.com/nutlope) |
 | Main post | [Source post](https://x.com/nutlope/status/2100614659690713543) |
 | Published (UTC) | 2026-09-17T15:55:37+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **542** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:25.698324+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100614659690713543); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

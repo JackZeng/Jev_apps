@@ -4,7 +4,9 @@
 
 > Filter relevant messages from a natural-language request instead of relying only on keywords.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>An intent-search interaction is demonstrated; large-inbox embedding retrieval is only a suggestion, and recall and relevance remain unmeasured.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#gmail-intent-search) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,7 +22,7 @@ Like asking an assistant for a type of message: the app supplies candidates and 
 | Platform / author | X / [@dabit3](https://x.com/dabit3) |
 | Main post | [Source post](https://x.com/dabit3/status/2100960281769738433) |
 | Published (UTC) | 2026-09-18T14:48:59+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 07:04:48 |
+| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **574** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:50:12+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100960281769738433); may be cached |

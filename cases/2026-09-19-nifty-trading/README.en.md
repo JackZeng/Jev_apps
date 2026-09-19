@@ -4,7 +4,9 @@
 
 > Demonstrate Jev-connected Nifty trading and report a triggered stop loss.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The source reports a stop-loss after an initially green morning, not a profitable day. Account authenticity, executions and long-term risk controls remain unverified; the disclosure is more balanced than profit marketing.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#nifty-trading) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,7 +22,7 @@ Like connecting decisions to orders with a stopping rule. Model judgments, broke
 | Platform / author | X / [@IndraVahan](https://x.com/IndraVahan) |
 | Main post | [Source post](https://x.com/IndraVahan/status/2100929105382564113) |
 | Published (UTC) | 2026-09-18T12:45:06+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 07:04:48 |
+| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **673** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:50:12+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100929105382564113); may be cached |

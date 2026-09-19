@@ -4,7 +4,9 @@
 
 > Use Jev to choose card-game actions with less waiting between decisions.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>A fast-action demo with a self-reported 0.7-second decision time; superhuman gameplay quality is not established by operation speed or a short clip.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#slay-spire) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Card games usually provide a set of currently legal choices that code can offer 
 | Platform / author | X / [@coolish](https://x.com/coolish) |
 | Main post | [Source post](https://x.com/coolish/status/2100570517954838897) |
 | Published (UTC) | 2026-09-17T13:00:12+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **598** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.210633+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100570517954838897); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

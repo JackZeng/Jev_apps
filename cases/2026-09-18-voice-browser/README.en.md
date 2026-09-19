@@ -4,7 +4,9 @@
 
 > Speak a command, such as “go back,” and let the browser act.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 10:50:59 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The transcription-to-decision loop is clear. Per-decision latency and cost do not measure the complete voice interaction or establish broad instruction accuracy.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#voice-browser) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Speech is first transcribed. Jev maps the text to an action, then the browser ex
 | Platform / author | X / [@moritzkremb](https://x.com/moritzkremb) |
 | Main post | [Source post](https://x.com/moritzkremb/status/2100577979021832365) |
 | Published (UTC) | 2026-09-17T13:29:51+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 10:50:59 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,829** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:22.752244+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100577979021832365); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

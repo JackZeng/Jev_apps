@@ -4,7 +4,9 @@
 
 > Find useful skills for the current task in a large AI skill library.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The integration is plausible, but the thirty-turn comparison is anecdotal and the reused preview does not independently demonstrate the Jev integration.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#skillbox) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Like choosing tools from a toolbox, Jev filters skills for the request and the a
 | Platform / author | X / [@thekitze](https://x.com/thekitze) |
 | Main post | [Source post](https://x.com/thekitze/status/2100556122570792999) |
 | Published (UTC) | 2026-09-17T12:03:00+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **724** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:23.946379+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100556122570792999); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

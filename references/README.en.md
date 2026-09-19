@@ -4,6 +4,10 @@
 
 Initial collection date: **2026-09-18, Asia/Shanghai**. The scope is concrete applications, prototypes, implementation demos and task-specific experiments using **TypeSafe Jev** on X.
 
+## Claim audit
+
+[2026-09-19: all 106 cases — 18 with clearer bounded evidence, 78 limited demos, 10 with overstated claims](2026-09-19-claims-audit.en.md). Each case includes primary-source links and limitations; no independent application reproduction was performed.
+
 ## Official references
 
 | Reference | Purpose |

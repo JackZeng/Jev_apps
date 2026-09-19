@@ -9,6 +9,7 @@ from pathlib import Path
 import sys
 
 from catalog_en import generate_en, validate_translations
+from catalog_reviews import review_line, review_legend, validate_review
 from catalog_dates import readme_dates, format_readme_time, case_day, case_review_day, latest_review_day
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,6 +45,7 @@ def validate(d):
         assert len(changed) == len(set(changed)), '增量记录重复'
         assert set(changed) <= {c['slug'] for c in cases}, '增量记录引用未知案例'
     for c in cases:
+        validate_review(c)
         p = c['post']
         added = datetime.fromisoformat(c['readme_added_at'])
         updated = datetime.fromisoformat(c['readme_updated_at'])
@@ -93,7 +95,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 - **同类放一起**：每组下面给选择建议，详细对比逐项列出优势与限制。类别内按用途排列，不按点赞排名。视频只是演示证据，不证明长期可靠性。
 - **简介旁的时间**：每条标注收录到 README 和最近内容更新的时间，统一为**北京时间（UTC+08:00）**；与原帖发布时间、点赞取数时间分别记录。[时间依据](references/README.md#readme-times)
 
-## 分类导航
+{review_legend(cases)}## 分类导航
 
 | 类别 | 案例数 | 对比与原理 |
 | --- | ---: | --- |
@@ -113,8 +115,8 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
         for c in group_cases:
             path = case_dir(c, date)
             p = c['post']
-            readme.append(f'| [**{c["title"]}**]({path}/README.md)<br>{c["summary"]}<br>**原理：** {c["plain_explanation"]}<br>{readme_dates(c)} | [{p["likes"]:,}]({p["url"]}) | {thumb(c)} |\n')
-            index.append(f'| [{c["title"]}]({case_day(c)}-{c["slug"]}/README.md) | {c["summary"]}<br>{readme_dates(c)} | [{p["likes"]:,}]({p["url"]}) |\n')
+            readme.append(f'| [**{c["title"]}**]({path}/README.md)<br>{c["summary"]}<br>**原理：** {c["plain_explanation"]}<br>{review_line(c)}<br>{readme_dates(c)} | [{p["likes"]:,}]({p["url"]}) | {thumb(c)} |\n')
+            index.append(f'| [{c["title"]}]({case_day(c)}-{c["slug"]}/README.md) | {c["summary"]}<br>{review_line(c, prefix="../")}<br>{readme_dates(c)} | [{p["likes"]:,}]({p["url"]}) |\n')
             b.append(f'| [{c["title"]}](../{path}/README.md) | {c["advantage"]} | {c["limitation"]} |\n')
             supplement = '\n'.join(f'- [@{s["author"]} 的补充帖]({s["url"]})：发布于 {s["published_at"]}；{s["retrieved_at"]} 取数时 {s["likes"]:,} 赞，仅作补充、不计入门槛。[取数来源]({s["metrics_source"]})。' + ''.join(f' [补充媒体 {i}]({m["url"]})' for i, m in enumerate(s.get('media', []), 1)) for s in c['supplementary_posts']) or '无。'
             update_entry = ''.join(f"| {u['reviewed_at']} | 合并补充来源，完善原理、证据或教程说明；[去重记录](../../CHANGELOG.md) |\n" for u in d.get('updates', [update] if update else []) if c['slug'] in u['updated_cases'])
@@ -128,6 +130,8 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 > {c['summary']}
 
 {readme_dates(c)}（北京时间，UTC+08:00）
+
+{review_line(c, prefix="../../")}
 
 ## 用人话解释原理
 

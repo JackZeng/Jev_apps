@@ -4,7 +4,9 @@
 
 > Write code-review rules in plain language and have a bot check changes against them.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The source explicitly describes an in-progress prototype and future release, so the claim is plausible but availability and review accuracy remain unverified.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#jev-rabbit) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Team conventions that are hard to encode as fixed checks can be assessed by Jev.
 | Platform / author | X / [@thekitze](https://x.com/thekitze) |
 | Main post | [Source post](https://x.com/thekitze/status/2100616530275029139) |
 | Published (UTC) | 2026-09-17T16:03:03+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **327** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:24.547752+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100616530275029139); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

@@ -4,7 +4,9 @@
 
 > Scan site articles and suggest relevant internal links using text already present.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The author discloses the early-stopped comparison. The 190-fold figure is a per-page extrapolation, not an equally completed, quality-matched full-site benchmark or proof of SEO benefit.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#seo-internal-links) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,7 +22,7 @@ Like an editor marking where an article could link to another: Jev judges releva
 | Platform / author | X / [@borjafat](https://x.com/borjafat) |
 | Main post | [Source post](https://x.com/borjafat/status/2101018783976722479) |
 | Published (UTC) | 2026-09-18T18:41:27+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 07:04:48 |
+| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **721** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:48:32+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2101018783976722479); may be cached |

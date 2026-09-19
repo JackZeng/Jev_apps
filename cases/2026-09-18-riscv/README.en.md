@@ -4,7 +4,9 @@
 
 > Use Jev for simple logic decisions and compose them into small computer instructions.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The author explicitly describes logic-gate judgments composed through SERV, not a native Jev CPU. Integration correctness, stability and any advantage over deterministic computation remain unverified.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#riscv) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Like building a machine from blocks, Jev supplies AND/OR-style decisions that SE
 | Platform / author | X / [@i2cjak](https://x.com/i2cjak) |
 | Main post | [Source post](https://x.com/i2cjak/status/2100454307405365673) |
 | Published (UTC) | 2026-09-17T05:18:26+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **208** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:30.049692+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100454307405365673); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

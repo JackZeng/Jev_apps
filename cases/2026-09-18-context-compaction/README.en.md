@@ -4,7 +4,9 @@
 
 > Trim an AI assistant's work history to retain what matters now.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 10:50:59 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟠 C · Claims exceed evidence**<br>A real API-backed filter exists, but instant size reduction does not establish preserved task quality. Pinned code omits tool-result bodies from decision state. Its separate scripted recording app makes no API calls; a live demo also exists, so this is not evidence that the entire project is fabricated.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#context-compaction) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Rather than rewrite all history as a summary, score tool records for relevance a
 | Platform / author | X / [@tamarajtran](https://x.com/tamarajtran) |
 | Main post | [Source post](https://x.com/tamarajtran/status/2100694549362553153) |
 | Published (UTC) | 2026-09-17T21:13:04+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 10:50:59 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,646** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:26.956952+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100694549362553153); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

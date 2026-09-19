@@ -4,7 +4,9 @@
 
 > Run multiple browser sessions to explore how a new release might fail during use.
 
-**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The parallel browser setup is plausible, but window count and low-cost wording do not establish meaningful coverage or defect-detection effectiveness.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#runlayer-adversarial-testing) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Like a team of testers trying software at once: Jev contributes quick decisions 
 | Platform / author | X / [@rafalwilinski](https://x.com/rafalwilinski) |
 | Main post | [Source post](https://x.com/rafalwilinski/status/2100882207879434359) |
 | Published (UTC) | 2026-09-18T09:38:45+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 19:44:51 / 2026-09-18 19:44:51 |
+| Added to README / content updated (Beijing time) | 2026-09-18 19:44:51 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **820** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T11:39:02+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100882207879434359); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

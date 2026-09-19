@@ -4,7 +4,9 @@
 
 > Classify a set of emails with four models and compare progress and elapsed time on one screen.
 
-**Added to README:** 2026-09-18 16:17:27<br>**Content updated:** 2026-09-18 16:17:27 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 16:17:27<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>A task-level speed demo is visible, but unspecified model versions, concurrency and accuracy prevent a general performance ranking.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#email-speed-race) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Like four sorting clerks handling the same stack of letters: each model assigns 
 | Platform / author | X / [@usutaku_channel](https://x.com/usutaku_channel) |
 | Main post | [Source post](https://x.com/usutaku_channel/status/2100829343954173965) |
 | Published (UTC) | 2026-09-18T06:08:41+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 16:17:27 / 2026-09-18 16:17:27 |
+| Added to README / content updated (Beijing time) | 2026-09-18 16:17:27 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **445** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T08:11:40+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100829343954173965); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

@@ -9,7 +9,8 @@
       "reported_result": "The author reports a flight search taking about 7 seconds and costing $0.0039, shown at normal speed.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
       "source_notes": "**Repository cross-check (2026-09-18)**: The [pinned README](https://github.com/browser-use/jev-ultrafast/blob/452c1ad2dd628008f1d5608f28158d76e49e6cc0/README.md) describes separate operation and target judgments in one request, with code executing only the matching target. A small LLM is used for TYPE_TEXT. Its 7,073ms measurement starts after the initial page observation and lists unsupported page types; it is not a general time from browser launch to arbitrary task completion.\n\n**2026-09-19 WebMCP comparison merged:** The author modifies Ultrafast: Jev selects website tools and Mercury 2.5 generates arguments. This is a benchmark variant of the existing project, not another entry. The [benchmark](https://webmcp.com/benchmark) covers 49 tasks on eight sites, with three attempts each. WebMCP solves 49/49 tasks but succeeds in 141/147 attempts; the DOM variant solves 25/49. Displayed median costs are $0.0011 and $0.0008 respectively, so the post’s 18% reduction does not directly describe those medians. These findings apply to this harness and test, without independent reproduction.",
-      "plain_explanation": "Think of an assistant with a constantly updated list of buttons. Code reads the page, Jev chooses the next action, and a text model helps fill in details such as city names."
+      "plain_explanation": "Think of an assistant with a constantly updated list of buttons. Code reads the page, Jev chooses the next action, and a text model helps fill in details such as city names.",
+      "review_summary": "Bounded flight demo and inspectable implementation support A. The WebMCP result is 49/49 tasks but 141/147 attempts, with Mercury helping; neither establishes universal reliability or an end-to-end seven-second guarantee."
     },
     "stagehand": {
       "title": "Stagehand browser control",
@@ -19,7 +20,8 @@
       "limitation": "Depends on page accessibility information; no success rate on a shared task set is published.",
       "reported_result": "The author reports $0.001 for this remote-browser task.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Webpages expose button names and other information to accessibility tools. This system gives that information to Jev, lets it choose an action, and uses Stagehand to execute it before checking the page again."
+      "plain_explanation": "Webpages expose button names and other information to accessibility tools. This system gives that information to Jev, lets it choose an action, and uses Stagehand to execute it before checking the page again.",
+      "review_summary": "The disclosed accessibility-tree/action loop is plausible and demonstrated, but one task does not establish general success rates or full pipeline cost."
     },
     "cua-jev-use": {
       "title": "Cua · jev-use",
@@ -30,7 +32,8 @@
       "reported_result": "The post advertises a macOS/Windows/Linux development preview and mentions #3943. Repository review identified #3916 as the semantic jev-use preview, still unmerged at collection.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
       "source_notes": "**Repository cross-check (2026-09-18)**: [PR #3916](https://github.com/trycua/cua/pull/3916) describes DOM/semantic evidence and Jev selecting actions outside Driver. Mock E2E CI is not live Jev certification across platforms. [PR #3943, mentioned in the post](https://github.com/trycua/cua/pull/3943), has been narrowed to an unwired perception-foundations draft and should not be treated as an available screenshot-perception feature. These are repository statements, not tests run here.\n\n**Third-pass review (2026-09-18 06:12 UTC):** [Teknium’s quote](https://x.com/Teknium/status/2100783833419505941) announces testing planned for the next few weeks, not results; it is merged into the existing Cua case. GitHub API checks show #3916 still open and unmerged, and #3943 still an open, unmerged draft. This pass refreshes PR status only; planned testing is not treated as a shipped integration.",
-      "plain_explanation": "Like ordering from a menu, Jev selects only an action ID prepared by the application. Code checks it, executes it and independently verifies the form. The current preview does not operate arbitrary software from screenshots."
+      "plain_explanation": "Like ordering from a menu, Jev selects only an action ID prepared by the application. Code checks it, executes it and independently verifies the form. The current preview does not operate arbitrary software from screenshots.",
+      "review_summary": "The semantic recipe is real and now merged, but the launch claim that fast computer use is solved across platforms exceeds its explicitly bounded, non-certifying scope. The visual extension has advanced but remains a draft; old catalog merge status is stale."
     },
     "coreml-ocr": {
       "title": "CoreML + OCR desktop clicks",
@@ -40,7 +43,8 @@
       "limitation": "OCR and detection errors affect results. Label text still leaves the device, so this is not fully offline.",
       "reported_result": "The author reports roughly 90ms per decision, without a full task benchmark.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Local recognition software does the screen-reading and lists the button labels. Jev chooses from that list. Images stay on the device, but recognized text is still sent to Jev."
+      "plain_explanation": "Local recognition software does the screen-reading and lists the button labels. Jev chooses from that list. Images stay on the device, but recognized text is still sent to Jev.",
+      "review_summary": "Local OCR plus remote text decisions is technically coherent. The reported 90 ms is per decision, not end-to-end latency; the short demo and author report do not establish general desktop reliability."
     },
     "agent-desktop": {
       "title": "OpenCode + agent-desktop",
@@ -50,7 +54,8 @@
       "limitation": "Still depends on an LLM. Snapshot encoding is unspecified; this does not establish native image input to Jev.",
       "reported_result": "The author shares a desktop-control demo with a visible cursor.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Think of a coordinator and an operator: the language model keeps context and passes desktop information to Jev for target selection. The post does not explain the exact representation."
+      "plain_explanation": "Think of a coordinator and an operator: the language model keeps context and passes desktop information to Jev for target selection. The post does not explain the exact representation.",
+      "review_summary": "The video and described division of labor support a hybrid prototype. Input encoding and a reproducible speed comparison remain undisclosed."
     },
     "kernel-browser": {
       "title": "Kernel browser demo",
@@ -60,7 +65,8 @@
       "limitation": "Only a short demo; complex pages, recovery and completion rates are undocumented.",
       "reported_result": "The author shares an approximately 22-second demo, without a comparable benchmark.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "The author connects Jev to the Kernel browser service in an observe–choose–act loop. The post does not detail how pages become model inputs or how errors are recovered."
+      "plain_explanation": "The author connects Jev to the Kernel browser service in an observe–choose–act loop. The post does not detail how pages become model inputs or how errors are recovered.",
+      "review_summary": "A short integration demo supports plausibility, while mechanism detail, recovery behavior and a task-level evaluation are missing."
     },
     "voice-browser": {
       "title": "Voice-controlled browser",
@@ -71,7 +77,8 @@
       "reported_result": "The author reports about 300ms and $0.0002 per decision.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
       "plain_explanation": "Speech is first transcribed. Jev maps the text to an action, then the browser executes it. Jev chooses what to do; a separate component handles the audio.",
-      "source_notes": "**Tutorial supplement:** The author’s [full tutorial](https://x.com/moritzkremb/status/2100715237267660873) identifies the 5:59 chapter as this voice-browser demonstration. It is merged by author and use case, not counted as another application. The tutorial also covers other demos. Chapter identification comes from the author’s outline; this update did not review every frame or run the code."
+      "source_notes": "**Tutorial supplement:** The author’s [full tutorial](https://x.com/moritzkremb/status/2100715237267660873) identifies the 5:59 chapter as this voice-browser demonstration. It is merged by author and use case, not counted as another application. The tutorial also covers other demos. Chapter identification comes from the author’s outline; this update did not review every frame or run the code.",
+      "review_summary": "The transcription-to-decision loop is clear. Per-decision latency and cost do not measure the complete voice interaction or establish broad instruction accuracy."
     },
     "opencode-qa": {
       "title": "OpenCode app testing",
@@ -81,7 +88,8 @@
       "limitation": "Fast interaction does not establish correct assertions or sufficient coverage. Included as a demo.",
       "reported_result": "The author shares an approximately 24-second testing demo, without a full QA benchmark.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Interacting with an app and knowing whether it is correct are separate jobs. The demo integrates Jev into OpenCode testing but does not publish the full pass/fail rules."
+      "plain_explanation": "Interacting with an app and knowing whether it is correct are separate jobs. The demo integrates Jev into OpenCode testing but does not publish the full pass/fail rules.",
+      "review_summary": "The author presents a small demo, not a validated QA replacement. Fast interaction does not establish assertion quality or defect coverage."
     },
     "eve-router": {
       "title": "Eve criteria-based model router",
@@ -91,7 +99,8 @@
       "limitation": "The post provides no routing accuracy, quota policy or fallback evaluation; the evidence is a demo screenshot.",
       "reported_result": "The author shares a screenshot of criteria-based model routing.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Like a receptionist routing calls, Jev sees the request and selection criteria, chooses a model, and lets code forward the work. The final task result is needed to judge the choice."
+      "plain_explanation": "Like a receptionist routing calls, Jev sees the request and selection criteria, chooses a model, and lets code forward the work. The final task result is needed to judge the choice.",
+      "review_summary": "A criteria-based selection experiment is supported by the screenshot; optimal routing, latency distributions and downstream answer quality are not established."
     },
     "ephraim-router": {
       "title": "Request-to-model router",
@@ -101,7 +110,8 @@
       "limitation": "No shared task set establishes better total cost or answer quality than a fixed model.",
       "reported_result": "The author shares an approximately 14-second routing demo.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Jev acts like a triage desk: it decides who handles the request. The selected model writes the answer. The demo connects selection and forwarding."
+      "plain_explanation": "Jev acts like a triage desk: it decides who handles the request. The selected model writes the answer. The demo connects selection and forwarding.",
+      "review_summary": "The routing flow is demonstrated, but selecting a model does not prove it is the best model for the request."
     },
     "firstmate": {
       "title": "Firstmate task dispatch",
@@ -111,7 +121,8 @@
       "limitation": "Agreement with Fable on 25 tasks is small-sample decision agreement, not task-outcome accuracy.",
       "reported_result": "The author reports agreement on 25 tasks and reductions of 71% in cost and 90% in elapsed time for the entire dispatch stage.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "A dispatcher chooses the worker, tool setup and effort level. Jev replaces that dispatch step; other agents still perform the task."
+      "plain_explanation": "A dispatcher chooses the worker, tool setup and effort level. Jev replaces that dispatch step; other agents still perform the task.",
+      "review_summary": "The author discloses 25 matching dispatch decisions and separates dispatch overhead. This is bounded self-reported evidence, not proof of equivalent task quality or whole-agent savings."
     },
     "local-delegation": {
       "title": "Local coding-agent delegation",
@@ -121,7 +132,8 @@
       "limitation": "Rules, fallbacks and long-term completion quality are not fully published. A deterministic hook does not make model decisions infallible.",
       "reported_result": "The author gives different routes for mechanical work, complex subtasks and long-running work.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Before delegation, code asks Jev who should handle the task, then invokes that assistant through a predefined route. Choosing a worker is separate from doing the work."
+      "plain_explanation": "Before delegation, code asks Jev who should handle the task, then invokes that assistant through a predefined route. Choosing a worker is separate from doing the work.",
+      "review_summary": "The task-category routing scheme is plausible. A deterministic hook does not guarantee correct routing, and no downstream task benchmark is supplied."
     },
     "skillbox": {
       "title": "Skillbox skill selection",
@@ -131,7 +143,8 @@
       "limitation": "No recall evaluation. The preview comes from an earlier Skillbox introduction, not a new screenshot testing the Jev integration.",
       "reported_result": "The author says the integration returns relevant skills directly, without a formal controlled evaluation.",
       "media_note": "This preview is from an earlier Skillbox introduction. The newer main post describes the Jev integration.",
-      "plain_explanation": "Like choosing tools from a toolbox, Jev filters skills for the request and the agent uses them. Speed matters, but so does avoiding missed essential skills."
+      "plain_explanation": "Like choosing tools from a toolbox, Jev filters skills for the request and the agent uses them. Speed matters, but so does avoiding missed essential skills.",
+      "review_summary": "The integration is plausible, but the thirty-turn comparison is anecdotal and the reused preview does not independently demonstrate the Jev integration."
     },
     "coding-garden-assistant": {
       "title": "Coding Garden tool assistant",
@@ -141,7 +154,8 @@
       "limitation": "Arguments and tool choices can still be wrong; the author's claim of no hallucinations is not established.",
       "reported_result": "The author shares an approximately four-minute demo and says no text-generating LLM is used.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Jev selects a tool and its arguments; the tool returns results and the interface displays them. Even sourced answers can be wrong if the wrong tool or arguments are chosen."
+      "plain_explanation": "Jev selects a tool and its arguments; the tool returns results and the interface displays them. Even sourced answers can be wrong if the wrong tool or arguments are chosen.",
+      "review_summary": "The tool-based assistant demo is credible, but eliminating free-form generation does not guarantee error-free answers. Tool selection, arguments and retrieved sources can still be wrong, so the categorical no-hallucination claim is overstated."
     },
     "eve-tool-agent": {
       "title": "Eve tool-calling agent",
@@ -151,7 +165,8 @@
       "limitation": "The author describes similar results but provides insufficient samples or a shared quality score; savings do not imply complete LLM replacement.",
       "reported_result": "An earlier update reports roughly one-eighth the cost with similar execution time and output quality.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "The original agent reasons about which tool to use. This experiment hands that choice to Jev while retaining the tools and downstream processing."
+      "plain_explanation": "The original agent reasons about which tool to use. This experiment hands that choice to Jev while retaining the tools and downstream processing.",
+      "review_summary": "This is an early author-reported tool-selection swap, not an equal-quality benchmark for complete agents; sample size and scoring are absent."
     },
     "ai-cli": {
       "title": "ai-cli decision interface",
@@ -161,7 +176,8 @@
       "limitation": "An integration tool, not an autonomous task-completion agent; arguments and error handling need evaluation.",
       "reported_result": "The author publishes a CLI screenshot and the npm package name ai-cli.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "It is a common adapter: Jev becomes callable through terminal commands. Providing an interface does not itself solve a complex task."
+      "plain_explanation": "It is a common adapter: Jev becomes callable through terminal commands. Providing an interface does not itself solve a complex task.",
+      "review_summary": "The published CLI interface directly supports the bounded integration claim, including typed outputs and error behavior. This does not validate judgment accuracy or every harness integration."
     },
     "jev-review": {
       "title": "jev-review MCP",
@@ -171,7 +187,8 @@
       "limitation": "An experimental plugin. Optimizing a score can reward gaming the metric; it does not replace tests or human review.",
       "reported_result": "The author demonstrates an experimental, local-first MCP plugin.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "The loop resembles submitting work, receiving feedback and revising it. Jev scores criteria; the coding agent edits. A higher score does not guarantee a correct program."
+      "plain_explanation": "The loop resembles submitting work, receiving feedback and revising it. Jev scores criteria; the coding agent edits. A higher score does not guarantee a correct program.",
+      "review_summary": "An experimental scoring loop is plausible; improved model scores are not independent evidence of improved code correctness."
     },
     "typed-pr-review": {
       "title": "14-check PR risk review",
@@ -181,7 +198,8 @@
       "limitation": "Only six PRs are shown; semantic risk classification does not establish comprehensive vulnerability detection.",
       "reported_result": "The author reports about 0.5 seconds and $0.00007 per PR. This repository has not reproduced the cost comparison.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Split review into 14 specific questions and ask Jev in one call. Code combines the answers; uncertain critical findings go to a person or larger model."
+      "plain_explanation": "Split review into 14 specific questions and ask Jev in one call. Code combines the answers; uncertain critical findings go to a person or larger model.",
+      "review_summary": "The six-PR typed-check demo and escalation rule are concrete. The price comparison does not establish equivalent coverage to a full Claude review; no general accuracy claim is justified."
     },
     "jev-rabbit": {
       "title": "jev-rabbit natural-language rules",
@@ -191,7 +209,8 @@
       "limitation": "The post says release is upcoming; availability is unconfirmed. Ambiguous rules can produce inconsistent reviews.",
       "reported_result": "The author shows a work-in-progress prototype and announces an upcoming GitHub release.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Team conventions that are hard to encode as fixed checks can be assessed by Jev. Clear rules are easier to apply. The source post describes a work-in-progress project."
+      "plain_explanation": "Team conventions that are hard to encode as fixed checks can be assessed by Jev. Clear rules are easier to apply. The source post describes a work-in-progress project.",
+      "review_summary": "The source explicitly describes an in-progress prototype and future release, so the claim is plausible but availability and review accuracy remain unverified."
     },
     "codebase-classifier": {
       "title": "Codebase complexity classifier",
@@ -201,7 +220,8 @@
       "limitation": "Overengineering depends on project context; classification has not been shown to guide safe refactoring.",
       "reported_result": "The author shares an approximately 99-second demo.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "It classifies code structure, like a preliminary engineering checkup. Overengineering depends on project needs; a label alone is not a sound basis for refactoring."
+      "plain_explanation": "It classifies code structure, like a preliminary engineering checkup. Overengineering depends on project needs; a label alone is not a sound basis for refactoring.",
+      "review_summary": "The demo supports a classifier experiment. The suggested benefit for overengineering remains a hypothesis, not an established result."
     },
     "fx-safety": {
       "title": "fx auto mode safety classifier",
@@ -211,7 +231,8 @@
       "limitation": "The full test set is not published; average accuracy alone is insufficient to authorize risky actions.",
       "reported_result": "The author reports about 5–18× faster classification than the previously used Luna model, with higher accuracy.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Jev acts as a pre-execution screener, classifying command safety. Fast screening can still miss risks; explicit rules must determine whether execution is allowed."
+      "plain_explanation": "Jev acts as a pre-execution screener, classifying command safety. Fast screening can still miss risks; explicit rules must determine whether execution is allowed.",
+      "review_summary": "A self-reported safety-classifier comparison exists, but the absent dataset and false-allow rates prevent treating it as validated security enforcement."
     },
     "jailbreak-screen": {
       "title": "Jailbreak prompt prescreen",
@@ -221,7 +242,8 @@
       "limitation": "Explicitly an early attempt. Approaching 100% is an aspiration, not an achieved result.",
       "reported_result": "The author shows an initial comparison and claims an advantage over Luna, without a reusable test set.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Jev checks whether a prompt resembles known bypass patterns. It is an initial screen and may miss unfamiliar forms."
+      "plain_explanation": "Jev checks whether a prompt resembles known bypass patterns. It is an initial screen and may miss unfamiliar forms.",
+      "review_summary": "The author distinguishes an initial comparison from a future near-perfect target. Current evidence is limited and does not establish robustness to unseen attacks."
     },
     "upload-check": {
       "title": "Document upload checker",
@@ -231,7 +253,8 @@
       "limitation": "The demo does not establish detection of all sensitive information and cannot replace organizational access rules.",
       "reported_result": "The author shares an approximately 35-second interaction demo.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "The system asks Jev for an allow/deny judgment. Its usefulness depends on the supplied rules and context; the post does not publish a full organizational confidentiality policy."
+      "plain_explanation": "The system asks Jev for an allow/deny judgment. Its usefulness depends on the supplied rules and context; the post does not publish a full organizational confidentiality policy.",
+      "review_summary": "The bounded upload-check prototype is plausible, but policy coverage and sensitive-data false negatives are unmeasured."
     },
     "papers": {
       "title": "1kpapers research classification",
@@ -241,7 +264,8 @@
       "limitation": "At posting, Jev labels were still under evaluation and had not replaced the site's existing labels. Summary quality affects classification.",
       "reported_result": "The author reports $3.99 for summaries, $0.08 for classification and 256ms median end-to-end classification latency per paper.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Another model summarizes each paper, then Jev picks from 24 topics. Think of making an index card first and then labeling it."
+      "plain_explanation": "Another model summarizes each paper, then Jev picks from 24 topics. Think of making an index card first and then labeling it.",
+      "review_summary": "The staged workflow and split costs are clearly described; $0.08 covers classification only, and the live site had not yet adopted the Jev labels."
     },
     "duckdb": {
       "title": "DuckDB semantic classification",
@@ -251,7 +275,8 @@
       "limitation": "Throughput depends on concurrency, row length and API limits; it is not directly comparable with single-request latency.",
       "reported_result": "The author reports roughly 10 seconds for 1,000 rows, without a full reproduction configuration.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "DuckDB processes tabular data. This extension connects it to Jev so queries can include classifications without manually copying rows into a chat window."
+      "plain_explanation": "DuckDB processes tabular data. This extension connects it to Jev so queries can include classifications without manually copying rows into a chat window.",
+      "review_summary": "A plausible SQL classification integration; a screenshot and a throughput claim do not establish accuracy or general superiority over LLMs."
     },
     "email-batch": {
       "title": "Batch classification of 500 emails",
@@ -261,7 +286,8 @@
       "limitation": "No accuracy or confusion matrix; low cost does not establish that important emails are classified correctly.",
       "reported_result": "The author reports 500 emails classified in seconds for $0.035 total.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Code sends email contents to Jev for category choices and collects the results. It is automated labeling, whose accuracy still needs checking."
+      "plain_explanation": "Code sends email contents to Jev for category choices and collects the results. It is automated labeling, whose accuracy still needs checking.",
+      "review_summary": "A concrete batch-email demo; dataset, label accuracy and timing boundaries remain undisclosed, so price and speed are author-reported."
     },
     "email-fraud": {
       "title": "Jev + Kimi email fraud detection",
@@ -271,7 +297,8 @@
       "limitation": "96/100 is the combined pipeline result. A small 50:50 sample does not represent real-world fraud prevalence or deployment performance.",
       "reported_result": "The author reports 1.42 seconds for Jev; the full pipeline took 16 seconds, cost about $0.07 and got 96/100 correct.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "It is a two-stage check: Jev screens first and Kimi reviews 31 low-confidence emails. The 96/100 result belongs to the combined pipeline, not Jev alone."
+      "plain_explanation": "It is a two-stage check: Jev screens first and Kimi reviews 31 low-confidence emails. The 96/100 result belongs to the combined pipeline, not Jev alone.",
+      "review_summary": "A transparent small-sample cascade, but 96/100 belongs to Jev plus Kimi; the confidence threshold and balanced sample do not establish production fraud detection."
     },
     "bank-payee": {
       "title": "Bank transaction payee cleanup",
@@ -281,7 +308,8 @@
       "limitation": "The author's estimate of about 95% is informal, not accuracy on a labeled evaluation set.",
       "reported_result": "The author shares a merchant-name result table and describes a promising first attempt.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Transaction descriptions mix names, locations and codes. Jev helps decide what matters, but the post does not explain exactly how the final name is extracted or produced."
+      "plain_explanation": "Transaction descriptions mix names, locations and codes. Jev helps decide what matters, but the post does not explain exactly how the final name is extracted or produced.",
+      "review_summary": "The screenshot supports a payee-cleaning experiment. The author’s roughly 95%-there assessment is subjective, not measured accuracy."
     },
     "support-intent": {
       "title": "Japanese support escalation intent",
@@ -291,7 +319,8 @@
       "limitation": "The 98% and 97% values are model outputs for the example, not overall Japanese support accuracy.",
       "reported_result": "The author publishes one Japanese example with two judgment results.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Ask two specific yes/no questions about one message. The percentages describe those judgments, not the accuracy of the whole support system."
+      "plain_explanation": "Ask two specific yes/no questions about one message. The percentages describe those judgments, not the accuracy of the whole support system.",
+      "review_summary": "A directly inspectable, unambiguous Japanese example supports the narrow capability claim; its two scores are not an accuracy benchmark."
     },
     "live-viral": {
       "title": "Live post-potential analyzer",
@@ -301,7 +330,8 @@
       "limitation": "The author says real X data still needs to be collected; predictive ability for future reach is unproven.",
       "reported_result": "The author demonstrates live classification and calls it an experiment.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "After a half-second pause, code sends the draft to Jev and updates its labels and scores. This is immediate writing feedback, not proof that the post will spread."
+      "plain_explanation": "After a half-second pause, code sends the draft to Jev and updates its labels and scores. This is immediate writing feedback, not proof that the post will spread.",
+      "review_summary": "The interactive scoring demo is plausible and explicitly experimental. No evidence establishes predictive validity for future reach."
     },
     "viral-classifier": {
       "title": "Viral-post classifier",
@@ -312,7 +342,8 @@
       "reported_result": "The author says it was built in about eight hours and shares a results screenshot.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
       "plain_explanation": "Jev acts as a fast first-pass classifier. The author does not publish the full criteria or evaluation, so reliable virality prediction is not established.",
-      "source_notes": "**Same-project demonstration update:** [The author’s new post](https://x.com/robj3d3/status/2100722975645598191) quotes the original and reports fitting on 9,481 posts from 207 creators, 61 questions per post, roughly one second / $0.0004, and selecting the viral post about two out of three times. These are author reports. The new 45-second video is supplementary media, not a separately counted “SuperX app.”"
+      "source_notes": "**Same-project demonstration update:** [The author’s new post](https://x.com/robj3d3/status/2100722975645598191) quotes the original and reports fitting on 9,481 posts from 207 creators, 61 questions per post, roughly one second / $0.0004, and selecting the viral post about two out of three times. These are author reports. The new 45-second video is supplementary media, not a separately counted “SuperX app.”",
+      "review_summary": "The claims that virality is solved and reply bait is never rewarded exceed a self-reported two-in-three result with no disclosed held-out split or fair model baseline."
     },
     "x-algorithm-sim": {
       "title": "X reach-score simulator",
@@ -322,7 +353,8 @@
       "limitation": "Rebuilding the X algorithm is the author's framing; weight provenance and real recommendation accuracy are unverified.",
       "reported_result": "The author shares an approximately 42-second demo and claims to use real weights.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "The author combines Jev judgments with weights. That scoring formula is a simplified model; resembling X does not establish recreation of its real recommendation system."
+      "plain_explanation": "The author combines Jev judgments with weights. That scoring formula is a simplified model; resembling X does not establish recreation of its real recommendation system.",
+      "review_summary": "A scoring UI is demonstrated, but the claims of rebuilding X’s actual algorithm and exceptional accuracy lack model-equivalence and prediction evidence."
     },
     "bookmark-prediction": {
       "title": "Bookmark-percentile prediction",
@@ -332,7 +364,8 @@
       "limitation": "Single-account data with incomplete time-split and leakage details; not a general X ranking model.",
       "reported_result": "The author reports using about 5,000 personal posts from June–August and plots cost against accuracy.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Replace vague virality with a checkable target: top 25% within a defined date window. Jev predicts that outcome and the author compares predictions with historical data."
+      "plain_explanation": "Replace vague virality with a checkable target: top 25% within a defined date window. Jev predicts that outcome and the author compares predictions with historical data.",
+      "review_summary": "The personal historical benchmark has a concrete label, but undisclosed splits and configurations prevent validating generalization or the 200-fold cost comparison; a future-looking label alone is not proof of leakage."
     },
     "post-analytics": {
       "title": "Analysis of 3,282 historical posts",
@@ -342,7 +375,8 @@
       "limitation": "Correlation is not causation; account, time and sample selection affect results.",
       "reported_result": "The author reports an 8m 34s run costing $0.1282, with a median of 150 likes for how-to posts versus 44 overall.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Jev labels topics, tone and other features, then code compares historical performance. This summarizes the past; it does not prove that adopting a style causes growth."
+      "plain_explanation": "Jev labels topics, tone and other features, then code compares historical performance. This summarizes the past; it does not prove that adopting a style causes growth.",
+      "review_summary": "A plausible descriptive analysis of historical posts; unavailable raw labels limit verification, and historical association does not establish a causal growth formula."
     },
     "ad-analysis": {
       "title": "StealAds ad-analysis preview",
@@ -352,7 +386,8 @@
       "limitation": "StealAds + MCP integration was described as upcoming; it is unclear whether cost includes collecting the material.",
       "reported_result": "The author reports analyzing 724 ads from 37 brands in 40 seconds for about $0.09 in inference.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Think of searchable index cards for ads. Jev judges separate features and code aggregates them. Collection and input preparation are not explained in the post."
+      "plain_explanation": "Think of searchable index cards for ads. Jev judges separate features and code aggregates them. Collection and input preparation are not explained in the post.",
+      "review_summary": "A specific multi-label ad analysis demo; accuracy and upstream collection costs are unverified, and the announced integration was future work."
     },
     "jevmeter": {
       "title": "JevMeter speech-analysis dashboard",
@@ -362,7 +397,8 @@
       "limitation": "The first post explicitly says it is not fact-checking. Later promotional wording does not establish verification of truth.",
       "reported_result": "The author reports 1,191 calls, 415ms median latency and $0.0497 for the debate experiment.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Ask the same five questions about each sentence and visualize the results. Consistent criteria help comparisons, but without external evidence checks they do not determine truth."
+      "plain_explanation": "Ask the same five questions about each sentence and visualize the results. Consistent criteria help comparisons, but without external evidence checks they do not determine truth.",
+      "review_summary": "The implementation supports rhetorical sentence scoring, while the follow-up fact-checking claim contradicts its own README disclaimer. The 200 authored-sentence evaluation measures preset classification, not truth verification."
     },
     "x-filter": {
       "title": "Natural-language X content filter",
@@ -372,7 +408,8 @@
       "limitation": "False-positive rates are unmeasured; vague rules may remove useful content.",
       "reported_result": "The author shares an extension video and configuration screenshot, without a standardized benchmark.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "The extension asks Jev whether a post matches your filtering rule, then hides or collapses it. The aim is meaning-based filtering rather than a keyword match."
+      "plain_explanation": "The extension asks Jev whether a post matches your filtering rule, then hides or collapses it. The aim is meaning-based filtering rather than a keyword match.",
+      "review_summary": "A credible natural-language filtering demo; false positives, misses and ongoing cost are unmeasured, and the future-of-ad-blockers framing is a vision."
     },
     "unclutter": {
       "title": "Unclutter page cleanup",
@@ -382,7 +419,8 @@
       "limitation": "Requires the user's API key; mistaken element classification may affect legitimate dialogs or page behavior.",
       "reported_result": "The author shares an approximately 25-second demo and describes it as free, open source and BYOK.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Code identifies candidate page elements and asks Jev to judge them. The challenge is not only finding clutter but avoiding removal of useful controls such as login dialogs."
+      "plain_explanation": "Code identifies candidate page elements and asks Jev to judge them. The challenge is not only finding clutter but avoiding removal of useful controls such as login dialogs.",
+      "review_summary": "The page-cleanup prototype is demonstrated and explicitly BYOK; cross-site safety and compatibility are untested, and a free extension does not mean free inference."
     },
     "context-compaction": {
       "title": "Tool-history context compaction",
@@ -393,7 +431,8 @@
       "reported_result": "The author shares a short demo claiming instant compaction, without a full quality evaluation.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
       "plain_explanation": "Rather than rewrite all history as a summary, score tool records for relevance and keep selected ones. This saves context but can omit information needed later.",
-      "source_notes": "**2026-09-18 update — merged into the same project:**\n\n- [Alex’s usage report](https://x.com/altryne/status/2100739055923425589) cites the original post and repository, reporting about one second to reduce nearly one million tokens to roughly 86,000. This is another user’s single report, not our reproduction.\n- [Theo’s critique](https://x.com/theo/status/2100762304862384257) raises information-loss, reasoning-state and cache-cost concerns. These are a reviewer’s arguments, not uniformly verified findings.\n- The [pinned README](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/README.md) and [state.ts](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/src/state.ts) show budget-fitted conversation context rather than completely isolated calls. However, tool-output bodies are replaced by status/length notes. “Whole conversation” does not mean every original detail is visible.\n- That revision explicitly describes `demo/JevDemo` as a scripted recording animation with no API calls. The animation alone is not a live-inference measurement; this also does not negate the separate real API implementation in the library. The plugin was not run."
+      "source_notes": "**2026-09-18 update — merged into the same project:**\n\n- [Alex’s usage report](https://x.com/altryne/status/2100739055923425589) cites the original post and repository, reporting about one second to reduce nearly one million tokens to roughly 86,000. This is another user’s single report, not our reproduction.\n- [Theo’s critique](https://x.com/theo/status/2100762304862384257) raises information-loss, reasoning-state and cache-cost concerns. These are a reviewer’s arguments, not uniformly verified findings.\n- The [pinned README](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/README.md) and [state.ts](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/src/state.ts) show budget-fitted conversation context rather than completely isolated calls. However, tool-output bodies are replaced by status/length notes. “Whole conversation” does not mean every original detail is visible.\n- That revision explicitly describes `demo/JevDemo` as a scripted recording animation with no API calls. The animation alone is not a live-inference measurement; this also does not negate the separate real API implementation in the library. The plugin was not run.",
+      "review_summary": "A real API-backed filter exists, but instant size reduction does not establish preserved task quality. Pinned code omits tool-result bodies from decision state. Its separate scripted recording app makes no API calls; a live demo also exists, so this is not evidence that the entire project is fabricated."
     },
     "memory-retrieval": {
       "title": "Memory retrieval filtering",
@@ -404,7 +443,8 @@
       "reported_result": "The author reports 94% fewer tokens and 2–3× faster retrieval, not independently reproduced here.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
       "plain_explanation": "Retrieve candidate memories, then use Jev for a second filter. It resembles picking useful search results; overly aggressive filtering can miss key evidence.",
-      "source_notes": "**Tutorial supplement:** The author’s [full tutorial](https://x.com/moritzkremb/status/2100715237267660873) identifies the 11:33 chapter as this AI-memory demonstration. It is merged by author and use case, not counted as another application. The tutorial also covers other demos. Chapter identification comes from the author’s outline; this update did not review every frame or run the code."
+      "source_notes": "**Tutorial supplement:** The author’s [full tutorial](https://x.com/moritzkremb/status/2100715237267660873) identifies the 11:33 chapter as this AI-memory demonstration. It is merged by author and use case, not counted as another application. The tutorial also covers other demos. Chapter identification comes from the author’s outline; this update did not review every frame or run the code.",
+      "review_summary": "The author explicitly calls the 94% token reduction and 2–3× retrieval gain a quick test. Recall and downstream quality are unreported; the figures are not general improvement guarantees."
     },
     "doom": {
       "title": "Official Doom demo",
@@ -414,7 +454,8 @@
       "limitation": "The footage alone does not establish direct pixel input; long-run success rates and full hardware settings are absent.",
       "reported_result": "The author reports about 10 calls/second and $7/hour.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Code connects the game and model while Jev makes choices in a loop. Seeing game footage does not mean Jev reads pixels; the post does not fully describe its input state."
+      "plain_explanation": "Code connects the game and model while Jev makes choices in a loop. Seeing game footage does not mean Jev reads pixels; the post does not fully describe its input state.",
+      "review_summary": "A bounded official code-plus-model demo with self-reported throughput and cost; state encoding, repeated performance and billing records remain unavailable."
     },
     "mario-faadhil": {
       "title": "Super Mario · @faadilhshaik",
@@ -424,7 +465,8 @@
       "limitation": "A short clip does not establish generalization across levels or sustained completion.",
       "reported_result": "The author shares an approximately 31-second gameplay demo.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "An adapter passes game state to Jev and converts its choice into an action. The state format is not published, so the video alone does not show human-like screen-based play."
+      "plain_explanation": "An adapter passes game state to Jev and converts its choice into an action. The state format is not published, so the video alone does not show human-like screen-based play.",
+      "review_summary": "A plausible Mario integration demo; unspecified observations, timing and repeated outcomes prevent a general gameplay claim."
     },
     "mario-comparison": {
       "title": "Super Mario · Jev / Qwen comparison",
@@ -434,7 +476,8 @@
       "limitation": "Not a native-vision comparison; repeated-run success rates and network conditions are absent.",
       "reported_result": "The author shares a same-condition demo and explicitly says Jev does not receive game images.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Convert the game state to structured data and give both models five choices. They take the same multiple-choice test rather than receiving different kinds of observations."
+      "plain_explanation": "Convert the game state to structured data and give both models five choices. They take the same multiple-choice test rather than receiving different kinds of observations.",
+      "review_summary": "The bounded setup is unusually explicit: identical structured observations and five actions. This supports the comparison design, not a general ranking or independent reproduction."
     },
     "mario-ppo": {
       "title": "Super Mario · World 1-1",
@@ -444,7 +487,8 @@
       "limitation": "A week of PPO work versus half an hour of integration is not a controlled model benchmark; supporting logic may differ.",
       "reported_result": "The author says PPO took a week of work, while Jev integration reached the same level goal in under 30 minutes.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "The author plugs an existing Jev model into the game, whereas the PPO approach required training a policy. Comparing setup experiences is not a controlled comparison of playing strength."
+      "plain_explanation": "The author plugs an existing Jev model into the game, whereas the PPO approach required training a policy. Comparing setup experiences is not a controlled comparison of playing strength.",
+      "review_summary": "A plausible implementation-time anecdote. Training a PPO policy and integrating an existing model are different tasks; the RL-beast prediction is opinion, not established learning or generalization performance."
     },
     "pacman": {
       "title": "Astra + Jev Pac-Man",
@@ -454,7 +498,8 @@
       "limitation": "Both models affect outcomes; Jev latency alone does not represent total cost or quality.",
       "reported_result": "The author shares hierarchical-control footage, without standardized win rates.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Think of a coach and player: Astra supplies the strategy, and Jev handles local choices. Assess the combined system, not just Jev's speed."
+      "plain_explanation": "Think of a coach and player: Astra supplies the strategy, and Jev handles local choices. Assess the combined system, not just Jev's speed.",
+      "review_summary": "The author discloses a planning/action split. Local decision latency does not establish end-to-end cost, speed or win rate."
     },
     "snake": {
       "title": "Step-by-step Snake",
@@ -464,7 +509,8 @@
       "limitation": "Request count grows with moves; maximum length and multi-game success rates are absent.",
       "reported_result": "The author reports $0.02 for 200 requests.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Repeat a simple loop: read the state, ask for a direction, move one step. Each extra move adds a request, so costs grow with game length."
+      "plain_explanation": "Repeat a simple loop: read the state, ask for a direction, move one step. Each extra move adds a request, so costs grow with game length.",
+      "review_summary": "The per-step loop and arithmetic are coherent as an author-reported run; the extrapolated price and gameplay quality are not independently established."
     },
     "tetris": {
       "title": "Tetris",
@@ -474,7 +520,8 @@
       "limitation": "The post does not identify which control method is used, so planning ability cannot be inferred.",
       "reported_result": "The author shares an approximately 28-second demo without score benchmarks.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Code must pass board information to the model and execute its choices. The post does not say whether Jev chooses final placements or individual keys, which matters for comparisons."
+      "plain_explanation": "Code must pass board information to the model and execute its choices. The post does not say whether Jev chooses final placements or individual keys, which matters for comparisons.",
+      "review_summary": "A plausible Tetris prototype. The slogan is subjective enthusiasm; action granularity, score and comparative performance remain unspecified."
     },
     "pokemon": {
       "title": "Jev Plays Pokémon",
@@ -484,7 +531,8 @@
       "limitation": "The first badge is partial progress, not game completion; additional navigation logic may be involved.",
       "reported_result": "The author reports over 8,000 decisions for $1.21, the first gym badge and progress into Mt. Moon.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "The game supplies new states and code repeatedly asks Jev for choices. Earning a badge after thousands of decisions provides more progress context than a short highlight clip."
+      "plain_explanation": "The game supplies new states and code repeatedly asks Jev for choices. Earning a badge after thousands of decisions provides more progress context than a short highlight clip.",
+      "review_summary": "The claim is appropriately bounded to the first badge and Mt. Moon, with reported decisions and cost. Full completion, scaffolding and independent verification remain unknown."
     },
     "slay-spire": {
       "title": "Slay the Spire 2 agent",
@@ -494,7 +542,8 @@
       "limitation": "Fast play does not imply stronger strategy; full-run win rates are absent.",
       "reported_result": "The author reports roughly 0.7 seconds of decision time per action and shares a video.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Card games usually provide a set of currently legal choices that code can offer to a model. The post does not disclose the interface, and quicker moves do not necessarily win more games."
+      "plain_explanation": "Card games usually provide a set of currently legal choices that code can offer to a model. The post does not disclose the interface, and quicker moves do not necessarily win more games.",
+      "review_summary": "A fast-action demo with a self-reported 0.7-second decision time; superhuman gameplay quality is not established by operation speed or a short clip."
     },
     "chess": {
       "title": "5+0 blitz chess",
@@ -505,7 +554,8 @@
       "reported_result": "The author says Jev beat Fable on time from a losing position, then was checkmated by Astra on move 18.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
       "jev_version": "V13 (as labeled by the author)",
-      "plain_explanation": "Every model call consumes time on the chess clock. Jev wins one game on time but is checkmated in another, separating speed from playing strength."
+      "plain_explanation": "Every model call consumes time on the chess clock. Jev wins one game on time but is checkmated in another, separating speed from playing strength.",
+      "review_summary": "The author reports both material inferiority and a loss, separating clock wins from playing strength. This is a bounded result, not an Elo estimate or independently reproduced benchmark."
     },
     "subway-runners": {
       "title": "Parallel Subway Surfers demo",
@@ -515,7 +565,8 @@
       "limitation": "It is unclear whether this uses the original client, a recreation or a simulator; it is not evidence of general phone control.",
       "reported_result": "The author reports 50 simultaneous games and less than $0.01 for the run.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Several game environments request decisions in parallel and execute them separately. The original client versus recreation is unspecified, so this is not evidence of general phone control."
+      "plain_explanation": "Several game environments request decisions in parallel and execute them separately. The original client versus recreation is unspecified, so this is not evidence of general phone control.",
+      "review_summary": "A plausible multi-instance demo with self-reported cost. Environment fidelity, batching and duration are unspecified, so it does not establish general mobile control or a matched human comparison."
     },
     "rubiks-cube": {
       "title": "Staged Rubik's Cube solver",
@@ -525,7 +576,8 @@
       "limitation": "The solution method lives in code; Jev is not independently deriving an optimal solution. The video is slowed down.",
       "reported_result": "The author reports 94 moves, about four seconds of total model time and roughly 250ms per judgment.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Imagine a prepared solving handbook. Jev identifies the situation; code applies and checks the matching method. The complete solution comes from their combination."
+      "plain_explanation": "Imagine a prepared solving handbook. Jev identifies the situation; code applies and checks the matching method. The complete solution comes from their combination.",
+      "review_summary": "Transparent composition: a coded beginner solver supplies moves and Jev classifies cases with code checks. Model time is not wall-clock mechanical solving, and the model does not independently derive the solution."
     },
     "mario-kart": {
       "title": "Mario Kart 64",
@@ -535,7 +587,8 @@
       "limitation": "No lap times, collision counts or controlled comparison; promotional claims do not establish superiority to computer-use models.",
       "reported_result": "The author shares an approximately 2m 38s demo.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "An adapter must turn racing state into model inputs and choices into controls. State access, driving aids and simulation speed are not explained, leaving important implementation details unknown."
+      "plain_explanation": "An adapter must turn racing state into model inputs and choices into controls. State access, driving aids and simulation speed are not explained, leaving important implementation details unknown.",
+      "review_summary": "The categorical superiority claim over Astra computer use exceeds a one-system video with no matched task, observations, lap times or collisions. This does not imply the demo itself is false."
     },
     "npc-needs": {
       "title": "Needs-driven NPCs",
@@ -545,7 +598,8 @@
       "limitation": "Need weighting, conflicts and long-term consistency are unspecified; traditional rules may be simpler and cheaper.",
       "reported_result": "The author shows a game prototype built with Claude and driven by Jev decisions.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Give Jev a character's needs and available options, then execute its choice in the game. The model decides what to do; movement, animation and rules remain in game code."
+      "plain_explanation": "Give Jev a character's needs and available options, then execute its choice in the game. The model decides what to do; movement, animation and rules remain in game code.",
+      "review_summary": "The needs-to-tool selection mechanism is plausible and the author acknowledges existing rule-based alternatives. Improved behavior or long-term coherence has not been measured."
     },
     "npc-500": {
       "title": "500 agents in a 3D environment",
@@ -555,7 +609,8 @@
       "limitation": "35 calls/second is not 35 updates per second for every agent; per-agent update frequency is absent.",
       "reported_result": "The author reports 500 agents, 500ms average latency and 35 API calls/second for an initial implementation.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Send characters' questions to Jev and execute their choices in the simulation. An overall rate of 35 requests/second does not mean each of 500 characters updates 35 times/second."
+      "plain_explanation": "Send characters' questions to Jev and execute their choices in the simulation. An overall rate of 35 requests/second does not mean each of 500 characters updates 35 times/second.",
+      "review_summary": "500 entities, 500ms request latency and 35 total calls/s do not establish every entity’s decision rate or remove latency as a bottleneck. Under one call per agent, a full sweep would take about 14.3s; batching is unspecified, so that calculation is conditional."
     },
     "driving-toy": {
       "title": "“FSD” driving simulation",
@@ -565,7 +620,8 @@
       "limitation": "Not a reproduction of Tesla FSD or a real-road validation; it establishes no road-safety or autonomous-driving capability.",
       "reported_result": "The author says the prototype took under an hour and shares an approximately two-minute video.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Code and Jev jointly control the simulated car. Driving in this environment is far from demonstrating safe real-road operation or reproducing Tesla FSD."
+      "plain_explanation": "Code and Jev jointly control the simulated car. Driving in this environment is far from demonstrating safe real-road operation or reproducing Tesla FSD.",
+      "review_summary": "Rebuilding Tesla FSD is a materially broader claim than a toy driving demo. Real-world perception, road testing, reliability and a matched system comparison are not provided; the prototype need not be false for the headline to overstate it."
     },
     "realtime-driving": {
       "title": "Unpaused real-time driving",
@@ -575,7 +631,8 @@
       "limitation": "Still a simulator, without coverage, crash-rate or long-duration stability data.",
       "reported_result": "The author explicitly states that the simulator runs without pausing for the model.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Pausing the simulator for every model call hides latency. Here it keeps moving, so the observed state may already be outdated when an answer arrives."
+      "plain_explanation": "Pausing the simulator for every model call hides latency. Here it keeps moving, so the observed state may already be outdated when an answer arrives.",
+      "review_summary": "The author explicitly bounds the work to an unpaused driving simulator. Timing logs and broad reliability are missing, but the source does not claim validated physical autonomy."
     },
     "drone-sim": {
       "title": "Jev drone simulation",
@@ -586,7 +643,8 @@
       "reported_result": "The author reports about 15 minutes of setup and $0.10 spent.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
       "source_notes": "**Repository cross-check (2026-09-18)**: The [pinned README](https://github.com/RomanSlack/jev-drone/blob/cbeb53ce4f17a06ea490ae43effcdad231143610/README.md) specifies MuJoCo, symbolic camera scenes and layered control. Jev does not receive images directly, and safety code can override its actions in the main setup. The author also discloses a single-run result, an earlier comparison with no advantage and an unreliable tunnel experiment. This is a documentation review, not a reproduction.",
-      "plain_explanation": "Like a navigator working with a flight controller, code summarizes camera information, Jev chooses maneuvers, and faster control/safety loops constrain the actions."
+      "plain_explanation": "Like a navigator working with a flight controller, code summarizes camera information, Jev chooses maneuvers, and faster control/safety loops constrain the actions.",
+      "review_summary": "The pinned documentation separates symbolic perception, classical control, safety vetoes and Jev advice, and discloses failures. It supports a narrow simulated hybrid-system result, not physical deployment or general superiority."
     },
     "unstable-government": {
       "title": "Unstable Government town",
@@ -596,7 +654,8 @@
       "limitation": "Fictional reactions cannot be used as predictions of policy effects in the real world.",
       "reported_result": "The author demonstrates a mixed-model town with 40 residents.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Claude creates possible reactions and scenes, Jev chooses for each resident, and the simulation acts them out. This is interactive storytelling, not policy forecasting."
+      "plain_explanation": "Claude creates possible reactions and scenes, Jev chooses for each resident, and the simulation acts them out. This is interactive storytelling, not policy forecasting.",
+      "review_summary": "A clearly fictional hybrid-model town demo. It provides no empirical policy forecast, but the author frames it as entertainment rather than validated social science."
     },
     "synthetic-personas": {
       "title": "150 fictional user personas",
@@ -606,7 +665,8 @@
       "limitation": "Synthetic opinions are not actual user research or market-demand validation.",
       "reported_result": "The author reports about five seconds and ¥1.8 JPY, including cross-region network latency.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Define personas, then ask Jev fixed questions in their context. These are simulated opinions, not responses from real interview participants."
+      "plain_explanation": "Define personas, then ask Jev fixed questions in their context. These are simulated opinions, not responses from real interview participants.",
+      "review_summary": "The source explicitly uses fictional personas and reports a single runtime/cost. This can illustrate synthetic responses, not real demand, willingness to pay or validated market research."
     },
     "typegpu-realtime": {
       "title": "TypeGPU real-time semantic effects",
@@ -616,7 +676,8 @@
       "limitation": "Jev is only one part of the pipeline; end-to-end latency and component ablations are absent.",
       "reported_result": "The author demonstrates three neural-network inference paths running alongside rendering.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Local models process speech, objects and depth; Jev makes semantic judgments; rendering code changes effects. Jev is one decision stage, not the whole perception/rendering pipeline."
+      "plain_explanation": "Local models process speech, objects and depth; Jev makes semantic judgments; rendering code changes effects. Jev is one decision stage, not the whole perception/rendering pipeline.",
+      "review_summary": "The post explicitly names local perception, rendering and Jev components, supporting a composed demo rather than direct audiovisual understanding by Jev. Full latency, implementation verification and component comparisons are missing."
     },
     "ask-jev": {
       "title": "Ask Jev",
@@ -626,7 +687,8 @@
       "limitation": "An interaction/entertainment example; arbitrary judgments should not be treated as reliable factual answers.",
       "reported_result": "The author shares the website and an approximately 26-second demo.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "The site takes input, asks Jev for a judgment and displays it. It illustrates decision-style interaction, not a guarantee that arbitrary judgments are factual."
+      "plain_explanation": "The site takes input, asks Jev for a judgment and displays it. It illustrates decision-style interaction, not a guarantee that arbitrary judgments are factual.",
+      "review_summary": "A website and video support a judgment interface, as the author describes. They do not establish reliable answers to arbitrary factual questions."
     },
     "word-chat": {
       "title": "Finite-vocabulary chat",
@@ -636,7 +698,8 @@
       "limitation": "The vocabulary limits expression; per-word decision costs and latency are not directly comparable with a text model.",
       "reported_result": "The author demonstrates chat built from common English words and punctuation choices.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Jev chooses the next word from a finite list; code appends it and asks again. The loop constructs the text, and the vocabulary limits what it can say."
+      "plain_explanation": "Jev chooses the next word from a finite list; code appends it and asks again. The loop constructs the text, and the vocabulary limits what it can say.",
+      "review_summary": "The author explicitly discloses a small word vocabulary and a selection loop, a bounded mechanism compatible with the demo. It does not establish a general text-generation API or competitive quality and efficiency."
     },
     "character-chat": {
       "title": "29-option character generation",
@@ -646,7 +709,8 @@
       "limitation": "Character-level loops require many calls and do not establish a native text-generation API.",
       "reported_result": "The author describes 29 character candidates and shares an approximately 15-second demo.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Each round asks 29 yes/no questions, picks the strongest character and appends it. Producing text this way does not establish an advantage over a dedicated text model."
+      "plain_explanation": "Each round asks 29 yes/no questions, picks the strongest character and appends it. Producing text this way does not establish an advantage over a dedicated text model.",
+      "review_summary": "The post specifies 29 yes/no character questions and appending the highest-probability result. The substantiated claim is an autoregressive selection loop, not training a new general-purpose language model."
     },
     "pixel-drawing": {
       "title": "Parallel pixel drawing",
@@ -656,7 +720,8 @@
       "limitation": "Not a validated general image generator; quality, resolution and total cost are unknown.",
       "reported_result": "The author shares an approximately 11-second drawing demo.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Think of deciding picture cells and assembling them in code. The author describes parallel pixel prediction but does not publish color choices, resolution or question construction."
+      "plain_explanation": "Think of deciding picture cells and assembling them in code. The author describes parallel pixel prediction but does not publish color choices, resolution or question construction.",
+      "review_summary": "A small drawing demo is compatible with composing pixel judgments. Resolution, palette, prompts and total cost are undisclosed; general-purpose image-generation quality is unestablished."
     },
     "riscv": {
       "title": "RISC-jeV logic-gate experiment",
@@ -666,7 +731,8 @@
       "limitation": "A concept experiment, not a computational-efficiency advantage; deterministic code is more appropriate for logic gates.",
       "reported_result": "The author publishes a live demo and names the SERV implementation.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "Like building a machine from blocks, Jev supplies AND/OR-style decisions that SERV combines into instructions. This illustrates composition rather than efficient computation."
+      "plain_explanation": "Like building a machine from blocks, Jev supplies AND/OR-style decisions that SERV combines into instructions. This illustrates composition rather than efficient computation.",
+      "review_summary": "The author explicitly describes logic-gate judgments composed through SERV, not a native Jev CPU. Integration correctness, stability and any advantage over deterministic computation remain unverified."
     },
     "trading-bot": {
       "title": "Monad / Kuru trading bot",
@@ -676,7 +742,8 @@
       "limitation": "No return, drawdown or risk-control evaluation; fast execution does not establish profitability. The demo is not investment advice.",
       "reported_result": "The author says it can execute trades in each roughly 300ms block and provides a demo URL.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
-      "plain_explanation": "The model chooses an action and code connects to the blockchain order book. Fast orders do not imply profitable trading; complete returns and risk records are absent."
+      "plain_explanation": "The model chooses an action and code connects to the blockchain order book. Fast orders do not imply profitable trading; complete returns and risk records are absent.",
+      "review_summary": "The decision-to-order architecture is plausible, but trades and sustained end-to-end latency are unverified. A 300ms block interval is not a measured complete decision/execution cycle, and no profitable strategy is established."
     },
     "predictive-launcher": {
       "title": "Intent-aware predictive launcher",
@@ -686,7 +753,8 @@
       "advantage": "Explores contextual requests such as “just downloaded” beyond filename or alias matching; useful for selecting among file candidates.",
       "limitation": "The roughly 100ms figure is author-reported. No evaluation covers large file collections, duplicate names or ambiguous references. High model confidence does not guarantee a correct match.",
       "reported_result": "The author shares a 20-second launcher demo and reports roughly 100ms decisions per keystroke, ranking the newest downloaded PDF first.",
-      "media_note": "The original 20-second demo video, with its source cover and direct video link."
+      "media_note": "The original 20-second demo video, with its source cover and direct video link.",
+      "review_summary": "A specific intent-based file query is demonstrated. The reported ~100 ms lacks scale, timing boundaries and error cases; high model confidence is not perfect retrieval accuracy."
     },
     "live-commerce-assistant": {
       "title": "Live shopping assistant and avatar expressions",
@@ -696,7 +764,8 @@
       "advantage": "Places recommendations inside a live conversation; closer to a customer-facing shopping experience than offline intent labeling.",
       "limitation": "A simple demo without recommendation-relevance, inventory-consistency or end-to-end latency evaluation. Expression mapping does not establish a capability exclusive to Jev.",
       "reported_result": "The author shares a roughly 65-second live shopping demo using Jev and gpt-live-1, describing the expression feature as a simple implementation.",
-      "media_note": "The main post’s roughly 65-second video; demonstration footage does not establish recommendation quality or conversion gains."
+      "media_note": "The main post’s roughly 65-second video; demonstration footage does not establish recommendation quality or conversion gains.",
+      "review_summary": "The author identifies a simple demo using Jev plus gpt-live-1. End-to-end behavior is not solely attributable to Jev, expression mapping is not proven unique to it, and recommendation/inventory accuracy is unmeasured."
     },
     "minecraft-hybrid": {
       "title": "Minecraft with Jev, Astra and local policies",
@@ -706,7 +775,8 @@
       "advantage": "Makes the planning, reactive-decision and low-level-control split explicit; useful to compare with the layered Pac-Man implementation.",
       "limitation": "Combat performance cannot be attributed to Jev alone. No Jev-only, Astra-only or combined-system comparison is available. The main video is approximately 2× speed; an original-speed version is supplied separately. No completion or speedrun result is established.",
       "reported_result": "The author demonstrates encounters with multiple zombies, explains the three layers in a reply and posts an original-speed version of the same footage.",
-      "media_note": "The main video is about 192 seconds; the author-labeled original-speed version is about 384 seconds. Use the latter when judging responsiveness rather than inferring speed from the main clip."
+      "media_note": "The main video is about 192 seconds; the author-labeled original-speed version is about 384 seconds. Use the latter when judging responsiveness rather than inferring speed from the main clip.",
+      "review_summary": "The author discloses planning, judgment and local movement policies plus an original-speed clip. The sped-up main clip cannot measure reaction time, and combined combat performance cannot be attributed to Jev alone."
     },
     "emoji-suggestions": {
       "title": "Live emoji suggestions",
@@ -716,7 +786,8 @@
       "advantage": "A bounded output space with immediately visible feedback; simpler than the repeated selection loop in character-by-character chat.",
       "limitation": "The 100–200ms and candidate-count claims describe this demo, not arbitrary scales. No language, ambiguity or emoji-relevance evaluation is available.",
       "reported_result": "The publisher reports roughly 100–200ms responses and similar speed with 3 or 200 candidates, in a roughly 13-second video.",
-      "media_note": "The main video shows text entry, emoji candidates and scores. No verified code entry point is recorded."
+      "media_note": "The main video shows text entry, emoji candidates and scores. No verified code entry point is recorded.",
+      "review_summary": "The demo reports 100–200 ms with similar timings for 3 and 200 candidates. Without repeated measurements or semantic accuracy, this does not imply constant latency at arbitrary scale."
     },
     "voice-gesture-canvas": {
       "title": "Voice-and-pointing canvas control",
@@ -726,7 +797,8 @@
       "advantage": "Combines language and pointing to resolve references missing from text alone. Compared with TypeGPU’s semantic effects, this example focuses on manipulating canvas objects.",
       "limitation": "The author explicitly describes an imperfect feasibility experiment. No pointing-error, speech-error or action-success evaluation is available, and separate decisions still require consistency checks.",
       "reported_result": "The author shares a roughly 39-second canvas demo and explains pointing capture and question decomposition in a reply.",
-      "media_note": "The video interface shows a canvas, camera and separate input/decision panels. Implementation details come from the author’s reply; this is not evidence that Jev directly recognizes video."
+      "media_note": "The video interface shows a canvas, camera and separate input/decision panels. Implementation details come from the author’s reply; this is not evidence that Jev directly recognizes video.",
+      "review_summary": "The author explains keyword-timed pointing and several small judgments, explicitly admitting imperfect behavior. Perception libraries, success rates and recovery are unreported; the demo is a feasibility experiment."
     },
     "youtube-sponsor-skip": {
       "title": "YouTube sponsor-segment skipping",
@@ -737,7 +809,8 @@
       "limitation": "Caption fetching can break; stepwise listening-mode seeks may overshoot into normal content. The author’s roughly $0.005/video claim is not universal across modes, and transcription adds cost. No accuracy or time-saving benchmark was run here.",
       "reported_result": "The author shares a roughly 21-second Chrome-extension demo, reports real-time detection at about $0.005/video, and calls it an open-source BYOK prototype.",
       "media_note": "The source video demonstrates the extension prototype. The repository’s web app and extension are one project, not two catalog entries.",
-      "source_notes": "**Source review:** Read the pinned [README at de01f05](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/README.md) and [src/jev.js](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/src/jev.js). Documentation distinguishes hourly costs across modes and Deepgram’s per-minute charge. The post’s per-video estimate is not treated as a total-cost guarantee. No extension was installed or API called."
+      "source_notes": "**Source review:** Read the pinned [README at de01f05](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/README.md) and [src/jev.js](https://github.com/trungdq88/youtube-sponsor-detection/blob/de01f0568d043035889a296a61ce21e0accc8b16/src/jev.js). Documentation distinguishes hourly costs across modes and Deepgram’s per-minute charge. The post’s per-video estimate is not treated as a total-cost guarantee. No extension was installed or API called.",
+      "review_summary": "Pinned code supports the transcript-line and audio-transcription implementation. This does not verify accuracy: audio modes incur extra costs and may overshoot, and the advertised per-video cost is not universal."
     },
     "predictive-spreadsheet": {
       "title": "Intent-driven spreadsheet ratings",
@@ -748,7 +821,8 @@
       "limitation": "The roughly 100ms claim lacks row-count and timing-scope details. Ambiguous column names, rating consistency and large-table costs are unevaluated. Arbitrary headings are not proven to become reliable formulas.",
       "reported_result": "The author shares a roughly 18-second video, reporting ratings from no follow-up needed to urgent after entering Urgency, in roughly 100ms.",
       "media_note": "Uses this spreadsheet post’s own video, not the launcher video it quotes.",
-      "source_notes": "**Deduplication:** This post quotes the same author’s launcher, but has its own video and a different task: rating spreadsheet rows rather than ranking files. It is a separate data-classification case; common authorship or a quote alone does not establish duplicate identity."
+      "source_notes": "**Deduplication:** This post quotes the same author’s launcher, but has its own video and a different task: rating spreadsheet rows rather than ranking files. It is a separate data-classification case; common authorship or a quote alone does not establish duplicate identity.",
+      "review_summary": "A concrete intent-labelled spreadsheet demo; question construction, consistency and timing scope are unknown, so arbitrary-column reliability is not established."
     },
     "probably-language": {
       "title": "Probably: semantic judgments as program control",
@@ -759,7 +833,8 @@
       "limitation": "Explicitly a toy language without general-purpose features such as arrays or functions. The hosted playground replays recorded results; custom programs require local execution with live model providers. Playback speed is not an inference benchmark.",
       "reported_result": "The author posts a language-example image and playground URL, describing feels, match and while, with Jev making judgments and an LLM writing.",
       "media_note": "The main post includes a language-example image. The website was read; programs were not executed and cached demonstrations were not treated as live API tests.",
-      "source_notes": "**Website review:** [Probably 0.1](https://probably-lang.southpolesteve.workers.dev) states that its hosted Worker replays bundled recordings and rejects uncached custom code or inputs without model calls. The interpreter also limits model calls and loop iterations per run. These are documented behaviors, not results from running the local interpreter."
+      "source_notes": "**Website review:** [Probably 0.1](https://probably-lang.southpolesteve.workers.dev) states that its hosted Worker replays bundled recordings and rejects uncached custom code or inputs without model calls. The interpreter also limits model calls and loop iterations per run. These are documented behaviors, not results from running the local interpreter.",
+      "review_summary": "The site documents interpreter, Jev and text-model responsibilities and toy-language limits. Hosted examples replay cached results; custom inputs require local live calls. This disclosed replay is not a live speed benchmark."
     },
     "eslint-rule-judgments": {
       "title": "Code judgments from ESLint rule descriptions",
@@ -769,7 +844,8 @@
       "advantage": "Explores turning written rules into quick code judgments. More focused than general PR scoring and suitable for comparison with deterministic lint results.",
       "limitation": "The roughly 90% correctness claim concerns the author’s snippet experiment, not whole repositories or real PRs. Public samples, independent evaluation and per-rule false positives/negatives are still needed. It provides no deterministic-linter guarantee.",
       "reported_result": "The author posts a results screenshot claiming roughly 90% correct judgments, then clarifies that the inputs are generated small snippets rather than whole repositories.",
-      "media_note": "The source image is the author’s experimental report, not output generated by this repository."
+      "media_note": "The source image is the author’s experimental report, not output generated by this repository.",
+      "review_summary": "The author scopes the result to generated snippets. The roughly 90% figure is self-reported and cannot be extrapolated to repository-wide linting reliability."
     },
     "opencode-intent-permissions": {
       "title": "OpenCode intent-aware permissions",
@@ -780,7 +856,8 @@
       "limitation": "The video does not establish bypass resistance; deterministic hard boundaries remain necessary. Version 0.1.0 explicitly excludes Code Mode execute and sends policies, recent user messages and tool inputs to TypeSafe. No adversarial or permission tests were run here.",
       "reported_result": "The author demonstrates a Google-only policy and reports blocking the shown attempts; the main post now has 235 likes at retrieval.",
       "media_note": "The main post includes a roughly 91-second video and configuration image. Eligibility uses the author’s post, without adding repost likes.",
-      "source_notes": "**Promoted from the inbox:** The 2026-09-18 02:38:04 UTC snapshot had 160 likes; the 06:07:34 UTC snapshot has 235 and now qualifies. The [author’s reply](https://x.com/OpeOginni/status/2100705405013754312) links the package. Read [npm metadata and README](https://registry.npmjs.org/oc-auto-perms), whose latest version was 0.1.0. The plugin was not installed."
+      "source_notes": "**Promoted from the inbox:** The 2026-09-18 02:38:04 UTC snapshot had 160 likes; the 06:07:34 UTC snapshot has 235 and now qualifies. The [author’s reply](https://x.com/OpeOginni/status/2100705405013754312) links the package. Read [npm metadata and README](https://registry.npmjs.org/oc-auto-perms), whose latest version was 0.1.0. The plugin was not installed.",
+      "review_summary": "The every-route wording refers to the demonstrated attempts, so B rather than C. Published docs explicitly expose a Code Mode bypass and preserve native permission controls; the demo is not a universal network boundary."
     },
     "email-speed-race": {
       "title": "Email classification: four-model speed comparison",
@@ -791,7 +868,8 @@
       "limitation": "No independent accuracy, confusion-matrix or full-cost evaluation is available. Concurrency, batching and timing conditions remain unverified, and interface labels do not establish exact API versions. This is insufficient for a universal speed ranking or multiplier.",
       "reported_result": "The author shares a roughly 30-second comparison video and reports Jev as substantially faster. This repository has not reproduced that claim or treated video length as classification latency.",
       "media_note": "Uses this post’s own video and thumbnail. The source interface and discussion were inspected; this is not a repost of the existing 500-email video.",
-      "source_notes": "**Deduplication and comparison:** The author, interface and source video differ from Riley Brown’s batch-email case, so this is a separate experiment in the same category. Without a shared complete test protocol, advertised times and costs should not be compared directly."
+      "source_notes": "**Deduplication and comparison:** The author, interface and source video differ from Riley Brown’s batch-email case, so this is a separate experiment in the same category. Without a shared complete test protocol, advertised times and costs should not be compared directly.",
+      "review_summary": "A task-level speed demo is visible, but unspecified model versions, concurrency and accuracy prevent a general performance ranking."
     },
     "code-comment-scoring": {
       "title": "Code comments: accuracy and usefulness scores",
@@ -802,7 +880,8 @@
       "limitation": "Two trivial examples do not establish performance on complex code. Scores are not independently measured test accuracy, and automatic comment deletion or rewriting is not demonstrated. The author describes a possible gate for reducing larger-model review, not a complete reviewer.",
       "reported_result": "The screenshot gives a correct but redundant multiplication comment 99/100 for accuracy and 2/100 for usefulness. A comment describing division as multiplication receives 1/100 and 11/100. The author confirms both lack informational value and the second is also wrong.",
       "media_note": "The source image is the author’s terminal experiment output. Two author replies clarify the scores and proposed screening role.",
-      "source_notes": "**Promoted after fourth-pass evidence review:** Previously pending because the label meanings were unclear. Image inspection and author replies establish two scoring dimensions and just two examples. Included as a concrete task experiment, not described as a shipped linter or mature product; no verifiable source-code entry point was obtained in this review."
+      "source_notes": "**Promoted after fourth-pass evidence review:** Previously pending because the label meanings were unclear. Image inspection and author replies establish two scoring dimensions and just two examples. Included as a concrete task experiment, not described as a shipped linter or mature product; no verifiable source-code entry point was obtained in this review.",
+      "review_summary": "Two simple examples illustrate separate accuracy and usefulness scores, and the author positions it as a gate. These scores are not evaluation accuracy or validation on complex code."
     },
     "runlayer-adversarial-testing": {
       "title": "Runlayer: parallel adversarial browser testing",
@@ -812,7 +891,8 @@
       "advantage": "Emphasizes concurrent exploration of interaction paths. Compare it with the existing OpenCode testing demo for parallel exploration versus post-development acceptance checks. Author replies identify the tooling for further investigation.",
       "limitation": "Many windows do not establish broad path coverage. Concurrency, real defect detection, retries and full-run costs are unspecified. The author’s “pennies” description is not a per-test cost guarantee.",
       "reported_result": "The author shares a roughly 14-second multi-browser video, describes attempts to break each release and reports low cost, without an independent defect-detection evaluation.",
-      "media_note": "Uses the main post’s multi-window video and two author replies about the stack. Windows and tool components are not counted as separate applications."
+      "media_note": "Uses the main post’s multi-window video and two author replies about the stack. Windows and tool components are not counted as separate applications.",
+      "review_summary": "The parallel browser setup is plausible, but window count and low-cost wording do not establish meaningful coverage or defect-detection effectiveness."
     },
     "hono-semantic-router": {
       "title": "Hono JevRouter: route requests by meaning",
@@ -823,7 +903,8 @@
       "limitation": "Explicitly experimental and unsuitable as an authentication or authorization boundary. Semantic routing adds model latency and cost. Request content is sent to Jev; only specified sensitive headers are redacted by default. Route order and adversarial input can affect outcomes.",
       "reported_result": "The author shares a usage-code image, playground and open-source package. The example serves Markdown to AI requests and HTML to human browsers. The latest npm version during this review was 0.2.0; it was not installed or tested.",
       "media_note": "The source image shows usage code, not a performance benchmark. An author reply directly links the repository.",
-      "source_notes": "**Source review:** Read the [README at 04f6e10](https://github.com/yusukebe/hono-jev-router/blob/04f6e103e1397bca659ab85c042011a1f14b679d/README.md) and [src/index.ts](https://github.com/yusukebe/hono-jev-router/blob/04f6e103e1397bca659ab85c042011a1f14b679d/src/index.ts). Route probabilities are independent and need not sum to one; these are multiple yes/no judgments, not mutually exclusive classification. No playground request was submitted."
+      "source_notes": "**Source review:** Read the [README at 04f6e10](https://github.com/yusukebe/hono-jev-router/blob/04f6e103e1397bca659ab85c042011a1f14b679d/README.md) and [src/index.ts](https://github.com/yusukebe/hono-jev-router/blob/04f6e103e1397bca659ab85c042011a1f14b679d/src/index.ts). Route probabilities are independent and need not sum to one; these are multiple yes/no judgments, not mutually exclusive classification. No playground request was submitted.",
+      "review_summary": "The source directly supports first-matching semantic routing and explicitly states its limits. It is an inspectable routing experiment, not an authentication guarantee."
     },
     "sac-calendar-computer-use": {
       "title": "Sac: Codex + Jev for Mac Calendar",
@@ -834,7 +915,8 @@
       "limitation": "One demo does not establish success rate, average speedup or total cost. This main post reports similar token usage; its quoted earlier post’s broad “10×” and token-saving claims are not results of this comparison. No verified source-code release link was obtained.",
       "reported_result": "The author shares a roughly 51-second video labeled 1× playback, reports smoother operation with similar token usage, and clarifies in a reply that Jev makes judgments within existing computer use.",
       "media_note": "Uses this post’s own Calendar comparison video, not the quoted post’s generic product image. The 1× label is shown on screen; timing was not independently verified.",
-      "source_notes": "**Name deduplication:** The author calls this Jev Use, but the author and Calendar video differ from [Cua · jev-use](../2026-09-18-cua-jev-use/README.en.md). Cataloged as this author’s experiment; a similar name does not establish Cua usage. The quoted introductory roundup is not a separate case."
+      "source_notes": "**Name deduplication:** The author calls this Jev Use, but the author and Calendar video differ from [Cua · jev-use](../2026-09-18-cua-jev-use/README.en.md). Cataloged as this author’s experiment; a similar name does not establish Cua usage. The quoted introductory roundup is not a separate case.",
+      "review_summary": "A side-by-side calendar demo supports a narrow anecdote. It does not establish average speedup, equal settings or broad computer-use performance."
     },
     "shell-history-suggestions": {
       "title": "Shell history: semantic command suggestions",
@@ -845,7 +927,8 @@
       "limitation": "History can be stale or sensitive and is sent to the service as candidate data. A suitable suggestion does not establish safe execution; user review remains necessary. The README reports roughly 0.7–0.9 seconds per request, not the millisecond claims from other demos. The author presents an experiment, not evidence of daily use.",
       "reported_result": "The author shares a roughly 22-second demo and repository, then states that Amp produced the demo. The repository README explicitly says it uses fabricated command history.",
       "media_note": "The main video and the author’s Amp production video are one project. A demonstration with fabricated history is not a real-user-log evaluation.",
-      "source_notes": "**Documentation review:** Read the [README at 4b2b75d](https://github.com/mrnugget/jev-shell-history/blob/4b2b75d26c0ccf5726263904514a22a8e11659ea/README.md), distinguishing prefix filtering, Jev candidate judgments and zsh acceptance. The plugin was not installed and local shell history was not transmitted."
+      "source_notes": "**Documentation review:** Read the [README at 4b2b75d](https://github.com/mrnugget/jev-shell-history/blob/4b2b75d26c0ccf5726263904514a22a8e11659ea/README.md), distinguishing prefix filtering, Jev candidate judgments and zsh acceptance. The plugin was not installed and local shell history was not transmitted.",
+      "review_summary": "Pinned docs specify history candidates, prefix filtering, Choice/Noul gates and stale-result rejection. The demo uses fabricated history and reports 0.7–0.9 s latency; everyday adoption and long-term acceptance are not established."
     },
     "calorie-notebook": {
       "title": "Calorie Notebook: text-based food logging",
@@ -855,7 +938,8 @@
       "advantage": "Emphasizes feedback while entering food, potentially reducing item-by-item logging effort. Compare responsiveness with the predictive spreadsheet, while separately checking portion interpretation and numerical evidence.",
       "limitation": "No database, recipe handling or error evaluation against actual labels is disclosed; an author reply also notes limitations of model calorie estimation. Fast responses do not establish accurate calories or a reliable nutrition-measurement tool.",
       "reported_result": "The author shares a roughly 41-second food-logging video and reports instant feedback. The interface shows food text, calorie and nutrient totals without a complete latency or estimation-accuracy benchmark.",
-      "media_note": "The source video shows a distinct food-logging interface. The same author’s included Skillbox, filter and PR tools serve different tasks and are not merged or counted again."
+      "media_note": "The source video shows a distinct food-logging interface. The same author’s included Skillbox, filter and PR tools serve different tasks and are not merged or counted again.",
+      "review_summary": "The interface is demonstrated, and the author expressly concedes estimation limitations. Instant numerical output does not establish nutritional accuracy."
     },
     "compact-adviser": {
       "title": "Compact Adviser: choose when to compact",
@@ -866,7 +950,8 @@
       "limitation": "The private labeled evaluation is unavailable for independent validation. Conversation excerpts reach the service; best-effort redaction is not a complete guarantee.",
       "reported_result": "The author reports 96 checkpoints from 40 sessions, examining precision at low context usage and recall at high usage, not a public benchmark.",
       "media_note": "The main post includes an image; pinned documentation explains the process and evaluation scope.",
-      "source_notes": "**Documentation review:** Read the [pinned documentation](https://github.com/kunchenguid/compact-adviser/blob/17e441a81e9dbacfef15756b7d0cca66461a9b98/README.md). Implementation descriptions above come from documentation, not installation, execution or independent reproduction."
+      "source_notes": "**Documentation review:** Read the [pinned documentation](https://github.com/kunchenguid/compact-adviser/blob/17e441a81e9dbacfef15756b7d0cca66461a9b98/README.md). Implementation descriptions above come from documentation, not installation, execution or independent reproduction.",
+      "review_summary": "The two-question policy, usage-dependent thresholds and 96-checkpoint evaluation are documented. The author tuned prompts on a private evaluation set; an independent held-out set and unseen-session safety are not established."
     },
     "json-render-ui": {
       "title": "json-render: assemble interfaces from component choices",
@@ -877,7 +962,8 @@
       "limitation": "Documented limits include 14 new elements per batch, 14 evaluator calls per request and depth 4. Structural validity does not guarantee semantic correctness or good design.",
       "reported_result": "The author shares an editable UI video and source links. Documentation rules out freeform generation calls; independent quality comparisons are absent.",
       "media_note": "The main video and author’s source-code reply form one case; quote-posts are not additional applications.",
-      "source_notes": "**Documentation review:** Read the [pinned documentation](https://github.com/vercel-labs/json-render/blob/3ad381881194e7011ad3ccd6d668033495a06c29/apps/web/lib/jev/README.md). Implementation descriptions above come from documentation, not installation, execution or independent reproduction."
+      "source_notes": "**Documentation review:** Read the [pinned documentation](https://github.com/vercel-labs/json-render/blob/3ad381881194e7011ad3ccd6d668033495a06c29/apps/web/lib/jev/README.md). Implementation descriptions above come from documentation, not installation, execution or independent reproduction.",
+      "review_summary": "Pinned docs substantiate component selection, staged layout and JSON assembly in code, without full-page templates or freeform generation. “Instant” is not established for arbitrary UIs: candidates, text, batch size and depth are bounded, with no matched-quality end-to-end benchmark."
     },
     "seo-internal-links": {
       "title": "SEO internal links: match existing text to relevant pages",
@@ -887,7 +973,8 @@
       "advantage": "Unlike content-popularity scores, it produces concrete suggestions editors can inspect, including decisions to add no link.",
       "limitation": "No independent relevance evaluation or SEO impact evidence. The Opus comparison stopped when Jev finished, so its full-site cost was extrapolated.",
       "reported_result": "The author reports 584 links, 139 pages skipped, 45.1 seconds and $0.21. The comparator completed only 21 pages, not the same full workload.",
-      "media_note": "The source includes a workflow video; planned Distribb/MCP support is not treated as released functionality."
+      "media_note": "The source includes a workflow video; planned Distribb/MCP support is not treated as released functionality.",
+      "review_summary": "The author discloses the early-stopped comparison. The 190-fold figure is a per-page extrapolation, not an equally completed, quality-matched full-site benchmark or proof of SEO benefit."
     },
     "box-incident-triage": {
       "title": "Box: triage and file incident reports",
@@ -897,7 +984,8 @@
       "advantage": "More specific to business triage than a general Downloads organizer; metadata preserves results for inspection.",
       "limitation": "Severity criteria, error costs and access controls are undisclosed. A demo does not establish reliable incident handling.",
       "reported_result": "The author shares a roughly 46-second video and qualitative speed/cost claims, without a reproducible quantitative evaluation.",
-      "media_note": "Only the demonstrated incident workflow is included; suggested insurance or loan uses are not separate cases."
+      "media_note": "Only the demonstrated incident workflow is included; suggested insurance or loan uses are not separate cases.",
+      "review_summary": "A clearly bounded Box workflow is described and demonstrated; incident-label accuracy and operational controls remain unverified, and other enterprise uses are hypothetical."
     },
     "snack-scoring": {
       "title": "NoSugarForKids: multi-criterion snack scoring",
@@ -907,7 +995,8 @@
       "advantage": "Focuses on batch product organization rather than estimating a meal, as in Calorie Notebook. Separate criteria can be inspected more easily than a single overall score.",
       "limitation": "Prompts, labeled samples and calibration are unavailable. Model scores do not replace checking product labels or nutrition data. Catalog size and this batch size are different measures.",
       "reported_result": "The author reports 3,000 items in 28 seconds for $0.11; not independently reproduced.",
-      "media_note": "Uses the scoring video; the site’s earlier launch post is project history, not an additional case."
+      "media_note": "Uses the scoring video; the site’s earlier launch post is project history, not an additional case.",
+      "review_summary": "A bulk product-scoring demo exists, but the rubric, data provenance and calibration are undisclosed; cheap scoring is not nutritional validation."
     },
     "tax-doc-classifier": {
       "title": "Tax Doc Classifier: label tax PDF pages",
@@ -918,7 +1007,8 @@
       "limitation": "Scans require separate OCR; pages without text can appear blank. Evaluation mainly covers English federal forms, and low-confidence failures must not disappear behind a “100%” headline.",
       "reported_result": "Documentation reports no errors across 314 filled pages spanning 15 forms. A separate 753-page, 261-form blank set had no misclassifications but 38 low-confidence strict-mode failures.",
       "media_note": "The source has a video; pinned README figures define the evaluation scope. Page classification is not tax filing.",
-      "source_notes": "**Documentation review:** Read the [pinned documentation](https://github.com/kyotofin/tax-doc-classifier/blob/6afcf701395466d7c936ec8178daf017b9d96b0c/README.md). Implementation descriptions above come from documentation, not installation, execution or independent reproduction."
+      "source_notes": "**Documentation review:** Read the [pinned documentation](https://github.com/kyotofin/tax-doc-classifier/blob/6afcf701395466d7c936ec8178daf017b9d96b0c/README.md). Implementation descriptions above come from documentation, not installation, execution or independent reproduction.",
+      "review_summary": "The pinned documentation provides a bounded corpus result, strict-failure counts and the old baseline. Its 100% claim must not hide 38 low-confidence rejections in the separate blank-form set or imply universal tax-document reliability."
     },
     "ego-product-decisions": {
       "title": "ego lite: filter Amazon products",
@@ -928,7 +1018,8 @@
       "advantage": "A concrete filtering task makes selected results easier to compare than a broad browser-automation claim.",
       "limitation": "Scoring criteria, repetitions and full costs are missing. Twenty decisions and a 10/10 display are different measures, not twenty completed shopping sessions or purchases.",
       "reported_result": "The author reports 20 decisions in 3.71 seconds versus 54.45 seconds with GPT-5.6 Sol, displaying 10/10 for both in one comparison.",
-      "media_note": "The video title and result panels support product filtering; they do not establish a completed purchase."
+      "media_note": "The video title and result panels support product filtering; they do not establish a completed purchase.",
+      "review_summary": "The single hybrid-system comparison is concrete, but decision count differs from result count; scoring, repetitions and component contributions are undisclosed."
     },
     "cnvs-voice-gate": {
       "title": "CNVS: gate voice commands without a wake word",
@@ -938,7 +1029,8 @@
       "advantage": "Unlike the voice-and-gesture canvas, this focuses on deciding whether to respond, without a fixed activation phrase.",
       "limitation": "False activations, missed commands, recording handling and end-to-end latency lack evaluation. A text decision model should not be described as directly understanding raw audio.",
       "reported_result": "The author shares roughly 84 seconds of interaction, without an independent activation-accuracy comparison.",
-      "media_note": "Separate from this author’s game demo and another author’s voice canvas because the tasks and videos differ."
+      "media_note": "Separate from this author’s game demo and another author’s voice canvas because the tasks and videos differ.",
+      "review_summary": "The video supports an intent-gating experiment within a speech/action pipeline. Long-term false activations, missed commands and transcription details are unknown; an ambient Jarvis remains a vision rather than demonstrated full autonomy."
     },
     "tester-army-e2e": {
       "title": "Tester Army: web and mobile end-to-end testing",
@@ -948,7 +1040,8 @@
       "advantage": "Shares the testing category with Runlayer but emphasizes a web/mobile framework, inviting comparison of platform coverage and assertion design.",
       "limitation": "A demo does not establish reliable defect detection. Availability is described as upcoming; a runnable open-source release was not verified.",
       "reported_result": "The post includes roughly 70 seconds of demonstration and a Tester Army link, without independent defect-detection results.",
-      "media_note": "A separate author and video support an independent case; windows and platforms are not counted separately."
+      "media_note": "A separate author and video support an independent case; windows and platforms are not counted separately.",
+      "review_summary": "The author explicitly describes a forthcoming framework. The demo is plausible, while release availability, platform coverage and defect detection remain unverified."
     },
     "codex-model-router": {
       "title": "Codex Model Router: choose a model each turn",
@@ -959,7 +1052,8 @@
       "limitation": "Prompt tuning is ongoing; cache benefits and context effects remain uncertain. Repository replay savings are not this user’s measured savings.",
       "reported_result": "The author reports initial over-routing to Sol even for easy tasks, then prompt adjustments, without a full personal-workflow quality/cost comparison.",
       "media_note": "The main screenshot, repository and tuning gist are one case.",
-      "source_notes": "**Documentation review:** Read the [pinned documentation](https://github.com/0xNatoshi/jev-codex-router/blob/8292b519659280884627a962c826ac7721136a64/README.md). Implementation descriptions above come from documentation, not installation, execution or independent reproduction."
+      "source_notes": "**Documentation review:** Read the [pinned documentation](https://github.com/0xNatoshi/jev-codex-router/blob/8292b519659280884627a962c826ac7721136a64/README.md). Implementation descriptions above come from documentation, not installation, execution or independent reproduction.",
+      "review_summary": "The inspectable routing infrastructure and candid user report support the bounded integration claim. Replay savings do not prove live cost or equal-quality gains for this user."
     },
     "gmail-intent-search": {
       "title": "Gmail: search by intent",
@@ -969,7 +1063,8 @@
       "advantage": "Unlike batch email classification, this addresses an individual search without requiring fixed labels for the whole inbox.",
       "limitation": "Recall, permissions, candidate coverage and sensitive-content handling are undisclosed. A classifier cannot recover a message absent from its candidates.",
       "reported_result": "The author shares a roughly 22-second video without large-inbox or retrieval-accuracy evaluation.",
-      "media_note": "The quoted spreadsheet project is already cataloged; the distinct search task and video warrant a separate case."
+      "media_note": "The quoted spreadsheet project is already cataloged; the distinct search task and video warrant a separate case.",
+      "review_summary": "An intent-search interaction is demonstrated; large-inbox embedding retrieval is only a suggestion, and recall and relevance remain unmeasured."
     },
     "ai-hedge-fund-backtest": {
       "title": "AI Hedge Fund: strategy backtesting",
@@ -979,7 +1074,8 @@
       "advantage": "Compared with on-chain execution, this focuses on offline strategy experiments, keeping backtests distinct from live orders.",
       "limitation": "Matched benchmarks, data splits and full costs are absent. Speed does not establish returns, and historical tests may suffer look-ahead bias.",
       "reported_result": "The author claims roughly 100-fold speed and cost improvements without complete conditions needed to reproduce those ratios.",
-      "media_note": "The roughly seven-second source video demonstrates a backtest workflow, not live profitability."
+      "media_note": "The roughly seven-second source video demonstrates a backtest workflow, not live profitability.",
+      "review_summary": "A backtesting interface does not establish frontier-level decision quality or matched 100x speed and cost improvements. The comparative baseline, quality metric and complete measurements are absent; historical testing is not live profit."
     },
     "ocr-image-organizer": {
       "title": "OCR + Jev: organize images",
@@ -989,7 +1085,8 @@
       "advantage": "Shares text extraction with CoreML/OCR desktop clicking, but produces image categories rather than action coordinates.",
       "limitation": "Text-free images and OCR errors limit classification. This is not direct image understanding by Jev, and accuracy across image types is unmeasured.",
       "reported_result": "The author reports roughly 40 seconds for 900 images; cost and end-to-end timing boundaries are unclear.",
-      "media_note": "The source includes about 62 seconds of demonstration; video duration differs from reported processing time."
+      "media_note": "The source includes about 62 seconds of demonstration; video duration differs from reported processing time.",
+      "review_summary": "The stated OCR-plus-classifier design is plausible; category accuracy and timing boundaries are unspecified, and the demo does not establish native image understanding by Jev."
     },
     "game-level-generation": {
       "title": "Sprite Fusion: generate runner terrain in real time",
@@ -1000,7 +1097,8 @@
       "limitation": "A simple runner prototype without long-horizon playability or adaptive-difficulty evaluation. Asset generation and terrain decisions are separate stages.",
       "reported_result": "The author records five requests at 319–375 ms Jev latency and an estimated $0.00057 each, not a measured sub-100 ms system.",
       "media_note": "The main video, implementation article and author’s state clarification form one case.",
-      "source_notes": "**Author article:** The [implementation write-up](https://www.spritefusion.com/blog/generating-game-level-in-real-time-with-jev) documents allowed surface types, widths, gaps, heights and a recorded response. This is public-design analysis; the game was not run."
+      "source_notes": "**Author article:** The [implementation write-up](https://www.spritefusion.com/blog/generating-game-level-in-real-time-with-jev) documents allowed surface types, widths, gaps, heights and a recorded response. This is public-design analysis; the game was not run.",
+      "review_summary": "The implementation article specifies state, finite terrain choices and code placement, with five measured requests at 319–375ms. This supports bounded terrain assembly, not asset generation, unrestricted game creation or long-term playability."
     },
     "maxfusion-ad-classifier": {
       "title": "MaxFusion: classify advertising creatives",
@@ -1010,7 +1108,8 @@
       "advantage": "Compare with StealAds for ad organization. This reports a larger batch, but different data, labels and preprocessing prevent direct timing comparisons.",
       "limitation": "Human-label agreement, campaign impact and full collection costs are absent. Announced MCP support is not confirmed as released.",
       "reported_result": "The author reports 1,891 ads in 19 seconds for $0.12; not independently reproduced.",
-      "media_note": "A distinct author, product and video differentiate it from StealAds despite their shared purpose."
+      "media_note": "A distinct author, product and video differentiate it from StealAds despite their shared purpose.",
+      "review_summary": "A specific ad-classification demo, with no validated label accuracy or complete preprocessing costs; batch size does not prove superiority over another tool."
     },
     "danish-stock-backtest": {
       "title": "Danish equities: a full-year historical strategy experiment",
@@ -1020,7 +1119,8 @@
       "advantage": "Identifies multiple input sources and a year-long span, complementing the configuration-focused backtest interface.",
       "limitation": "Look-ahead controls, fees, slippage and reliable return statistics are missing. Token charges are not full strategy costs.",
       "reported_result": "The author reports 239 trading days, 8.1 million tokens and $0.32; not independently reproduced.",
-      "media_note": "The roughly 22-second video is not evidence of current live-account trading."
+      "media_note": "The roughly 22-second video is not evidence of current live-account trading.",
+      "review_summary": "The dated 2025 run is a historical experiment with self-reported token cost. Point-in-time inputs, leakage controls, trading costs and validated returns are unspecified; it is not evidence of profitable live trading."
     },
     "flappy-bird": {
       "title": "Flappy Bird: navigate obstacles",
@@ -1030,7 +1130,8 @@
       "advantage": "A simpler action space than many character games helps study timing, but does not itself establish reliability.",
       "limitation": "No multi-run scores, failure clips, costs or reproducible source. A successful clip does not establish completion rate.",
       "reported_result": "The author supplies roughly 49 seconds of gameplay without a verifiable quantitative success rate.",
-      "media_note": "Cataloged as a distinct game task alongside other game-decision experiments."
+      "media_note": "Cataloged as a distinct game task alongside other game-decision experiments.",
+      "review_summary": "A plausible short game-control demo. The effortless framing is impressionistic; observation format, timing, failures and repeated scores are not available."
     },
     "script-code-review": {
       "title": "Script.it: flag issues before writing review comments",
@@ -1040,7 +1141,8 @@
       "advantage": "Explicitly separates detection from explanation compared with agent-led review, and discloses the recall tradeoff.",
       "limitation": "The private set’s size and labels are unavailable. Zero false positives refers to tested developer-disputed findings, not a guarantee of no production errors.",
       "reported_result": "The author reports roughly 50× speed, 100× cost improvement and 75% confirmed-bug recall; the previous ensemble detected more bugs.",
-      "media_note": "The source includes an image and workflow description. Results remain an internal author evaluation, not independent certification."
+      "media_note": "The source includes an image and workflow description. Results remain an internal author evaluation, not independent certification.",
+      "review_summary": "The author discloses the workflow change and 75% recall trade-off. Private-data zero false positives and speed/cost ratios remain unverified, but are not presented as an equal-recall universal guarantee."
     },
     "nifty-trading": {
       "title": "Nifty intraday trading: an account demo with a stop-loss report",
@@ -1050,7 +1152,8 @@
       "advantage": "Unlike speed-only trading posts, this discloses a stopped-out day and an author-reported adverse outcome.",
       "limitation": "Accounts, fills and net returns are unverified. Leverage magnifies losses; one stop-loss report does not establish durable risk control.",
       "reported_result": "The author says an initially profitable morning ended at the ₹1,000 hard stop, not an overall profitable day.",
-      "media_note": "The roughly 38-second video has a different author, market and execution venue from the Monad/Kuru bot."
+      "media_note": "The roughly 38-second video has a different author, market and execution venue from the Monad/Kuru bot.",
+      "review_summary": "The source reports a stop-loss after an initially green morning, not a profitable day. Account authenticity, executions and long-term risk controls remain unverified; the disclosure is more balanced than profit marketing."
     },
     "downloads-organizer": {
       "title": "macOS Downloads: organize files by rules",
@@ -1060,7 +1163,8 @@
       "advantage": "Fits an ongoing local-file workflow rather than only batch classification. Box triage instead handles business reports in cloud folders.",
       "limitation": "Wrong moves or names can impair retrieval. Undo, conflicts, permissions and classification accuracy are undocumented.",
       "reported_result": "The author supplies a roughly nine-second demo without long-term or quantitative classification results.",
-      "media_note": "Distinct from the same author’s X filter because both task and video differ."
+      "media_note": "Distinct from the same author’s X filter because both task and video differ.",
+      "review_summary": "A plausible file-rule automation; extraction and filename construction are undisclosed, and no-other-LLM does not imply free-form generation by Jev."
     },
     "color-judgments": {
       "title": "Words and colors: visualize 16-color judgments",
@@ -1070,7 +1174,8 @@
       "advantage": "A smaller candidate set than pixel drawing offers direct semantic feedback for exploring word-to-visual interaction.",
       "limitation": "Constrained by palette and prompts, subjective associations have no single correct answer. This is not an image-recognition or color-science evaluation.",
       "reported_result": "The author shares roughly 65 seconds of interaction and palette details, without quantitative evaluation.",
-      "media_note": "The 16-color explanation and later mixing discussion are merged rather than counted as multiple apps."
+      "media_note": "The 16-color explanation and later mixing discussion are merged rather than counted as multiple apps.",
+      "review_summary": "The author discloses a fixed 16-color palette and rendering weighted probabilities. This supports word-to-palette associations, not visual color recognition or color-science accuracy."
     },
     "x-reply-cleanup": {
       "title": "X reply cleanup: flag low-value comments",
@@ -1080,7 +1185,8 @@
       "advantage": "More focused on replies than general feed filtering, with a correction mechanism; distinct from this author’s historical-post analysis.",
       "limitation": "Low-value judgments are subjective and error rates are unavailable. Correction feedback does not establish model training or cross-user learning.",
       "reported_result": "The author supplies roughly 15 seconds of video and a quick-build claim, without formal filtering evaluation.",
-      "media_note": "The main video and correction follow-up form one application."
+      "media_note": "The main video and correction follow-up form one application.",
+      "review_summary": "The demo supports reply flagging and correction, but the precise action is unclear; using feedback on a later call is not evidence of model training or measured accuracy."
     }
   },
   "groups": {

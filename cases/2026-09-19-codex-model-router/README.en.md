@@ -4,7 +4,9 @@
 
 > Select a model and reasoning settings for each Codex task.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟢 A · Clearer evidence for function/mechanism**<br>The inspectable routing infrastructure and candid user report support the bounded integration claim. Replay savings do not prove live cost or equal-quality gains for this user.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#codex-model-router) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,7 +22,7 @@ Like assigning easy tickets to a lighter assistant and difficult ones to a stron
 | Platform / author | X / [@antonioleivag](https://x.com/antonioleivag) |
 | Main post | [Source post](https://x.com/antonioleivag/status/2100962426439000484) |
 | Published (UTC) | 2026-09-18T14:57:31+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 07:04:48 |
+| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **437** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:49:18+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100962426439000484); may be cached |

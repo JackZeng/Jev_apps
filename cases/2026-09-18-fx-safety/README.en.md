@@ -4,7 +4,9 @@
 
 > Check a command's potential risk before an agent executes it automatically.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>A self-reported safety-classifier comparison exists, but the absent dataset and false-allow rates prevent treating it as validated security enforcement.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#fx-safety) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Jev acts as a pre-execution screener, classifying command safety. Fast screening
 | Platform / author | X / [@fazxes](https://x.com/fazxes) |
 | Main post | [Source post](https://x.com/fazxes/status/2100300097695232164) |
 | Published (UTC) | 2026-09-16T19:05:39+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **591** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:25.117433+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100300097695232164); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

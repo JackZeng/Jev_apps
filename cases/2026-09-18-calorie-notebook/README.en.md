@@ -4,7 +4,9 @@
 
 > Write down what you ate and receive quick calorie, nutrient and total values in the interface.
 
-**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-18 19:44:51 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 19:44:51<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The interface is demonstrated, and the author expressly concedes estimation limitations. Instant numerical output does not establish nutritional accuracy.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#calorie-notebook) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Like putting an estimator beside a notebook: food and portion descriptions becom
 | Platform / author | X / [@thekitze](https://x.com/thekitze) |
 | Main post | [Source post](https://x.com/thekitze/status/2100857642566758849) |
 | Published (UTC) | 2026-09-18T08:01:08+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 19:44:51 / 2026-09-18 19:44:51 |
+| Added to README / content updated (Beijing time) | 2026-09-18 19:44:51 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **326** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T11:39:30+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100857642566758849); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

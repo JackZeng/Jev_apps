@@ -4,7 +4,9 @@
 
 > Explore agent-driven interface tests in a framework targeting web and mobile.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The author explicitly describes a forthcoming framework. The demo is plausible, while release availability, platform coverage and defect detection remain unverified.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#tester-army-e2e) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,7 +22,7 @@ Like a tester operating an interface from entry to outcome: Jev contributes deci
 | Platform / author | X / [@o_kwasniewski](https://x.com/o_kwasniewski) |
 | Main post | [Source post](https://x.com/o_kwasniewski/status/2100966838905585687) |
 | Published (UTC) | 2026-09-18T15:15:03+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 07:04:48 |
+| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **505** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:49:18+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100966838905585687); may be cached |

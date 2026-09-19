@@ -4,7 +4,9 @@
 
 > Suggest emoji that fit the meaning of text as it is entered.
 
-**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-18 10:50:59 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The demo reports 100–200 ms with similar timings for 3 and 200 candidates. Without repeated measurements or semantic accuracy, this does not imply constant latency at arbitrary scale.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#emoji-suggestions) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ The model selects from existing emoji rather than drawing new ones. The interfac
 | Platform / author | X / [@riku720720](https://x.com/riku720720) |
 | Main post | [Source post](https://x.com/riku720720/status/2100705558512963602) |
 | Published (UTC) | 2026-09-17T21:56:49+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 10:50:59 / 2026-09-18 10:50:59 |
+| Added to README / content updated (Beijing time) | 2026-09-18 10:50:59 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **230** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T02:39:18+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100705558512963602); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

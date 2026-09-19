@@ -4,7 +4,9 @@
 
 > Let Jev choose the next browser action and Stagehand carry it out.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The disclosed accessibility-tree/action loop is plausible and demonstrated, but one task does not establish general success rates or full pipeline cost.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#stagehand) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Webpages expose button names and other information to accessibility tools. This 
 | Platform / author | X / [@kylejeong](https://x.com/kylejeong) |
 | Main post | [Source post](https://x.com/kylejeong/status/2100622054945095934) |
 | Published (UTC) | 2026-09-17T16:25:00+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **393** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:22.761918+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100622054945095934); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

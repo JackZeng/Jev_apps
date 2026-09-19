@@ -4,7 +4,9 @@
 
 > Combine browser tooling and models to filter products on a webpage.
 
-**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 07:04:48 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-19 07:04:48<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The single hybrid-system comparison is concrete, but decision count differs from result count; scoring, repetitions and component contributions are undisclosed.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#ego-product-decisions) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,7 +22,7 @@ Like one assistant reading a product list and another quickly judging matches. T
 | Platform / author | X / [@ego_agent](https://x.com/ego_agent) |
 | Main post | [Source post](https://x.com/ego_agent/status/2100970015977804008) |
 | Published (UTC) | 2026-09-18T15:27:40+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 07:04:48 |
+| Added to README / content updated (Beijing time) | 2026-09-19 07:04:48 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **366** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T22:49:18+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100970015977804008); may be cached |

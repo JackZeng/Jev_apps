@@ -4,7 +4,9 @@
 
 > Split Minecraft play across models: long-term planning, quick reactions, and local movement and aiming.
 
-**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-18 10:50:59 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 10:50:59<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟡 B · Effectiveness unverified**<br>The author discloses planning, judgment and local movement policies plus an original-speed clip. The sped-up main clip cannot measure reaction time, and combined combat performance cannot be attributed to Jev alone.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#minecraft-hybrid) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Like a captain, field coordinator and players sharing work: Astra plans, Jev rea
 | Platform / author | X / [@wuyang_zhou](https://x.com/wuyang_zhou) |
 | Main post | [Source post](https://x.com/wuyang_zhou/status/2100727660875808913) |
 | Published (UTC) | 2026-09-17T23:24:38+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 10:50:59 / 2026-09-18 10:50:59 |
+| Added to README / content updated (Beijing time) | 2026-09-18 10:50:59 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **354** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-18T02:36:40+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100727660875808913); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

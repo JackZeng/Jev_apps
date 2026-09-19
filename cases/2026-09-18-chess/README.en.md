@@ -4,7 +4,9 @@
 
 > Compare model playing strength and decision speed in timed chess.
 
-**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-18 07:24:03 (Beijing time, UTC+08:00)
+**Added to README:** 2026-09-18 06:58:16<br>**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+
+**🟢 A · Clearer evidence for function/mechanism**<br>The author reports both material inferiority and a loss, separating clock wins from playing strength. This is a bounded result, not an Elo estimate or independently reproduced benchmark.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#chess) · 2026-09-19 11:30:00 Beijing time
 
 ## How it works, in plain English
 
@@ -20,11 +22,11 @@ Every model call consumes time on the chess clock. Jev wins one game on time but
 | Platform / author | X / [@aimlapi](https://x.com/aimlapi) |
 | Main post | [Source post](https://x.com/aimlapi/status/2100372930282573876) |
 | Published (UTC) | 2026-09-16T23:55:04+00:00 |
-| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-18 07:24:03 |
+| Added to README / content updated (Beijing time) | 2026-09-18 06:58:16 / 2026-09-19 16:55:36 |
 | Main-post likes snapshot | **1,985** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:42:28.166587+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100372930282573876); may be cached |
-| Last source review | 2026-09-18; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
 | Jev version | V13 (as labeled by the author) |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 

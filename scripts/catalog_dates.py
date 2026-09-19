@@ -20,6 +20,8 @@ def latest_review_day(d):
 def case_review_day(c, d):
     days = [beijing_day(u['reviewed_at']) for u in d.get('updates', [])
             if c['slug'] in u['new_cases'] + u['updated_cases']]
+    if c.get('claim_review'):
+        days.append(beijing_day(c['claim_review']['reviewed_at']))
     return max(days, default=case_day(c))
 
 
