@@ -1,5 +1,5 @@
 # Increment 7: sources and claim assessments
- 
+
 [中文 / English](2026-09-19-increment7-audit.md)
 
 **Review cutoff: 2026-09-19 17:48:49 Beijing time.**
