@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """从公开元数据和原创笔记生成 Markdown；仅使用 Python 标准库，不访问网络。"""
 import argparse
-from collections import Counter
 from datetime import datetime
 import html
 import json
@@ -9,8 +8,9 @@ from pathlib import Path
 import sys
 
 from catalog_en import generate_en, validate_translations
-from catalog_reviews import review_line, review_legend, validate_review
-from catalog_dates import readme_dates, case_day, case_review_day, latest_review_day
+from catalog_reviews import review_line, validate_review
+from catalog_home import render_homepage
+from catalog_dates import readme_dates, case_day, case_review_day
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / 'data/catalog.json'
@@ -69,53 +69,19 @@ def validate(d):
 def generate(d):
     date, cases = d['collected_on'], d['cases']
     groups = {g['id']: g for g in d['groups']}
-    counts = Counter(c['group'] for c in cases)
     files = {}
     update = d.get('latest_update')
-    update_notice = (f"最近增量核对：**{update['reviewed_at']}（UTC）**；新增 **{len(update['new_cases'])}** 个独立案例，补充 **{len(update['updated_cases'])}** 个已有条目。[本轮新增、合并与未收录原因](CHANGELOG.md)。已有主帖的点赞快照保持原取数时间。\n\n" if update else '')
-    readme = [f'''# Jev 应用案例与原理拆解
-
-从 X 收集 **TypeSafe Jev** 的应用演示，整理用途、实现思路和同类优劣。**当前 {len(cases)} 个案例 · {len(groups)} 类 · 每条主帖收录时均 ≥ {d['minimum_likes']} 赞 · 每条附图或视频**。
-
-{update_notice}## Jev 是什么？先用一句人话理解
-
-可以把 Jev 想成软件里的快速分拣员：程序先把当前情况和问题准备好，Jev 负责判断，程序再把判断变成动作。例如给邮件贴标签、为任务挑一个 AI 助手，或决定网页上下一步点哪个按钮。许多个小判断组合起来，就能构成下面这些应用。
-
-以查航班为例：程序先读网页、列出可操作的按钮，Jev 选下一步，浏览器工具负责点击，然后再看页面有什么变化。读取页面、需要时生成输入文字、检查结果是否正确，都由整套程序配合完成。
-
-更新日期：**{latest_review_day(d)}（北京时间）**。这是本次检索覆盖到的案例集，不承诺穷尽 X；目前全部**未复现**。正文中的性能、成本与效果均标明为作者报告，优劣是根据公开设计作出的分析，不是本仓库跑分。
-
-Jev 接收状态与类型化问题，输出可供代码使用的选择、评分或是非判断。它在下面许多应用中充当决策组件，周围仍需要观测、执行器，有时也需要 LLM。[官方介绍](https://docs.typesafe.ai/introduction) · [基本原理与阅读方法](breakdowns/2026-09-18-how-jev-apps-work.md)
-
-## 收录与阅读规则
-
-- **门槛按单条主帖判断**：点赞 ≥ 200，明确使用 TypeSafe Jev，有具体演示或实现截图；同项目更新与转载合并，点赞不相加。
-- **数字是快照**：检索来自 X；精确点赞与媒体元数据通过 FxTwitter 公共接口复核，可能有缓存或延迟。每篇保留原帖时间、取数时间和来源。[检索与证据说明](references/README.md) · [结构化目录与点赞快照](data/catalog.json)
-- **预览可点击**：表中的图来自原帖图片或视频封面，点击打开对应来源。详情保留视频直链/原图；X 图片 CDN、视频直链或帖子可能失效，优先回原帖查看。Skillbox 的图来自它被引用的旧版介绍，已单独说明。
-- **同类放一起**：每组下面给选择建议，详细对比逐项列出优势与限制。类别内按用途排列，不按点赞排名。视频只是演示证据，不证明长期可靠性。
-- **简介旁的时间**：每条仅显示最近内容更新的时间，统一为**北京时间（UTC+08:00）**；与原帖发布时间、点赞取数时间分别记录。[时间依据](references/README.md#readme-times)
-
-{review_legend(cases)}## 分类导航
-
-| 类别 | 案例数 | 对比与原理 |
-| --- | ---: | --- |
-''']
-    for g in groups.values():
-        readme.append(f'| [{g["title"]}](#{g["id"]}) | {counts[g["id"]]} | [阅读分析](breakdowns/{date}-{g["id"]}.md) |\n')
-    readme.append('\n[案例索引](cases/README.md) · [全部拆解](breakdowns/README.md) · [待补证据](inbox/README.md) · [收录流程](CONTRIBUTING.md)\n\n## 全部应用列表\n')
     index = ['# 案例索引\n\n全部条目未复现；点赞为各自主帖的取数快照。内容更新时间统一为北京时间（UTC+08:00）。图文总览见 [首页](../README.md)。\n']
     breakdowns = ['# 原理拆解与同类对比\n\n这些是公开资料分析，尚未执行复现实验。\n\n- [Jev 应用如何工作：三种原语与应用组合](2026-09-18-how-jev-apps-work.md)\n']
     for group_id, g in groups.items():
         group_cases = [c for c in cases if c['group'] == group_id]
         bp = f'breakdowns/{date}-{group_id}.md'
-        readme.append(f'\n<a id="{group_id}"></a>\n\n### {g["title"]}（{len(group_cases)}）\n\n{g["comparison"]}\n\n[逐项优劣与原理对比]({bp})\n\n| 应用与简介 | 主帖点赞 | 图片 / 视频 |\n| --- | ---: | --- |\n')
         index.append(f'\n## {g["title"]}\n\n| 应用 | 简介 | 主帖点赞 |\n| --- | --- | ---: |\n')
         breakdowns.append(f'- [{g["title"]}]({date}-{group_id}.md)：{len(group_cases)} 个案例。\n')
         b = [f'# {g["title"]}：原理与对比\n\n首次整理：{date}；各案例来源复查时间见详情。验证状态：**未复现**。\n\n## 选择建议\n\n{g["comparison"]}\n\n## 同类逐项对比\n\n以下优势和限制是基于作者公开说明的技术分析；不构成同条件实验结论。\n\n| 案例 | 相对优势 / 适用场景 | 限制 / 尚缺证据 |\n| --- | --- | --- |\n']
         for c in group_cases:
             path = case_dir(c, date)
             p = c['post']
-            readme.append(f'| [**{c["title"]}**]({path}/README.md)<br>{c["summary"]}<br>**原理：** {c["plain_explanation"]}<br>{review_line(c)}<br>{readme_dates(c)} | [{p["likes"]:,}]({p["url"]}) | {thumb(c)} |\n')
             index.append(f'| [{c["title"]}]({case_day(c)}-{c["slug"]}/README.md) | {c["summary"]}<br>{review_line(c, prefix="../")}<br>{readme_dates(c)} | [{p["likes"]:,}]({p["url"]}) |\n')
             b.append(f'| [{c["title"]}](../{path}/README.md) | {c["advantage"]} | {c["limitation"]} |\n')
             supplement = '\n'.join(f'- [@{s["author"]} 的补充帖]({s["url"]})：发布于 {s["published_at"]}；{s["retrieved_at"]} 取数时 {s["likes"]:,} 赞，仅作补充、不计入门槛。[取数来源]({s["metrics_source"]})。' + ''.join(f' [补充媒体 {i}]({m["url"]})' for i, m in enumerate(s.get('media', []), 1)) for s in c['supplementary_posts']) or '无。'
@@ -211,21 +177,7 @@ Jev 接收状态与类型化问题，输出可供代码使用的选择、评分�
 {update_entry}'''
         b.append(f'\n## 可观察流程与机制\n\n{g["flow"]}\n\n{g["analysis"]}\n\n各案例的输入和实现差异见上表链接的来源记录。该流程是应用层归纳，不代表每个项目都采用完全相同的实现，也不是对 Jev 内部训练架构的推断。\n\n## 复现实验建议\n\n{g["evaluation"]}\n\n**尚未执行实验。** 当前没有本仓库产生的耗时、准确率或成本结果。\n\n## 更新记录\n\n- {date}：整理首批案例，合并同项目更新，建立对比。\n\n[返回首页](../README.md#{group_id}) · [拆解索引](README.md)\n')
         files[bp] = ''.join(b)
-    readme.append('''
-## 继续维护
-
-新增线索先放 [待整理区](inbox/README.md)。中文内容与共享来源保存在 [data/catalog.json](data/catalog.json)，英文介绍保存在 [data/catalog.en.json](data/catalog.en.json)。点赞、作者和媒体只维护一份，再执行：
-
-```sh
-python3 scripts/build_catalog.py
-python3 scripts/build_catalog.py --check
-```
-
-脚本同时生成中英文 Markdown，缺英文条目或字段会报错；不联网、不需要第三方依赖，不会自动刷新点赞。人工核对新快照后再更新取数时间。详见 [贡献流程](CONTRIBUTING.md) 与 [分类约定](docs/taxonomy.md)。
-
-所有第三方图片、视频和代码权利归各自作者；收录不表示背书。本库以原创摘要和来源链接为主。
-''')
-    files['README.md'] = ''.join(readme)
+    files['README.md'] = render_homepage(d)
     files['cases/README.md'] = ''.join(index)
     files['breakdowns/README.md'] = ''.join(breakdowns)
     return files

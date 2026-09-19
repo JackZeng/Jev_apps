@@ -1,301 +1,1356 @@
-# Jev 应用案例与原理拆解
+# Jev：小判断，能做什么？
 
 **简体中文** | [English](README.en.md)
 
-从 X 收集 **TypeSafe Jev** 的应用演示，整理用途、实现思路和同类优劣。**当前 112 个案例 · 11 类 · 每条主帖收录时均 ≥ 200 赞 · 每条附图或视频**。
+大多数 AI 以写答案见长，**TypeSafe Jev 擅长做判断。**
+给它当前情况和问题或选项，它返回选择、评分或是非判断，再由程序执行。
+这里介绍人们用它做出的应用，也解释演示究竟能证明什么。
 
-最近增量核对：**2026-09-19T09:48:49+00:00（UTC）**；新增 **6** 个独立案例，补充 **1** 个已有条目。[本轮新增、合并与未收录原因](CHANGELOG.md)。已有主帖的点赞快照保持原取数时间。
+**112 个案例 · 11 类用途** · 来源核对至 2026-09-19
 
-## Jev 是什么？先用一句人话理解
+[浏览全部应用](#all-apps) · [Jev 如何工作](breakdowns/2026-09-18-how-jev-apps-work.md) · [最近收录](CHANGELOG.md)
 
-可以把 Jev 想成软件里的快速分拣员：程序先把当前情况和问题准备好，Jev 负责判断，程序再把判断变成动作。例如给邮件贴标签、为任务挑一个 AI 助手，或决定网页上下一步点哪个按钮。许多个小判断组合起来，就能构成下面这些应用。
+## 先看这六个点子
 
-以查航班为例：程序先读网页、列出可操作的按钮，Jev 选下一步，浏览器工具负责点击，然后再看页面有什么变化。读取页面、需要时生成输入文字、检查结果是否正确，都由整套程序配合完成。
+从用途直观、原理较清楚的案例开始。点击图片可看原始演示。
 
-更新日期：**2026-09-19（北京时间）**。这是本次检索覆盖到的案例集，不承诺穷尽 X；目前全部**未复现**。正文中的性能、成本与效果均标明为作者报告，优劣是根据公开设计作出的分析，不是本仓库跑分。
+### 让 AI 按按钮，谁来读网页？
 
-Jev 接收状态与类型化问题，输出可供代码使用的选择、评分或是非判断。它在下面许多应用中充当决策组件，周围仍需要观测、执行器，有时也需要 LLM。[官方介绍](https://docs.typesafe.ai/introduction) · [基本原理与阅读方法](breakdowns/2026-09-18-how-jev-apps-work.md)
+[Browser Use · Ultrafast](cases/2026-09-18-browser-use/README.md)
 
-## 收录与阅读规则
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100410607807918080/img/lNfcykqoOvLoZHWa.jpg" width="480" alt="Browser Use · Ultrafast">](https://x.com/gregpr07/status/2100411066966749359)
 
-- **门槛按单条主帖判断**：点赞 ≥ 200，明确使用 TypeSafe Jev，有具体演示或实现截图；同项目更新与转载合并，点赞不相加。
-- **数字是快照**：检索来自 X；精确点赞与媒体元数据通过 FxTwitter 公共接口复核，可能有缓存或延迟。每篇保留原帖时间、取数时间和来源。[检索与证据说明](references/README.md) · [结构化目录与点赞快照](data/catalog.json)
-- **预览可点击**：表中的图来自原帖图片或视频封面，点击打开对应来源。详情保留视频直链/原图；X 图片 CDN、视频直链或帖子可能失效，优先回原帖查看。Skillbox 的图来自它被引用的旧版介绍，已单独说明。
-- **同类放一起**：每组下面给选择建议，详细对比逐项列出优势与限制。类别内按用途排列，不按点赞排名。视频只是演示证据，不证明长期可靠性。
-- **简介旁的时间**：每条仅显示最近内容更新的时间，统一为**北京时间（UTC+08:00）**；与原帖发布时间、点赞取数时间分别记录。[时间依据](references/README.md#readme-times)
+程序读网页并列出按钮，Jev 选下一步；需要填写文字时，再交给文字模型。
 
-## 项目证据审核
+**证据边界：** 结果来自整套工具配合，不能把全部能力都归给 Jev。
 
-**A：19 项 · B：79 项 · C：14 项 · 尚未审核：0 项。** 最近审核：2026-09-19 17:48:49 北京时间。下方每个项目均标注等级、简短理由和具体依据。
+[原理较清楚](references/2026-09-19-claims-audit.md#browser-use) · [X · 6,891 赞快照](https://x.com/gregpr07/status/2100411066966749359) · [原理与依据](cases/2026-09-18-browser-use/README.md)
 
-- **🟢 A：功能/原理证据较清楚**，只支持限定范围，不认证所有性能宣传。
-- **🟡 B：效果待验证**，有合理演示或作者自测，但缺完整效果证据。
-- **🟠 C：宣传超出证据**，针对具体主张，不等于整个项目造假。
+**内容更新：** 2026-09-19
 
-审核等级与复现状态分开：本库全部案例仍未独立复现，点赞数不作为可信度评分。
+### 不写页面，能不能拼出界面？
 
-## 分类导航
+[json-render · 用组件选择拼出界面](cases/2026-09-19-json-render-ui/README.md)
 
-| 类别 | 案例数 | 对比与原理 |
-| --- | ---: | --- |
-| [浏览器与电脑操作](#browser) | 12 | [阅读分析](breakdowns/2026-09-18-browser.md) |
-| [模型、技能与工具路由](#routing) | 11 | [阅读分析](breakdowns/2026-09-18-routing.md) |
-| [代码质量与安全检查](#review) | 11 | [阅读分析](breakdowns/2026-09-18-review.md) |
-| [数据分类与信息整理](#data) | 16 | [阅读分析](breakdowns/2026-09-18-data.md) |
-| [内容与广告分析](#content) | 10 | [阅读分析](breakdowns/2026-09-18-content.md) |
-| [网页与信息流过滤](#filter) | 4 | [阅读分析](breakdowns/2026-09-18-filter.md) |
-| [上下文与记忆筛选](#memory) | 3 | [阅读分析](breakdowns/2026-09-18-memory.md) |
-| [游戏决策与求解](#games) | 16 | [阅读分析](breakdowns/2026-09-18-games.md) |
-| [NPC、驾驶与群体模拟](#simulation) | 10 | [阅读分析](breakdowns/2026-09-18-simulation.md) |
-| [实时交互与组合实验](#interaction) | 15 | [阅读分析](breakdowns/2026-09-18-interaction.md) |
-| [交易与历史回测](#finance) | 4 | [阅读分析](breakdowns/2026-09-18-finance.md) |
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101022081810911232/img/3tKdQ3Y2_ZGSg3Q7.jpg" width="480" alt="json-render · 用组件选择拼出界面">](https://x.com/ctatedev/status/2101022101750571357)
 
-[案例索引](cases/README.md) · [全部拆解](breakdowns/README.md) · [待补证据](inbox/README.md) · [收录流程](CONTRIBUTING.md)
+像搭积木：Jev 选择组件、安排关系，程序将结果装配成可以渲染的界面。
 
-## 全部应用列表
+**证据边界：** 结构合法，不代表内容正确或设计好看。
+
+[原理较清楚](references/2026-09-19-claims-audit.md#json-render-ui) · [X · 3,341 赞快照](https://x.com/ctatedev/status/2101022101750571357) · [原理与依据](cases/2026-09-19-json-render-ui/README.md)
+
+**内容更新：** 2026-09-19
+
+### 视频里的口播广告，怎么跳过？
+
+[YouTube 赞助片段跳过](cases/2026-09-18-youtube-sponsor-skip/README.md)
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100792834526007296/img/8AFbjqEeZrJUEHid.jpg" width="480" alt="YouTube 赞助片段跳过">](https://x.com/tdinh_me/status/2100793777103466615)
+
+Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，再执行跳转。
+
+**证据边界：** 字幕与边界判断都可能出错，音频模式还需要语音转写。
+
+[原理较清楚](references/2026-09-19-claims-audit.md#youtube-sponsor-skip) · [X · 238 赞快照](https://x.com/tdinh_me/status/2100793777103466615) · [原理与依据](cases/2026-09-18-youtube-sponsor-skip/README.md)
+
+**内容更新：** 2026-09-19
+
+### 解开魔方，靠判断还是公式？
+
+[魔方分阶段解法](cases/2026-09-18-rubiks-cube/README.md)
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100479486382809088/img/r6daGpDnvsCr3LyL.jpg" width="480" alt="魔方分阶段解法">](https://x.com/redp314/status/2100489858951073858)
+
+公式预先写在代码里，Jev 识别当前属于哪种情况，程序查公式并检查操作。
+
+**证据边界：** 这是模型与解法代码合作，不能当成模型独立发明了解法。
+
+[原理较清楚](references/2026-09-19-claims-audit.md#rubiks-cube) · [X · 494 赞快照](https://x.com/redp314/status/2100489858951073858) · [原理与依据](cases/2026-09-18-rubiks-cube/README.md)
+
+**内容更新：** 2026-09-19
+
+### 一叠表格，怎样分清每一页？
+
+[Tax Doc Classifier · 税务 PDF 页面识别](cases/2026-09-19-tax-doc-classifier/README.md)
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100973360989773825/img/yMtL6CxrKMVXQEHV.jpg" width="480" alt="Tax Doc Classifier · 税务 PDF 页面识别">](https://x.com/nedwize/status/2100973868324417852)
+
+程序提取页面文字，Jev 判断表格类型；拿不准的页面留下来复核。
+
+**证据边界：** 作者公开了测试结果，但这不等于所有格式都能可靠识别。
+
+[原理较清楚](references/2026-09-19-claims-audit.md#tax-doc-classifier) · [X · 1,506 赞快照](https://x.com/nedwize/status/2100973868324417852) · [原理与依据](cases/2026-09-19-tax-doc-classifier/README.md)
+
+**内容更新：** 2026-09-19
+
+### 简单任务，需要最强的模型吗？
+
+[Claude Code Mod · 模型与推理力度路由](cases/2026-09-19-claude-code-jev-router/README.md)
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101176234411425792/img/UgEWGdQPunczzXcv.jpg" width="480" alt="Claude Code Mod · 模型与推理力度路由">](https://x.com/dani_avila7/status/2101176629745561686)
+
+像工单分诊：Jev 判断任务难度，插件据此选择子代理模型和主会话推理力度。
+
+**证据边界：** 路由机制可查，实际省多少钱、是否影响质量仍待验证。
+
+[原理较清楚](references/2026-09-19-increment7-audit.md#claude-code-jev-router) · [X · 417 赞快照](https://x.com/dani_avila7/status/2101176629745561686) · [原理与依据](cases/2026-09-19-claude-code-jev-router/README.md)
+
+**内容更新：** 2026-09-19
+
+<a id="all-apps"></a>
+
+## 按用途找应用
+
+展开分类查看所有案例，包含上面的六项精选。日期均为北京时间的内容更新日期。
+
+证据标签可点开查看依据：**原理较清楚 / 效果待验证 / 主张缺依据**。它们描述公开证据的充分程度；本库尚未独立复现这些应用。
 
 <a id="browser"></a>
 
-### 浏览器与电脑操作（12）
+<details>
+<summary><strong>操作网页与电脑</strong> · 12</summary>
 
-要研究浏览器循环，优先看 Browser Use 与 Stagehand：前者明确 DOM 动态动作空间及文本回退，后者明确无障碍树和执行器分工。桌面应用可看 CoreML/OCR，Cua 当前公开预览可用于研究受约束的语义动作执行；需要长任务上下文则看 agent-desktop。语音入口和 QA 演示解决的是交互或验收问题，不宜只按速度排名。 Runlayer 强调多会话并行探索，仍缺路径覆盖和缺陷检出证据；Sac 的日历对照聚焦单个桌面任务，后续已公开无障碍树文字候选与执行器分工；“最快”仍缺统一基准。两者都不能仅凭操作视频代替验收断言。 Tester Army 侧重 Web / 移动端框架，尚未核实开源发布；ego lite 聚焦商品筛选，混合模型的效果不能归给 Jev 一项。Browser Use 新增 WebMCP 同源对照，需区分任务覆盖和每次尝试成功率。
+从查网页到操作桌面，关键是把“看见什么”和“下一步做什么”接起来。浏览器方案多读页面结构，桌面方案可能用无障碍树或 OCR；先比较能完成哪些任务，再看速度。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-browser.md)
+[同类优劣对比](breakdowns/2026-09-18-browser.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**Browser Use · Ultrafast**](cases/2026-09-18-browser-use/README.md)<br>告诉它航班需求，它会自己在网页上点选、填写并查找结果。<br>**原理：** 像给助手一张不断更新的按钮清单：程序先读网页，Jev 选下一步点哪里；需要输入城市名时，再请文字模型帮忙填写。<br>**🟢 A · 功能/原理证据较清楚**<br>固定版文档披露 DOM 动作选项、小模型填文本、结果独立检查和计时起点；公开基准区分任务完成与尝试成功。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#browser-use)<br>**内容更新：** 2026-09-19 16:55:36 | [6,891](https://x.com/gregpr07/status/2100411066966749359) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100410607807918080/img/lNfcykqoOvLoZHWa.jpg" width="160" alt="Browser Use · Ultrafast预览">](https://x.com/gregpr07/status/2100411066966749359)<br>[视频](https://x.com/gregpr07/status/2100411066966749359) |
-| [**Stagehand 浏览器控制**](cases/2026-09-18-stagehand/README.md)<br>让 Jev 决定网页上下一步怎么操作，再由 Stagehand 动手。<br>**原理：** 网页会向辅助技术提供按钮名称等信息。这个方案把这些信息整理给 Jev，让它选动作；Stagehand 负责真正点击，然后重新查看页面。<br>**🟡 B · 效果待验证**<br>没有任务集、重复次数和完整成本拆分；支持一次演示，不足以证明通用浏览器可靠性。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#stagehand)<br>**内容更新：** 2026-09-19 16:55:36 | [393](https://x.com/kylejeong/status/2100622054945095934) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100495119065722880/img/7A1mijkU3Z_Zj7PM.jpg" width="160" alt="Stagehand 浏览器控制预览">](https://x.com/kylejeong/status/2100622054945095934)<br>[视频](https://x.com/kylejeong/status/2100622054945095934) |
-| [**Cua · jev-use**](cases/2026-09-18-cua-jev-use/README.md)<br>给 Jev 一份允许执行的网页操作清单，让它选一个，再检查是否做对。<br>**原理：** 像从菜单点菜：Jev 只能选程序事先列出的动作编号。程序检查编号后才操作，并另查表单是否填写成功；当前公开示例还不是“看截图操作任意软件”。<br>**🟠 C · 宣传超出证据**<br>宣传把有限示例扩展成通用电脑操作结论；#3916 明言不发布 Driver 运行时能力、不认证原生桌面，最新候选未运行可选 live 工作流。不能沿用旧目录中“#3916 未合并”的状态。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#cua-jev-use)<br>**内容更新：** 2026-09-19 16:55:36 | [1,162](https://x.com/trycua/status/2100649543079502213) | [<img src="https://pbs.twimg.com/media/HSb_nmIWYAAkGKa.jpg?name=orig" width="160" alt="Cua · jev-use预览">](https://x.com/trycua/status/2100649543079502213)<br>[图片](https://x.com/trycua/status/2100649543079502213) |
-| [**CoreML + OCR 桌面点击**](cases/2026-09-18-coreml-ocr/README.md)<br>先在 Mac 上认出按钮和文字，再让 Jev 选要点击的位置。<br>**原理：** 本地识别程序负责“看屏幕”，把按钮上的文字列出来；Jev 负责从列表里做选择。图片留在本机，但识别出的文字仍会发给 Jev。<br>**🟡 B · 效果待验证**<br>90ms 是单次判断，不是 OCR、点击、重新观测的总延迟；“没有延迟”是宣传修辞。未证明完整任务成功率，也不是完全离线。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#coreml-ocr)<br>**内容更新：** 2026-09-19 16:55:36 | [564](https://x.com/milindlabs/status/2100631847155994852) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100629037790183424/img/NR6wQpZiC-xjCEsC.jpg" width="160" alt="CoreML + OCR 桌面点击预览">](https://x.com/milindlabs/status/2100631847155994852)<br>[视频](https://x.com/milindlabs/status/2100631847155994852) |
-| [**OpenCode + agent-desktop**](cases/2026-09-18-agent-desktop/README.md)<br>一个模型记住任务，Jev 帮它更快地选择桌面操作目标。<br>**原理：** 像领队与操作员配合：文字模型保留前后文，获取桌面状态后交给 Jev 选目标。原帖没解释这些桌面信息具体怎样编码。<br>**🟡 B · 效果待验证**<br>快照编码方式和可复现对照未知；不能由此推断 Jev 直接看截图或独立完成任务。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#agent-desktop)<br>**内容更新：** 2026-09-19 16:55:36 | [870](https://x.com/mdlahfir/status/2100359236924637349) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100358791321755648/img/t6Bd787flQiGeoJ_.jpg" width="160" alt="OpenCode + agent-desktop预览">](https://x.com/mdlahfir/status/2100359236924637349)<br>[视频](https://x.com/mdlahfir/status/2100359236924637349) |
-| [**Kernel 浏览器演示**](cases/2026-09-18-kernel-browser/README.md)<br>在网页里体验 Jev 帮忙操作浏览器。<br>**原理：** 作者把 Jev 接到 Kernel 浏览器服务中，形成“观察、选择、操作”的循环；页面如何变成模型输入、出错怎么恢复，原帖没有展开。<br>**🟡 B · 效果待验证**<br>没有公开观测编码、动作约束、失败处理或测评；快速一例不代表复杂任务效果。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#kernel-browser)<br>**内容更新：** 2026-09-19 16:55:36 | [235](https://x.com/stevekrouse/status/2100321685081559542) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100321453455425537/img/hVYy_d3Nuw9XhSwg.jpg" width="160" alt="Kernel 浏览器演示预览">](https://x.com/stevekrouse/status/2100321685081559542)<br>[视频](https://x.com/stevekrouse/status/2100321685081559542) |
-| [**语音控制浏览器**](cases/2026-09-18-voice-browser/README.md)<br>说出指令，让浏览器替你点击，例如“返回上一页”。<br>**原理：** 先把声音转成文字，再让 Jev 判断指令对应哪个操作，最后由浏览器执行。Jev 在这里负责理解并选择动作，不负责听声音。<br>**🟡 B · 效果待验证**<br>数字不包含完整收音、转写和执行链路；句子未说完就动作也可能是提前识别，不能等同完整指令均已理解。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#voice-browser)<br>**内容更新：** 2026-09-19 16:55:36 | [1,829](https://x.com/moritzkremb/status/2100577979021832365) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100577954338373633/img/tbH43kHpUotE3hzK.jpg" width="160" alt="语音控制浏览器预览">](https://x.com/moritzkremb/status/2100577979021832365)<br>[视频](https://x.com/moritzkremb/status/2100577979021832365) |
-| [**OpenCode 应用测试**](cases/2026-09-18-opencode-qa/README.md)<br>让编码助手自己操作应用，帮忙做开发后的检查。<br>**原理：** 操作应用与判断应用是否正确是两回事。演示把 Jev 接入 OpenCode 测试流程，但没有公开完整的“怎样算通过”规则。<br>**🟡 B · 效果待验证**<br>未公开断言、失败判据和缺陷检出率；自动点击快与测试有效是两件事。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#opencode-qa)<br>**内容更新：** 2026-09-19 16:55:36 | [1,133](https://x.com/Neriousy/status/2100287208166969746) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100286679386873857/img/vlw6EBlSVZ9uAoHc.jpg" width="160" alt="OpenCode 应用测试预览">](https://x.com/Neriousy/status/2100287208166969746)<br>[视频](https://x.com/Neriousy/status/2100287208166969746) |
-| [**Runlayer · 并行浏览器对抗测试**](cases/2026-09-18-runlayer-adversarial-testing/README.md)<br>同时打开多路浏览器，尝试找出新版本在操作中会出什么问题。<br>**原理：** 像让一组测试员同时试用软件：Jev 参与快速判断下一步，代理和浏览器负责操作。真正证明找到了漏洞，还要有清楚的失败判据和可重复步骤。<br>**🟡 B · 效果待验证**<br>窗口数量不是路径覆盖；没有缺陷复现、断言、误报或全成本明细。“几分钱”没有固定分母。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#runlayer-adversarial-testing)<br>**内容更新：** 2026-09-19 16:55:36 | [820](https://x.com/rafalwilinski/status/2100882207879434359) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100881920343105536/img/c1y4THiGwA2GfXGa.jpg" width="160" alt="Runlayer · 并行浏览器对抗测试预览">](https://x.com/rafalwilinski/status/2100882207879434359)<br>[视频](https://x.com/rafalwilinski/status/2100882207879434359) |
-| [**Sac · Codex + Jev 操作 Mac 日历**](cases/2026-09-18-sac-calendar-computer-use/README.md)<br>给 Codex 的电脑操作加上 Jev 判断层，用创建日历事件做并排对照。<br>**原理：** 像让助手负责看界面和动手，再请反应更快的搭档判断下一步。Jev 在电脑操作流程中负责判断；这不等于它单独看懂屏幕并完成全部动作。<br>**🟠 C · 宣传超出证据**<br>已能检查文字候选与执行分工，但新帖“Codex 里最快”的比较没有统一基准；C 针对此最强比较，不否定原型存在。<br>[判断依据与来源](references/2026-09-19-increment7-audit.md#sac-calendar-computer-use)<br>**内容更新：** 2026-09-19 17:48:49 | [217](https://x.com/Saccc_c/status/2100864907046768890) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100853279089647616/img/H6altwjZQ28_1bfY.jpg" width="160" alt="Sac · Codex + Jev 操作 Mac 日历预览">](https://x.com/Saccc_c/status/2100864907046768890)<br>[视频](https://x.com/Saccc_c/status/2100864907046768890) |
-| [**ego lite · Amazon 商品筛选**](cases/2026-09-19-ego-product-decisions/README.md)<br>组合浏览器工具和模型，筛选网页上的商品。<br>**原理：** 像一个助手读商品列表，另一个快速判断哪些符合要求；浏览器和周围模型一起完成流程，不能把全部表现归给 Jev。<br>**🟡 B · 效果待验证**<br>20 个决策与 10/10 是不同口径；评分标准、重复和模型分工未知，不能宣传成 Jev 单独完成购物或普遍快十五倍。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#ego-product-decisions)<br>**内容更新：** 2026-09-19 16:55:36 | [366](https://x.com/ego_agent/status/2100970015977804008) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100969567715790848/img/IXAgXZrtsLGyeYRA.jpg" width="160" alt="ego lite · Amazon 商品筛选预览">](https://x.com/ego_agent/status/2100970015977804008)<br>[视频](https://x.com/ego_agent/status/2100970015977804008) |
-| [**Tester Army · Web / 手机端测试演示**](cases/2026-09-19-tester-army-e2e/README.md)<br>用代理执行界面测试，探索 Web 和移动端的端到端测试框架。<br>**原理：** 像测试员从入口一路操作到结果：Jev 参与下一步判断，执行器操作界面；判断测试通过还需要明确检查点。<br>**🟡 B · 效果待验证**<br>未核到可运行发布、跨平台断言和缺陷检出评测；视频不证明稳定自动测试能力。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#tester-army-e2e)<br>**内容更新：** 2026-09-19 16:55:36 | [505](https://x.com/o_kwasniewski/status/2100966838905585687) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100966360192868352/img/8GCSVzX1AYF4caav.jpg" width="160" alt="Tester Army · Web / 手机端测试演示预览">](https://x.com/o_kwasniewski/status/2100966838905585687)<br>[视频](https://x.com/o_kwasniewski/status/2100966838905585687) |
+### [Browser Use · Ultrafast](cases/2026-09-18-browser-use/README.md)
+
+告诉它航班需求，它会自己在网页上点选、填写并查找结果。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100410607807918080/img/lNfcykqoOvLoZHWa.jpg" width="320" alt="Browser Use · Ultrafast">](https://x.com/gregpr07/status/2100411066966749359)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#browser-use) · [X · 6,891 赞快照](https://x.com/gregpr07/status/2100411066966749359) · [原理与依据](cases/2026-09-18-browser-use/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Stagehand 浏览器控制](cases/2026-09-18-stagehand/README.md)
+
+让 Jev 决定网页上下一步怎么操作，再由 Stagehand 动手。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100495119065722880/img/7A1mijkU3Z_Zj7PM.jpg" width="320" alt="Stagehand 浏览器控制">](https://x.com/kylejeong/status/2100622054945095934)
+
+[效果待验证](references/2026-09-19-claims-audit.md#stagehand) · [X · 393 赞快照](https://x.com/kylejeong/status/2100622054945095934) · [原理与依据](cases/2026-09-18-stagehand/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Cua · jev-use](cases/2026-09-18-cua-jev-use/README.md)
+
+给 Jev 一份允许执行的网页操作清单，让它选一个，再检查是否做对。
+
+[<img src="https://pbs.twimg.com/media/HSb_nmIWYAAkGKa.jpg?name=orig" width="320" alt="Cua · jev-use">](https://x.com/trycua/status/2100649543079502213)
+
+[主张缺依据](references/2026-09-19-claims-audit.md#cua-jev-use) · [X · 1,162 赞快照](https://x.com/trycua/status/2100649543079502213) · [原理与依据](cases/2026-09-18-cua-jev-use/README.md)
+
+**内容更新：** 2026-09-19
+
+### [CoreML + OCR 桌面点击](cases/2026-09-18-coreml-ocr/README.md)
+
+先在 Mac 上认出按钮和文字，再让 Jev 选要点击的位置。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100629037790183424/img/NR6wQpZiC-xjCEsC.jpg" width="320" alt="CoreML + OCR 桌面点击">](https://x.com/milindlabs/status/2100631847155994852)
+
+[效果待验证](references/2026-09-19-claims-audit.md#coreml-ocr) · [X · 564 赞快照](https://x.com/milindlabs/status/2100631847155994852) · [原理与依据](cases/2026-09-18-coreml-ocr/README.md)
+
+**内容更新：** 2026-09-19
+
+### [OpenCode + agent-desktop](cases/2026-09-18-agent-desktop/README.md)
+
+一个模型记住任务，Jev 帮它更快地选择桌面操作目标。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100358791321755648/img/t6Bd787flQiGeoJ_.jpg" width="320" alt="OpenCode + agent-desktop">](https://x.com/mdlahfir/status/2100359236924637349)
+
+[效果待验证](references/2026-09-19-claims-audit.md#agent-desktop) · [X · 870 赞快照](https://x.com/mdlahfir/status/2100359236924637349) · [原理与依据](cases/2026-09-18-agent-desktop/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Kernel 浏览器演示](cases/2026-09-18-kernel-browser/README.md)
+
+在网页里体验 Jev 帮忙操作浏览器。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100321453455425537/img/hVYy_d3Nuw9XhSwg.jpg" width="320" alt="Kernel 浏览器演示">](https://x.com/stevekrouse/status/2100321685081559542)
+
+[效果待验证](references/2026-09-19-claims-audit.md#kernel-browser) · [X · 235 赞快照](https://x.com/stevekrouse/status/2100321685081559542) · [原理与依据](cases/2026-09-18-kernel-browser/README.md)
+
+**内容更新：** 2026-09-19
+
+### [语音控制浏览器](cases/2026-09-18-voice-browser/README.md)
+
+说出指令，让浏览器替你点击，例如“返回上一页”。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100577954338373633/img/tbH43kHpUotE3hzK.jpg" width="320" alt="语音控制浏览器">](https://x.com/moritzkremb/status/2100577979021832365)
+
+[效果待验证](references/2026-09-19-claims-audit.md#voice-browser) · [X · 1,829 赞快照](https://x.com/moritzkremb/status/2100577979021832365) · [原理与依据](cases/2026-09-18-voice-browser/README.md)
+
+**内容更新：** 2026-09-19
+
+### [OpenCode 应用测试](cases/2026-09-18-opencode-qa/README.md)
+
+让编码助手自己操作应用，帮忙做开发后的检查。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100286679386873857/img/vlw6EBlSVZ9uAoHc.jpg" width="320" alt="OpenCode 应用测试">](https://x.com/Neriousy/status/2100287208166969746)
+
+[效果待验证](references/2026-09-19-claims-audit.md#opencode-qa) · [X · 1,133 赞快照](https://x.com/Neriousy/status/2100287208166969746) · [原理与依据](cases/2026-09-18-opencode-qa/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Runlayer · 并行浏览器对抗测试](cases/2026-09-18-runlayer-adversarial-testing/README.md)
+
+同时打开多路浏览器，尝试找出新版本在操作中会出什么问题。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100881920343105536/img/c1y4THiGwA2GfXGa.jpg" width="320" alt="Runlayer · 并行浏览器对抗测试">](https://x.com/rafalwilinski/status/2100882207879434359)
+
+[效果待验证](references/2026-09-19-claims-audit.md#runlayer-adversarial-testing) · [X · 820 赞快照](https://x.com/rafalwilinski/status/2100882207879434359) · [原理与依据](cases/2026-09-18-runlayer-adversarial-testing/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Sac · Codex + Jev 操作 Mac 日历](cases/2026-09-18-sac-calendar-computer-use/README.md)
+
+给 Codex 的电脑操作加上 Jev 判断层，用创建日历事件做并排对照。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100853279089647616/img/H6altwjZQ28_1bfY.jpg" width="320" alt="Sac · Codex + Jev 操作 Mac 日历">](https://x.com/Saccc_c/status/2100864907046768890)
+
+[主张缺依据](references/2026-09-19-increment7-audit.md#sac-calendar-computer-use) · [X · 217 赞快照](https://x.com/Saccc_c/status/2100864907046768890) · [原理与依据](cases/2026-09-18-sac-calendar-computer-use/README.md)
+
+**内容更新：** 2026-09-19
+
+### [ego lite · Amazon 商品筛选](cases/2026-09-19-ego-product-decisions/README.md)
+
+组合浏览器工具和模型，筛选网页上的商品。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100969567715790848/img/IXAgXZrtsLGyeYRA.jpg" width="320" alt="ego lite · Amazon 商品筛选">](https://x.com/ego_agent/status/2100970015977804008)
+
+[效果待验证](references/2026-09-19-claims-audit.md#ego-product-decisions) · [X · 366 赞快照](https://x.com/ego_agent/status/2100970015977804008) · [原理与依据](cases/2026-09-19-ego-product-decisions/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Tester Army · Web / 手机端测试演示](cases/2026-09-19-tester-army-e2e/README.md)
+
+用代理执行界面测试，探索 Web 和移动端的端到端测试框架。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100966360192868352/img/8GCSVzX1AYF4caav.jpg" width="320" alt="Tester Army · Web / 手机端测试演示">](https://x.com/o_kwasniewski/status/2100966838905585687)
+
+[效果待验证](references/2026-09-19-claims-audit.md#tester-army-e2e) · [X · 505 赞快照](https://x.com/o_kwasniewski/status/2100966838905585687) · [原理与依据](cases/2026-09-19-tester-army-e2e/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
 
 <a id="routing"></a>
 
-### 模型、技能与工具路由（11）
+<details>
+<summary><strong>给任务挑选助手</strong> · 11</summary>
 
-模型选择看 Eve 与 Ephraim 的演示；已有代理编排可以看 Firstmate 和本地分工。技能库检索看 Skillbox；想连接日常工具看 Coding Garden；Eve 工具代理展示局部替换；ai-cli 是统一接入入口。这些方案可以组合，并非互相替代。 Hono JevRouter 选择 HTTP 处理函数，规则用自然语言表达，且按注册顺序取首个达标路由；与选择模型或技能不同，分流错误直接改变响应内容，不能用来代替认证。 Codex Model Router 逐轮选择模型和推理配置，公开回退策略，但用户已观察到简单任务过度选强模型；应对比任务质量、缓存和整体账单，而非只看分类速度。 Claude Code Mod 默认路由子代理和主会话推理力度，关闭主模型切换；相对 Codex 的逐轮模型路由，更应分别检查缓存、回退与最终任务质量。
+模型、技能和工具各有擅长的工作，Jev 负责分派。选模型影响费用与质量，选技能影响能否找到合适能力；两者可以组合。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-routing.md)
+[同类优劣对比](breakdowns/2026-09-18-routing.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**Eve 条件式模型路由**](cases/2026-09-18-eve-router/README.md)<br>先判断问题需要哪种模型，再把它交给合适的模型处理。<br>**原理：** 像前台分配来电：给 Jev 请求和各模型的选择标准，它选一个，程序负责转交。选得是否合适，还要看后续任务结果。<br>**🟡 B · 效果待验证**<br>没有公开准确率、回退策略或总费用与质量对照。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#eve-router)<br>**内容更新：** 2026-09-19 16:55:36 | [821](https://x.com/eve/status/2100430918762832180) | [<img src="https://pbs.twimg.com/media/HSY6yf5a8AA8NJi.jpg?name=orig" width="160" alt="Eve 条件式模型路由预览">](https://x.com/eve/status/2100430918762832180)<br>[图片](https://x.com/eve/status/2100430918762832180) |
-| [**请求到模型路由器**](cases/2026-09-18-ephraim-router/README.md)<br>自动为不同问题挑选回答模型，并直接发送请求。<br>**原理：** Jev 像分诊台，只决定“交给谁”；真正写答案的是被选中的模型。演示把选择和转交两步连在了一起。<br>**🟡 B · 效果待验证**<br>“最适合”需要质量与成本标签；现有来源没有统一评测或最优性依据。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#ephraim-router)<br>**内容更新：** 2026-09-19 16:55:36 | [1,503](https://x.com/ephraimduncan/status/2100454070536351824) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100454021852954624/img/hqULLONlXw40573G.jpg" width="160" alt="请求到模型路由器预览">](https://x.com/ephraimduncan/status/2100454070536351824)<br>[视频](https://x.com/ephraimduncan/status/2100454070536351824) |
-| [**Firstmate 任务分派**](cases/2026-09-18-firstmate/README.md)<br>按任务难度和用户偏好，挑选合适的 AI 助手及工作档位。<br>**原理：** 像派工员同时决定“谁来做、用什么工具、花多少力气”。Jev 替换的是这段分配工作，真正执行任务的助手仍然存在。<br>**🟡 B · 效果待验证**<br>一致率不是执行任务的正确率；样本小且私有。可接受为作者的小样本分派对照，不能扩大到整个 agent 的同等质量。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#firstmate)<br>**内容更新：** 2026-09-19 16:55:36 | [1,615](https://x.com/kunchenguid/status/2100468943853085061) | [<img src="https://pbs.twimg.com/media/HSYK_gbagAAqKqr.jpg?name=orig" width="160" alt="Firstmate 任务分派预览">](https://x.com/kunchenguid/status/2100468943853085061)<br>[图片](https://x.com/kunchenguid/status/2100468943853085061) |
-| [**本地编码代理分工**](cases/2026-09-18-local-delegation/README.md)<br>把简单活、复杂问题和长时间编程任务分给不同的 AI 助手。<br>**原理：** 程序在分派任务前先问 Jev 应该交给谁，再按预设路径调用助手。这样能把“选择助手”和“完成任务”分开处理。<br>**🟡 B · 效果待验证**<br>没有公布准确率或任务结果；确定性触发器并不能使模型判断确定无误。“解决”不足以作为产品成熟度证据。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#local-delegation)<br>**内容更新：** 2026-09-19 16:55:36 | [777](https://x.com/mdlahfir/status/2100314182201802811) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100314084990414848/img/iePXR9Edae7YVCT_.jpg" width="160" alt="本地编码代理分工预览">](https://x.com/mdlahfir/status/2100314182201802811)<br>[视频](https://x.com/mdlahfir/status/2100314182201802811) |
-| [**Skillbox 技能选择**](cases/2026-09-18-skillbox/README.md)<br>从一大堆 AI 技能中，快速找出当前任务可能用得上的几个。<br>**原理：** 像在工具箱里挑工具：Jev 根据请求筛选技能，助手再拿这些技能完成工作。筛得快还不够，也要检查有没有漏掉关键技能。<br>**🟡 B · 效果待验证**<br>“30 轮”没有统计定义；所用预览来自更早介绍，不是本次 Jev 集成实测画面，也无技能召回率。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#skillbox)<br>**内容更新：** 2026-09-19 16:55:36 | [724](https://x.com/thekitze/status/2100556122570792999) | [<img src="https://pbs.twimg.com/media/HRidCpLaMAAqV-7.jpg?name=orig" width="160" alt="Skillbox 技能选择预览">](https://x.com/thekitze/status/2096598298220277856)<br>[图片](https://x.com/thekitze/status/2096598298220277856) |
-| [**Coding Garden 工具助手**](cases/2026-09-18-coding-garden-assistant/README.md)<br>用一句话查天气、找资料或处理待办，让助手调用对应工具。<br>**原理：** 它像一个工具调度台：Jev 选工具和参数，工具返回真实结果，界面再显示出来。有来源的回答仍可能因为选错工具而出错。<br>**🟠 C · 宣传超出证据**<br>没有自由写作不等于永不出错：工具选错、参数选错或来源错误仍可能导致错误答案；来源未提供覆盖性证据支撑“无幻觉”。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#coding-garden-assistant)<br>**内容更新：** 2026-09-19 16:55:36 | [334](https://x.com/CodingGarden/status/2100665210419950031) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100664410935332864/img/KPApgq0AysL_SFeg.jpg" width="160" alt="Coding Garden 工具助手预览">](https://x.com/CodingGarden/status/2100665210419950031)<br>[视频](https://x.com/CodingGarden/status/2100665210419950031) |
-| [**Eve 工具调用代理**](cases/2026-09-18-eve-tool-agent/README.md)<br>让 Jev 接手“下一步用哪个工具”的判断，减少代理在选择上花的时间和费用。<br>**原理：** 原来的助手先思考再选工具，这个实验把其中的选择环节交给 Jev。工具本身和后续处理仍由原来的程序负责。<br>**🟡 B · 效果待验证**<br>样本和质量评分缺失；不能解读成 Jev 在所有 agent 任务中同质省八倍。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#eve-tool-agent)<br>**内容更新：** 2026-09-19 16:55:36 | [1,117](https://x.com/oviniciuslana/status/2100457622407168509) | [<img src="https://pbs.twimg.com/media/HSZSqLGXwAA1jSL.jpg?name=orig" width="160" alt="Eve 工具调用代理预览">](https://x.com/oviniciuslana/status/2100457622407168509)<br>[图片](https://x.com/oviniciuslana/status/2100457622407168509) |
-| [**ai-cli 终端决策入口**](cases/2026-09-18-ai-cli/README.md)<br>让终端里的 AI 助手也能调用 Jev 做判断、选择和评分。<br>**原理：** 它像一个通用插座，把 Jev 包装成终端命令。它提供调用入口，并不会单靠这个入口自动完成复杂任务。<br>**🟢 A · 功能/原理证据较清楚**<br>本轮 npm 文档明确 evaluate 子命令、三种类型、Jev 默认模型、JSON 输出、错误和超时语义；是可核查的接入工具。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#ai-cli)<br>**内容更新：** 2026-09-19 16:55:36 | [874](https://x.com/ctatedev/status/2100584917092409479) | [<img src="https://pbs.twimg.com/media/HSbG2YLWkAAPqmU.jpg?name=orig" width="160" alt="ai-cli 终端决策入口预览">](https://x.com/ctatedev/status/2100584917092409479)<br>[图片](https://x.com/ctatedev/status/2100584917092409479) |
-| [**Hono JevRouter · 按请求含义分流**](cases/2026-09-18-hono-semantic-router/README.md)<br>根据请求像是来自人还是 AI，选择返回网页或 Markdown 等不同内容。<br>**原理：** 普通路由像看门牌号分信件，这个实验还读信件表达的意思。开发者用文字描述各个处理入口，Jev 逐项判断是否适合，程序按注册顺序选中第一个达标入口。<br>**🟢 A · 功能/原理证据较清楚**<br>源码逐项判断路由描述并选首个过阈值匹配；文档披露概率独立、默认阈值和普通路由优先。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#hono-semantic-router)<br>**内容更新：** 2026-09-19 16:55:36 | [405](https://x.com/yusukebe/status/2100871075743859182) | [<img src="https://pbs.twimg.com/media/HSfKgItbcAAwVIl.jpg?name=orig" width="160" alt="Hono JevRouter · 按请求含义分流预览">](https://x.com/yusukebe/status/2100871075743859182)<br>[图片](https://x.com/yusukebe/status/2100871075743859182) |
-| [**Codex Model Router · 每轮选择模型**](cases/2026-09-19-codex-model-router/README.md)<br>按当前任务复杂程度，为 Codex 选择模型和推理配置。<br>**原理：** 像把简单工单分给轻量助手、复杂工单分给更强助手：Jev 做分类，代理按策略改写实际请求。<br>**🟢 A · 功能/原理证据较清楚**<br>固定版公开代理、分层策略和低置信回退，用户原帖也主动披露失败与缓存未知，有限“路由接入可行”有依据。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#codex-model-router)<br>**内容更新：** 2026-09-19 16:55:36 | [437](https://x.com/antonioleivag/status/2100962426439000484) | [<img src="https://pbs.twimg.com/media/HSgeLlIX0AAjedL.png?name=orig" width="160" alt="Codex Model Router · 每轮选择模型预览">](https://x.com/antonioleivag/status/2100962426439000484)<br>[图片](https://x.com/antonioleivag/status/2100962426439000484) |
-| [**Claude Code Mod · 模型与推理力度路由**](cases/2026-09-19-claude-code-jev-router/README.md)<br>按任务选择子代理模型，并调整主会话的推理力度。<br>**原理：** 像工单分诊：Jev 判断工作难度，插件把任务交给对应助手；真正写代码的仍是被选中的模型。<br>**🟢 A · 功能/原理证据较清楚**<br>固定源码可核对 hooks、默认开关和回退；主帖与当前版本的主模型路由描述有差异，费用收益仍未验证。<br>[判断依据与来源](references/2026-09-19-increment7-audit.md#claude-code-jev-router)<br>**内容更新：** 2026-09-19 17:48:49 | [417](https://x.com/dani_avila7/status/2101176629745561686) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101176234411425792/img/UgEWGdQPunczzXcv.jpg" width="160" alt="Claude Code Mod · 模型与推理力度路由预览">](https://x.com/dani_avila7/status/2101176629745561686)<br>[视频](https://x.com/dani_avila7/status/2101176629745561686) |
+### [Eve 条件式模型路由](cases/2026-09-18-eve-router/README.md)
+
+先判断问题需要哪种模型，再把它交给合适的模型处理。
+
+[<img src="https://pbs.twimg.com/media/HSY6yf5a8AA8NJi.jpg?name=orig" width="320" alt="Eve 条件式模型路由">](https://x.com/eve/status/2100430918762832180)
+
+[效果待验证](references/2026-09-19-claims-audit.md#eve-router) · [X · 821 赞快照](https://x.com/eve/status/2100430918762832180) · [原理与依据](cases/2026-09-18-eve-router/README.md)
+
+**内容更新：** 2026-09-19
+
+### [请求到模型路由器](cases/2026-09-18-ephraim-router/README.md)
+
+自动为不同问题挑选回答模型，并直接发送请求。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100454021852954624/img/hqULLONlXw40573G.jpg" width="320" alt="请求到模型路由器">](https://x.com/ephraimduncan/status/2100454070536351824)
+
+[效果待验证](references/2026-09-19-claims-audit.md#ephraim-router) · [X · 1,503 赞快照](https://x.com/ephraimduncan/status/2100454070536351824) · [原理与依据](cases/2026-09-18-ephraim-router/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Firstmate 任务分派](cases/2026-09-18-firstmate/README.md)
+
+按任务难度和用户偏好，挑选合适的 AI 助手及工作档位。
+
+[<img src="https://pbs.twimg.com/media/HSYK_gbagAAqKqr.jpg?name=orig" width="320" alt="Firstmate 任务分派">](https://x.com/kunchenguid/status/2100468943853085061)
+
+[效果待验证](references/2026-09-19-claims-audit.md#firstmate) · [X · 1,615 赞快照](https://x.com/kunchenguid/status/2100468943853085061) · [原理与依据](cases/2026-09-18-firstmate/README.md)
+
+**内容更新：** 2026-09-19
+
+### [本地编码代理分工](cases/2026-09-18-local-delegation/README.md)
+
+把简单活、复杂问题和长时间编程任务分给不同的 AI 助手。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100314084990414848/img/iePXR9Edae7YVCT_.jpg" width="320" alt="本地编码代理分工">](https://x.com/mdlahfir/status/2100314182201802811)
+
+[效果待验证](references/2026-09-19-claims-audit.md#local-delegation) · [X · 777 赞快照](https://x.com/mdlahfir/status/2100314182201802811) · [原理与依据](cases/2026-09-18-local-delegation/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Skillbox 技能选择](cases/2026-09-18-skillbox/README.md)
+
+从一大堆 AI 技能中，快速找出当前任务可能用得上的几个。
+
+[<img src="https://pbs.twimg.com/media/HRidCpLaMAAqV-7.jpg?name=orig" width="320" alt="Skillbox 技能选择">](https://x.com/thekitze/status/2096598298220277856)
+
+[效果待验证](references/2026-09-19-claims-audit.md#skillbox) · [X · 724 赞快照](https://x.com/thekitze/status/2100556122570792999) · [原理与依据](cases/2026-09-18-skillbox/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Coding Garden 工具助手](cases/2026-09-18-coding-garden-assistant/README.md)
+
+用一句话查天气、找资料或处理待办，让助手调用对应工具。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100664410935332864/img/KPApgq0AysL_SFeg.jpg" width="320" alt="Coding Garden 工具助手">](https://x.com/CodingGarden/status/2100665210419950031)
+
+[主张缺依据](references/2026-09-19-claims-audit.md#coding-garden-assistant) · [X · 334 赞快照](https://x.com/CodingGarden/status/2100665210419950031) · [原理与依据](cases/2026-09-18-coding-garden-assistant/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Eve 工具调用代理](cases/2026-09-18-eve-tool-agent/README.md)
+
+让 Jev 接手“下一步用哪个工具”的判断，减少代理在选择上花的时间和费用。
+
+[<img src="https://pbs.twimg.com/media/HSZSqLGXwAA1jSL.jpg?name=orig" width="320" alt="Eve 工具调用代理">](https://x.com/oviniciuslana/status/2100457622407168509)
+
+[效果待验证](references/2026-09-19-claims-audit.md#eve-tool-agent) · [X · 1,117 赞快照](https://x.com/oviniciuslana/status/2100457622407168509) · [原理与依据](cases/2026-09-18-eve-tool-agent/README.md)
+
+**内容更新：** 2026-09-19
+
+### [ai-cli 终端决策入口](cases/2026-09-18-ai-cli/README.md)
+
+让终端里的 AI 助手也能调用 Jev 做判断、选择和评分。
+
+[<img src="https://pbs.twimg.com/media/HSbG2YLWkAAPqmU.jpg?name=orig" width="320" alt="ai-cli 终端决策入口">](https://x.com/ctatedev/status/2100584917092409479)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#ai-cli) · [X · 874 赞快照](https://x.com/ctatedev/status/2100584917092409479) · [原理与依据](cases/2026-09-18-ai-cli/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Hono JevRouter · 按请求含义分流](cases/2026-09-18-hono-semantic-router/README.md)
+
+根据请求像是来自人还是 AI，选择返回网页或 Markdown 等不同内容。
+
+[<img src="https://pbs.twimg.com/media/HSfKgItbcAAwVIl.jpg?name=orig" width="320" alt="Hono JevRouter · 按请求含义分流">](https://x.com/yusukebe/status/2100871075743859182)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#hono-semantic-router) · [X · 405 赞快照](https://x.com/yusukebe/status/2100871075743859182) · [原理与依据](cases/2026-09-18-hono-semantic-router/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Codex Model Router · 每轮选择模型](cases/2026-09-19-codex-model-router/README.md)
+
+按当前任务复杂程度，为 Codex 选择模型和推理配置。
+
+[<img src="https://pbs.twimg.com/media/HSgeLlIX0AAjedL.png?name=orig" width="320" alt="Codex Model Router · 每轮选择模型">](https://x.com/antonioleivag/status/2100962426439000484)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#codex-model-router) · [X · 437 赞快照](https://x.com/antonioleivag/status/2100962426439000484) · [原理与依据](cases/2026-09-19-codex-model-router/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Claude Code Mod · 模型与推理力度路由](cases/2026-09-19-claude-code-jev-router/README.md)
+
+按任务选择子代理模型，并调整主会话的推理力度。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101176234411425792/img/UgEWGdQPunczzXcv.jpg" width="320" alt="Claude Code Mod · 模型与推理力度路由">](https://x.com/dani_avila7/status/2101176629745561686)
+
+[原理较清楚](references/2026-09-19-increment7-audit.md#claude-code-jev-router) · [X · 417 赞快照](https://x.com/dani_avila7/status/2101176629745561686) · [原理与依据](cases/2026-09-19-claude-code-jev-router/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
 
 <a id="review"></a>
 
-### 代码质量与安全检查（11）
+<details>
+<summary><strong>检查代码与操作风险</strong> · 11</summary>
 
-PR 评审可对照 14 项检查、jev-review 和 jev-rabbit：分别重在明确风险与升级、迭代评分、自然语言团队规则。代码库分类器关注整体结构。命令安全、越狱预筛和上传判断对应不同防线，应分别评估漏报。 ESLint 规则实验判断小代码片段是否合规；OpenCode 权限插件在工具运行前决定放行、询问或拒绝。两者分别检查代码与操作，不能互相替代。 注释评分把准确性和实用性拆开，解释性强于单一总分，但目前只有两个简单样例；ESLint 实验按规则检查片段，PR 工具覆盖更广的改动。三者应按任务范围和证据规模比较。 Script.it 先给 diff 评分、命中后再写解释，减少长流程开销，但作者仅召回 75% 已确认 bug。与探索型评审相比，应把少误报和多漏报同时列出。
+把宽泛的“有没有问题”拆成几个具体判断。代码评审找缺陷，权限判断管操作；少误报和不漏报都要看，评分不能替代测试。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-review.md)
+[同类优劣对比](breakdowns/2026-09-18-review.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**jev-review MCP**](cases/2026-09-18-jev-review/README.md)<br>给 AI 写出的代码打分，让它根据反馈继续修改。<br>**原理：** 流程像交作业、拿评语、再修改：Jev 按不同标准评分，编码助手负责改代码。分数提高不一定代表程序真的没问题。<br>**🟡 B · 效果待验证**<br>缺少独立质量标签和改进前后盲评；分数升高可能只是迎合评分，不保证代码更正确。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#jev-review)<br>**内容更新：** 2026-09-19 16:55:36 | [445](https://x.com/niazmorshed_/status/2100465662867218857) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100465308519759872/img/2uIG43VFGvWzku0s.jpg" width="160" alt="jev-review MCP预览">](https://x.com/niazmorshed_/status/2100465662867218857)<br>[视频](https://x.com/niazmorshed_/status/2100465662867218857) |
-| [**14 项 PR 风险检查**](cases/2026-09-18-typed-pr-review/README.md)<br>快速检查一批代码修改有没有泄密、删测试等风险，不确定时交给人复核。<br>**原理：** 把审查拆成 14 个具体问题，让 Jev 一次判断；程序再按结果给建议。关键问题拿不准时，不直接猜，而是转给人或更大模型。<br>**🟡 B · 效果待验证**<br>这是特定风险分类，未证明与完整 Claude 评审相同的漏洞召回；200 倍只可保留为作者该演示费用对照。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#typed-pr-review)<br>**内容更新：** 2026-09-19 16:55:36 | [1,927](https://x.com/redp314/status/2100585126652481915) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100585029533372416/img/ZcrsntW2yWgtB_HD.jpg" width="160" alt="14 项 PR 风险检查预览">](https://x.com/redp314/status/2100585126652481915)<br>[视频](https://x.com/redp314/status/2100585126652481915) |
-| [**jev-rabbit 自然语言规则**](cases/2026-09-18-jev-rabbit/README.md)<br>把团队的代码审查要求写成人话，让机器人按这些要求检查修改。<br>**原理：** 例如团队有难写成固定检查规则的约定，可以交给 Jev 判断是否符合。规则越清楚越容易检查；这个项目在原帖中仍处于开发阶段。<br>**🟡 B · 效果待验证**<br>未核到实际发行或测试；不能把预告当已发布产品，也不能证明自然语言规则总是可准确执行。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#jev-rabbit)<br>**内容更新：** 2026-09-19 16:55:36 | [327](https://x.com/thekitze/status/2100616530275029139) | [<img src="https://pbs.twimg.com/media/HSbjmhQbQAA4G5A.jpg?name=orig" width="160" alt="jev-rabbit 自然语言规则预览">](https://x.com/thekitze/status/2100616530275029139)<br>[图片](https://x.com/thekitze/status/2100616530275029139) |
-| [**代码库复杂度分类器**](cases/2026-09-18-codebase-classifier/README.md)<br>帮助发现代码是不是把简单事情做得过于复杂。<br>**原理：** 它给代码结构做分类，类似给工程做一次“体检”。但什么算过度设计要结合项目需求，不能仅凭一个标签就直接重构。<br>**🟡 B · 效果待验证**<br>分类标准、输入范围和对照缺失；识别复杂度不等于能提出安全重构或减少过度设计。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#codebase-classifier)<br>**内容更新：** 2026-09-19 16:55:36 | [1,165](https://x.com/ryanvogel/status/2100068006592123055) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100067392223076352/img/BqXd-11SCr3_ff8q.jpg" width="160" alt="代码库复杂度分类器预览">](https://x.com/ryanvogel/status/2100068006592123055)<br>[视频](https://x.com/ryanvogel/status/2100068006592123055) |
-| [**fx auto mode 命令安全分类**](cases/2026-09-18-fx-safety/README.md)<br>在 AI 自动执行命令前，先判断这条命令可能有多危险。<br>**原理：** Jev 像执行前的检查员，给命令做安全分类。检查很快不等于没有漏报，最终能否执行仍需要明确规则。<br>**🟡 B · 效果待验证**<br>没有公开完整数据、危险命令漏放率及分布；平均准确率不足以证明可以安全自动放行。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#fx-safety)<br>**内容更新：** 2026-09-19 16:55:36 | [591](https://x.com/fazxes/status/2100300097695232164) | [<img src="https://pbs.twimg.com/media/HSW-E8wWgAAyw9O.jpg?name=orig" width="160" alt="fx auto mode 命令安全分类预览">](https://x.com/fazxes/status/2100300097695232164)<br>[图片](https://x.com/fazxes/status/2100300097695232164) |
-| [**越狱提示预筛**](cases/2026-09-18-jailbreak-screen/README.md)<br>先筛查输入里是否有试图绕过 AI 规则的内容。<br>**原理：** 把可疑提示交给 Jev，判断是否像已知的绕过套路。它只是前置筛查，遇到没见过的写法仍可能漏掉。<br>**🟡 B · 效果待验证**<br>现有截图不能支持已达 100%；已知越狱模式与未知攻击的泛化需要分开。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#jailbreak-screen)<br>**内容更新：** 2026-09-19 16:55:36 | [264](https://x.com/mayfer/status/2100343452865265747) | [<img src="https://pbs.twimg.com/media/HSXq9mqbsAAtHoT.jpg?name=orig" width="160" alt="越狱提示预筛预览">](https://x.com/mayfer/status/2100343452865265747)<br>[图片](https://x.com/mayfer/status/2100343452865265747) |
-| [**资料上传判断器**](cases/2026-09-18-upload-check/README.md)<br>上传资料前先问一句：这份内容适合传出去吗？<br>**原理：** 系统让 Jev 对资料做允许或不允许的判断。是否判断得对取决于给它的规则和信息；原帖没有公开完整的公司保密策略。<br>**🟡 B · 效果待验证**<br>组织政策、敏感字段覆盖及漏检率未知；没有声称或证据证明能替代正式权限控制。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#upload-check)<br>**内容更新：** 2026-09-19 16:55:36 | [284](https://x.com/iwasakoya/status/2100471523358474709) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100471095627591680/img/jQewHJZ85th2EEv3.jpg" width="160" alt="资料上传判断器预览">](https://x.com/iwasakoya/status/2100471523358474709)<br>[视频](https://x.com/iwasakoya/status/2100471523358474709) |
-| [**按 ESLint 规则说明判断代码**](cases/2026-09-18-eslint-rule-judgments/README.md)<br>只给规则的文字说明，让 Jev 判断小段代码是否符合规则。<br>**原理：** 类似给阅卷者一张评分标准，再给一段待检查代码；Jev 判断是否违反要求。它学的是规则描述的含义，不是在这个实验里执行 ESLint 的规则实现。<br>**🟡 B · 效果待验证**<br>尚缺公开样本、各规则表现和独立测试；九成不能当真实 PR 正确率，更不等同确定性 lint。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#eslint-rule-judgments)<br>**内容更新：** 2026-09-19 16:55:36 | [351](https://x.com/mizchi/status/2100765201385869434) | [<img src="https://pbs.twimg.com/media/HSdqjcJa8AAGjPE.jpg?name=orig" width="160" alt="按 ESLint 规则说明判断代码预览">](https://x.com/mizchi/status/2100765201385869434)<br>[图片](https://x.com/mizchi/status/2100765201385869434) |
-| [**OpenCode · 意图感知权限插件**](cases/2026-09-18-opencode-intent-permissions/README.md)<br>用“只访问 Google”等自然语言规则，检查代理换着工具发起的操作。<br>**原理：** 像门卫既看通行规则也听你要办什么事：Jev 判断工具输入的意图，插件再决定放行、询问或拒绝。OpenCode 原有权限仍在外层控制。<br>**🟡 B · 效果待验证**<br>文档明确 Code Mode execute 可绕过插件。应理解为若干拦截演示，不能扩展成无法绕过的网络安全边界。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#opencode-intent-permissions)<br>**内容更新：** 2026-09-19 16:55:36 | [235](https://x.com/OpeOginni/status/2100702649834188855) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100701224920129536/img/-vzxHYoZxMjXKOKh.jpg" width="160" alt="OpenCode · 意图感知权限插件预览">](https://x.com/OpeOginni/status/2100702649834188855)<br>[视频](https://x.com/OpeOginni/status/2100702649834188855) |
-| [**代码注释 · 准确性与实用性评分**](cases/2026-09-18-code-comment-scoring/README.md)<br>分别检查注释有没有说错，以及它是否提供了代码之外的有用信息。<br>**原理：** 给注释两张成绩单：一句话可以正确复述代码，却没有解释为什么这样写；另一句话则可能连代码做什么都说错。Jev 分别评分，帮助开发者找到值得复核的注释。<br>**🟡 B · 效果待验证**<br>仅两个简单例子，0–100 分是输出分数而非测试准确率；复杂代码能力与评分校准未证明。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#code-comment-scoring)<br>**内容更新：** 2026-09-19 16:55:36 | [1,777](https://x.com/markjaquith/status/2100359340087501296) | [<img src="https://pbs.twimg.com/media/HSX4qrBWcAAA3K4.jpg?name=orig" width="160" alt="代码注释 · 准确性与实用性评分预览">](https://x.com/markjaquith/status/2100359340087501296)<br>[图片](https://x.com/markjaquith/status/2100359340087501296) |
-| [**Script.it · 先筛问题再写评审**](cases/2026-09-19-script-code-review/README.md)<br>先判断 git diff 有没有问题，命中后才让文字模型写解释。<br>**原理：** 像先用检查清单圈出可疑改动，再请评审员说明原因；省掉无问题时的长篇探索，也可能少找出一些深层问题。<br>**🟡 B · 效果待验证**<br>私有数据规模与标注不公开；不能把零误报扩大为永不误报，也不是等召回率的成本比较。作者已说明损失，故不判夸张。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#script-code-review)<br>**内容更新：** 2026-09-19 16:55:36 | [202](https://x.com/liorshkiller/status/2100936106615140757) | [<img src="https://pbs.twimg.com/media/HSgGI1wWQAAY5zl.jpg?name=orig" width="160" alt="Script.it · 先筛问题再写评审预览">](https://x.com/liorshkiller/status/2100936106615140757)<br>[图片](https://x.com/liorshkiller/status/2100936106615140757) |
+### [jev-review MCP](cases/2026-09-18-jev-review/README.md)
+
+给 AI 写出的代码打分，让它根据反馈继续修改。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100465308519759872/img/2uIG43VFGvWzku0s.jpg" width="320" alt="jev-review MCP">](https://x.com/niazmorshed_/status/2100465662867218857)
+
+[效果待验证](references/2026-09-19-claims-audit.md#jev-review) · [X · 445 赞快照](https://x.com/niazmorshed_/status/2100465662867218857) · [原理与依据](cases/2026-09-18-jev-review/README.md)
+
+**内容更新：** 2026-09-19
+
+### [14 项 PR 风险检查](cases/2026-09-18-typed-pr-review/README.md)
+
+快速检查一批代码修改有没有泄密、删测试等风险，不确定时交给人复核。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100585029533372416/img/ZcrsntW2yWgtB_HD.jpg" width="320" alt="14 项 PR 风险检查">](https://x.com/redp314/status/2100585126652481915)
+
+[效果待验证](references/2026-09-19-claims-audit.md#typed-pr-review) · [X · 1,927 赞快照](https://x.com/redp314/status/2100585126652481915) · [原理与依据](cases/2026-09-18-typed-pr-review/README.md)
+
+**内容更新：** 2026-09-19
+
+### [jev-rabbit 自然语言规则](cases/2026-09-18-jev-rabbit/README.md)
+
+把团队的代码审查要求写成人话，让机器人按这些要求检查修改。
+
+[<img src="https://pbs.twimg.com/media/HSbjmhQbQAA4G5A.jpg?name=orig" width="320" alt="jev-rabbit 自然语言规则">](https://x.com/thekitze/status/2100616530275029139)
+
+[效果待验证](references/2026-09-19-claims-audit.md#jev-rabbit) · [X · 327 赞快照](https://x.com/thekitze/status/2100616530275029139) · [原理与依据](cases/2026-09-18-jev-rabbit/README.md)
+
+**内容更新：** 2026-09-19
+
+### [代码库复杂度分类器](cases/2026-09-18-codebase-classifier/README.md)
+
+帮助发现代码是不是把简单事情做得过于复杂。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100067392223076352/img/BqXd-11SCr3_ff8q.jpg" width="320" alt="代码库复杂度分类器">](https://x.com/ryanvogel/status/2100068006592123055)
+
+[效果待验证](references/2026-09-19-claims-audit.md#codebase-classifier) · [X · 1,165 赞快照](https://x.com/ryanvogel/status/2100068006592123055) · [原理与依据](cases/2026-09-18-codebase-classifier/README.md)
+
+**内容更新：** 2026-09-19
+
+### [fx auto mode 命令安全分类](cases/2026-09-18-fx-safety/README.md)
+
+在 AI 自动执行命令前，先判断这条命令可能有多危险。
+
+[<img src="https://pbs.twimg.com/media/HSW-E8wWgAAyw9O.jpg?name=orig" width="320" alt="fx auto mode 命令安全分类">](https://x.com/fazxes/status/2100300097695232164)
+
+[效果待验证](references/2026-09-19-claims-audit.md#fx-safety) · [X · 591 赞快照](https://x.com/fazxes/status/2100300097695232164) · [原理与依据](cases/2026-09-18-fx-safety/README.md)
+
+**内容更新：** 2026-09-19
+
+### [越狱提示预筛](cases/2026-09-18-jailbreak-screen/README.md)
+
+先筛查输入里是否有试图绕过 AI 规则的内容。
+
+[<img src="https://pbs.twimg.com/media/HSXq9mqbsAAtHoT.jpg?name=orig" width="320" alt="越狱提示预筛">](https://x.com/mayfer/status/2100343452865265747)
+
+[效果待验证](references/2026-09-19-claims-audit.md#jailbreak-screen) · [X · 264 赞快照](https://x.com/mayfer/status/2100343452865265747) · [原理与依据](cases/2026-09-18-jailbreak-screen/README.md)
+
+**内容更新：** 2026-09-19
+
+### [资料上传判断器](cases/2026-09-18-upload-check/README.md)
+
+上传资料前先问一句：这份内容适合传出去吗？
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100471095627591680/img/jQewHJZ85th2EEv3.jpg" width="320" alt="资料上传判断器">](https://x.com/iwasakoya/status/2100471523358474709)
+
+[效果待验证](references/2026-09-19-claims-audit.md#upload-check) · [X · 284 赞快照](https://x.com/iwasakoya/status/2100471523358474709) · [原理与依据](cases/2026-09-18-upload-check/README.md)
+
+**内容更新：** 2026-09-19
+
+### [按 ESLint 规则说明判断代码](cases/2026-09-18-eslint-rule-judgments/README.md)
+
+只给规则的文字说明，让 Jev 判断小段代码是否符合规则。
+
+[<img src="https://pbs.twimg.com/media/HSdqjcJa8AAGjPE.jpg?name=orig" width="320" alt="按 ESLint 规则说明判断代码">](https://x.com/mizchi/status/2100765201385869434)
+
+[效果待验证](references/2026-09-19-claims-audit.md#eslint-rule-judgments) · [X · 351 赞快照](https://x.com/mizchi/status/2100765201385869434) · [原理与依据](cases/2026-09-18-eslint-rule-judgments/README.md)
+
+**内容更新：** 2026-09-19
+
+### [OpenCode · 意图感知权限插件](cases/2026-09-18-opencode-intent-permissions/README.md)
+
+用“只访问 Google”等自然语言规则，检查代理换着工具发起的操作。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100701224920129536/img/-vzxHYoZxMjXKOKh.jpg" width="320" alt="OpenCode · 意图感知权限插件">](https://x.com/OpeOginni/status/2100702649834188855)
+
+[效果待验证](references/2026-09-19-claims-audit.md#opencode-intent-permissions) · [X · 235 赞快照](https://x.com/OpeOginni/status/2100702649834188855) · [原理与依据](cases/2026-09-18-opencode-intent-permissions/README.md)
+
+**内容更新：** 2026-09-19
+
+### [代码注释 · 准确性与实用性评分](cases/2026-09-18-code-comment-scoring/README.md)
+
+分别检查注释有没有说错，以及它是否提供了代码之外的有用信息。
+
+[<img src="https://pbs.twimg.com/media/HSX4qrBWcAAA3K4.jpg?name=orig" width="320" alt="代码注释 · 准确性与实用性评分">](https://x.com/markjaquith/status/2100359340087501296)
+
+[效果待验证](references/2026-09-19-claims-audit.md#code-comment-scoring) · [X · 1,777 赞快照](https://x.com/markjaquith/status/2100359340087501296) · [原理与依据](cases/2026-09-18-code-comment-scoring/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Script.it · 先筛问题再写评审](cases/2026-09-19-script-code-review/README.md)
+
+先判断 git diff 有没有问题，命中后才让文字模型写解释。
+
+[<img src="https://pbs.twimg.com/media/HSgGI1wWQAAY5zl.jpg?name=orig" width="320" alt="Script.it · 先筛问题再写评审">](https://x.com/liorshkiller/status/2100936106615140757)
+
+[效果待验证](references/2026-09-19-claims-audit.md#script-code-review) · [X · 202 赞快照](https://x.com/liorshkiller/status/2100936106615140757) · [原理与依据](cases/2026-09-19-script-code-review/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
 
 <a id="data"></a>
 
-### 数据分类与信息整理（16）
+<details>
+<summary><strong>整理文件与信息</strong> · 16</summary>
 
-整理大批文本看邮件分类和 DuckDB；有生成前处理的流程看论文分类；需要处理不确定结果看 Jev + Kimi。银行描述是提取/归一化场景，客服意图是多问题判断；不要把分类、提取和预测的指标混用。 预测性表格把分类意图放在列名里，侧重边输入边反馈；与 DuckDB 批处理比较时，应分开衡量界面响应和整表处理成本。 四模型邮件对照便于观察相同任务的等待差异，500 封邮件案例侧重批量规模和作者报告的成本；前者缺统一精度与配置证据，后者缺跨模型对照，不能把不同演示的秒数直接排成榜单。 饮食记事本将文字记录变成热量与营养数值，和预测性表格同样重视即时反馈，但数值估算还需要可信数据与误差评估，不能用分类响应速度代替数值准确性。 新案例分别覆盖税表页面识别、Box 事故分流、本地下载归档、OCR 图片整理、Gmail 意图检索和零食评分。税表有明确拒绝门槛和分项测试，其他演示主要只有作者计时；不能跨数据类型给准确率排名。 虚构面试记录展示多维分类，适合比较处理流程；不能把每人费用与真实招聘有效性或公平性混为一谈。
+给邮件贴标签、识别表格、挑出相关文件，都是把杂乱信息整理成可用结果。分类、检索和数值估算的错误不同，不能用一张速度榜衡量。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-data.md)
+[同类优劣对比](breakdowns/2026-09-18-data.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**1kpapers 论文分类**](cases/2026-09-18-papers/README.md)<br>把一千多篇 AI 论文分门别类，方便按主题浏览。<br>**原理：** 先让另一个模型把长论文写成摘要，再让 Jev 从 24 个主题里挑类别。相当于先做内容卡片，再给卡片贴标签。<br>**🟡 B · 效果待验证**<br>端到端推理约 4.07 美元；作者还在评估 Jev 标签，不能把已上线网站当作 Jev 分类质量验证。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#papers)<br>**内容更新：** 2026-09-19 16:55:36 | [1,684](https://x.com/nutlope/status/2100426999546184123) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100425141947604992/img/AITyHwcOWq1jw-3Z.jpg" width="160" alt="1kpapers 论文分类预览">](https://x.com/nutlope/status/2100426999546184123)<br>[视频](https://x.com/nutlope/status/2100426999546184123) |
-| [**DuckDB 语义分类扩展**](cases/2026-09-18-duckdb/README.md)<br>在分析表格时，顺手让 Jev 给每行文字分个类。<br>**原理：** DuckDB 是处理表格数据的工具，这个扩展把 Jev 接了进去。查询表格时就能得到分类结果，不必先手动搬到聊天窗口。<br>**🟡 B · 效果待验证**<br>没有标注准确率、模型对照或并发配置；吞吐量和便利性不能证明普遍优于所有 LLM。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#duckdb)<br>**内容更新：** 2026-09-19 16:55:36 | [1,310](https://x.com/hamiltonulmer/status/2100370557405667768) | [<img src="https://pbs.twimg.com/media/HSYD5B1bsAAWqeg.jpg?name=orig" width="160" alt="DuckDB 语义分类扩展预览">](https://x.com/hamiltonulmer/status/2100370557405667768)<br>[图片](https://x.com/hamiltonulmer/status/2100370557405667768) |
-| [**500 封邮件分类**](cases/2026-09-18-email-batch/README.md)<br>把一大批邮件快速分到不同类别，减少逐封整理。<br>**原理：** 程序逐封把邮件内容交给 Jev 选类别，再汇总展示。像自动贴标签，但标签是否准确仍需要人工抽查。<br>**🟡 B · 效果待验证**<br>邮件构成、标签、正确率和计时边界未公开；目前仅支持一次批量演示与作者成本报告。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#email-batch)<br>**内容更新：** 2026-09-19 16:55:36 | [3,161](https://x.com/rileybrown/status/2100404532119269426) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100403183533125632/img/54ZFO-CHvDeC-rw-.jpg" width="160" alt="500 封邮件分类预览">](https://x.com/rileybrown/status/2100404532119269426)<br>[视频](https://x.com/rileybrown/status/2100404532119269426) |
-| [**Jev + Kimi 邮件反欺诈**](cases/2026-09-18-email-fraud/README.md)<br>先快速筛查诈骗邮件，再把拿不准的交给更大的模型复核。<br>**原理：** 像两级检查：Jev 先分流，置信度不足的 31 封再交给 Kimi。最后的 96/100 是整套流程成绩，不是 Jev 单独的成绩。<br>**🟡 B · 效果待验证**<br>96% 属于组合流程；95% 阈值不是已经校准的欺诈概率，也没有真实低欺诈基率下的误报率。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#email-fraud)<br>**内容更新：** 2026-09-19 16:55:36 | [542](https://x.com/nutlope/status/2100614659690713543) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100608348219478016/img/23vFEVMegwLrMa8g.jpg" width="160" alt="Jev + Kimi 邮件反欺诈预览">](https://x.com/nutlope/status/2100614659690713543)<br>[视频](https://x.com/nutlope/status/2100614659690713543) |
-| [**银行流水收款方整理**](cases/2026-09-18-bank-payee/README.md)<br>把银行流水里杂乱的交易说明，整理成更容易认出的商户名。<br>**原理：** 流水里常混着地点、编号和店名，这个实验让 Jev 参与判断哪些信息该留下。原帖没公开具体怎样切出或生成最终名称。<br>**🟡 B · 效果待验证**<br>作者措辞是粗略完成度，不是标注测试集 95% 准确率；候选生成和名称构造尚不明确。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#bank-payee)<br>**内容更新：** 2026-09-19 16:55:36 | [633](https://x.com/jlongster/status/2100179852053639236) | [<img src="https://pbs.twimg.com/media/HSVWcZ9WcAAcwPe.jpg?name=orig" width="160" alt="银行流水收款方整理预览">](https://x.com/jlongster/status/2100179852053639236)<br>[图片](https://x.com/jlongster/status/2100179852053639236) |
-| [**日语客服升级意图**](cases/2026-09-18-support-intent/README.md)<br>从日语客服消息里判断：用户是不是想找人工、是不是已经问过多次。<br>**原理：** 把一条消息拆成两个清楚的是非问题，分别问 Jev。显示的百分比代表这次判断的倾向，不是整个客服系统的准确率。<br>**🟢 A · 功能/原理证据较清楚**<br>原帖完整给出同一条日语输入、两个问题及 98% Yes / 97% Yes 输出；文字内容确实明确提出转人工并已联系三次。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#support-intent)<br>**内容更新：** 2026-09-19 16:55:36 | [351](https://x.com/ku_suke/status/2100392430805856469) | [<img src="https://pbs.twimg.com/media/HSYXuW5aoAAghbD.jpg?name=orig" width="160" alt="日语客服升级意图预览">](https://x.com/ku_suke/status/2100392430805856469)<br>[图片](https://x.com/ku_suke/status/2100392430805856469) |
-| [**按列名意图评分的电子表格**](cases/2026-09-18-predictive-spreadsheet/README.md)<br>给一列起名“紧急程度”，让每行文字自动获得相应评级。<br>**原理：** 普通公式按算式处理数字，这个演示让列名表达想问的问题：Jev 结合每行内容判断紧急程度，程序把结果填回表格。<br>**🟡 B · 效果待验证**<br>问题如何构建、评分是否稳定、计时覆盖多少行未公开；不能推广成任意列名都能获得可靠公式。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#predictive-spreadsheet)<br>**内容更新：** 2026-09-19 16:55:36 | [337](https://x.com/dabit3/status/2100780008193020049) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100779722447667200/img/gvsEg2-3oD6FRZhc.jpg" width="160" alt="按列名意图评分的电子表格预览">](https://x.com/dabit3/status/2100780008193020049)<br>[视频](https://x.com/dabit3/status/2100780008193020049) |
-| [**邮件分类 · 四模型速度对照**](cases/2026-09-18-email-speed-race/README.md)<br>让四个模型给一组邮件分类，在同一页面对照完成进度和耗时。<br>**原理：** 像让四位分拣员处理同一叠信件：每个模型判断邮件属于哪一类，网页记录结果和时间。这个演示关注分拣速度，但跑得快不代表每封都分对。<br>**🟡 B · 效果待验证**<br>模型完整版本、并发、批处理和正确率未核清；仅凭进度条不能形成通用速度排名。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#email-speed-race)<br>**内容更新：** 2026-09-19 16:55:36 | [445](https://x.com/usutaku_channel/status/2100829343954173965) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100829070514864128/img/V3ix1we5Euhs8DsY.jpg" width="160" alt="邮件分类 · 四模型速度对照预览">](https://x.com/usutaku_channel/status/2100829343954173965)<br>[视频](https://x.com/usutaku_channel/status/2100829343954173965) |
-| [**Calorie Notebook · 文字饮食记录**](cases/2026-09-18-calorie-notebook/README.md)<br>用文字记下吃了什么，界面快速显示热量、营养数值和汇总。<br>**原理：** 像在记事本旁放一台估算器：你写下食物和分量，应用把它们变成数字反馈。作者称使用 Jev，但食物资料从哪来、数字如何算出，这次没有公开。<br>**🟡 B · 效果待验证**<br>未公开数据库、份量解释或误差评测；可以确认交互原型，不能确认营养数值可靠。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#calorie-notebook)<br>**内容更新：** 2026-09-19 16:55:36 | [326](https://x.com/thekitze/status/2100857642566758849) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100857416984477696/img/RAMEV-YddA05BR1X.jpg" width="160" alt="Calorie Notebook · 文字饮食记录预览">](https://x.com/thekitze/status/2100857642566758849)<br>[视频](https://x.com/thekitze/status/2100857642566758849) |
-| [**Box · 事故报告分级归档**](cases/2026-09-19-box-incident-triage/README.md)<br>读事故报告，判断影响与严重程度，再放进对应处理文件夹。<br>**原理：** 像收件员先看“是否影响客户、严重到什么程度”，再把材料送到升级处理、监控或复核队列。<br>**🟡 B · 效果待验证**<br>严重性标准、误判率和权限控制未公开；保险、贷款等只是作者举的未来设想。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#box-incident-triage)<br>**内容更新：** 2026-09-19 16:55:36 | [317](https://x.com/levie/status/2101007708044574906) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100999115949953024/img/6D1_NvmSfMLGDstw.jpg" width="160" alt="Box · 事故报告分级归档预览">](https://x.com/levie/status/2101007708044574906)<br>[视频](https://x.com/levie/status/2101007708044574906) |
-| [**NoSugarForKids · 零食多维评分**](cases/2026-09-19-snack-scoring/README.md)<br>批量给儿童零食打分，帮助整理商品目录。<br>**原理：** 像给货架上的商品填多列表格：每列问一个问题，Jev 返回判断，再由网站汇总展示。具体评分问题尚未公开。<br>**🟡 B · 效果待验证**<br>评分问题、营养数据来源和校准不明；低成本打分不能证明商品营养判断正确。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#snack-scoring)<br>**内容更新：** 2026-09-19 16:55:36 | [312](https://x.com/nikunj/status/2101006585481073093) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101005796603809792/img/19SyyiWW5wotfFfW.jpg" width="160" alt="NoSugarForKids · 零食多维评分预览">](https://x.com/nikunj/status/2101006585481073093)<br>[视频](https://x.com/nikunj/status/2101006585481073093) |
-| [**Tax Doc Classifier · 税务 PDF 页面识别**](cases/2026-09-19-tax-doc-classifier/README.md)<br>识别税务 PDF 每页属于哪种表格，给后续整理提供标签。<br>**原理：** 像先看每页页眉、正文和页脚，再给它贴表格标签；不确定就报出低置信度，而不是假装都认识。<br>**🟢 A · 功能/原理证据较清楚**<br>固定文档公开文本提取与分类流程：314 张已填表页零错分/零严格失败；753 张空白表格零错分但 38 次低置信度失败，并披露无跨页缓存的 Sonnet 对照。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#tax-doc-classifier)<br>**内容更新：** 2026-09-19 16:55:36 | [1,506](https://x.com/nedwize/status/2100973868324417852) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100973360989773825/img/yMtL6CxrKMVXQEHV.jpg" width="160" alt="Tax Doc Classifier · 税务 PDF 页面识别预览">](https://x.com/nedwize/status/2100973868324417852)<br>[视频](https://x.com/nedwize/status/2100973868324417852) |
-| [**Gmail · 按意图找邮件**](cases/2026-09-19-gmail-intent-search/README.md)<br>用一句需求筛出相关邮件，减少只靠关键词搜索的限制。<br>**原理：** 像告诉助理“找我要处理的那类邮件”：程序提供候选邮件，Jev 判断它们是否符合意思。候选怎样获取仍未公开。<br>**🟡 B · 效果待验证**<br>没有候选召回范围与人工相关性评测；不能确认大规模收件箱表现或把建议写成已实现流程。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#gmail-intent-search)<br>**内容更新：** 2026-09-19 16:55:36 | [574](https://x.com/dabit3/status/2100960281769738433) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100959260616151040/img/nb1GFqB_cwNesugB.jpg" width="160" alt="Gmail · 按意图找邮件预览">](https://x.com/dabit3/status/2100960281769738433)<br>[视频](https://x.com/dabit3/status/2100960281769738433) |
-| [**OCR + Jev · 图片归类**](cases/2026-09-19-ocr-image-organizer/README.md)<br>先读出图片里的文字，再按内容整理图片。<br>**原理：** 像先把照片上的字抄到卡片，再按卡片内容分堆：OCR 负责读字，Jev 判断类别。<br>**🟡 B · 效果待验证**<br>类别、OCR 耗时是否计入和正确率不明；这不是 Jev 直接看图的证据。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#ocr-image-organizer)<br>**内容更新：** 2026-09-19 16:55:36 | [246](https://x.com/fayazara/status/2100953838891192789) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100953271238320128/img/vzUjAo15Bg8tVa_q.jpg" width="160" alt="OCR + Jev · 图片归类预览">](https://x.com/fayazara/status/2100953838891192789)<br>[视频](https://x.com/fayazara/status/2100953838891192789) |
-| [**macOS Downloads · 按规则归档文件**](cases/2026-09-19-downloads-organizer/README.md)<br>监控下载目录，把符合自定义规则的文件移动到对应位置。<br>**原理：** 像收件员看一眼文件是不是发票，再送进发票柜；Jev 判断规则，应用负责移动和命名。<br>**🟡 B · 效果待验证**<br>文本提取、最终文件名来源和撤销机制未披露；“无其他 LLM”不等于 Jev 能直接生成任意名称。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#downloads-organizer)<br>**内容更新：** 2026-09-19 16:55:36 | [889](https://x.com/marcelpociot/status/2100906882365788167) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100906588626173952/img/1KnNI3B3aUJEwFvI.jpg" width="160" alt="macOS Downloads · 按规则归档文件预览">](https://x.com/marcelpociot/status/2100906882365788167)<br>[视频](https://x.com/marcelpociot/status/2100906882365788167) |
-| [**虚构面试记录 · 批量分类与评分**](cases/2026-09-19-synthetic-interview-classifier/README.md)<br>将 100 份虚构面试记录分为通过、保留、暂不考虑，并给出分项评分。<br>**原理：** 像用一张检查表读模拟面试笔记：按技能、沟通和意愿分别判断，再由程序整理成表。得分不等于真实工作能力。<br>**🟡 B · 效果待验证**<br>明确使用虚构记录，支持批量分类演示；缺独立标签与误判统计，不能推断真实招聘效果。<br>[判断依据与来源](references/2026-09-19-increment7-audit.md#synthetic-interview-classifier)<br>**内容更新：** 2026-09-19 17:48:49 | [278](https://x.com/masa_okamura108/status/2101206603240477030) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101206578284380160/img/WUIj3LeQ4Nrch8yD.jpg" width="160" alt="虚构面试记录 · 批量分类与评分预览">](https://x.com/masa_okamura108/status/2101206603240477030)<br>[视频](https://x.com/masa_okamura108/status/2101206603240477030) |
+### [1kpapers 论文分类](cases/2026-09-18-papers/README.md)
+
+把一千多篇 AI 论文分门别类，方便按主题浏览。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100425141947604992/img/AITyHwcOWq1jw-3Z.jpg" width="320" alt="1kpapers 论文分类">](https://x.com/nutlope/status/2100426999546184123)
+
+[效果待验证](references/2026-09-19-claims-audit.md#papers) · [X · 1,684 赞快照](https://x.com/nutlope/status/2100426999546184123) · [原理与依据](cases/2026-09-18-papers/README.md)
+
+**内容更新：** 2026-09-19
+
+### [DuckDB 语义分类扩展](cases/2026-09-18-duckdb/README.md)
+
+在分析表格时，顺手让 Jev 给每行文字分个类。
+
+[<img src="https://pbs.twimg.com/media/HSYD5B1bsAAWqeg.jpg?name=orig" width="320" alt="DuckDB 语义分类扩展">](https://x.com/hamiltonulmer/status/2100370557405667768)
+
+[效果待验证](references/2026-09-19-claims-audit.md#duckdb) · [X · 1,310 赞快照](https://x.com/hamiltonulmer/status/2100370557405667768) · [原理与依据](cases/2026-09-18-duckdb/README.md)
+
+**内容更新：** 2026-09-19
+
+### [500 封邮件分类](cases/2026-09-18-email-batch/README.md)
+
+把一大批邮件快速分到不同类别，减少逐封整理。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100403183533125632/img/54ZFO-CHvDeC-rw-.jpg" width="320" alt="500 封邮件分类">](https://x.com/rileybrown/status/2100404532119269426)
+
+[效果待验证](references/2026-09-19-claims-audit.md#email-batch) · [X · 3,161 赞快照](https://x.com/rileybrown/status/2100404532119269426) · [原理与依据](cases/2026-09-18-email-batch/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Jev + Kimi 邮件反欺诈](cases/2026-09-18-email-fraud/README.md)
+
+先快速筛查诈骗邮件，再把拿不准的交给更大的模型复核。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100608348219478016/img/23vFEVMegwLrMa8g.jpg" width="320" alt="Jev + Kimi 邮件反欺诈">](https://x.com/nutlope/status/2100614659690713543)
+
+[效果待验证](references/2026-09-19-claims-audit.md#email-fraud) · [X · 542 赞快照](https://x.com/nutlope/status/2100614659690713543) · [原理与依据](cases/2026-09-18-email-fraud/README.md)
+
+**内容更新：** 2026-09-19
+
+### [银行流水收款方整理](cases/2026-09-18-bank-payee/README.md)
+
+把银行流水里杂乱的交易说明，整理成更容易认出的商户名。
+
+[<img src="https://pbs.twimg.com/media/HSVWcZ9WcAAcwPe.jpg?name=orig" width="320" alt="银行流水收款方整理">](https://x.com/jlongster/status/2100179852053639236)
+
+[效果待验证](references/2026-09-19-claims-audit.md#bank-payee) · [X · 633 赞快照](https://x.com/jlongster/status/2100179852053639236) · [原理与依据](cases/2026-09-18-bank-payee/README.md)
+
+**内容更新：** 2026-09-19
+
+### [日语客服升级意图](cases/2026-09-18-support-intent/README.md)
+
+从日语客服消息里判断：用户是不是想找人工、是不是已经问过多次。
+
+[<img src="https://pbs.twimg.com/media/HSYXuW5aoAAghbD.jpg?name=orig" width="320" alt="日语客服升级意图">](https://x.com/ku_suke/status/2100392430805856469)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#support-intent) · [X · 351 赞快照](https://x.com/ku_suke/status/2100392430805856469) · [原理与依据](cases/2026-09-18-support-intent/README.md)
+
+**内容更新：** 2026-09-19
+
+### [按列名意图评分的电子表格](cases/2026-09-18-predictive-spreadsheet/README.md)
+
+给一列起名“紧急程度”，让每行文字自动获得相应评级。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100779722447667200/img/gvsEg2-3oD6FRZhc.jpg" width="320" alt="按列名意图评分的电子表格">](https://x.com/dabit3/status/2100780008193020049)
+
+[效果待验证](references/2026-09-19-claims-audit.md#predictive-spreadsheet) · [X · 337 赞快照](https://x.com/dabit3/status/2100780008193020049) · [原理与依据](cases/2026-09-18-predictive-spreadsheet/README.md)
+
+**内容更新：** 2026-09-19
+
+### [邮件分类 · 四模型速度对照](cases/2026-09-18-email-speed-race/README.md)
+
+让四个模型给一组邮件分类，在同一页面对照完成进度和耗时。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100829070514864128/img/V3ix1we5Euhs8DsY.jpg" width="320" alt="邮件分类 · 四模型速度对照">](https://x.com/usutaku_channel/status/2100829343954173965)
+
+[效果待验证](references/2026-09-19-claims-audit.md#email-speed-race) · [X · 445 赞快照](https://x.com/usutaku_channel/status/2100829343954173965) · [原理与依据](cases/2026-09-18-email-speed-race/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Calorie Notebook · 文字饮食记录](cases/2026-09-18-calorie-notebook/README.md)
+
+用文字记下吃了什么，界面快速显示热量、营养数值和汇总。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100857416984477696/img/RAMEV-YddA05BR1X.jpg" width="320" alt="Calorie Notebook · 文字饮食记录">](https://x.com/thekitze/status/2100857642566758849)
+
+[效果待验证](references/2026-09-19-claims-audit.md#calorie-notebook) · [X · 326 赞快照](https://x.com/thekitze/status/2100857642566758849) · [原理与依据](cases/2026-09-18-calorie-notebook/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Box · 事故报告分级归档](cases/2026-09-19-box-incident-triage/README.md)
+
+读事故报告，判断影响与严重程度，再放进对应处理文件夹。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100999115949953024/img/6D1_NvmSfMLGDstw.jpg" width="320" alt="Box · 事故报告分级归档">](https://x.com/levie/status/2101007708044574906)
+
+[效果待验证](references/2026-09-19-claims-audit.md#box-incident-triage) · [X · 317 赞快照](https://x.com/levie/status/2101007708044574906) · [原理与依据](cases/2026-09-19-box-incident-triage/README.md)
+
+**内容更新：** 2026-09-19
+
+### [NoSugarForKids · 零食多维评分](cases/2026-09-19-snack-scoring/README.md)
+
+批量给儿童零食打分，帮助整理商品目录。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101005796603809792/img/19SyyiWW5wotfFfW.jpg" width="320" alt="NoSugarForKids · 零食多维评分">](https://x.com/nikunj/status/2101006585481073093)
+
+[效果待验证](references/2026-09-19-claims-audit.md#snack-scoring) · [X · 312 赞快照](https://x.com/nikunj/status/2101006585481073093) · [原理与依据](cases/2026-09-19-snack-scoring/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Tax Doc Classifier · 税务 PDF 页面识别](cases/2026-09-19-tax-doc-classifier/README.md)
+
+识别税务 PDF 每页属于哪种表格，给后续整理提供标签。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100973360989773825/img/yMtL6CxrKMVXQEHV.jpg" width="320" alt="Tax Doc Classifier · 税务 PDF 页面识别">](https://x.com/nedwize/status/2100973868324417852)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#tax-doc-classifier) · [X · 1,506 赞快照](https://x.com/nedwize/status/2100973868324417852) · [原理与依据](cases/2026-09-19-tax-doc-classifier/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Gmail · 按意图找邮件](cases/2026-09-19-gmail-intent-search/README.md)
+
+用一句需求筛出相关邮件，减少只靠关键词搜索的限制。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100959260616151040/img/nb1GFqB_cwNesugB.jpg" width="320" alt="Gmail · 按意图找邮件">](https://x.com/dabit3/status/2100960281769738433)
+
+[效果待验证](references/2026-09-19-claims-audit.md#gmail-intent-search) · [X · 574 赞快照](https://x.com/dabit3/status/2100960281769738433) · [原理与依据](cases/2026-09-19-gmail-intent-search/README.md)
+
+**内容更新：** 2026-09-19
+
+### [OCR + Jev · 图片归类](cases/2026-09-19-ocr-image-organizer/README.md)
+
+先读出图片里的文字，再按内容整理图片。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100953271238320128/img/vzUjAo15Bg8tVa_q.jpg" width="320" alt="OCR + Jev · 图片归类">](https://x.com/fayazara/status/2100953838891192789)
+
+[效果待验证](references/2026-09-19-claims-audit.md#ocr-image-organizer) · [X · 246 赞快照](https://x.com/fayazara/status/2100953838891192789) · [原理与依据](cases/2026-09-19-ocr-image-organizer/README.md)
+
+**内容更新：** 2026-09-19
+
+### [macOS Downloads · 按规则归档文件](cases/2026-09-19-downloads-organizer/README.md)
+
+监控下载目录，把符合自定义规则的文件移动到对应位置。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100906588626173952/img/1KnNI3B3aUJEwFvI.jpg" width="320" alt="macOS Downloads · 按规则归档文件">](https://x.com/marcelpociot/status/2100906882365788167)
+
+[效果待验证](references/2026-09-19-claims-audit.md#downloads-organizer) · [X · 889 赞快照](https://x.com/marcelpociot/status/2100906882365788167) · [原理与依据](cases/2026-09-19-downloads-organizer/README.md)
+
+**内容更新：** 2026-09-19
+
+### [虚构面试记录 · 批量分类与评分](cases/2026-09-19-synthetic-interview-classifier/README.md)
+
+将 100 份虚构面试记录分为通过、保留、暂不考虑，并给出分项评分。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101206578284380160/img/WUIj3LeQ4Nrch8yD.jpg" width="320" alt="虚构面试记录 · 批量分类与评分">](https://x.com/masa_okamura108/status/2101206603240477030)
+
+[效果待验证](references/2026-09-19-increment7-audit.md#synthetic-interview-classifier) · [X · 278 赞快照](https://x.com/masa_okamura108/status/2101206603240477030) · [原理与依据](cases/2026-09-19-synthetic-interview-classifier/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
 
 <a id="content"></a>
 
-### 内容与广告分析（10）
+<details>
+<summary><strong>读懂内容与传播</strong> · 10</summary>
 
-实时分析器适合写作反馈；收藏分位实验把预测目标定义得更具体；历史帖子分析适合描述性复盘；广告拆解服务素材整理。传播分类器与 X 算法模拟器的泛化证据较少。JevMeter 是按规则分析言论的仪表，不能当成已验证的事实核查器。 MaxFusion 与 StealAds 都做广告标签，批次和维度不同；SEO 内链推荐则选择相关文章与现成锚文本。广告标签、链接相关性和最终业务收益需要分别验证。 Ryze 涵盖 SEO/GEO 多环节审核修复，内链项目只选择相关页面和锚文本。前者范围广但归因证据弱；两者的提速数字都缺完整同条件对照，不能直接比较倍率。
+有的工具给广告贴标签，有的分析文章关联或预测传播。描述内容与预测未来是两回事；高评分也不保证流量或引用。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-content.md)
+[同类优劣对比](breakdowns/2026-09-18-content.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**实时帖子潜力分析器**](cases/2026-09-18-live-viral/README.md)<br>写帖子时边写边看反馈，了解内容类型和可能的传播潜力。<br>**原理：** 停止输入半秒后，程序把草稿交给 Jev 做分类和评分，再更新界面。它更像即时写作反馈，还不能证明帖子一定会火。<br>**🟡 B · 效果待验证**<br>界面即时反馈不证明未来传播预测有效；因作者主动限定实验性质，不将整个项目直接判为夸大。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#live-viral)<br>**内容更新：** 2026-09-19 16:55:36 | [830](https://x.com/rileybrown/status/2100425868053008758) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100424897491070976/img/kKnsb68jNUZZzSBi.jpg" width="160" alt="实时帖子潜力分析器预览">](https://x.com/rileybrown/status/2100425868053008758)<br>[视频](https://x.com/rileybrown/status/2100425868053008758) |
-| [**帖子传播分类器**](cases/2026-09-18-viral-classifier/README.md)<br>尝试从帖子里挑出更可能引起关注的内容。<br>**原理：** Jev 给帖子做分类，类似一个快速初筛员。作者没有公开完整的判分依据和测试过程，所以目前不能把它当成可靠的爆款预测器。<br>**🟠 C · 宣传超出证据**<br>缺少独立时间/作者划分、基线和对照配置；这些证据不足以支持“解决了”、永不误判或通用 100 倍性能结论。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#viral-classifier)<br>**内容更新：** 2026-09-19 16:55:36 | [387](https://x.com/robj3d3/status/2100631889585606959) | [<img src="https://pbs.twimg.com/media/HSbxP15bMAA1LaU.jpg?name=orig" width="160" alt="帖子传播分类器预览">](https://x.com/robj3d3/status/2100631889585606959)<br>[图片](https://x.com/robj3d3/status/2100631889585606959) |
-| [**X 传播评分模拟器**](cases/2026-09-18-x-algorithm-sim/README.md)<br>给帖子做传播效果模拟，看看不同写法可能得到什么评分。<br>**原理：** 作者把 Jev 的判断和一组权重结合成评分。评分公式像一个简化模型；即使看起来像 X，也不等于复刻了真实推荐系统。<br>**🟠 C · 宣传超出证据**<br>没有权重出处、真实线上推荐模型等价性或预测误差测试；评分界面不能证明复刻推荐系统。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#x-algorithm-sim)<br>**内容更新：** 2026-09-19 16:55:36 | [877](https://x.com/leojrr/status/2100470174130250127) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100467692117295104/img/01ZWSKAA75eSiFlc.jpg" width="160" alt="X 传播评分模拟器预览">](https://x.com/leojrr/status/2100470174130250127)<br>[视频](https://x.com/leojrr/status/2100470174130250127) |
-| [**收藏率分位预测实验**](cases/2026-09-18-bookmark-prediction/README.md)<br>预测一条帖子的收藏量，能不能排进附近日期帖子的前四分之一。<br>**原理：** 先把“会不会火”改成可检查的问题：它是否进入特定时间窗口的前 25%？再让 Jev 预测，并用历史数据比较结果。<br>**🟡 B · 效果待验证**<br>没有充分披露训练测试划分、提示和运行配置；历史窗口含未来是标签定义，不足以直接判定泄漏，也不足以证明面向未来泛化。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#bookmark-prediction)<br>**内容更新：** 2026-09-19 16:55:36 | [287](https://x.com/AM09_21/status/2100430480642642395) | [<img src="https://pbs.twimg.com/media/HSYtFVgaoAIPpi5.jpg?name=orig" width="160" alt="收藏率分位预测实验预览">](https://x.com/AM09_21/status/2100430480642642395)<br>[图片](https://x.com/AM09_21/status/2100430480642642395) |
-| [**3,282 条历史帖子分析**](cases/2026-09-18-post-analytics/README.md)<br>回看自己的几千条帖子，找出哪些主题和写法过去更受欢迎。<br>**原理：** Jev 给每条帖子贴上主题、语气等标签，程序再统计各标签的历史表现。它是在总结过去，不能证明换成这种写法就一定涨粉。<br>**🟡 B · 效果待验证**<br>原始标签与帖子表未公开；历史相关性不能证明照着建议发帖就能增长。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#post-analytics)<br>**内容更新：** 2026-09-19 16:55:36 | [262](https://x.com/iannuttall/status/2100668908227162567) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100668725737213952/img/m210oIkCyuGX5Dqr.jpg" width="160" alt="3,282 条历史帖子分析预览">](https://x.com/iannuttall/status/2100668908227162567)<br>[视频](https://x.com/iannuttall/status/2100668908227162567) |
-| [**StealAds 广告拆解预览**](cases/2026-09-18-ad-analysis/README.md)<br>把大量广告拆成开场卖点、优惠和引导动作，方便找创作思路。<br>**原理：** 像把广告做成可筛选的资料卡：Jev 分别判断不同要素，程序汇总。素材怎样采集和转成模型输入，原帖没有说明。<br>**🟡 B · 效果待验证**<br>没有人工标注一致率；素材采集/转写成本不明确，且作者说未来才集成 StealAds/MCP。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#ad-analysis)<br>**内容更新：** 2026-09-19 16:55:36 | [1,678](https://x.com/TheMattBerman/status/2100654891756589230) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100654321792684032/img/cXvU50KmCe6QFu86.jpg" width="160" alt="StealAds 广告拆解预览预览">](https://x.com/TheMattBerman/status/2100654891756589230)<br>[视频](https://x.com/TheMattBerman/status/2100654891756589230) |
-| [**JevMeter 言论指标仪表**](cases/2026-09-18-jevmeter/README.md)<br>给辩论或访谈逐句打指标，观察说话方式和内容特征。<br>**原理：** 每句话都回答同样五个问题，再把结果画成指标。统一尺子便于比较，但没有查证外部事实，就不能据此判断一句话真假。<br>**🟠 C · 宣传超出证据**<br>后续“事实核查”越过了已实现功能：检测说法/修辞特征不等于对照外部证据判真伪。200 条自编测试的 99% 也只是预设问题分类成绩。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#jevmeter)<br>**内容更新：** 2026-09-19 16:55:36 | [1,017](https://x.com/chetaslua/status/2100473581251748216) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100473445868003328/img/1ukjahQYLgbIEmyI.jpg" width="160" alt="JevMeter 言论指标仪表预览">](https://x.com/chetaslua/status/2100473581251748216)<br>[视频](https://x.com/chetaslua/status/2100473581251748216) |
-| [**SEO 内链推荐 · 从已有文字找链接**](cases/2026-09-19-seo-internal-links/README.md)<br>扫描网站文章，挑选相关页面和已有文字作为内部链接。<br>**原理：** 像编辑读完文章后圈出“这里可以链接到另一篇”：Jev 判断关联，程序将现成文字和目标页面配对。<br>**🟡 B · 效果待验证**<br>190 倍按已处理页面单价计算，整站 43 美元是外推；任务质量、候选范围和并发未对齐，不能作为同质量整站实测比价或 SEO 收益证明。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#seo-internal-links)<br>**内容更新：** 2026-09-19 16:55:36 | [721](https://x.com/borjafat/status/2101018783976722479) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101018477087592448/img/9YlAHKLLo_h6rgtK.jpg" width="160" alt="SEO 内链推荐 · 从已有文字找链接预览">](https://x.com/borjafat/status/2101018783976722479)<br>[视频](https://x.com/borjafat/status/2101018783976722479) |
-| [**MaxFusion · 广告素材分类**](cases/2026-09-19-maxfusion-ad-classifier/README.md)<br>给广告标注风格和用户旅程阶段，方便按维度分析账号素材。<br>**原理：** 像把广告放进带标签的素材柜：Jev 判断各个维度，程序再统计和展示；标签不等于投放效果。<br>**🟡 B · 效果待验证**<br>缺人工标签评测和素材前处理成本；批次更大不能直接证明比 StealAds 更好，MCP 仍是预告。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#maxfusion-ad-classifier)<br>**内容更新：** 2026-09-19 16:55:36 | [320](https://x.com/OriSilver/status/2100941251478458871) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100940464870301696/img/g-uzVt-FDP21an26.jpg" width="160" alt="MaxFusion · 广告素材分类预览">](https://x.com/OriSilver/status/2100941251478458871)<br>[视频](https://x.com/OriSilver/status/2100941251478458871) |
-| [**Ryze AI · SEO/GEO 审核与修复**](cases/2026-09-19-ryze-seo-geo/README.md)<br>把 Jev 加入网站搜索可见性审核，分析页面及 AI 搜索引用并提出修复。<br>**原理：** 像编辑检查网站为何不容易被找到：系统收集页面和引用资料，判断问题再安排修改；生成新文章仍需其他生成环节。<br>**🟠 C · 宣传超出证据**<br>90% 降费、20–30 倍提速和获得 AI 引用的主张缺完整对照；短视频不足以支持这些具体效果。<br>[判断依据与来源](references/2026-09-19-increment7-audit.md#ryze-seo-geo)<br>**内容更新：** 2026-09-19 17:48:49 | [790](https://x.com/irabukht/status/2101090579127951694) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101089408099516416/img/Smzn-jtE8prvdY90.jpg" width="160" alt="Ryze AI · SEO/GEO 审核与修复预览">](https://x.com/irabukht/status/2101090579127951694)<br>[视频](https://x.com/irabukht/status/2101090579127951694) |
+### [实时帖子潜力分析器](cases/2026-09-18-live-viral/README.md)
+
+写帖子时边写边看反馈，了解内容类型和可能的传播潜力。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100424897491070976/img/kKnsb68jNUZZzSBi.jpg" width="320" alt="实时帖子潜力分析器">](https://x.com/rileybrown/status/2100425868053008758)
+
+[效果待验证](references/2026-09-19-claims-audit.md#live-viral) · [X · 830 赞快照](https://x.com/rileybrown/status/2100425868053008758) · [原理与依据](cases/2026-09-18-live-viral/README.md)
+
+**内容更新：** 2026-09-19
+
+### [帖子传播分类器](cases/2026-09-18-viral-classifier/README.md)
+
+尝试从帖子里挑出更可能引起关注的内容。
+
+[<img src="https://pbs.twimg.com/media/HSbxP15bMAA1LaU.jpg?name=orig" width="320" alt="帖子传播分类器">](https://x.com/robj3d3/status/2100631889585606959)
+
+[主张缺依据](references/2026-09-19-claims-audit.md#viral-classifier) · [X · 387 赞快照](https://x.com/robj3d3/status/2100631889585606959) · [原理与依据](cases/2026-09-18-viral-classifier/README.md)
+
+**内容更新：** 2026-09-19
+
+### [X 传播评分模拟器](cases/2026-09-18-x-algorithm-sim/README.md)
+
+给帖子做传播效果模拟，看看不同写法可能得到什么评分。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100467692117295104/img/01ZWSKAA75eSiFlc.jpg" width="320" alt="X 传播评分模拟器">](https://x.com/leojrr/status/2100470174130250127)
+
+[主张缺依据](references/2026-09-19-claims-audit.md#x-algorithm-sim) · [X · 877 赞快照](https://x.com/leojrr/status/2100470174130250127) · [原理与依据](cases/2026-09-18-x-algorithm-sim/README.md)
+
+**内容更新：** 2026-09-19
+
+### [收藏率分位预测实验](cases/2026-09-18-bookmark-prediction/README.md)
+
+预测一条帖子的收藏量，能不能排进附近日期帖子的前四分之一。
+
+[<img src="https://pbs.twimg.com/media/HSYtFVgaoAIPpi5.jpg?name=orig" width="320" alt="收藏率分位预测实验">](https://x.com/AM09_21/status/2100430480642642395)
+
+[效果待验证](references/2026-09-19-claims-audit.md#bookmark-prediction) · [X · 287 赞快照](https://x.com/AM09_21/status/2100430480642642395) · [原理与依据](cases/2026-09-18-bookmark-prediction/README.md)
+
+**内容更新：** 2026-09-19
+
+### [3,282 条历史帖子分析](cases/2026-09-18-post-analytics/README.md)
+
+回看自己的几千条帖子，找出哪些主题和写法过去更受欢迎。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100668725737213952/img/m210oIkCyuGX5Dqr.jpg" width="320" alt="3,282 条历史帖子分析">](https://x.com/iannuttall/status/2100668908227162567)
+
+[效果待验证](references/2026-09-19-claims-audit.md#post-analytics) · [X · 262 赞快照](https://x.com/iannuttall/status/2100668908227162567) · [原理与依据](cases/2026-09-18-post-analytics/README.md)
+
+**内容更新：** 2026-09-19
+
+### [StealAds 广告拆解预览](cases/2026-09-18-ad-analysis/README.md)
+
+把大量广告拆成开场卖点、优惠和引导动作，方便找创作思路。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100654321792684032/img/cXvU50KmCe6QFu86.jpg" width="320" alt="StealAds 广告拆解预览">](https://x.com/TheMattBerman/status/2100654891756589230)
+
+[效果待验证](references/2026-09-19-claims-audit.md#ad-analysis) · [X · 1,678 赞快照](https://x.com/TheMattBerman/status/2100654891756589230) · [原理与依据](cases/2026-09-18-ad-analysis/README.md)
+
+**内容更新：** 2026-09-19
+
+### [JevMeter 言论指标仪表](cases/2026-09-18-jevmeter/README.md)
+
+给辩论或访谈逐句打指标，观察说话方式和内容特征。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100473445868003328/img/1ukjahQYLgbIEmyI.jpg" width="320" alt="JevMeter 言论指标仪表">](https://x.com/chetaslua/status/2100473581251748216)
+
+[主张缺依据](references/2026-09-19-claims-audit.md#jevmeter) · [X · 1,017 赞快照](https://x.com/chetaslua/status/2100473581251748216) · [原理与依据](cases/2026-09-18-jevmeter/README.md)
+
+**内容更新：** 2026-09-19
+
+### [SEO 内链推荐 · 从已有文字找链接](cases/2026-09-19-seo-internal-links/README.md)
+
+扫描网站文章，挑选相关页面和已有文字作为内部链接。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101018477087592448/img/9YlAHKLLo_h6rgtK.jpg" width="320" alt="SEO 内链推荐 · 从已有文字找链接">](https://x.com/borjafat/status/2101018783976722479)
+
+[效果待验证](references/2026-09-19-claims-audit.md#seo-internal-links) · [X · 721 赞快照](https://x.com/borjafat/status/2101018783976722479) · [原理与依据](cases/2026-09-19-seo-internal-links/README.md)
+
+**内容更新：** 2026-09-19
+
+### [MaxFusion · 广告素材分类](cases/2026-09-19-maxfusion-ad-classifier/README.md)
+
+给广告标注风格和用户旅程阶段，方便按维度分析账号素材。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100940464870301696/img/g-uzVt-FDP21an26.jpg" width="320" alt="MaxFusion · 广告素材分类">](https://x.com/OriSilver/status/2100941251478458871)
+
+[效果待验证](references/2026-09-19-claims-audit.md#maxfusion-ad-classifier) · [X · 320 赞快照](https://x.com/OriSilver/status/2100941251478458871) · [原理与依据](cases/2026-09-19-maxfusion-ad-classifier/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Ryze AI · SEO/GEO 审核与修复](cases/2026-09-19-ryze-seo-geo/README.md)
+
+把 Jev 加入网站搜索可见性审核，分析页面及 AI 搜索引用并提出修复。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101089408099516416/img/Smzn-jtE8prvdY90.jpg" width="320" alt="Ryze AI · SEO/GEO 审核与修复">](https://x.com/irabukht/status/2101090579127951694)
+
+[主张缺依据](references/2026-09-19-increment7-audit.md#ryze-seo-geo) · [X · 790 赞快照](https://x.com/irabukht/status/2101090579127951694) · [原理与依据](cases/2026-09-19-ryze-seo-geo/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
 
 <a id="filter"></a>
 
-### 网页与信息流过滤（4）
+<details>
+<summary><strong>过滤不想看的内容</strong> · 4</summary>
 
-只想控制 X 信息流，比较自然语言 X 过滤器；想清理整个网页的广告、横幅和追加销售区域，看 Unclutter。前者分类帖子内容，后者判断页面元素；同一条规则很难在两个层次直接复用。 新增 Sponsor Skip 处理视频时间轴上的口播赞助，不是网页广告元素；字幕获取、语音转写和边界误判是它独有的比较维度。 X 回复清理专注评论区，支持作者所述的误判纠正；与信息流过滤相比，需额外核清清理动作及反馈保存方式，不能将标记等同于删除。
+把“我不想看到什么”变成可执行的筛选规则。信息流过滤判断帖子，网页清理判断元素，视频跳过判断时间段；各自都要能纠正误判。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-filter.md)
+[同类优劣对比](breakdowns/2026-09-18-filter.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**自然语言 X 内容过滤器**](cases/2026-09-18-x-filter/README.md)<br>用自己的话告诉浏览器：哪些 X 帖子我不想看。<br>**原理：** 扩展把帖子和过滤要求交给 Jev 判断，符合条件就隐藏或折叠。它按意思筛选，不只是找某个关键词。<br>**🟡 B · 效果待验证**<br>没有误杀率、漏检率或长期成本；“未来的广告拦截器”属于愿景，不能当作成熟过滤保证。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#x-filter)<br>**内容更新：** 2026-09-19 16:55:36 | [950](https://x.com/marcelpociot/status/2100520134481735729) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100519256425140224/img/-A44e4qCo8mVP8ws.jpg" width="160" alt="自然语言 X 内容过滤器预览">](https://x.com/marcelpociot/status/2100520134481735729)<br>[视频](https://x.com/marcelpociot/status/2100520134481735729) |
-| [**Unclutter 页面清理**](cases/2026-09-18-unclutter/README.md)<br>帮网页清掉广告、促销弹窗等干扰，让正文更容易看。<br>**原理：** 程序先找出可能要清理的页面元素，再请 Jev 判断。难点不只是认出广告，还要避免误删登录框等正常功能。<br>**🟡 B · 效果待验证**<br>没有跨网站误删与兼容性验证；免费扩展不等于模型调用免费，当前记录未核清可复现的源码版本。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#unclutter)<br>**内容更新：** 2026-09-19 16:55:36 | [497](https://x.com/thekitze/status/2100595129874817340) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100595059041370112/img/cyfF5qMMKBPQTMAG.jpg" width="160" alt="Unclutter 页面清理预览">](https://x.com/thekitze/status/2100595129874817340)<br>[视频](https://x.com/thekitze/status/2100595129874817340) |
-| [**YouTube 赞助片段跳过**](cases/2026-09-18-youtube-sponsor-skip/README.md)<br>观看 YouTube 时识别口播赞助片段，自动跳到后面的内容。<br>**原理：** 像给字幕做标记：Jev 判断哪些句子是赞助内容，程序把句子编号换成播放时间，再执行跳转。需要听声音时，先由另一家语音服务转成文字。<br>**🟢 A · 功能/原理证据较清楚**<br>固定版本文档及 src/jev.js、src/live.js 公开字幕分窗、行号选择、程序映射时间和音频模式的转写分工，支持功能机制。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#youtube-sponsor-skip)<br>**内容更新：** 2026-09-19 16:55:36 | [238](https://x.com/tdinh_me/status/2100793777103466615) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100792834526007296/img/8AFbjqEeZrJUEHid.jpg" width="160" alt="YouTube 赞助片段跳过预览">](https://x.com/tdinh_me/status/2100793777103466615)<br>[视频](https://x.com/tdinh_me/status/2100793777103466615) |
-| [**X 回复清理 · 标记低价值评论**](cases/2026-09-19-x-reply-cleanup/README.md)<br>识别帖子下面疑似低价值回复，帮助用户清理评论区。<br>**原理：** 像先圈出疑似灌水评论，再允许用户纠正误判；作者说更正会在下次判断时被考虑，具体保存方式未知。<br>**🟡 B · 效果待验证**<br>实际处理是隐藏还是屏蔽未核清；更正进入下一次上下文不等于训练模型，也没有准确率证明。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#x-reply-cleanup)<br>**内容更新：** 2026-09-19 16:55:36 | [223](https://x.com/iannuttall/status/2100888635943883244) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100888448118759424/img/MafhEAfm3BlPst1X.jpg" width="160" alt="X 回复清理 · 标记低价值评论预览">](https://x.com/iannuttall/status/2100888635943883244)<br>[视频](https://x.com/iannuttall/status/2100888635943883244) |
+### [自然语言 X 内容过滤器](cases/2026-09-18-x-filter/README.md)
+
+用自己的话告诉浏览器：哪些 X 帖子我不想看。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100519256425140224/img/-A44e4qCo8mVP8ws.jpg" width="320" alt="自然语言 X 内容过滤器">](https://x.com/marcelpociot/status/2100520134481735729)
+
+[效果待验证](references/2026-09-19-claims-audit.md#x-filter) · [X · 950 赞快照](https://x.com/marcelpociot/status/2100520134481735729) · [原理与依据](cases/2026-09-18-x-filter/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Unclutter 页面清理](cases/2026-09-18-unclutter/README.md)
+
+帮网页清掉广告、促销弹窗等干扰，让正文更容易看。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100595059041370112/img/cyfF5qMMKBPQTMAG.jpg" width="320" alt="Unclutter 页面清理">](https://x.com/thekitze/status/2100595129874817340)
+
+[效果待验证](references/2026-09-19-claims-audit.md#unclutter) · [X · 497 赞快照](https://x.com/thekitze/status/2100595129874817340) · [原理与依据](cases/2026-09-18-unclutter/README.md)
+
+**内容更新：** 2026-09-19
+
+### [YouTube 赞助片段跳过](cases/2026-09-18-youtube-sponsor-skip/README.md)
+
+观看 YouTube 时识别口播赞助片段，自动跳到后面的内容。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100792834526007296/img/8AFbjqEeZrJUEHid.jpg" width="320" alt="YouTube 赞助片段跳过">](https://x.com/tdinh_me/status/2100793777103466615)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#youtube-sponsor-skip) · [X · 238 赞快照](https://x.com/tdinh_me/status/2100793777103466615) · [原理与依据](cases/2026-09-18-youtube-sponsor-skip/README.md)
+
+**内容更新：** 2026-09-19
+
+### [X 回复清理 · 标记低价值评论](cases/2026-09-19-x-reply-cleanup/README.md)
+
+识别帖子下面疑似低价值回复，帮助用户清理评论区。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100888448118759424/img/MafhEAfm3BlPst1X.jpg" width="320" alt="X 回复清理 · 标记低价值评论">](https://x.com/iannuttall/status/2100888635943883244)
+
+[效果待验证](references/2026-09-19-claims-audit.md#x-reply-cleanup) · [X · 223 赞快照](https://x.com/iannuttall/status/2100888635943883244) · [原理与依据](cases/2026-09-19-x-reply-cleanup/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
 
 <a id="memory"></a>
 
-### 上下文与记忆筛选（3）
+<details>
+<summary><strong>帮 AI 留住有用记忆</strong> · 3</summary>
 
-工具调用压缩处理当前会话的历史；记忆检索筛选处理外部记忆的召回候选。两者都以减少输入为目标，适用位置不同。优先观察信息保留与任务质量，再比较 token 降幅。 Compact Adviser 选择“什么时候压缩”，已有压缩工具选择“压缩哪些内容”，记忆筛选选择“召回哪些材料”。三者位置不同，可组合，比较时需看后续任务质量。
+对话变长后，哪些信息值得留下？这些工具分别选择何时压缩、压缩什么、召回什么；节省字数之后，仍要检查任务能否继续做好。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-memory.md)
+[同类优劣对比](breakdowns/2026-09-18-memory.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**工具调用上下文压缩**](cases/2026-09-18-context-compaction/README.md)<br>给 AI 助手的工作记录瘦身，只把眼下有用的内容继续带着。<br>**原理：** 不是把所有历史重写成一篇摘要，而是先给工具记录评相关性，再选择保留哪些。省下空间的同时，也可能丢掉以后才需要的信息。<br>**🟠 C · 宣传超出证据**<br>体积下降不证明信息保真或后续任务质量。仓库还包含明确不调用 API 的录屏动画，不能拿该动画证明实时性能；另有 live demo，不能因此称整个项目造假。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#context-compaction)<br>**内容更新：** 2026-09-19 16:55:36 | [1,646](https://x.com/tamarajtran/status/2100694549362553153) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100694537672998912/img/OF8vottg6-45ZgNl.jpg" width="160" alt="工具调用上下文压缩预览">](https://x.com/tamarajtran/status/2100694549362553153)<br>[视频](https://x.com/tamarajtran/status/2100694549362553153) |
-| [**记忆系统检索筛选**](cases/2026-09-18-memory-retrieval/README.md)<br>从 AI 记忆库里筛出真正相关的内容，减少翻找和阅读负担。<br>**原理：** 先找到一批可能相关的记忆，再由 Jev 做第二轮筛选。像从搜索结果里挑重点；筛得太狠，也可能漏掉关键线索。<br>**🟡 B · 效果待验证**<br>未给召回率、遗漏信息或后续任务正确率；只能当作者这次测试结果，不能当默认提升比例。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#memory-retrieval)<br>**内容更新：** 2026-09-19 16:55:36 | [335](https://x.com/moritzkremb/status/2100566009312940457) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100565973376061440/img/jeTib61RNpwXn853.jpg" width="160" alt="记忆系统检索筛选预览">](https://x.com/moritzkremb/status/2100566009312940457)<br>[视频](https://x.com/moritzkremb/status/2100566009312940457) |
-| [**Compact Adviser · 判断何时压缩上下文**](cases/2026-09-19-compact-adviser/README.md)<br>在编码会话接近合适停顿点时，提示是否该整理上下文。<br>**原理：** 像会议秘书挑一个话题结束的时刻做纪要：Jev 判断时机，宿主工具负责真正压缩；它不决定删除哪一段。<br>**🟡 B · 效果待验证**<br>原作者说对私有评估集反复调提示；未见独立留出集，不能据此证明未见会话上的安全性或保真率。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#compact-adviser)<br>**内容更新：** 2026-09-19 16:55:36 | [242](https://x.com/kunchenguid/status/2101032677940117875) | [<img src="https://pbs.twimg.com/media/HShbIHcbcAAJvsR.jpg?name=orig" width="160" alt="Compact Adviser · 判断何时压缩上下文预览">](https://x.com/kunchenguid/status/2101032677940117875)<br>[图片](https://x.com/kunchenguid/status/2101032677940117875) |
+### [工具调用上下文压缩](cases/2026-09-18-context-compaction/README.md)
+
+给 AI 助手的工作记录瘦身，只把眼下有用的内容继续带着。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100694537672998912/img/OF8vottg6-45ZgNl.jpg" width="320" alt="工具调用上下文压缩">](https://x.com/tamarajtran/status/2100694549362553153)
+
+[主张缺依据](references/2026-09-19-claims-audit.md#context-compaction) · [X · 1,646 赞快照](https://x.com/tamarajtran/status/2100694549362553153) · [原理与依据](cases/2026-09-18-context-compaction/README.md)
+
+**内容更新：** 2026-09-19
+
+### [记忆系统检索筛选](cases/2026-09-18-memory-retrieval/README.md)
+
+从 AI 记忆库里筛出真正相关的内容，减少翻找和阅读负担。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100565973376061440/img/jeTib61RNpwXn853.jpg" width="320" alt="记忆系统检索筛选">](https://x.com/moritzkremb/status/2100566009312940457)
+
+[效果待验证](references/2026-09-19-claims-audit.md#memory-retrieval) · [X · 335 赞快照](https://x.com/moritzkremb/status/2100566009312940457) · [原理与依据](cases/2026-09-18-memory-retrieval/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Compact Adviser · 判断何时压缩上下文](cases/2026-09-19-compact-adviser/README.md)
+
+在编码会话接近合适停顿点时，提示是否该整理上下文。
+
+[<img src="https://pbs.twimg.com/media/HShbIHcbcAAJvsR.jpg?name=orig" width="320" alt="Compact Adviser · 判断何时压缩上下文">](https://x.com/kunchenguid/status/2101032677940117875)
+
+[效果待验证](references/2026-09-19-claims-audit.md#compact-adviser) · [X · 242 赞快照](https://x.com/kunchenguid/status/2101032677940117875) · [原理与依据](cases/2026-09-19-compact-adviser/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
 
 <a id="games"></a>
 
-### 游戏决策与求解（16）
+<details>
+<summary><strong>玩游戏与解谜</strong> · 16</summary>
 
-马里奥三个实现并排比较：@faadilhshaik 展示基本接入，Jev/Qwen 版本明确相同结构化状态与五选一，PPO 对照展示实现投入。吃豆人体现规划/执行分层；宝可梦体现长期进度；棋局显示速度与棋力分离；魔方的确定性代码承担解法。其余演示适合研究动作空间，而不是据短片排通用能力榜。 Minecraft 同样分层，但增加了本地移动/瞄准策略，不能把整个系统的表现归给 Jev；比较速度请看作者原速补充视频。 Flappy Bird 聚焦动作时机但实现细节少；Sprite Fusion 选择下一段地形而非玩家动作，公开参数和请求计时。后者还需要可达性与可玩性测试，不能按玩家得分衡量。
+把游戏状态变成可选动作，就能观察一连串小判断怎样影响结果。有的只选动作，有的配合规划器或现成解法；流畅演示不等于高水平通关。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-games.md)
+[同类优劣对比](breakdowns/2026-09-18-games.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**官方 Doom 演示**](cases/2026-09-18-doom/README.md)<br>让 Jev 持续选择游戏动作，演示快速决策如何接入 Doom。<br>**原理：** 程序负责连接游戏与模型，Jev 在循环中做选择。看到游戏画面不代表 Jev 直接看懂了像素；原帖没有完整说明它实际收到什么状态。<br>**🟡 B · 效果待验证**<br>未披露状态编码、长期胜率或完整计费日志；不能由游戏画面推断 Jev 原生看图、拥有通用实时游戏能力。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#doom)<br>**内容更新：** 2026-09-19 16:55:36 | [4,585](https://x.com/CompleteSkeptic/status/2099925687465570372) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2099924592534183936/img/hBGk8j8MRxBgPyg9.jpg" width="160" alt="官方 Doom 演示预览">](https://x.com/CompleteSkeptic/status/2099925687465570372)<br>[视频](https://x.com/CompleteSkeptic/status/2099925687465570372) |
-| [**Super Mario · @faadilhshaik**](cases/2026-09-18-mario-faadhil/README.md)<br>让 Jev 操作超级马里奥，展示快速选择动作的效果。<br>**原理：** 游戏适配程序把状态交给 Jev，再把选择变成游戏操作。具体状态格式未公开，因此不能只凭视频判断它是否像人一样“看屏幕玩”。<br>**🟡 B · 效果待验证**<br>状态输入、暂停机制、失败次数和多关卡结果未知；成功片段不等于稳定通关。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#mario-faadhil)<br>**内容更新：** 2026-09-19 16:55:36 | [2,686](https://x.com/faadilhshaik/status/2100086301894881578) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100085174826647552/img/6YMRQKKZYBPsW2oo.jpg" width="160" alt="Super Mario · @faadilhshaik预览">](https://x.com/faadilhshaik/status/2100086301894881578)<br>[视频](https://x.com/faadilhshaik/status/2100086301894881578) |
-| [**Super Mario · Jev / Qwen 对照**](cases/2026-09-18-mario-comparison/README.md)<br>给 Jev 和 Qwen 相同的马里奥信息，比较它们怎样选动作。<br>**原理：** 先把游戏情况变成结构化数据，两种模型都只能五选一。像参加同一份选择题，而不是让一个看画面、另一个读游戏内部数据。<br>**🟢 A · 功能/原理证据较清楚**<br>作者明确：游戏信息先转为结构化数据，两者都五选一；没有把 Jev 表述为视觉模型。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#mario-comparison)<br>**内容更新：** 2026-09-19 16:55:36 | [284](https://x.com/karaage0703/status/2100569924238471355) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100567975317454849/img/UjFbLkeMH5RdOrlS.jpg" width="160" alt="Super Mario · Jev / Qwen 对照预览">](https://x.com/karaage0703/status/2100569924238471355)<br>[视频](https://x.com/karaage0703/status/2100569924238471355) |
-| [**Super Mario · 1-1 关卡**](cases/2026-09-18-mario-ppo/README.md)<br>展示用 Jev 接入马里奥第一关，与作者之前训练游戏 AI 的经历对照。<br>**原理：** 作者把已有 Jev 接入游戏，而 PPO 方案需要训练控制策略。这里比较的是搭建经历，不能直接推出哪个模型在相同条件下更强。<br>**🟡 B · 效果待验证**<br>一周训练与调用现成模型不是同条件性能实验；开发耗时也不能证明强化学习能力或泛化。原帖的未来预测应视为意见。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#mario-ppo)<br>**内容更新：** 2026-09-19 16:55:36 | [248](https://x.com/shantanugoel/status/2100455295801827769) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100454863335501825/img/RbCmluMnOGM4rHPb.jpg" width="160" alt="Super Mario · 1-1 关卡预览">](https://x.com/shantanugoel/status/2100455295801827769)<br>[视频](https://x.com/shantanugoel/status/2100455295801827769) |
-| [**Astra + Jev 吃豆人**](cases/2026-09-18-pacman/README.md)<br>一个模型想策略，Jev 负责快速走下一步，合力玩吃豆人。<br>**原理：** 像教练和球员分工：Astra 提供大方向，Jev 根据方向执行局部动作。两层配合的效果要一起看，不能只算 Jev 的速度。<br>**🟡 B · 效果待验证**<br>毫秒级是局部动作陈述；完整模型成本、胜率、规划调用次数及延迟分布未给。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#pacman)<br>**内容更新：** 2026-09-19 16:55:36 | [860](https://x.com/daniel_mac8/status/2100335929273524541) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100335842451492864/img/gC9HxZoXRIgMLKrW.jpg" width="160" alt="Astra + Jev 吃豆人预览">](https://x.com/daniel_mac8/status/2100335929273524541)<br>[视频](https://x.com/daniel_mac8/status/2100335929273524541) |
-| [**贪吃蛇逐步决策**](cases/2026-09-18-snake/README.md)<br>贪吃蛇每走一步，都先问 Jev 下一步怎么走。<br>**原理：** 程序反复执行“读状态、问方向、走一步”。这个小循环很容易理解，但每多走一步就多一次请求，长局的总费用也会增加。<br>**🟡 B · 效果待验证**<br>这是作者本次请求均价的外推，未给账单或长度/成功率；上下文和价格改变后不能沿用。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#snake)<br>**内容更新：** 2026-09-19 16:55:36 | [204](https://x.com/chenchengpro/status/2100516953496670430) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100516335155646464/img/pow4ZDKeRwkBVSvy.jpg" width="160" alt="贪吃蛇逐步决策预览">](https://x.com/chenchengpro/status/2100516953496670430)<br>[视频](https://x.com/chenchengpro/status/2100516953496670430) |
-| [**俄罗斯方块**](cases/2026-09-18-tetris/README.md)<br>让 Jev 决定俄罗斯方块的操作，观察它怎样安排落块。<br>**原理：** 需要有程序把棋盘状态转给模型，再把选择变成操作。原帖没说明 Jev 是选最终落点，还是逐次选按键，这会影响比较结果。<br>**🟡 B · 效果待验证**<br>没有说明选落点还是连续按键，也没有得分、延迟或基线；改变一切是感想而非可检验性能结论。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#tetris)<br>**内容更新：** 2026-09-19 16:55:36 | [956](https://x.com/marcus_lowe/status/2100315518930661861) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100315393860730880/img/u0iH2SHQny2hkd4Q.jpg" width="160" alt="俄罗斯方块预览">](https://x.com/marcus_lowe/status/2100315518930661861)<br>[视频](https://x.com/marcus_lowe/status/2100315518930661861) |
-| [**Jev Plays Pokémon**](cases/2026-09-18-pokemon/README.md)<br>让 Jev 长时间玩宝可梦，并记录打到哪里、用了多少次决策。<br>**原理：** 游戏不断反馈新情况，程序反复向 Jev 请求选择，累积推进剧情。几千步后取得徽章，比一小段精彩剪辑提供了更多进度信息。<br>**🟡 B · 效果待验证**<br>费用和进度未独立复现，记忆、导航辅助及失败记录未知；首枚徽章不能升级为自主通关能力。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#pokemon)<br>**内容更新：** 2026-09-19 16:55:36 | [220](https://x.com/0xBOYD/status/2100539883836018697) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100539819172544512/img/0EZ7yznRwL7qi4K8.jpg" width="160" alt="Jev Plays Pokémon预览">](https://x.com/0xBOYD/status/2100539883836018697)<br>[视频](https://x.com/0xBOYD/status/2100539883836018697) |
-| [**杀戮尖塔 2 代打**](cases/2026-09-18-slay-spire/README.md)<br>让 Jev 代选卡牌游戏中的行动，减少等模型思考的时间。<br>**原理：** 卡牌游戏通常有一组当前合法的选择，程序可把它们交给模型挑选。原帖没公开接口细节，而且出牌快不一定代表更容易赢。<br>**🟡 B · 效果待验证**<br>超人类指宣传中的操作节奏，没有人类对照或胜率；行动快不代表策略强，也未展示完整对局。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#slay-spire)<br>**内容更新：** 2026-09-19 16:55:36 | [598](https://x.com/coolish/status/2100570517954838897) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100569632482746369/img/TPuOBiHYCWUWxNOc.jpg" width="160" alt="杀戮尖塔 2 代打预览">](https://x.com/coolish/status/2100570517954838897)<br>[视频](https://x.com/coolish/status/2100570517954838897) |
-| [**5+0 国际象棋对局**](cases/2026-09-18-chess/README.md)<br>让几个模型下限时国际象棋，同时比较下棋水平与思考速度。<br>**原理：** 每一步都要请求模型，思考时间也从棋钟里扣。Jev 有一局靠对手超时获胜，但另一局被将死，说明“下得快”和“下得好”是两件事。<br>**🟢 A · 功能/原理证据较清楚**<br>作者同时公开获胜原因、落后局面和失败；把速度优势与棋力区别开。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#chess)<br>**内容更新：** 2026-09-19 16:55:36 | [1,985](https://x.com/aimlapi/status/2100372930282573876) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100371773275406336/img/NmHPy0pAprSsC6Gi.jpg" width="160" alt="5+0 国际象棋对局预览">](https://x.com/aimlapi/status/2100372930282573876)<br>[视频](https://x.com/aimlapi/status/2100372930282573876) |
-| [**Subway Surfers 并行演示**](cases/2026-09-18-subway-runners/README.md)<br>展示 Jev 同时控制多局跑酷游戏的效果。<br>**原理：** 多个游戏环境并行请求决策，再各自执行。原帖没有说清是不是原版客户端，所以它证明的是这个演示的控制效果，不是通用手机操作能力。<br>**🟡 B · 效果待验证**<br>原版客户端、改写环境、批处理和运行时长未说明；50 个实例不等于 50 台手机视觉控制，超人类没有匹配的人类测试。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#subway-runners)<br>**内容更新：** 2026-09-19 16:55:36 | [1,474](https://x.com/_MaxBlade/status/2100634359099232678) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100633400717565952/img/KlytLNSLCQA-yY2E.jpg" width="160" alt="Subway Surfers 并行演示预览">](https://x.com/_MaxBlade/status/2100634359099232678)<br>[视频](https://x.com/_MaxBlade/status/2100634359099232678) |
-| [**魔方分阶段解法**](cases/2026-09-18-rubiks-cube/README.md)<br>程序会魔方公式，Jev 帮它判断当前该用哪一种。<br>**原理：** 像先准备一本解法手册：Jev 负责认出眼下的情况，程序查对应公式并检查操作。因此完整解法来自模型与代码合作。<br>**🟢 A · 功能/原理证据较清楚**<br>作者明确初学者解法写在代码中，Jev 判断当前属于哪种情况，代码检查选择；主动披露视频放慢。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#rubiks-cube)<br>**内容更新：** 2026-09-19 16:55:36 | [494](https://x.com/redp314/status/2100489858951073858) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100479486382809088/img/r6daGpDnvsCr3LyL.jpg" width="160" alt="魔方分阶段解法预览">](https://x.com/redp314/status/2100489858951073858)<br>[视频](https://x.com/redp314/status/2100489858951073858) |
-| [**Mario Kart 64**](cases/2026-09-18-mario-kart/README.md)<br>展示 Jev 玩马里奥赛车，观察连续驾驶时的反应。<br>**原理：** 程序必须把赛车状态转成模型能判断的信息，再把结果变成操控。原帖没交代状态接口、辅助驾驶逻辑或模拟速度，原理细节仍待补充。<br>**🟠 C · 宣传超出证据**<br>原帖没有 Astra 同场景对照、相同输入与工具、圈速或碰撞数据；单方演示支撑不了对另一系统的明确优劣结论。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#mario-kart)<br>**内容更新：** 2026-09-19 16:55:36 | [204](https://x.com/shreypandya/status/2100606445758898287) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100605130869784576/img/gdGysXaHMdzFOU8W.jpg" width="160" alt="Mario Kart 64预览">](https://x.com/shreypandya/status/2100606445758898287)<br>[视频](https://x.com/shreypandya/status/2100606445758898287) |
-| [**Minecraft · Jev、Astra 与本地策略**](cases/2026-09-18-minecraft-hybrid/README.md)<br>让不同模型分工玩 Minecraft：一个管长远计划，一个应急，本地模型负责走路和瞄准。<br>**原理：** 像队长、现场指挥和队员分工：Astra 规划目标，Jev 应对眼前变化，本地策略把指令变成移动和瞄准。画面中的表现来自整套系统。<br>**🟡 B · 效果待验证**<br>主视频约加速两倍，不能拿播放速度当模型实时反应；不能把整套系统的战斗能力归于 Jev，也没有通关证据。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#minecraft-hybrid)<br>**内容更新：** 2026-09-19 16:55:36 | [354](https://x.com/wuyang_zhou/status/2100727660875808913) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100727359569530880/img/IGuQpzilRkIsw1Wb.jpg" width="160" alt="Minecraft · Jev、Astra 与本地策略预览">](https://x.com/wuyang_zhou/status/2100727660875808913)<br>[视频](https://x.com/wuyang_zhou/status/2100727660875808913) |
-| [**Sprite Fusion · 实时生成跑酷地形**](cases/2026-09-19-game-level-generation/README.md)<br>玩家向前跑时，为前方地图选择新的平台和间隙。<br>**原理：** 像给关卡设计师一盒固定尺寸的地块：Jev 选宽度、间隔、高度和表面类型，游戏代码负责摆放。<br>**🟢 A · 功能/原理证据较清楚**<br>作者文章给出有限地块参数、状态输入和一次四个表面的选择；代码摆放地块。五次请求实测 319–375ms，并明确不是低于 100ms。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#game-level-generation)<br>**内容更新：** 2026-09-19 16:55:36 | [1,289](https://x.com/HugoDuprez/status/2100953089003921543) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100952449661992960/img/GEVdw9BvAW7Dv2Gx.jpg" width="160" alt="Sprite Fusion · 实时生成跑酷地形预览">](https://x.com/HugoDuprez/status/2100953089003921543)<br>[视频](https://x.com/HugoDuprez/status/2100953089003921543) |
-| [**Flappy Bird · 飞行避障**](cases/2026-09-19-flappy-bird/README.md)<br>让 Jev 参与控制小鸟穿过障碍。<br>**原理：** 可把这类游戏理解为不断回答“现在该不该拍翅膀”。这是帮助理解的动作选择类比；该演示如何提供状态、何时调用，尚未公开。<br>**🟡 B · 效果待验证**<br>没有状态格式、是否暂停、失败局、多局分数和成本；轻松是观感，不能推断稳定水平。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#flappy-bird)<br>**内容更新：** 2026-09-19 16:55:36 | [254](https://x.com/thymikee/status/2100937960115838984) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100937854813700096/img/AlsBUETn77dLd0r8.jpg" width="160" alt="Flappy Bird · 飞行避障预览">](https://x.com/thymikee/status/2100937960115838984)<br>[视频](https://x.com/thymikee/status/2100937960115838984) |
+### [官方 Doom 演示](cases/2026-09-18-doom/README.md)
+
+让 Jev 持续选择游戏动作，演示快速决策如何接入 Doom。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2099924592534183936/img/hBGk8j8MRxBgPyg9.jpg" width="320" alt="官方 Doom 演示">](https://x.com/CompleteSkeptic/status/2099925687465570372)
+
+[效果待验证](references/2026-09-19-claims-audit.md#doom) · [X · 4,585 赞快照](https://x.com/CompleteSkeptic/status/2099925687465570372) · [原理与依据](cases/2026-09-18-doom/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Super Mario · @faadilhshaik](cases/2026-09-18-mario-faadhil/README.md)
+
+让 Jev 操作超级马里奥，展示快速选择动作的效果。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100085174826647552/img/6YMRQKKZYBPsW2oo.jpg" width="320" alt="Super Mario · @faadilhshaik">](https://x.com/faadilhshaik/status/2100086301894881578)
+
+[效果待验证](references/2026-09-19-claims-audit.md#mario-faadhil) · [X · 2,686 赞快照](https://x.com/faadilhshaik/status/2100086301894881578) · [原理与依据](cases/2026-09-18-mario-faadhil/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Super Mario · Jev / Qwen 对照](cases/2026-09-18-mario-comparison/README.md)
+
+给 Jev 和 Qwen 相同的马里奥信息，比较它们怎样选动作。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100567975317454849/img/UjFbLkeMH5RdOrlS.jpg" width="320" alt="Super Mario · Jev / Qwen 对照">](https://x.com/karaage0703/status/2100569924238471355)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#mario-comparison) · [X · 284 赞快照](https://x.com/karaage0703/status/2100569924238471355) · [原理与依据](cases/2026-09-18-mario-comparison/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Super Mario · 1-1 关卡](cases/2026-09-18-mario-ppo/README.md)
+
+展示用 Jev 接入马里奥第一关，与作者之前训练游戏 AI 的经历对照。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100454863335501825/img/RbCmluMnOGM4rHPb.jpg" width="320" alt="Super Mario · 1-1 关卡">](https://x.com/shantanugoel/status/2100455295801827769)
+
+[效果待验证](references/2026-09-19-claims-audit.md#mario-ppo) · [X · 248 赞快照](https://x.com/shantanugoel/status/2100455295801827769) · [原理与依据](cases/2026-09-18-mario-ppo/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Astra + Jev 吃豆人](cases/2026-09-18-pacman/README.md)
+
+一个模型想策略，Jev 负责快速走下一步，合力玩吃豆人。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100335842451492864/img/gC9HxZoXRIgMLKrW.jpg" width="320" alt="Astra + Jev 吃豆人">](https://x.com/daniel_mac8/status/2100335929273524541)
+
+[效果待验证](references/2026-09-19-claims-audit.md#pacman) · [X · 860 赞快照](https://x.com/daniel_mac8/status/2100335929273524541) · [原理与依据](cases/2026-09-18-pacman/README.md)
+
+**内容更新：** 2026-09-19
+
+### [贪吃蛇逐步决策](cases/2026-09-18-snake/README.md)
+
+贪吃蛇每走一步，都先问 Jev 下一步怎么走。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100516335155646464/img/pow4ZDKeRwkBVSvy.jpg" width="320" alt="贪吃蛇逐步决策">](https://x.com/chenchengpro/status/2100516953496670430)
+
+[效果待验证](references/2026-09-19-claims-audit.md#snake) · [X · 204 赞快照](https://x.com/chenchengpro/status/2100516953496670430) · [原理与依据](cases/2026-09-18-snake/README.md)
+
+**内容更新：** 2026-09-19
+
+### [俄罗斯方块](cases/2026-09-18-tetris/README.md)
+
+让 Jev 决定俄罗斯方块的操作，观察它怎样安排落块。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100315393860730880/img/u0iH2SHQny2hkd4Q.jpg" width="320" alt="俄罗斯方块">](https://x.com/marcus_lowe/status/2100315518930661861)
+
+[效果待验证](references/2026-09-19-claims-audit.md#tetris) · [X · 956 赞快照](https://x.com/marcus_lowe/status/2100315518930661861) · [原理与依据](cases/2026-09-18-tetris/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Jev Plays Pokémon](cases/2026-09-18-pokemon/README.md)
+
+让 Jev 长时间玩宝可梦，并记录打到哪里、用了多少次决策。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100539819172544512/img/0EZ7yznRwL7qi4K8.jpg" width="320" alt="Jev Plays Pokémon">](https://x.com/0xBOYD/status/2100539883836018697)
+
+[效果待验证](references/2026-09-19-claims-audit.md#pokemon) · [X · 220 赞快照](https://x.com/0xBOYD/status/2100539883836018697) · [原理与依据](cases/2026-09-18-pokemon/README.md)
+
+**内容更新：** 2026-09-19
+
+### [杀戮尖塔 2 代打](cases/2026-09-18-slay-spire/README.md)
+
+让 Jev 代选卡牌游戏中的行动，减少等模型思考的时间。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100569632482746369/img/TPuOBiHYCWUWxNOc.jpg" width="320" alt="杀戮尖塔 2 代打">](https://x.com/coolish/status/2100570517954838897)
+
+[效果待验证](references/2026-09-19-claims-audit.md#slay-spire) · [X · 598 赞快照](https://x.com/coolish/status/2100570517954838897) · [原理与依据](cases/2026-09-18-slay-spire/README.md)
+
+**内容更新：** 2026-09-19
+
+### [5+0 国际象棋对局](cases/2026-09-18-chess/README.md)
+
+让几个模型下限时国际象棋，同时比较下棋水平与思考速度。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100371773275406336/img/NmHPy0pAprSsC6Gi.jpg" width="320" alt="5+0 国际象棋对局">](https://x.com/aimlapi/status/2100372930282573876)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#chess) · [X · 1,985 赞快照](https://x.com/aimlapi/status/2100372930282573876) · [原理与依据](cases/2026-09-18-chess/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Subway Surfers 并行演示](cases/2026-09-18-subway-runners/README.md)
+
+展示 Jev 同时控制多局跑酷游戏的效果。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100633400717565952/img/KlytLNSLCQA-yY2E.jpg" width="320" alt="Subway Surfers 并行演示">](https://x.com/_MaxBlade/status/2100634359099232678)
+
+[效果待验证](references/2026-09-19-claims-audit.md#subway-runners) · [X · 1,474 赞快照](https://x.com/_MaxBlade/status/2100634359099232678) · [原理与依据](cases/2026-09-18-subway-runners/README.md)
+
+**内容更新：** 2026-09-19
+
+### [魔方分阶段解法](cases/2026-09-18-rubiks-cube/README.md)
+
+程序会魔方公式，Jev 帮它判断当前该用哪一种。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100479486382809088/img/r6daGpDnvsCr3LyL.jpg" width="320" alt="魔方分阶段解法">](https://x.com/redp314/status/2100489858951073858)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#rubiks-cube) · [X · 494 赞快照](https://x.com/redp314/status/2100489858951073858) · [原理与依据](cases/2026-09-18-rubiks-cube/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Mario Kart 64](cases/2026-09-18-mario-kart/README.md)
+
+展示 Jev 玩马里奥赛车，观察连续驾驶时的反应。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100605130869784576/img/gdGysXaHMdzFOU8W.jpg" width="320" alt="Mario Kart 64">](https://x.com/shreypandya/status/2100606445758898287)
+
+[主张缺依据](references/2026-09-19-claims-audit.md#mario-kart) · [X · 204 赞快照](https://x.com/shreypandya/status/2100606445758898287) · [原理与依据](cases/2026-09-18-mario-kart/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Minecraft · Jev、Astra 与本地策略](cases/2026-09-18-minecraft-hybrid/README.md)
+
+让不同模型分工玩 Minecraft：一个管长远计划，一个应急，本地模型负责走路和瞄准。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100727359569530880/img/IGuQpzilRkIsw1Wb.jpg" width="320" alt="Minecraft · Jev、Astra 与本地策略">](https://x.com/wuyang_zhou/status/2100727660875808913)
+
+[效果待验证](references/2026-09-19-claims-audit.md#minecraft-hybrid) · [X · 354 赞快照](https://x.com/wuyang_zhou/status/2100727660875808913) · [原理与依据](cases/2026-09-18-minecraft-hybrid/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Sprite Fusion · 实时生成跑酷地形](cases/2026-09-19-game-level-generation/README.md)
+
+玩家向前跑时，为前方地图选择新的平台和间隙。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100952449661992960/img/GEVdw9BvAW7Dv2Gx.jpg" width="320" alt="Sprite Fusion · 实时生成跑酷地形">](https://x.com/HugoDuprez/status/2100953089003921543)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#game-level-generation) · [X · 1,289 赞快照](https://x.com/HugoDuprez/status/2100953089003921543) · [原理与依据](cases/2026-09-19-game-level-generation/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Flappy Bird · 飞行避障](cases/2026-09-19-flappy-bird/README.md)
+
+让 Jev 参与控制小鸟穿过障碍。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100937854813700096/img/AlsBUETn77dLd0r8.jpg" width="320" alt="Flappy Bird · 飞行避障">](https://x.com/thymikee/status/2100937960115838984)
+
+[效果待验证](references/2026-09-19-claims-audit.md#flappy-bird) · [X · 254 赞快照](https://x.com/thymikee/status/2100937960115838984) · [原理与依据](cases/2026-09-19-flappy-bird/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
 
 <a id="simulation"></a>
 
-### NPC、驾驶与群体模拟（10）
+<details>
+<summary><strong>在模拟世界里做实验</strong> · 10</summary>
 
-NPC 需求选择适合研究角色行为，500 agents 演示关注并发吞吐。驾驶原型中，不暂停的模拟器更明确暴露延迟约束；无人机原型有代码线索。小镇与虚构 personas 属于叙事和构思工具，不能据合成人物反应预测真实世界。 新增交通灯、双臂机器人和生命体征模拟：分别选择放行方向、分层动作和状态标签。机器人明确把 IK/物理留给代码；交通的 600% 和监测的实际可用性缺对应验证。应按各自任务评测，不把所有模拟都当成现实部署。
+从交通灯、机器人到虚构角色，在沙盘里观察决策的影响。物理与运动通常由程序处理；模拟成功之后，还需要验证现实中的表现。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-simulation.md)
+[同类优劣对比](breakdowns/2026-09-18-simulation.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**按需求行动的 NPC**](cases/2026-09-18-npc-needs/README.md)<br>让游戏角色根据自己的需求，挑选环境中合适的物品或活动。<br>**原理：** 给 Jev 角色的需求和可用选项，它选一个，再由游戏执行。这里模型决定“做什么”，角色移动、动画和规则仍由游戏负责。<br>**🟡 B · 效果待验证**<br>未给相对规则方案的收益、冲突解决或长期行为一致性；不能把模型参与等同于更聪明的 NPC。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#npc-needs)<br>**内容更新：** 2026-09-19 16:55:36 | [201](https://x.com/m_iraji/status/2100394212743159944) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100394190643355648/img/52O-mJZSxj4IGHos.jpg" width="160" alt="按需求行动的 NPC预览">](https://x.com/m_iraji/status/2100394212743159944)<br>[视频](https://x.com/m_iraji/status/2100394212743159944) |
-| [**500 个 3D agents**](cases/2026-09-18-npc-500/README.md)<br>在同一个 3D 世界里，让很多虚拟角色并行做决定。<br>**原理：** 把不同角色的问题交给 Jev，再让仿真执行各自选择。整体每秒 35 次请求，并不表示 500 个角色各自每秒都更新 35 次。<br>**🟠 C · 宣传超出证据**<br>总计 35 calls/s 不是每个角色 35 次；若每角色一次调用，轮询 500 个约需 14.3 秒（条件推算，批处理未知）。这些指标不足以证明 500 个角色都在实时独立决策，更不能排除延迟瓶颈。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#npc-500)<br>**内容更新：** 2026-09-19 16:55:36 | [572](https://x.com/crislenta/status/2100457614073327754) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100457262372560897/img/zSIVGvaQhEZLMd9-.jpg" width="160" alt="500 个 3D agents预览">](https://x.com/crislenta/status/2100457614073327754)<br>[视频](https://x.com/crislenta/status/2100457614073327754) |
-| [**“FSD”驾驶模拟演示**](cases/2026-09-18-driving-toy/README.md)<br>一个让 Jev 参与开车的模拟小实验，作者把它称作“重建 FSD”。<br>**原理：** 画面中的车由程序和 Jev 协作控制。模拟道路上的演示与真实汽车安全驾驶差别很大，不能据此认定重做出了 Tesla FSD。<br>**🟠 C · 宣传超出证据**<br>把仿真原型叫重建 FSD 跨越了证据边界：没有实车感知、开放道路测试、长程成功率或同条件系统对照；不能据此推出汽车自动驾驶能力。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#driving-toy)<br>**内容更新：** 2026-09-19 16:55:36 | [3,993](https://x.com/jpschroeder/status/2100347770867458384) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100347372844756992/img/CaExDBw3MTf0ia58.jpg" width="160" alt="“FSD”驾驶模拟演示预览">](https://x.com/jpschroeder/status/2100347770867458384)<br>[视频](https://x.com/jpschroeder/status/2100347770867458384) |
-| [**不暂停的实时驾驶模拟**](cases/2026-09-18-realtime-driving/README.md)<br>模型思考时车也不停，测试 Jev 能否跟上模拟驾驶的节奏。<br>**原理：** 如果每次等模型时都暂停游戏，就隐藏了延迟问题。这个实验让模拟器持续运行，旧状态可能在回答回来前就过时。<br>**🟡 B · 效果待验证**<br>仍缺少原始日志、多场景碰撞率和长时测试；这支持实时仿真控制主张，不能外推实车安全。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#realtime-driving)<br>**内容更新：** 2026-09-19 16:55:36 | [270](https://x.com/SigGravitas/status/2100325221932958134) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100323655389474816/img/LLOAJ3wie1phk45K.jpg" width="160" alt="不暂停的实时驾驶模拟预览">](https://x.com/SigGravitas/status/2100325221932958134)<br>[视频](https://x.com/SigGravitas/status/2100325221932958134) |
-| [**Jev 无人机仿真**](cases/2026-09-18-drone-sim/README.md)<br>在模拟器里让无人机过障碍，Jev 选路线策略，代码负责稳住飞机。<br>**原理：** 像领航员与飞控分工：程序先把相机信息变成简洁状态，Jev 选绕行或爬升，速度更快的控制和安全程序随时约束动作。<br>**🟢 A · 功能/原理证据较清楚**<br>固定版 README 明确 Jev 读符号场景、只给战术建议；感知、飞控和可否决动作的安全层由代码负责，还披露单次成功及早期三种子无优势结果。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#drone-sim)<br>**内容更新：** 2026-09-19 16:55:36 | [330](https://x.com/RomanSlack1/status/2100335978229690683) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100335726097494016/img/EljFdjduS88MyP9d.jpg" width="160" alt="Jev 无人机仿真预览">](https://x.com/RomanSlack1/status/2100335978229690683)<br>[视频](https://x.com/RomanSlack1/status/2100335978229690683) |
-| [**Unstable Government 小镇**](cases/2026-09-18-unstable-government/README.md)<br>给虚构小镇颁布一条法规，看看居民怎样反应并生成一份报纸。<br>**原理：** Claude 编写候选反应和场景，Jev 为每位居民做选择，仿真把结果演出来。它是互动故事，不是预测现实政策效果的工具。<br>**🟡 B · 效果待验证**<br>没有真实居民数据或政策效果验证；不能把合成剧情用于预测现实政策。原帖自身没有作这种外推。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#unstable-government)<br>**内容更新：** 2026-09-19 16:55:36 | [395](https://x.com/threepointone/status/2100576921629163848) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100576552849117184/img/fdEy6tirVMqee5pe.jpg" width="160" alt="Unstable Government 小镇预览">](https://x.com/threepointone/status/2100576921629163848)<br>[视频](https://x.com/threepointone/status/2100576921629163848) |
-| [**150 位虚构用户意向**](cases/2026-09-18-synthetic-personas/README.md)<br>让一群虚构用户回答产品意向问题，帮助整理早期想法。<br>**原理：** 先写好人物设定，再让 Jev 代入设定回答固定问题。它能模拟一种意见，但人物不是实际受访者，不能替代真实用户调研。<br>**🟡 B · 效果待验证**<br>没有真实用户调查、购买行为或校准；只能产出基于人物设定的合成意见，不能作为市场需求证据。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#synthetic-personas)<br>**内容更新：** 2026-09-19 16:55:36 | [792](https://x.com/ytiskw/status/2100474943154827344) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100474178457698304/img/DXGnHg-iUrEhsFgE.jpg" width="160" alt="150 位虚构用户意向预览">](https://x.com/ytiskw/status/2100474943154827344)<br>[视频](https://x.com/ytiskw/status/2100474943154827344) |
-| [**Jev City · 九路口交通灯模拟**](cases/2026-09-19-traffic-light-city/README.md)<br>在虚拟路网中选择交通灯方向，观察车辆排队与等待时间。<br>**原理：** 像沙盘里的交通调度员：程序提供路口状态，Jev 选放行方向，模拟器让车辆继续行驶。<br>**🟠 C · 宣传超出证据**<br>“等待增加超过 600%”缺同条件控制器基线与重复统计；可确认模拟界面，不能认定真实交通改善幅度。<br>[判断依据与来源](references/2026-09-19-increment7-audit.md#traffic-light-city)<br>**内容更新：** 2026-09-19 17:48:49 | [1,081](https://x.com/leojrr/status/2101161666410893328) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101161072447180800/img/sRIOALT11TUpdAdU.jpg" width="160" alt="Jev City · 九路口交通灯模拟预览">](https://x.com/leojrr/status/2101161666410893328)<br>[视频](https://x.com/leojrr/status/2101161666410893328) |
-| [**生命体征模拟 · 状态变化判断**](cases/2026-09-19-vital-signs-simulator/README.md)<br>用正常状态和心率偏慢的模拟场景，对照规则报警与 Jev 判断。<br>**原理：** 像给监测器做模拟练习：输入虚构场景的指标，比较两种判断。模型的自信分数不是经过临床验证的发病概率。<br>**🟠 C · 宣传超出证据**<br>两段模拟不能支持“可用于实际工作”；回答一致性、置信度和临床事件概率并非同一验证目标。<br>[判断依据与来源](references/2026-09-19-increment7-audit.md#vital-signs-simulator)<br>**内容更新：** 2026-09-19 17:48:49 | [216](https://x.com/roiyaruRIZ/status/2101130711067431018) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101125501234630656/img/pxMddfrpMLTvBhaR.jpg" width="160" alt="生命体征模拟 · 状态变化判断预览">](https://x.com/roiyaruRIZ/status/2101130711067431018)<br>[视频](https://x.com/roiyaruRIZ/status/2101130711067431018) |
-| [**双臂机器人仿真 · 分层动作决策**](cases/2026-09-19-dual-arm-robot-sim/README.md)<br>在模拟环境中按指令操作积木，由 Jev 承担中间层决策。<br>**原理：** 像让领班决定先搬哪块积木，机械工程师负责算手臂怎样伸过去：决策、关节求解和物理运动分开。<br>**🟡 B · 效果待验证**<br>分层结构和仿真画面支持原型存在；速度、费用与实体迁移效果仍是未验证的作者报告。<br>[判断依据与来源](references/2026-09-19-increment7-audit.md#dual-arm-robot-sim)<br>**内容更新：** 2026-09-19 17:48:49 | [229](https://x.com/Raptor_zip/status/2101091398447505567) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101070240444772353/img/Ci_PCLcMigmoAdks.jpg" width="160" alt="双臂机器人仿真 · 分层动作决策预览">](https://x.com/Raptor_zip/status/2101091398447505567)<br>[视频](https://x.com/Raptor_zip/status/2101091398447505567) |
+### [按需求行动的 NPC](cases/2026-09-18-npc-needs/README.md)
+
+让游戏角色根据自己的需求，挑选环境中合适的物品或活动。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100394190643355648/img/52O-mJZSxj4IGHos.jpg" width="320" alt="按需求行动的 NPC">](https://x.com/m_iraji/status/2100394212743159944)
+
+[效果待验证](references/2026-09-19-claims-audit.md#npc-needs) · [X · 201 赞快照](https://x.com/m_iraji/status/2100394212743159944) · [原理与依据](cases/2026-09-18-npc-needs/README.md)
+
+**内容更新：** 2026-09-19
+
+### [500 个 3D agents](cases/2026-09-18-npc-500/README.md)
+
+在同一个 3D 世界里，让很多虚拟角色并行做决定。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100457262372560897/img/zSIVGvaQhEZLMd9-.jpg" width="320" alt="500 个 3D agents">](https://x.com/crislenta/status/2100457614073327754)
+
+[主张缺依据](references/2026-09-19-claims-audit.md#npc-500) · [X · 572 赞快照](https://x.com/crislenta/status/2100457614073327754) · [原理与依据](cases/2026-09-18-npc-500/README.md)
+
+**内容更新：** 2026-09-19
+
+### [“FSD”驾驶模拟演示](cases/2026-09-18-driving-toy/README.md)
+
+一个让 Jev 参与开车的模拟小实验，作者把它称作“重建 FSD”。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100347372844756992/img/CaExDBw3MTf0ia58.jpg" width="320" alt="“FSD”驾驶模拟演示">](https://x.com/jpschroeder/status/2100347770867458384)
+
+[主张缺依据](references/2026-09-19-claims-audit.md#driving-toy) · [X · 3,993 赞快照](https://x.com/jpschroeder/status/2100347770867458384) · [原理与依据](cases/2026-09-18-driving-toy/README.md)
+
+**内容更新：** 2026-09-19
+
+### [不暂停的实时驾驶模拟](cases/2026-09-18-realtime-driving/README.md)
+
+模型思考时车也不停，测试 Jev 能否跟上模拟驾驶的节奏。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100323655389474816/img/LLOAJ3wie1phk45K.jpg" width="320" alt="不暂停的实时驾驶模拟">](https://x.com/SigGravitas/status/2100325221932958134)
+
+[效果待验证](references/2026-09-19-claims-audit.md#realtime-driving) · [X · 270 赞快照](https://x.com/SigGravitas/status/2100325221932958134) · [原理与依据](cases/2026-09-18-realtime-driving/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Jev 无人机仿真](cases/2026-09-18-drone-sim/README.md)
+
+在模拟器里让无人机过障碍，Jev 选路线策略，代码负责稳住飞机。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100335726097494016/img/EljFdjduS88MyP9d.jpg" width="320" alt="Jev 无人机仿真">](https://x.com/RomanSlack1/status/2100335978229690683)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#drone-sim) · [X · 330 赞快照](https://x.com/RomanSlack1/status/2100335978229690683) · [原理与依据](cases/2026-09-18-drone-sim/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Unstable Government 小镇](cases/2026-09-18-unstable-government/README.md)
+
+给虚构小镇颁布一条法规，看看居民怎样反应并生成一份报纸。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100576552849117184/img/fdEy6tirVMqee5pe.jpg" width="320" alt="Unstable Government 小镇">](https://x.com/threepointone/status/2100576921629163848)
+
+[效果待验证](references/2026-09-19-claims-audit.md#unstable-government) · [X · 395 赞快照](https://x.com/threepointone/status/2100576921629163848) · [原理与依据](cases/2026-09-18-unstable-government/README.md)
+
+**内容更新：** 2026-09-19
+
+### [150 位虚构用户意向](cases/2026-09-18-synthetic-personas/README.md)
+
+让一群虚构用户回答产品意向问题，帮助整理早期想法。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100474178457698304/img/DXGnHg-iUrEhsFgE.jpg" width="320" alt="150 位虚构用户意向">](https://x.com/ytiskw/status/2100474943154827344)
+
+[效果待验证](references/2026-09-19-claims-audit.md#synthetic-personas) · [X · 792 赞快照](https://x.com/ytiskw/status/2100474943154827344) · [原理与依据](cases/2026-09-18-synthetic-personas/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Jev City · 九路口交通灯模拟](cases/2026-09-19-traffic-light-city/README.md)
+
+在虚拟路网中选择交通灯方向，观察车辆排队与等待时间。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101161072447180800/img/sRIOALT11TUpdAdU.jpg" width="320" alt="Jev City · 九路口交通灯模拟">](https://x.com/leojrr/status/2101161666410893328)
+
+[主张缺依据](references/2026-09-19-increment7-audit.md#traffic-light-city) · [X · 1,081 赞快照](https://x.com/leojrr/status/2101161666410893328) · [原理与依据](cases/2026-09-19-traffic-light-city/README.md)
+
+**内容更新：** 2026-09-19
+
+### [生命体征模拟 · 状态变化判断](cases/2026-09-19-vital-signs-simulator/README.md)
+
+用正常状态和心率偏慢的模拟场景，对照规则报警与 Jev 判断。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101125501234630656/img/pxMddfrpMLTvBhaR.jpg" width="320" alt="生命体征模拟 · 状态变化判断">](https://x.com/roiyaruRIZ/status/2101130711067431018)
+
+[主张缺依据](references/2026-09-19-increment7-audit.md#vital-signs-simulator) · [X · 216 赞快照](https://x.com/roiyaruRIZ/status/2101130711067431018) · [原理与依据](cases/2026-09-19-vital-signs-simulator/README.md)
+
+**内容更新：** 2026-09-19
+
+### [双臂机器人仿真 · 分层动作决策](cases/2026-09-19-dual-arm-robot-sim/README.md)
+
+在模拟环境中按指令操作积木，由 Jev 承担中间层决策。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101070240444772353/img/Ci_PCLcMigmoAdks.jpg" width="320" alt="双臂机器人仿真 · 分层动作决策">](https://x.com/Raptor_zip/status/2101091398447505567)
+
+[效果待验证](references/2026-09-19-increment7-audit.md#dual-arm-robot-sim) · [X · 229 赞快照](https://x.com/Raptor_zip/status/2101091398447505567) · [原理与依据](cases/2026-09-19-dual-arm-robot-sim/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
 
 <a id="interaction"></a>
 
-### 实时交互与组合实验（15）
+<details>
+<summary><strong>把判断变成交互</strong> · 15</summary>
 
-TypeGPU 案例把本地感知与远端语义判断结合；Ask Jev 提供简单判断界面；词表和字符聊天展示选择循环；像素绘图与 RISC-jeV 展示将大量小判断组合成输出。这些适合作为机制启发，不应直接当成替代专用模型或程序的产品。 启动器、emoji 候选、导购和语音指向画布，分别面向文件选择、表达辅助、购物对话和对象操作；用途不同，保留独立条目。画布与 TypeGPU 都组合本地感知，但前者操作对象，后者改变视听特效。 Probably 则把判断、分支和文字生成组织成小语言；官网是预录回放，比较实时性时需与真正的本地模型调用区分。 终端历史补全和启动器都是从候选中选下一步：前者可查固定版本文档和门槛逻辑，但只用虚构历史演示；后者侧重文件选择。比较时分开看命中率、接受率和执行风险。 json-render 从组件目录组合可交互界面，颜色实验从 16 色候选给视觉反馈，CNVS 判断一句话是否值得响应。三者分别需要检查结构与语义、主观匹配、误触发，不能只比较响应速度。
+选择一个颜色、一个组件，或判断一句话是否需要回应，小判断也能组成新界面。不同作品分别看语义、结构和误触发，不能只比响应快慢。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-interaction.md)
+[同类优劣对比](breakdowns/2026-09-18-interaction.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**TypeGPU 实时语义特效**](cases/2026-09-18-typegpu-realtime/README.md)<br>让摄像头和麦克风感知到的内容，影响画面的灯光与特效。<br>**原理：** 本地模型先处理声音、物体和深度信息，Jev 再做语义判断，渲染程序改变效果。它像流水线里的决策一站，不包办感知和绘图。<br>**🟡 B · 效果待验证**<br>组合系统的演示可信度高于“Jev 直接看听”说法，但缺代码核对、完整延迟与各模块对照。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#typegpu-realtime)<br>**内容更新：** 2026-09-19 16:55:36 | [251](https://x.com/reczko_konrad/status/2100646448324833512) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100644432211062784/img/iduKHYZdESQ5FBR7.jpg" width="160" alt="TypeGPU 实时语义特效预览">](https://x.com/reczko_konrad/status/2100646448324833512)<br>[视频](https://x.com/reczko_konrad/status/2100646448324833512) |
-| [**Ask Jev**](cases/2026-09-18-ask-jev/README.md)<br>输入一个问题，看看 Jev 会怎样判断，而不是等它写一大段回答。<br>**原理：** 网页收集输入，把判断交给 Jev，再显示结果。它适合体验“选择式 AI”的交互，但不能把随便一个判断都当成正确知识。<br>**🟡 B · 效果待验证**<br>没有知识准确率或事实核查评测；任意提问入口不等于任意问题都能可靠判断。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#ask-jev)<br>**内容更新：** 2026-09-19 16:55:36 | [423](https://x.com/waynesutton/status/2100487878992388279) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100486117325955072/img/_QailXRTsMGQ_atc.jpg" width="160" alt="Ask Jev预览">](https://x.com/waynesutton/status/2100487878992388279)<br>[视频](https://x.com/waynesutton/status/2100487878992388279) |
-| [**有限词表聊天**](cases/2026-09-18-word-chat/README.md)<br>只给 Jev 一份常用词清单，让它一个词一个词拼出对话。<br>**原理：** 每次都让 Jev 从有限词表里选下一个词，程序把它接在末尾继续问。文字是循环拼出来的，表达也受词表限制。<br>**🟢 A · 功能/原理证据较清楚**<br>原作者主动说明有限词表，逐词选择循环与视频符合可组合分类器的机制。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#word-chat)<br>**内容更新：** 2026-09-19 16:55:36 | [2,644](https://x.com/hi_im_isaac_/status/2100408276949385668) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100407646226649088/img/qVPomAIwJ_lKpO2J.jpg" width="160" alt="有限词表聊天预览">](https://x.com/hi_im_isaac_/status/2100408276949385668)<br>[视频](https://x.com/hi_im_isaac_/status/2100408276949385668) |
-| [**29 选项字符生成**](cases/2026-09-18-character-chat/README.md)<br>让 Jev 每次挑一个字母或标点，慢慢拼成一段话。<br>**原理：** 每轮问 29 个是非问题，比较哪个字符最合适，再追加到已有文本后。能拼出文字不代表这种办法比专门的文字模型更划算。<br>**🟢 A · 功能/原理证据较清楚**<br>正文完整解释 26 字母加空格、逗号、句号以及最高概率追加机制。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#character-chat)<br>**内容更新：** 2026-09-19 16:55:36 | [866](https://x.com/ryanvogel/status/2100218045549412499) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100217973000617984/img/AFareJummI08B_QB.jpg" width="160" alt="29 选项字符生成预览">](https://x.com/ryanvogel/status/2100218045549412499)<br>[视频](https://x.com/ryanvogel/status/2100218045549412499) |
-| [**并行像素绘图**](cases/2026-09-18-pixel-drawing/README.md)<br>把许多小像素的判断拼在一起，尝试让 Jev 画图。<br>**原理：** 可以把它理解为逐格决定画面，再由程序拼成图。作者称像素并行预测，但没公开颜色选项、分辨率和问题写法。<br>**🟡 B · 效果待验证**<br>分辨率、调色板、提示和总体成本未知；不能从短片推断通用高质量图像生成。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#pixel-drawing)<br>**内容更新：** 2026-09-19 16:55:36 | [1,461](https://x.com/anshuc/status/2100246929611411501) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100245288183066624/img/ARkl8CTLZxp1KXSa.jpg" width="160" alt="并行像素绘图预览">](https://x.com/anshuc/status/2100246929611411501)<br>[视频](https://x.com/anshuc/status/2100246929611411501) |
-| [**RISC-jeV 逻辑门实验**](cases/2026-09-18-riscv/README.md)<br>让 Jev 判断最简单的逻辑，再把这些判断拼成小型计算机指令。<br>**原理：** 像用积木搭机器：底层先判断 AND、OR 等逻辑，SERV 实现再组合成指令。它是在展示组合原理，并不是高效做计算的新办法。<br>**🟡 B · 效果待验证**<br>未核查 Jev 到 SERV 的实现与稳定性；这是组合计算实验，没有效率优于确定性逻辑的证据。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#riscv)<br>**内容更新：** 2026-09-19 16:55:36 | [208](https://x.com/i2cjak/status/2100454307405365673) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100454137695469568/img/pGRTotN_ZQaAuc4V.jpg" width="160" alt="RISC-jeV 逻辑门实验预览">](https://x.com/i2cjak/status/2100454307405365673)<br>[视频](https://x.com/i2cjak/status/2100454307405365673) |
-| [**意图预测启动器**](cases/2026-09-18-predictive-launcher/README.md)<br>不记文件名也能找文件：输入“刚下载的 PDF”，让相关文件排到前面。<br>**原理：** 像跟助理说“把刚才那份资料找出来”：应用准备文件候选和相关信息，Jev 判断你的意思，界面随输入调整排序。具体索引方法尚未公开。<br>**🟡 B · 效果待验证**<br>没有文件规模、计时边界或错误查询集；模型置信度很高不等于检索百分之百正确。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#predictive-launcher)<br>**内容更新：** 2026-09-19 16:55:36 | [252](https://x.com/dabit3/status/2100756930054504776) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100756324845862913/img/8ew1NdHs6k5cReoF.jpg" width="160" alt="意图预测启动器预览">](https://x.com/dabit3/status/2100756930054504776)<br>[视频](https://x.com/dabit3/status/2100756930054504776) |
-| [**实时电商导购与头像表情**](cases/2026-09-18-live-commerce-assistant/README.md)<br>一边聊天一边推荐商品，让虚拟店员的表情跟着对话变化。<br>**原理：** 像店员边听需求边拿商品：对话系统负责交谈，Jev 参与快速判断，应用更新推荐和表情。作者展示了两种模型搭配，但没有公开每一步的接口。<br>**🟡 B · 效果待验证**<br>不能把全套效果归给 Jev，也未证明表情联动是 Jev 独有；推荐质量与库存一致性未知。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#live-commerce-assistant)<br>**内容更新：** 2026-09-19 16:55:36 | [217](https://x.com/rinte0321/status/2100736454850908344) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100735518963355648/img/o0S0IxXnxWjnlNOG.jpg" width="160" alt="实时电商导购与头像表情预览">](https://x.com/rinte0321/status/2100736454850908344)<br>[视频](https://x.com/rinte0321/status/2100736454850908344) |
-| [**实时表情候选**](cases/2026-09-18-emoji-suggestions/README.md)<br>输入文字时，自动推荐与意思相符的 emoji。<br>**原理：** 不是让模型画新表情，而是从已有表情里挑合适的。界面展示候选和分数，输入变化时再判断一次。具体问题格式未公开。<br>**🟡 B · 效果待验证**<br>缺重复计时、网络条件和语义准确率；两种规模相近不证明任意规模都恒定。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#emoji-suggestions)<br>**内容更新：** 2026-09-19 16:55:36 | [230](https://x.com/riku720720/status/2100705558512963602) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100705222016520192/img/BxzTN_rxkA_FLvwe.jpg" width="160" alt="实时表情候选预览">](https://x.com/riku720720/status/2100705558512963602)<br>[视频](https://x.com/riku720720/status/2100705558512963602) |
-| [**语音与手指指向控制画布**](cases/2026-09-18-voice-gesture-canvas/README.md)<br>边说边指，在画布里表达“把那个放到这里”。<br>**原理：** 软件先记住你说“那个”和“这里”时指向哪里，再让 Jev 分别确认几个小问题。这样不用把所有物体、动作和位置的组合都列成一张巨大选项表。<br>**🟡 B · 效果待验证**<br>感知库、操作成功率与错误恢复未披露；一个成功演示不证明一般人机交互已经解决。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#voice-gesture-canvas)<br>**内容更新：** 2026-09-19 16:55:36 | [915](https://x.com/jackcheng/status/2100729670991802386) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100729243185324032/img/YNw8njfnSXu-Tbyr.jpg" width="160" alt="语音与手指指向控制画布预览">](https://x.com/jackcheng/status/2100729670991802386)<br>[视频](https://x.com/jackcheng/status/2100729670991802386) |
-| [**Probably · 用语义判断控制程序**](cases/2026-09-18-probably-language/README.md)<br>把“这封邮件是否紧急”这样的判断写进条件分支，再让文字模型按结果起草回复。<br>**原理：** 像把判断题装进程序：Jev 回答条件是否成立或该走哪个分支，解释器安排步骤，另一个模型负责写文字。判断、流程和生成分别由不同组件承担。<br>**🟢 A · 功能/原理证据较清楚**<br>官网明示 TypeScript 解释器、Jev 判断、独立 LLM 写作，以及玩具语言限制。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#probably-language)<br>**内容更新：** 2026-09-19 16:55:36 | [894](https://x.com/southpolesteve/status/2100767781868150938) | [<img src="https://pbs.twimg.com/media/HSdr-ILWUAAN29Y.jpg?name=orig" width="160" alt="Probably · 用语义判断控制程序预览">](https://x.com/southpolesteve/status/2100767781868150938)<br>[图片](https://x.com/southpolesteve/status/2100767781868150938) |
-| [**终端历史命令 · 语义补全**](cases/2026-09-18-shell-history-suggestions/README.md)<br>输入半条命令或一句意图，从用过的命令里推荐下一条。<br>**原理：** 像一份懂意思的历史菜单：程序先列出过去的命令，Jev 挑最像你想输入的一条。候选、匹配和是否显示由程序控制，用户接受建议后才进入命令行。<br>**🟢 A · 功能/原理证据较清楚**<br>固定文档给出最近 100 条不同历史、前缀筛选、Choice 与 Noul 门控和过期结果丢弃。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#shell-history-suggestions)<br>**内容更新：** 2026-09-19 16:55:36 | [396](https://x.com/thorstenball/status/2100858434904109099) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100858390683475969/img/PRKkLSCaQKsfoXRI.jpg" width="160" alt="终端历史命令 · 语义补全预览">](https://x.com/thorstenball/status/2100858434904109099)<br>[视频](https://x.com/thorstenball/status/2100858434904109099) |
-| [**json-render · 用组件选择拼出界面**](cases/2026-09-19-json-render-ui/README.md)<br>把界面需求变成受约束的组件布局，支持增删和移动组件。<br>**原理：** 像从积木盒里选形状再安排位置：Jev 做选择，程序把结果装成合法的界面描述并渲染。<br>**🟢 A · 功能/原理证据较清楚**<br>固定文档可核查组件选择、二阶段布局、代码装配 JSON；明确不是完整页面模板，也不让 Jev 写自由文本。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#json-render-ui)<br>**内容更新：** 2026-09-19 16:55:36 | [3,341](https://x.com/ctatedev/status/2101022101750571357) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101022081810911232/img/3tKdQ3Y2_ZGSg3Q7.jpg" width="160" alt="json-render · 用组件选择拼出界面预览">](https://x.com/ctatedev/status/2101022101750571357)<br>[视频](https://x.com/ctatedev/status/2101022101750571357) |
-| [**CNVS · 无唤醒词语音指令门控**](cases/2026-09-19-cnvs-voice-gate/README.md)<br>一直听候选语音，判断这句话是不是在给电脑下指令。<br>**原理：** 像旁听者分辨你是在聊天还是叫它做事：判断通过才把话交给执行流程。语音识别和动作执行仍是周围系统的工作。<br>**🟡 B · 效果待验证**<br>长期误触发/漏触发和转写组件未知；“环境式 Jarvis”仍是愿景，不是完整自主助手能力证据。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#cnvs-voice-gate)<br>**内容更新：** 2026-09-19 16:55:36 | [1,053](https://x.com/_MaxBlade/status/2100967959879471519) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100966551826444288/img/i2s52ZeMNTOO-IRD.jpg" width="160" alt="CNVS · 无唤醒词语音指令门控预览">](https://x.com/_MaxBlade/status/2100967959879471519)<br>[视频](https://x.com/_MaxBlade/status/2100967959879471519) |
-| [**词语与颜色 · 16 色概率可视化**](cases/2026-09-19-color-judgments/README.md)<br>输入词语，把模型对颜色的判断画成配色结果。<br>**原理：** 像把“番茄”投进一个有 16 支彩笔的盒子：Jev 给候选颜色权重，程序把权重画出来；它不是在看照片识色。<br>**🟢 A · 功能/原理证据较清楚**<br>作者明确只有 16 个预设颜色，渲染其概率权重；调色板公开。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#color-judgments)<br>**内容更新：** 2026-09-19 16:55:36 | [3,441](https://x.com/mattdesl/status/2100899669802963060) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100898643117068288/img/p9Jp61lJyiq-UoWK.jpg" width="160" alt="词语与颜色 · 16 色概率可视化预览">](https://x.com/mattdesl/status/2100899669802963060)<br>[视频](https://x.com/mattdesl/status/2100899669802963060) |
+### [TypeGPU 实时语义特效](cases/2026-09-18-typegpu-realtime/README.md)
+
+让摄像头和麦克风感知到的内容，影响画面的灯光与特效。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100644432211062784/img/iduKHYZdESQ5FBR7.jpg" width="320" alt="TypeGPU 实时语义特效">](https://x.com/reczko_konrad/status/2100646448324833512)
+
+[效果待验证](references/2026-09-19-claims-audit.md#typegpu-realtime) · [X · 251 赞快照](https://x.com/reczko_konrad/status/2100646448324833512) · [原理与依据](cases/2026-09-18-typegpu-realtime/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Ask Jev](cases/2026-09-18-ask-jev/README.md)
+
+输入一个问题，看看 Jev 会怎样判断，而不是等它写一大段回答。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100486117325955072/img/_QailXRTsMGQ_atc.jpg" width="320" alt="Ask Jev">](https://x.com/waynesutton/status/2100487878992388279)
+
+[效果待验证](references/2026-09-19-claims-audit.md#ask-jev) · [X · 423 赞快照](https://x.com/waynesutton/status/2100487878992388279) · [原理与依据](cases/2026-09-18-ask-jev/README.md)
+
+**内容更新：** 2026-09-19
+
+### [有限词表聊天](cases/2026-09-18-word-chat/README.md)
+
+只给 Jev 一份常用词清单，让它一个词一个词拼出对话。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100407646226649088/img/qVPomAIwJ_lKpO2J.jpg" width="320" alt="有限词表聊天">](https://x.com/hi_im_isaac_/status/2100408276949385668)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#word-chat) · [X · 2,644 赞快照](https://x.com/hi_im_isaac_/status/2100408276949385668) · [原理与依据](cases/2026-09-18-word-chat/README.md)
+
+**内容更新：** 2026-09-19
+
+### [29 选项字符生成](cases/2026-09-18-character-chat/README.md)
+
+让 Jev 每次挑一个字母或标点，慢慢拼成一段话。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100217973000617984/img/AFareJummI08B_QB.jpg" width="320" alt="29 选项字符生成">](https://x.com/ryanvogel/status/2100218045549412499)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#character-chat) · [X · 866 赞快照](https://x.com/ryanvogel/status/2100218045549412499) · [原理与依据](cases/2026-09-18-character-chat/README.md)
+
+**内容更新：** 2026-09-19
+
+### [并行像素绘图](cases/2026-09-18-pixel-drawing/README.md)
+
+把许多小像素的判断拼在一起，尝试让 Jev 画图。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100245288183066624/img/ARkl8CTLZxp1KXSa.jpg" width="320" alt="并行像素绘图">](https://x.com/anshuc/status/2100246929611411501)
+
+[效果待验证](references/2026-09-19-claims-audit.md#pixel-drawing) · [X · 1,461 赞快照](https://x.com/anshuc/status/2100246929611411501) · [原理与依据](cases/2026-09-18-pixel-drawing/README.md)
+
+**内容更新：** 2026-09-19
+
+### [RISC-jeV 逻辑门实验](cases/2026-09-18-riscv/README.md)
+
+让 Jev 判断最简单的逻辑，再把这些判断拼成小型计算机指令。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100454137695469568/img/pGRTotN_ZQaAuc4V.jpg" width="320" alt="RISC-jeV 逻辑门实验">](https://x.com/i2cjak/status/2100454307405365673)
+
+[效果待验证](references/2026-09-19-claims-audit.md#riscv) · [X · 208 赞快照](https://x.com/i2cjak/status/2100454307405365673) · [原理与依据](cases/2026-09-18-riscv/README.md)
+
+**内容更新：** 2026-09-19
+
+### [意图预测启动器](cases/2026-09-18-predictive-launcher/README.md)
+
+不记文件名也能找文件：输入“刚下载的 PDF”，让相关文件排到前面。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100756324845862913/img/8ew1NdHs6k5cReoF.jpg" width="320" alt="意图预测启动器">](https://x.com/dabit3/status/2100756930054504776)
+
+[效果待验证](references/2026-09-19-claims-audit.md#predictive-launcher) · [X · 252 赞快照](https://x.com/dabit3/status/2100756930054504776) · [原理与依据](cases/2026-09-18-predictive-launcher/README.md)
+
+**内容更新：** 2026-09-19
+
+### [实时电商导购与头像表情](cases/2026-09-18-live-commerce-assistant/README.md)
+
+一边聊天一边推荐商品，让虚拟店员的表情跟着对话变化。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100735518963355648/img/o0S0IxXnxWjnlNOG.jpg" width="320" alt="实时电商导购与头像表情">](https://x.com/rinte0321/status/2100736454850908344)
+
+[效果待验证](references/2026-09-19-claims-audit.md#live-commerce-assistant) · [X · 217 赞快照](https://x.com/rinte0321/status/2100736454850908344) · [原理与依据](cases/2026-09-18-live-commerce-assistant/README.md)
+
+**内容更新：** 2026-09-19
+
+### [实时表情候选](cases/2026-09-18-emoji-suggestions/README.md)
+
+输入文字时，自动推荐与意思相符的 emoji。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100705222016520192/img/BxzTN_rxkA_FLvwe.jpg" width="320" alt="实时表情候选">](https://x.com/riku720720/status/2100705558512963602)
+
+[效果待验证](references/2026-09-19-claims-audit.md#emoji-suggestions) · [X · 230 赞快照](https://x.com/riku720720/status/2100705558512963602) · [原理与依据](cases/2026-09-18-emoji-suggestions/README.md)
+
+**内容更新：** 2026-09-19
+
+### [语音与手指指向控制画布](cases/2026-09-18-voice-gesture-canvas/README.md)
+
+边说边指，在画布里表达“把那个放到这里”。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100729243185324032/img/YNw8njfnSXu-Tbyr.jpg" width="320" alt="语音与手指指向控制画布">](https://x.com/jackcheng/status/2100729670991802386)
+
+[效果待验证](references/2026-09-19-claims-audit.md#voice-gesture-canvas) · [X · 915 赞快照](https://x.com/jackcheng/status/2100729670991802386) · [原理与依据](cases/2026-09-18-voice-gesture-canvas/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Probably · 用语义判断控制程序](cases/2026-09-18-probably-language/README.md)
+
+把“这封邮件是否紧急”这样的判断写进条件分支，再让文字模型按结果起草回复。
+
+[<img src="https://pbs.twimg.com/media/HSdr-ILWUAAN29Y.jpg?name=orig" width="320" alt="Probably · 用语义判断控制程序">](https://x.com/southpolesteve/status/2100767781868150938)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#probably-language) · [X · 894 赞快照](https://x.com/southpolesteve/status/2100767781868150938) · [原理与依据](cases/2026-09-18-probably-language/README.md)
+
+**内容更新：** 2026-09-19
+
+### [终端历史命令 · 语义补全](cases/2026-09-18-shell-history-suggestions/README.md)
+
+输入半条命令或一句意图，从用过的命令里推荐下一条。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100858390683475969/img/PRKkLSCaQKsfoXRI.jpg" width="320" alt="终端历史命令 · 语义补全">](https://x.com/thorstenball/status/2100858434904109099)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#shell-history-suggestions) · [X · 396 赞快照](https://x.com/thorstenball/status/2100858434904109099) · [原理与依据](cases/2026-09-18-shell-history-suggestions/README.md)
+
+**内容更新：** 2026-09-19
+
+### [json-render · 用组件选择拼出界面](cases/2026-09-19-json-render-ui/README.md)
+
+把界面需求变成受约束的组件布局，支持增删和移动组件。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101022081810911232/img/3tKdQ3Y2_ZGSg3Q7.jpg" width="320" alt="json-render · 用组件选择拼出界面">](https://x.com/ctatedev/status/2101022101750571357)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#json-render-ui) · [X · 3,341 赞快照](https://x.com/ctatedev/status/2101022101750571357) · [原理与依据](cases/2026-09-19-json-render-ui/README.md)
+
+**内容更新：** 2026-09-19
+
+### [CNVS · 无唤醒词语音指令门控](cases/2026-09-19-cnvs-voice-gate/README.md)
+
+一直听候选语音，判断这句话是不是在给电脑下指令。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100966551826444288/img/i2s52ZeMNTOO-IRD.jpg" width="320" alt="CNVS · 无唤醒词语音指令门控">](https://x.com/_MaxBlade/status/2100967959879471519)
+
+[效果待验证](references/2026-09-19-claims-audit.md#cnvs-voice-gate) · [X · 1,053 赞快照](https://x.com/_MaxBlade/status/2100967959879471519) · [原理与依据](cases/2026-09-19-cnvs-voice-gate/README.md)
+
+**内容更新：** 2026-09-19
+
+### [词语与颜色 · 16 色概率可视化](cases/2026-09-19-color-judgments/README.md)
+
+输入词语，把模型对颜色的判断画成配色结果。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100898643117068288/img/p9Jp61lJyiq-UoWK.jpg" width="320" alt="词语与颜色 · 16 色概率可视化">](https://x.com/mattdesl/status/2100899669802963060)
+
+[原理较清楚](references/2026-09-19-claims-audit.md#color-judgments) · [X · 3,441 赞快照](https://x.com/mattdesl/status/2100899669802963060) · [原理与依据](cases/2026-09-19-color-judgments/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
 
 <a id="finance"></a>
 
-### 交易与历史回测（4）
+<details>
+<summary><strong>研究交易与历史回测</strong> · 4</summary>
 
-Monad/Kuru 展示链上执行，Nifty 作者称用真实账户并披露止损；AI Hedge Fund 与丹麦股票实验展示历史回测。前两者需要核验订单、成交和风控，后两者需要控制数据时序与前视偏差。四者都不能凭速度或 token 账单证明盈利。
+一类在过去行情上试策略，一类展示交易执行。回测要检查数据时序，执行要核对成交与风控；跑得快、费用低都不证明能盈利。
 
-[逐项优劣与原理对比](breakdowns/2026-09-18-finance.md)
+[同类优劣对比](breakdowns/2026-09-18-finance.md)
 
-| 应用与简介 | 主帖点赞 | 图片 / 视频 |
-| --- | ---: | --- |
-| [**Monad / Kuru 交易机器人**](cases/2026-09-18-trading-bot/README.md)<br>让 Jev 看价格变化后选买或卖，再由程序把订单送出去。<br>**原理：** 模型只负责交易选择，程序负责连接区块链订单簿。下单快和交易赚钱没有必然联系，原帖没有给出完整收益与风险记录。<br>**🟡 B · 效果待验证**<br>未独立核验链上订单、持续端到端延迟或净收益；区块间隔不等于每次模型决策加成交的总时延。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#trading-bot)<br>**内容更新：** 2026-09-19 16:55:36 | [4,142](https://x.com/jarrodwatts/status/2100356151468585346) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100355999064379392/img/BiAbeDjN57avf2VK.jpg" width="160" alt="Monad / Kuru 交易机器人预览">](https://x.com/jarrodwatts/status/2100356151468585346)<br>[视频](https://x.com/jarrodwatts/status/2100356151468585346) |
-| [**AI Hedge Fund · 策略回测**](cases/2026-09-19-ai-hedge-fund-backtest/README.md)<br>选择策略和股票代码，在历史数据上运行策略实验。<br>**原理：** 像拿过去的行情做练习卷：系统反复作出策略判断，再统计模拟表现；跑得快不代表未来能赚钱。<br>**🟠 C · 宣传超出证据**<br>未公布比较模型、同一任务和精度定义、费用与时间记录；约 7 秒流程视频无法支持质量等同与双重 100 倍改善。回测也不是实盘收益。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#ai-hedge-fund-backtest)<br>**内容更新：** 2026-09-19 16:55:36 | [613](https://x.com/virattt/status/2100959848623899005) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100959729350561792/img/wc-JtyIBGa_9qgNL.jpg" width="160" alt="AI Hedge Fund · 策略回测预览">](https://x.com/virattt/status/2100959848623899005)<br>[视频](https://x.com/virattt/status/2100959848623899005) |
-| [**丹麦股票 · 全年历史策略实验**](cases/2026-09-19-danish-stock-backtest/README.md)<br>用市场、新闻等信息，在 2025 年行情上做交易策略实验。<br>**原理：** 像翻阅一整年的旧行情逐日做选择；只有严格使用当时可获得的信息，回测才不等于提前看答案。<br>**🟡 B · 效果待验证**<br>没有逐时信息截断、前视偏差控制、手续费或滑点；token 费用不是完整策略成本，不能理解为真实全年实盘获利。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#danish-stock-backtest)<br>**内容更新：** 2026-09-19 16:55:36 | [269](https://x.com/tommy_jepsen/status/2100939646653903063) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100938100272746496/img/8yisuerchTVTcFTn.jpg" width="160" alt="丹麦股票 · 全年历史策略实验预览">](https://x.com/tommy_jepsen/status/2100939646653903063)<br>[视频](https://x.com/tommy_jepsen/status/2100939646653903063) |
-| [**Nifty 日内交易 · 含止损的账户演示**](cases/2026-09-19-nifty-trading/README.md)<br>展示将 Jev 接入 Nifty 日内交易，并报告触发止损。<br>**原理：** 像把判断接到下单流程，同时设一条停止线；模型判断、券商执行和风控各有职责，视频不证明策略会盈利。<br>**🟡 B · 效果待验证**<br>真实账户、成交、净收益和风控执行未独立核验；一次亏损披露也不能证明长期风控可靠或可获利。<br>[判断依据与来源](references/2026-09-19-claims-audit.md#nifty-trading)<br>**内容更新：** 2026-09-19 16:55:36 | [673](https://x.com/IndraVahan/status/2100929105382564113) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100928264831410176/img/VP6eszCSb95ePMo4.jpg" width="160" alt="Nifty 日内交易 · 含止损的账户演示预览">](https://x.com/IndraVahan/status/2100929105382564113)<br>[视频](https://x.com/IndraVahan/status/2100929105382564113) |
+### [Monad / Kuru 交易机器人](cases/2026-09-18-trading-bot/README.md)
 
-## 继续维护
+让 Jev 看价格变化后选买或卖，再由程序把订单送出去。
 
-新增线索先放 [待整理区](inbox/README.md)。中文内容与共享来源保存在 [data/catalog.json](data/catalog.json)，英文介绍保存在 [data/catalog.en.json](data/catalog.en.json)。点赞、作者和媒体只维护一份，再执行：
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100355999064379392/img/BiAbeDjN57avf2VK.jpg" width="320" alt="Monad / Kuru 交易机器人">](https://x.com/jarrodwatts/status/2100356151468585346)
 
-```sh
-python3 scripts/build_catalog.py
-python3 scripts/build_catalog.py --check
-```
+[效果待验证](references/2026-09-19-claims-audit.md#trading-bot) · [X · 4,142 赞快照](https://x.com/jarrodwatts/status/2100356151468585346) · [原理与依据](cases/2026-09-18-trading-bot/README.md)
 
-脚本同时生成中英文 Markdown，缺英文条目或字段会报错；不联网、不需要第三方依赖，不会自动刷新点赞。人工核对新快照后再更新取数时间。详见 [贡献流程](CONTRIBUTING.md) 与 [分类约定](docs/taxonomy.md)。
+**内容更新：** 2026-09-19
 
-所有第三方图片、视频和代码权利归各自作者；收录不表示背书。本库以原创摘要和来源链接为主。
+### [AI Hedge Fund · 策略回测](cases/2026-09-19-ai-hedge-fund-backtest/README.md)
+
+选择策略和股票代码，在历史数据上运行策略实验。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100959729350561792/img/wc-JtyIBGa_9qgNL.jpg" width="320" alt="AI Hedge Fund · 策略回测">](https://x.com/virattt/status/2100959848623899005)
+
+[主张缺依据](references/2026-09-19-claims-audit.md#ai-hedge-fund-backtest) · [X · 613 赞快照](https://x.com/virattt/status/2100959848623899005) · [原理与依据](cases/2026-09-19-ai-hedge-fund-backtest/README.md)
+
+**内容更新：** 2026-09-19
+
+### [丹麦股票 · 全年历史策略实验](cases/2026-09-19-danish-stock-backtest/README.md)
+
+用市场、新闻等信息，在 2025 年行情上做交易策略实验。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100938100272746496/img/8yisuerchTVTcFTn.jpg" width="320" alt="丹麦股票 · 全年历史策略实验">](https://x.com/tommy_jepsen/status/2100939646653903063)
+
+[效果待验证](references/2026-09-19-claims-audit.md#danish-stock-backtest) · [X · 269 赞快照](https://x.com/tommy_jepsen/status/2100939646653903063) · [原理与依据](cases/2026-09-19-danish-stock-backtest/README.md)
+
+**内容更新：** 2026-09-19
+
+### [Nifty 日内交易 · 含止损的账户演示](cases/2026-09-19-nifty-trading/README.md)
+
+展示将 Jev 接入 Nifty 日内交易，并报告触发止损。
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100928264831410176/img/VP6eszCSb95ePMo4.jpg" width="320" alt="Nifty 日内交易 · 含止损的账户演示">](https://x.com/IndraVahan/status/2100929105382564113)
+
+[效果待验证](references/2026-09-19-claims-audit.md#nifty-trading) · [X · 673 赞快照](https://x.com/IndraVahan/status/2100929105382564113) · [原理与依据](cases/2026-09-19-nifty-trading/README.md)
+
+**内容更新：** 2026-09-19
+
+</details>
+
+## 关于这份收集
+
+收录原始应用主帖达到 **200 赞**、有对应图片或视频的案例。同项目更新合并，独立实现按用途对比。点赞是历史快照，不是可信度评分；本库不承诺穷尽 X。
+
+精确取数时间、技术细节和审核等级保留在详情与报告中。媒体权利归原作者；预览失效时可点击回原帖查看。
+
+[案例索引](cases/README.md) · [来源与收录方法](references/README.md) · [待补证据](inbox/README.md) · [贡献案例](CONTRIBUTING.md)

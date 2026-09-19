@@ -18,7 +18,10 @@ class CrossDayPublishing(unittest.TestCase):
         self.new = copy.deepcopy(self.old)
         self.new.update(slug='midnight-regression', readme_added_at='2027-01-01T16:01:02+00:00',
                         readme_updated_at='2027-01-01T16:01:02+00:00')
-        self.d['cases'] = [self.old, self.new]
+        # Keep the real homepage's featured references while adding the midnight case.
+        self.d['cases'] = [self.old, self.new] + [
+            c for c in self.d['cases'] if c['slug'] != self.old['slug']
+        ]
         self.d['updates'] = [dict(reviewed_at='2027-01-01T16:00:01+00:00',
                                   new_cases=[self.new['slug']], updated_cases=[])]
         self.d['latest_update'] = self.d['updates'][-1]

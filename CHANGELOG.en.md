@@ -2,6 +2,10 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-19 · Field-guide homepage
+
+Redesigned the homepage as a field guide: three introductory sentences, six highlights, 11 collapsible categories and a short collection policy. All 112 cases retain summaries, media, evidence links and content-update dates; exact timestamps, technical details and A/B/C reports remain in the records. Added bilingual homepage copy and a shared renderer. This presentation change adds no cases and changes no recorded assessments or content timestamps.
+
 ## 2026-09-19 · Increment 7
 
 Checked through **2026-09-19 17:48:49 Beijing time**. Added **6** cases and merged **1** existing project update: **112 cases, 11 categories**. A 19 / B 79 / C 14. All new main posts have ≥200 likes and media at their recorded snapshots.

@@ -1,299 +1,1356 @@
-# Jev Apps: Examples and How They Work
+# Jev: small decisions, surprising applications
 
 [简体中文](README.md) | **English**
 
-A bilingual field guide to **TypeSafe Jev** applications found on X: what they do, how they work, and the strengths and limits of similar approaches. **112 examples · 11 categories · each main post had ≥ 200 likes when collected · every entry includes an image or video.**
+Most AI tools are known for writing answers. **TypeSafe Jev specializes in making judgments.**
+Give it the current situation and a question or set of choices; it returns a choice, score or yes/no judgment for code to act on.
+This guide explores what people have built with it—and what their demonstrations actually establish.
 
-Latest incremental source review: **2026-09-19T09:48:49+00:00 (UTC)**; **6 new cases**, **1 existing entries updated**. [Additions, merges and exclusions](CHANGELOG.en.md). Existing main-post metric snapshots retain their original retrieval times.
+**112 examples · 11 categories** · Sources checked through 2026-09-19
 
-## What is Jev, in plain English?
+[Browse all applications](#all-apps) · [How Jev works](breakdowns/2026-09-18-how-jev-apps-work.en.md) · [Latest additions](CHANGELOG.en.md)
 
-Think of Jev as a fast sorting assistant inside software. The application prepares the current situation and a set of questions or choices. Jev makes judgments, and code turns them into actions: label an email, choose an AI worker, or pick the next browser button. Larger applications combine many such small decisions.
+## Six ideas worth understanding
 
-For example, a flight-search agent reads the webpage and lists available controls. Jev selects a next action, a browser tool executes it, and the loop repeats. Other components still handle observation, text generation when needed, and checking whether the task actually succeeded. [Official introduction](https://docs.typesafe.ai/introduction) · [Illustrated explanation](breakdowns/2026-09-18-how-jev-apps-work.en.md)
+Start with examples that have clear uses and inspectable mechanisms. Click an image to see its original demo.
 
-**Collection updated: 2026-09-19 (Asia/Shanghai).** This is a collection from that search, not an exhaustive inventory of X. All examples are **not independently reproduced**. Performance and cost figures are attributed to their authors; comparisons are analysis of public designs, not our own benchmarks.
+### An AI clicks. Who reads the page?
 
-## How to read this catalog
+[Browser Use · Ultrafast](cases/2026-09-18-browser-use/README.en.md)
 
-- **One qualifying main post:** at least 200 likes, an explicit TypeSafe Jev use case and concrete media. Updates and reposts are merged; likes are not added together.
-- **Counts are snapshots:** discovery used X; exact metrics and media metadata were cross-checked through the public FxTwitter API, which may cache or lag. Each detail page records timestamps and sources. [Evidence method](references/README.en.md) · [Shared source data](data/catalog.json)
-- **Clickable previews:** images come from source photos or video covers. Details retain original media URLs; links and CDN content can change. Skillbox explicitly uses an older quoted product image.
-- **Similar examples stay together:** each group has guidance and a detailed strengths/limitations table. Entries are organized by use, not ranked by likes. Demonstration footage does not establish long-term reliability.
-- **Dates beside each introduction:** only the latest content update, in **Beijing time (UTC+08:00)**. Post publication and metric retrieval times are recorded separately. [Timestamp provenance](references/README.en.md#readme-times)
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100410607807918080/img/lNfcykqoOvLoZHWa.jpg" width="480" alt="Browser Use · Ultrafast">](https://x.com/gregpr07/status/2100411066966749359)
 
-## Claim assessments
+Code reads the page and lists controls; Jev picks an action. A text model helps when words need to be entered.
 
-**A: 19 · B: 79 · C: 14 · Not assessed: 0.** Latest assessment: 2026-09-19 17:48:49 Beijing time. Each application below includes a label, a short reason and a link to its evidence.
+**Keep in mind:** The result depends on the whole system, not Jev alone.
 
-- **🟢 A:** clearer support for a bounded function or mechanism; not certification of all performance claims.
-- **🟡 B:** a plausible demo or author test, with effectiveness still unverified.
-- **🟠 C:** a specific promotional claim exceeds its evidence; this does not mean the whole project is fake.
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#browser-use) · [X · 6,891 likes at collection](https://x.com/gregpr07/status/2100411066966749359) · [How it works & evidence](cases/2026-09-18-browser-use/README.en.md)
 
-These are editorial assessments of public claims, separate from reproduction status. All cases remain unreproduced.
+**Content updated:** 2026-09-19
 
-## Categories
+### Can choices become an interface?
 
-| Category | Examples | Comparison |
-| --- | ---: | --- |
-| [Browser and computer control](#browser) | 12 | [Read analysis](breakdowns/2026-09-18-browser.en.md) |
-| [Model, skill and tool routing](#routing) | 11 | [Read analysis](breakdowns/2026-09-18-routing.en.md) |
-| [Code quality and safety checks](#review) | 11 | [Read analysis](breakdowns/2026-09-18-review.en.md) |
-| [Data classification and organization](#data) | 16 | [Read analysis](breakdowns/2026-09-18-data.en.md) |
-| [Content and advertising analysis](#content) | 10 | [Read analysis](breakdowns/2026-09-18-content.en.md) |
-| [Webpage and feed filtering](#filter) | 4 | [Read analysis](breakdowns/2026-09-18-filter.en.md) |
-| [Context and memory filtering](#memory) | 3 | [Read analysis](breakdowns/2026-09-18-memory.en.md) |
-| [Game decisions and solving](#games) | 16 | [Read analysis](breakdowns/2026-09-18-games.en.md) |
-| [NPCs, driving and population simulations](#simulation) | 10 | [Read analysis](breakdowns/2026-09-18-simulation.en.md) |
-| [Real-time interaction and composition experiments](#interaction) | 15 | [Read analysis](breakdowns/2026-09-18-interaction.en.md) |
-| [Trading and historical backtests](#finance) | 4 | [Read analysis](breakdowns/2026-09-18-finance.en.md) |
+[json-render: assemble interfaces from component choices](cases/2026-09-19-json-render-ui/README.en.md)
 
-[Case index](cases/README.en.md) · [All explanations](breakdowns/README.en.md) · [Pending evidence](inbox/README.en.md) · [Contributing](CONTRIBUTING.en.md)
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101022081810911232/img/3tKdQ3Y2_ZGSg3Q7.jpg" width="480" alt="json-render: assemble interfaces from component choices">](https://x.com/ctatedev/status/2101022101750571357)
+
+Like building with blocks: Jev selects components and relationships; code assembles a renderable interface.
+
+**Keep in mind:** A valid structure does not guarantee correct content or good design.
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#json-render-ui) · [X · 3,341 likes at collection](https://x.com/ctatedev/status/2101022101750571357) · [How it works & evidence](cases/2026-09-19-json-render-ui/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### How do you skip a spoken sponsor segment?
+
+[YouTube sponsor-segment skipping](cases/2026-09-18-youtube-sponsor-skip/README.en.md)
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100792834526007296/img/8AFbjqEeZrJUEHid.jpg" width="480" alt="YouTube sponsor-segment skipping">](https://x.com/tdinh_me/status/2100793777103466615)
+
+Jev identifies sponsor content in captions; code maps those lines to playback times and skips ahead.
+
+**Keep in mind:** Captions and segment boundaries can be wrong; audio mode also needs transcription.
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#youtube-sponsor-skip) · [X · 238 likes at collection](https://x.com/tdinh_me/status/2100793777103466615) · [How it works & evidence](cases/2026-09-18-youtube-sponsor-skip/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### Solving a cube: judgment or formulas?
+
+[Staged Rubik's Cube solver](cases/2026-09-18-rubiks-cube/README.en.md)
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100479486382809088/img/r6daGpDnvsCr3LyL.jpg" width="480" alt="Staged Rubik&#x27;s Cube solver">](https://x.com/redp314/status/2100489858951073858)
+
+The formulas live in code. Jev recognizes the current situation; code selects a formula and checks the moves.
+
+**Keep in mind:** This is model-and-code teamwork, not evidence that the model invented the solution.
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#rubiks-cube) · [X · 494 likes at collection](https://x.com/redp314/status/2100489858951073858) · [How it works & evidence](cases/2026-09-18-rubiks-cube/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### What kind of form is each page?
+
+[Tax Doc Classifier: label tax PDF pages](cases/2026-09-19-tax-doc-classifier/README.en.md)
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100973360989773825/img/yMtL6CxrKMVXQEHV.jpg" width="480" alt="Tax Doc Classifier: label tax PDF pages">](https://x.com/nedwize/status/2100973868324417852)
+
+Code extracts page text; Jev identifies the form type. Uncertain pages are held for review.
+
+**Keep in mind:** The author publishes test results, which do not establish reliability on every format.
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#tax-doc-classifier) · [X · 1,506 likes at collection](https://x.com/nedwize/status/2100973868324417852) · [How it works & evidence](cases/2026-09-19-tax-doc-classifier/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### Does every task need the strongest model?
+
+[Claude Code Mod: model and effort routing](cases/2026-09-19-claude-code-jev-router/README.en.md)
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101176234411425792/img/UgEWGdQPunczzXcv.jpg" width="480" alt="Claude Code Mod: model and effort routing">](https://x.com/dani_avila7/status/2101176629745561686)
+
+Like ticket triage: Jev judges task difficulty, and a plugin chooses subagent models and main-session reasoning effort.
+
+**Keep in mind:** The routing mechanism is inspectable; real savings and quality effects remain unverified.
+
+[Clearer mechanism](references/2026-09-19-increment7-audit.en.md#claude-code-jev-router) · [X · 417 likes at collection](https://x.com/dani_avila7/status/2101176629745561686) · [How it works & evidence](cases/2026-09-19-claude-code-jev-router/README.en.md)
+
+**Content updated:** 2026-09-19
+
+<a id="all-apps"></a>
 
 ## All applications
 
+Expand a category to browse every example, including the six above. Dates are content-update dates in Beijing time.
+
+Evidence labels link to the assessment: **Clearer mechanism / Effectiveness unverified / Claims lack support**. They describe public evidence; none of these applications has been independently reproduced here.
+
 <a id="browser"></a>
 
-### Browser and computer control (12)
+<details>
+<summary><strong>Operate browsers and computers</strong> · 12</summary>
 
-For browser loops, compare Browser Use and Stagehand: the former describes a dynamic DOM action space with text-generation fallback; the latter separates accessibility-tree observation from execution. For native apps, see CoreML/OCR. Cua currently offers a constrained semantic-action preview. agent-desktop retains an LLM for longer context; voice control and QA address different interaction needs. Runlayer emphasizes parallel sessions but lacks coverage and defect-detection evidence; Sac’s Calendar comparison focuses on one desktop task. Neither action video substitutes for acceptance assertions. Tester Army targets web/mobile testing but its open-source release is unverified; ego lite focuses on product filtering with a hybrid stack. Browser Use now includes a same-project WebMCP comparison: task coverage and per-attempt success are distinct. Sac’s new Jev-cu source now exposes accessibility-text observation and executor roles, resolving the earlier missing-interface detail; the fastest-in-Codex claim remains unverified.
+These systems connect observation to action. Browser tools often read page structure; desktop tools may use accessibility trees or OCR. Compare task coverage before speed.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-browser.en.md)
+[Compare approaches](breakdowns/2026-09-18-browser.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**Browser Use · Ultrafast**](cases/2026-09-18-browser-use/README.en.md)<br>Describe a flight search and let the agent click, type and find results on the website.<br>**How it works:** Think of an assistant with a constantly updated list of buttons. Code reads the page, Jev chooses the next action, and a text model helps fill in details such as city names.<br>**🟢 A · Clearer evidence for function/mechanism**<br>Bounded flight demo and inspectable implementation support A. The WebMCP result is 49/49 tasks but 141/147 attempts, with Mercury helping; neither establishes universal reliability or an end-to-end seven-second guarantee.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#browser-use)<br>**Content updated:** 2026-09-19 16:55:36 | [6,891](https://x.com/gregpr07/status/2100411066966749359) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100410607807918080/img/lNfcykqoOvLoZHWa.jpg" width="160" alt="Browser Use · Ultrafast preview">](https://x.com/gregpr07/status/2100411066966749359)<br>[Video](https://x.com/gregpr07/status/2100411066966749359) |
-| [**Stagehand browser control**](cases/2026-09-18-stagehand/README.en.md)<br>Let Jev choose the next browser action and Stagehand carry it out.<br>**How it works:** Webpages expose button names and other information to accessibility tools. This system gives that information to Jev, lets it choose an action, and uses Stagehand to execute it before checking the page again.<br>**🟡 B · Effectiveness unverified**<br>The disclosed accessibility-tree/action loop is plausible and demonstrated, but one task does not establish general success rates or full pipeline cost.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#stagehand)<br>**Content updated:** 2026-09-19 16:55:36 | [393](https://x.com/kylejeong/status/2100622054945095934) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100495119065722880/img/7A1mijkU3Z_Zj7PM.jpg" width="160" alt="Stagehand browser control preview">](https://x.com/kylejeong/status/2100622054945095934)<br>[Video](https://x.com/kylejeong/status/2100622054945095934) |
-| [**Cua · jev-use**](cases/2026-09-18-cua-jev-use/README.en.md)<br>Give Jev a list of allowed browser actions, execute its choice, then check the result.<br>**How it works:** Like ordering from a menu, Jev selects only an action ID prepared by the application. Code checks it, executes it and independently verifies the form. The current preview does not operate arbitrary software from screenshots.<br>**🟠 C · Claims exceed evidence**<br>The semantic recipe is real and now merged, but the launch claim that fast computer use is solved across platforms exceeds its explicitly bounded, non-certifying scope. The visual extension has advanced but remains a draft; old catalog merge status is stale.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#cua-jev-use)<br>**Content updated:** 2026-09-19 16:55:36 | [1,162](https://x.com/trycua/status/2100649543079502213) | [<img src="https://pbs.twimg.com/media/HSb_nmIWYAAkGKa.jpg?name=orig" width="160" alt="Cua · jev-use preview">](https://x.com/trycua/status/2100649543079502213)<br>[Image](https://x.com/trycua/status/2100649543079502213) |
-| [**CoreML + OCR desktop clicks**](cases/2026-09-18-coreml-ocr/README.en.md)<br>Recognize buttons and labels on a Mac, then ask Jev which one to click.<br>**How it works:** Local recognition software does the screen-reading and lists the button labels. Jev chooses from that list. Images stay on the device, but recognized text is still sent to Jev.<br>**🟡 B · Effectiveness unverified**<br>Local OCR plus remote text decisions is technically coherent. The reported 90 ms is per decision, not end-to-end latency; the short demo and author report do not establish general desktop reliability.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#coreml-ocr)<br>**Content updated:** 2026-09-19 16:55:36 | [564](https://x.com/milindlabs/status/2100631847155994852) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100629037790183424/img/NR6wQpZiC-xjCEsC.jpg" width="160" alt="CoreML + OCR desktop clicks preview">](https://x.com/milindlabs/status/2100631847155994852)<br>[Video](https://x.com/milindlabs/status/2100631847155994852) |
-| [**OpenCode + agent-desktop**](cases/2026-09-18-agent-desktop/README.en.md)<br>One model remembers the task while Jev helps choose desktop targets quickly.<br>**How it works:** Think of a coordinator and an operator: the language model keeps context and passes desktop information to Jev for target selection. The post does not explain the exact representation.<br>**🟡 B · Effectiveness unverified**<br>The video and described division of labor support a hybrid prototype. Input encoding and a reproducible speed comparison remain undisclosed.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#agent-desktop)<br>**Content updated:** 2026-09-19 16:55:36 | [870](https://x.com/mdlahfir/status/2100359236924637349) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100358791321755648/img/t6Bd787flQiGeoJ_.jpg" width="160" alt="OpenCode + agent-desktop preview">](https://x.com/mdlahfir/status/2100359236924637349)<br>[Video](https://x.com/mdlahfir/status/2100359236924637349) |
-| [**Kernel browser demo**](cases/2026-09-18-kernel-browser/README.en.md)<br>Try a web demo of Jev controlling a browser.<br>**How it works:** The author connects Jev to the Kernel browser service in an observe–choose–act loop. The post does not detail how pages become model inputs or how errors are recovered.<br>**🟡 B · Effectiveness unverified**<br>A short integration demo supports plausibility, while mechanism detail, recovery behavior and a task-level evaluation are missing.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#kernel-browser)<br>**Content updated:** 2026-09-19 16:55:36 | [235](https://x.com/stevekrouse/status/2100321685081559542) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100321453455425537/img/hVYy_d3Nuw9XhSwg.jpg" width="160" alt="Kernel browser demo preview">](https://x.com/stevekrouse/status/2100321685081559542)<br>[Video](https://x.com/stevekrouse/status/2100321685081559542) |
-| [**Voice-controlled browser**](cases/2026-09-18-voice-browser/README.en.md)<br>Speak a command, such as “go back,” and let the browser act.<br>**How it works:** Speech is first transcribed. Jev maps the text to an action, then the browser executes it. Jev chooses what to do; a separate component handles the audio.<br>**🟡 B · Effectiveness unverified**<br>The transcription-to-decision loop is clear. Per-decision latency and cost do not measure the complete voice interaction or establish broad instruction accuracy.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#voice-browser)<br>**Content updated:** 2026-09-19 16:55:36 | [1,829](https://x.com/moritzkremb/status/2100577979021832365) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100577954338373633/img/tbH43kHpUotE3hzK.jpg" width="160" alt="Voice-controlled browser preview">](https://x.com/moritzkremb/status/2100577979021832365)<br>[Video](https://x.com/moritzkremb/status/2100577979021832365) |
-| [**OpenCode app testing**](cases/2026-09-18-opencode-qa/README.en.md)<br>Let a coding assistant interact with an app to help check it after development.<br>**How it works:** Interacting with an app and knowing whether it is correct are separate jobs. The demo integrates Jev into OpenCode testing but does not publish the full pass/fail rules.<br>**🟡 B · Effectiveness unverified**<br>The author presents a small demo, not a validated QA replacement. Fast interaction does not establish assertion quality or defect coverage.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#opencode-qa)<br>**Content updated:** 2026-09-19 16:55:36 | [1,133](https://x.com/Neriousy/status/2100287208166969746) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100286679386873857/img/vlw6EBlSVZ9uAoHc.jpg" width="160" alt="OpenCode app testing preview">](https://x.com/Neriousy/status/2100287208166969746)<br>[Video](https://x.com/Neriousy/status/2100287208166969746) |
-| [**Runlayer: parallel adversarial browser testing**](cases/2026-09-18-runlayer-adversarial-testing/README.en.md)<br>Run multiple browser sessions to explore how a new release might fail during use.<br>**How it works:** Like a team of testers trying software at once: Jev contributes quick decisions while agents and browsers perform actions. Proving a defect still requires a clear failure criterion and reproducible steps.<br>**🟡 B · Effectiveness unverified**<br>The parallel browser setup is plausible, but window count and low-cost wording do not establish meaningful coverage or defect-detection effectiveness.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#runlayer-adversarial-testing)<br>**Content updated:** 2026-09-19 16:55:36 | [820](https://x.com/rafalwilinski/status/2100882207879434359) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100881920343105536/img/c1y4THiGwA2GfXGa.jpg" width="160" alt="Runlayer: parallel adversarial browser testing preview">](https://x.com/rafalwilinski/status/2100882207879434359)<br>[Video](https://x.com/rafalwilinski/status/2100882207879434359) |
-| [**Sac: Codex + Jev for Mac Calendar**](cases/2026-09-18-sac-calendar-computer-use/README.en.md)<br>Add a Jev decision layer to Codex computer use and compare creating a calendar event side by side.<br>**How it works:** Like an assistant observing and operating the interface with a quicker partner choosing the next step. Jev supplies judgments within the workflow; that does not mean it independently sees the screen and performs every action.<br>**🟠 C · Claims exceed evidence**<br>Text candidates and execution roles are inspectable, but the new fastest-in-Codex comparison lacks a matched benchmark. C addresses that superlative, not prototype existence.<br>[Assessment and sources](references/2026-09-19-increment7-audit.en.md#sac-calendar-computer-use)<br>**Content updated:** 2026-09-19 17:48:49 | [217](https://x.com/Saccc_c/status/2100864907046768890) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100853279089647616/img/H6altwjZQ28_1bfY.jpg" width="160" alt="Sac: Codex + Jev for Mac Calendar preview">](https://x.com/Saccc_c/status/2100864907046768890)<br>[Video](https://x.com/Saccc_c/status/2100864907046768890) |
-| [**ego lite: filter Amazon products**](cases/2026-09-19-ego-product-decisions/README.en.md)<br>Combine browser tooling and models to filter products on a webpage.<br>**How it works:** Like one assistant reading a product list and another quickly judging matches. The browser and surrounding models contribute to the result; it is not Jev alone.<br>**🟡 B · Effectiveness unverified**<br>The single hybrid-system comparison is concrete, but decision count differs from result count; scoring, repetitions and component contributions are undisclosed.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#ego-product-decisions)<br>**Content updated:** 2026-09-19 16:55:36 | [366](https://x.com/ego_agent/status/2100970015977804008) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100969567715790848/img/IXAgXZrtsLGyeYRA.jpg" width="160" alt="ego lite: filter Amazon products preview">](https://x.com/ego_agent/status/2100970015977804008)<br>[Video](https://x.com/ego_agent/status/2100970015977804008) |
-| [**Tester Army: web and mobile end-to-end testing**](cases/2026-09-19-tester-army-e2e/README.en.md)<br>Explore agent-driven interface tests in a framework targeting web and mobile.<br>**How it works:** Like a tester operating an interface from entry to outcome: Jev contributes decisions and an executor performs actions. Passing still requires explicit checkpoints.<br>**🟡 B · Effectiveness unverified**<br>The author explicitly describes a forthcoming framework. The demo is plausible, while release availability, platform coverage and defect detection remain unverified.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#tester-army-e2e)<br>**Content updated:** 2026-09-19 16:55:36 | [505](https://x.com/o_kwasniewski/status/2100966838905585687) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100966360192868352/img/8GCSVzX1AYF4caav.jpg" width="160" alt="Tester Army: web and mobile end-to-end testing preview">](https://x.com/o_kwasniewski/status/2100966838905585687)<br>[Video](https://x.com/o_kwasniewski/status/2100966838905585687) |
+### [Browser Use · Ultrafast](cases/2026-09-18-browser-use/README.en.md)
+
+Describe a flight search and let the agent click, type and find results on the website.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100410607807918080/img/lNfcykqoOvLoZHWa.jpg" width="320" alt="Browser Use · Ultrafast">](https://x.com/gregpr07/status/2100411066966749359)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#browser-use) · [X · 6,891 likes at collection](https://x.com/gregpr07/status/2100411066966749359) · [How it works & evidence](cases/2026-09-18-browser-use/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Stagehand browser control](cases/2026-09-18-stagehand/README.en.md)
+
+Let Jev choose the next browser action and Stagehand carry it out.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100495119065722880/img/7A1mijkU3Z_Zj7PM.jpg" width="320" alt="Stagehand browser control">](https://x.com/kylejeong/status/2100622054945095934)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#stagehand) · [X · 393 likes at collection](https://x.com/kylejeong/status/2100622054945095934) · [How it works & evidence](cases/2026-09-18-stagehand/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Cua · jev-use](cases/2026-09-18-cua-jev-use/README.en.md)
+
+Give Jev a list of allowed browser actions, execute its choice, then check the result.
+
+[<img src="https://pbs.twimg.com/media/HSb_nmIWYAAkGKa.jpg?name=orig" width="320" alt="Cua · jev-use">](https://x.com/trycua/status/2100649543079502213)
+
+[Claims lack support](references/2026-09-19-claims-audit.en.md#cua-jev-use) · [X · 1,162 likes at collection](https://x.com/trycua/status/2100649543079502213) · [How it works & evidence](cases/2026-09-18-cua-jev-use/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [CoreML + OCR desktop clicks](cases/2026-09-18-coreml-ocr/README.en.md)
+
+Recognize buttons and labels on a Mac, then ask Jev which one to click.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100629037790183424/img/NR6wQpZiC-xjCEsC.jpg" width="320" alt="CoreML + OCR desktop clicks">](https://x.com/milindlabs/status/2100631847155994852)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#coreml-ocr) · [X · 564 likes at collection](https://x.com/milindlabs/status/2100631847155994852) · [How it works & evidence](cases/2026-09-18-coreml-ocr/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [OpenCode + agent-desktop](cases/2026-09-18-agent-desktop/README.en.md)
+
+One model remembers the task while Jev helps choose desktop targets quickly.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100358791321755648/img/t6Bd787flQiGeoJ_.jpg" width="320" alt="OpenCode + agent-desktop">](https://x.com/mdlahfir/status/2100359236924637349)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#agent-desktop) · [X · 870 likes at collection](https://x.com/mdlahfir/status/2100359236924637349) · [How it works & evidence](cases/2026-09-18-agent-desktop/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Kernel browser demo](cases/2026-09-18-kernel-browser/README.en.md)
+
+Try a web demo of Jev controlling a browser.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100321453455425537/img/hVYy_d3Nuw9XhSwg.jpg" width="320" alt="Kernel browser demo">](https://x.com/stevekrouse/status/2100321685081559542)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#kernel-browser) · [X · 235 likes at collection](https://x.com/stevekrouse/status/2100321685081559542) · [How it works & evidence](cases/2026-09-18-kernel-browser/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Voice-controlled browser](cases/2026-09-18-voice-browser/README.en.md)
+
+Speak a command, such as “go back,” and let the browser act.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100577954338373633/img/tbH43kHpUotE3hzK.jpg" width="320" alt="Voice-controlled browser">](https://x.com/moritzkremb/status/2100577979021832365)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#voice-browser) · [X · 1,829 likes at collection](https://x.com/moritzkremb/status/2100577979021832365) · [How it works & evidence](cases/2026-09-18-voice-browser/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [OpenCode app testing](cases/2026-09-18-opencode-qa/README.en.md)
+
+Let a coding assistant interact with an app to help check it after development.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100286679386873857/img/vlw6EBlSVZ9uAoHc.jpg" width="320" alt="OpenCode app testing">](https://x.com/Neriousy/status/2100287208166969746)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#opencode-qa) · [X · 1,133 likes at collection](https://x.com/Neriousy/status/2100287208166969746) · [How it works & evidence](cases/2026-09-18-opencode-qa/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Runlayer: parallel adversarial browser testing](cases/2026-09-18-runlayer-adversarial-testing/README.en.md)
+
+Run multiple browser sessions to explore how a new release might fail during use.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100881920343105536/img/c1y4THiGwA2GfXGa.jpg" width="320" alt="Runlayer: parallel adversarial browser testing">](https://x.com/rafalwilinski/status/2100882207879434359)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#runlayer-adversarial-testing) · [X · 820 likes at collection](https://x.com/rafalwilinski/status/2100882207879434359) · [How it works & evidence](cases/2026-09-18-runlayer-adversarial-testing/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Sac: Codex + Jev for Mac Calendar](cases/2026-09-18-sac-calendar-computer-use/README.en.md)
+
+Add a Jev decision layer to Codex computer use and compare creating a calendar event side by side.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100853279089647616/img/H6altwjZQ28_1bfY.jpg" width="320" alt="Sac: Codex + Jev for Mac Calendar">](https://x.com/Saccc_c/status/2100864907046768890)
+
+[Claims lack support](references/2026-09-19-increment7-audit.en.md#sac-calendar-computer-use) · [X · 217 likes at collection](https://x.com/Saccc_c/status/2100864907046768890) · [How it works & evidence](cases/2026-09-18-sac-calendar-computer-use/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [ego lite: filter Amazon products](cases/2026-09-19-ego-product-decisions/README.en.md)
+
+Combine browser tooling and models to filter products on a webpage.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100969567715790848/img/IXAgXZrtsLGyeYRA.jpg" width="320" alt="ego lite: filter Amazon products">](https://x.com/ego_agent/status/2100970015977804008)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#ego-product-decisions) · [X · 366 likes at collection](https://x.com/ego_agent/status/2100970015977804008) · [How it works & evidence](cases/2026-09-19-ego-product-decisions/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Tester Army: web and mobile end-to-end testing](cases/2026-09-19-tester-army-e2e/README.en.md)
+
+Explore agent-driven interface tests in a framework targeting web and mobile.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100966360192868352/img/8GCSVzX1AYF4caav.jpg" width="320" alt="Tester Army: web and mobile end-to-end testing">](https://x.com/o_kwasniewski/status/2100966838905585687)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#tester-army-e2e) · [X · 505 likes at collection](https://x.com/o_kwasniewski/status/2100966838905585687) · [How it works & evidence](cases/2026-09-19-tester-army-e2e/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
 
 <a id="routing"></a>
 
-### Model, skill and tool routing (11)
+<details>
+<summary><strong>Choose an assistant for the task</strong> · 11</summary>
 
-Eve and Ephraim demonstrate model selection; Firstmate and local delegation address agent orchestration. Skillbox searches a skill library, Coding Garden connects everyday tools, and the Eve tool agent substitutes one stage of an existing system. ai-cli is an integration interface. These approaches can be combined. Hono JevRouter selects HTTP handlers using descriptions and the first qualifying route in registration order. Unlike model or skill selection, a routing error changes the response directly; it must not replace authentication. Codex Model Router selects a model and reasoning configuration each turn with documented fallback, but a user observed over-routing on easy tasks. Compare final quality, cache behavior and total bills, not classification speed alone. The Claude Code Mod defaults to subagent-model and main-effort routing, leaving main-model switching off. Compare cache effects, fallback and final quality separately from the Codex per-turn router.
+Models, skills and tools serve different needs; Jev helps assign work. Model routing affects cost and quality, while skill routing finds capabilities. The two can work together.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-routing.en.md)
+[Compare approaches](breakdowns/2026-09-18-routing.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**Eve criteria-based model router**](cases/2026-09-18-eve-router/README.en.md)<br>Choose which model should handle a request before sending it there.<br>**How it works:** Like a receptionist routing calls, Jev sees the request and selection criteria, chooses a model, and lets code forward the work. The final task result is needed to judge the choice.<br>**🟡 B · Effectiveness unverified**<br>A criteria-based selection experiment is supported by the screenshot; optimal routing, latency distributions and downstream answer quality are not established.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#eve-router)<br>**Content updated:** 2026-09-19 16:55:36 | [821](https://x.com/eve/status/2100430918762832180) | [<img src="https://pbs.twimg.com/media/HSY6yf5a8AA8NJi.jpg?name=orig" width="160" alt="Eve criteria-based model router preview">](https://x.com/eve/status/2100430918762832180)<br>[Image](https://x.com/eve/status/2100430918762832180) |
-| [**Request-to-model router**](cases/2026-09-18-ephraim-router/README.en.md)<br>Pick a model for each question and send the request automatically.<br>**How it works:** Jev acts like a triage desk: it decides who handles the request. The selected model writes the answer. The demo connects selection and forwarding.<br>**🟡 B · Effectiveness unverified**<br>The routing flow is demonstrated, but selecting a model does not prove it is the best model for the request.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#ephraim-router)<br>**Content updated:** 2026-09-19 16:55:36 | [1,503](https://x.com/ephraimduncan/status/2100454070536351824) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100454021852954624/img/hqULLONlXw40573G.jpg" width="160" alt="Request-to-model router preview">](https://x.com/ephraimduncan/status/2100454070536351824)<br>[Video](https://x.com/ephraimduncan/status/2100454070536351824) |
-| [**Firstmate task dispatch**](cases/2026-09-18-firstmate/README.en.md)<br>Choose an AI worker and effort level based on the task and user preferences.<br>**How it works:** A dispatcher chooses the worker, tool setup and effort level. Jev replaces that dispatch step; other agents still perform the task.<br>**🟡 B · Effectiveness unverified**<br>The author discloses 25 matching dispatch decisions and separates dispatch overhead. This is bounded self-reported evidence, not proof of equivalent task quality or whole-agent savings.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#firstmate)<br>**Content updated:** 2026-09-19 16:55:36 | [1,615](https://x.com/kunchenguid/status/2100468943853085061) | [<img src="https://pbs.twimg.com/media/HSYK_gbagAAqKqr.jpg?name=orig" width="160" alt="Firstmate task dispatch preview">](https://x.com/kunchenguid/status/2100468943853085061)<br>[Image](https://x.com/kunchenguid/status/2100468943853085061) |
-| [**Local coding-agent delegation**](cases/2026-09-18-local-delegation/README.en.md)<br>Send routine work, hard questions and long coding tasks to different AI assistants.<br>**How it works:** Before delegation, code asks Jev who should handle the task, then invokes that assistant through a predefined route. Choosing a worker is separate from doing the work.<br>**🟡 B · Effectiveness unverified**<br>The task-category routing scheme is plausible. A deterministic hook does not guarantee correct routing, and no downstream task benchmark is supplied.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#local-delegation)<br>**Content updated:** 2026-09-19 16:55:36 | [777](https://x.com/mdlahfir/status/2100314182201802811) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100314084990414848/img/iePXR9Edae7YVCT_.jpg" width="160" alt="Local coding-agent delegation preview">](https://x.com/mdlahfir/status/2100314182201802811)<br>[Video](https://x.com/mdlahfir/status/2100314182201802811) |
-| [**Skillbox skill selection**](cases/2026-09-18-skillbox/README.en.md)<br>Find useful skills for the current task in a large AI skill library.<br>**How it works:** Like choosing tools from a toolbox, Jev filters skills for the request and the agent uses them. Speed matters, but so does avoiding missed essential skills.<br>**🟡 B · Effectiveness unverified**<br>The integration is plausible, but the thirty-turn comparison is anecdotal and the reused preview does not independently demonstrate the Jev integration.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#skillbox)<br>**Content updated:** 2026-09-19 16:55:36 | [724](https://x.com/thekitze/status/2100556122570792999) | [<img src="https://pbs.twimg.com/media/HRidCpLaMAAqV-7.jpg?name=orig" width="160" alt="Skillbox skill selection preview">](https://x.com/thekitze/status/2096598298220277856)<br>[Image](https://x.com/thekitze/status/2096598298220277856) |
-| [**Coding Garden tool assistant**](cases/2026-09-18-coding-garden-assistant/README.en.md)<br>Ask for weather, information or to-do actions and let an assistant call the right tool.<br>**How it works:** Jev selects a tool and its arguments; the tool returns results and the interface displays them. Even sourced answers can be wrong if the wrong tool or arguments are chosen.<br>**🟠 C · Claims exceed evidence**<br>The tool-based assistant demo is credible, but eliminating free-form generation does not guarantee error-free answers. Tool selection, arguments and retrieved sources can still be wrong, so the categorical no-hallucination claim is overstated.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#coding-garden-assistant)<br>**Content updated:** 2026-09-19 16:55:36 | [334](https://x.com/CodingGarden/status/2100665210419950031) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100664410935332864/img/KPApgq0AysL_SFeg.jpg" width="160" alt="Coding Garden tool assistant preview">](https://x.com/CodingGarden/status/2100665210419950031)<br>[Video](https://x.com/CodingGarden/status/2100665210419950031) |
-| [**Eve tool-calling agent**](cases/2026-09-18-eve-tool-agent/README.en.md)<br>Let Jev choose an agent's next tool to reduce selection overhead.<br>**How it works:** The original agent reasons about which tool to use. This experiment hands that choice to Jev while retaining the tools and downstream processing.<br>**🟡 B · Effectiveness unverified**<br>This is an early author-reported tool-selection swap, not an equal-quality benchmark for complete agents; sample size and scoring are absent.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#eve-tool-agent)<br>**Content updated:** 2026-09-19 16:55:36 | [1,117](https://x.com/oviniciuslana/status/2100457622407168509) | [<img src="https://pbs.twimg.com/media/HSZSqLGXwAA1jSL.jpg?name=orig" width="160" alt="Eve tool-calling agent preview">](https://x.com/oviniciuslana/status/2100457622407168509)<br>[Image](https://x.com/oviniciuslana/status/2100457622407168509) |
-| [**ai-cli decision interface**](cases/2026-09-18-ai-cli/README.en.md)<br>Give terminal-based assistants access to Jev judgments, choices and scores.<br>**How it works:** It is a common adapter: Jev becomes callable through terminal commands. Providing an interface does not itself solve a complex task.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The published CLI interface directly supports the bounded integration claim, including typed outputs and error behavior. This does not validate judgment accuracy or every harness integration.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#ai-cli)<br>**Content updated:** 2026-09-19 16:55:36 | [874](https://x.com/ctatedev/status/2100584917092409479) | [<img src="https://pbs.twimg.com/media/HSbG2YLWkAAPqmU.jpg?name=orig" width="160" alt="ai-cli decision interface preview">](https://x.com/ctatedev/status/2100584917092409479)<br>[Image](https://x.com/ctatedev/status/2100584917092409479) |
-| [**Hono JevRouter: route requests by meaning**](cases/2026-09-18-hono-semantic-router/README.en.md)<br>Choose responses such as HTML or Markdown based on whether a request appears to come from a person or an AI.<br>**How it works:** Ordinary routing sorts letters by address; this experiment also considers their meaning. Developers describe handlers in words, Jev judges each description, and code selects the first qualifying handler in registration order.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The source directly supports first-matching semantic routing and explicitly states its limits. It is an inspectable routing experiment, not an authentication guarantee.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#hono-semantic-router)<br>**Content updated:** 2026-09-19 16:55:36 | [405](https://x.com/yusukebe/status/2100871075743859182) | [<img src="https://pbs.twimg.com/media/HSfKgItbcAAwVIl.jpg?name=orig" width="160" alt="Hono JevRouter: route requests by meaning preview">](https://x.com/yusukebe/status/2100871075743859182)<br>[Image](https://x.com/yusukebe/status/2100871075743859182) |
-| [**Codex Model Router: choose a model each turn**](cases/2026-09-19-codex-model-router/README.en.md)<br>Select a model and reasoning settings for each Codex task.<br>**How it works:** Like assigning easy tickets to a lighter assistant and difficult ones to a stronger one: Jev classifies and a proxy applies routing policy.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The inspectable routing infrastructure and candid user report support the bounded integration claim. Replay savings do not prove live cost or equal-quality gains for this user.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#codex-model-router)<br>**Content updated:** 2026-09-19 16:55:36 | [437](https://x.com/antonioleivag/status/2100962426439000484) | [<img src="https://pbs.twimg.com/media/HSgeLlIX0AAjedL.png?name=orig" width="160" alt="Codex Model Router: choose a model each turn preview">](https://x.com/antonioleivag/status/2100962426439000484)<br>[Image](https://x.com/antonioleivag/status/2100962426439000484) |
-| [**Claude Code Mod: model and effort routing**](cases/2026-09-19-claude-code-jev-router/README.en.md)<br>Choose subagent models and adjust reasoning effort in the main conversation.<br>**How it works:** Like ticket triage: Jev judges task difficulty and the plugin assigns an assistant; the selected model still writes the code.<br>**🟢 A · Clearer evidence for function/mechanism**<br>Pinned source exposes hooks, defaults and fallback. Main-model behavior differs from the post’s description; savings remain unverified.<br>[Assessment and sources](references/2026-09-19-increment7-audit.en.md#claude-code-jev-router)<br>**Content updated:** 2026-09-19 17:48:49 | [417](https://x.com/dani_avila7/status/2101176629745561686) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101176234411425792/img/UgEWGdQPunczzXcv.jpg" width="160" alt="Claude Code Mod: model and effort routing preview">](https://x.com/dani_avila7/status/2101176629745561686)<br>[Video](https://x.com/dani_avila7/status/2101176629745561686) |
+### [Eve criteria-based model router](cases/2026-09-18-eve-router/README.en.md)
+
+Choose which model should handle a request before sending it there.
+
+[<img src="https://pbs.twimg.com/media/HSY6yf5a8AA8NJi.jpg?name=orig" width="320" alt="Eve criteria-based model router">](https://x.com/eve/status/2100430918762832180)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#eve-router) · [X · 821 likes at collection](https://x.com/eve/status/2100430918762832180) · [How it works & evidence](cases/2026-09-18-eve-router/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Request-to-model router](cases/2026-09-18-ephraim-router/README.en.md)
+
+Pick a model for each question and send the request automatically.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100454021852954624/img/hqULLONlXw40573G.jpg" width="320" alt="Request-to-model router">](https://x.com/ephraimduncan/status/2100454070536351824)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#ephraim-router) · [X · 1,503 likes at collection](https://x.com/ephraimduncan/status/2100454070536351824) · [How it works & evidence](cases/2026-09-18-ephraim-router/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Firstmate task dispatch](cases/2026-09-18-firstmate/README.en.md)
+
+Choose an AI worker and effort level based on the task and user preferences.
+
+[<img src="https://pbs.twimg.com/media/HSYK_gbagAAqKqr.jpg?name=orig" width="320" alt="Firstmate task dispatch">](https://x.com/kunchenguid/status/2100468943853085061)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#firstmate) · [X · 1,615 likes at collection](https://x.com/kunchenguid/status/2100468943853085061) · [How it works & evidence](cases/2026-09-18-firstmate/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Local coding-agent delegation](cases/2026-09-18-local-delegation/README.en.md)
+
+Send routine work, hard questions and long coding tasks to different AI assistants.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100314084990414848/img/iePXR9Edae7YVCT_.jpg" width="320" alt="Local coding-agent delegation">](https://x.com/mdlahfir/status/2100314182201802811)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#local-delegation) · [X · 777 likes at collection](https://x.com/mdlahfir/status/2100314182201802811) · [How it works & evidence](cases/2026-09-18-local-delegation/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Skillbox skill selection](cases/2026-09-18-skillbox/README.en.md)
+
+Find useful skills for the current task in a large AI skill library.
+
+[<img src="https://pbs.twimg.com/media/HRidCpLaMAAqV-7.jpg?name=orig" width="320" alt="Skillbox skill selection">](https://x.com/thekitze/status/2096598298220277856)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#skillbox) · [X · 724 likes at collection](https://x.com/thekitze/status/2100556122570792999) · [How it works & evidence](cases/2026-09-18-skillbox/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Coding Garden tool assistant](cases/2026-09-18-coding-garden-assistant/README.en.md)
+
+Ask for weather, information or to-do actions and let an assistant call the right tool.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100664410935332864/img/KPApgq0AysL_SFeg.jpg" width="320" alt="Coding Garden tool assistant">](https://x.com/CodingGarden/status/2100665210419950031)
+
+[Claims lack support](references/2026-09-19-claims-audit.en.md#coding-garden-assistant) · [X · 334 likes at collection](https://x.com/CodingGarden/status/2100665210419950031) · [How it works & evidence](cases/2026-09-18-coding-garden-assistant/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Eve tool-calling agent](cases/2026-09-18-eve-tool-agent/README.en.md)
+
+Let Jev choose an agent's next tool to reduce selection overhead.
+
+[<img src="https://pbs.twimg.com/media/HSZSqLGXwAA1jSL.jpg?name=orig" width="320" alt="Eve tool-calling agent">](https://x.com/oviniciuslana/status/2100457622407168509)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#eve-tool-agent) · [X · 1,117 likes at collection](https://x.com/oviniciuslana/status/2100457622407168509) · [How it works & evidence](cases/2026-09-18-eve-tool-agent/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [ai-cli decision interface](cases/2026-09-18-ai-cli/README.en.md)
+
+Give terminal-based assistants access to Jev judgments, choices and scores.
+
+[<img src="https://pbs.twimg.com/media/HSbG2YLWkAAPqmU.jpg?name=orig" width="320" alt="ai-cli decision interface">](https://x.com/ctatedev/status/2100584917092409479)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#ai-cli) · [X · 874 likes at collection](https://x.com/ctatedev/status/2100584917092409479) · [How it works & evidence](cases/2026-09-18-ai-cli/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Hono JevRouter: route requests by meaning](cases/2026-09-18-hono-semantic-router/README.en.md)
+
+Choose responses such as HTML or Markdown based on whether a request appears to come from a person or an AI.
+
+[<img src="https://pbs.twimg.com/media/HSfKgItbcAAwVIl.jpg?name=orig" width="320" alt="Hono JevRouter: route requests by meaning">](https://x.com/yusukebe/status/2100871075743859182)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#hono-semantic-router) · [X · 405 likes at collection](https://x.com/yusukebe/status/2100871075743859182) · [How it works & evidence](cases/2026-09-18-hono-semantic-router/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Codex Model Router: choose a model each turn](cases/2026-09-19-codex-model-router/README.en.md)
+
+Select a model and reasoning settings for each Codex task.
+
+[<img src="https://pbs.twimg.com/media/HSgeLlIX0AAjedL.png?name=orig" width="320" alt="Codex Model Router: choose a model each turn">](https://x.com/antonioleivag/status/2100962426439000484)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#codex-model-router) · [X · 437 likes at collection](https://x.com/antonioleivag/status/2100962426439000484) · [How it works & evidence](cases/2026-09-19-codex-model-router/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Claude Code Mod: model and effort routing](cases/2026-09-19-claude-code-jev-router/README.en.md)
+
+Choose subagent models and adjust reasoning effort in the main conversation.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101176234411425792/img/UgEWGdQPunczzXcv.jpg" width="320" alt="Claude Code Mod: model and effort routing">](https://x.com/dani_avila7/status/2101176629745561686)
+
+[Clearer mechanism](references/2026-09-19-increment7-audit.en.md#claude-code-jev-router) · [X · 417 likes at collection](https://x.com/dani_avila7/status/2101176629745561686) · [How it works & evidence](cases/2026-09-19-claude-code-jev-router/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
 
 <a id="review"></a>
 
-### Code quality and safety checks (11)
+<details>
+<summary><strong>Check code and risky actions</strong> · 11</summary>
 
-Compare the 14-check PR reviewer, jev-review and jev-rabbit for explicit risks and escalation, iterative scoring and natural-language team rules respectively. Codebase classification examines overall structure. Command safety, jailbreak screening and upload checks guard different actions and need separate false-negative evaluations. The ESLint experiment judges snippet compliance; OpenCode permissions decide whether a tool action is allowed, questioned or denied before execution. They check different things and are not substitutes. Comment scoring separates accuracy from usefulness for clearer interpretation than one overall score, but currently shows only two trivial examples. ESLint checks snippets against rules, while PR tools cover broader changes. Compare their task scope and evidence size separately. Script.it scores diffs before generating explanations, reducing workflow overhead but recalling only 75% of confirmed bugs in its author evaluation. Compare both reduced false positives and increased misses with exploratory review.
+Break a broad review into specific judgments. Code review looks for defects; permission checks govern actions. Both false alarms and missed problems matter, and scores do not replace tests.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-review.en.md)
+[Compare approaches](breakdowns/2026-09-18-review.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**jev-review MCP**](cases/2026-09-18-jev-review/README.en.md)<br>Score AI-written code and let the coding agent revise it using feedback.<br>**How it works:** The loop resembles submitting work, receiving feedback and revising it. Jev scores criteria; the coding agent edits. A higher score does not guarantee a correct program.<br>**🟡 B · Effectiveness unverified**<br>An experimental scoring loop is plausible; improved model scores are not independent evidence of improved code correctness.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#jev-review)<br>**Content updated:** 2026-09-19 16:55:36 | [445](https://x.com/niazmorshed_/status/2100465662867218857) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100465308519759872/img/2uIG43VFGvWzku0s.jpg" width="160" alt="jev-review MCP preview">](https://x.com/niazmorshed_/status/2100465662867218857)<br>[Video](https://x.com/niazmorshed_/status/2100465662867218857) |
-| [**14-check PR risk review**](cases/2026-09-18-typed-pr-review/README.en.md)<br>Screen code changes for risks such as exposed secrets or removed tests, and escalate uncertainty.<br>**How it works:** Split review into 14 specific questions and ask Jev in one call. Code combines the answers; uncertain critical findings go to a person or larger model.<br>**🟡 B · Effectiveness unverified**<br>The six-PR typed-check demo and escalation rule are concrete. The price comparison does not establish equivalent coverage to a full Claude review; no general accuracy claim is justified.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#typed-pr-review)<br>**Content updated:** 2026-09-19 16:55:36 | [1,927](https://x.com/redp314/status/2100585126652481915) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100585029533372416/img/ZcrsntW2yWgtB_HD.jpg" width="160" alt="14-check PR risk review preview">](https://x.com/redp314/status/2100585126652481915)<br>[Video](https://x.com/redp314/status/2100585126652481915) |
-| [**jev-rabbit natural-language rules**](cases/2026-09-18-jev-rabbit/README.en.md)<br>Write code-review rules in plain language and have a bot check changes against them.<br>**How it works:** Team conventions that are hard to encode as fixed checks can be assessed by Jev. Clear rules are easier to apply. The source post describes a work-in-progress project.<br>**🟡 B · Effectiveness unverified**<br>The source explicitly describes an in-progress prototype and future release, so the claim is plausible but availability and review accuracy remain unverified.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#jev-rabbit)<br>**Content updated:** 2026-09-19 16:55:36 | [327](https://x.com/thekitze/status/2100616530275029139) | [<img src="https://pbs.twimg.com/media/HSbjmhQbQAA4G5A.jpg?name=orig" width="160" alt="jev-rabbit natural-language rules preview">](https://x.com/thekitze/status/2100616530275029139)<br>[Image](https://x.com/thekitze/status/2100616530275029139) |
-| [**Codebase complexity classifier**](cases/2026-09-18-codebase-classifier/README.en.md)<br>Explore whether a codebase makes simple things unnecessarily complicated.<br>**How it works:** It classifies code structure, like a preliminary engineering checkup. Overengineering depends on project needs; a label alone is not a sound basis for refactoring.<br>**🟡 B · Effectiveness unverified**<br>The demo supports a classifier experiment. The suggested benefit for overengineering remains a hypothesis, not an established result.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#codebase-classifier)<br>**Content updated:** 2026-09-19 16:55:36 | [1,165](https://x.com/ryanvogel/status/2100068006592123055) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100067392223076352/img/BqXd-11SCr3_ff8q.jpg" width="160" alt="Codebase complexity classifier preview">](https://x.com/ryanvogel/status/2100068006592123055)<br>[Video](https://x.com/ryanvogel/status/2100068006592123055) |
-| [**fx auto mode safety classifier**](cases/2026-09-18-fx-safety/README.en.md)<br>Check a command's potential risk before an agent executes it automatically.<br>**How it works:** Jev acts as a pre-execution screener, classifying command safety. Fast screening can still miss risks; explicit rules must determine whether execution is allowed.<br>**🟡 B · Effectiveness unverified**<br>A self-reported safety-classifier comparison exists, but the absent dataset and false-allow rates prevent treating it as validated security enforcement.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#fx-safety)<br>**Content updated:** 2026-09-19 16:55:36 | [591](https://x.com/fazxes/status/2100300097695232164) | [<img src="https://pbs.twimg.com/media/HSW-E8wWgAAyw9O.jpg?name=orig" width="160" alt="fx auto mode safety classifier preview">](https://x.com/fazxes/status/2100300097695232164)<br>[Image](https://x.com/fazxes/status/2100300097695232164) |
-| [**Jailbreak prompt prescreen**](cases/2026-09-18-jailbreak-screen/README.en.md)<br>Prescreen prompts for attempts to bypass an AI system's rules.<br>**How it works:** Jev checks whether a prompt resembles known bypass patterns. It is an initial screen and may miss unfamiliar forms.<br>**🟡 B · Effectiveness unverified**<br>The author distinguishes an initial comparison from a future near-perfect target. Current evidence is limited and does not establish robustness to unseen attacks.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#jailbreak-screen)<br>**Content updated:** 2026-09-19 16:55:36 | [264](https://x.com/mayfer/status/2100343452865265747) | [<img src="https://pbs.twimg.com/media/HSXq9mqbsAAtHoT.jpg?name=orig" width="160" alt="Jailbreak prompt prescreen preview">](https://x.com/mayfer/status/2100343452865265747)<br>[Image](https://x.com/mayfer/status/2100343452865265747) |
-| [**Document upload checker**](cases/2026-09-18-upload-check/README.en.md)<br>Before uploading a document, check whether its contents should be shared.<br>**How it works:** The system asks Jev for an allow/deny judgment. Its usefulness depends on the supplied rules and context; the post does not publish a full organizational confidentiality policy.<br>**🟡 B · Effectiveness unverified**<br>The bounded upload-check prototype is plausible, but policy coverage and sensitive-data false negatives are unmeasured.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#upload-check)<br>**Content updated:** 2026-09-19 16:55:36 | [284](https://x.com/iwasakoya/status/2100471523358474709) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100471095627591680/img/jQewHJZ85th2EEv3.jpg" width="160" alt="Document upload checker preview">](https://x.com/iwasakoya/status/2100471523358474709)<br>[Video](https://x.com/iwasakoya/status/2100471523358474709) |
-| [**Code judgments from ESLint rule descriptions**](cases/2026-09-18-eslint-rule-judgments/README.en.md)<br>Give Jev a rule’s text description and ask whether a small code snippet complies.<br>**How it works:** Like handing a reviewer a marking guide and a snippet: Jev judges whether the rule is violated. The experiment interprets the rule’s meaning rather than executing its ESLint implementation.<br>**🟡 B · Effectiveness unverified**<br>The author scopes the result to generated snippets. The roughly 90% figure is self-reported and cannot be extrapolated to repository-wide linting reliability.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#eslint-rule-judgments)<br>**Content updated:** 2026-09-19 16:55:36 | [351](https://x.com/mizchi/status/2100765201385869434) | [<img src="https://pbs.twimg.com/media/HSdqjcJa8AAGjPE.jpg?name=orig" width="160" alt="Code judgments from ESLint rule descriptions preview">](https://x.com/mizchi/status/2100765201385869434)<br>[Image](https://x.com/mizchi/status/2100765201385869434) |
-| [**OpenCode intent-aware permissions**](cases/2026-09-18-opencode-intent-permissions/README.en.md)<br>Check an agent’s actions across tools using policies such as “only access Google.”<br>**How it works:** Like a gatekeeper considering both access rules and the purpose of a request: Jev judges tool-input intent, and the plugin allows, asks or denies. Native OpenCode permissions remain the outer layer.<br>**🟡 B · Effectiveness unverified**<br>The every-route wording refers to the demonstrated attempts, so B rather than C. Published docs explicitly expose a Code Mode bypass and preserve native permission controls; the demo is not a universal network boundary.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#opencode-intent-permissions)<br>**Content updated:** 2026-09-19 16:55:36 | [235](https://x.com/OpeOginni/status/2100702649834188855) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100701224920129536/img/-vzxHYoZxMjXKOKh.jpg" width="160" alt="OpenCode intent-aware permissions preview">](https://x.com/OpeOginni/status/2100702649834188855)<br>[Video](https://x.com/OpeOginni/status/2100702649834188855) |
-| [**Code comments: accuracy and usefulness scores**](cases/2026-09-18-code-comment-scoring/README.en.md)<br>Check whether a comment is correct and whether it adds useful information beyond the code.<br>**How it works:** Give each comment two report cards: it may correctly restate the code without explaining why it exists, or even misdescribe what the code does. Jev scores the dimensions separately to highlight comments worth reviewing.<br>**🟡 B · Effectiveness unverified**<br>Two simple examples illustrate separate accuracy and usefulness scores, and the author positions it as a gate. These scores are not evaluation accuracy or validation on complex code.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#code-comment-scoring)<br>**Content updated:** 2026-09-19 16:55:36 | [1,777](https://x.com/markjaquith/status/2100359340087501296) | [<img src="https://pbs.twimg.com/media/HSX4qrBWcAAA3K4.jpg?name=orig" width="160" alt="Code comments: accuracy and usefulness scores preview">](https://x.com/markjaquith/status/2100359340087501296)<br>[Image](https://x.com/markjaquith/status/2100359340087501296) |
-| [**Script.it: flag issues before writing review comments**](cases/2026-09-19-script-code-review/README.en.md)<br>Score a git diff first, then ask a language model for explanations only when issues are flagged.<br>**How it works:** Like marking suspicious changes with a checklist before asking a reviewer to explain them. This can avoid lengthy exploration but may miss deeper issues.<br>**🟡 B · Effectiveness unverified**<br>The author discloses the workflow change and 75% recall trade-off. Private-data zero false positives and speed/cost ratios remain unverified, but are not presented as an equal-recall universal guarantee.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#script-code-review)<br>**Content updated:** 2026-09-19 16:55:36 | [202](https://x.com/liorshkiller/status/2100936106615140757) | [<img src="https://pbs.twimg.com/media/HSgGI1wWQAAY5zl.jpg?name=orig" width="160" alt="Script.it: flag issues before writing review comments preview">](https://x.com/liorshkiller/status/2100936106615140757)<br>[Image](https://x.com/liorshkiller/status/2100936106615140757) |
+### [jev-review MCP](cases/2026-09-18-jev-review/README.en.md)
+
+Score AI-written code and let the coding agent revise it using feedback.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100465308519759872/img/2uIG43VFGvWzku0s.jpg" width="320" alt="jev-review MCP">](https://x.com/niazmorshed_/status/2100465662867218857)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#jev-review) · [X · 445 likes at collection](https://x.com/niazmorshed_/status/2100465662867218857) · [How it works & evidence](cases/2026-09-18-jev-review/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [14-check PR risk review](cases/2026-09-18-typed-pr-review/README.en.md)
+
+Screen code changes for risks such as exposed secrets or removed tests, and escalate uncertainty.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100585029533372416/img/ZcrsntW2yWgtB_HD.jpg" width="320" alt="14-check PR risk review">](https://x.com/redp314/status/2100585126652481915)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#typed-pr-review) · [X · 1,927 likes at collection](https://x.com/redp314/status/2100585126652481915) · [How it works & evidence](cases/2026-09-18-typed-pr-review/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [jev-rabbit natural-language rules](cases/2026-09-18-jev-rabbit/README.en.md)
+
+Write code-review rules in plain language and have a bot check changes against them.
+
+[<img src="https://pbs.twimg.com/media/HSbjmhQbQAA4G5A.jpg?name=orig" width="320" alt="jev-rabbit natural-language rules">](https://x.com/thekitze/status/2100616530275029139)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#jev-rabbit) · [X · 327 likes at collection](https://x.com/thekitze/status/2100616530275029139) · [How it works & evidence](cases/2026-09-18-jev-rabbit/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Codebase complexity classifier](cases/2026-09-18-codebase-classifier/README.en.md)
+
+Explore whether a codebase makes simple things unnecessarily complicated.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100067392223076352/img/BqXd-11SCr3_ff8q.jpg" width="320" alt="Codebase complexity classifier">](https://x.com/ryanvogel/status/2100068006592123055)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#codebase-classifier) · [X · 1,165 likes at collection](https://x.com/ryanvogel/status/2100068006592123055) · [How it works & evidence](cases/2026-09-18-codebase-classifier/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [fx auto mode safety classifier](cases/2026-09-18-fx-safety/README.en.md)
+
+Check a command's potential risk before an agent executes it automatically.
+
+[<img src="https://pbs.twimg.com/media/HSW-E8wWgAAyw9O.jpg?name=orig" width="320" alt="fx auto mode safety classifier">](https://x.com/fazxes/status/2100300097695232164)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#fx-safety) · [X · 591 likes at collection](https://x.com/fazxes/status/2100300097695232164) · [How it works & evidence](cases/2026-09-18-fx-safety/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Jailbreak prompt prescreen](cases/2026-09-18-jailbreak-screen/README.en.md)
+
+Prescreen prompts for attempts to bypass an AI system's rules.
+
+[<img src="https://pbs.twimg.com/media/HSXq9mqbsAAtHoT.jpg?name=orig" width="320" alt="Jailbreak prompt prescreen">](https://x.com/mayfer/status/2100343452865265747)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#jailbreak-screen) · [X · 264 likes at collection](https://x.com/mayfer/status/2100343452865265747) · [How it works & evidence](cases/2026-09-18-jailbreak-screen/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Document upload checker](cases/2026-09-18-upload-check/README.en.md)
+
+Before uploading a document, check whether its contents should be shared.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100471095627591680/img/jQewHJZ85th2EEv3.jpg" width="320" alt="Document upload checker">](https://x.com/iwasakoya/status/2100471523358474709)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#upload-check) · [X · 284 likes at collection](https://x.com/iwasakoya/status/2100471523358474709) · [How it works & evidence](cases/2026-09-18-upload-check/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Code judgments from ESLint rule descriptions](cases/2026-09-18-eslint-rule-judgments/README.en.md)
+
+Give Jev a rule’s text description and ask whether a small code snippet complies.
+
+[<img src="https://pbs.twimg.com/media/HSdqjcJa8AAGjPE.jpg?name=orig" width="320" alt="Code judgments from ESLint rule descriptions">](https://x.com/mizchi/status/2100765201385869434)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#eslint-rule-judgments) · [X · 351 likes at collection](https://x.com/mizchi/status/2100765201385869434) · [How it works & evidence](cases/2026-09-18-eslint-rule-judgments/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [OpenCode intent-aware permissions](cases/2026-09-18-opencode-intent-permissions/README.en.md)
+
+Check an agent’s actions across tools using policies such as “only access Google.”
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100701224920129536/img/-vzxHYoZxMjXKOKh.jpg" width="320" alt="OpenCode intent-aware permissions">](https://x.com/OpeOginni/status/2100702649834188855)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#opencode-intent-permissions) · [X · 235 likes at collection](https://x.com/OpeOginni/status/2100702649834188855) · [How it works & evidence](cases/2026-09-18-opencode-intent-permissions/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Code comments: accuracy and usefulness scores](cases/2026-09-18-code-comment-scoring/README.en.md)
+
+Check whether a comment is correct and whether it adds useful information beyond the code.
+
+[<img src="https://pbs.twimg.com/media/HSX4qrBWcAAA3K4.jpg?name=orig" width="320" alt="Code comments: accuracy and usefulness scores">](https://x.com/markjaquith/status/2100359340087501296)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#code-comment-scoring) · [X · 1,777 likes at collection](https://x.com/markjaquith/status/2100359340087501296) · [How it works & evidence](cases/2026-09-18-code-comment-scoring/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Script.it: flag issues before writing review comments](cases/2026-09-19-script-code-review/README.en.md)
+
+Score a git diff first, then ask a language model for explanations only when issues are flagged.
+
+[<img src="https://pbs.twimg.com/media/HSgGI1wWQAAY5zl.jpg?name=orig" width="320" alt="Script.it: flag issues before writing review comments">](https://x.com/liorshkiller/status/2100936106615140757)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#script-code-review) · [X · 202 likes at collection](https://x.com/liorshkiller/status/2100936106615140757) · [How it works & evidence](cases/2026-09-19-script-code-review/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
 
 <a id="data"></a>
 
-### Data classification and organization (16)
+<details>
+<summary><strong>Organize files and information</strong> · 16</summary>
 
-Email classification and DuckDB handle batches of text; the paper example includes generative preprocessing; Jev + Kimi shows uncertainty escalation. Payee cleanup is extraction/normalization and support intent is multi-question judgment. Their metrics are not interchangeable. Predictive spreadsheets put classification intent in column headings and emphasize live feedback. Compare interface response separately from full-table processing costs when considering DuckDB-style batching. The four-model email demo exposes differences in waiting time, while the 500-email case emphasizes batch scale and reported cost. The former lacks standardized accuracy and configuration evidence; the latter lacks a cross-model comparison. Times from separate demonstrations do not establish a ranking. The food notebook turns text into calorie and nutrient values. Like predictive spreadsheets it prioritizes immediate feedback, but numerical estimates also require trustworthy data and error evaluation; classification speed is not numerical accuracy. New cases cover tax-page identification, Box incident triage, Downloads filing, OCR-based image organization, Gmail intent search and snack scoring. Tax classification documents rejection gates and separate test sets; most others offer author timings. Accuracy cannot be ranked across unrelated datasets. Fictional interview notes demonstrate multidimensional classification. Per-record cost does not establish real hiring validity or fairness.
+Label emails, identify forms or find relevant files. Classification, retrieval and numerical estimates fail in different ways; one speed ranking cannot compare them fairly.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-data.en.md)
+[Compare approaches](breakdowns/2026-09-18-data.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**1kpapers research classification**](cases/2026-09-18-papers/README.en.md)<br>Organize over a thousand AI papers so readers can browse them by topic.<br>**How it works:** Another model summarizes each paper, then Jev picks from 24 topics. Think of making an index card first and then labeling it.<br>**🟡 B · Effectiveness unverified**<br>The staged workflow and split costs are clearly described; $0.08 covers classification only, and the live site had not yet adopted the Jev labels.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#papers)<br>**Content updated:** 2026-09-19 16:55:36 | [1,684](https://x.com/nutlope/status/2100426999546184123) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100425141947604992/img/AITyHwcOWq1jw-3Z.jpg" width="160" alt="1kpapers research classification preview">](https://x.com/nutlope/status/2100426999546184123)<br>[Video](https://x.com/nutlope/status/2100426999546184123) |
-| [**DuckDB semantic classification**](cases/2026-09-18-duckdb/README.en.md)<br>Classify text rows while working with a table.<br>**How it works:** DuckDB processes tabular data. This extension connects it to Jev so queries can include classifications without manually copying rows into a chat window.<br>**🟡 B · Effectiveness unverified**<br>A plausible SQL classification integration; a screenshot and a throughput claim do not establish accuracy or general superiority over LLMs.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#duckdb)<br>**Content updated:** 2026-09-19 16:55:36 | [1,310](https://x.com/hamiltonulmer/status/2100370557405667768) | [<img src="https://pbs.twimg.com/media/HSYD5B1bsAAWqeg.jpg?name=orig" width="160" alt="DuckDB semantic classification preview">](https://x.com/hamiltonulmer/status/2100370557405667768)<br>[Image](https://x.com/hamiltonulmer/status/2100370557405667768) |
-| [**Batch classification of 500 emails**](cases/2026-09-18-email-batch/README.en.md)<br>Sort a large batch of emails into categories instead of filing them one by one.<br>**How it works:** Code sends email contents to Jev for category choices and collects the results. It is automated labeling, whose accuracy still needs checking.<br>**🟡 B · Effectiveness unverified**<br>A concrete batch-email demo; dataset, label accuracy and timing boundaries remain undisclosed, so price and speed are author-reported.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#email-batch)<br>**Content updated:** 2026-09-19 16:55:36 | [3,161](https://x.com/rileybrown/status/2100404532119269426) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100403183533125632/img/54ZFO-CHvDeC-rw-.jpg" width="160" alt="Batch classification of 500 emails preview">](https://x.com/rileybrown/status/2100404532119269426)<br>[Video](https://x.com/rileybrown/status/2100404532119269426) |
-| [**Jev + Kimi email fraud detection**](cases/2026-09-18-email-fraud/README.en.md)<br>Screen emails for fraud quickly, then send uncertain cases to a larger model.<br>**How it works:** It is a two-stage check: Jev screens first and Kimi reviews 31 low-confidence emails. The 96/100 result belongs to the combined pipeline, not Jev alone.<br>**🟡 B · Effectiveness unverified**<br>A transparent small-sample cascade, but 96/100 belongs to Jev plus Kimi; the confidence threshold and balanced sample do not establish production fraud detection.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#email-fraud)<br>**Content updated:** 2026-09-19 16:55:36 | [542](https://x.com/nutlope/status/2100614659690713543) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100608348219478016/img/23vFEVMegwLrMa8g.jpg" width="160" alt="Jev + Kimi email fraud detection preview">](https://x.com/nutlope/status/2100614659690713543)<br>[Video](https://x.com/nutlope/status/2100614659690713543) |
-| [**Bank transaction payee cleanup**](cases/2026-09-18-bank-payee/README.en.md)<br>Turn messy bank transaction descriptions into recognizable merchant names.<br>**How it works:** Transaction descriptions mix names, locations and codes. Jev helps decide what matters, but the post does not explain exactly how the final name is extracted or produced.<br>**🟡 B · Effectiveness unverified**<br>The screenshot supports a payee-cleaning experiment. The author’s roughly 95%-there assessment is subjective, not measured accuracy.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#bank-payee)<br>**Content updated:** 2026-09-19 16:55:36 | [633](https://x.com/jlongster/status/2100179852053639236) | [<img src="https://pbs.twimg.com/media/HSVWcZ9WcAAcwPe.jpg?name=orig" width="160" alt="Bank transaction payee cleanup preview">](https://x.com/jlongster/status/2100179852053639236)<br>[Image](https://x.com/jlongster/status/2100179852053639236) |
-| [**Japanese support escalation intent**](cases/2026-09-18-support-intent/README.en.md)<br>Detect whether a Japanese support message asks for a human or mentions repeated contact.<br>**How it works:** Ask two specific yes/no questions about one message. The percentages describe those judgments, not the accuracy of the whole support system.<br>**🟢 A · Clearer evidence for function/mechanism**<br>A directly inspectable, unambiguous Japanese example supports the narrow capability claim; its two scores are not an accuracy benchmark.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#support-intent)<br>**Content updated:** 2026-09-19 16:55:36 | [351](https://x.com/ku_suke/status/2100392430805856469) | [<img src="https://pbs.twimg.com/media/HSYXuW5aoAAghbD.jpg?name=orig" width="160" alt="Japanese support escalation intent preview">](https://x.com/ku_suke/status/2100392430805856469)<br>[Image](https://x.com/ku_suke/status/2100392430805856469) |
-| [**Intent-driven spreadsheet ratings**](cases/2026-09-18-predictive-spreadsheet/README.en.md)<br>Name a column “Urgency” and have the text in each row receive a corresponding rating.<br>**How it works:** Ordinary formulas calculate numbers; this demo uses a column name to express a question. Jev judges each row’s urgency, and the app writes the result into the table.<br>**🟡 B · Effectiveness unverified**<br>A concrete intent-labelled spreadsheet demo; question construction, consistency and timing scope are unknown, so arbitrary-column reliability is not established.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#predictive-spreadsheet)<br>**Content updated:** 2026-09-19 16:55:36 | [337](https://x.com/dabit3/status/2100780008193020049) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100779722447667200/img/gvsEg2-3oD6FRZhc.jpg" width="160" alt="Intent-driven spreadsheet ratings preview">](https://x.com/dabit3/status/2100780008193020049)<br>[Video](https://x.com/dabit3/status/2100780008193020049) |
-| [**Email classification: four-model speed comparison**](cases/2026-09-18-email-speed-race/README.en.md)<br>Classify a set of emails with four models and compare progress and elapsed time on one screen.<br>**How it works:** Like four sorting clerks handling the same stack of letters: each model assigns categories while the page tracks results and time. This demonstration focuses on speed; finishing first does not mean every label is correct.<br>**🟡 B · Effectiveness unverified**<br>A task-level speed demo is visible, but unspecified model versions, concurrency and accuracy prevent a general performance ranking.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#email-speed-race)<br>**Content updated:** 2026-09-19 16:55:36 | [445](https://x.com/usutaku_channel/status/2100829343954173965) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100829070514864128/img/V3ix1we5Euhs8DsY.jpg" width="160" alt="Email classification: four-model speed comparison preview">](https://x.com/usutaku_channel/status/2100829343954173965)<br>[Video](https://x.com/usutaku_channel/status/2100829343954173965) |
-| [**Calorie Notebook: text-based food logging**](cases/2026-09-18-calorie-notebook/README.en.md)<br>Write down what you ate and receive quick calorie, nutrient and total values in the interface.<br>**How it works:** Like putting an estimator beside a notebook: food and portion descriptions become numerical feedback. The author says Jev is used, but the food-data source and calculation method are not disclosed here.<br>**🟡 B · Effectiveness unverified**<br>The interface is demonstrated, and the author expressly concedes estimation limitations. Instant numerical output does not establish nutritional accuracy.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#calorie-notebook)<br>**Content updated:** 2026-09-19 16:55:36 | [326](https://x.com/thekitze/status/2100857642566758849) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100857416984477696/img/RAMEV-YddA05BR1X.jpg" width="160" alt="Calorie Notebook: text-based food logging preview">](https://x.com/thekitze/status/2100857642566758849)<br>[Video](https://x.com/thekitze/status/2100857642566758849) |
-| [**Box: triage and file incident reports**](cases/2026-09-19-box-incident-triage/README.en.md)<br>Read incident reports, judge impact and severity, and route them to handling folders.<br>**How it works:** Like a clerk checking customer impact and severity before sending a report to escalation, monitoring or review.<br>**🟡 B · Effectiveness unverified**<br>A clearly bounded Box workflow is described and demonstrated; incident-label accuracy and operational controls remain unverified, and other enterprise uses are hypothetical.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#box-incident-triage)<br>**Content updated:** 2026-09-19 16:55:36 | [317](https://x.com/levie/status/2101007708044574906) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100999115949953024/img/6D1_NvmSfMLGDstw.jpg" width="160" alt="Box: triage and file incident reports preview">](https://x.com/levie/status/2101007708044574906)<br>[Video](https://x.com/levie/status/2101007708044574906) |
-| [**NoSugarForKids: multi-criterion snack scoring**](cases/2026-09-19-snack-scoring/README.en.md)<br>Score children’s snacks in batches to organize a product catalog.<br>**How it works:** Like filling several columns for each product on a shelf: Jev supplies judgments for the site to assemble. The exact scoring questions are undisclosed.<br>**🟡 B · Effectiveness unverified**<br>A bulk product-scoring demo exists, but the rubric, data provenance and calibration are undisclosed; cheap scoring is not nutritional validation.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#snack-scoring)<br>**Content updated:** 2026-09-19 16:55:36 | [312](https://x.com/nikunj/status/2101006585481073093) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101005796603809792/img/19SyyiWW5wotfFfW.jpg" width="160" alt="NoSugarForKids: multi-criterion snack scoring preview">](https://x.com/nikunj/status/2101006585481073093)<br>[Video](https://x.com/nikunj/status/2101006585481073093) |
-| [**Tax Doc Classifier: label tax PDF pages**](cases/2026-09-19-tax-doc-classifier/README.en.md)<br>Identify which tax form each PDF page belongs to for downstream organization.<br>**How it works:** Like reading the header, body and footer before attaching a form label, while reporting uncertainty instead of pretending every page is recognized.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The pinned documentation provides a bounded corpus result, strict-failure counts and the old baseline. Its 100% claim must not hide 38 low-confidence rejections in the separate blank-form set or imply universal tax-document reliability.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#tax-doc-classifier)<br>**Content updated:** 2026-09-19 16:55:36 | [1,506](https://x.com/nedwize/status/2100973868324417852) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100973360989773825/img/yMtL6CxrKMVXQEHV.jpg" width="160" alt="Tax Doc Classifier: label tax PDF pages preview">](https://x.com/nedwize/status/2100973868324417852)<br>[Video](https://x.com/nedwize/status/2100973868324417852) |
-| [**Gmail: search by intent**](cases/2026-09-19-gmail-intent-search/README.en.md)<br>Filter relevant messages from a natural-language request instead of relying only on keywords.<br>**How it works:** Like asking an assistant for a type of message: the app supplies candidates and Jev judges their fit. Candidate retrieval remains undisclosed.<br>**🟡 B · Effectiveness unverified**<br>An intent-search interaction is demonstrated; large-inbox embedding retrieval is only a suggestion, and recall and relevance remain unmeasured.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#gmail-intent-search)<br>**Content updated:** 2026-09-19 16:55:36 | [574](https://x.com/dabit3/status/2100960281769738433) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100959260616151040/img/nb1GFqB_cwNesugB.jpg" width="160" alt="Gmail: search by intent preview">](https://x.com/dabit3/status/2100960281769738433)<br>[Video](https://x.com/dabit3/status/2100960281769738433) |
-| [**OCR + Jev: organize images**](cases/2026-09-19-ocr-image-organizer/README.en.md)<br>Read text from images, then categorize them by content.<br>**How it works:** Like copying words from a photo onto a card before sorting cards: OCR reads the words and Jev judges categories.<br>**🟡 B · Effectiveness unverified**<br>The stated OCR-plus-classifier design is plausible; category accuracy and timing boundaries are unspecified, and the demo does not establish native image understanding by Jev.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#ocr-image-organizer)<br>**Content updated:** 2026-09-19 16:55:36 | [246](https://x.com/fayazara/status/2100953838891192789) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100953271238320128/img/vzUjAo15Bg8tVa_q.jpg" width="160" alt="OCR + Jev: organize images preview">](https://x.com/fayazara/status/2100953838891192789)<br>[Video](https://x.com/fayazara/status/2100953838891192789) |
-| [**macOS Downloads: organize files by rules**](cases/2026-09-19-downloads-organizer/README.en.md)<br>Watch Downloads and move matching files to destinations defined by custom rules.<br>**How it works:** Like a clerk recognizing an invoice and filing it: Jev judges rules, while the application moves and names files.<br>**🟡 B · Effectiveness unverified**<br>A plausible file-rule automation; extraction and filename construction are undisclosed, and no-other-LLM does not imply free-form generation by Jev.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#downloads-organizer)<br>**Content updated:** 2026-09-19 16:55:36 | [889](https://x.com/marcelpociot/status/2100906882365788167) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100906588626173952/img/1KnNI3B3aUJEwFvI.jpg" width="160" alt="macOS Downloads: organize files by rules preview">](https://x.com/marcelpociot/status/2100906882365788167)<br>[Video](https://x.com/marcelpociot/status/2100906882365788167) |
-| [**Synthetic interview notes: batch classification and scoring**](cases/2026-09-19-synthetic-interview-classifier/README.en.md)<br>Sort 100 fictional interview records into advance, hold or decline and assign component scores.<br>**How it works:** Like applying a checklist to fictional interview notes: judge skills, communication and interest, then organize the results. Scores do not establish real job performance.<br>**🟡 B · Effectiveness unverified**<br>Explicitly fictional data supports a batch-classification demo; independent labels and error statistics are missing.<br>[Assessment and sources](references/2026-09-19-increment7-audit.en.md#synthetic-interview-classifier)<br>**Content updated:** 2026-09-19 17:48:49 | [278](https://x.com/masa_okamura108/status/2101206603240477030) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101206578284380160/img/WUIj3LeQ4Nrch8yD.jpg" width="160" alt="Synthetic interview notes: batch classification and scoring preview">](https://x.com/masa_okamura108/status/2101206603240477030)<br>[Video](https://x.com/masa_okamura108/status/2101206603240477030) |
+### [1kpapers research classification](cases/2026-09-18-papers/README.en.md)
+
+Organize over a thousand AI papers so readers can browse them by topic.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100425141947604992/img/AITyHwcOWq1jw-3Z.jpg" width="320" alt="1kpapers research classification">](https://x.com/nutlope/status/2100426999546184123)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#papers) · [X · 1,684 likes at collection](https://x.com/nutlope/status/2100426999546184123) · [How it works & evidence](cases/2026-09-18-papers/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [DuckDB semantic classification](cases/2026-09-18-duckdb/README.en.md)
+
+Classify text rows while working with a table.
+
+[<img src="https://pbs.twimg.com/media/HSYD5B1bsAAWqeg.jpg?name=orig" width="320" alt="DuckDB semantic classification">](https://x.com/hamiltonulmer/status/2100370557405667768)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#duckdb) · [X · 1,310 likes at collection](https://x.com/hamiltonulmer/status/2100370557405667768) · [How it works & evidence](cases/2026-09-18-duckdb/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Batch classification of 500 emails](cases/2026-09-18-email-batch/README.en.md)
+
+Sort a large batch of emails into categories instead of filing them one by one.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100403183533125632/img/54ZFO-CHvDeC-rw-.jpg" width="320" alt="Batch classification of 500 emails">](https://x.com/rileybrown/status/2100404532119269426)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#email-batch) · [X · 3,161 likes at collection](https://x.com/rileybrown/status/2100404532119269426) · [How it works & evidence](cases/2026-09-18-email-batch/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Jev + Kimi email fraud detection](cases/2026-09-18-email-fraud/README.en.md)
+
+Screen emails for fraud quickly, then send uncertain cases to a larger model.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100608348219478016/img/23vFEVMegwLrMa8g.jpg" width="320" alt="Jev + Kimi email fraud detection">](https://x.com/nutlope/status/2100614659690713543)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#email-fraud) · [X · 542 likes at collection](https://x.com/nutlope/status/2100614659690713543) · [How it works & evidence](cases/2026-09-18-email-fraud/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Bank transaction payee cleanup](cases/2026-09-18-bank-payee/README.en.md)
+
+Turn messy bank transaction descriptions into recognizable merchant names.
+
+[<img src="https://pbs.twimg.com/media/HSVWcZ9WcAAcwPe.jpg?name=orig" width="320" alt="Bank transaction payee cleanup">](https://x.com/jlongster/status/2100179852053639236)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#bank-payee) · [X · 633 likes at collection](https://x.com/jlongster/status/2100179852053639236) · [How it works & evidence](cases/2026-09-18-bank-payee/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Japanese support escalation intent](cases/2026-09-18-support-intent/README.en.md)
+
+Detect whether a Japanese support message asks for a human or mentions repeated contact.
+
+[<img src="https://pbs.twimg.com/media/HSYXuW5aoAAghbD.jpg?name=orig" width="320" alt="Japanese support escalation intent">](https://x.com/ku_suke/status/2100392430805856469)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#support-intent) · [X · 351 likes at collection](https://x.com/ku_suke/status/2100392430805856469) · [How it works & evidence](cases/2026-09-18-support-intent/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Intent-driven spreadsheet ratings](cases/2026-09-18-predictive-spreadsheet/README.en.md)
+
+Name a column “Urgency” and have the text in each row receive a corresponding rating.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100779722447667200/img/gvsEg2-3oD6FRZhc.jpg" width="320" alt="Intent-driven spreadsheet ratings">](https://x.com/dabit3/status/2100780008193020049)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#predictive-spreadsheet) · [X · 337 likes at collection](https://x.com/dabit3/status/2100780008193020049) · [How it works & evidence](cases/2026-09-18-predictive-spreadsheet/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Email classification: four-model speed comparison](cases/2026-09-18-email-speed-race/README.en.md)
+
+Classify a set of emails with four models and compare progress and elapsed time on one screen.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100829070514864128/img/V3ix1we5Euhs8DsY.jpg" width="320" alt="Email classification: four-model speed comparison">](https://x.com/usutaku_channel/status/2100829343954173965)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#email-speed-race) · [X · 445 likes at collection](https://x.com/usutaku_channel/status/2100829343954173965) · [How it works & evidence](cases/2026-09-18-email-speed-race/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Calorie Notebook: text-based food logging](cases/2026-09-18-calorie-notebook/README.en.md)
+
+Write down what you ate and receive quick calorie, nutrient and total values in the interface.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100857416984477696/img/RAMEV-YddA05BR1X.jpg" width="320" alt="Calorie Notebook: text-based food logging">](https://x.com/thekitze/status/2100857642566758849)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#calorie-notebook) · [X · 326 likes at collection](https://x.com/thekitze/status/2100857642566758849) · [How it works & evidence](cases/2026-09-18-calorie-notebook/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Box: triage and file incident reports](cases/2026-09-19-box-incident-triage/README.en.md)
+
+Read incident reports, judge impact and severity, and route them to handling folders.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100999115949953024/img/6D1_NvmSfMLGDstw.jpg" width="320" alt="Box: triage and file incident reports">](https://x.com/levie/status/2101007708044574906)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#box-incident-triage) · [X · 317 likes at collection](https://x.com/levie/status/2101007708044574906) · [How it works & evidence](cases/2026-09-19-box-incident-triage/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [NoSugarForKids: multi-criterion snack scoring](cases/2026-09-19-snack-scoring/README.en.md)
+
+Score children’s snacks in batches to organize a product catalog.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101005796603809792/img/19SyyiWW5wotfFfW.jpg" width="320" alt="NoSugarForKids: multi-criterion snack scoring">](https://x.com/nikunj/status/2101006585481073093)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#snack-scoring) · [X · 312 likes at collection](https://x.com/nikunj/status/2101006585481073093) · [How it works & evidence](cases/2026-09-19-snack-scoring/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Tax Doc Classifier: label tax PDF pages](cases/2026-09-19-tax-doc-classifier/README.en.md)
+
+Identify which tax form each PDF page belongs to for downstream organization.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100973360989773825/img/yMtL6CxrKMVXQEHV.jpg" width="320" alt="Tax Doc Classifier: label tax PDF pages">](https://x.com/nedwize/status/2100973868324417852)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#tax-doc-classifier) · [X · 1,506 likes at collection](https://x.com/nedwize/status/2100973868324417852) · [How it works & evidence](cases/2026-09-19-tax-doc-classifier/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Gmail: search by intent](cases/2026-09-19-gmail-intent-search/README.en.md)
+
+Filter relevant messages from a natural-language request instead of relying only on keywords.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100959260616151040/img/nb1GFqB_cwNesugB.jpg" width="320" alt="Gmail: search by intent">](https://x.com/dabit3/status/2100960281769738433)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#gmail-intent-search) · [X · 574 likes at collection](https://x.com/dabit3/status/2100960281769738433) · [How it works & evidence](cases/2026-09-19-gmail-intent-search/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [OCR + Jev: organize images](cases/2026-09-19-ocr-image-organizer/README.en.md)
+
+Read text from images, then categorize them by content.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100953271238320128/img/vzUjAo15Bg8tVa_q.jpg" width="320" alt="OCR + Jev: organize images">](https://x.com/fayazara/status/2100953838891192789)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#ocr-image-organizer) · [X · 246 likes at collection](https://x.com/fayazara/status/2100953838891192789) · [How it works & evidence](cases/2026-09-19-ocr-image-organizer/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [macOS Downloads: organize files by rules](cases/2026-09-19-downloads-organizer/README.en.md)
+
+Watch Downloads and move matching files to destinations defined by custom rules.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100906588626173952/img/1KnNI3B3aUJEwFvI.jpg" width="320" alt="macOS Downloads: organize files by rules">](https://x.com/marcelpociot/status/2100906882365788167)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#downloads-organizer) · [X · 889 likes at collection](https://x.com/marcelpociot/status/2100906882365788167) · [How it works & evidence](cases/2026-09-19-downloads-organizer/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Synthetic interview notes: batch classification and scoring](cases/2026-09-19-synthetic-interview-classifier/README.en.md)
+
+Sort 100 fictional interview records into advance, hold or decline and assign component scores.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101206578284380160/img/WUIj3LeQ4Nrch8yD.jpg" width="320" alt="Synthetic interview notes: batch classification and scoring">](https://x.com/masa_okamura108/status/2101206603240477030)
+
+[Effectiveness unverified](references/2026-09-19-increment7-audit.en.md#synthetic-interview-classifier) · [X · 278 likes at collection](https://x.com/masa_okamura108/status/2101206603240477030) · [How it works & evidence](cases/2026-09-19-synthetic-interview-classifier/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
 
 <a id="content"></a>
 
-### Content and advertising analysis (10)
+<details>
+<summary><strong>Analyze content and reach</strong> · 10</summary>
 
-Live analyzers provide writing feedback; bookmark-percentile prediction defines a more specific target; historical-post analysis supports retrospective review; ad analysis organizes creative material. Viral classifiers and the X-algorithm simulator have limited generalization evidence. JevMeter applies rules to speech, not validated fact-checking. MaxFusion and StealAds label ads with different batches and dimensions; SEO linking instead selects related pages and existing anchors. Labels, link relevance and business impact require separate evaluation. Ryze spans SEO/GEO audits and fixes; internal linking selects pages and anchor text. Ryze has broader scope but weaker attribution. Neither speed claim provides a complete matched comparison, so their ratios cannot be ranked.
+Some tools label ads; others connect articles or predict reach. Describing content differs from predicting the future, and a high score does not guarantee traffic or citations.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-content.en.md)
+[Compare approaches](breakdowns/2026-09-18-content.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**Live post-potential analyzer**](cases/2026-09-18-live-viral/README.en.md)<br>Get feedback on a post's type and potential reach as you write.<br>**How it works:** After a half-second pause, code sends the draft to Jev and updates its labels and scores. This is immediate writing feedback, not proof that the post will spread.<br>**🟡 B · Effectiveness unverified**<br>The interactive scoring demo is plausible and explicitly experimental. No evidence establishes predictive validity for future reach.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#live-viral)<br>**Content updated:** 2026-09-19 16:55:36 | [830](https://x.com/rileybrown/status/2100425868053008758) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100424897491070976/img/kKnsb68jNUZZzSBi.jpg" width="160" alt="Live post-potential analyzer preview">](https://x.com/rileybrown/status/2100425868053008758)<br>[Video](https://x.com/rileybrown/status/2100425868053008758) |
-| [**Viral-post classifier**](cases/2026-09-18-viral-classifier/README.en.md)<br>Try to identify posts that may attract more attention.<br>**How it works:** Jev acts as a fast first-pass classifier. The author does not publish the full criteria or evaluation, so reliable virality prediction is not established.<br>**🟠 C · Claims exceed evidence**<br>The claims that virality is solved and reply bait is never rewarded exceed a self-reported two-in-three result with no disclosed held-out split or fair model baseline.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#viral-classifier)<br>**Content updated:** 2026-09-19 16:55:36 | [387](https://x.com/robj3d3/status/2100631889585606959) | [<img src="https://pbs.twimg.com/media/HSbxP15bMAA1LaU.jpg?name=orig" width="160" alt="Viral-post classifier preview">](https://x.com/robj3d3/status/2100631889585606959)<br>[Image](https://x.com/robj3d3/status/2100631889585606959) |
-| [**X reach-score simulator**](cases/2026-09-18-x-algorithm-sim/README.en.md)<br>Simulate reach scores to compare different ways of writing a post.<br>**How it works:** The author combines Jev judgments with weights. That scoring formula is a simplified model; resembling X does not establish recreation of its real recommendation system.<br>**🟠 C · Claims exceed evidence**<br>A scoring UI is demonstrated, but the claims of rebuilding X’s actual algorithm and exceptional accuracy lack model-equivalence and prediction evidence.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#x-algorithm-sim)<br>**Content updated:** 2026-09-19 16:55:36 | [877](https://x.com/leojrr/status/2100470174130250127) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100467692117295104/img/01ZWSKAA75eSiFlc.jpg" width="160" alt="X reach-score simulator preview">](https://x.com/leojrr/status/2100470174130250127)<br>[Video](https://x.com/leojrr/status/2100470174130250127) |
-| [**Bookmark-percentile prediction**](cases/2026-09-18-bookmark-prediction/README.en.md)<br>Predict whether a post ranks in the top quarter for bookmarks among nearby dates.<br>**How it works:** Replace vague virality with a checkable target: top 25% within a defined date window. Jev predicts that outcome and the author compares predictions with historical data.<br>**🟡 B · Effectiveness unverified**<br>The personal historical benchmark has a concrete label, but undisclosed splits and configurations prevent validating generalization or the 200-fold cost comparison; a future-looking label alone is not proof of leakage.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#bookmark-prediction)<br>**Content updated:** 2026-09-19 16:55:36 | [287](https://x.com/AM09_21/status/2100430480642642395) | [<img src="https://pbs.twimg.com/media/HSYtFVgaoAIPpi5.jpg?name=orig" width="160" alt="Bookmark-percentile prediction preview">](https://x.com/AM09_21/status/2100430480642642395)<br>[Image](https://x.com/AM09_21/status/2100430480642642395) |
-| [**Analysis of 3,282 historical posts**](cases/2026-09-18-post-analytics/README.en.md)<br>Review thousands of past posts to see which topics and styles performed well.<br>**How it works:** Jev labels topics, tone and other features, then code compares historical performance. This summarizes the past; it does not prove that adopting a style causes growth.<br>**🟡 B · Effectiveness unverified**<br>A plausible descriptive analysis of historical posts; unavailable raw labels limit verification, and historical association does not establish a causal growth formula.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#post-analytics)<br>**Content updated:** 2026-09-19 16:55:36 | [262](https://x.com/iannuttall/status/2100668908227162567) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100668725737213952/img/m210oIkCyuGX5Dqr.jpg" width="160" alt="Analysis of 3,282 historical posts preview">](https://x.com/iannuttall/status/2100668908227162567)<br>[Video](https://x.com/iannuttall/status/2100668908227162567) |
-| [**StealAds ad-analysis preview**](cases/2026-09-18-ad-analysis/README.en.md)<br>Break many ads into hooks, offers and calls to action for creative research.<br>**How it works:** Think of searchable index cards for ads. Jev judges separate features and code aggregates them. Collection and input preparation are not explained in the post.<br>**🟡 B · Effectiveness unverified**<br>A specific multi-label ad analysis demo; accuracy and upstream collection costs are unverified, and the announced integration was future work.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#ad-analysis)<br>**Content updated:** 2026-09-19 16:55:36 | [1,678](https://x.com/TheMattBerman/status/2100654891756589230) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100654321792684032/img/cXvU50KmCe6QFu86.jpg" width="160" alt="StealAds ad-analysis preview preview">](https://x.com/TheMattBerman/status/2100654891756589230)<br>[Video](https://x.com/TheMattBerman/status/2100654891756589230) |
-| [**JevMeter speech-analysis dashboard**](cases/2026-09-18-jevmeter/README.en.md)<br>Score sentences in debates or interviews to examine speech patterns and content features.<br>**How it works:** Ask the same five questions about each sentence and visualize the results. Consistent criteria help comparisons, but without external evidence checks they do not determine truth.<br>**🟠 C · Claims exceed evidence**<br>The implementation supports rhetorical sentence scoring, while the follow-up fact-checking claim contradicts its own README disclaimer. The 200 authored-sentence evaluation measures preset classification, not truth verification.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#jevmeter)<br>**Content updated:** 2026-09-19 16:55:36 | [1,017](https://x.com/chetaslua/status/2100473581251748216) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100473445868003328/img/1ukjahQYLgbIEmyI.jpg" width="160" alt="JevMeter speech-analysis dashboard preview">](https://x.com/chetaslua/status/2100473581251748216)<br>[Video](https://x.com/chetaslua/status/2100473581251748216) |
-| [**SEO internal links: match existing text to relevant pages**](cases/2026-09-19-seo-internal-links/README.en.md)<br>Scan site articles and suggest relevant internal links using text already present.<br>**How it works:** Like an editor marking where an article could link to another: Jev judges relevance and code pairs existing text with destination pages.<br>**🟡 B · Effectiveness unverified**<br>The author discloses the early-stopped comparison. The 190-fold figure is a per-page extrapolation, not an equally completed, quality-matched full-site benchmark or proof of SEO benefit.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#seo-internal-links)<br>**Content updated:** 2026-09-19 16:55:36 | [721](https://x.com/borjafat/status/2101018783976722479) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101018477087592448/img/9YlAHKLLo_h6rgtK.jpg" width="160" alt="SEO internal links: match existing text to relevant pages preview">](https://x.com/borjafat/status/2101018783976722479)<br>[Video](https://x.com/borjafat/status/2101018783976722479) |
-| [**MaxFusion: classify advertising creatives**](cases/2026-09-19-maxfusion-ad-classifier/README.en.md)<br>Label ads by style and customer-journey stage for account-level analysis.<br>**How it works:** Like arranging ads in a labeled cabinet: Jev judges dimensions and code aggregates results. Labels do not establish campaign effectiveness.<br>**🟡 B · Effectiveness unverified**<br>A specific ad-classification demo, with no validated label accuracy or complete preprocessing costs; batch size does not prove superiority over another tool.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#maxfusion-ad-classifier)<br>**Content updated:** 2026-09-19 16:55:36 | [320](https://x.com/OriSilver/status/2100941251478458871) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100940464870301696/img/g-uzVt-FDP21an26.jpg" width="160" alt="MaxFusion: classify advertising creatives preview">](https://x.com/OriSilver/status/2100941251478458871)<br>[Video](https://x.com/OriSilver/status/2100941251478458871) |
-| [**Ryze AI: SEO/GEO audits and fixes**](cases/2026-09-19-ryze-seo-geo/README.en.md)<br>Add Jev to website visibility audits, analyzing pages and AI-search citations to guide fixes.<br>**How it works:** Like an editor investigating why a site is hard to find: gather pages and citations, judge gaps and arrange edits. New prose still requires a generation stage.<br>**🟠 C · Claims exceed evidence**<br>The 90% savings, 20–30-fold speedups and citation claims lack complete controlled evidence; the short clip does not establish these outcomes.<br>[Assessment and sources](references/2026-09-19-increment7-audit.en.md#ryze-seo-geo)<br>**Content updated:** 2026-09-19 17:48:49 | [790](https://x.com/irabukht/status/2101090579127951694) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101089408099516416/img/Smzn-jtE8prvdY90.jpg" width="160" alt="Ryze AI: SEO/GEO audits and fixes preview">](https://x.com/irabukht/status/2101090579127951694)<br>[Video](https://x.com/irabukht/status/2101090579127951694) |
+### [Live post-potential analyzer](cases/2026-09-18-live-viral/README.en.md)
+
+Get feedback on a post's type and potential reach as you write.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100424897491070976/img/kKnsb68jNUZZzSBi.jpg" width="320" alt="Live post-potential analyzer">](https://x.com/rileybrown/status/2100425868053008758)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#live-viral) · [X · 830 likes at collection](https://x.com/rileybrown/status/2100425868053008758) · [How it works & evidence](cases/2026-09-18-live-viral/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Viral-post classifier](cases/2026-09-18-viral-classifier/README.en.md)
+
+Try to identify posts that may attract more attention.
+
+[<img src="https://pbs.twimg.com/media/HSbxP15bMAA1LaU.jpg?name=orig" width="320" alt="Viral-post classifier">](https://x.com/robj3d3/status/2100631889585606959)
+
+[Claims lack support](references/2026-09-19-claims-audit.en.md#viral-classifier) · [X · 387 likes at collection](https://x.com/robj3d3/status/2100631889585606959) · [How it works & evidence](cases/2026-09-18-viral-classifier/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [X reach-score simulator](cases/2026-09-18-x-algorithm-sim/README.en.md)
+
+Simulate reach scores to compare different ways of writing a post.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100467692117295104/img/01ZWSKAA75eSiFlc.jpg" width="320" alt="X reach-score simulator">](https://x.com/leojrr/status/2100470174130250127)
+
+[Claims lack support](references/2026-09-19-claims-audit.en.md#x-algorithm-sim) · [X · 877 likes at collection](https://x.com/leojrr/status/2100470174130250127) · [How it works & evidence](cases/2026-09-18-x-algorithm-sim/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Bookmark-percentile prediction](cases/2026-09-18-bookmark-prediction/README.en.md)
+
+Predict whether a post ranks in the top quarter for bookmarks among nearby dates.
+
+[<img src="https://pbs.twimg.com/media/HSYtFVgaoAIPpi5.jpg?name=orig" width="320" alt="Bookmark-percentile prediction">](https://x.com/AM09_21/status/2100430480642642395)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#bookmark-prediction) · [X · 287 likes at collection](https://x.com/AM09_21/status/2100430480642642395) · [How it works & evidence](cases/2026-09-18-bookmark-prediction/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Analysis of 3,282 historical posts](cases/2026-09-18-post-analytics/README.en.md)
+
+Review thousands of past posts to see which topics and styles performed well.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100668725737213952/img/m210oIkCyuGX5Dqr.jpg" width="320" alt="Analysis of 3,282 historical posts">](https://x.com/iannuttall/status/2100668908227162567)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#post-analytics) · [X · 262 likes at collection](https://x.com/iannuttall/status/2100668908227162567) · [How it works & evidence](cases/2026-09-18-post-analytics/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [StealAds ad-analysis preview](cases/2026-09-18-ad-analysis/README.en.md)
+
+Break many ads into hooks, offers and calls to action for creative research.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100654321792684032/img/cXvU50KmCe6QFu86.jpg" width="320" alt="StealAds ad-analysis preview">](https://x.com/TheMattBerman/status/2100654891756589230)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#ad-analysis) · [X · 1,678 likes at collection](https://x.com/TheMattBerman/status/2100654891756589230) · [How it works & evidence](cases/2026-09-18-ad-analysis/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [JevMeter speech-analysis dashboard](cases/2026-09-18-jevmeter/README.en.md)
+
+Score sentences in debates or interviews to examine speech patterns and content features.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100473445868003328/img/1ukjahQYLgbIEmyI.jpg" width="320" alt="JevMeter speech-analysis dashboard">](https://x.com/chetaslua/status/2100473581251748216)
+
+[Claims lack support](references/2026-09-19-claims-audit.en.md#jevmeter) · [X · 1,017 likes at collection](https://x.com/chetaslua/status/2100473581251748216) · [How it works & evidence](cases/2026-09-18-jevmeter/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [SEO internal links: match existing text to relevant pages](cases/2026-09-19-seo-internal-links/README.en.md)
+
+Scan site articles and suggest relevant internal links using text already present.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101018477087592448/img/9YlAHKLLo_h6rgtK.jpg" width="320" alt="SEO internal links: match existing text to relevant pages">](https://x.com/borjafat/status/2101018783976722479)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#seo-internal-links) · [X · 721 likes at collection](https://x.com/borjafat/status/2101018783976722479) · [How it works & evidence](cases/2026-09-19-seo-internal-links/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [MaxFusion: classify advertising creatives](cases/2026-09-19-maxfusion-ad-classifier/README.en.md)
+
+Label ads by style and customer-journey stage for account-level analysis.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100940464870301696/img/g-uzVt-FDP21an26.jpg" width="320" alt="MaxFusion: classify advertising creatives">](https://x.com/OriSilver/status/2100941251478458871)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#maxfusion-ad-classifier) · [X · 320 likes at collection](https://x.com/OriSilver/status/2100941251478458871) · [How it works & evidence](cases/2026-09-19-maxfusion-ad-classifier/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Ryze AI: SEO/GEO audits and fixes](cases/2026-09-19-ryze-seo-geo/README.en.md)
+
+Add Jev to website visibility audits, analyzing pages and AI-search citations to guide fixes.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101089408099516416/img/Smzn-jtE8prvdY90.jpg" width="320" alt="Ryze AI: SEO/GEO audits and fixes">](https://x.com/irabukht/status/2101090579127951694)
+
+[Claims lack support](references/2026-09-19-increment7-audit.en.md#ryze-seo-geo) · [X · 790 likes at collection](https://x.com/irabukht/status/2101090579127951694) · [How it works & evidence](cases/2026-09-19-ryze-seo-geo/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
 
 <a id="filter"></a>
 
-### Webpage and feed filtering (4)
+<details>
+<summary><strong>Filter unwanted content</strong> · 4</summary>
 
-The X filter targets posts in a feed; Unclutter targets ads, banners and upsells across webpages. One classifies content, the other page elements, so their rules cannot necessarily be reused directly. Sponsor Skip targets spoken sponsorship along a video timeline rather than webpage elements; caption availability, transcription and boundary errors are distinct comparison dimensions. X reply cleanup targets comments and adds author-described false-positive correction. Compared with feed filtering, action semantics and feedback storage need clarification; flagging does not establish deletion.
+Turn preferences into filtering rules. Feed tools judge posts, page cleaners judge elements, and video tools locate time segments. Each needs a way to correct mistakes.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-filter.en.md)
+[Compare approaches](breakdowns/2026-09-18-filter.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**Natural-language X content filter**](cases/2026-09-18-x-filter/README.en.md)<br>Tell the browser in your own words which X posts you would rather not see.<br>**How it works:** The extension asks Jev whether a post matches your filtering rule, then hides or collapses it. The aim is meaning-based filtering rather than a keyword match.<br>**🟡 B · Effectiveness unverified**<br>A credible natural-language filtering demo; false positives, misses and ongoing cost are unmeasured, and the future-of-ad-blockers framing is a vision.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#x-filter)<br>**Content updated:** 2026-09-19 16:55:36 | [950](https://x.com/marcelpociot/status/2100520134481735729) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100519256425140224/img/-A44e4qCo8mVP8ws.jpg" width="160" alt="Natural-language X content filter preview">](https://x.com/marcelpociot/status/2100520134481735729)<br>[Video](https://x.com/marcelpociot/status/2100520134481735729) |
-| [**Unclutter page cleanup**](cases/2026-09-18-unclutter/README.en.md)<br>Clear ads, promotional dialogs and similar clutter to make webpages easier to read.<br>**How it works:** Code identifies candidate page elements and asks Jev to judge them. The challenge is not only finding clutter but avoiding removal of useful controls such as login dialogs.<br>**🟡 B · Effectiveness unverified**<br>The page-cleanup prototype is demonstrated and explicitly BYOK; cross-site safety and compatibility are untested, and a free extension does not mean free inference.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#unclutter)<br>**Content updated:** 2026-09-19 16:55:36 | [497](https://x.com/thekitze/status/2100595129874817340) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100595059041370112/img/cyfF5qMMKBPQTMAG.jpg" width="160" alt="Unclutter page cleanup preview">](https://x.com/thekitze/status/2100595129874817340)<br>[Video](https://x.com/thekitze/status/2100595129874817340) |
-| [**YouTube sponsor-segment skipping**](cases/2026-09-18-youtube-sponsor-skip/README.en.md)<br>Detect spoken sponsor segments while watching YouTube and jump past them.<br>**How it works:** Like marking up captions: Jev identifies sponsor lines, code maps their IDs to playback times, then seeks the player. Listening modes first use a separate speech service to turn audio into text.<br>**🟢 A · Clearer evidence for function/mechanism**<br>Pinned code supports the transcript-line and audio-transcription implementation. This does not verify accuracy: audio modes incur extra costs and may overshoot, and the advertised per-video cost is not universal.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#youtube-sponsor-skip)<br>**Content updated:** 2026-09-19 16:55:36 | [238](https://x.com/tdinh_me/status/2100793777103466615) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100792834526007296/img/8AFbjqEeZrJUEHid.jpg" width="160" alt="YouTube sponsor-segment skipping preview">](https://x.com/tdinh_me/status/2100793777103466615)<br>[Video](https://x.com/tdinh_me/status/2100793777103466615) |
-| [**X reply cleanup: flag low-value comments**](cases/2026-09-19-x-reply-cleanup/README.en.md)<br>Identify suspected low-value replies to help clean up a post’s discussion.<br>**How it works:** Like marking likely spam while letting the user correct mistakes. The author says corrections inform later decisions; storage details are unknown.<br>**🟡 B · Effectiveness unverified**<br>The demo supports reply flagging and correction, but the precise action is unclear; using feedback on a later call is not evidence of model training or measured accuracy.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#x-reply-cleanup)<br>**Content updated:** 2026-09-19 16:55:36 | [223](https://x.com/iannuttall/status/2100888635943883244) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100888448118759424/img/MafhEAfm3BlPst1X.jpg" width="160" alt="X reply cleanup: flag low-value comments preview">](https://x.com/iannuttall/status/2100888635943883244)<br>[Video](https://x.com/iannuttall/status/2100888635943883244) |
+### [Natural-language X content filter](cases/2026-09-18-x-filter/README.en.md)
+
+Tell the browser in your own words which X posts you would rather not see.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100519256425140224/img/-A44e4qCo8mVP8ws.jpg" width="320" alt="Natural-language X content filter">](https://x.com/marcelpociot/status/2100520134481735729)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#x-filter) · [X · 950 likes at collection](https://x.com/marcelpociot/status/2100520134481735729) · [How it works & evidence](cases/2026-09-18-x-filter/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Unclutter page cleanup](cases/2026-09-18-unclutter/README.en.md)
+
+Clear ads, promotional dialogs and similar clutter to make webpages easier to read.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100595059041370112/img/cyfF5qMMKBPQTMAG.jpg" width="320" alt="Unclutter page cleanup">](https://x.com/thekitze/status/2100595129874817340)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#unclutter) · [X · 497 likes at collection](https://x.com/thekitze/status/2100595129874817340) · [How it works & evidence](cases/2026-09-18-unclutter/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [YouTube sponsor-segment skipping](cases/2026-09-18-youtube-sponsor-skip/README.en.md)
+
+Detect spoken sponsor segments while watching YouTube and jump past them.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100792834526007296/img/8AFbjqEeZrJUEHid.jpg" width="320" alt="YouTube sponsor-segment skipping">](https://x.com/tdinh_me/status/2100793777103466615)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#youtube-sponsor-skip) · [X · 238 likes at collection](https://x.com/tdinh_me/status/2100793777103466615) · [How it works & evidence](cases/2026-09-18-youtube-sponsor-skip/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [X reply cleanup: flag low-value comments](cases/2026-09-19-x-reply-cleanup/README.en.md)
+
+Identify suspected low-value replies to help clean up a post’s discussion.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100888448118759424/img/MafhEAfm3BlPst1X.jpg" width="320" alt="X reply cleanup: flag low-value comments">](https://x.com/iannuttall/status/2100888635943883244)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#x-reply-cleanup) · [X · 223 likes at collection](https://x.com/iannuttall/status/2100888635943883244) · [How it works & evidence](cases/2026-09-19-x-reply-cleanup/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
 
 <a id="memory"></a>
 
-### Context and memory filtering (3)
+<details>
+<summary><strong>Help AI keep useful context</strong> · 3</summary>
 
-Tool-history compaction filters the current conversation; memory retrieval filtering selects from an external memory store. Both reduce input at different stages. Evaluate retained information and task quality before comparing token reductions. Compact Adviser decides when to compact; the existing compactor decides what to compact; memory filtering decides what to retrieve. They act at different stages and can be combined; downstream task quality matters.
+As conversations grow, what should stay? These tools decide when to compact, what to keep or what to retrieve. Fewer tokens are useful only if later work still succeeds.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-memory.en.md)
+[Compare approaches](breakdowns/2026-09-18-memory.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**Tool-history context compaction**](cases/2026-09-18-context-compaction/README.en.md)<br>Trim an AI assistant's work history to retain what matters now.<br>**How it works:** Rather than rewrite all history as a summary, score tool records for relevance and keep selected ones. This saves context but can omit information needed later.<br>**🟠 C · Claims exceed evidence**<br>A real API-backed filter exists, but instant size reduction does not establish preserved task quality. Pinned code omits tool-result bodies from decision state. Its separate scripted recording app makes no API calls; a live demo also exists, so this is not evidence that the entire project is fabricated.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#context-compaction)<br>**Content updated:** 2026-09-19 16:55:36 | [1,646](https://x.com/tamarajtran/status/2100694549362553153) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100694537672998912/img/OF8vottg6-45ZgNl.jpg" width="160" alt="Tool-history context compaction preview">](https://x.com/tamarajtran/status/2100694549362553153)<br>[Video](https://x.com/tamarajtran/status/2100694549362553153) |
-| [**Memory retrieval filtering**](cases/2026-09-18-memory-retrieval/README.en.md)<br>Filter an AI memory store so the next model sees relevant material.<br>**How it works:** Retrieve candidate memories, then use Jev for a second filter. It resembles picking useful search results; overly aggressive filtering can miss key evidence.<br>**🟡 B · Effectiveness unverified**<br>The author explicitly calls the 94% token reduction and 2–3× retrieval gain a quick test. Recall and downstream quality are unreported; the figures are not general improvement guarantees.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#memory-retrieval)<br>**Content updated:** 2026-09-19 16:55:36 | [335](https://x.com/moritzkremb/status/2100566009312940457) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100565973376061440/img/jeTib61RNpwXn853.jpg" width="160" alt="Memory retrieval filtering preview">](https://x.com/moritzkremb/status/2100566009312940457)<br>[Video](https://x.com/moritzkremb/status/2100566009312940457) |
-| [**Compact Adviser: choose when to compact**](cases/2026-09-19-compact-adviser/README.en.md)<br>Suggest when a coding conversation has reached a suitable point for context compaction.<br>**How it works:** Like a secretary choosing a pause between topics for meeting notes: Jev judges timing and the host performs compaction. It does not select passages for deletion.<br>**🟡 B · Effectiveness unverified**<br>The two-question policy, usage-dependent thresholds and 96-checkpoint evaluation are documented. The author tuned prompts on a private evaluation set; an independent held-out set and unseen-session safety are not established.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#compact-adviser)<br>**Content updated:** 2026-09-19 16:55:36 | [242](https://x.com/kunchenguid/status/2101032677940117875) | [<img src="https://pbs.twimg.com/media/HShbIHcbcAAJvsR.jpg?name=orig" width="160" alt="Compact Adviser: choose when to compact preview">](https://x.com/kunchenguid/status/2101032677940117875)<br>[Image](https://x.com/kunchenguid/status/2101032677940117875) |
+### [Tool-history context compaction](cases/2026-09-18-context-compaction/README.en.md)
+
+Trim an AI assistant's work history to retain what matters now.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100694537672998912/img/OF8vottg6-45ZgNl.jpg" width="320" alt="Tool-history context compaction">](https://x.com/tamarajtran/status/2100694549362553153)
+
+[Claims lack support](references/2026-09-19-claims-audit.en.md#context-compaction) · [X · 1,646 likes at collection](https://x.com/tamarajtran/status/2100694549362553153) · [How it works & evidence](cases/2026-09-18-context-compaction/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Memory retrieval filtering](cases/2026-09-18-memory-retrieval/README.en.md)
+
+Filter an AI memory store so the next model sees relevant material.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100565973376061440/img/jeTib61RNpwXn853.jpg" width="320" alt="Memory retrieval filtering">](https://x.com/moritzkremb/status/2100566009312940457)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#memory-retrieval) · [X · 335 likes at collection](https://x.com/moritzkremb/status/2100566009312940457) · [How it works & evidence](cases/2026-09-18-memory-retrieval/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Compact Adviser: choose when to compact](cases/2026-09-19-compact-adviser/README.en.md)
+
+Suggest when a coding conversation has reached a suitable point for context compaction.
+
+[<img src="https://pbs.twimg.com/media/HShbIHcbcAAJvsR.jpg?name=orig" width="320" alt="Compact Adviser: choose when to compact">](https://x.com/kunchenguid/status/2101032677940117875)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#compact-adviser) · [X · 242 likes at collection](https://x.com/kunchenguid/status/2101032677940117875) · [How it works & evidence](cases/2026-09-19-compact-adviser/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
 
 <a id="games"></a>
 
-### Game decisions and solving (16)
+<details>
+<summary><strong>Play games and solve puzzles</strong> · 16</summary>
 
-Compare three Mario implementations: basic integration, a controlled structured-state/five-action Jev–Qwen demo, and a PPO implementation-effort anecdote. Pac-Man separates planning and execution; Pokémon reports longer progress; chess separates speed from strength; cube-solving code supplies the method. Other demos explore action spaces rather than establish a general leaderboard. Minecraft also uses layers, with local movement/aiming policies. Its performance belongs to the combined system; use the author’s original-speed supplement when comparing responsiveness. Flappy Bird focuses on action timing with sparse implementation details. Sprite Fusion selects terrain rather than player actions and documents parameters and request timing; evaluate reachability and playability rather than player scores.
+Turn game state into choices and watch small decisions add up. Some systems only select actions; others use planners or predefined solutions. Smooth footage does not establish strong play.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-games.en.md)
+[Compare approaches](breakdowns/2026-09-18-games.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**Official Doom demo**](cases/2026-09-18-doom/README.en.md)<br>Use Jev to choose game actions repeatedly in a Doom demo.<br>**How it works:** Code connects the game and model while Jev makes choices in a loop. Seeing game footage does not mean Jev reads pixels; the post does not fully describe its input state.<br>**🟡 B · Effectiveness unverified**<br>A bounded official code-plus-model demo with self-reported throughput and cost; state encoding, repeated performance and billing records remain unavailable.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#doom)<br>**Content updated:** 2026-09-19 16:55:36 | [4,585](https://x.com/CompleteSkeptic/status/2099925687465570372) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2099924592534183936/img/hBGk8j8MRxBgPyg9.jpg" width="160" alt="Official Doom demo preview">](https://x.com/CompleteSkeptic/status/2099925687465570372)<br>[Video](https://x.com/CompleteSkeptic/status/2099925687465570372) |
-| [**Super Mario · @faadilhshaik**](cases/2026-09-18-mario-faadhil/README.en.md)<br>Let Jev control Super Mario to demonstrate fast action selection.<br>**How it works:** An adapter passes game state to Jev and converts its choice into an action. The state format is not published, so the video alone does not show human-like screen-based play.<br>**🟡 B · Effectiveness unverified**<br>A plausible Mario integration demo; unspecified observations, timing and repeated outcomes prevent a general gameplay claim.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#mario-faadhil)<br>**Content updated:** 2026-09-19 16:55:36 | [2,686](https://x.com/faadilhshaik/status/2100086301894881578) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100085174826647552/img/6YMRQKKZYBPsW2oo.jpg" width="160" alt="Super Mario · @faadilhshaik preview">](https://x.com/faadilhshaik/status/2100086301894881578)<br>[Video](https://x.com/faadilhshaik/status/2100086301894881578) |
-| [**Super Mario · Jev / Qwen comparison**](cases/2026-09-18-mario-comparison/README.en.md)<br>Give Jev and Qwen the same Mario information and compare action choices.<br>**How it works:** Convert the game state to structured data and give both models five choices. They take the same multiple-choice test rather than receiving different kinds of observations.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The bounded setup is unusually explicit: identical structured observations and five actions. This supports the comparison design, not a general ranking or independent reproduction.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#mario-comparison)<br>**Content updated:** 2026-09-19 16:55:36 | [284](https://x.com/karaage0703/status/2100569924238471355) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100567975317454849/img/UjFbLkeMH5RdOrlS.jpg" width="160" alt="Super Mario · Jev / Qwen comparison preview">](https://x.com/karaage0703/status/2100569924238471355)<br>[Video](https://x.com/karaage0703/status/2100569924238471355) |
-| [**Super Mario · World 1-1**](cases/2026-09-18-mario-ppo/README.en.md)<br>Demonstrate Jev on Mario's first level alongside the author's earlier game-AI training experience.<br>**How it works:** The author plugs an existing Jev model into the game, whereas the PPO approach required training a policy. Comparing setup experiences is not a controlled comparison of playing strength.<br>**🟡 B · Effectiveness unverified**<br>A plausible implementation-time anecdote. Training a PPO policy and integrating an existing model are different tasks; the RL-beast prediction is opinion, not established learning or generalization performance.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#mario-ppo)<br>**Content updated:** 2026-09-19 16:55:36 | [248](https://x.com/shantanugoel/status/2100455295801827769) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100454863335501825/img/RbCmluMnOGM4rHPb.jpg" width="160" alt="Super Mario · World 1-1 preview">](https://x.com/shantanugoel/status/2100455295801827769)<br>[Video](https://x.com/shantanugoel/status/2100455295801827769) |
-| [**Astra + Jev Pac-Man**](cases/2026-09-18-pacman/README.en.md)<br>One model plans while Jev chooses quick local moves to play Pac-Man.<br>**How it works:** Think of a coach and player: Astra supplies the strategy, and Jev handles local choices. Assess the combined system, not just Jev's speed.<br>**🟡 B · Effectiveness unverified**<br>The author discloses a planning/action split. Local decision latency does not establish end-to-end cost, speed or win rate.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#pacman)<br>**Content updated:** 2026-09-19 16:55:36 | [860](https://x.com/daniel_mac8/status/2100335929273524541) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100335842451492864/img/gC9HxZoXRIgMLKrW.jpg" width="160" alt="Astra + Jev Pac-Man preview">](https://x.com/daniel_mac8/status/2100335929273524541)<br>[Video](https://x.com/daniel_mac8/status/2100335929273524541) |
-| [**Step-by-step Snake**](cases/2026-09-18-snake/README.en.md)<br>Ask Jev for the next move at every step of Snake.<br>**How it works:** Repeat a simple loop: read the state, ask for a direction, move one step. Each extra move adds a request, so costs grow with game length.<br>**🟡 B · Effectiveness unverified**<br>The per-step loop and arithmetic are coherent as an author-reported run; the extrapolated price and gameplay quality are not independently established.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#snake)<br>**Content updated:** 2026-09-19 16:55:36 | [204](https://x.com/chenchengpro/status/2100516953496670430) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100516335155646464/img/pow4ZDKeRwkBVSvy.jpg" width="160" alt="Step-by-step Snake preview">](https://x.com/chenchengpro/status/2100516953496670430)<br>[Video](https://x.com/chenchengpro/status/2100516953496670430) |
-| [**Tetris**](cases/2026-09-18-tetris/README.en.md)<br>Let Jev make Tetris decisions and observe how blocks are placed.<br>**How it works:** Code must pass board information to the model and execute its choices. The post does not say whether Jev chooses final placements or individual keys, which matters for comparisons.<br>**🟡 B · Effectiveness unverified**<br>A plausible Tetris prototype. The slogan is subjective enthusiasm; action granularity, score and comparative performance remain unspecified.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#tetris)<br>**Content updated:** 2026-09-19 16:55:36 | [956](https://x.com/marcus_lowe/status/2100315518930661861) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100315393860730880/img/u0iH2SHQny2hkd4Q.jpg" width="160" alt="Tetris preview">](https://x.com/marcus_lowe/status/2100315518930661861)<br>[Video](https://x.com/marcus_lowe/status/2100315518930661861) |
-| [**Jev Plays Pokémon**](cases/2026-09-18-pokemon/README.en.md)<br>Let Jev play Pokémon over time and track progress and decision costs.<br>**How it works:** The game supplies new states and code repeatedly asks Jev for choices. Earning a badge after thousands of decisions provides more progress context than a short highlight clip.<br>**🟡 B · Effectiveness unverified**<br>The claim is appropriately bounded to the first badge and Mt. Moon, with reported decisions and cost. Full completion, scaffolding and independent verification remain unknown.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#pokemon)<br>**Content updated:** 2026-09-19 16:55:36 | [220](https://x.com/0xBOYD/status/2100539883836018697) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100539819172544512/img/0EZ7yznRwL7qi4K8.jpg" width="160" alt="Jev Plays Pokémon preview">](https://x.com/0xBOYD/status/2100539883836018697)<br>[Video](https://x.com/0xBOYD/status/2100539883836018697) |
-| [**Slay the Spire 2 agent**](cases/2026-09-18-slay-spire/README.en.md)<br>Use Jev to choose card-game actions with less waiting between decisions.<br>**How it works:** Card games usually provide a set of currently legal choices that code can offer to a model. The post does not disclose the interface, and quicker moves do not necessarily win more games.<br>**🟡 B · Effectiveness unverified**<br>A fast-action demo with a self-reported 0.7-second decision time; superhuman gameplay quality is not established by operation speed or a short clip.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#slay-spire)<br>**Content updated:** 2026-09-19 16:55:36 | [598](https://x.com/coolish/status/2100570517954838897) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100569632482746369/img/TPuOBiHYCWUWxNOc.jpg" width="160" alt="Slay the Spire 2 agent preview">](https://x.com/coolish/status/2100570517954838897)<br>[Video](https://x.com/coolish/status/2100570517954838897) |
-| [**5+0 blitz chess**](cases/2026-09-18-chess/README.en.md)<br>Compare model playing strength and decision speed in timed chess.<br>**How it works:** Every model call consumes time on the chess clock. Jev wins one game on time but is checkmated in another, separating speed from playing strength.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The author reports both material inferiority and a loss, separating clock wins from playing strength. This is a bounded result, not an Elo estimate or independently reproduced benchmark.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#chess)<br>**Content updated:** 2026-09-19 16:55:36 | [1,985](https://x.com/aimlapi/status/2100372930282573876) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100371773275406336/img/NmHPy0pAprSsC6Gi.jpg" width="160" alt="5+0 blitz chess preview">](https://x.com/aimlapi/status/2100372930282573876)<br>[Video](https://x.com/aimlapi/status/2100372930282573876) |
-| [**Parallel Subway Surfers demo**](cases/2026-09-18-subway-runners/README.en.md)<br>Demonstrate Jev controlling multiple runner-style games at once.<br>**How it works:** Several game environments request decisions in parallel and execute them separately. The original client versus recreation is unspecified, so this is not evidence of general phone control.<br>**🟡 B · Effectiveness unverified**<br>A plausible multi-instance demo with self-reported cost. Environment fidelity, batching and duration are unspecified, so it does not establish general mobile control or a matched human comparison.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#subway-runners)<br>**Content updated:** 2026-09-19 16:55:36 | [1,474](https://x.com/_MaxBlade/status/2100634359099232678) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100633400717565952/img/KlytLNSLCQA-yY2E.jpg" width="160" alt="Parallel Subway Surfers demo preview">](https://x.com/_MaxBlade/status/2100634359099232678)<br>[Video](https://x.com/_MaxBlade/status/2100634359099232678) |
-| [**Staged Rubik's Cube solver**](cases/2026-09-18-rubiks-cube/README.en.md)<br>Code knows the cube-solving methods; Jev identifies which case to apply.<br>**How it works:** Imagine a prepared solving handbook. Jev identifies the situation; code applies and checks the matching method. The complete solution comes from their combination.<br>**🟢 A · Clearer evidence for function/mechanism**<br>Transparent composition: a coded beginner solver supplies moves and Jev classifies cases with code checks. Model time is not wall-clock mechanical solving, and the model does not independently derive the solution.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#rubiks-cube)<br>**Content updated:** 2026-09-19 16:55:36 | [494](https://x.com/redp314/status/2100489858951073858) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100479486382809088/img/r6daGpDnvsCr3LyL.jpg" width="160" alt="Staged Rubik&#x27;s Cube solver preview">](https://x.com/redp314/status/2100489858951073858)<br>[Video](https://x.com/redp314/status/2100489858951073858) |
-| [**Mario Kart 64**](cases/2026-09-18-mario-kart/README.en.md)<br>Watch Jev control Mario Kart in a continuous-driving demo.<br>**How it works:** An adapter must turn racing state into model inputs and choices into controls. State access, driving aids and simulation speed are not explained, leaving important implementation details unknown.<br>**🟠 C · Claims exceed evidence**<br>The categorical superiority claim over Astra computer use exceeds a one-system video with no matched task, observations, lap times or collisions. This does not imply the demo itself is false.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#mario-kart)<br>**Content updated:** 2026-09-19 16:55:36 | [204](https://x.com/shreypandya/status/2100606445758898287) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100605130869784576/img/gdGysXaHMdzFOU8W.jpg" width="160" alt="Mario Kart 64 preview">](https://x.com/shreypandya/status/2100606445758898287)<br>[Video](https://x.com/shreypandya/status/2100606445758898287) |
-| [**Minecraft with Jev, Astra and local policies**](cases/2026-09-18-minecraft-hybrid/README.en.md)<br>Split Minecraft play across models: long-term planning, quick reactions, and local movement and aiming.<br>**How it works:** Like a captain, field coordinator and players sharing work: Astra plans, Jev reacts to immediate events, and local policies turn decisions into movement and aiming. The footage reflects the entire system.<br>**🟡 B · Effectiveness unverified**<br>The author discloses planning, judgment and local movement policies plus an original-speed clip. The sped-up main clip cannot measure reaction time, and combined combat performance cannot be attributed to Jev alone.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#minecraft-hybrid)<br>**Content updated:** 2026-09-19 16:55:36 | [354](https://x.com/wuyang_zhou/status/2100727660875808913) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100727359569530880/img/IGuQpzilRkIsw1Wb.jpg" width="160" alt="Minecraft with Jev, Astra and local policies preview">](https://x.com/wuyang_zhou/status/2100727660875808913)<br>[Video](https://x.com/wuyang_zhou/status/2100727660875808913) |
-| [**Sprite Fusion: generate runner terrain in real time**](cases/2026-09-19-game-level-generation/README.en.md)<br>Select new platforms and gaps ahead of a moving player.<br>**How it works:** Like giving a level designer a box of fixed-size tiles: Jev chooses width, gap, height and surface type, and game code places them.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The implementation article specifies state, finite terrain choices and code placement, with five measured requests at 319–375ms. This supports bounded terrain assembly, not asset generation, unrestricted game creation or long-term playability.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#game-level-generation)<br>**Content updated:** 2026-09-19 16:55:36 | [1,289](https://x.com/HugoDuprez/status/2100953089003921543) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100952449661992960/img/GEVdw9BvAW7Dv2Gx.jpg" width="160" alt="Sprite Fusion: generate runner terrain in real time preview">](https://x.com/HugoDuprez/status/2100953089003921543)<br>[Video](https://x.com/HugoDuprez/status/2100953089003921543) |
-| [**Flappy Bird: navigate obstacles**](cases/2026-09-19-flappy-bird/README.en.md)<br>Use Jev in controlling a bird through obstacles.<br>**How it works:** Think of repeatedly asking whether to flap now. This is an explanatory analogy; how this demo supplies state and schedules decisions is undisclosed.<br>**🟡 B · Effectiveness unverified**<br>A plausible short game-control demo. The effortless framing is impressionistic; observation format, timing, failures and repeated scores are not available.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#flappy-bird)<br>**Content updated:** 2026-09-19 16:55:36 | [254](https://x.com/thymikee/status/2100937960115838984) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100937854813700096/img/AlsBUETn77dLd0r8.jpg" width="160" alt="Flappy Bird: navigate obstacles preview">](https://x.com/thymikee/status/2100937960115838984)<br>[Video](https://x.com/thymikee/status/2100937960115838984) |
+### [Official Doom demo](cases/2026-09-18-doom/README.en.md)
+
+Use Jev to choose game actions repeatedly in a Doom demo.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2099924592534183936/img/hBGk8j8MRxBgPyg9.jpg" width="320" alt="Official Doom demo">](https://x.com/CompleteSkeptic/status/2099925687465570372)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#doom) · [X · 4,585 likes at collection](https://x.com/CompleteSkeptic/status/2099925687465570372) · [How it works & evidence](cases/2026-09-18-doom/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Super Mario · @faadilhshaik](cases/2026-09-18-mario-faadhil/README.en.md)
+
+Let Jev control Super Mario to demonstrate fast action selection.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100085174826647552/img/6YMRQKKZYBPsW2oo.jpg" width="320" alt="Super Mario · @faadilhshaik">](https://x.com/faadilhshaik/status/2100086301894881578)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#mario-faadhil) · [X · 2,686 likes at collection](https://x.com/faadilhshaik/status/2100086301894881578) · [How it works & evidence](cases/2026-09-18-mario-faadhil/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Super Mario · Jev / Qwen comparison](cases/2026-09-18-mario-comparison/README.en.md)
+
+Give Jev and Qwen the same Mario information and compare action choices.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100567975317454849/img/UjFbLkeMH5RdOrlS.jpg" width="320" alt="Super Mario · Jev / Qwen comparison">](https://x.com/karaage0703/status/2100569924238471355)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#mario-comparison) · [X · 284 likes at collection](https://x.com/karaage0703/status/2100569924238471355) · [How it works & evidence](cases/2026-09-18-mario-comparison/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Super Mario · World 1-1](cases/2026-09-18-mario-ppo/README.en.md)
+
+Demonstrate Jev on Mario's first level alongside the author's earlier game-AI training experience.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100454863335501825/img/RbCmluMnOGM4rHPb.jpg" width="320" alt="Super Mario · World 1-1">](https://x.com/shantanugoel/status/2100455295801827769)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#mario-ppo) · [X · 248 likes at collection](https://x.com/shantanugoel/status/2100455295801827769) · [How it works & evidence](cases/2026-09-18-mario-ppo/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Astra + Jev Pac-Man](cases/2026-09-18-pacman/README.en.md)
+
+One model plans while Jev chooses quick local moves to play Pac-Man.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100335842451492864/img/gC9HxZoXRIgMLKrW.jpg" width="320" alt="Astra + Jev Pac-Man">](https://x.com/daniel_mac8/status/2100335929273524541)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#pacman) · [X · 860 likes at collection](https://x.com/daniel_mac8/status/2100335929273524541) · [How it works & evidence](cases/2026-09-18-pacman/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Step-by-step Snake](cases/2026-09-18-snake/README.en.md)
+
+Ask Jev for the next move at every step of Snake.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100516335155646464/img/pow4ZDKeRwkBVSvy.jpg" width="320" alt="Step-by-step Snake">](https://x.com/chenchengpro/status/2100516953496670430)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#snake) · [X · 204 likes at collection](https://x.com/chenchengpro/status/2100516953496670430) · [How it works & evidence](cases/2026-09-18-snake/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Tetris](cases/2026-09-18-tetris/README.en.md)
+
+Let Jev make Tetris decisions and observe how blocks are placed.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100315393860730880/img/u0iH2SHQny2hkd4Q.jpg" width="320" alt="Tetris">](https://x.com/marcus_lowe/status/2100315518930661861)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#tetris) · [X · 956 likes at collection](https://x.com/marcus_lowe/status/2100315518930661861) · [How it works & evidence](cases/2026-09-18-tetris/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Jev Plays Pokémon](cases/2026-09-18-pokemon/README.en.md)
+
+Let Jev play Pokémon over time and track progress and decision costs.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100539819172544512/img/0EZ7yznRwL7qi4K8.jpg" width="320" alt="Jev Plays Pokémon">](https://x.com/0xBOYD/status/2100539883836018697)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#pokemon) · [X · 220 likes at collection](https://x.com/0xBOYD/status/2100539883836018697) · [How it works & evidence](cases/2026-09-18-pokemon/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Slay the Spire 2 agent](cases/2026-09-18-slay-spire/README.en.md)
+
+Use Jev to choose card-game actions with less waiting between decisions.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100569632482746369/img/TPuOBiHYCWUWxNOc.jpg" width="320" alt="Slay the Spire 2 agent">](https://x.com/coolish/status/2100570517954838897)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#slay-spire) · [X · 598 likes at collection](https://x.com/coolish/status/2100570517954838897) · [How it works & evidence](cases/2026-09-18-slay-spire/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [5+0 blitz chess](cases/2026-09-18-chess/README.en.md)
+
+Compare model playing strength and decision speed in timed chess.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100371773275406336/img/NmHPy0pAprSsC6Gi.jpg" width="320" alt="5+0 blitz chess">](https://x.com/aimlapi/status/2100372930282573876)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#chess) · [X · 1,985 likes at collection](https://x.com/aimlapi/status/2100372930282573876) · [How it works & evidence](cases/2026-09-18-chess/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Parallel Subway Surfers demo](cases/2026-09-18-subway-runners/README.en.md)
+
+Demonstrate Jev controlling multiple runner-style games at once.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100633400717565952/img/KlytLNSLCQA-yY2E.jpg" width="320" alt="Parallel Subway Surfers demo">](https://x.com/_MaxBlade/status/2100634359099232678)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#subway-runners) · [X · 1,474 likes at collection](https://x.com/_MaxBlade/status/2100634359099232678) · [How it works & evidence](cases/2026-09-18-subway-runners/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Staged Rubik's Cube solver](cases/2026-09-18-rubiks-cube/README.en.md)
+
+Code knows the cube-solving methods; Jev identifies which case to apply.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100479486382809088/img/r6daGpDnvsCr3LyL.jpg" width="320" alt="Staged Rubik&#x27;s Cube solver">](https://x.com/redp314/status/2100489858951073858)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#rubiks-cube) · [X · 494 likes at collection](https://x.com/redp314/status/2100489858951073858) · [How it works & evidence](cases/2026-09-18-rubiks-cube/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Mario Kart 64](cases/2026-09-18-mario-kart/README.en.md)
+
+Watch Jev control Mario Kart in a continuous-driving demo.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100605130869784576/img/gdGysXaHMdzFOU8W.jpg" width="320" alt="Mario Kart 64">](https://x.com/shreypandya/status/2100606445758898287)
+
+[Claims lack support](references/2026-09-19-claims-audit.en.md#mario-kart) · [X · 204 likes at collection](https://x.com/shreypandya/status/2100606445758898287) · [How it works & evidence](cases/2026-09-18-mario-kart/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Minecraft with Jev, Astra and local policies](cases/2026-09-18-minecraft-hybrid/README.en.md)
+
+Split Minecraft play across models: long-term planning, quick reactions, and local movement and aiming.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100727359569530880/img/IGuQpzilRkIsw1Wb.jpg" width="320" alt="Minecraft with Jev, Astra and local policies">](https://x.com/wuyang_zhou/status/2100727660875808913)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#minecraft-hybrid) · [X · 354 likes at collection](https://x.com/wuyang_zhou/status/2100727660875808913) · [How it works & evidence](cases/2026-09-18-minecraft-hybrid/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Sprite Fusion: generate runner terrain in real time](cases/2026-09-19-game-level-generation/README.en.md)
+
+Select new platforms and gaps ahead of a moving player.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100952449661992960/img/GEVdw9BvAW7Dv2Gx.jpg" width="320" alt="Sprite Fusion: generate runner terrain in real time">](https://x.com/HugoDuprez/status/2100953089003921543)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#game-level-generation) · [X · 1,289 likes at collection](https://x.com/HugoDuprez/status/2100953089003921543) · [How it works & evidence](cases/2026-09-19-game-level-generation/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Flappy Bird: navigate obstacles](cases/2026-09-19-flappy-bird/README.en.md)
+
+Use Jev in controlling a bird through obstacles.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100937854813700096/img/AlsBUETn77dLd0r8.jpg" width="320" alt="Flappy Bird: navigate obstacles">](https://x.com/thymikee/status/2100937960115838984)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#flappy-bird) · [X · 254 likes at collection](https://x.com/thymikee/status/2100937960115838984) · [How it works & evidence](cases/2026-09-19-flappy-bird/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
 
 <a id="simulation"></a>
 
-### NPCs, driving and population simulations (10)
+<details>
+<summary><strong>Experiment in simulated worlds</strong> · 10</summary>
 
-Needs-driven NPCs explore behavior; the 500-agent demo explores throughput. Unpaused driving exposes latency constraints. The drone project provides code. Towns and fictional personas are storytelling or ideation tools, not evidence of real-world behavior. Traffic signals, dual-arm manipulation and vital signs respectively concern signal direction, layered actions and state labels. Robotics explicitly leaves IK/physics to code; the traffic ratio and practical monitoring claims lack matching validation. Evaluate each task separately from real deployment.
+Explore decisions in traffic, robotics and virtual characters. Code usually handles physics and movement. Success in a simulation still needs validation in the real world.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-simulation.en.md)
+[Compare approaches](breakdowns/2026-09-18-simulation.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**Needs-driven NPCs**](cases/2026-09-18-npc-needs/README.en.md)<br>Let game characters choose objects or activities that meet their needs.<br>**How it works:** Give Jev a character's needs and available options, then execute its choice in the game. The model decides what to do; movement, animation and rules remain in game code.<br>**🟡 B · Effectiveness unverified**<br>The needs-to-tool selection mechanism is plausible and the author acknowledges existing rule-based alternatives. Improved behavior or long-term coherence has not been measured.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#npc-needs)<br>**Content updated:** 2026-09-19 16:55:36 | [201](https://x.com/m_iraji/status/2100394212743159944) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100394190643355648/img/52O-mJZSxj4IGHos.jpg" width="160" alt="Needs-driven NPCs preview">](https://x.com/m_iraji/status/2100394212743159944)<br>[Video](https://x.com/m_iraji/status/2100394212743159944) |
-| [**500 agents in a 3D environment**](cases/2026-09-18-npc-500/README.en.md)<br>Run decisions for many virtual characters in one 3D world.<br>**How it works:** Send characters' questions to Jev and execute their choices in the simulation. An overall rate of 35 requests/second does not mean each of 500 characters updates 35 times/second.<br>**🟠 C · Claims exceed evidence**<br>500 entities, 500ms request latency and 35 total calls/s do not establish every entity’s decision rate or remove latency as a bottleneck. Under one call per agent, a full sweep would take about 14.3s; batching is unspecified, so that calculation is conditional.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#npc-500)<br>**Content updated:** 2026-09-19 16:55:36 | [572](https://x.com/crislenta/status/2100457614073327754) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100457262372560897/img/zSIVGvaQhEZLMd9-.jpg" width="160" alt="500 agents in a 3D environment preview">](https://x.com/crislenta/status/2100457614073327754)<br>[Video](https://x.com/crislenta/status/2100457614073327754) |
-| [**“FSD” driving simulation**](cases/2026-09-18-driving-toy/README.en.md)<br>A small driving simulation that the author calls “rebuilding FSD.”<br>**How it works:** Code and Jev jointly control the simulated car. Driving in this environment is far from demonstrating safe real-road operation or reproducing Tesla FSD.<br>**🟠 C · Claims exceed evidence**<br>Rebuilding Tesla FSD is a materially broader claim than a toy driving demo. Real-world perception, road testing, reliability and a matched system comparison are not provided; the prototype need not be false for the headline to overstate it.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#driving-toy)<br>**Content updated:** 2026-09-19 16:55:36 | [3,993](https://x.com/jpschroeder/status/2100347770867458384) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100347372844756992/img/CaExDBw3MTf0ia58.jpg" width="160" alt="“FSD” driving simulation preview">](https://x.com/jpschroeder/status/2100347770867458384)<br>[Video](https://x.com/jpschroeder/status/2100347770867458384) |
-| [**Unpaused real-time driving**](cases/2026-09-18-realtime-driving/README.en.md)<br>Keep the car moving while Jev thinks to test real-time simulated driving.<br>**How it works:** Pausing the simulator for every model call hides latency. Here it keeps moving, so the observed state may already be outdated when an answer arrives.<br>**🟡 B · Effectiveness unverified**<br>The author explicitly bounds the work to an unpaused driving simulator. Timing logs and broad reliability are missing, but the source does not claim validated physical autonomy.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#realtime-driving)<br>**Content updated:** 2026-09-19 16:55:36 | [270](https://x.com/SigGravitas/status/2100325221932958134) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100323655389474816/img/LLOAJ3wie1phk45K.jpg" width="160" alt="Unpaused real-time driving preview">](https://x.com/SigGravitas/status/2100325221932958134)<br>[Video](https://x.com/SigGravitas/status/2100325221932958134) |
-| [**Jev drone simulation**](cases/2026-09-18-drone-sim/README.en.md)<br>Fly through simulated obstacles with Jev choosing tactics and code stabilizing the drone.<br>**How it works:** Like a navigator working with a flight controller, code summarizes camera information, Jev chooses maneuvers, and faster control/safety loops constrain the actions.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The pinned documentation separates symbolic perception, classical control, safety vetoes and Jev advice, and discloses failures. It supports a narrow simulated hybrid-system result, not physical deployment or general superiority.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#drone-sim)<br>**Content updated:** 2026-09-19 16:55:36 | [330](https://x.com/RomanSlack1/status/2100335978229690683) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100335726097494016/img/EljFdjduS88MyP9d.jpg" width="160" alt="Jev drone simulation preview">](https://x.com/RomanSlack1/status/2100335978229690683)<br>[Video](https://x.com/RomanSlack1/status/2100335978229690683) |
-| [**Unstable Government town**](cases/2026-09-18-unstable-government/README.en.md)<br>Introduce a law in a fictional town and watch residents react before a newspaper is generated.<br>**How it works:** Claude creates possible reactions and scenes, Jev chooses for each resident, and the simulation acts them out. This is interactive storytelling, not policy forecasting.<br>**🟡 B · Effectiveness unverified**<br>A clearly fictional hybrid-model town demo. It provides no empirical policy forecast, but the author frames it as entertainment rather than validated social science.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#unstable-government)<br>**Content updated:** 2026-09-19 16:55:36 | [395](https://x.com/threepointone/status/2100576921629163848) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100576552849117184/img/fdEy6tirVMqee5pe.jpg" width="160" alt="Unstable Government town preview">](https://x.com/threepointone/status/2100576921629163848)<br>[Video](https://x.com/threepointone/status/2100576921629163848) |
-| [**150 fictional user personas**](cases/2026-09-18-synthetic-personas/README.en.md)<br>Ask fictional users about product interest to explore early ideas.<br>**How it works:** Define personas, then ask Jev fixed questions in their context. These are simulated opinions, not responses from real interview participants.<br>**🟡 B · Effectiveness unverified**<br>The source explicitly uses fictional personas and reports a single runtime/cost. This can illustrate synthetic responses, not real demand, willingness to pay or validated market research.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#synthetic-personas)<br>**Content updated:** 2026-09-19 16:55:36 | [792](https://x.com/ytiskw/status/2100474943154827344) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100474178457698304/img/DXGnHg-iUrEhsFgE.jpg" width="160" alt="150 fictional user personas preview">](https://x.com/ytiskw/status/2100474943154827344)<br>[Video](https://x.com/ytiskw/status/2100474943154827344) |
-| [**Jev City: nine-intersection traffic simulation**](cases/2026-09-19-traffic-light-city/README.en.md)<br>Choose signal directions in a virtual road network and observe queues and waiting time.<br>**How it works:** Like a dispatcher in a model city: code supplies junction state, Jev chooses a direction, and the simulator moves vehicles.<br>**🟠 C · Claims exceed evidence**<br>The over-600% claim lacks matched controller baselines and repeated statistics. The simulation interface does not establish real-world traffic gains.<br>[Assessment and sources](references/2026-09-19-increment7-audit.en.md#traffic-light-city)<br>**Content updated:** 2026-09-19 17:48:49 | [1,081](https://x.com/leojrr/status/2101161666410893328) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101161072447180800/img/sRIOALT11TUpdAdU.jpg" width="160" alt="Jev City: nine-intersection traffic simulation preview">](https://x.com/leojrr/status/2101161666410893328)<br>[Video](https://x.com/leojrr/status/2101161666410893328) |
-| [**Vital-sign simulation: judging state changes**](cases/2026-09-19-vital-signs-simulator/README.en.md)<br>Compare rule alarms with Jev judgments in normal-state and slow-heart-rate simulations.<br>**How it works:** Like a practice drill for a monitor: compare judgments on simulated measurements. Model confidence is not a clinically validated event probability.<br>**🟠 C · Claims exceed evidence**<br>Two simulations do not support readiness for practical use. Repeatability, confidence and clinical event probability are different validation targets.<br>[Assessment and sources](references/2026-09-19-increment7-audit.en.md#vital-signs-simulator)<br>**Content updated:** 2026-09-19 17:48:49 | [216](https://x.com/roiyaruRIZ/status/2101130711067431018) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101125501234630656/img/pxMddfrpMLTvBhaR.jpg" width="160" alt="Vital-sign simulation: judging state changes preview">](https://x.com/roiyaruRIZ/status/2101130711067431018)<br>[Video](https://x.com/roiyaruRIZ/status/2101130711067431018) |
-| [**Dual-arm robot simulation: layered action decisions**](cases/2026-09-19-dual-arm-robot-sim/README.en.md)<br>Manipulate blocks in simulation, with Jev handling the middle decision layer.<br>**How it works:** Like a supervisor choosing which block to move while an engineer calculates arm motion: decisions, joint solving and physics have separate roles.<br>**🟡 B · Effectiveness unverified**<br>Layer descriptions and simulation media support a prototype; speed, cost and transfer to hardware remain unverified.<br>[Assessment and sources](references/2026-09-19-increment7-audit.en.md#dual-arm-robot-sim)<br>**Content updated:** 2026-09-19 17:48:49 | [229](https://x.com/Raptor_zip/status/2101091398447505567) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101070240444772353/img/Ci_PCLcMigmoAdks.jpg" width="160" alt="Dual-arm robot simulation: layered action decisions preview">](https://x.com/Raptor_zip/status/2101091398447505567)<br>[Video](https://x.com/Raptor_zip/status/2101091398447505567) |
+### [Needs-driven NPCs](cases/2026-09-18-npc-needs/README.en.md)
+
+Let game characters choose objects or activities that meet their needs.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100394190643355648/img/52O-mJZSxj4IGHos.jpg" width="320" alt="Needs-driven NPCs">](https://x.com/m_iraji/status/2100394212743159944)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#npc-needs) · [X · 201 likes at collection](https://x.com/m_iraji/status/2100394212743159944) · [How it works & evidence](cases/2026-09-18-npc-needs/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [500 agents in a 3D environment](cases/2026-09-18-npc-500/README.en.md)
+
+Run decisions for many virtual characters in one 3D world.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100457262372560897/img/zSIVGvaQhEZLMd9-.jpg" width="320" alt="500 agents in a 3D environment">](https://x.com/crislenta/status/2100457614073327754)
+
+[Claims lack support](references/2026-09-19-claims-audit.en.md#npc-500) · [X · 572 likes at collection](https://x.com/crislenta/status/2100457614073327754) · [How it works & evidence](cases/2026-09-18-npc-500/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [“FSD” driving simulation](cases/2026-09-18-driving-toy/README.en.md)
+
+A small driving simulation that the author calls “rebuilding FSD.”
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100347372844756992/img/CaExDBw3MTf0ia58.jpg" width="320" alt="“FSD” driving simulation">](https://x.com/jpschroeder/status/2100347770867458384)
+
+[Claims lack support](references/2026-09-19-claims-audit.en.md#driving-toy) · [X · 3,993 likes at collection](https://x.com/jpschroeder/status/2100347770867458384) · [How it works & evidence](cases/2026-09-18-driving-toy/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Unpaused real-time driving](cases/2026-09-18-realtime-driving/README.en.md)
+
+Keep the car moving while Jev thinks to test real-time simulated driving.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100323655389474816/img/LLOAJ3wie1phk45K.jpg" width="320" alt="Unpaused real-time driving">](https://x.com/SigGravitas/status/2100325221932958134)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#realtime-driving) · [X · 270 likes at collection](https://x.com/SigGravitas/status/2100325221932958134) · [How it works & evidence](cases/2026-09-18-realtime-driving/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Jev drone simulation](cases/2026-09-18-drone-sim/README.en.md)
+
+Fly through simulated obstacles with Jev choosing tactics and code stabilizing the drone.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100335726097494016/img/EljFdjduS88MyP9d.jpg" width="320" alt="Jev drone simulation">](https://x.com/RomanSlack1/status/2100335978229690683)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#drone-sim) · [X · 330 likes at collection](https://x.com/RomanSlack1/status/2100335978229690683) · [How it works & evidence](cases/2026-09-18-drone-sim/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Unstable Government town](cases/2026-09-18-unstable-government/README.en.md)
+
+Introduce a law in a fictional town and watch residents react before a newspaper is generated.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100576552849117184/img/fdEy6tirVMqee5pe.jpg" width="320" alt="Unstable Government town">](https://x.com/threepointone/status/2100576921629163848)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#unstable-government) · [X · 395 likes at collection](https://x.com/threepointone/status/2100576921629163848) · [How it works & evidence](cases/2026-09-18-unstable-government/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [150 fictional user personas](cases/2026-09-18-synthetic-personas/README.en.md)
+
+Ask fictional users about product interest to explore early ideas.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100474178457698304/img/DXGnHg-iUrEhsFgE.jpg" width="320" alt="150 fictional user personas">](https://x.com/ytiskw/status/2100474943154827344)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#synthetic-personas) · [X · 792 likes at collection](https://x.com/ytiskw/status/2100474943154827344) · [How it works & evidence](cases/2026-09-18-synthetic-personas/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Jev City: nine-intersection traffic simulation](cases/2026-09-19-traffic-light-city/README.en.md)
+
+Choose signal directions in a virtual road network and observe queues and waiting time.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101161072447180800/img/sRIOALT11TUpdAdU.jpg" width="320" alt="Jev City: nine-intersection traffic simulation">](https://x.com/leojrr/status/2101161666410893328)
+
+[Claims lack support](references/2026-09-19-increment7-audit.en.md#traffic-light-city) · [X · 1,081 likes at collection](https://x.com/leojrr/status/2101161666410893328) · [How it works & evidence](cases/2026-09-19-traffic-light-city/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Vital-sign simulation: judging state changes](cases/2026-09-19-vital-signs-simulator/README.en.md)
+
+Compare rule alarms with Jev judgments in normal-state and slow-heart-rate simulations.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101125501234630656/img/pxMddfrpMLTvBhaR.jpg" width="320" alt="Vital-sign simulation: judging state changes">](https://x.com/roiyaruRIZ/status/2101130711067431018)
+
+[Claims lack support](references/2026-09-19-increment7-audit.en.md#vital-signs-simulator) · [X · 216 likes at collection](https://x.com/roiyaruRIZ/status/2101130711067431018) · [How it works & evidence](cases/2026-09-19-vital-signs-simulator/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Dual-arm robot simulation: layered action decisions](cases/2026-09-19-dual-arm-robot-sim/README.en.md)
+
+Manipulate blocks in simulation, with Jev handling the middle decision layer.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101070240444772353/img/Ci_PCLcMigmoAdks.jpg" width="320" alt="Dual-arm robot simulation: layered action decisions">](https://x.com/Raptor_zip/status/2101091398447505567)
+
+[Effectiveness unverified](references/2026-09-19-increment7-audit.en.md#dual-arm-robot-sim) · [X · 229 likes at collection](https://x.com/Raptor_zip/status/2101091398447505567) · [How it works & evidence](cases/2026-09-19-dual-arm-robot-sim/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
 
 <a id="interaction"></a>
 
-### Real-time interaction and composition experiments (15)
+<details>
+<summary><strong>Turn judgments into interactions</strong> · 15</summary>
 
-TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs. Other entries cover file selection, emoji suggestions, live shopping and voice-and-pointing canvas control. Their distinct tasks warrant separate cases. Both the canvas and TypeGPU combine perception with decisions, but one manipulates objects while the other changes audiovisual effects. Probably organizes judgments, branches and text generation into a small language. Its hosted site uses recorded playback, which must be distinguished from live local model calls when discussing responsiveness. Shell-history suggestions and the launcher both select a next step from candidates. The former documents thresholds in a pinned version but uses fabricated demo history; the latter selects files. Compare hit rates, acceptance and execution risks separately. json-render assembles interactive component trees, the color experiment visualizes 16-color judgments, and CNVS gates whether to respond to speech. They require structural/semantic checks, subjective matching and false-activation tests respectively, not just latency comparisons.
+Choose a color or component, or decide whether speech needs a response. Small judgments can create new interfaces. Compare meaning, structure and false activations as well as latency.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-interaction.en.md)
+[Compare approaches](breakdowns/2026-09-18-interaction.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**TypeGPU real-time semantic effects**](cases/2026-09-18-typegpu-realtime/README.en.md)<br>Let camera and microphone input influence lighting and visual effects.<br>**How it works:** Local models process speech, objects and depth; Jev makes semantic judgments; rendering code changes effects. Jev is one decision stage, not the whole perception/rendering pipeline.<br>**🟡 B · Effectiveness unverified**<br>The post explicitly names local perception, rendering and Jev components, supporting a composed demo rather than direct audiovisual understanding by Jev. Full latency, implementation verification and component comparisons are missing.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#typegpu-realtime)<br>**Content updated:** 2026-09-19 16:55:36 | [251](https://x.com/reczko_konrad/status/2100646448324833512) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100644432211062784/img/iduKHYZdESQ5FBR7.jpg" width="160" alt="TypeGPU real-time semantic effects preview">](https://x.com/reczko_konrad/status/2100646448324833512)<br>[Video](https://x.com/reczko_konrad/status/2100646448324833512) |
-| [**Ask Jev**](cases/2026-09-18-ask-jev/README.en.md)<br>Enter a question and see Jev's judgment instead of a long written answer.<br>**How it works:** The site takes input, asks Jev for a judgment and displays it. It illustrates decision-style interaction, not a guarantee that arbitrary judgments are factual.<br>**🟡 B · Effectiveness unverified**<br>A website and video support a judgment interface, as the author describes. They do not establish reliable answers to arbitrary factual questions.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#ask-jev)<br>**Content updated:** 2026-09-19 16:55:36 | [423](https://x.com/waynesutton/status/2100487878992388279) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100486117325955072/img/_QailXRTsMGQ_atc.jpg" width="160" alt="Ask Jev preview">](https://x.com/waynesutton/status/2100487878992388279)<br>[Video](https://x.com/waynesutton/status/2100487878992388279) |
-| [**Finite-vocabulary chat**](cases/2026-09-18-word-chat/README.en.md)<br>Give Jev a common-word list and let it build a conversation one word at a time.<br>**How it works:** Jev chooses the next word from a finite list; code appends it and asks again. The loop constructs the text, and the vocabulary limits what it can say.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The author explicitly discloses a small word vocabulary and a selection loop, a bounded mechanism compatible with the demo. It does not establish a general text-generation API or competitive quality and efficiency.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#word-chat)<br>**Content updated:** 2026-09-19 16:55:36 | [2,644](https://x.com/hi_im_isaac_/status/2100408276949385668) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100407646226649088/img/qVPomAIwJ_lKpO2J.jpg" width="160" alt="Finite-vocabulary chat preview">](https://x.com/hi_im_isaac_/status/2100408276949385668)<br>[Video](https://x.com/hi_im_isaac_/status/2100408276949385668) |
-| [**29-option character generation**](cases/2026-09-18-character-chat/README.en.md)<br>Let Jev choose one letter or punctuation mark at a time to build text.<br>**How it works:** Each round asks 29 yes/no questions, picks the strongest character and appends it. Producing text this way does not establish an advantage over a dedicated text model.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The post specifies 29 yes/no character questions and appending the highest-probability result. The substantiated claim is an autoregressive selection loop, not training a new general-purpose language model.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#character-chat)<br>**Content updated:** 2026-09-19 16:55:36 | [866](https://x.com/ryanvogel/status/2100218045549412499) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100217973000617984/img/AFareJummI08B_QB.jpg" width="160" alt="29-option character generation preview">](https://x.com/ryanvogel/status/2100218045549412499)<br>[Video](https://x.com/ryanvogel/status/2100218045549412499) |
-| [**Parallel pixel drawing**](cases/2026-09-18-pixel-drawing/README.en.md)<br>Combine many pixel-level judgments to experiment with drawing through Jev.<br>**How it works:** Think of deciding picture cells and assembling them in code. The author describes parallel pixel prediction but does not publish color choices, resolution or question construction.<br>**🟡 B · Effectiveness unverified**<br>A small drawing demo is compatible with composing pixel judgments. Resolution, palette, prompts and total cost are undisclosed; general-purpose image-generation quality is unestablished.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#pixel-drawing)<br>**Content updated:** 2026-09-19 16:55:36 | [1,461](https://x.com/anshuc/status/2100246929611411501) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100245288183066624/img/ARkl8CTLZxp1KXSa.jpg" width="160" alt="Parallel pixel drawing preview">](https://x.com/anshuc/status/2100246929611411501)<br>[Video](https://x.com/anshuc/status/2100246929611411501) |
-| [**RISC-jeV logic-gate experiment**](cases/2026-09-18-riscv/README.en.md)<br>Use Jev for simple logic decisions and compose them into small computer instructions.<br>**How it works:** Like building a machine from blocks, Jev supplies AND/OR-style decisions that SERV combines into instructions. This illustrates composition rather than efficient computation.<br>**🟡 B · Effectiveness unverified**<br>The author explicitly describes logic-gate judgments composed through SERV, not a native Jev CPU. Integration correctness, stability and any advantage over deterministic computation remain unverified.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#riscv)<br>**Content updated:** 2026-09-19 16:55:36 | [208](https://x.com/i2cjak/status/2100454307405365673) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100454137695469568/img/pGRTotN_ZQaAuc4V.jpg" width="160" alt="RISC-jeV logic-gate experiment preview">](https://x.com/i2cjak/status/2100454307405365673)<br>[Video](https://x.com/i2cjak/status/2100454307405365673) |
-| [**Intent-aware predictive launcher**](cases/2026-09-18-predictive-launcher/README.en.md)<br>Find files without remembering names: type “the PDF I just downloaded” and rank relevant matches first.<br>**How it works:** Like asking an assistant for the document you just downloaded: the app prepares candidates and context, Jev interprets the request, and the interface updates its ranking as you type. Indexing details are undisclosed.<br>**🟡 B · Effectiveness unverified**<br>A specific intent-based file query is demonstrated. The reported ~100 ms lacks scale, timing boundaries and error cases; high model confidence is not perfect retrieval accuracy.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#predictive-launcher)<br>**Content updated:** 2026-09-19 16:55:36 | [252](https://x.com/dabit3/status/2100756930054504776) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100756324845862913/img/8ew1NdHs6k5cReoF.jpg" width="160" alt="Intent-aware predictive launcher preview">](https://x.com/dabit3/status/2100756930054504776)<br>[Video](https://x.com/dabit3/status/2100756930054504776) |
-| [**Live shopping assistant and avatar expressions**](cases/2026-09-18-live-commerce-assistant/README.en.md)<br>Recommend products during a conversation and change a virtual shop assistant’s expression with the dialogue.<br>**How it works:** Like a shop assistant listening and bringing over products: the conversation system talks, Jev contributes quick judgments, and the app updates recommendations and expressions. The author demonstrates two models together but does not disclose every interface.<br>**🟡 B · Effectiveness unverified**<br>The author identifies a simple demo using Jev plus gpt-live-1. End-to-end behavior is not solely attributable to Jev, expression mapping is not proven unique to it, and recommendation/inventory accuracy is unmeasured.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#live-commerce-assistant)<br>**Content updated:** 2026-09-19 16:55:36 | [217](https://x.com/rinte0321/status/2100736454850908344) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100735518963355648/img/o0S0IxXnxWjnlNOG.jpg" width="160" alt="Live shopping assistant and avatar expressions preview">](https://x.com/rinte0321/status/2100736454850908344)<br>[Video](https://x.com/rinte0321/status/2100736454850908344) |
-| [**Live emoji suggestions**](cases/2026-09-18-emoji-suggestions/README.en.md)<br>Suggest emoji that fit the meaning of text as it is entered.<br>**How it works:** The model selects from existing emoji rather than drawing new ones. The interface displays candidates and scores and asks again when the input changes. The exact question format is undisclosed.<br>**🟡 B · Effectiveness unverified**<br>The demo reports 100–200 ms with similar timings for 3 and 200 candidates. Without repeated measurements or semantic accuracy, this does not imply constant latency at arbitrary scale.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#emoji-suggestions)<br>**Content updated:** 2026-09-19 16:55:36 | [230](https://x.com/riku720720/status/2100705558512963602) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100705222016520192/img/BxzTN_rxkA_FLvwe.jpg" width="160" alt="Live emoji suggestions preview">](https://x.com/riku720720/status/2100705558512963602)<br>[Video](https://x.com/riku720720/status/2100705558512963602) |
-| [**Voice-and-pointing canvas control**](cases/2026-09-18-voice-gesture-canvas/README.en.md)<br>Use speech and pointing together to say “put that over there” on a canvas.<br>**How it works:** The app records where you point when saying words such as “that” and “there,” then asks Jev a few separate questions. It avoids enumerating every object, action and position combination as one huge choice list.<br>**🟡 B · Effectiveness unverified**<br>The author explains keyword-timed pointing and several small judgments, explicitly admitting imperfect behavior. Perception libraries, success rates and recovery are unreported; the demo is a feasibility experiment.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#voice-gesture-canvas)<br>**Content updated:** 2026-09-19 16:55:36 | [915](https://x.com/jackcheng/status/2100729670991802386) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100729243185324032/img/YNw8njfnSXu-Tbyr.jpg" width="160" alt="Voice-and-pointing canvas control preview">](https://x.com/jackcheng/status/2100729670991802386)<br>[Video](https://x.com/jackcheng/status/2100729670991802386) |
-| [**Probably: semantic judgments as program control**](cases/2026-09-18-probably-language/README.en.md)<br>Write judgments such as “is this email urgent?” into branches, then ask a text model to draft a reply.<br>**How it works:** Put a judgment inside a program: Jev decides whether a condition holds or which branch fits, an interpreter coordinates the steps, and a separate model writes text.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The site documents interpreter, Jev and text-model responsibilities and toy-language limits. Hosted examples replay cached results; custom inputs require local live calls. This disclosed replay is not a live speed benchmark.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#probably-language)<br>**Content updated:** 2026-09-19 16:55:36 | [894](https://x.com/southpolesteve/status/2100767781868150938) | [<img src="https://pbs.twimg.com/media/HSdr-ILWUAAN29Y.jpg?name=orig" width="160" alt="Probably: semantic judgments as program control preview">](https://x.com/southpolesteve/status/2100767781868150938)<br>[Image](https://x.com/southpolesteve/status/2100767781868150938) |
-| [**Shell history: semantic command suggestions**](cases/2026-09-18-shell-history-suggestions/README.en.md)<br>Type part of a command or describe an intent to select a suggestion from past commands.<br>**How it works:** Like a history menu that understands meaning: code lists previous commands and Jev picks the closest to your intent. Code controls candidates, matching and display; the user accepts a suggestion into the command line.<br>**🟢 A · Clearer evidence for function/mechanism**<br>Pinned docs specify history candidates, prefix filtering, Choice/Noul gates and stale-result rejection. The demo uses fabricated history and reports 0.7–0.9 s latency; everyday adoption and long-term acceptance are not established.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#shell-history-suggestions)<br>**Content updated:** 2026-09-19 16:55:36 | [396](https://x.com/thorstenball/status/2100858434904109099) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100858390683475969/img/PRKkLSCaQKsfoXRI.jpg" width="160" alt="Shell history: semantic command suggestions preview">](https://x.com/thorstenball/status/2100858434904109099)<br>[Video](https://x.com/thorstenball/status/2100858434904109099) |
-| [**json-render: assemble interfaces from component choices**](cases/2026-09-19-json-render-ui/README.en.md)<br>Turn interface requests into constrained component layouts, including additions, removals and moves.<br>**How it works:** Like choosing blocks and arranging them: Jev makes selections, while code builds and renders a valid interface specification.<br>**🟢 A · Clearer evidence for function/mechanism**<br>Pinned docs substantiate component selection, staged layout and JSON assembly in code, without full-page templates or freeform generation. “Instant” is not established for arbitrary UIs: candidates, text, batch size and depth are bounded, with no matched-quality end-to-end benchmark.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#json-render-ui)<br>**Content updated:** 2026-09-19 16:55:36 | [3,341](https://x.com/ctatedev/status/2101022101750571357) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2101022081810911232/img/3tKdQ3Y2_ZGSg3Q7.jpg" width="160" alt="json-render: assemble interfaces from component choices preview">](https://x.com/ctatedev/status/2101022101750571357)<br>[Video](https://x.com/ctatedev/status/2101022101750571357) |
-| [**CNVS: gate voice commands without a wake word**](cases/2026-09-19-cnvs-voice-gate/README.en.md)<br>Decide whether a spoken utterance is directed at the computer.<br>**How it works:** Like a listener distinguishing conversation from a request: only accepted utterances enter the action workflow. Speech recognition and execution remain surrounding-system responsibilities.<br>**🟡 B · Effectiveness unverified**<br>The video supports an intent-gating experiment within a speech/action pipeline. Long-term false activations, missed commands and transcription details are unknown; an ambient Jarvis remains a vision rather than demonstrated full autonomy.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#cnvs-voice-gate)<br>**Content updated:** 2026-09-19 16:55:36 | [1,053](https://x.com/_MaxBlade/status/2100967959879471519) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100966551826444288/img/i2s52ZeMNTOO-IRD.jpg" width="160" alt="CNVS: gate voice commands without a wake word preview">](https://x.com/_MaxBlade/status/2100967959879471519)<br>[Video](https://x.com/_MaxBlade/status/2100967959879471519) |
-| [**Words and colors: visualize 16-color judgments**](cases/2026-09-19-color-judgments/README.en.md)<br>Enter words and visualize the model’s judgments about colors.<br>**How it works:** Like putting “tomato” into a box of 16 crayons: Jev weights color candidates and code visualizes the weights. It is not recognizing colors from photographs.<br>**🟢 A · Clearer evidence for function/mechanism**<br>The author discloses a fixed 16-color palette and rendering weighted probabilities. This supports word-to-palette associations, not visual color recognition or color-science accuracy.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#color-judgments)<br>**Content updated:** 2026-09-19 16:55:36 | [3,441](https://x.com/mattdesl/status/2100899669802963060) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100898643117068288/img/p9Jp61lJyiq-UoWK.jpg" width="160" alt="Words and colors: visualize 16-color judgments preview">](https://x.com/mattdesl/status/2100899669802963060)<br>[Video](https://x.com/mattdesl/status/2100899669802963060) |
+### [TypeGPU real-time semantic effects](cases/2026-09-18-typegpu-realtime/README.en.md)
+
+Let camera and microphone input influence lighting and visual effects.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100644432211062784/img/iduKHYZdESQ5FBR7.jpg" width="320" alt="TypeGPU real-time semantic effects">](https://x.com/reczko_konrad/status/2100646448324833512)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#typegpu-realtime) · [X · 251 likes at collection](https://x.com/reczko_konrad/status/2100646448324833512) · [How it works & evidence](cases/2026-09-18-typegpu-realtime/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Ask Jev](cases/2026-09-18-ask-jev/README.en.md)
+
+Enter a question and see Jev's judgment instead of a long written answer.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100486117325955072/img/_QailXRTsMGQ_atc.jpg" width="320" alt="Ask Jev">](https://x.com/waynesutton/status/2100487878992388279)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#ask-jev) · [X · 423 likes at collection](https://x.com/waynesutton/status/2100487878992388279) · [How it works & evidence](cases/2026-09-18-ask-jev/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Finite-vocabulary chat](cases/2026-09-18-word-chat/README.en.md)
+
+Give Jev a common-word list and let it build a conversation one word at a time.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100407646226649088/img/qVPomAIwJ_lKpO2J.jpg" width="320" alt="Finite-vocabulary chat">](https://x.com/hi_im_isaac_/status/2100408276949385668)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#word-chat) · [X · 2,644 likes at collection](https://x.com/hi_im_isaac_/status/2100408276949385668) · [How it works & evidence](cases/2026-09-18-word-chat/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [29-option character generation](cases/2026-09-18-character-chat/README.en.md)
+
+Let Jev choose one letter or punctuation mark at a time to build text.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100217973000617984/img/AFareJummI08B_QB.jpg" width="320" alt="29-option character generation">](https://x.com/ryanvogel/status/2100218045549412499)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#character-chat) · [X · 866 likes at collection](https://x.com/ryanvogel/status/2100218045549412499) · [How it works & evidence](cases/2026-09-18-character-chat/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Parallel pixel drawing](cases/2026-09-18-pixel-drawing/README.en.md)
+
+Combine many pixel-level judgments to experiment with drawing through Jev.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100245288183066624/img/ARkl8CTLZxp1KXSa.jpg" width="320" alt="Parallel pixel drawing">](https://x.com/anshuc/status/2100246929611411501)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#pixel-drawing) · [X · 1,461 likes at collection](https://x.com/anshuc/status/2100246929611411501) · [How it works & evidence](cases/2026-09-18-pixel-drawing/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [RISC-jeV logic-gate experiment](cases/2026-09-18-riscv/README.en.md)
+
+Use Jev for simple logic decisions and compose them into small computer instructions.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100454137695469568/img/pGRTotN_ZQaAuc4V.jpg" width="320" alt="RISC-jeV logic-gate experiment">](https://x.com/i2cjak/status/2100454307405365673)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#riscv) · [X · 208 likes at collection](https://x.com/i2cjak/status/2100454307405365673) · [How it works & evidence](cases/2026-09-18-riscv/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Intent-aware predictive launcher](cases/2026-09-18-predictive-launcher/README.en.md)
+
+Find files without remembering names: type “the PDF I just downloaded” and rank relevant matches first.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100756324845862913/img/8ew1NdHs6k5cReoF.jpg" width="320" alt="Intent-aware predictive launcher">](https://x.com/dabit3/status/2100756930054504776)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#predictive-launcher) · [X · 252 likes at collection](https://x.com/dabit3/status/2100756930054504776) · [How it works & evidence](cases/2026-09-18-predictive-launcher/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Live shopping assistant and avatar expressions](cases/2026-09-18-live-commerce-assistant/README.en.md)
+
+Recommend products during a conversation and change a virtual shop assistant’s expression with the dialogue.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100735518963355648/img/o0S0IxXnxWjnlNOG.jpg" width="320" alt="Live shopping assistant and avatar expressions">](https://x.com/rinte0321/status/2100736454850908344)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#live-commerce-assistant) · [X · 217 likes at collection](https://x.com/rinte0321/status/2100736454850908344) · [How it works & evidence](cases/2026-09-18-live-commerce-assistant/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Live emoji suggestions](cases/2026-09-18-emoji-suggestions/README.en.md)
+
+Suggest emoji that fit the meaning of text as it is entered.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100705222016520192/img/BxzTN_rxkA_FLvwe.jpg" width="320" alt="Live emoji suggestions">](https://x.com/riku720720/status/2100705558512963602)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#emoji-suggestions) · [X · 230 likes at collection](https://x.com/riku720720/status/2100705558512963602) · [How it works & evidence](cases/2026-09-18-emoji-suggestions/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Voice-and-pointing canvas control](cases/2026-09-18-voice-gesture-canvas/README.en.md)
+
+Use speech and pointing together to say “put that over there” on a canvas.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100729243185324032/img/YNw8njfnSXu-Tbyr.jpg" width="320" alt="Voice-and-pointing canvas control">](https://x.com/jackcheng/status/2100729670991802386)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#voice-gesture-canvas) · [X · 915 likes at collection](https://x.com/jackcheng/status/2100729670991802386) · [How it works & evidence](cases/2026-09-18-voice-gesture-canvas/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Probably: semantic judgments as program control](cases/2026-09-18-probably-language/README.en.md)
+
+Write judgments such as “is this email urgent?” into branches, then ask a text model to draft a reply.
+
+[<img src="https://pbs.twimg.com/media/HSdr-ILWUAAN29Y.jpg?name=orig" width="320" alt="Probably: semantic judgments as program control">](https://x.com/southpolesteve/status/2100767781868150938)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#probably-language) · [X · 894 likes at collection](https://x.com/southpolesteve/status/2100767781868150938) · [How it works & evidence](cases/2026-09-18-probably-language/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Shell history: semantic command suggestions](cases/2026-09-18-shell-history-suggestions/README.en.md)
+
+Type part of a command or describe an intent to select a suggestion from past commands.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100858390683475969/img/PRKkLSCaQKsfoXRI.jpg" width="320" alt="Shell history: semantic command suggestions">](https://x.com/thorstenball/status/2100858434904109099)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#shell-history-suggestions) · [X · 396 likes at collection](https://x.com/thorstenball/status/2100858434904109099) · [How it works & evidence](cases/2026-09-18-shell-history-suggestions/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [json-render: assemble interfaces from component choices](cases/2026-09-19-json-render-ui/README.en.md)
+
+Turn interface requests into constrained component layouts, including additions, removals and moves.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2101022081810911232/img/3tKdQ3Y2_ZGSg3Q7.jpg" width="320" alt="json-render: assemble interfaces from component choices">](https://x.com/ctatedev/status/2101022101750571357)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#json-render-ui) · [X · 3,341 likes at collection](https://x.com/ctatedev/status/2101022101750571357) · [How it works & evidence](cases/2026-09-19-json-render-ui/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [CNVS: gate voice commands without a wake word](cases/2026-09-19-cnvs-voice-gate/README.en.md)
+
+Decide whether a spoken utterance is directed at the computer.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100966551826444288/img/i2s52ZeMNTOO-IRD.jpg" width="320" alt="CNVS: gate voice commands without a wake word">](https://x.com/_MaxBlade/status/2100967959879471519)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#cnvs-voice-gate) · [X · 1,053 likes at collection](https://x.com/_MaxBlade/status/2100967959879471519) · [How it works & evidence](cases/2026-09-19-cnvs-voice-gate/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Words and colors: visualize 16-color judgments](cases/2026-09-19-color-judgments/README.en.md)
+
+Enter words and visualize the model’s judgments about colors.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100898643117068288/img/p9Jp61lJyiq-UoWK.jpg" width="320" alt="Words and colors: visualize 16-color judgments">](https://x.com/mattdesl/status/2100899669802963060)
+
+[Clearer mechanism](references/2026-09-19-claims-audit.en.md#color-judgments) · [X · 3,441 likes at collection](https://x.com/mattdesl/status/2100899669802963060) · [How it works & evidence](cases/2026-09-19-color-judgments/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
 
 <a id="finance"></a>
 
-### Trading and historical backtests (4)
+<details>
+<summary><strong>Explore trading and backtests</strong> · 4</summary>
 
-Monad/Kuru demonstrates on-chain execution; the Nifty author claims live-account use and reports a stop loss. AI Hedge Fund and the Danish-equities experiment concern historical backtests. Execution demos require order, fill and risk-control verification; backtests require time-valid data and look-ahead controls. Speed and token bills do not establish profitability.
+Some examples test strategies on historical data; others demonstrate execution. Backtests need time-valid data, while execution needs fill and risk checks. Speed and low cost do not establish profit.
 
-[Detailed strengths, limitations and mechanisms](breakdowns/2026-09-18-finance.en.md)
+[Compare approaches](breakdowns/2026-09-18-finance.en.md)
 
-| Application and explanation | Main-post likes | Image / video |
-| --- | ---: | --- |
-| [**Monad / Kuru trading bot**](cases/2026-09-18-trading-bot/README.en.md)<br>Let Jev choose buy or sell from price information and have code submit the order.<br>**How it works:** The model chooses an action and code connects to the blockchain order book. Fast orders do not imply profitable trading; complete returns and risk records are absent.<br>**🟡 B · Effectiveness unverified**<br>The decision-to-order architecture is plausible, but trades and sustained end-to-end latency are unverified. A 300ms block interval is not a measured complete decision/execution cycle, and no profitable strategy is established.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#trading-bot)<br>**Content updated:** 2026-09-19 16:55:36 | [4,142](https://x.com/jarrodwatts/status/2100356151468585346) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100355999064379392/img/BiAbeDjN57avf2VK.jpg" width="160" alt="Monad / Kuru trading bot preview">](https://x.com/jarrodwatts/status/2100356151468585346)<br>[Video](https://x.com/jarrodwatts/status/2100356151468585346) |
-| [**AI Hedge Fund: strategy backtesting**](cases/2026-09-19-ai-hedge-fund-backtest/README.en.md)<br>Choose a strategy and stock tickers to run an experiment on historical data.<br>**How it works:** Like practicing on past market data: the system makes repeated decisions and measures simulated outcomes. Faster computation does not imply future profit.<br>**🟠 C · Claims exceed evidence**<br>A backtesting interface does not establish frontier-level decision quality or matched 100x speed and cost improvements. The comparative baseline, quality metric and complete measurements are absent; historical testing is not live profit.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#ai-hedge-fund-backtest)<br>**Content updated:** 2026-09-19 16:55:36 | [613](https://x.com/virattt/status/2100959848623899005) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100959729350561792/img/wc-JtyIBGa_9qgNL.jpg" width="160" alt="AI Hedge Fund: strategy backtesting preview">](https://x.com/virattt/status/2100959848623899005)<br>[Video](https://x.com/virattt/status/2100959848623899005) |
-| [**Danish equities: a full-year historical strategy experiment**](cases/2026-09-19-danish-stock-backtest/README.en.md)<br>Experiment with trading decisions on 2025 market data using news and other signals.<br>**How it works:** Like working through an old market diary one day at a time. A valid backtest must restrict inputs to information available at each historical moment.<br>**🟡 B · Effectiveness unverified**<br>The dated 2025 run is a historical experiment with self-reported token cost. Point-in-time inputs, leakage controls, trading costs and validated returns are unspecified; it is not evidence of profitable live trading.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#danish-stock-backtest)<br>**Content updated:** 2026-09-19 16:55:36 | [269](https://x.com/tommy_jepsen/status/2100939646653903063) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100938100272746496/img/8yisuerchTVTcFTn.jpg" width="160" alt="Danish equities: a full-year historical strategy experiment preview">](https://x.com/tommy_jepsen/status/2100939646653903063)<br>[Video](https://x.com/tommy_jepsen/status/2100939646653903063) |
-| [**Nifty intraday trading: an account demo with a stop-loss report**](cases/2026-09-19-nifty-trading/README.en.md)<br>Demonstrate Jev-connected Nifty trading and report a triggered stop loss.<br>**How it works:** Like connecting decisions to orders with a stopping rule. Model judgments, broker execution and risk controls have separate roles; a video does not prove profitability.<br>**🟡 B · Effectiveness unverified**<br>The source reports a stop-loss after an initially green morning, not a profitable day. Account authenticity, executions and long-term risk controls remain unverified; the disclosure is more balanced than profit marketing.<br>[Assessment and sources](references/2026-09-19-claims-audit.en.md#nifty-trading)<br>**Content updated:** 2026-09-19 16:55:36 | [673](https://x.com/IndraVahan/status/2100929105382564113) | [<img src="https://pbs.twimg.com/amplify_video_thumb/2100928264831410176/img/VP6eszCSb95ePMo4.jpg" width="160" alt="Nifty intraday trading: an account demo with a stop-loss report preview">](https://x.com/IndraVahan/status/2100929105382564113)<br>[Video](https://x.com/IndraVahan/status/2100929105382564113) |
+### [Monad / Kuru trading bot](cases/2026-09-18-trading-bot/README.en.md)
 
-## Keeping both languages in sync
+Let Jev choose buy or sell from price information and have code submit the order.
 
-Add new leads to the [inbox](inbox/README.en.md). Shared sources, likes and media live in [data/catalog.json](data/catalog.json); English editorial text lives in [data/catalog.en.json](data/catalog.en.json). Then run:
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100355999064379392/img/BiAbeDjN57avf2VK.jpg" width="320" alt="Monad / Kuru trading bot">](https://x.com/jarrodwatts/status/2100356151468585346)
 
-```sh
-python3 scripts/build_catalog.py
-python3 scripts/build_catalog.py --check
-```
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#trading-bot) · [X · 4,142 likes at collection](https://x.com/jarrodwatts/status/2100356151468585346) · [How it works & evidence](cases/2026-09-18-trading-bot/README.en.md)
 
-The dependency-free script generates both languages locally. It does not use the network or refresh likes. Missing English entries or fields fail validation. Update retrieval timestamps only after actually checking a new snapshot. See [Contributing](CONTRIBUTING.en.md) and [Taxonomy](docs/taxonomy.en.md).
+**Content updated:** 2026-09-19
 
-Third-party images, videos and code remain the property of their creators. Inclusion is not endorsement; this catalog primarily provides original summaries and source links.
+### [AI Hedge Fund: strategy backtesting](cases/2026-09-19-ai-hedge-fund-backtest/README.en.md)
+
+Choose a strategy and stock tickers to run an experiment on historical data.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100959729350561792/img/wc-JtyIBGa_9qgNL.jpg" width="320" alt="AI Hedge Fund: strategy backtesting">](https://x.com/virattt/status/2100959848623899005)
+
+[Claims lack support](references/2026-09-19-claims-audit.en.md#ai-hedge-fund-backtest) · [X · 613 likes at collection](https://x.com/virattt/status/2100959848623899005) · [How it works & evidence](cases/2026-09-19-ai-hedge-fund-backtest/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Danish equities: a full-year historical strategy experiment](cases/2026-09-19-danish-stock-backtest/README.en.md)
+
+Experiment with trading decisions on 2025 market data using news and other signals.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100938100272746496/img/8yisuerchTVTcFTn.jpg" width="320" alt="Danish equities: a full-year historical strategy experiment">](https://x.com/tommy_jepsen/status/2100939646653903063)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#danish-stock-backtest) · [X · 269 likes at collection](https://x.com/tommy_jepsen/status/2100939646653903063) · [How it works & evidence](cases/2026-09-19-danish-stock-backtest/README.en.md)
+
+**Content updated:** 2026-09-19
+
+### [Nifty intraday trading: an account demo with a stop-loss report](cases/2026-09-19-nifty-trading/README.en.md)
+
+Demonstrate Jev-connected Nifty trading and report a triggered stop loss.
+
+[<img src="https://pbs.twimg.com/amplify_video_thumb/2100928264831410176/img/VP6eszCSb95ePMo4.jpg" width="320" alt="Nifty intraday trading: an account demo with a stop-loss report">](https://x.com/IndraVahan/status/2100929105382564113)
+
+[Effectiveness unverified](references/2026-09-19-claims-audit.en.md#nifty-trading) · [X · 673 likes at collection](https://x.com/IndraVahan/status/2100929105382564113) · [How it works & evidence](cases/2026-09-19-nifty-trading/README.en.md)
+
+**Content updated:** 2026-09-19
+
+</details>
+
+## About this collection
+
+Original application posts must have at least **200 likes** and relevant media. Updates to one project are merged; independent implementations are grouped for comparison. Counts are snapshots, not credibility scores, and this is not an exhaustive inventory of X.
+
+Exact metric timestamps, technical details and assessment grades are kept in the linked records. Media remains with its original creators; click through if a preview stops working.
+
+[Case index](cases/README.en.md) · [Sources & method](references/README.en.md) · [Pending evidence](inbox/README.en.md) · [Contribute a case](CONTRIBUTING.en.md)
