@@ -50,3 +50,18 @@
 ## 2026-09-19 · 第七轮待核来源
 
 [Alan Daitch 语音控制视频](https://x.com/AlanDaitch/status/2101090570110169547)：本轮公开快照 238 赞、有约 48 秒视频，但实现作者及与已有语音控制案例的关系尚未核清。先确认来源与重复关系，再决定转正。
+
+## 2026-09-20 · 第八轮待补证据
+
+| 线索 | 原帖 / 点赞快照 | 待补证据 |
+| --- | --- | --- |
+| LangChain 代理评测 | [@LangChain · 450](https://x.com/LangChain/status/2101454284927959080) | 主帖为文章入口，未直接附运行媒体；需核对文章图表、任务与完整方法。 |
+| 实体消歧 | [@hrishioa · 253](https://x.com/hrishioa/status/2101362082369470675) | 主帖无媒体；文章中的 99% 降费、近似准确性与吞吐对照还需完整核查。 |
+| jev-lint 命名一致性 | [@mizchi · 348](https://x.com/mizchi/status/2101337282607550589) | 主帖无媒体；需核清新工具与同作者 ESLint 规则实验的关系，再决定合并或独立收录。 |
+| GrokBot 路由实验室 | [@0xCodila · 522](https://x.com/0xCodila/status/2101433560796467348) | 主帖含演示但需核对仓库、具体任务及原始实现；“超过 95%”未给比较基准。 |
+| 会计模拟 | [@xat_t0b · 1138](https://x.com/xat_t0b/status/2101260322917306612) | 作者称接入 API，需进一步读图核对会计任务、输出与规则；不凭短句推断记账能力。 |
+| 设计师演示 | [@heystefan_ · 2882](https://x.com/heystefan_/status/2101369117496521042) | 文字没有说明具体输入输出或 Jev 分工，媒体内容待核。 |
+| Web Dev Cody 演示 | [@webdevcody · 1196](https://x.com/webdevcody/status/2101393755513217192) | 文字极简，需核清是实际应用、反例还是戏仿，再决定是否收录。 |
+| Jevassembler | [@neogoose_btw · 457](https://x.com/neogoose_btw/status/2101428888874410069) | “不用代码执行 CPU 指令”的表述有戏仿色彩；需核对可执行实现与已有 RISC-jeV 的区别。 |
+
+以上数字为 9 月 20 日 FxTwitter 公开镜像快照，不计入 127 项正式目录。模仿 API 的本地模型、纯观点帖，以及 Ultrafast/Ryze/交通模拟的重复转载也未新增。[核对范围](../references/2026-09-20-increment8-audit.md)。

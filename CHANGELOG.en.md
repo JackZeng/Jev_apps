@@ -2,6 +2,30 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-20 · Eighth incremental update
+
+Reviewed through **2026-09-20 11:01:10 Beijing time**. Added **15** cases and merged **4** updates, for **127 cases in 11 groups**. A 23 / B 90 / C 14. Every new original post has at least 200 likes in its snapshot and corresponding media.
+
+| New case | Like snapshot |
+| --- | ---: |
+| [Meeting-to-flowchart: organize a process as people talk](cases/2026-09-20-meeting-flowchart/README.en.md) | [439](https://x.com/masa_okamura108/status/2101446065526632473) |
+| [Agent goal verifier: check completion after each turn](cases/2026-09-20-agent-goal-verifier/README.en.md) | [317](https://x.com/omarsar0/status/2101443311454036477) |
+| [Drape try-on experiment: select outfits from speech](cases/2026-09-20-drape-outfit-selection/README.en.md) | [1379](https://x.com/nailthy62/status/2101388186916454439) |
+| [Goodreads: predict personal five-star books](cases/2026-09-20-goodreads-taste-prediction/README.en.md) | [238](https://x.com/venturetwins/status/2101393861667115437) |
+| [Zillow listings: natural-language filters](cases/2026-09-20-zillow-semantic-filters/README.en.md) | [527](https://x.com/venturetwins/status/2101341075684434245) |
+| [Shiori: automatic bookmark tags](cases/2026-09-20-shiori-link-tagging/README.en.md) | [327](https://x.com/brian_lovin/status/2101321554130809156) |
+| [jev-align: refine decision criteria with human feedback](cases/2026-09-20-jev-align/README.en.md) | [511](https://x.com/sethkimmel3/status/2101357768640987302) |
+| [Third Hand: control a Mac using text from your request](cases/2026-09-20-third-hand/README.en.md) | [549](https://x.com/sxhivs/status/2101367048223982065) |
+| [MuJoCo: three-model apple pick-and-place comparison](cases/2026-09-20-mujoco-apple-control/README.en.md) | [272](https://x.com/openroboto/status/2101310974359941332) |
+| [Voice-spell game: turn a spoken chant into magic](cases/2026-09-20-voice-spell-game/README.en.md) | [576](https://x.com/izumisatoshi05/status/2101287104030609624) |
+| [Chat game: classify emotion and topic](cases/2026-09-20-emotion-topic-chat-game/README.en.md) | [391](https://x.com/gigabit_million/status/2101285853859545263) |
+| [Canada word map: visualize regional associations](cases/2026-09-20-canada-word-map/README.en.md) | [219](https://x.com/measure_plan/status/2101315424247820309) |
+| [Contextual clipboard: choose what to paste now](cases/2026-09-20-contextual-clipboard/README.en.md) | [207](https://x.com/CoooolXyh/status/2101284346640654362) |
+| [X draft check: flag overhyped wording before posting](cases/2026-09-20-x-draft-hype-check/README.en.md) | [446](https://x.com/unsu0707/status/2101249913099375058) |
+| [Ori Eval: compare 30-way request classification](cases/2026-09-20-ori-task-classification/README.en.md) | [329](https://x.com/OpenRouter/status/2101412965765529853) |
+
+Merged TipTour’s source release, the Hermes compaction evaluation, additional Ryze workflow details and a 12306 Ultrafast demonstration into their existing cases. TipTour moves to A for implementation clarity; performance remains unverified. New tools are compared within existing categories. Both languages preserve the two-column cards, original snapshots and first-added times; only the 19 changed cases receive new content-update times. See the [evidence report](references/2026-09-20-increment8-audit.en.md).
+
 ## 2026-09-19 · Two-column application cards
 
 Changed the 11 collapsible categories to two-column cards. Each card places its thumbnail above the application name and purpose, followed by evidence, details, source and content-update date. Odd categories leave the final cell empty; images retain their aspect ratios. Both languages retain all 112 cases and existing historical data.

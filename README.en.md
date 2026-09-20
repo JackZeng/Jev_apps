@@ -6,7 +6,7 @@ Most AI tools are known for writing answers. **TypeSafe Jev specializes in makin
 Give it the current situation and a question or set of choices; it returns a choice, score or yes/no judgment for code to act on.
 This guide explores what people have built with it—and what their demonstrations actually establish.
 
-**112 examples · 11 categories** · Sources checked through 2026-09-19
+**127 examples · 11 categories** · Sources checked through 2026-09-20
 
 [Browse all applications](#all-apps) · [How Jev works](breakdowns/2026-09-18-how-jev-apps-work.en.md) · [Latest additions](CHANGELOG.en.md)
 
@@ -24,9 +24,9 @@ Code reads the page and lists controls; Jev picks an action. A text model helps 
 
 **Keep in mind:** The result depends on the whole system, not Jev alone.
 
-[Clearer mechanism](references/2026-09-19-claims-audit.en.md#browser-use) · [X · 6,891 likes at collection](https://x.com/gregpr07/status/2100411066966749359) · [How it works & evidence](cases/2026-09-18-browser-use/README.en.md)
+[Clearer mechanism](references/2026-09-20-increment8-audit.en.md#browser-use) · [X · 6,891 likes at collection](https://x.com/gregpr07/status/2100411066966749359) · [How it works & evidence](cases/2026-09-18-browser-use/README.en.md)
 
-**Content updated:** 2026-09-19
+**Content updated:** 2026-09-20
 
 ### Can choices become an interface?
 
@@ -109,7 +109,7 @@ Evidence labels link to the assessment: **Clearer mechanism / Effectiveness unve
 <a id="browser"></a>
 
 <details>
-<summary><strong>Operate browsers and computers</strong> · 12</summary>
+<summary><strong>Operate browsers and computers</strong> · 13</summary>
 
 These systems connect observation to action. Browser tools often read page structure; desktop tools may use accessibility trees or OCR. Compare task coverage before speed.
 
@@ -120,7 +120,7 @@ These systems connect observation to action. Browser tools often read page struc
 <td width="50%" valign="top">
 <p><a href="https://x.com/gregpr07/status/2100411066966749359"><img src="https://pbs.twimg.com/amplify_video_thumb/2100410607807918080/img/lNfcykqoOvLoZHWa.jpg" width="320" alt="Browser Use · Ultrafast"></a></p>
 <p><strong><a href="cases/2026-09-18-browser-use/README.en.md">Browser Use · Ultrafast</a></strong><br>Describe a flight search and let the agent click, type and find results on the website.</p>
-<p><a href="references/2026-09-19-claims-audit.en.md#browser-use">Clearer mechanism</a> · <a href="cases/2026-09-18-browser-use/README.en.md">Details</a><br><a href="https://x.com/gregpr07/status/2100411066966749359">X · 6,891 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#browser-use">Clearer mechanism</a> · <a href="cases/2026-09-18-browser-use/README.en.md">Details</a><br><a href="https://x.com/gregpr07/status/2100411066966749359">X · 6,891 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
 </td>
 <td width="50%" valign="top">
 <p><a href="https://x.com/kylejeong/status/2100622054945095934"><img src="https://pbs.twimg.com/amplify_video_thumb/2100495119065722880/img/7A1mijkU3Z_Zj7PM.jpg" width="320" alt="Stagehand browser control"></a></p>
@@ -135,9 +135,9 @@ These systems connect observation to action. Browser tools often read page struc
 <p><a href="references/2026-09-19-claims-audit.en.md#cua-jev-use">Claims lack support</a> · <a href="cases/2026-09-18-cua-jev-use/README.en.md">Details</a><br><a href="https://x.com/trycua/status/2100649543079502213">X · 1,162 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
 </td>
 <td width="50%" valign="top">
-<p><a href="https://x.com/milindlabs/status/2100631847155994852"><img src="https://pbs.twimg.com/amplify_video_thumb/2100629037790183424/img/NR6wQpZiC-xjCEsC.jpg" width="320" alt="CoreML + OCR desktop clicks"></a></p>
-<p><strong><a href="cases/2026-09-18-coreml-ocr/README.en.md">CoreML + OCR desktop clicks</a></strong><br>Recognize buttons and labels on a Mac, then ask Jev which one to click.</p>
-<p><a href="references/2026-09-19-claims-audit.en.md#coreml-ocr">Effectiveness unverified</a> · <a href="cases/2026-09-18-coreml-ocr/README.en.md">Details</a><br><a href="https://x.com/milindlabs/status/2100631847155994852">X · 564 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
+<p><a href="https://x.com/milindlabs/status/2100631847155994852"><img src="https://pbs.twimg.com/amplify_video_thumb/2100629037790183424/img/NR6wQpZiC-xjCEsC.jpg" width="320" alt="TipTour: CoreML + OCR desktop clicks"></a></p>
+<p><strong><a href="cases/2026-09-18-coreml-ocr/README.en.md">TipTour: CoreML + OCR desktop clicks</a></strong><br>Recognize buttons and labels on a Mac, then ask Jev which one to click.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#coreml-ocr">Clearer mechanism</a> · <a href="cases/2026-09-18-coreml-ocr/README.en.md">Details</a><br><a href="https://x.com/milindlabs/status/2100631847155994852">X · 564 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
 </td>
 </tr>
 <tr>
@@ -187,6 +187,14 @@ These systems connect observation to action. Browser tools often read page struc
 <p><strong><a href="cases/2026-09-19-tester-army-e2e/README.en.md">Tester Army: web and mobile end-to-end testing</a></strong><br>Explore agent-driven interface tests in a framework targeting web and mobile.</p>
 <p><a href="references/2026-09-19-claims-audit.en.md#tester-army-e2e">Effectiveness unverified</a> · <a href="cases/2026-09-19-tester-army-e2e/README.en.md">Details</a><br><a href="https://x.com/o_kwasniewski/status/2100966838905585687">X · 505 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
 </td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/sxhivs/status/2101367048223982065"><img src="https://pbs.twimg.com/amplify_video_thumb/2101364408870109184/img/w93wxuq73naZx36A.jpg" width="320" alt="Third Hand: control a Mac using text from your request"></a></p>
+<p><strong><a href="cases/2026-09-20-third-hand/README.en.md">Third Hand: control a Mac using text from your request</a></strong><br>Read app controls, click them and enter text already supplied in the request.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#third-hand">Clearer mechanism</a> · <a href="cases/2026-09-20-third-hand/README.en.md">Details</a><br><a href="https://x.com/sxhivs/status/2101367048223982065">X · 549 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+<td width="50%"></td>
 </tr>
 </table>
 
@@ -277,7 +285,7 @@ Models, skills and tools serve different needs; Jev helps assign work. Model rou
 <a id="review"></a>
 
 <details>
-<summary><strong>Check code and risky actions</strong> · 11</summary>
+<summary><strong>Check code and risky actions</strong> · 13</summary>
 
 Break a broad review into specific judgments. Code review looks for defects; permission checks govern actions. Both false alarms and missed problems matter, and scores do not replace tests.
 
@@ -350,6 +358,18 @@ Break a broad review into specific judgments. Code review looks for defects; per
 <p><strong><a href="cases/2026-09-19-script-code-review/README.en.md">Script.it: flag issues before writing review comments</a></strong><br>Score a git diff first, then ask a language model for explanations only when issues are flagged.</p>
 <p><a href="references/2026-09-19-claims-audit.en.md#script-code-review">Effectiveness unverified</a> · <a href="cases/2026-09-19-script-code-review/README.en.md">Details</a><br><a href="https://x.com/liorshkiller/status/2100936106615140757">X · 202 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
 </td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/omarsar0/status/2101443311454036477"><img src="https://pbs.twimg.com/amplify_video_thumb/2101443076828925952/img/zVy7_B-F8UmXFdKK.jpg" width="320" alt="Agent goal verifier: check completion after each turn"></a></p>
+<p><strong><a href="cases/2026-09-20-agent-goal-verifier/README.en.md">Agent goal verifier: check completion after each turn</a></strong><br>Check whether an agent has actually achieved its goal after every turn.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#agent-goal-verifier">Effectiveness unverified</a> · <a href="cases/2026-09-20-agent-goal-verifier/README.en.md">Details</a><br><a href="https://x.com/omarsar0/status/2101443311454036477">X · 317 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/sethkimmel3/status/2101357768640987302"><img src="https://pbs.twimg.com/amplify_video_thumb/2101357265253212160/img/yMWnsAPk5D4HinBv.jpg" width="320" alt="jev-align: refine decision criteria with human feedback"></a></p>
+<p><strong><a href="cases/2026-09-20-jev-align/README.en.md">jev-align: refine decision criteria with human feedback</a></strong><br>Label boundary cases and iteratively improve Jev’s decision instructions.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#jev-align">Clearer mechanism</a> · <a href="cases/2026-09-20-jev-align/README.en.md">Details</a><br><a href="https://x.com/sethkimmel3/status/2101357768640987302">X · 511 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
 <td width="50%"></td>
 </tr>
 </table>
@@ -359,7 +379,7 @@ Break a broad review into specific judgments. Code review looks for defects; per
 <a id="data"></a>
 
 <details>
-<summary><strong>Organize files and information</strong> · 16</summary>
+<summary><strong>Organize files and information</strong> · 20</summary>
 
 Label emails, identify forms or find relevant files. Classification, retrieval and numerical estimates fail in different ways; one speed ranking cannot compare them fairly.
 
@@ -462,6 +482,30 @@ Label emails, identify forms or find relevant files. Classification, retrieval a
 <p><a href="references/2026-09-19-increment7-audit.en.md#synthetic-interview-classifier">Effectiveness unverified</a> · <a href="cases/2026-09-19-synthetic-interview-classifier/README.en.md">Details</a><br><a href="https://x.com/masa_okamura108/status/2101206603240477030">X · 278 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/venturetwins/status/2101393861667115437"><img src="https://pbs.twimg.com/amplify_video_thumb/2101393799234871296/img/oBhawR0JczN9WT1k.jpg" width="320" alt="Goodreads: predict personal five-star books"></a></p>
+<p><strong><a href="cases/2026-09-20-goodreads-taste-prediction/README.en.md">Goodreads: predict personal five-star books</a></strong><br>Use past ratings to predict which books one reader might award five stars.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#goodreads-taste-prediction">Effectiveness unverified</a> · <a href="cases/2026-09-20-goodreads-taste-prediction/README.en.md">Details</a><br><a href="https://x.com/venturetwins/status/2101393861667115437">X · 238 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/venturetwins/status/2101341075684434245"><img src="https://pbs.twimg.com/amplify_video_thumb/2101339712464326656/img/A8yq5IoXQuhJAi32.jpg" width="320" alt="Zillow listings: natural-language filters"></a></p>
+<p><strong><a href="cases/2026-09-20-zillow-semantic-filters/README.en.md">Zillow listings: natural-language filters</a></strong><br>Organize listings by architecture, renovation status and other nonstandard filters.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#zillow-semantic-filters">Effectiveness unverified</a> · <a href="cases/2026-09-20-zillow-semantic-filters/README.en.md">Details</a><br><a href="https://x.com/venturetwins/status/2101341075684434245">X · 527 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/brian_lovin/status/2101321554130809156"><img src="https://pbs.twimg.com/amplify_video_thumb/2101321495351799809/img/4KIZYG3NZtHjWnZB.jpg" width="320" alt="Shiori: automatic bookmark tags"></a></p>
+<p><strong><a href="cases/2026-09-20-shiori-link-tagging/README.en.md">Shiori: automatic bookmark tags</a></strong><br>Categorize saved links so they are easier to find by topic later.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#shiori-link-tagging">Effectiveness unverified</a> · <a href="cases/2026-09-20-shiori-link-tagging/README.en.md">Details</a><br><a href="https://x.com/brian_lovin/status/2101321554130809156">X · 327 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/OpenRouter/status/2101412965765529853"><img src="https://pbs.twimg.com/media/HSm39ISbsAAEPfg.png?name=orig" width="320" alt="Ori Eval: compare 30-way request classification"></a></p>
+<p><strong><a href="cases/2026-09-20-ori-task-classification/README.en.md">Ori Eval: compare 30-way request classification</a></strong><br>Classify requests into 30 task types and compare five models on speed, cost and correctness.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#ori-task-classification">Effectiveness unverified</a> · <a href="cases/2026-09-20-ori-task-classification/README.en.md">Details</a><br><a href="https://x.com/OpenRouter/status/2101412965765529853">X · 329 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+</tr>
 </table>
 
 </details>
@@ -469,7 +513,7 @@ Label emails, identify forms or find relevant files. Classification, retrieval a
 <a id="content"></a>
 
 <details>
-<summary><strong>Analyze content and reach</strong> · 10</summary>
+<summary><strong>Analyze content and reach</strong> · 11</summary>
 
 Some tools label ads; others connect articles or predict reach. Describing content differs from predicting the future, and a high score does not guarantee traffic or citations.
 
@@ -533,8 +577,16 @@ Some tools label ads; others connect articles or predict reach. Describing conte
 <td width="50%" valign="top">
 <p><a href="https://x.com/irabukht/status/2101090579127951694"><img src="https://pbs.twimg.com/amplify_video_thumb/2101089408099516416/img/Smzn-jtE8prvdY90.jpg" width="320" alt="Ryze AI: SEO/GEO audits and fixes"></a></p>
 <p><strong><a href="cases/2026-09-19-ryze-seo-geo/README.en.md">Ryze AI: SEO/GEO audits and fixes</a></strong><br>Add Jev to website visibility audits, analyzing pages and AI-search citations to guide fixes.</p>
-<p><a href="references/2026-09-19-increment7-audit.en.md#ryze-seo-geo">Claims lack support</a> · <a href="cases/2026-09-19-ryze-seo-geo/README.en.md">Details</a><br><a href="https://x.com/irabukht/status/2101090579127951694">X · 790 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#ryze-seo-geo">Claims lack support</a> · <a href="cases/2026-09-19-ryze-seo-geo/README.en.md">Details</a><br><a href="https://x.com/irabukht/status/2101090579127951694">X · 790 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
 </td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/unsu0707/status/2101249913099375058"><img src="https://pbs.twimg.com/amplify_video_thumb/2101248847444078592/img/mGFrlyfBgnJWT-p8.jpg" width="320" alt="X draft check: flag overhyped wording before posting"></a></p>
+<p><strong><a href="cases/2026-09-20-x-draft-hype-check/README.en.md">X draft check: flag overhyped wording before posting</a></strong><br>Warn when a draft sounds like exaggerated marketing or a sales pitch.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#x-draft-hype-check">Effectiveness unverified</a> · <a href="cases/2026-09-20-x-draft-hype-check/README.en.md">Details</a><br><a href="https://x.com/unsu0707/status/2101249913099375058">X · 446 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+<td width="50%"></td>
 </tr>
 </table>
 
@@ -592,7 +644,7 @@ As conversations grow, what should stay? These tools decide when to compact, wha
 <td width="50%" valign="top">
 <p><a href="https://x.com/tamarajtran/status/2100694549362553153"><img src="https://pbs.twimg.com/amplify_video_thumb/2100694537672998912/img/OF8vottg6-45ZgNl.jpg" width="320" alt="Tool-history context compaction"></a></p>
 <p><strong><a href="cases/2026-09-18-context-compaction/README.en.md">Tool-history context compaction</a></strong><br>Trim an AI assistant&#x27;s work history to retain what matters now.</p>
-<p><a href="references/2026-09-19-claims-audit.en.md#context-compaction">Claims lack support</a> · <a href="cases/2026-09-18-context-compaction/README.en.md">Details</a><br><a href="https://x.com/tamarajtran/status/2100694549362553153">X · 1,646 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#context-compaction">Claims lack support</a> · <a href="cases/2026-09-18-context-compaction/README.en.md">Details</a><br><a href="https://x.com/tamarajtran/status/2100694549362553153">X · 1,646 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
 </td>
 <td width="50%" valign="top">
 <p><a href="https://x.com/moritzkremb/status/2100566009312940457"><img src="https://pbs.twimg.com/amplify_video_thumb/2100565973376061440/img/jeTib61RNpwXn853.jpg" width="320" alt="Memory retrieval filtering"></a></p>
@@ -615,7 +667,7 @@ As conversations grow, what should stay? These tools decide when to compact, wha
 <a id="games"></a>
 
 <details>
-<summary><strong>Play games and solve puzzles</strong> · 16</summary>
+<summary><strong>Play games and solve puzzles</strong> · 18</summary>
 
 Turn game state into choices and watch small decisions add up. Some systems only select actions; others use planners or predefined solutions. Smooth footage does not establish strong play.
 
@@ -718,6 +770,18 @@ Turn game state into choices and watch small decisions add up. Some systems only
 <p><a href="references/2026-09-19-claims-audit.en.md#flappy-bird">Effectiveness unverified</a> · <a href="cases/2026-09-19-flappy-bird/README.en.md">Details</a><br><a href="https://x.com/thymikee/status/2100937960115838984">X · 254 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/izumisatoshi05/status/2101287104030609624"><img src="https://pbs.twimg.com/amplify_video_thumb/2101283892556972032/img/VZM3g2req3zV_HAd.jpg" width="320" alt="Voice-spell game: turn a spoken chant into magic"></a></p>
+<p><strong><a href="cases/2026-09-20-voice-spell-game/README.en.md">Voice-spell game: turn a spoken chant into magic</a></strong><br>Let semantic judgments determine the type and power of a player’s invented spell.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#voice-spell-game">Effectiveness unverified</a> · <a href="cases/2026-09-20-voice-spell-game/README.en.md">Details</a><br><a href="https://x.com/izumisatoshi05/status/2101287104030609624">X · 576 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/gigabit_million/status/2101285853859545263"><img src="https://pbs.twimg.com/amplify_video_thumb/2101283748440616960/img/zi6EL5MsWikz9suI.jpg" width="320" alt="Chat game: classify emotion and topic"></a></p>
+<p><strong><a href="cases/2026-09-20-emotion-topic-chat-game/README.en.md">Chat game: classify emotion and topic</a></strong><br>Classify a player’s emotion and topic to drive a chat game’s response.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#emotion-topic-chat-game">Effectiveness unverified</a> · <a href="cases/2026-09-20-emotion-topic-chat-game/README.en.md">Details</a><br><a href="https://x.com/gigabit_million/status/2101285853859545263">X · 391 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+</tr>
 </table>
 
 </details>
@@ -725,7 +789,7 @@ Turn game state into choices and watch small decisions add up. Some systems only
 <a id="simulation"></a>
 
 <details>
-<summary><strong>Experiment in simulated worlds</strong> · 10</summary>
+<summary><strong>Experiment in simulated worlds</strong> · 11</summary>
 
 Explore decisions in traffic, robotics and virtual characters. Code usually handles physics and movement. Success in a simulation still needs validation in the real world.
 
@@ -792,6 +856,14 @@ Explore decisions in traffic, robotics and virtual characters. Code usually hand
 <p><a href="references/2026-09-19-increment7-audit.en.md#dual-arm-robot-sim">Effectiveness unverified</a> · <a href="cases/2026-09-19-dual-arm-robot-sim/README.en.md">Details</a><br><a href="https://x.com/Raptor_zip/status/2101091398447505567">X · 229 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/openroboto/status/2101310974359941332"><img src="https://pbs.twimg.com/amplify_video_thumb/2101310940260270080/img/mCYBqjSwjUf4UV6d.jpg" width="320" alt="MuJoCo: three-model apple pick-and-place comparison"></a></p>
+<p><strong><a href="cases/2026-09-20-mujoco-apple-control/README.en.md">MuJoCo: three-model apple pick-and-place comparison</a></strong><br>Move an apple onto a plate with a simulated arm and compare direction and gripper decisions.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#mujoco-apple-control">Clearer mechanism</a> · <a href="cases/2026-09-20-mujoco-apple-control/README.en.md">Details</a><br><a href="https://x.com/openroboto/status/2101310974359941332">X · 272 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+<td width="50%"></td>
+</tr>
 </table>
 
 </details>
@@ -799,7 +871,7 @@ Explore decisions in traffic, robotics and virtual characters. Code usually hand
 <a id="interaction"></a>
 
 <details>
-<summary><strong>Turn judgments into interactions</strong> · 15</summary>
+<summary><strong>Turn judgments into interactions</strong> · 19</summary>
 
 Choose a color or component, or decide whether speech needs a response. Small judgments can create new interfaces. Compare meaning, structure and false activations as well as latency.
 
@@ -895,6 +967,30 @@ Choose a color or component, or decide whether speech needs a response. Small ju
 <p><a href="https://x.com/mattdesl/status/2100899669802963060"><img src="https://pbs.twimg.com/amplify_video_thumb/2100898643117068288/img/p9Jp61lJyiq-UoWK.jpg" width="320" alt="Words and colors: visualize 16-color judgments"></a></p>
 <p><strong><a href="cases/2026-09-19-color-judgments/README.en.md">Words and colors: visualize 16-color judgments</a></strong><br>Enter words and visualize the model’s judgments about colors.</p>
 <p><a href="references/2026-09-19-claims-audit.en.md#color-judgments">Clearer mechanism</a> · <a href="cases/2026-09-19-color-judgments/README.en.md">Details</a><br><a href="https://x.com/mattdesl/status/2100899669802963060">X · 3,441 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/masa_okamura108/status/2101446065526632473"><img src="https://pbs.twimg.com/amplify_video_thumb/2101445734306586624/img/OtIwp0JbQ9jrtce0.jpg" width="320" alt="Meeting-to-flowchart: organize a process as people talk"></a></p>
+<p><strong><a href="cases/2026-09-20-meeting-flowchart/README.en.md">Meeting-to-flowchart: organize a process as people talk</a></strong><br>Extract business steps from meeting remarks into an editable flowchart.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#meeting-flowchart">Effectiveness unverified</a> · <a href="cases/2026-09-20-meeting-flowchart/README.en.md">Details</a><br><a href="https://x.com/masa_okamura108/status/2101446065526632473">X · 439 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/nailthy62/status/2101388186916454439"><img src="https://pbs.twimg.com/amplify_video_thumb/2101384523124740096/img/1Q6moTMdLcZ-mJ3r.jpg" width="320" alt="Drape try-on experiment: select outfits from speech"></a></p>
+<p><strong><a href="cases/2026-09-20-drape-outfit-selection/README.en.md">Drape try-on experiment: select outfits from speech</a></strong><br>Choose clothes from speech and wardrobe information, then display the change through a video system.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#drape-outfit-selection">Effectiveness unverified</a> · <a href="cases/2026-09-20-drape-outfit-selection/README.en.md">Details</a><br><a href="https://x.com/nailthy62/status/2101388186916454439">X · 1,379 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/measure_plan/status/2101315424247820309"><img src="https://pbs.twimg.com/amplify_video_thumb/2101314739296993280/img/2s3V7uUsqvcHi9AX.jpg" width="320" alt="Canada word map: visualize regional associations"></a></p>
+<p><strong><a href="cases/2026-09-20-canada-word-map/README.en.md">Canada word map: visualize regional associations</a></strong><br>Enter a word and display Canadian regions the model associates with it.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#canada-word-map">Effectiveness unverified</a> · <a href="cases/2026-09-20-canada-word-map/README.en.md">Details</a><br><a href="https://x.com/measure_plan/status/2101315424247820309">X · 219 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/CoooolXyh/status/2101284346640654362"><img src="https://pbs.twimg.com/media/HSlCWGybcAA1AiJ.jpg?name=orig" width="320" alt="Contextual clipboard: choose what to paste now"></a></p>
+<p><strong><a href="cases/2026-09-20-contextual-clipboard/README.en.md">Contextual clipboard: choose what to paste now</a></strong><br>Use the active field and app context to select an item from clipboard history.</p>
+<p><a href="references/2026-09-20-increment8-audit.en.md#contextual-clipboard">Effectiveness unverified</a> · <a href="cases/2026-09-20-contextual-clipboard/README.en.md">Details</a><br><a href="https://x.com/CoooolXyh/status/2101284346640654362">X · 207 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
 </td>
 <td width="50%"></td>
 </tr>

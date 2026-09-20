@@ -6,7 +6,7 @@
 给它当前情况和问题或选项，它返回选择、评分或是非判断，再由程序执行。
 这里介绍人们用它做出的应用，也解释演示究竟能证明什么。
 
-**112 个案例 · 11 类用途** · 来源核对至 2026-09-19
+**127 个案例 · 11 类用途** · 来源核对至 2026-09-20
 
 [浏览全部应用](#all-apps) · [Jev 如何工作](breakdowns/2026-09-18-how-jev-apps-work.md) · [最近收录](CHANGELOG.md)
 
@@ -24,9 +24,9 @@
 
 **证据边界：** 结果来自整套工具配合，不能把全部能力都归给 Jev。
 
-[原理较清楚](references/2026-09-19-claims-audit.md#browser-use) · [X · 6,891 赞快照](https://x.com/gregpr07/status/2100411066966749359) · [原理与依据](cases/2026-09-18-browser-use/README.md)
+[原理较清楚](references/2026-09-20-increment8-audit.md#browser-use) · [X · 6,891 赞快照](https://x.com/gregpr07/status/2100411066966749359) · [原理与依据](cases/2026-09-18-browser-use/README.md)
 
-**内容更新：** 2026-09-19
+**内容更新：** 2026-09-20
 
 ### 不写页面，能不能拼出界面？
 
@@ -109,7 +109,7 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <a id="browser"></a>
 
 <details>
-<summary><strong>操作网页与电脑</strong> · 12</summary>
+<summary><strong>操作网页与电脑</strong> · 13</summary>
 
 从查网页到操作桌面，关键是把“看见什么”和“下一步做什么”接起来。浏览器方案多读页面结构，桌面方案可能用无障碍树或 OCR；先比较能完成哪些任务，再看速度。
 
@@ -120,7 +120,7 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <td width="50%" valign="top">
 <p><a href="https://x.com/gregpr07/status/2100411066966749359"><img src="https://pbs.twimg.com/amplify_video_thumb/2100410607807918080/img/lNfcykqoOvLoZHWa.jpg" width="320" alt="Browser Use · Ultrafast"></a></p>
 <p><strong><a href="cases/2026-09-18-browser-use/README.md">Browser Use · Ultrafast</a></strong><br>告诉它航班需求，它会自己在网页上点选、填写并查找结果。</p>
-<p><a href="references/2026-09-19-claims-audit.md#browser-use">原理较清楚</a> · <a href="cases/2026-09-18-browser-use/README.md">详情</a><br><a href="https://x.com/gregpr07/status/2100411066966749359">X · 6,891 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
+<p><a href="references/2026-09-20-increment8-audit.md#browser-use">原理较清楚</a> · <a href="cases/2026-09-18-browser-use/README.md">详情</a><br><a href="https://x.com/gregpr07/status/2100411066966749359">X · 6,891 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
 </td>
 <td width="50%" valign="top">
 <p><a href="https://x.com/kylejeong/status/2100622054945095934"><img src="https://pbs.twimg.com/amplify_video_thumb/2100495119065722880/img/7A1mijkU3Z_Zj7PM.jpg" width="320" alt="Stagehand 浏览器控制"></a></p>
@@ -135,9 +135,9 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <p><a href="references/2026-09-19-claims-audit.md#cua-jev-use">主张缺依据</a> · <a href="cases/2026-09-18-cua-jev-use/README.md">详情</a><br><a href="https://x.com/trycua/status/2100649543079502213">X · 1,162 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
 </td>
 <td width="50%" valign="top">
-<p><a href="https://x.com/milindlabs/status/2100631847155994852"><img src="https://pbs.twimg.com/amplify_video_thumb/2100629037790183424/img/NR6wQpZiC-xjCEsC.jpg" width="320" alt="CoreML + OCR 桌面点击"></a></p>
-<p><strong><a href="cases/2026-09-18-coreml-ocr/README.md">CoreML + OCR 桌面点击</a></strong><br>先在 Mac 上认出按钮和文字，再让 Jev 选要点击的位置。</p>
-<p><a href="references/2026-09-19-claims-audit.md#coreml-ocr">效果待验证</a> · <a href="cases/2026-09-18-coreml-ocr/README.md">详情</a><br><a href="https://x.com/milindlabs/status/2100631847155994852">X · 564 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
+<p><a href="https://x.com/milindlabs/status/2100631847155994852"><img src="https://pbs.twimg.com/amplify_video_thumb/2100629037790183424/img/NR6wQpZiC-xjCEsC.jpg" width="320" alt="TipTour · CoreML + OCR 桌面点击"></a></p>
+<p><strong><a href="cases/2026-09-18-coreml-ocr/README.md">TipTour · CoreML + OCR 桌面点击</a></strong><br>先在 Mac 上认出按钮和文字，再让 Jev 选要点击的位置。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#coreml-ocr">原理较清楚</a> · <a href="cases/2026-09-18-coreml-ocr/README.md">详情</a><br><a href="https://x.com/milindlabs/status/2100631847155994852">X · 564 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
 </td>
 </tr>
 <tr>
@@ -187,6 +187,14 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <p><strong><a href="cases/2026-09-19-tester-army-e2e/README.md">Tester Army · Web / 手机端测试演示</a></strong><br>用代理执行界面测试，探索 Web 和移动端的端到端测试框架。</p>
 <p><a href="references/2026-09-19-claims-audit.md#tester-army-e2e">效果待验证</a> · <a href="cases/2026-09-19-tester-army-e2e/README.md">详情</a><br><a href="https://x.com/o_kwasniewski/status/2100966838905585687">X · 505 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
 </td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/sxhivs/status/2101367048223982065"><img src="https://pbs.twimg.com/amplify_video_thumb/2101364408870109184/img/w93wxuq73naZx36A.jpg" width="320" alt="Third Hand · 从指令里选文本操作 Mac"></a></p>
+<p><strong><a href="cases/2026-09-20-third-hand/README.md">Third Hand · 从指令里选文本操作 Mac</a></strong><br>读取应用控件，按指令点击，并输入指令中已有的文字。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#third-hand">原理较清楚</a> · <a href="cases/2026-09-20-third-hand/README.md">详情</a><br><a href="https://x.com/sxhivs/status/2101367048223982065">X · 549 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+<td width="50%"></td>
 </tr>
 </table>
 
@@ -277,7 +285,7 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <a id="review"></a>
 
 <details>
-<summary><strong>检查代码与操作风险</strong> · 11</summary>
+<summary><strong>检查代码与操作风险</strong> · 13</summary>
 
 把宽泛的“有没有问题”拆成几个具体判断。代码评审找缺陷，权限判断管操作；少误报和不漏报都要看，评分不能替代测试。
 
@@ -350,6 +358,18 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <p><strong><a href="cases/2026-09-19-script-code-review/README.md">Script.it · 先筛问题再写评审</a></strong><br>先判断 git diff 有没有问题，命中后才让文字模型写解释。</p>
 <p><a href="references/2026-09-19-claims-audit.md#script-code-review">效果待验证</a> · <a href="cases/2026-09-19-script-code-review/README.md">详情</a><br><a href="https://x.com/liorshkiller/status/2100936106615140757">X · 202 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
 </td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/omarsar0/status/2101443311454036477"><img src="https://pbs.twimg.com/amplify_video_thumb/2101443076828925952/img/zVy7_B-F8UmXFdKK.jpg" width="320" alt="代理目标核验 · 每轮检查是否做完"></a></p>
+<p><strong><a href="cases/2026-09-20-agent-goal-verifier/README.md">代理目标核验 · 每轮检查是否做完</a></strong><br>让代理每完成一轮工作，就检查目标是否真的达成。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#agent-goal-verifier">效果待验证</a> · <a href="cases/2026-09-20-agent-goal-verifier/README.md">详情</a><br><a href="https://x.com/omarsar0/status/2101443311454036477">X · 317 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/sethkimmel3/status/2101357768640987302"><img src="https://pbs.twimg.com/amplify_video_thumb/2101357265253212160/img/yMWnsAPk5D4HinBv.jpg" width="320" alt="jev-align · 用人工反馈调整判断标准"></a></p>
+<p><strong><a href="cases/2026-09-20-jev-align/README.md">jev-align · 用人工反馈调整判断标准</a></strong><br>给边界样例标注对错，让工具逐轮改进 Jev 的判断说明。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#jev-align">原理较清楚</a> · <a href="cases/2026-09-20-jev-align/README.md">详情</a><br><a href="https://x.com/sethkimmel3/status/2101357768640987302">X · 511 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
 <td width="50%"></td>
 </tr>
 </table>
@@ -359,7 +379,7 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <a id="data"></a>
 
 <details>
-<summary><strong>整理文件与信息</strong> · 16</summary>
+<summary><strong>整理文件与信息</strong> · 20</summary>
 
 给邮件贴标签、识别表格、挑出相关文件，都是把杂乱信息整理成可用结果。分类、检索和数值估算的错误不同，不能用一张速度榜衡量。
 
@@ -462,6 +482,30 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <p><a href="references/2026-09-19-increment7-audit.md#synthetic-interview-classifier">效果待验证</a> · <a href="cases/2026-09-19-synthetic-interview-classifier/README.md">详情</a><br><a href="https://x.com/masa_okamura108/status/2101206603240477030">X · 278 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/venturetwins/status/2101393861667115437"><img src="https://pbs.twimg.com/amplify_video_thumb/2101393799234871296/img/oBhawR0JczN9WT1k.jpg" width="320" alt="Goodreads · 预测个人五星书籍"></a></p>
+<p><strong><a href="cases/2026-09-20-goodreads-taste-prediction/README.md">Goodreads · 预测个人五星书籍</a></strong><br>用自己的历史书评，预测哪些书可能值得打五星。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#goodreads-taste-prediction">效果待验证</a> · <a href="cases/2026-09-20-goodreads-taste-prediction/README.md">详情</a><br><a href="https://x.com/venturetwins/status/2101393861667115437">X · 238 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/venturetwins/status/2101341075684434245"><img src="https://pbs.twimg.com/amplify_video_thumb/2101339712464326656/img/A8yq5IoXQuhJAi32.jpg" width="320" alt="Zillow 房源 · 用自然语言加筛选条件"></a></p>
+<p><strong><a href="cases/2026-09-20-zillow-semantic-filters/README.md">Zillow 房源 · 用自然语言加筛选条件</a></strong><br>按建筑风格、装修状态等普通筛选器没有的条件整理房源。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#zillow-semantic-filters">效果待验证</a> · <a href="cases/2026-09-20-zillow-semantic-filters/README.md">详情</a><br><a href="https://x.com/venturetwins/status/2101341075684434245">X · 527 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/brian_lovin/status/2101321554130809156"><img src="https://pbs.twimg.com/amplify_video_thumb/2101321495351799809/img/4KIZYG3NZtHjWnZB.jpg" width="320" alt="Shiori · 给收藏链接自动打标签"></a></p>
+<p><strong><a href="cases/2026-09-20-shiori-link-tagging/README.md">Shiori · 给收藏链接自动打标签</a></strong><br>收藏网页时自动归类，方便以后按主题找回来。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#shiori-link-tagging">效果待验证</a> · <a href="cases/2026-09-20-shiori-link-tagging/README.md">详情</a><br><a href="https://x.com/brian_lovin/status/2101321554130809156">X · 327 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/OpenRouter/status/2101412965765529853"><img src="https://pbs.twimg.com/media/HSm39ISbsAAEPfg.png?name=orig" width="320" alt="Ori Eval · 30 类请求分类对照"></a></p>
+<p><strong><a href="cases/2026-09-20-ori-task-classification/README.md">Ori Eval · 30 类请求分类对照</a></strong><br>把传入请求分成 30 种任务，比较五个模型的速度、费用和正确性。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#ori-task-classification">效果待验证</a> · <a href="cases/2026-09-20-ori-task-classification/README.md">详情</a><br><a href="https://x.com/OpenRouter/status/2101412965765529853">X · 329 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+</tr>
 </table>
 
 </details>
@@ -469,7 +513,7 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <a id="content"></a>
 
 <details>
-<summary><strong>读懂内容与传播</strong> · 10</summary>
+<summary><strong>读懂内容与传播</strong> · 11</summary>
 
 有的工具给广告贴标签，有的分析文章关联或预测传播。描述内容与预测未来是两回事；高评分也不保证流量或引用。
 
@@ -533,8 +577,16 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <td width="50%" valign="top">
 <p><a href="https://x.com/irabukht/status/2101090579127951694"><img src="https://pbs.twimg.com/amplify_video_thumb/2101089408099516416/img/Smzn-jtE8prvdY90.jpg" width="320" alt="Ryze AI · SEO/GEO 审核与修复"></a></p>
 <p><strong><a href="cases/2026-09-19-ryze-seo-geo/README.md">Ryze AI · SEO/GEO 审核与修复</a></strong><br>把 Jev 加入网站搜索可见性审核，分析页面及 AI 搜索引用并提出修复。</p>
-<p><a href="references/2026-09-19-increment7-audit.md#ryze-seo-geo">主张缺依据</a> · <a href="cases/2026-09-19-ryze-seo-geo/README.md">详情</a><br><a href="https://x.com/irabukht/status/2101090579127951694">X · 790 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
+<p><a href="references/2026-09-20-increment8-audit.md#ryze-seo-geo">主张缺依据</a> · <a href="cases/2026-09-19-ryze-seo-geo/README.md">详情</a><br><a href="https://x.com/irabukht/status/2101090579127951694">X · 790 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
 </td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/unsu0707/status/2101249913099375058"><img src="https://pbs.twimg.com/amplify_video_thumb/2101248847444078592/img/mGFrlyfBgnJWT-p8.jpg" width="320" alt="X 草稿检查 · 发帖前看看是否太浮夸"></a></p>
+<p><strong><a href="cases/2026-09-20-x-draft-hype-check/README.md">X 草稿检查 · 发帖前看看是否太浮夸</a></strong><br>在编辑帖子时提醒措辞是否像夸张营销或卖课话术。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#x-draft-hype-check">效果待验证</a> · <a href="cases/2026-09-20-x-draft-hype-check/README.md">详情</a><br><a href="https://x.com/unsu0707/status/2101249913099375058">X · 446 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+<td width="50%"></td>
 </tr>
 </table>
 
@@ -592,7 +644,7 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <td width="50%" valign="top">
 <p><a href="https://x.com/tamarajtran/status/2100694549362553153"><img src="https://pbs.twimg.com/amplify_video_thumb/2100694537672998912/img/OF8vottg6-45ZgNl.jpg" width="320" alt="工具调用上下文压缩"></a></p>
 <p><strong><a href="cases/2026-09-18-context-compaction/README.md">工具调用上下文压缩</a></strong><br>给 AI 助手的工作记录瘦身，只把眼下有用的内容继续带着。</p>
-<p><a href="references/2026-09-19-claims-audit.md#context-compaction">主张缺依据</a> · <a href="cases/2026-09-18-context-compaction/README.md">详情</a><br><a href="https://x.com/tamarajtran/status/2100694549362553153">X · 1,646 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
+<p><a href="references/2026-09-20-increment8-audit.md#context-compaction">主张缺依据</a> · <a href="cases/2026-09-18-context-compaction/README.md">详情</a><br><a href="https://x.com/tamarajtran/status/2100694549362553153">X · 1,646 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
 </td>
 <td width="50%" valign="top">
 <p><a href="https://x.com/moritzkremb/status/2100566009312940457"><img src="https://pbs.twimg.com/amplify_video_thumb/2100565973376061440/img/jeTib61RNpwXn853.jpg" width="320" alt="记忆系统检索筛选"></a></p>
@@ -615,7 +667,7 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <a id="games"></a>
 
 <details>
-<summary><strong>玩游戏与解谜</strong> · 16</summary>
+<summary><strong>玩游戏与解谜</strong> · 18</summary>
 
 把游戏状态变成可选动作，就能观察一连串小判断怎样影响结果。有的只选动作，有的配合规划器或现成解法；流畅演示不等于高水平通关。
 
@@ -718,6 +770,18 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <p><a href="references/2026-09-19-claims-audit.md#flappy-bird">效果待验证</a> · <a href="cases/2026-09-19-flappy-bird/README.md">详情</a><br><a href="https://x.com/thymikee/status/2100937960115838984">X · 254 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/izumisatoshi05/status/2101287104030609624"><img src="https://pbs.twimg.com/amplify_video_thumb/2101283892556972032/img/VZM3g2req3zV_HAd.jpg" width="320" alt="语音咒语游戏 · 一句话决定魔法"></a></p>
+<p><strong><a href="cases/2026-09-20-voice-spell-game/README.md">语音咒语游戏 · 一句话决定魔法</a></strong><br>念出自己编的咒语，由语义判断决定魔法的属性与威力。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#voice-spell-game">效果待验证</a> · <a href="cases/2026-09-20-voice-spell-game/README.md">详情</a><br><a href="https://x.com/izumisatoshi05/status/2101287104030609624">X · 576 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/gigabit_million/status/2101285853859545263"><img src="https://pbs.twimg.com/amplify_video_thumb/2101283748440616960/img/zi6EL5MsWikz9suI.jpg" width="320" alt="聊天小游戏 · 识别情绪与话题"></a></p>
+<p><strong><a href="cases/2026-09-20-emotion-topic-chat-game/README.md">聊天小游戏 · 识别情绪与话题</a></strong><br>把玩家输入分成情绪和话题，让聊天游戏作出响应。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#emotion-topic-chat-game">效果待验证</a> · <a href="cases/2026-09-20-emotion-topic-chat-game/README.md">详情</a><br><a href="https://x.com/gigabit_million/status/2101285853859545263">X · 391 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+</tr>
 </table>
 
 </details>
@@ -725,7 +789,7 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <a id="simulation"></a>
 
 <details>
-<summary><strong>在模拟世界里做实验</strong> · 10</summary>
+<summary><strong>在模拟世界里做实验</strong> · 11</summary>
 
 从交通灯、机器人到虚构角色，在沙盘里观察决策的影响。物理与运动通常由程序处理；模拟成功之后，还需要验证现实中的表现。
 
@@ -792,6 +856,14 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <p><a href="references/2026-09-19-increment7-audit.md#dual-arm-robot-sim">效果待验证</a> · <a href="cases/2026-09-19-dual-arm-robot-sim/README.md">详情</a><br><a href="https://x.com/Raptor_zip/status/2101091398447505567">X · 229 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/openroboto/status/2101310974359941332"><img src="https://pbs.twimg.com/amplify_video_thumb/2101310940260270080/img/mCYBqjSwjUf4UV6d.jpg" width="320" alt="MuJoCo · 三模型搬苹果对照"></a></p>
+<p><strong><a href="cases/2026-09-20-mujoco-apple-control/README.md">MuJoCo · 三模型搬苹果对照</a></strong><br>让模拟机械臂把苹果放进盘子，比较三种模型的方向与夹爪决策。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#mujoco-apple-control">原理较清楚</a> · <a href="cases/2026-09-20-mujoco-apple-control/README.md">详情</a><br><a href="https://x.com/openroboto/status/2101310974359941332">X · 272 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+<td width="50%"></td>
+</tr>
 </table>
 
 </details>
@@ -799,7 +871,7 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <a id="interaction"></a>
 
 <details>
-<summary><strong>把判断变成交互</strong> · 15</summary>
+<summary><strong>把判断变成交互</strong> · 19</summary>
 
 选择一个颜色、一个组件，或判断一句话是否需要回应，小判断也能组成新界面。不同作品分别看语义、结构和误触发，不能只比响应快慢。
 
@@ -895,6 +967,30 @@ Jev 在字幕中找赞助内容，程序把对应句子换算成播放时间，�
 <p><a href="https://x.com/mattdesl/status/2100899669802963060"><img src="https://pbs.twimg.com/amplify_video_thumb/2100898643117068288/img/p9Jp61lJyiq-UoWK.jpg" width="320" alt="词语与颜色 · 16 色概率可视化"></a></p>
 <p><strong><a href="cases/2026-09-19-color-judgments/README.md">词语与颜色 · 16 色概率可视化</a></strong><br>输入词语，把模型对颜色的判断画成配色结果。</p>
 <p><a href="references/2026-09-19-claims-audit.md#color-judgments">原理较清楚</a> · <a href="cases/2026-09-19-color-judgments/README.md">详情</a><br><a href="https://x.com/mattdesl/status/2100899669802963060">X · 3,441 赞快照</a><br><sub>内容更新：2026-09-19</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/masa_okamura108/status/2101446065526632473"><img src="https://pbs.twimg.com/amplify_video_thumb/2101445734306586624/img/OtIwp0JbQ9jrtce0.jpg" width="320" alt="会议转流程图 · 边聊边整理业务"></a></p>
+<p><strong><a href="cases/2026-09-20-meeting-flowchart/README.md">会议转流程图 · 边聊边整理业务</a></strong><br>从会议发言中筛出业务步骤，逐步画进可编辑的流程图。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#meeting-flowchart">效果待验证</a> · <a href="cases/2026-09-20-meeting-flowchart/README.md">详情</a><br><a href="https://x.com/masa_okamura108/status/2101446065526632473">X · 439 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/nailthy62/status/2101388186916454439"><img src="https://pbs.twimg.com/amplify_video_thumb/2101384523124740096/img/1Q6moTMdLcZ-mJ3r.jpg" width="320" alt="Drape 试衣实验 · 听要求选衣服"></a></p>
+<p><strong><a href="cases/2026-09-20-drape-outfit-selection/README.md">Drape 试衣实验 · 听要求选衣服</a></strong><br>根据说话内容与衣柜资料选服装，再由视频系统展示换装。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#drape-outfit-selection">效果待验证</a> · <a href="cases/2026-09-20-drape-outfit-selection/README.md">详情</a><br><a href="https://x.com/nailthy62/status/2101388186916454439">X · 1,379 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/measure_plan/status/2101315424247820309"><img src="https://pbs.twimg.com/amplify_video_thumb/2101314739296993280/img/2s3V7uUsqvcHi9AX.jpg" width="320" alt="加拿大词语地图 · 把联想画在地图上"></a></p>
+<p><strong><a href="cases/2026-09-20-canada-word-map/README.md">加拿大词语地图 · 把联想画在地图上</a></strong><br>输入一个词，展示模型认为哪些加拿大地区与它相关。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#canada-word-map">效果待验证</a> · <a href="cases/2026-09-20-canada-word-map/README.md">详情</a><br><a href="https://x.com/measure_plan/status/2101315424247820309">X · 219 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/CoooolXyh/status/2101284346640654362"><img src="https://pbs.twimg.com/media/HSlCWGybcAA1AiJ.jpg?name=orig" width="320" alt="情境剪贴板 · 猜此刻要粘贴哪条"></a></p>
+<p><strong><a href="cases/2026-09-20-contextual-clipboard/README.md">情境剪贴板 · 猜此刻要粘贴哪条</a></strong><br>结合当前输入框和应用，从剪贴板历史里选出要粘贴的内容。</p>
+<p><a href="references/2026-09-20-increment8-audit.md#contextual-clipboard">效果待验证</a> · <a href="cases/2026-09-20-contextual-clipboard/README.md">详情</a><br><a href="https://x.com/CoooolXyh/status/2101284346640654362">X · 207 赞快照</a><br><sub>内容更新：2026-09-20</sub></p>
 </td>
 <td width="50%"></td>
 </tr>

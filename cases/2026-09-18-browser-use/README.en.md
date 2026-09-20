@@ -4,9 +4,9 @@
 
 > Describe a flight search and let the agent click, type and find results on the website.
 
-**Content updated:** 2026-09-19 16:55:36 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-20 11:01:10 (Beijing time, UTC+08:00)
 
-**🟢 A · Clearer evidence for function/mechanism**<br>Bounded flight demo and inspectable implementation support A. The WebMCP result is 49/49 tasks but 141/147 attempts, with Mercury helping; neither establishes universal reliability or an end-to-end seven-second guarantee.<br>[Assessment and sources](../../references/2026-09-19-claims-audit.en.md#browser-use)
+**🟢 A · Clearer evidence for function/mechanism**<br>Pinned docs and a public benchmark expose implementation and timing conditions. The new 12306 clip is another use report for the same project, not a separate app or proof of arbitrary-site reliability.<br>[Assessment and sources](../../references/2026-09-20-increment8-audit.en.md#browser-use)
 
 ## How it works, in plain English
 
@@ -25,7 +25,7 @@ Think of an assistant with a constantly updated list of buttons. Code reads the 
 | Main-post likes snapshot | **6,891** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-17T22:32:51.243200+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2100411066966749359); may be cached |
-| Last source review | 2026-09-19; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-20; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 
@@ -62,9 +62,12 @@ Undisclosed prompts, state formats, thresholds and recovery logic remain unknown
 
 **2026-09-19 WebMCP comparison merged:** The author modifies Ultrafast: Jev selects website tools and Mercury 2.5 generates arguments. This is a benchmark variant of the existing project, not another entry. The [benchmark](https://webmcp.com/benchmark) covers 49 tasks on eight sites, with three attempts each. WebMCP solves 49/49 tasks but succeeds in 141/147 attempts; the DOM variant solves 25/49. Displayed median costs are $0.0011 and $0.0008 respectively, so the post’s 18% reduction does not directly describe those medians. These findings apply to this harness and test, without independent reproduction.
 
+**2026-09-20 merged 12306 use report:** [@yanhua1010’s post](https://x.com/yanhua1010/status/2101257759497089171) explicitly uses Jev Ultrafast with Pi + DeepSeek to query trains. The roughly 93-second process video lacks full timing boundaries, bills and repeated tests; it is not a separate browser tool.
+
 Updates and deduplicated supporting sources:
 
 - [Supporting post by @0xidanlevin](https://x.com/0xidanlevin/status/2100937437325205568): published 2026-09-18T13:18:13+00:00; 1,407 likes retrieved 2026-09-18T22:50:12+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2100937437325205568). [Supplementary media 1](https://pbs.twimg.com/media/HSf2OSVWQAAYUAE.jpg?name=orig)
+- [Supporting post by @yanhua1010](https://x.com/yanhua1010/status/2101257759497089171): published 2026-09-19T10:31:04+00:00; 227 likes retrieved 2026-09-20T02:51:41+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2101257759497089171). [Supplementary media 1](https://video.twimg.com/amplify_video/2101257016945819648/vid/avc1/2458x1440/F8vfvuaYZJ38VTOq.mp4?tag=29)
 
 Public project / demo links (a link does not mean availability has been tested here):
 
@@ -89,3 +92,4 @@ See the [category analysis](../../breakdowns/2026-09-18-browser.en.md) for compa
 | --- | --- |
 | 2026-09-18 | First collection; checked the main post, metric snapshot and media; added to category comparisons |
 | 2026-09-18T23:03:22+00:00 | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |
+| 2026-09-20T11:01:10+08:00 | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |

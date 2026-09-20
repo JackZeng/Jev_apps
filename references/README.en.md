@@ -98,3 +98,7 @@ Backfills use the timestamps of commits containing the content, comparing each c
 ## Increment 7
 
 [Six additions and one update: sources, exclusions and assessment rationale](2026-09-19-increment7-audit.en.md).
+
+## 2026-09-20 · Eighth incremental update
+
+Added 15 cases and merged 4 updates, yielding 127 cases (A 23 / B 90 / C 14). [Per-case evidence, deduplication and snapshot scope](2026-09-20-increment8-audit.en.md). Search used X Latest with overlap from the prior cutoff; this is not a full-platform census.

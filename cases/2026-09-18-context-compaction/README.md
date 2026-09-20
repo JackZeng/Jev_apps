@@ -4,9 +4,9 @@
 
 > 给 AI 助手的工作记录瘦身，只把眼下有用的内容继续带着。
 
-**内容更新：** 2026-09-19 16:55:36（北京时间，UTC+08:00）
+**内容更新：** 2026-09-20 11:01:10（北京时间，UTC+08:00）
 
-**🟠 C · 宣传超出证据**<br>体积下降不证明信息保真或后续任务质量。仓库还包含明确不调用 API 的录屏动画，不能拿该动画证明实时性能；另有 live demo，不能因此称整个项目造假。<br>[判断依据与来源](../../references/2026-09-19-claims-audit.md#context-compaction)
+**🟠 C · 宣传超出证据**<br>公开反向评测说明单次压缩快不等于长期更省；三份记录、移植版与检索恢复基线是必要限定。原录屏动画也不能充当实时 API 测量。<br>[判断依据与来源](../../references/2026-09-20-increment8-audit.md#context-compaction)
 
 ## 用人话解释原理
 
@@ -25,7 +25,7 @@
 | 主帖点赞快照 | **1,646**（门槛 ≥ 200） |
 | 点赞与媒体取数时间（UTC） | 2026-09-17T22:42:26.956952+00:00 |
 | 元数据核验渠道 | [FxTwitter 公共接口](https://api.fxtwitter.com/status/2100694549362553153)；可能有缓存 |
-| 最后来源复查 | 2026-09-19，核对公开说明与元数据；未运行应用 |
+| 最后来源复查 | 2026-09-20，核对公开说明与元数据；未运行应用 |
 | Jev 版本 | 原帖未明确固定版本，未知 |
 | 验证状态 / 可用性 | 未复现 / 未知（未运行验证） |
 
@@ -55,7 +55,7 @@
 
 | 主张 | 依据类型 | 来源 | 适用范围 |
 | --- | --- | --- | --- |
-| 作者发布短演示，称可实现即时压缩，未提供完整质量评估。 | 作者陈述 | [主帖正文及附带媒体](https://x.com/tamarajtran/status/2100694549362553153) | 本仓库未复测，演示不证明普遍性能 |
+| 原作者称即时压缩。Hermes 三份长记录评测报告：Jev 压缩约 1.4 秒，保留约 115K token、回忆评分 75.5%；其生产摘要加检索恢复路径约 55K、78.9%。本库未运行该评测。 | 作者陈述 | [结果文档](https://github.com/NousResearch/hermes-agent/blob/dba815e7ad800dad19f921ca9ad028eba027e8a4/evals/compaction/results/SCORECARD-2026-09-19-jev.md) | 本仓库未复测，演示不证明普遍性能 |
 | 主帖达到收录门槛、附带媒体 | 元数据核对 | [取数接口](https://api.fxtwitter.com/status/2100694549362553153) | 仅上述时间快照，非实时数值 |
 
 **2026-09-18 增量核对（同一项目，不新增案例）：**
@@ -65,19 +65,25 @@
 - 对照[固定版本 README](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/README.md)与 [state.ts](https://github.com/tamaratran/fast-jev-compaction/blob/e3f262a7f4d42bd8dd32ced30d26176f7cb545b0/src/state.ts)：模型能看到经过裁剪的对话上下文，并非完全孤立地看每条调用；但工具输出正文确实被替换为状态/长度说明。不能把“看到整段对话”理解为“看到全部原始信息”。
 - 同版本文档明确说明 `demo/JevDemo` 是用预设记录制作的录屏动画，不调用 API。因此该动画本身不是实时推理测量；也不能仅凭此否定库中另有真实 API 调用实现。未运行插件。
 
+**2026-09-20 新增评测：** [Hermes 固定版成绩单](https://github.com/NousResearch/hermes-agent/blob/dba815e7ad800dad19f921ca9ad028eba027e8a4/evals/compaction/results/SCORECARD-2026-09-19-jev.md)使用三份 500K-token 前缀、每份 15 道回忆题；第四份因状态预算无法容纳而回退，未计入评分。它通过 OpenRouter 移植插件，并非原 Claude Code 宿主的直接复测。默认阈值删除的是全部未保护工具候选，不是全部历史。等预算排序与按时间保留均为 77.8%；原始会话未提交，评分由模型完成。重复压缩实验说明不断增长的普通文本会挤压可释放空间，而非以后完全没有新工具调用。以上是评测作者结果，不把帖文泛称的 10 倍缓存费用写成通用定论。
+
 补充更新与去重来源：
 
 - [@tamarajtran 的补充帖](https://x.com/tamarajtran/status/2100694552369897539)：发布于 2026-09-17T21:13:04+00:00；2026-09-18T02:41:19+00:00 取数时 500 赞，仅作补充、不计入门槛。[取数来源](https://api.fxtwitter.com/status/2100694552369897539)。
 - [@altryne 的补充帖](https://x.com/altryne/status/2100739055923425589)：发布于 2026-09-18T00:09:55+00:00；2026-09-18T02:36:40+00:00 取数时 1,836 赞，仅作补充、不计入门槛。[取数来源](https://api.fxtwitter.com/status/2100739055923425589)。 [补充媒体 1](https://pbs.twimg.com/media/HSdTBk8bAAAPtk8.png?name=orig) [补充媒体 2](https://pbs.twimg.com/media/HSdTCa_a0AAKYLw.png?name=orig)
 - [@theo 的补充帖](https://x.com/theo/status/2100762304862384257)：发布于 2026-09-18T01:42:18+00:00；2026-09-18T02:36:40+00:00 取数时 347 赞，仅作补充、不计入门槛。[取数来源](https://api.fxtwitter.com/status/2100762304862384257)。
+- [@Teknium 的补充帖](https://x.com/Teknium/status/2101398453578555898)：发布于 2026-09-19T19:50:08+00:00；2026-09-20T02:45:53+00:00 取数时 894 赞，仅作补充、不计入门槛。[取数来源](https://api.fxtwitter.com/status/2101398453578555898)。 [补充媒体 1](https://pbs.twimg.com/media/HSmb61xbMAAsTQj.jpg?name=orig)
 
 公开项目 / 体验入口（存在入口不等于本仓库已验证可用）：
 
 - [项目入口 1](https://github.com/tamaratran/fast-jev-compaction)
+- [项目入口 2](https://github.com/NousResearch/hermes-agent/pull/116246)
+- [项目入口 3](https://github.com/NousResearch/hermes-agent/blob/dba815e7ad800dad19f921ca9ad028eba027e8a4/evals/compaction/results/SCORECARD-2026-09-19-jev.md)
+- [项目入口 4](https://github.com/NousResearch/hermes-agent/blob/dba815e7ad800dad19f921ca9ad028eba027e8a4/evals/compaction/jev_arm.py)
 
 ## 原理拆解与同类比较
 
-尚无长任务保真率或总费用对照。源码给 Jev 的状态省略工具输出正文，因此筛选可能漏掉重要结果；历史改写还需评估缓存重建。新增使用报告不能证明后续任务质量，仓库的录屏演示程序明确不调用 API。
+新增 Hermes 评测暴露了筛选与长期空间问题：其移植版在默认阈值下删除全部 851 个未保护候选，反复压缩仍保留不断增长的普通文本。结果限于该适配、样本和预算；不能推广到所有 Jev 记忆方案。
 
 同类逐项对比、公共流程和建议实验见 [专题分析](../../breakdowns/2026-09-18-memory.md)。实现说明来自作者公开材料；优势及尚缺证据属于本仓库分析，不能视为模型内部架构已被证实。
 
@@ -91,3 +97,4 @@
 | --- | --- |
 | 2026-09-18 | 首次收录；核对主帖、点赞与媒体，加入同类对比 |
 | 2026-09-18T02:43:33+00:00 | 合并补充来源，完善原理、证据或教程说明；[去重记录](../../CHANGELOG.md) |
+| 2026-09-20T11:01:10+08:00 | 合并补充来源，完善原理、证据或教程说明；[去重记录](../../CHANGELOG.md) |

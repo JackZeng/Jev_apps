@@ -50,3 +50,18 @@ Snapshots were retrieved in this review via FxTwitter; they may be cached. These
 ## 2026-09-19 · Increment 7 pending attribution
 
 [Alan Daitch voice-control clip](https://x.com/AlanDaitch/status/2101090570110169547): 238 likes in the current public snapshot. A 48-second clip exists, but its implementation author and relationship to existing voice-control cases are unclear. Do not count it until attribution and deduplication are resolved.
+
+## 2026-09-20 · Eighth-round pending evidence
+
+| Lead | Original post / like snapshot | Missing evidence |
+| --- | --- | --- |
+| LangChain agent evaluation | [@LangChain · 450](https://x.com/LangChain/status/2101454284927959080) | Main post links an article without direct run media; inspect article figures, task and full methodology. |
+| Entity resolution | [@hrishioa · 253](https://x.com/hrishioa/status/2101362082369470675) | No media in the post; the article’s cost, accuracy and throughput comparisons need full review. |
+| jev-lint naming consistency | [@mizchi · 348](https://x.com/mizchi/status/2101337282607550589) | No post media; establish its relationship to the author’s ESLint experiment before merging or adding. |
+| GrokBot routing lab | [@0xCodila · 522](https://x.com/0xCodila/status/2101433560796467348) | Media exists, but repository, task and original implementation need checking; the better-than-95% claim lacks a benchmark. |
+| Accounting mockup | [@xat_t0b · 1138](https://x.com/xat_t0b/status/2101260322917306612) | The author claims an API connection; establish the accounting task, outputs and rules rather than infer bookkeeping capability. |
+| Designer demo | [@heystefan_ · 2882](https://x.com/heystefan_/status/2101369117496521042) | Text does not establish inputs, outputs or Jev’s role; media needs inspection. |
+| Web Dev Cody demo | [@webdevcody · 1196](https://x.com/webdevcody/status/2101393755513217192) | Sparse text; establish whether this is an application, counterexample or satire. |
+| Jevassembler | [@neogoose_btw · 457](https://x.com/neogoose_btw/status/2101428888874410069) | The no-code CPU-instruction claim has a satirical framing; inspect the implementation and distinguish it from RISC-jeV. |
+
+Snapshot metadata was read on September 20 through the FxTwitter public mirror. These leads are excluded from the 127-case count. Local models imitating the API, general opinion posts and repeated Ultrafast/Ryze/traffic-demo reposts were also excluded. [Review scope](../references/2026-09-20-increment8-audit.en.md).

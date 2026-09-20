@@ -2,6 +2,30 @@
 
 **简体中文** | [English](CHANGELOG.en.md)
 
+## 2026-09-20 · 第八轮增量
+
+核对截止 **2026-09-20 11:01:10 北京时间**。新增 **15** 项、合并 **4** 项更新，共 **127 项、11 类**。A 23 / B 90 / C 14；新增原帖快照均 ≥200 赞且附媒体。
+
+| 新增案例 | 点赞快照 |
+| --- | ---: |
+| [会议转流程图 · 边聊边整理业务](cases/2026-09-20-meeting-flowchart/README.md) | [439](https://x.com/masa_okamura108/status/2101446065526632473) |
+| [代理目标核验 · 每轮检查是否做完](cases/2026-09-20-agent-goal-verifier/README.md) | [317](https://x.com/omarsar0/status/2101443311454036477) |
+| [Drape 试衣实验 · 听要求选衣服](cases/2026-09-20-drape-outfit-selection/README.md) | [1379](https://x.com/nailthy62/status/2101388186916454439) |
+| [Goodreads · 预测个人五星书籍](cases/2026-09-20-goodreads-taste-prediction/README.md) | [238](https://x.com/venturetwins/status/2101393861667115437) |
+| [Zillow 房源 · 用自然语言加筛选条件](cases/2026-09-20-zillow-semantic-filters/README.md) | [527](https://x.com/venturetwins/status/2101341075684434245) |
+| [Shiori · 给收藏链接自动打标签](cases/2026-09-20-shiori-link-tagging/README.md) | [327](https://x.com/brian_lovin/status/2101321554130809156) |
+| [jev-align · 用人工反馈调整判断标准](cases/2026-09-20-jev-align/README.md) | [511](https://x.com/sethkimmel3/status/2101357768640987302) |
+| [Third Hand · 从指令里选文本操作 Mac](cases/2026-09-20-third-hand/README.md) | [549](https://x.com/sxhivs/status/2101367048223982065) |
+| [MuJoCo · 三模型搬苹果对照](cases/2026-09-20-mujoco-apple-control/README.md) | [272](https://x.com/openroboto/status/2101310974359941332) |
+| [语音咒语游戏 · 一句话决定魔法](cases/2026-09-20-voice-spell-game/README.md) | [576](https://x.com/izumisatoshi05/status/2101287104030609624) |
+| [聊天小游戏 · 识别情绪与话题](cases/2026-09-20-emotion-topic-chat-game/README.md) | [391](https://x.com/gigabit_million/status/2101285853859545263) |
+| [加拿大词语地图 · 把联想画在地图上](cases/2026-09-20-canada-word-map/README.md) | [219](https://x.com/measure_plan/status/2101315424247820309) |
+| [情境剪贴板 · 猜此刻要粘贴哪条](cases/2026-09-20-contextual-clipboard/README.md) | [207](https://x.com/CoooolXyh/status/2101284346640654362) |
+| [X 草稿检查 · 发帖前看看是否太浮夸](cases/2026-09-20-x-draft-hype-check/README.md) | [446](https://x.com/unsu0707/status/2101249913099375058) |
+| [Ori Eval · 30 类请求分类对照](cases/2026-09-20-ori-task-classification/README.md) | [329](https://x.com/OpenRouter/status/2101412965765529853) |
+
+TipTour 开源、Hermes 压缩反向评测、Ryze 新流程和 Ultrafast 查询 12306 分别并入旧条目。TipTour 因实现更可检查调整为 A，性能仍未复现。同用途独立工具在原分类内对比。同步中英文，保留双列卡片、原快照及首次收录时间，仅 19 个变更条目刷新内容更新。详见[证据报告](references/2026-09-20-increment8-audit.md)。
+
 ## 2026-09-19 · 双列应用卡片
 
 完整目录的 11 个折叠分类改为双列图文卡片：每行两个项目，缩略图在上，应用名称与用途在下，证据、详情、来源和内容更新日期位于卡片末尾。奇数项末行留空，图片保持原比例。同步中英文，保留全部 112 项及原有历史数据。
