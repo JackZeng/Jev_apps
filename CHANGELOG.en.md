@@ -2,6 +2,25 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-21 · Ninth incremental update
+
+Reviewed through **2026-09-21 11:02:26 Beijing time**. **10 new cases**, **2 merged updates**, **137 cases in 11 groups** (A 25 / B 96 / C 16). Every new original has at least 200 likes in its recorded snapshot and corresponding media.
+
+| New case | Like snapshot |
+| --- | ---: |
+| [DocJev: classify documents and split bundles](cases/2026-09-21-docjev/README.en.md) | [695](https://x.com/jerryjliu0/status/2101738281046294552) |
+| [ReadAloud: check missing words and changed meaning](cases/2026-09-21-dasheng-reading/README.en.md) | [351](https://x.com/wquguru/status/2101711235628810669) |
+| [Needle: find webpage passages by meaning](cases/2026-09-21-needle-semantic-find/README.en.md) | [1658](https://x.com/Saboo_Shubham_/status/2101576462042366114) |
+| [Reddit Radar MCP: filter discussions by your criteria](cases/2026-09-21-reddit-radar-mcp/README.en.md) | [295](https://x.com/oguzhankayancom/status/2101667801274478707) |
+| [Toothless: decide whether speech addresses the assistant](cases/2026-09-21-toothless-voice-gate/README.en.md) | [266](https://x.com/ashutoshpuro97/status/2101660362882085299) |
+| [Mario teacher data: Jev demonstrates, LightGBM takes over](cases/2026-09-21-mario-lightgbm-teacher/README.en.md) | [945](https://x.com/nwnwnyo/status/2101605150242849140) |
+| [Minecraft fixed route: planning plus bounded actions](cases/2026-09-21-minecraft-fixed-route/README.en.md) | [6861](https://x.com/rronak_/status/2101544156757950697) |
+| [Token-choice loop: assemble text through repeated decisions](cases/2026-09-21-token-choice-loop/README.en.md) | [211](https://x.com/erikdunteman/status/2101533797527454109) |
+| [Jev Field Notes: curate Jev examples with Jev](cases/2026-09-21-jev-field-notes-curation/README.en.md) | [298](https://x.com/omarsar0/status/2101696753749655863) |
+| [AnimeAct: connect dialogue to character acting](cases/2026-09-21-animeact-jev-demo/README.en.md) | [2014](https://x.com/frombit_jp/status/2101298040741253195) |
+
+Merged the DuckDB extension rewrite and the related Third Hand/arc-cua executor. DocJev and Needle have pinned implementation evidence; ReadAloud’s full-product/offline wording and Minecraft’s low-level-control claim exceed the inspected implementation. All remain unreproduced. Both languages preserve cards and original snapshots; only changed cases receive new content-update times. See the [evidence report](references/2026-09-21-increment9-audit.en.md).
+
 ## 2026-09-20 · Eighth incremental update
 
 Reviewed through **2026-09-20 11:01:10 Beijing time**. Added **15** cases and merged **4** updates, for **127 cases in 11 groups**. A 23 / B 90 / C 14. Every new original post has at least 200 likes in its snapshot and corresponding media.

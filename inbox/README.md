@@ -65,3 +65,25 @@
 | Jevassembler | [@neogoose_btw · 457](https://x.com/neogoose_btw/status/2101428888874410069) | “不用代码执行 CPU 指令”的表述有戏仿色彩；需核对可执行实现与已有 RISC-jeV 的区别。 |
 
 以上数字为 9 月 20 日 FxTwitter 公开镜像快照，不计入 127 项正式目录。模仿 API 的本地模型、纯观点帖，以及 Ultrafast/Ryze/交通模拟的重复转载也未新增。[核对范围](../references/2026-09-20-increment8-audit.md)。
+
+## 2026-09-21 · 第九轮待补证据
+
+| 线索 | 原帖 / 点赞快照 | 待补证据 |
+| --- | --- | --- |
+| 智能复制粘贴 | [@marcus_lowe · 7422](https://x.com/marcus_lowe/status/2101476399488160013) | 原帖文字未说明字段映射与 Jev 分工；需核清视频、输入格式及与已有剪贴板案例的关系。 |
+| 收藏积压整理 | [@alexchristou_ · 1028](https://x.com/alexchristou_/status/2101674202361221376) | 需核清视频中的分类功能和项目身份，排除已收 Shiori 的重复演示。 |
+| 图片搜索 | [@shridharathi · 676](https://x.com/shridharathi/status/2101715395925184678) | 需核查图像描述由谁生成、Jev 实际输入及检索方法，不能推断直接看图。 |
+| 按场合找衣服 | [@dbillson · 360](https://x.com/dbillson/status/2101657637871837578) | 需核对商品字段、演示和实现；不能只凭用途相似归为 Drape 或认定独立产品。 |
+| 账号 slop 检测 | [@robj3d3 · 206](https://x.com/robj3d3/status/2101786193709142049) | 需补评分定义与可检查入口；百分比不能直接当 AI 生成概率。 |
+| 模型路由界面 | [@okkshitij · 343](https://x.com/okkshitij/status/2101704186769404160) | 需核对实际候选模型、决策字段、仓库及与已收路由器的关系。 |
+| 自然语言工作流 | [@GilFeig · 492](https://x.com/GilFeig/status/2101674767266845026) | 需核对执行器和固定动作范围；两秒、免费、每次相同缺完整条件与对照。 |
+| 按话题剪视频 | [@BurhanUsman · 285](https://x.com/BurhanUsman/status/2101641842441732297) | 需区分字幕预处理、片段选择和视频导出；两秒和费用数字是否包含完整处理未知。 |
+| 稀疏注意力实验 | [@sep_is_heim · 1619](https://x.com/sep_is_heim/status/2101603192664740330) | 需核实模型身份、Jev 控制字段、可执行代码与质量对照，不能只用加速数字下结论。 |
+| 预测按键键盘 | [@neogoose_btw · 397](https://x.com/neogoose_btw/status/2101556786528760050) | 需核对上下文来源、硬件反馈与预测方法；原帖媒体不替代准确率统计。 |
+| jev-browser skill | [@hqmank · 380](https://x.com/hqmank/status/2101529876469522673) | 需先核清仓库与 Ultrafast 等已有工具的依赖关系，再决定合并或独立收录。 |
+| 高收益交易宣传 | [@bl888m_eth · 344](https://x.com/bl888m_eth/status/2101684333413368021) | 需完整可核查交易记录、起止余额与费用；界面截图不足以证明宣传收益。 |
+| 扫雷 | [@comocc · 224](https://x.com/comocc/status/2101653695821984134) | 原帖有演示，尚待核清棋盘输入、动作执行与同名项目关系。 |
+| 智能拖放 | [@MalayVasa · 405](https://x.com/MalayVasa/status/2101649868305653889) | 文字过少，需核清拖放规则、Jev 决策内容与原始实现。 |
+| 聊天负面内容过滤 | [@developedbyed · 3933](https://x.com/developedbyed/status/2101628206478512341) | 需核对实际过滤标准和误杀行为；负面情绪不等同于辱骂或有害内容。 |
+
+以上为 9 月 21 日 FxTwitter 快照线索，不计入 137 项正式目录。重复转载、纯发布/宣传帖、模仿 Jev API 的独立本地模型也未新增。[核对范围](../references/2026-09-21-increment9-audit.md)。

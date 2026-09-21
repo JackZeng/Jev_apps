@@ -2,6 +2,25 @@
 
 **简体中文** | [English](CHANGELOG.en.md)
 
+## 2026-09-21 · 第九轮增量
+
+核对截止 **2026-09-21 11:02:26 北京时间**。新增 **10** 项、合并更新 **2** 项，共 **137 项、11 类**（A 25 / B 96 / C 16）。新增原帖快照均 ≥200 赞且附媒体。
+
+| 新增案例 | 点赞快照 |
+| --- | ---: |
+| [DocJev · 给文档分类、拆分合订本](cases/2026-09-21-docjev/README.md) | [695](https://x.com/jerryjliu0/status/2101738281046294552) |
+| [大声读 · 检查朗读有没有漏词、变意](cases/2026-09-21-dasheng-reading/README.md) | [351](https://x.com/wquguru/status/2101711235628810669) |
+| [Needle · 按意思查找网页原文](cases/2026-09-21-needle-semantic-find/README.md) | [1658](https://x.com/Saboo_Shubham_/status/2101576462042366114) |
+| [Reddit Radar MCP · 按自定义条件筛帖子](cases/2026-09-21-reddit-radar-mcp/README.md) | [295](https://x.com/oguzhankayancom/status/2101667801274478707) |
+| [Toothless · 判断一句话是不是在叫助手](cases/2026-09-21-toothless-voice-gate/README.md) | [266](https://x.com/ashutoshpuro97/status/2101660362882085299) |
+| [Mario 教师数据 · Jev 示范，小模型接手](cases/2026-09-21-mario-lightgbm-teacher/README.md) | [945](https://x.com/nwnwnyo/status/2101605150242849140) |
+| [Minecraft 固定路线 · 规划与动作选择协作](cases/2026-09-21-minecraft-fixed-route/README.md) | [6861](https://x.com/rronak_/status/2101544156757950697) |
+| [Token 选择循环 · 用选择题逐步拼文字](cases/2026-09-21-token-choice-loop/README.md) | [211](https://x.com/erikdunteman/status/2101533797527454109) |
+| [Jev Field Notes · 用 Jev 整理 Jev 案例](cases/2026-09-21-jev-field-notes-curation/README.md) | [298](https://x.com/omarsar0/status/2101696753749655863) |
+| [AnimeAct · 让角色跟着台词做表情和动作](cases/2026-09-21-animeact-jev-demo/README.md) | [2014](https://x.com/frombit_jp/status/2101298040741253195) |
+
+DuckDB 重写和 Third Hand / arc-cua 相关执行器合并原条目。DocJev、Needle 有固定实现依据；大声读的整套替代/离线表述及 Minecraft 的逐键控制说法超出核查到的实现，已标注。全部未复现。同步中英文，保留卡片和旧快照，仅变更条目刷新内容更新。详见[证据报告](references/2026-09-21-increment9-audit.md)。
+
 ## 2026-09-20 · 第八轮增量
 
 核对截止 **2026-09-20 11:01:10 北京时间**。新增 **15** 项、合并 **4** 项更新，共 **127 项、11 类**。A 23 / B 90 / C 14；新增原帖快照均 ≥200 赞且附媒体。

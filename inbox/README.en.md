@@ -65,3 +65,25 @@ Snapshots were retrieved in this review via FxTwitter; they may be cached. These
 | Jevassembler | [@neogoose_btw · 457](https://x.com/neogoose_btw/status/2101428888874410069) | The no-code CPU-instruction claim has a satirical framing; inspect the implementation and distinguish it from RISC-jeV. |
 
 Snapshot metadata was read on September 20 through the FxTwitter public mirror. These leads are excluded from the 127-case count. Local models imitating the API, general opinion posts and repeated Ultrafast/Ryze/traffic-demo reposts were also excluded. [Review scope](../references/2026-09-20-increment8-audit.en.md).
+
+## 2026-09-21 · Ninth-round pending evidence
+
+| Lead | Original / like snapshot | Missing evidence |
+| --- | --- | --- |
+| Smart copy/paste | [@marcus_lowe · 7422](https://x.com/marcus_lowe/status/2101476399488160013) | Sparse original text; inspect field mapping, inputs, Jev’s role and its relationship to existing clipboard tools. |
+| Bookmark backlog | [@alexchristou_ · 1028](https://x.com/alexchristou_/status/2101674202361221376) | Establish the tagging function and project identity; rule out a repeated Shiori demo. |
+| Image search | [@shridharathi · 676](https://x.com/shridharathi/status/2101715395925184678) | Establish caption generation, actual Jev inputs and retrieval method; do not infer direct image input. |
+| Occasion-based clothing search | [@dbillson · 360](https://x.com/dbillson/status/2101657637871837578) | Inspect product fields, media and implementation; similar use alone neither proves a Drape duplicate nor an independent product. |
+| Account slop scoring | [@robj3d3 · 206](https://x.com/robj3d3/status/2101786193709142049) | Need score definitions and an inspectable entry point; percentages are not established AI-generation probabilities. |
+| Model-routing UI | [@okkshitij · 343](https://x.com/okkshitij/status/2101704186769404160) | Verify model candidates, decision fields, source and relationship to existing routers. |
+| Natural-language workflows | [@GilFeig · 492](https://x.com/GilFeig/status/2101674767266845026) | Inspect executor and action bounds; two-second, free and identical-every-time claims lack conditions and controls. |
+| Topic-based video clipping | [@BurhanUsman · 285](https://x.com/BurhanUsman/status/2101641842441732297) | Separate transcript preparation, segment selection and rendering; full timing/cost boundaries are unclear. |
+| Sparse-attention experiment | [@sep_is_heim · 1619](https://x.com/sep_is_heim/status/2101603192664740330) | Verify model identity, Jev controls, implementation and output quality; speed figures alone are insufficient. |
+| Predictive keyboard | [@neogoose_btw · 397](https://x.com/neogoose_btw/status/2101556786528760050) | Inspect context inputs, hardware feedback and prediction method; media does not establish accuracy. |
+| jev-browser skill | [@hqmank · 380](https://x.com/hqmank/status/2101529876469522673) | Establish source and dependencies on Ultrafast or other existing tools before deciding whether to merge. |
+| High-return trading claim | [@bl888m_eth · 344](https://x.com/bl888m_eth/status/2101684333413368021) | Need verifiable trades, starting/ending balances and fees; screenshots do not establish claimed returns. |
+| Minesweeper | [@comocc · 224](https://x.com/comocc/status/2101653695821984134) | Demo exists; verify board inputs, action execution and project identity. |
+| Smart drag-and-drop | [@MalayVasa · 405](https://x.com/MalayVasa/status/2101649868305653889) | Sparse text; establish drop rules, Jev decisions and original implementation. |
+| Negative-chat filtering | [@developedbyed · 3933](https://x.com/developedbyed/status/2101628206478512341) | Establish filtering criteria and false removals; negative sentiment is not equivalent to abuse or harmful content. |
+
+These September 21 FxTwitter snapshots are research leads, excluded from the 137-case count. Also excluded: reposts, general launch/promotional posts, and standalone local models imitating Jev’s API. [Review scope](../references/2026-09-21-increment9-audit.en.md).

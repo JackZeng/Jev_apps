@@ -272,11 +272,11 @@
       "summary": "Classify text rows while working with a table.",
       "mechanism": "A DuckDB extension calls Jev on table data and returns queryable classifications.",
       "advantage": "Keeps semantic classification inside a SQL analysis workflow.",
-      "limitation": "Throughput depends on concurrency, row length and API limits; it is not directly comparable with single-request latency.",
-      "reported_result": "The author reports roughly 10 seconds for 1,000 rows, without a full reproduction configuration.",
+      "limitation": "The update lacks full configuration, data and accuracy results. Throughput depends on concurrency, row length and API limits; this is not an intrinsic Jev model speedup.",
+      "reported_result": "The original reports 1,000 rows in about 10 seconds. A new post claims a 20–40-fold speedup after rewriting the extension, relative to the author’s inefficient earlier extension, not another model.",
       "media_note": "Image or video attached to the source post; the preview does not verify all implementation or performance claims.",
       "plain_explanation": "DuckDB processes tabular data. This extension connects it to Jev so queries can include classifications without manually copying rows into a chat window.",
-      "review_summary": "A plausible SQL classification integration; a screenshot and a throughput claim do not establish accuracy or general superiority over LLMs."
+      "review_summary": "The new figures describe software optimization of the same DuckDB integration. The author acknowledges the earlier inefficiency; no public matched benchmark, so B is retained and the update merged."
     },
     "email-batch": {
       "title": "Batch classification of 500 emails",
@@ -1332,15 +1332,15 @@
       "review_summary": "Code exposes labeling, GEPA’s optimization target and human acceptance. A denotes clear implementation evidence, not proven generalization gains."
     },
     "third-hand": {
-      "title": "Third Hand: control a Mac using text from your request",
-      "summary": "Read app controls, click them and enter text already supplied in the request.",
-      "plain_explanation": "Like using a button list and a note: Jev chooses a target and picks words from the note; it cannot freely write a new article.",
-      "mechanism": "Pinned code reads accessibility controls with local Apple Vision OCR when needed. Jev selects actions and candidate text extracted from the request, then the app checks state. Tasks, labels and values go to TypeSafe even though pixels stay local.",
-      "advantage": "More constrained than Ultrafast’s small-LLM text entry but requires no extra generator; unlike click-only TipTour, it can enter explicitly supplied text.",
-      "limitation": "No free-form writing or arbitrary command generation. Icons, complex editors and gestures can fail; subsecond and near-free claims lack full-task benchmarks.",
+      "title": "Third Hand / arc-cua: choose actions on a Mac",
+      "summary": "Read controls and screen text, choose actions and enter request- or planner-supplied text.",
+      "plain_explanation": "A planner supplies the task and a note, Jev chooses from a control list, and the executor handles clicks, typing and waiting.",
+      "mechanism": "Third Hand is a Swift app; the same author’s arc-cua is a separate Python executor reusing its text-entry approach. An upstream planner supplies goals, literal values and checks; AX/local OCR observes, Jev selects actions and input keys, and the runtime waits for UI stability.",
+      "advantage": "Third Hand extracts text from requests without another generator; arc-cua accepts literals from an upstream planner for agent integration. Both separate action selection from local execution.",
+      "limitation": "Separate repositories and programs are grouped as related work by one author. arc-cua still observes and calls Jev at each step; it has not established solved computer use. Unlabeled graphical interfaces and full-task success rates remain gaps.",
       "reported_result": "The author shows a 31-second demo and claims subsecond latency. Documentation calls it experimental and says completion still needs human judgment.",
-      "media_note": "A separate Swift repository and author, not another Ultrafast demo; release reply and source form one case.",
-      "review_summary": "Pinned source explains text entry without an extra LLM as selection/extraction, not general generation. Speed and cost remain independently unverified."
+      "media_note": "Preserves the Third Hand original snapshot, adding arc-cua’s 11-second demo, release reply and separate repository.",
+      "review_summary": "A concerns inspectable implementation roles. arc-cua explicitly reuses Third Hand’s text-entry approach and is grouped as related work. Solved computer use and universal speed gains lack benchmarks."
     },
     "mujoco-apple-control": {
       "title": "MuJoCo: three-model apple pick-and-place comparison",
@@ -1418,12 +1418,122 @@
       "reported_result": "The author reports over five times the speed of the runner-up, accuracy within a few cases across models, and second-lowest cost behind Qwen3.8 Flash.",
       "media_note": "The main chart and four methodological/results replies form one request-classification experiment, not a general agent-quality judge.",
       "review_summary": "The task and important limits are stated, but a small synthetic set and incomplete reproduction materials restrict the conclusions."
+    },
+    "docjev": {
+      "title": "DocJev: classify documents and split bundles",
+      "summary": "Identify document types and boundaries inside a combined PDF.",
+      "plain_explanation": "OCR reads the pages; Jev decides their categories and where another document starts.",
+      "mechanism": "Pinned code uses Choice for categories and Noul for page boundaries. LiteParse can parse locally; Jev decisions remain hosted, with LlamaParse optional.",
+      "advantage": "Adds page-boundary detection to ordinary document classification, with an inspectable small evaluation.",
+      "limitation": "Only 40 short English PDFs and eight constructed packets; labels lack human review. This does not establish scan, long-document or production accuracy.",
+      "reported_result": "Published results: both classify 40/40; packet exact match is 7/8 for Jev and 8/8 for Luna. Decision medians are 138.6/794.3ms and 209.6/1352.3ms, excluding OCR.",
+      "media_note": "A 24-second post video plus pinned code and evaluation.",
+      "review_summary": "Implementation and timing scope are clear. Equal accuracy and roughly sixfold speed claims need qualification: splitting differs and OCR is excluded."
+    },
+    "dasheng-reading": {
+      "title": "ReadAloud: check missing words and changed meaning",
+      "summary": "Transcribe reading and mark omissions or questionable substitutions for practice.",
+      "plain_explanation": "Compare a transcript with the passage; text can reveal meaning changes but cannot establish pronunciation quality.",
+      "mechanism": "R2T2 transcribes speech; code aligns words. Jev judges suspicious-word equivalence, error type and meaning; local formulas score completeness, pace and the total.",
+      "advantage": "Word-level feedback makes omissions easier to inspect than a plain transcript.",
+      "limitation": "Pinned code calls hosted Jev through ZenMux. The full stack is not offline and does not score pronunciation, stress or accent; validation against professional speaking assessment is absent.",
+      "reported_result": "An approximately 81-second demo accompanies a claim to replace an English-speaking app; the code supports a narrower reading-text checker.",
+      "media_note": "Original post and pinned scoring code form one case; neither ASR nor model calls were run.",
+      "review_summary": "Inspectable implementation, but full-product replacement and fully offline wording exceed the implemented assessment and network behavior."
+    },
+    "needle-semantic-find": {
+      "title": "Needle: find webpage passages by meaning",
+      "summary": "Use your own words to find relevant sentences without remembering exact keywords.",
+      "plain_explanation": "Like asking someone to highlight useful passages: read the page text and select the best source sentence.",
+      "mechanism": "The extension extracts passages. A backend calls Jev through Vercel AI Gateway for relevance and sentence selection, then maps highlights back; the inclusion threshold is 0.58.",
+      "advantage": "Handles paraphrases while keeping results tied to inspectable source text.",
+      "limitation": "Limited to 160 passages and 60,000 characters; PDF viewers and scans are unsupported. Long pages may be incomplete. Queries and captured passages go to hosted services; the threshold does not guarantee recall.",
+      "reported_result": "A roughly 21-second demo, without a standard retrieval benchmark. Temporary promotions are not permanent free access.",
+      "media_note": "The author links the Needle subdirectory; the entire awesome-llm-apps repository is not counted as another application.",
+      "review_summary": "Pinned code establishes extraction, relevance and sentence selection. A reflects clear implementation, not verified search completeness."
+    },
+    "reddit-radar-mcp": {
+      "title": "Reddit Radar MCP: filter discussions by your criteria",
+      "summary": "Find Reddit discussions matching custom criteria from Claude Code or Codex.",
+      "plain_explanation": "A sorter collects posts, applies your criteria and returns matching discussions.",
+      "mechanism": "The author describes an MCP tool combining Reddit scanning with Jev classification. Coverage, deduplication, label definitions and source remain unestablished.",
+      "advantage": "Brings bulk filtering into existing assistants for exploring discussion topics.",
+      "limitation": "Public discussion alone does not validate demand. Precision, recall and full collection/inference costs are missing.",
+      "reported_result": "The author claims tens of thousands of posts in minutes and shows a roughly 12-second clip; throughput and idea validation are unverified.",
+      "media_note": "One original MCP product demo, not separate apps for each client.",
+      "review_summary": "A clear task and demo, with scale and business outcomes remaining author claims."
+    },
+    "toothless-voice-gate": {
+      "title": "Toothless: decide whether speech addresses the assistant",
+      "summary": "Separate assistant-directed remarks from people talking to each other.",
+      "plain_explanation": "Like a considerate listener, use conversational context to decide whether to respond.",
+      "mechanism": "The author describes simultaneous checks for topic continuation, internet needs and potential assistant usefulness. Transcription, speaker information and the final activation rule are not fully disclosed.",
+      "advantage": "Shares wake-word-free interaction with CNVS, emphasizing when to join a multi-person conversation.",
+      "limitation": "No multi-speaker false-activation or miss rates. This does not establish direct audio understanding by Jev or reliable addressee recognition.",
+      "reported_result": "A roughly 3m40s prototype demo, without controlled latency, quality or all-day evaluation.",
+      "media_note": "Independent author and media, grouped with CNVS rather than treated as its update.",
+      "review_summary": "Supports an activation-gate prototype; natural turn-taking and persistent reliability remain unverified."
+    },
+    "mario-lightgbm-teacher": {
+      "title": "Mario teacher data: Jev demonstrates, LightGBM takes over",
+      "summary": "Generate training examples with Jev, then control Mario with local LightGBM.",
+      "plain_explanation": "A coach demonstrates and a trainee takes over; the trainee runs during gameplay.",
+      "mechanism": "The author reports excessive Jev latency from Japan, then generates teacher data and trains LightGBM to replace live decisions. Samples, features and training code are undisclosed.",
+      "advantage": "Moves network waiting to preparation instead of every gameplay decision, unlike continuously calling Jev.",
+      "limitation": "This does not accelerate Jev itself. Dataset size, unseen-level results, repeated completion rates and full preparation costs are unknown.",
+      "reported_result": "The author claims over 300-fold faster decisions and a completion, with a roughly 22-second clip; the ratio is specific to that reported setup.",
+      "media_note": "Compared with other Mario controllers by runtime architecture; reposts of this experiment are not new cases.",
+      "review_summary": "Teacher and runtime models are clearly distinguished, while generalization and reliable completion remain unverified."
+    },
+    "minecraft-fixed-route": {
+      "title": "Minecraft fixed route: planning plus bounded actions",
+      "summary": "Combine a planner, Jev and pathfinding code on a known route to the dragon.",
+      "plain_explanation": "Follow a surveyed map: the planner sets objectives, Jev picks an operation and pathfinding handles movement.",
+      "mechanism": "Astra plans, Jev selects bounded actions and Mineflayer executes. A fixed seed and Peaceful difficulty use configured supply/active-portal coordinates plus a read-only dragon-position sensor.",
+      "advantage": "Inspectable route and control roles; a separate implementation from the existing Minecraft hybrid controller.",
+      "limitation": "Neither random-world exploration nor individual-key/screenshot control. Full video and action logs remain local to the author; the short public clip cannot establish the complete run or bill.",
+      "reported_result": "The author reports 8m43s and $0.01 Jev plus $0.96 Astra. Documentation adds surveyed routes and scripts; this catalog has not reproduced it.",
+      "media_note": "The 39-second post and author reply form one case; full run evidence is absent from the repository.",
+      "review_summary": "The WASD/mouse claim conflicts with documented structured-state, higher-level actions. Treat this as a bounded route experiment, not general autonomous completion."
+    },
+    "token-choice-loop": {
+      "title": "Token-choice loop: assemble text through repeated decisions",
+      "summary": "Repeatedly ask Jev to choose the next token from candidates.",
+      "plain_explanation": "Build a sentence by choosing one piece from a tray at each step.",
+      "mechanism": "The author places Jev in an autoregressive loop with possible next tokens. The full vocabulary, stopping rule and sampling procedure are undisclosed.",
+      "advantage": "Complements word- and character-choice experiments, illustrating how candidate granularity affects assembled text.",
+      "limitation": "No language-quality, total-call or full-response latency comparison. This is not a native generation endpoint or established chat model.",
+      "reported_result": "A roughly 22-second demo; the author cautiously says it partly works, without general performance conclusions.",
+      "media_note": "Independent author and media, grouped with word/character loops; reposts are not separate cases.",
+      "review_summary": "A sourced loop and prototype, with text quality and efficiency still unverified."
+    },
+    "jev-field-notes-curation": {
+      "title": "Jev Field Notes: curate Jev examples with Jev",
+      "summary": "Select X application demos for a community collection.",
+      "plain_explanation": "Like a clipping editor, collect leads and decide which ones to keep.",
+      "mechanism": "The author describes automatic X discovery and Jev curation. A public resource page exists; retrieval, ranking, deduplication and quality criteria are not established.",
+      "advantage": "Applies classification to a concrete editorial task, comparable with bookmark tagging and bulk post screening.",
+      "limitation": "Update automation and curation quality are unverified. Popularity does not establish truth; original sources and implementation still need checking.",
+      "reported_result": "An approximately eight-second preview; the public resource page was checked, but its scheduled backend was not.",
+      "media_note": "One curation tool; its collected demos are not counted again as new projects.",
+      "review_summary": "Supports an author-described curation prototype, not established completeness, deduplication or fact-checking capability."
+    },
+    "animeact-jev-demo": {
+      "title": "AnimeAct: connect dialogue to character acting",
+      "summary": "Connect dialogue intent to a 3D acting system for responsive expressions and motion.",
+      "plain_explanation": "Like a director cueing an actor: interpret a line, then let the acting engine execute expressions and movement.",
+      "mechanism": "The author demos Jev with AnimeAct Engine. The product page describes expression, gaze and upper-body composition plus JSON control; the fields Jev selects are undisclosed.",
+      "advantage": "Adds visible character feedback to classification, useful for exploring dialogue-driven acting.",
+      "limitation": "Do not attribute all animation or audio processing to Jev. Stage timings, quality benchmarks and a runnable Jev integration are missing.",
+      "reported_result": "The author describes near-realtime behavior and tester recruitment, not an independently verified production integration.",
+      "media_note": "A September 19 original discovered through a newer quote, with video and images; quotations are not extra cases.",
+      "review_summary": "A sourced integration demo, with exact interface and release availability unresolved. Future-dated product-page text is not evidence of a completed launch."
     }
   },
   "groups": {
     "browser": {
       "title": "Browser and computer control",
-      "comparison": "For browser loops, compare Browser Use and Stagehand: the former describes a dynamic DOM action space with text-generation fallback; the latter separates accessibility-tree observation from execution. For native apps, see CoreML/OCR. Cua currently offers a constrained semantic-action preview. agent-desktop retains an LLM for longer context; voice control and QA address different interaction needs. Runlayer emphasizes parallel sessions but lacks coverage and defect-detection evidence; Sac’s Calendar comparison focuses on one desktop task. Neither action video substitutes for acceptance assertions. Tester Army targets web/mobile testing but its open-source release is unverified; ego lite focuses on product filtering with a hybrid stack. Browser Use now includes a same-project WebMCP comparison: task coverage and per-attempt success are distinct. Sac’s new Jev-cu source now exposes accessibility-text observation and executor roles, resolving the earlier missing-interface detail; the fastest-in-Codex claim remains unverified. Third Hand enters text extracted from the request, TipTour’s Jev mode only clicks, and Ultrafast can use a small LLM for text entry. Their input capabilities differ; no-extra-LLM claims or step latency alone cannot rank them.",
+      "comparison": "For browser loops, compare Browser Use and Stagehand: the former describes a dynamic DOM action space with text-generation fallback; the latter separates accessibility-tree observation from execution. For native apps, see CoreML/OCR. Cua currently offers a constrained semantic-action preview. agent-desktop retains an LLM for longer context; voice control and QA address different interaction needs. Runlayer emphasizes parallel sessions but lacks coverage and defect-detection evidence; Sac’s Calendar comparison focuses on one desktop task. Neither action video substitutes for acceptance assertions. Tester Army targets web/mobile testing but its open-source release is unverified; ego lite focuses on product filtering with a hybrid stack. Browser Use now includes a same-project WebMCP comparison: task coverage and per-attempt success are distinct. Sac’s new Jev-cu source now exposes accessibility-text observation and executor roles, resolving the earlier missing-interface detail; the fastest-in-Codex claim remains unverified. Third Hand enters text extracted from the request, TipTour’s Jev mode only clicks, and Ultrafast can use a small LLM for text entry. Their input capabilities differ; no-extra-LLM claims or step latency alone cannot rank them. arc-cua and Third Hand are grouped as related work by one author: the former receives planner-supplied literals, the latter extracts candidate text from requests. Assess full-task completion; fewer large-model calls do not mean no UI observation.",
       "flow": "Observe the page or desktop → construct executable candidates → Jev selects → execute → observe again.",
       "analysis": "DOM, accessibility trees and OCR are different observation interfaces. Keeping pixels local does not mean all content stays local. Browser Use still delegates text generation to an LLM. These designs come from author descriptions; unspecified encoding details remain unknown.",
       "evaluation": "Compare the same read-only tasks using completion rate, steps, full elapsed time, total cost and recovery. Include unlabeled buttons, dynamic pages, dialogs and window changes. Do not compare one model decision with an entire task."
@@ -1444,7 +1554,7 @@
     },
     "data": {
       "title": "Data classification and organization",
-      "comparison": "Email classification and DuckDB handle batches of text; the paper example includes generative preprocessing; Jev + Kimi shows uncertainty escalation. Payee cleanup is extraction/normalization and support intent is multi-question judgment. Their metrics are not interchangeable. Predictive spreadsheets put classification intent in column headings and emphasize live feedback. Compare interface response separately from full-table processing costs when considering DuckDB-style batching. The four-model email demo exposes differences in waiting time, while the 500-email case emphasizes batch scale and reported cost. The former lacks standardized accuracy and configuration evidence; the latter lacks a cross-model comparison. Times from separate demonstrations do not establish a ranking. The food notebook turns text into calorie and nutrient values. Like predictive spreadsheets it prioritizes immediate feedback, but numerical estimates also require trustworthy data and error evaluation; classification speed is not numerical accuracy. New cases cover tax-page identification, Box incident triage, Downloads filing, OCR-based image organization, Gmail intent search and snack scoring. Tax classification documents rejection gates and separate test sets; most others offer author timings. Accuracy cannot be ranked across unrelated datasets. Fictional interview notes demonstrate multidimensional classification. Per-record cost does not establish real hiring validity or fairness. Shiori tags bookmarks, Zillow adds listing labels, Goodreads predicts personal five-star preferences, and Ori Eval compares 30-way synthetic request classification. Evaluate tagging errors, field grounding, preference prediction and task labels separately; speed is not recommendation quality.",
+      "comparison": "Email classification and DuckDB handle batches of text; the paper example includes generative preprocessing; Jev + Kimi shows uncertainty escalation. Payee cleanup is extraction/normalization and support intent is multi-question judgment. Their metrics are not interchangeable. Predictive spreadsheets put classification intent in column headings and emphasize live feedback. Compare interface response separately from full-table processing costs when considering DuckDB-style batching. The four-model email demo exposes differences in waiting time, while the 500-email case emphasizes batch scale and reported cost. The former lacks standardized accuracy and configuration evidence; the latter lacks a cross-model comparison. Times from separate demonstrations do not establish a ranking. The food notebook turns text into calorie and nutrient values. Like predictive spreadsheets it prioritizes immediate feedback, but numerical estimates also require trustworthy data and error evaluation; classification speed is not numerical accuracy. New cases cover tax-page identification, Box incident triage, Downloads filing, OCR-based image organization, Gmail intent search and snack scoring. Tax classification documents rejection gates and separate test sets; most others offer author timings. Accuracy cannot be ranked across unrelated datasets. Fictional interview notes demonstrate multidimensional classification. Per-record cost does not establish real hiring validity or fairness. Shiori tags bookmarks, Zillow adds listing labels, Goodreads predicts personal five-star preferences, and Ori Eval compares 30-way synthetic request classification. Evaluate tagging errors, field grounding, preference prediction and task labels separately; speed is not recommendation quality. DocJev targets categories and page boundaries, Reddit Radar screens discussions, and Jev Field Notes selects demos. Compare split errors, post precision/recall and source quality separately. DuckDB’s new speedup compares extension versions, not models.",
       "flow": "Raw text or tables → needed cleanup/summaries → Jev judgments → fallback for uncertain items → write results to an index or table.",
       "analysis": "The paper example separates summary costs from classification. The fraud example escalates uncertain emails to a larger model. Preprocessing and fallback both count toward total system cost. Payee candidate generation is unknown; do not assume Jev freely generates merchant names.",
       "evaluation": "Fix labeled data and splits. Report per-class precision/recall, throughput, per-item latency, retries and total cost. Fraud evaluation also needs realistic prevalence and separate false-positive/negative analysis."
@@ -1458,7 +1568,7 @@
     },
     "filter": {
       "title": "Webpage and feed filtering",
-      "comparison": "The X filter targets posts in a feed; Unclutter targets ads, banners and upsells across webpages. One classifies content, the other page elements, so their rules cannot necessarily be reused directly. Sponsor Skip targets spoken sponsorship along a video timeline rather than webpage elements; caption availability, transcription and boundary errors are distinct comparison dimensions. X reply cleanup targets comments and adds author-described false-positive correction. Compared with feed filtering, action semantics and feedback storage need clarification; flagging does not establish deletion.",
+      "comparison": "The X filter targets posts in a feed; Unclutter targets ads, banners and upsells across webpages. One classifies content, the other page elements, so their rules cannot necessarily be reused directly. Sponsor Skip targets spoken sponsorship along a video timeline rather than webpage elements; caption availability, transcription and boundary errors are distinct comparison dimensions. X reply cleanup targets comments and adds author-described false-positive correction. Compared with feed filtering, action semantics and feedback storage need clarification; flagging does not establish deletion. Needle selects and highlights source sentences on a page, unlike feed filtering or inbox search. Source traceability is useful; extraction limits and unverified recall constrain coverage.",
       "flow": "Extract posts/elements → apply user-written semantic rules through Jev → hide, collapse or remove.",
       "analysis": "Filtering depends on extraction and rule scope. Fast inference does not guarantee no flicker, false removals or broken interactions; page structures can change.",
       "evaluation": "Compare false removals, missed targets, initial display latency and per-page cost on a fixed page set. Check normal dialogs, login, infinite scroll and undo behavior."
@@ -1472,7 +1582,7 @@
     },
     "games": {
       "title": "Game decisions and solving",
-      "comparison": "Compare three Mario implementations: basic integration, a controlled structured-state/five-action Jev–Qwen demo, and a PPO implementation-effort anecdote. Pac-Man separates planning and execution; Pokémon reports longer progress; chess separates speed from strength; cube-solving code supplies the method. Other demos explore action spaces rather than establish a general leaderboard. Minecraft also uses layers, with local movement/aiming policies. Its performance belongs to the combined system; use the author’s original-speed supplement when comparing responsiveness. Flappy Bird focuses on action timing with sparse implementation details. Sprite Fusion selects terrain rather than player actions and documents parameters and request timing; evaluate reachability and playability rather than player scores. Voice spells and emotion/topic chat games use player input to drive rules rather than model-controlled play. Assess parameter mapping/response for spells and dialogue consistency/classification for chat; account separately for effects and response generation.",
+      "comparison": "Compare three Mario implementations: basic integration, a controlled structured-state/five-action Jev–Qwen demo, and a PPO implementation-effort anecdote. Pac-Man separates planning and execution; Pokémon reports longer progress; chess separates speed from strength; cube-solving code supplies the method. Other demos explore action spaces rather than establish a general leaderboard. Minecraft also uses layers, with local movement/aiming policies. Its performance belongs to the combined system; use the author’s original-speed supplement when comparing responsiveness. Flappy Bird focuses on action timing with sparse implementation details. Sprite Fusion selects terrain rather than player actions and documents parameters and request timing; evaluate reachability and playability rather than player scores. Voice spells and emotion/topic chat games use player input to drive rules rather than model-controlled play. Assess parameter mapping/response for spells and dialogue consistency/classification for chat; account separately for effects and response generation. Jev teacher data plus LightGBM replaces live decisions with a local model. Fixed-route Minecraft combines planning, Jev selection and pathfinding scripts. Compare preparation cost, runtime model, map priors and repeated success separately from direct Jev control.",
       "flow": "Environment state → adapter and legal action candidates → Jev choice → rule/executor checks → advance the environment.",
       "analysis": "Games can expose grid state, memory variables or other structured interfaces. The Jev–Qwen Mario post explicitly describes structured conversion and five choices; undocumented details elsewhere remain unknown. Cube algorithms come from code, illustrating how overall capability depends on the whole system.",
       "evaluation": "Fix environment versions, speed, action granularity and random seeds. Run repeated games and report wins, scores, total cost and stalls. State whether simulation pauses during model waits; separate decision latency from real game progress."
@@ -1486,7 +1596,7 @@
     },
     "interaction": {
       "title": "Real-time interaction and composition experiments",
-      "comparison": "TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs. Other entries cover file selection, emoji suggestions, live shopping and voice-and-pointing canvas control. Their distinct tasks warrant separate cases. Both the canvas and TypeGPU combine perception with decisions, but one manipulates objects while the other changes audiovisual effects. Probably organizes judgments, branches and text generation into a small language. Its hosted site uses recorded playback, which must be distinguished from live local model calls when discussing responsiveness. Shell-history suggestions and the launcher both select a next step from candidates. The former documents thresholds in a pinned version but uses fabricated demo history; the latter selects files. Compare hit rates, acceptance and execution risks separately. json-render assembles interactive component trees, the color experiment visualizes 16-color judgments, and CNVS gates whether to respond to speech. They require structural/semantic checks, subjective matching and false-activation tests respectively, not just latency comparisons. Meeting diagrams combine Jev filtering, LLM structuring and diagram code; try-on combines clothing selection with video processing; clipboard selection reuses text; the Canada map visualizes associations. Compare omissions, outfit selection, paste hit rate and subjective associations separately, including surrounding processing costs.",
+      "comparison": "TypeGPU combines local perception with remote semantic decisions. Ask Jev exposes simple judgments. Word/character chat demonstrates selection loops; pixel drawing and RISC-jeV combine small judgments into outputs. These are conceptual examples, not established replacements for specialized models or programs. Other entries cover file selection, emoji suggestions, live shopping and voice-and-pointing canvas control. Their distinct tasks warrant separate cases. Both the canvas and TypeGPU combine perception with decisions, but one manipulates objects while the other changes audiovisual effects. Probably organizes judgments, branches and text generation into a small language. Its hosted site uses recorded playback, which must be distinguished from live local model calls when discussing responsiveness. Shell-history suggestions and the launcher both select a next step from candidates. The former documents thresholds in a pinned version but uses fabricated demo history; the latter selects files. Compare hit rates, acceptance and execution risks separately. json-render assembles interactive component trees, the color experiment visualizes 16-color judgments, and CNVS gates whether to respond to speech. They require structural/semantic checks, subjective matching and false-activation tests respectively, not just latency comparisons. Meeting diagrams combine Jev filtering, LLM structuring and diagram code; try-on combines clothing selection with video processing; clipboard selection reuses text; the Canada map visualizes associations. Compare omissions, outfit selection, paste hit rate and subjective associations separately, including surrounding processing costs. Toothless and CNVS need false-activation/miss comparisons. ReadAloud checks transcribed text, not acoustic pronunciation. AnimeAct adds character feedback with Jev interface details pending. Token, word and character loops need full-response quality and call-count comparisons, not just step latency.",
       "flow": "Prepare finite candidates or atomic questions → Jev judges → code composes results → update interaction state or output.",
       "analysis": "Code assembles word and character choices into text; the API still returns judgments. RISC-jeV stacks logic-gate decisions and instruction interpretation to illustrate composition, not efficiency.",
       "evaluation": "Record vocabulary size, resolution or character count, loop count and full cost. Compare quality with deterministic code or specialized generators. Measure local perception, remote decisions and rendering separately."

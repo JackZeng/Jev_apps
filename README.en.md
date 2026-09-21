@@ -6,7 +6,7 @@ Most AI tools are known for writing answers. **TypeSafe Jev specializes in makin
 Give it the current situation and a question or set of choices; it returns a choice, score or yes/no judgment for code to act on.
 This guide explores what people have built with it—and what their demonstrations actually establish.
 
-**127 examples · 11 categories** · Sources checked through 2026-09-20
+**137 examples · 11 categories** · Sources checked through 2026-09-21
 
 [Browse all applications](#all-apps) · [How Jev works](breakdowns/2026-09-18-how-jev-apps-work.en.md) · [Latest additions](CHANGELOG.en.md)
 
@@ -190,9 +190,9 @@ These systems connect observation to action. Browser tools often read page struc
 </tr>
 <tr>
 <td width="50%" valign="top">
-<p><a href="https://x.com/sxhivs/status/2101367048223982065"><img src="https://pbs.twimg.com/amplify_video_thumb/2101364408870109184/img/w93wxuq73naZx36A.jpg" width="320" alt="Third Hand: control a Mac using text from your request"></a></p>
-<p><strong><a href="cases/2026-09-20-third-hand/README.en.md">Third Hand: control a Mac using text from your request</a></strong><br>Read app controls, click them and enter text already supplied in the request.</p>
-<p><a href="references/2026-09-20-increment8-audit.en.md#third-hand">Clearer mechanism</a> · <a href="cases/2026-09-20-third-hand/README.en.md">Details</a><br><a href="https://x.com/sxhivs/status/2101367048223982065">X · 549 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+<p><a href="https://x.com/sxhivs/status/2101367048223982065"><img src="https://pbs.twimg.com/amplify_video_thumb/2101364408870109184/img/w93wxuq73naZx36A.jpg" width="320" alt="Third Hand / arc-cua: choose actions on a Mac"></a></p>
+<p><strong><a href="cases/2026-09-20-third-hand/README.en.md">Third Hand / arc-cua: choose actions on a Mac</a></strong><br>Read controls and screen text, choose actions and enter request- or planner-supplied text.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#third-hand">Clearer mechanism</a> · <a href="cases/2026-09-20-third-hand/README.en.md">Details</a><br><a href="https://x.com/sxhivs/status/2101367048223982065">X · 549 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
 </td>
 <td width="50%"></td>
 </tr>
@@ -379,7 +379,7 @@ Break a broad review into specific judgments. Code review looks for defects; per
 <a id="data"></a>
 
 <details>
-<summary><strong>Organize files and information</strong> · 20</summary>
+<summary><strong>Organize files and information</strong> · 23</summary>
 
 Label emails, identify forms or find relevant files. Classification, retrieval and numerical estimates fail in different ways; one speed ranking cannot compare them fairly.
 
@@ -395,7 +395,7 @@ Label emails, identify forms or find relevant files. Classification, retrieval a
 <td width="50%" valign="top">
 <p><a href="https://x.com/hamiltonulmer/status/2100370557405667768"><img src="https://pbs.twimg.com/media/HSYD5B1bsAAWqeg.jpg?name=orig" width="320" alt="DuckDB semantic classification"></a></p>
 <p><strong><a href="cases/2026-09-18-duckdb/README.en.md">DuckDB semantic classification</a></strong><br>Classify text rows while working with a table.</p>
-<p><a href="references/2026-09-19-claims-audit.en.md#duckdb">Effectiveness unverified</a> · <a href="cases/2026-09-18-duckdb/README.en.md">Details</a><br><a href="https://x.com/hamiltonulmer/status/2100370557405667768">X · 1,310 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#duckdb">Effectiveness unverified</a> · <a href="cases/2026-09-18-duckdb/README.en.md">Details</a><br><a href="https://x.com/hamiltonulmer/status/2100370557405667768">X · 1,310 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
 </td>
 </tr>
 <tr>
@@ -506,6 +506,26 @@ Label emails, identify forms or find relevant files. Classification, retrieval a
 <p><a href="references/2026-09-20-increment8-audit.en.md#ori-task-classification">Effectiveness unverified</a> · <a href="cases/2026-09-20-ori-task-classification/README.en.md">Details</a><br><a href="https://x.com/OpenRouter/status/2101412965765529853">X · 329 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/jerryjliu0/status/2101738281046294552"><img src="https://pbs.twimg.com/amplify_video_thumb/2101738161546391552/img/aTJ-mBG_YeF98yMQ.jpg" width="320" alt="DocJev: classify documents and split bundles"></a></p>
+<p><strong><a href="cases/2026-09-21-docjev/README.en.md">DocJev: classify documents and split bundles</a></strong><br>Identify document types and boundaries inside a combined PDF.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#docjev">Clearer mechanism</a> · <a href="cases/2026-09-21-docjev/README.en.md">Details</a><br><a href="https://x.com/jerryjliu0/status/2101738281046294552">X · 695 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/oguzhankayancom/status/2101667801274478707"><img src="https://pbs.twimg.com/amplify_video_thumb/2101667558847856640/img/ueDe_Ess6ATvRcz8.jpg" width="320" alt="Reddit Radar MCP: filter discussions by your criteria"></a></p>
+<p><strong><a href="cases/2026-09-21-reddit-radar-mcp/README.en.md">Reddit Radar MCP: filter discussions by your criteria</a></strong><br>Find Reddit discussions matching custom criteria from Claude Code or Codex.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#reddit-radar-mcp">Effectiveness unverified</a> · <a href="cases/2026-09-21-reddit-radar-mcp/README.en.md">Details</a><br><a href="https://x.com/oguzhankayancom/status/2101667801274478707">X · 295 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/omarsar0/status/2101696753749655863"><img src="https://pbs.twimg.com/amplify_video_thumb/2101692387160358912/img/2uCGZ2BKwoQEFC1k.jpg" width="320" alt="Jev Field Notes: curate Jev examples with Jev"></a></p>
+<p><strong><a href="cases/2026-09-21-jev-field-notes-curation/README.en.md">Jev Field Notes: curate Jev examples with Jev</a></strong><br>Select X application demos for a community collection.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#jev-field-notes-curation">Effectiveness unverified</a> · <a href="cases/2026-09-21-jev-field-notes-curation/README.en.md">Details</a><br><a href="https://x.com/omarsar0/status/2101696753749655863">X · 298 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+</td>
+<td width="50%"></td>
+</tr>
 </table>
 
 </details>
@@ -595,7 +615,7 @@ Some tools label ads; others connect articles or predict reach. Describing conte
 <a id="filter"></a>
 
 <details>
-<summary><strong>Filter unwanted content</strong> · 4</summary>
+<summary><strong>Filter unwanted content</strong> · 5</summary>
 
 Turn preferences into filtering rules. Feed tools judge posts, page cleaners judge elements, and video tools locate time segments. Each needs a way to correct mistakes.
 
@@ -625,6 +645,14 @@ Turn preferences into filtering rules. Feed tools judge posts, page cleaners jud
 <p><strong><a href="cases/2026-09-19-x-reply-cleanup/README.en.md">X reply cleanup: flag low-value comments</a></strong><br>Identify suspected low-value replies to help clean up a post’s discussion.</p>
 <p><a href="references/2026-09-19-claims-audit.en.md#x-reply-cleanup">Effectiveness unverified</a> · <a href="cases/2026-09-19-x-reply-cleanup/README.en.md">Details</a><br><a href="https://x.com/iannuttall/status/2100888635943883244">X · 223 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
 </td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/Saboo_Shubham_/status/2101576462042366114"><img src="https://pbs.twimg.com/amplify_video_thumb/2101576307352203264/img/THdpZUHOSRsSoTVr.jpg" width="320" alt="Needle: find webpage passages by meaning"></a></p>
+<p><strong><a href="cases/2026-09-21-needle-semantic-find/README.en.md">Needle: find webpage passages by meaning</a></strong><br>Use your own words to find relevant sentences without remembering exact keywords.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#needle-semantic-find">Clearer mechanism</a> · <a href="cases/2026-09-21-needle-semantic-find/README.en.md">Details</a><br><a href="https://x.com/Saboo_Shubham_/status/2101576462042366114">X · 1,658 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+</td>
+<td width="50%"></td>
 </tr>
 </table>
 
@@ -667,7 +695,7 @@ As conversations grow, what should stay? These tools decide when to compact, wha
 <a id="games"></a>
 
 <details>
-<summary><strong>Play games and solve puzzles</strong> · 18</summary>
+<summary><strong>Play games and solve puzzles</strong> · 20</summary>
 
 Turn game state into choices and watch small decisions add up. Some systems only select actions; others use planners or predefined solutions. Smooth footage does not establish strong play.
 
@@ -782,6 +810,18 @@ Turn game state into choices and watch small decisions add up. Some systems only
 <p><a href="references/2026-09-20-increment8-audit.en.md#emotion-topic-chat-game">Effectiveness unverified</a> · <a href="cases/2026-09-20-emotion-topic-chat-game/README.en.md">Details</a><br><a href="https://x.com/gigabit_million/status/2101285853859545263">X · 391 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/nwnwnyo/status/2101605150242849140"><img src="https://pbs.twimg.com/amplify_video_thumb/2101595622608687104/img/0WizOSDnwuaCFE80.jpg" width="320" alt="Mario teacher data: Jev demonstrates, LightGBM takes over"></a></p>
+<p><strong><a href="cases/2026-09-21-mario-lightgbm-teacher/README.en.md">Mario teacher data: Jev demonstrates, LightGBM takes over</a></strong><br>Generate training examples with Jev, then control Mario with local LightGBM.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#mario-lightgbm-teacher">Effectiveness unverified</a> · <a href="cases/2026-09-21-mario-lightgbm-teacher/README.en.md">Details</a><br><a href="https://x.com/nwnwnyo/status/2101605150242849140">X · 945 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/rronak_/status/2101544156757950697"><img src="https://pbs.twimg.com/amplify_video_thumb/2101542497042481152/img/edco8P9wl-DUp5z8.jpg" width="320" alt="Minecraft fixed route: planning plus bounded actions"></a></p>
+<p><strong><a href="cases/2026-09-21-minecraft-fixed-route/README.en.md">Minecraft fixed route: planning plus bounded actions</a></strong><br>Combine a planner, Jev and pathfinding code on a known route to the dragon.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#minecraft-fixed-route">Claims lack support</a> · <a href="cases/2026-09-21-minecraft-fixed-route/README.en.md">Details</a><br><a href="https://x.com/rronak_/status/2101544156757950697">X · 6,861 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+</td>
+</tr>
 </table>
 
 </details>
@@ -871,7 +911,7 @@ Explore decisions in traffic, robotics and virtual characters. Code usually hand
 <a id="interaction"></a>
 
 <details>
-<summary><strong>Turn judgments into interactions</strong> · 19</summary>
+<summary><strong>Turn judgments into interactions</strong> · 23</summary>
 
 Choose a color or component, or decide whether speech needs a response. Small judgments can create new interfaces. Compare meaning, structure and false activations as well as latency.
 
@@ -991,6 +1031,30 @@ Choose a color or component, or decide whether speech needs a response. Small ju
 <p><a href="https://x.com/CoooolXyh/status/2101284346640654362"><img src="https://pbs.twimg.com/media/HSlCWGybcAA1AiJ.jpg?name=orig" width="320" alt="Contextual clipboard: choose what to paste now"></a></p>
 <p><strong><a href="cases/2026-09-20-contextual-clipboard/README.en.md">Contextual clipboard: choose what to paste now</a></strong><br>Use the active field and app context to select an item from clipboard history.</p>
 <p><a href="references/2026-09-20-increment8-audit.en.md#contextual-clipboard">Effectiveness unverified</a> · <a href="cases/2026-09-20-contextual-clipboard/README.en.md">Details</a><br><a href="https://x.com/CoooolXyh/status/2101284346640654362">X · 207 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/wquguru/status/2101711235628810669"><img src="https://pbs.twimg.com/amplify_video_thumb/2101707450797932544/img/AZFZnwRm5949VkO1.jpg" width="320" alt="ReadAloud: check missing words and changed meaning"></a></p>
+<p><strong><a href="cases/2026-09-21-dasheng-reading/README.en.md">ReadAloud: check missing words and changed meaning</a></strong><br>Transcribe reading and mark omissions or questionable substitutions for practice.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#dasheng-reading">Claims lack support</a> · <a href="cases/2026-09-21-dasheng-reading/README.en.md">Details</a><br><a href="https://x.com/wquguru/status/2101711235628810669">X · 351 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/ashutoshpuro97/status/2101660362882085299"><img src="https://pbs.twimg.com/amplify_video_thumb/2101659226607321089/img/iDIVp1YnUasEtGo9.jpg" width="320" alt="Toothless: decide whether speech addresses the assistant"></a></p>
+<p><strong><a href="cases/2026-09-21-toothless-voice-gate/README.en.md">Toothless: decide whether speech addresses the assistant</a></strong><br>Separate assistant-directed remarks from people talking to each other.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#toothless-voice-gate">Effectiveness unverified</a> · <a href="cases/2026-09-21-toothless-voice-gate/README.en.md">Details</a><br><a href="https://x.com/ashutoshpuro97/status/2101660362882085299">X · 266 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+</td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/erikdunteman/status/2101533797527454109"><img src="https://pbs.twimg.com/amplify_video_thumb/2101533698042785792/img/qrWkmPUgmo0GVwUK.jpg" width="320" alt="Token-choice loop: assemble text through repeated decisions"></a></p>
+<p><strong><a href="cases/2026-09-21-token-choice-loop/README.en.md">Token-choice loop: assemble text through repeated decisions</a></strong><br>Repeatedly ask Jev to choose the next token from candidates.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#token-choice-loop">Effectiveness unverified</a> · <a href="cases/2026-09-21-token-choice-loop/README.en.md">Details</a><br><a href="https://x.com/erikdunteman/status/2101533797527454109">X · 211 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/frombit_jp/status/2101298040741253195"><img src="https://pbs.twimg.com/amplify_video_thumb/2101297718199250944/img/ZfHi6yxmGhGWvSPC.jpg" width="320" alt="AnimeAct: connect dialogue to character acting"></a></p>
+<p><strong><a href="cases/2026-09-21-animeact-jev-demo/README.en.md">AnimeAct: connect dialogue to character acting</a></strong><br>Connect dialogue intent to a 3D acting system for responsive expressions and motion.</p>
+<p><a href="references/2026-09-21-increment9-audit.en.md#animeact-jev-demo">Effectiveness unverified</a> · <a href="cases/2026-09-21-animeact-jev-demo/README.en.md">Details</a><br><a href="https://x.com/frombit_jp/status/2101298040741253195">X · 2,014 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
 </td>
 <td width="50%"></td>
 </tr>
