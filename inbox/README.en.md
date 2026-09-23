@@ -37,9 +37,6 @@ The fifth pass rechecks only Jev QA tester’s original text and metadata: 756 l
 
 | Lead | Source / snapshot likes | Missing evidence |
 | --- | --- | --- |
-| Flowsery replay analysis | [@tarasshyn · 398](https://x.com/tarasshyn/status/2101012033340571952) | Clarify Jev judgments, event parsing and PR-generation roles; 213 draft PRs do not establish code generation by Jev. |
-| Backdoor job matching | [@sarvagya_kul · 875](https://x.com/sarvagya_kul/status/2100980770206879849) | Clarify inputs, scoring meaning and displayed results; model scores are not validated hiring probabilities. |
-| Gojiberry lead scoring | [@romanbuildsaas · 2,391](https://x.com/romanbuildsaas/status/2100891604735099103) | Clarify scoring criteria and inputs; distinguish interest scores, conversion probabilities and planned MCP support. |
 | Humor judgments | [@rafalwilinski · 651](https://x.com/rafalwilinski/status/2100959576682012988) | Sparse text; establish inputs, candidates and the scoring task before explaining the mechanism. |
 | Form autofill | [@ctnicholasdev · 458](https://x.com/ctnicholasdev/status/2100928133608472817) | Establish field types, candidate-value sources and Jev versus other-component roles. |
 | DeepAPI abuse screening | [@DavidOndrej1 · 287](https://x.com/DavidOndrej1/status/2100902217515454507) | Establish behaviors, labels and benchmark scope rather than compare only a “perfect” results image. |
@@ -79,7 +76,6 @@ Snapshot metadata was read on September 20 through the FxTwitter public mirror. 
 | Natural-language workflows | [@GilFeig · 492](https://x.com/GilFeig/status/2101674767266845026) | Inspect executor and action bounds; two-second, free and identical-every-time claims lack conditions and controls. |
 | Topic-based video clipping | [@BurhanUsman · 285](https://x.com/BurhanUsman/status/2101641842441732297) | Separate transcript preparation, segment selection and rendering; full timing/cost boundaries are unclear. |
 | Sparse-attention experiment | [@sep_is_heim · 1619](https://x.com/sep_is_heim/status/2101603192664740330) | Verify model identity, Jev controls, implementation and output quality; speed figures alone are insufficient. |
-| Predictive keyboard | [@neogoose_btw · 397](https://x.com/neogoose_btw/status/2101556786528760050) | Inspect context inputs, hardware feedback and prediction method; media does not establish accuracy. |
 | jev-browser skill | [@hqmank · 380](https://x.com/hqmank/status/2101529876469522673) | Establish source and dependencies on Ultrafast or other existing tools before deciding whether to merge. |
 | High-return trading claim | [@bl888m_eth · 344](https://x.com/bl888m_eth/status/2101684333413368021) | Need verifiable trades, starting/ending balances and fees; screenshots do not establish claimed returns. |
 | Minesweeper | [@comocc · 224](https://x.com/comocc/status/2101653695821984134) | Demo exists; verify board inputs, action execution and project identity. |
@@ -93,15 +89,16 @@ These September 21 FxTwitter snapshots are research leads, excluded from the 137
 | Lead | Original / like snapshot | Missing evidence |
 | --- | --- | --- |
 | CommandCode nudges | [@MrAhmadAwais · 186](https://x.com/MrAhmadAwais/status/2102456912486989945) | The application original has only 186 likes; a 222-like official quote cannot replace the threshold or be added. |
-| Neatlogs semantic detections | [@simranrambles · 234](https://x.com/simranrambles/status/2102313324293820530) | Establish detection targets, input fields, alert criteria and component roles; a rollout announcement is not outcome validation. |
 | Bookkeeping replacement claim | [@andywang · 840](https://x.com/andywang/status/2102265179543400907) | Clarify transaction classification versus full bookkeeping; 20 seconds/$0.32 cannot directly replace a comparison with 34 months of accounting service. |
-| Working-memory lesson checks | [@Austin_Way · 609](https://x.com/Austin_Way/status/2102131624921968704) | Original source link found; inspect scoring rules, educational-quality evidence and the $250,000/$2,000 projection boundaries. |
-| Visual decision workflows | [@ctnicholasdev · 638](https://x.com/ctnicholasdev/status/2102070640589279318) | Inspect open source, node execution, output types and relationship to the author’s form tool; do not count nodes as separate applications. |
-| AgentRun repetitive tasks | [@_aj · 2142](https://x.com/_aj/status/2102061534956662818) | Review methods and full-task results; establish learning, code execution and Jev roles before evaluating the 90% cost reduction. |
 | Decision Index 0.1 | [@multimodalart · 268](https://x.com/multimodalart/status/2102296665331999098) | Inspect dataset provenance, splits, labels, timing and billing, rather than relying on the aggregate leaderboard. |
-| Monid video and tool retrieval | [@Jasperli0122 · 204](https://x.com/Jasperli0122/status/2102140451763749077) | Cross-check the related tool-search demo by another author (2102112693041938825); separate preprocessing, selection and full cost before intake, not two new cases. |
 | Cua-Bench S1 | [@trycua · 454](https://x.com/trycua/status/2102149662207844620) | Prefer a potential update to existing Cua; review methods, inputs and success-rate denominators before merging, not a new card. |
 | Autofill demo | [@misakism13 · 2100](https://x.com/misakism13/status/2102305405280080143) | Check implementation authorship and field candidates; rule out redistribution of existing form demos. |
 | Six-agent marketing workflow | [@askOkara · 444](https://x.com/askOkara/status/2102319722671047139) | Separate Jev decisions from other models’ writing; 30-fold speed at equal quality needs a matched benchmark. |
 
 September 23 FxTwitter snapshots; these leads are excluded from the 148-case count. Other observed demos with unclear interfaces or original authorship remain outside this selective intake. [Review scope](../references/2026-09-23-increment10-audit.en.md).
+
+## 2026-09-23 · Expanded intake
+
+After inspecting original threads and selected source/method documents, 9 pending table rows have moved into formal cases. Historical round totals above describe their original cutoffs. [完整转入名单 / Intake list](../CHANGELOG.en.md) · [筛选依据 / Evidence](../references/2026-09-23-expanded-audit.en.md)
+
+The [303-source ledger](../references/2026-09-23-expanded-screening.csv) retains the remaining leads and exclusion reasons, with current snapshot times. CommandCode’s application original is still below threshold at 191 likes; the 230-like official quote does not substitute. Pending means unresolved evidence, not a negative verdict.

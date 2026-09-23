@@ -4,9 +4,9 @@
 
 > Use voice to connect product selection, image generation and video-ad creation.
 
-**Content updated:** 2026-09-23 12:09:12 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-23 12:45:07 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>Supports an integrated voice-ad demo. Exact roles and reliability remain unknown, so B is retained.<br>[Assessment and sources](../../references/2026-09-23-increment10-audit.en.md#higgsfield-voice-ads)
+**🟡 B · Effectiveness unverified**<br>The earlier official post clarifies Jev asset selection versus other components’ generation; workflow reliability and full cost remain unverified.<br>[Assessment and sources](../../references/2026-09-23-expanded-audit.en.md#higgsfield-voice-ads)
 
 ## How it works, in plain English
 
@@ -33,7 +33,7 @@ Give spoken directions to a production workflow whose components handle selectio
 
 [<img src="https://pbs.twimg.com/amplify_video_thumb/2102369418189963264/img/MHnxiaMsiijAiMLF.jpg" width="640" alt="Higgsfield: control an ad-production workflow by voice preview">](https://x.com/higgsfield_ai/status/2102369525048168862)<br>[Video](https://x.com/higgsfield_ai/status/2102369525048168862)
 
-An update to the author’s workflow but its first intake here; the full ad workflow counts once.
+Voice-control and earlier asset-selection videos are grouped as one workflow, not two applications.
 
 - [Direct video 1](https://video.twimg.com/amplify_video/2102369418189963264/vid/avc1/1920x1080/o66_yWSBrSNQfkCw.mp4?tag=29) (metadata duration: 38.5s)
 
@@ -47,7 +47,7 @@ Use voice to connect product selection, image generation and video-ad creation.
 
 ## Inputs, steps and outputs
 
-The official post adds voice control to a Jev ad workflow combining DeepSeek and Higgsfield. Exact Jev routing fields, transcription and generation boundaries are not fully disclosed.
+An earlier official post assigns content filtering and asset selection to Jev, then ad-creative generation to DeepSeek plus Higgsfield. The newer post adds voice control; ASR and exact routing fields remain unknown.
 
 Undisclosed prompts, state formats, thresholds and recovery logic remain unknown. Inclusion of a demo does not establish a stable release.
 
@@ -62,7 +62,7 @@ Undisclosed prompts, state formats, thresholds and recovery logic remain unknown
 
 Updates and deduplicated supporting sources:
 
-None.
+- [Supporting post by @higgsfield_ai](https://x.com/higgsfield_ai/status/2101117855622463719): published 2026-09-19T01:15:08+00:00; 1,319 likes retrieved 2026-09-23T04:32:29+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2101117855622463719). [Supplementary media 1](https://video.twimg.com/amplify_video/2101117486720765952/vid/avc1/1920x1080/FdfHqGr5GRlxRKc0.mp4?tag=29)
 
 Public project / demo links (a link does not mean availability has been tested here):
 
@@ -83,3 +83,4 @@ See the [category analysis](../../breakdowns/2026-09-18-content.en.md) for compa
 | Date | Change |
 | --- | --- |
 | 2026-09-23 | First collection; checked the main post, metric snapshot and media; added to category comparisons |
+| 2026-09-23T12:45:07+08:00 | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |

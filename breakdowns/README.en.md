@@ -5,14 +5,14 @@
 Analysis of public sources; no reproduction experiments have been run here.
 
 - [How Jev apps work: judgments and software composition](2026-09-18-how-jev-apps-work.en.md)
-- [Browser and computer control](2026-09-18-browser.en.md): 13 examples.
-- [Model, skill and tool routing](2026-09-18-routing.en.md): 13 examples.
-- [Code quality and safety checks](2026-09-18-review.en.md): 14 examples.
-- [Data classification and organization](2026-09-18-data.en.md): 25 examples.
-- [Content and advertising analysis](2026-09-18-content.en.md): 13 examples.
-- [Webpage and feed filtering](2026-09-18-filter.en.md): 6 examples.
+- [Browser and computer control](2026-09-18-browser.en.md): 15 examples.
+- [Model, skill and tool routing](2026-09-18-routing.en.md): 18 examples.
+- [Code quality and safety checks](2026-09-18-review.en.md): 18 examples.
+- [Data classification and organization](2026-09-18-data.en.md): 33 examples.
+- [Content and advertising analysis](2026-09-18-content.en.md): 15 examples.
+- [Webpage and feed filtering](2026-09-18-filter.en.md): 8 examples.
 - [Context and memory filtering](2026-09-18-memory.en.md): 3 examples.
-- [Game decisions and solving](2026-09-18-games.en.md): 20 examples.
-- [NPCs, driving and population simulations](2026-09-18-simulation.en.md): 12 examples.
-- [Real-time interaction and composition experiments](2026-09-18-interaction.en.md): 24 examples.
+- [Game decisions and solving](2026-09-18-games.en.md): 25 examples.
+- [NPCs, driving and population simulations](2026-09-18-simulation.en.md): 14 examples.
+- [Real-time interaction and composition experiments](2026-09-18-interaction.en.md): 29 examples.
 - [Trading and historical backtests](2026-09-18-finance.en.md): 5 examples.

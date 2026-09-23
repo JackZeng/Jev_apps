@@ -110,3 +110,7 @@ Added 10 cases and merged 2 updates, for 137 cases. [Evidence, deduplication, so
 ## 2026-09-23 · Tenth incremental update
 
 Added 11 cases and merged 2 updates, for 148 cases. [Evidence, deduplication, versions and scope](2026-09-23-increment10-audit.en.md).
+
+## 2026-09-23 · Expanded intake
+
+35 additional cases, 2 merged updates, 183 total. [报告 / Report](2026-09-23-expanded-audit.en.md) · [303-source CSV](2026-09-23-expanded-screening.csv)

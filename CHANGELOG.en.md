@@ -2,6 +2,50 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-23 · Expanded intake
+
+Added **35** cases (8 recent originals, 27 older omissions), merged **2** updates; **183** cases total. All new originals meet ≥200 likes and have media. “Recent” uses the September 21, 11:02:26 Beijing cutoff.
+
+| Case | Original date (Beijing) | Like snapshot |
+| --- | --- | ---: |
+| [Passage: inspect how many ideas a lesson asks readers to hold](cases/2026-09-23-working-memory-passage/README.en.md) | 2026-09-22 | [609](https://x.com/Austin_Way/status/2102131624921968704) |
+| [Jev Workflow Builder: connect decisions into a workflow](cases/2026-09-23-jev-workflow-builder/README.en.md) | 2026-09-22 | [638](https://x.com/ctnicholasdev/status/2102070640589279318) |
+| [AgentRun: turn repeated work into reusable procedures](cases/2026-09-23-agentrun/README.en.md) | 2026-09-21 | [2142](https://x.com/_aj/status/2102061534956662818) |
+| [Neatlogs: flag semantic problems in agent traces](cases/2026-09-23-neatlogs-detections/README.en.md) | 2026-09-22 | [235](https://x.com/simranrambles/status/2102313324293820530) |
+| [Monid: add batch decisions to tool workflows](cases/2026-09-23-monid-jev-tools/README.en.md) | 2026-09-22 | [238](https://x.com/shengkunye/status/2102112693041938825) |
+| [StarCraft II: plan globally and control squads with Jev](cases/2026-09-23-starcraft2-squads/README.en.md) | 2026-09-22 | [709](https://x.com/GZhan57/status/2102126922688012410) |
+| [Smash Bros.: Raspberry Pi inputs and Jev move selection](cases/2026-09-23-smash-pi-controller/README.en.md) | 2026-09-22 | [249](https://x.com/aokiti_tech/status/2102123079912808849) |
+| [Halite: compare strategic planning and ship-level execution](cases/2026-09-23-halite-hybrid/README.en.md) | 2026-09-21 | [386](https://x.com/Sentdex/status/2101828851458293827) |
+| [YC startup search: find companies by description](cases/2026-09-23-yc-startup-search/README.en.md) | 2026-09-22 | [1495](https://x.com/aaayandev/status/2102137061490794730) |
+| [Predictive keyboard: light up a likely next key](cases/2026-09-23-predictive-keyboard/README.en.md) | 2026-09-20 | [478](https://x.com/neogoose_btw/status/2101556786528760050) |
+| [Abide: check project rules after code changes](cases/2026-09-23-abide-rules/README.en.md) | 2026-09-19 | [921](https://x.com/OhansEmmanuel/status/2101034822760288452) |
+| [Jev Reviewer: find inspectable quotations in research papers](cases/2026-09-23-jev-reviewer-papers/README.en.md) | 2026-09-19 | [244](https://x.com/ASofiMahmudi/status/2100985031703269425) |
+| [pg-jev: filter database rows in everyday language](cases/2026-09-23-pg-jev/README.en.md) | 2026-09-18 | [2832](https://x.com/iam_zachi/status/2100679300756435135) |
+| [TypeSafe AdBlock: judge suspected webpage ads by meaning](cases/2026-09-23-typesafe-adblock/README.en.md) | 2026-09-17 | [3889](https://x.com/iam_zachi/status/2100529273186472318) |
+| [Voice turn ending: wait through a pause before interrupting](cases/2026-09-23-voice-turn-end/README.en.md) | 2026-09-17 | [443](https://x.com/uezochan/status/2100608556823388486) |
+| [MuJoCo two-stage control: choose a goal, then move the arm](cases/2026-09-23-mujoco-two-stage/README.en.md) | 2026-09-19 | [626](https://x.com/dimentary/status/2101018760371171420) |
+| [Chess comparison: moving faster is not playing better](cases/2026-09-23-chess-glm-comparison/README.en.md) | 2026-09-19 | [324](https://x.com/nutlope/status/2101010773157761481) |
+| [Prompt Box: choose the model, machine and project folder](cases/2026-09-23-prompt-box-router/README.en.md) | 2026-09-19 | [203](https://x.com/sawyerhood/status/2100994779291259187) |
+| [Corent: use different routing thresholds for different costs](cases/2026-09-23-corent-router/README.en.md) | 2026-09-18 | [326](https://x.com/corentAI/status/2100965880242770423) |
+| [Lurk: monitor Reddit discussions worth following](cases/2026-09-23-lurk-reddit-monitor/README.en.md) | 2026-09-19 | [751](https://x.com/mxfp4/status/2101070906852298910) |
+| [Hacker News classification: organize 24,000 posts in bulk](cases/2026-09-23-hn-venice-classification/README.en.md) | 2026-09-19 | [221](https://x.com/sabrinaesaquino/status/2101102660997017747) |
+| [OCR Router: send only pages needing OCR](cases/2026-09-23-ocr-page-router/README.en.md) | 2026-09-19 | [483](https://x.com/MisbahSy/status/2100979972194369925) |
+| [Mac voice control: start opening an app before speech ends](cases/2026-09-23-mac-voice-fast-actions/README.en.md) | 2026-09-18 | [6130](https://x.com/instantricecook/status/2100814590300889426) |
+| [Second-hand shopping assistant: judge listings against requirements](cases/2026-09-23-secondhand-playwright/README.en.md) | 2026-09-18 | [947](https://x.com/AlanDaitch/status/2100757989212754085) |
+| [Smash with four agents: simultaneous character decisions](cases/2026-09-23-smash-four-agents/README.en.md) | 2026-09-18 | [3680](https://x.com/maubaron/status/2100738237237002706) |
+| [Newsjack: match current news to brands](cases/2026-09-23-news-brand-matching/README.en.md) | 2026-09-18 | [3930](https://x.com/elvissun/status/2100951347080421409) |
+| [Backdoor: compare a profile with job opportunities](cases/2026-09-23-backdoor-job-matching/README.en.md) | 2026-09-19 | [1770](https://x.com/sarvagya_kul/status/2100980770206879849) |
+| [Gojiberry: check whether outreach fits its recipient](cases/2026-09-23-gojiberry-outreach/README.en.md) | 2026-09-18 | [3364](https://x.com/romanbuildsaas/status/2100891604735099103) |
+| [Flowsery: flag suspicious patterns in session replays](cases/2026-09-23-flowsery-replay/README.en.md) | 2026-09-19 | [835](https://x.com/tarasshyn/status/2101012033340571952) |
+| [Partial-speech tool choice: decide before the utterance ends](cases/2026-09-23-voice-partial-tools/README.en.md) | 2026-09-19 | [477](https://x.com/BhosalePratim/status/2100986774742765991) |
+| [Mutuals: compose a character reaction from multiple decisions](cases/2026-09-23-mutuals-character/README.en.md) | 2026-09-19 | [790](https://x.com/john_bortotti/status/2101019513676345555) |
+| [Whale-back city: advance a survival story through choices](cases/2026-09-23-whale-city-game/README.en.md) | 2026-09-19 | [268](https://x.com/gokayfem/status/2101022590722810271) |
+| [Personal email classification: a 1,500-message experiment](cases/2026-09-23-email-1500-ryan/README.en.md) | 2026-09-16 | [3550](https://x.com/ryanvogel/status/2100042788851101842) |
+| [Plain-English logic interpreter: execute rules with program control](cases/2026-09-23-plain-english-interpreter/README.en.md) | 2026-09-19 | [501](https://x.com/narphorium/status/2100985027093749764) |
+| [Visual reference finder: discover creative material by description](cases/2026-09-23-visual-reference-finder/README.en.md) | 2026-09-18 | [712](https://x.com/albicodes/status/2100720936852857271) |
+
+Higgsfield’s model roles are clarified; StealAds’ focus-group replacement claim is flagged C. Six new pinned implementations; all cases remain unreproduced. [报告 / Report](references/2026-09-23-expanded-audit.en.md) · [CSV](references/2026-09-23-expanded-screening.csv)
+
 ## 2026-09-23 · Tenth incremental update
 
 Reviewed through **2026-09-23 12:09:12 Beijing time**. **11 new cases**, **2 merged updates**, **148 cases in 11 groups** (A 29 / B 102 / C 17). New originals all have ≥200 likes in their snapshots and media.

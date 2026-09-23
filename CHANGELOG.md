@@ -2,6 +2,50 @@
 
 **简体中文** | [English](CHANGELOG.en.md)
 
+## 2026-09-23 · 扩大回查补录
+
+再补 **35** 项（8 项近期原帖、27 项较早漏收），合并更新 **2** 项，共 **183** 项。新增主帖均 ≥200 赞并附媒体。“近期”以 9 月 21 日 11:02:26 北京时间为界。
+
+| 案例 | 原帖日期（北京） | 点赞快照 |
+| --- | --- | ---: |
+| [Passage · 看教材是否一下塞进太多概念](cases/2026-09-23-working-memory-passage/README.md) | 2026-09-22 | [609](https://x.com/Austin_Way/status/2102131624921968704) |
+| [Jev Workflow Builder · 把判断连成工作流](cases/2026-09-23-jev-workflow-builder/README.md) | 2026-09-22 | [638](https://x.com/ctnicholasdev/status/2102070640589279318) |
+| [AgentRun · 让重复工作逐渐变成固定流程](cases/2026-09-23-agentrun/README.md) | 2026-09-21 | [2142](https://x.com/_aj/status/2102061534956662818) |
+| [Neatlogs · 在代理运行记录里找语义异常](cases/2026-09-23-neatlogs-detections/README.md) | 2026-09-22 | [235](https://x.com/simranrambles/status/2102313324293820530) |
+| [Monid · 给工具工作流加上批量判断](cases/2026-09-23-monid-jev-tools/README.md) | 2026-09-22 | [238](https://x.com/shengkunye/status/2102112693041938825) |
+| [StarCraft II · 大模型定计划，Jev 指挥小队](cases/2026-09-23-starcraft2-squads/README.md) | 2026-09-22 | [709](https://x.com/GZhan57/status/2102126922688012410) |
+| [Smash Bros. · 树莓派按键与 Jev 选招](cases/2026-09-23-smash-pi-controller/README.md) | 2026-09-22 | [249](https://x.com/aokiti_tech/status/2102123079912808849) |
+| [Halite · 战略模型与逐船执行对照](cases/2026-09-23-halite-hybrid/README.md) | 2026-09-21 | [386](https://x.com/Sentdex/status/2101828851458293827) |
+| [YC 公司搜索 · 按描述寻找创业公司](cases/2026-09-23-yc-startup-search/README.md) | 2026-09-22 | [1495](https://x.com/aaayandev/status/2102137061490794730) |
+| [预测键盘 · 提前点亮可能要按的键](cases/2026-09-23-predictive-keyboard/README.md) | 2026-09-20 | [478](https://x.com/neogoose_btw/status/2101556786528760050) |
+| [Abide · 每次改代码都检查项目约定](cases/2026-09-23-abide-rules/README.md) | 2026-09-19 | [921](https://x.com/OhansEmmanuel/status/2101034822760288452) |
+| [Jev Reviewer · 从论文中找到可核对的原句](cases/2026-09-23-jev-reviewer-papers/README.md) | 2026-09-19 | [244](https://x.com/ASofiMahmudi/status/2100985031703269425) |
+| [pg-jev · 用日常语言筛数据库里的行](cases/2026-09-23-pg-jev/README.md) | 2026-09-18 | [2832](https://x.com/iam_zachi/status/2100679300756435135) |
+| [TypeSafe AdBlock · 按含义识别网页广告](cases/2026-09-23-typesafe-adblock/README.md) | 2026-09-17 | [3889](https://x.com/iam_zachi/status/2100529273186472318) |
+| [语音轮次判断 · 停顿时先别急着插话](cases/2026-09-23-voice-turn-end/README.md) | 2026-09-17 | [443](https://x.com/uezochan/status/2100608556823388486) |
+| [MuJoCo 两段决策 · 先选目标，再动机械臂](cases/2026-09-23-mujoco-two-stage/README.md) | 2026-09-19 | [626](https://x.com/dimentary/status/2101018760371171420) |
+| [国际象棋对照 · 走得快不等于下得好](cases/2026-09-23-chess-glm-comparison/README.md) | 2026-09-19 | [324](https://x.com/nutlope/status/2101010773157761481) |
+| [Prompt Box · 自动选模型、电脑和项目目录](cases/2026-09-23-prompt-box-router/README.md) | 2026-09-19 | [203](https://x.com/sawyerhood/status/2100994779291259187) |
+| [Corent · 按任务费用设置不同路由门槛](cases/2026-09-23-corent-router/README.md) | 2026-09-18 | [326](https://x.com/corentAI/status/2100965880242770423) |
+| [Lurk · 持续找值得关注的 Reddit 讨论](cases/2026-09-23-lurk-reddit-monitor/README.md) | 2026-09-19 | [751](https://x.com/mxfp4/status/2101070906852298910) |
+| [Hacker News 分类 · 批量整理 24,000 条帖子](cases/2026-09-23-hn-venice-classification/README.md) | 2026-09-19 | [221](https://x.com/sabrinaesaquino/status/2101102660997017747) |
+| [OCR Router · 只把需要识别的页面送去 OCR](cases/2026-09-23-ocr-page-router/README.md) | 2026-09-19 | [483](https://x.com/MisbahSy/status/2100979972194369925) |
+| [Mac 语音操作 · 话没说完就开始打开应用](cases/2026-09-23-mac-voice-fast-actions/README.md) | 2026-09-18 | [6130](https://x.com/instantricecook/status/2100814590300889426) |
+| [二手商品助手 · 逐件判断是否符合需求](cases/2026-09-23-secondhand-playwright/README.md) | 2026-09-18 | [947](https://x.com/AlanDaitch/status/2100757989212754085) |
+| [Smash 四角色 · 多个决策循环同时对战](cases/2026-09-23-smash-four-agents/README.md) | 2026-09-18 | [3680](https://x.com/maubaron/status/2100738237237002706) |
+| [Newsjack · 给品牌匹配当天新闻](cases/2026-09-23-news-brand-matching/README.md) | 2026-09-18 | [3930](https://x.com/elvissun/status/2100951347080421409) |
+| [Backdoor · 对照履历筛选岗位线索](cases/2026-09-23-backdoor-job-matching/README.md) | 2026-09-19 | [1770](https://x.com/sarvagya_kul/status/2100980770206879849) |
+| [Gojiberry · 检查销售线索与消息是否匹配](cases/2026-09-23-gojiberry-outreach/README.md) | 2026-09-18 | [3364](https://x.com/romanbuildsaas/status/2100891604735099103) |
+| [Flowsery · 从网页回放中挑出可疑问题](cases/2026-09-23-flowsery-replay/README.md) | 2026-09-19 | [835](https://x.com/tarasshyn/status/2101012033340571952) |
+| [半句语音选工具 · 提前判断下一步](cases/2026-09-23-voice-partial-tools/README.md) | 2026-09-19 | [477](https://x.com/BhosalePratim/status/2100986774742765991) |
+| [Mutuals · 用多个判断拼出角色反应](cases/2026-09-23-mutuals-character/README.md) | 2026-09-19 | [790](https://x.com/john_bortotti/status/2101019513676345555) |
+| [鲸背城市 · 用决策推进生存故事](cases/2026-09-23-whale-city-game/README.md) | 2026-09-19 | [268](https://x.com/gokayfem/status/2101022590722810271) |
+| [个人邮箱分类 · 用 1,500 封邮件试验整理](cases/2026-09-23-email-1500-ryan/README.md) | 2026-09-16 | [3550](https://x.com/ryanvogel/status/2100042788851101842) |
+| [自然语言逻辑解释器 · 把规则交给程序执行](cases/2026-09-23-plain-english-interpreter/README.md) | 2026-09-19 | [501](https://x.com/narphorium/status/2100985027093749764) |
+| [视觉参考查找 · 按描述找创作素材](cases/2026-09-23-visual-reference-finder/README.md) | 2026-09-18 | [712](https://x.com/albicodes/status/2100720936852857271) |
+
+补清 Higgsfield 模型分工；StealAds“替代焦点小组”宣传改标 C。六项新增附固定源码，全部仍未复现。[报告 / Report](references/2026-09-23-expanded-audit.md) · [CSV](references/2026-09-23-expanded-screening.csv)
+
 ## 2026-09-23 · 第十轮增量
 
 核对截止 **2026-09-23 12:09:12 北京时间**。新增 **11** 项、合并更新 **2** 项，共 **148 项、11 类**（A 29 / B 102 / C 17）。新增原帖快照均 ≥200 赞且附媒体。

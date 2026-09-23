@@ -37,9 +37,6 @@
 
 | 线索 | 来源 / 点赞快照 | 待补证据 |
 | --- | --- | --- |
-| Flowsery 回放分析 | [@tarasshyn · 398](https://x.com/tarasshyn/status/2101012033340571952) | 需说明 Jev 分类、事件解析与 PR 生成的分工；213 个草稿 PR 不能直接写成 Jev 生成代码。 |
-| Backdoor 求职匹配 | [@sarvagya_kul · 875](https://x.com/sarvagya_kul/status/2100980770206879849) | 需明确匹配输入、评分含义及结果展示；模型分数不能当真实录用概率。 |
-| Gojiberry 线索评分 | [@romanbuildsaas · 2,391](https://x.com/romanbuildsaas/status/2100891604735099103) | 需明确评分标准和输入字段，区分兴趣评分、转化概率与未来 MCP 计划。 |
 | 幽默判断 | [@rafalwilinski · 651](https://x.com/rafalwilinski/status/2100959576682012988) | 文字极简，需核清输入、候选和评分任务，才能写可靠的原理介绍。 |
 | 表单自动填充 | [@ctnicholasdev · 458](https://x.com/ctnicholasdev/status/2100928133608472817) | 需补字段类型、候选内容来源与 Jev / 其他组件分工。 |
 | DeepAPI 滥用判断 | [@DavidOndrej1 · 287](https://x.com/DavidOndrej1/status/2100902217515454507) | 需核清被测行为、标签和基准范围，不能只按“完美”结果图比较。 |
@@ -79,7 +76,6 @@
 | 自然语言工作流 | [@GilFeig · 492](https://x.com/GilFeig/status/2101674767266845026) | 需核对执行器和固定动作范围；两秒、免费、每次相同缺完整条件与对照。 |
 | 按话题剪视频 | [@BurhanUsman · 285](https://x.com/BurhanUsman/status/2101641842441732297) | 需区分字幕预处理、片段选择和视频导出；两秒和费用数字是否包含完整处理未知。 |
 | 稀疏注意力实验 | [@sep_is_heim · 1619](https://x.com/sep_is_heim/status/2101603192664740330) | 需核实模型身份、Jev 控制字段、可执行代码与质量对照，不能只用加速数字下结论。 |
-| 预测按键键盘 | [@neogoose_btw · 397](https://x.com/neogoose_btw/status/2101556786528760050) | 需核对上下文来源、硬件反馈与预测方法；原帖媒体不替代准确率统计。 |
 | jev-browser skill | [@hqmank · 380](https://x.com/hqmank/status/2101529876469522673) | 需先核清仓库与 Ultrafast 等已有工具的依赖关系，再决定合并或独立收录。 |
 | 高收益交易宣传 | [@bl888m_eth · 344](https://x.com/bl888m_eth/status/2101684333413368021) | 需完整可核查交易记录、起止余额与费用；界面截图不足以证明宣传收益。 |
 | 扫雷 | [@comocc · 224](https://x.com/comocc/status/2101653695821984134) | 原帖有演示，尚待核清棋盘输入、动作执行与同名项目关系。 |
@@ -93,15 +89,16 @@
 | 线索 | 原帖 / 点赞快照 | 待补证据 |
 | --- | --- | --- |
 | CommandCode 自动提醒 | [@MrAhmadAwais · 186](https://x.com/MrAhmadAwais/status/2102456912486989945) | 原应用帖取数仅 186 赞；官方引用 222 赞不能替代主帖门槛或累计。 |
-| Neatlogs 语义检测 | [@simranrambles · 234](https://x.com/simranrambles/status/2102313324293820530) | 需明确检测对象、输入字段、告警标准与模型分工；预告上线不是实际效果验证。 |
 | 记账替代宣传 | [@andywang · 840](https://x.com/andywang/status/2102265179543400907) | 需核清具体是交易分类还是完整账务；20 秒/$0.32 无法直接与 34 个月会计服务比较。 |
-| 教学内容工作记忆检查 | [@Austin_Way · 609](https://x.com/Austin_Way/status/2102131624921968704) | 已找到原作者代码链接；尚需核对评分规则、教育质量依据与 $250,000/$2,000 估算边界。 |
-| 可视化决策工作流 | [@ctnicholasdev · 638](https://x.com/ctnicholasdev/status/2102070640589279318) | 需读取开源实现，核对节点执行、输出类型及与同作者表单工具的关系，不能把多节点拆成多个应用。 |
-| AgentRun 重复任务 | [@_aj · 2142](https://x.com/_aj/status/2102061534956662818) | 需核对文章方法与完整任务结果，确认学习、代码执行与 Jev 分工后再评估 90% 降费。 |
 | Decision Index 0.1 | [@multimodalart · 268](https://x.com/multimodalart/status/2102296665331999098) | 需完整检查数据来源、划分、标签、延迟与费用统计，不能只据综合排行榜立结论。 |
-| Monid 视频与工具检索 | [@Jasperli0122 · 204](https://x.com/Jasperli0122/status/2102140451763749077) | 与同项目另一作者的工具检索演示（2102112693041938825）关联核查；需拆清视频预处理、选择和全程费用，未作两条新增。 |
 | Cua-Bench S1 | [@trycua · 454](https://x.com/trycua/status/2102149662207844620) | 优先作为已有 Cua 案例的补充候选；需读完整方法、输入条件与成功率分母，暂不拆新卡。 |
 | 自动填表演示 | [@misakism13 · 2100](https://x.com/misakism13/status/2102305405280080143) | 需核对原始实现作者和字段候选，排除已有填表素材的二次传播。 |
 | 六代理营销流程 | [@askOkara · 444](https://x.com/askOkara/status/2102319722671047139) | 需区分 Jev 选择判断与其他模型写作，30 倍且同质量缺同条件基准。 |
 
 以上为 9 月 23 日 FxTwitter 快照，均未计入 148 项正式目录。其他输入接口或原始作者尚未核清的演示，也不在本轮精选增量中。[核对范围](../references/2026-09-23-increment10-audit.md)。
+
+## 2026-09-23 · 扩大回查补录
+
+补查原帖及部分源码/方法后，已将 9 行满足条件的待核线索移出上方表格，转入正式案例；上方各轮历史数量仍表示当时的状态。[完整转入名单 / Intake list](../CHANGELOG.md) · [筛选依据 / Evidence](../references/2026-09-23-expanded-audit.md)
+
+[303 条来源台账](../references/2026-09-23-expanded-screening.csv)保留其余线索、未收原因及本轮取数时间。CommandCode 原应用帖仍仅 191 赞，官方引用的 230 赞不能替代门槛。待核表示证据未补齐，不表示负面结论。
