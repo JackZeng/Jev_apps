@@ -2,6 +2,26 @@
 
 **简体中文** | [English](CHANGELOG.en.md)
 
+## 2026-09-23 · 第十轮增量
+
+核对截止 **2026-09-23 12:09:12 北京时间**。新增 **11** 项、合并更新 **2** 项，共 **148 项、11 类**（A 29 / B 102 / C 17）。新增原帖快照均 ≥200 赞且附媒体。
+
+| 新增案例 | 点赞快照 |
+| --- | ---: |
+| [Astra-Ares · 按任务进展调节思考力度](cases/2026-09-23-astra-ares/README.md) | [3466](https://x.com/miu21590/status/2101857866378362926) |
+| [webctl · 先筛网页，再交给研究助手](cases/2026-09-23-webctl/README.md) | [357](https://x.com/dorkitude/status/2102194028704092585) |
+| [Jimothy · 把 Jev 的示范教给本地分类器](cases/2026-09-23-jimothy/README.md) | [367](https://x.com/AndrewPrifer/status/2102162296739099126) |
+| [Perch · 用自然语言规则检查代码](cases/2026-09-23-perch/README.md) | [229](https://x.com/joshuafbrown/status/2102085153015451695) |
+| [演讲教练 · 提醒哪些要点还没讲](cases/2026-09-23-presentation-coach/README.md) | [202](https://x.com/hakimel/status/2102355980621324494) |
+| [Kaku · 按已有习惯给笔记打标签](cases/2026-09-23-kaku-note-tags/README.md) | [2026](https://x.com/gemama0/status/2102198046201086356) |
+| [联动编辑 · 改一处，找出其他需要改的地方](cases/2026-09-23-semantic-edit-consistency/README.md) | [225](https://x.com/Saboo_Shubham_/status/2102297903247307067) |
+| [Higgsfield · 用语音串起广告制作](cases/2026-09-23-higgsfield-voice-ads/README.md) | [202](https://x.com/higgsfield_ai/status/2102369525048168862) |
+| [OpenClaw · 给插件接上统一决策接口](cases/2026-09-23-openclaw-decisions/README.md) | [438](https://x.com/openclaw/status/2102488199486656862) |
+| [旧金山城市演示 · 让虚拟街区动起来](cases/2026-09-23-sf-unreal-city/README.md) | [1501](https://x.com/MatthewBerman/status/2102483668468195539) |
+| [BTC 模拟交易 · 用订单簿估计五分钟涨跌](cases/2026-09-23-btc-polymarket-paper/README.md) | [356](https://x.com/FrankDa18249347/status/2102197241331290121) |
+
+MotherDuck 并入相关 DuckDB SQL 案例，Mario 更换教师并入原实验。四个新案例补充固定源码依据；城市演示的宽泛归因标为 C。保留旧快照、六个精选和双列卡片，全部未复现。[逐项依据与去重报告](references/2026-09-23-increment10-audit.md)。
+
 ## 2026-09-21 · 第九轮增量
 
 核对截止 **2026-09-21 11:02:26 北京时间**。新增 **10** 项、合并更新 **2** 项，共 **137 项、11 类**（A 25 / B 96 / C 16）。新增原帖快照均 ≥200 赞且附媒体。

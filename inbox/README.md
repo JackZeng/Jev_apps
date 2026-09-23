@@ -87,3 +87,21 @@
 | 聊天负面内容过滤 | [@developedbyed · 3933](https://x.com/developedbyed/status/2101628206478512341) | 需核对实际过滤标准和误杀行为；负面情绪不等同于辱骂或有害内容。 |
 
 以上为 9 月 21 日 FxTwitter 快照线索，不计入 137 项正式目录。重复转载、纯发布/宣传帖、模仿 Jev API 的独立本地模型也未新增。[核对范围](../references/2026-09-21-increment9-audit.md)。
+
+## 2026-09-23 · 第十轮待补证据
+
+| 线索 | 原帖 / 点赞快照 | 待补证据 |
+| --- | --- | --- |
+| CommandCode 自动提醒 | [@MrAhmadAwais · 186](https://x.com/MrAhmadAwais/status/2102456912486989945) | 原应用帖取数仅 186 赞；官方引用 222 赞不能替代主帖门槛或累计。 |
+| Neatlogs 语义检测 | [@simranrambles · 234](https://x.com/simranrambles/status/2102313324293820530) | 需明确检测对象、输入字段、告警标准与模型分工；预告上线不是实际效果验证。 |
+| 记账替代宣传 | [@andywang · 840](https://x.com/andywang/status/2102265179543400907) | 需核清具体是交易分类还是完整账务；20 秒/$0.32 无法直接与 34 个月会计服务比较。 |
+| 教学内容工作记忆检查 | [@Austin_Way · 609](https://x.com/Austin_Way/status/2102131624921968704) | 已找到原作者代码链接；尚需核对评分规则、教育质量依据与 $250,000/$2,000 估算边界。 |
+| 可视化决策工作流 | [@ctnicholasdev · 638](https://x.com/ctnicholasdev/status/2102070640589279318) | 需读取开源实现，核对节点执行、输出类型及与同作者表单工具的关系，不能把多节点拆成多个应用。 |
+| AgentRun 重复任务 | [@_aj · 2142](https://x.com/_aj/status/2102061534956662818) | 需核对文章方法与完整任务结果，确认学习、代码执行与 Jev 分工后再评估 90% 降费。 |
+| Decision Index 0.1 | [@multimodalart · 268](https://x.com/multimodalart/status/2102296665331999098) | 需完整检查数据来源、划分、标签、延迟与费用统计，不能只据综合排行榜立结论。 |
+| Monid 视频与工具检索 | [@Jasperli0122 · 204](https://x.com/Jasperli0122/status/2102140451763749077) | 与同项目另一作者的工具检索演示（2102112693041938825）关联核查；需拆清视频预处理、选择和全程费用，未作两条新增。 |
+| Cua-Bench S1 | [@trycua · 454](https://x.com/trycua/status/2102149662207844620) | 优先作为已有 Cua 案例的补充候选；需读完整方法、输入条件与成功率分母，暂不拆新卡。 |
+| 自动填表演示 | [@misakism13 · 2100](https://x.com/misakism13/status/2102305405280080143) | 需核对原始实现作者和字段候选，排除已有填表素材的二次传播。 |
+| 六代理营销流程 | [@askOkara · 444](https://x.com/askOkara/status/2102319722671047139) | 需区分 Jev 选择判断与其他模型写作，30 倍且同质量缺同条件基准。 |
+
+以上为 9 月 23 日 FxTwitter 快照，均未计入 148 项正式目录。其他输入接口或原始作者尚未核清的演示，也不在本轮精选增量中。[核对范围](../references/2026-09-23-increment10-audit.md)。

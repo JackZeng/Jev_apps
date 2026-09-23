@@ -37,6 +37,8 @@
 | [Hono JevRouter · 按请求含义分流](2026-09-18-hono-semantic-router/README.md) | 根据请求像是来自人还是 AI，选择返回网页或 Markdown 等不同内容。<br>**🟢 A · 功能/原理证据较清楚**<br>源码逐项判断路由描述并选首个过阈值匹配；文档披露概率独立、默认阈值和普通路由优先。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#hono-semantic-router)<br>**内容更新：** 2026-09-19 16:55:36 | [405](https://x.com/yusukebe/status/2100871075743859182) |
 | [Codex Model Router · 每轮选择模型](2026-09-19-codex-model-router/README.md) | 按当前任务复杂程度，为 Codex 选择模型和推理配置。<br>**🟢 A · 功能/原理证据较清楚**<br>固定版公开代理、分层策略和低置信回退，用户原帖也主动披露失败与缓存未知，有限“路由接入可行”有依据。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#codex-model-router)<br>**内容更新：** 2026-09-19 16:55:36 | [437](https://x.com/antonioleivag/status/2100962426439000484) |
 | [Claude Code Mod · 模型与推理力度路由](2026-09-19-claude-code-jev-router/README.md) | 按任务选择子代理模型，并调整主会话的推理力度。<br>**🟢 A · 功能/原理证据较清楚**<br>固定源码可核对 hooks、默认开关和回退；主帖与当前版本的主模型路由描述有差异，费用收益仍未验证。<br>[判断依据与来源](../references/2026-09-19-increment7-audit.md#claude-code-jev-router)<br>**内容更新：** 2026-09-19 17:48:49 | [417](https://x.com/dani_avila7/status/2101176629745561686) |
+| [Astra-Ares · 按任务进展调节思考力度](2026-09-23-astra-ares/README.md) | 让 Codex 遇到难题多想一些，处理例行步骤时少想一些。<br>**🟢 A · 功能/原理证据较清楚**<br>A 针对可检查的控制实现；50% 省费与更快运行仍是作者自测，缓存结构保持不等于命中率已验证。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#astra-ares)<br>**内容更新：** 2026-09-23 12:09:12 | [3,466](https://x.com/miu21590/status/2101857866378362926) |
+| [OpenClaw · 给插件接上统一决策接口](2026-09-23-openclaw-decisions/README.md) | 让插件或程序直接请求分类、评分和选择，供后续流程使用。<br>**🟡 B · 效果待验证**<br>接口进展有官方来源，但生产发布与各拟议用途的实际效果未验证；它是可选能力，不会自动开启所有功能。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#openclaw-decisions)<br>**内容更新：** 2026-09-23 12:09:12 | [438](https://x.com/openclaw/status/2102488199486656862) |
 
 ## 代码质量与安全检查
 
@@ -55,13 +57,14 @@
 | [Script.it · 先筛问题再写评审](2026-09-19-script-code-review/README.md) | 先判断 git diff 有没有问题，命中后才让文字模型写解释。<br>**🟡 B · 效果待验证**<br>私有数据规模与标注不公开；不能把零误报扩大为永不误报，也不是等召回率的成本比较。作者已说明损失，故不判夸张。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#script-code-review)<br>**内容更新：** 2026-09-19 16:55:36 | [202](https://x.com/liorshkiller/status/2100936106615140757) |
 | [代理目标核验 · 每轮检查是否做完](2026-09-20-agent-goal-verifier/README.md) | 让代理每完成一轮工作，就检查目标是否真的达成。<br>**🟡 B · 效果待验证**<br>可确认作者的核验原型与试验范围；“适合所有验证”和长期代理能力提升仍缺基准。<br>[判断依据与来源](../references/2026-09-20-increment8-audit.md#agent-goal-verifier)<br>**内容更新：** 2026-09-20 11:01:10 | [317](https://x.com/omarsar0/status/2101443311454036477) |
 | [jev-align · 用人工反馈调整判断标准](2026-09-20-jev-align/README.md) | 给边界样例标注对错，让工具逐轮改进 Jev 的判断说明。<br>**🟢 A · 功能/原理证据较清楚**<br>源码可核对标签、GEPA 优化对象与人工接受流程；A 表示实现证据清楚，不代表已验证泛化收益。<br>[判断依据与来源](../references/2026-09-20-increment8-audit.md#jev-align)<br>**内容更新：** 2026-09-20 11:01:10 | [511](https://x.com/sethkimmel3/status/2101357768640987302) |
+| [Perch · 用自然语言规则检查代码](2026-09-23-perch/README.md) | 检查代码是否符合行为约定，把可疑缺陷排出来供人或代理复查。<br>**🟢 A · 功能/原理证据较清楚**<br>A 针对扫描与规则实现；不能把置信度当已验证缺陷，仍需定位、复现与回归检查。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#perch)<br>**内容更新：** 2026-09-23 12:09:12 | [229](https://x.com/joshuafbrown/status/2102085153015451695) |
 
 ## 数据分类与信息整理
 
 | 应用 | 简介 | 主帖点赞 |
 | --- | --- | ---: |
 | [1kpapers 论文分类](2026-09-18-papers/README.md) | 把一千多篇 AI 论文分门别类，方便按主题浏览。<br>**🟡 B · 效果待验证**<br>端到端推理约 4.07 美元；作者还在评估 Jev 标签，不能把已上线网站当作 Jev 分类质量验证。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#papers)<br>**内容更新：** 2026-09-19 16:55:36 | [1,684](https://x.com/nutlope/status/2100426999546184123) |
-| [DuckDB 语义分类扩展](2026-09-18-duckdb/README.md) | 在分析表格时，顺手让 Jev 给每行文字分个类。<br>**🟡 B · 效果待验证**<br>新数字属于同一 DuckDB 集成的软件优化；作者承认旧版低效，缺同条件公开基准，保留 B 并合并更新。<br>[判断依据与来源](../references/2026-09-21-increment9-audit.md#duckdb)<br>**内容更新：** 2026-09-21 11:02:26 | [1,310](https://x.com/hamiltonulmer/status/2100370557405667768) |
+| [DuckDB / MotherDuck · 在 SQL 里给文字分类](2026-09-18-duckdb/README.md) | 查询表格时直接调用 Jev 分类，不必先把文本导出。<br>**🟡 B · 效果待验证**<br>新文章补充数据集、查询和统计口径，但仍是厂商自测；B 保留。NULL 排除和训练划分来源需一并看，不能把宣传倍率当通用结论。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#duckdb)<br>**内容更新：** 2026-09-23 12:09:12 | [1,310](https://x.com/hamiltonulmer/status/2100370557405667768) |
 | [500 封邮件分类](2026-09-18-email-batch/README.md) | 把一大批邮件快速分到不同类别，减少逐封整理。<br>**🟡 B · 效果待验证**<br>邮件构成、标签、正确率和计时边界未公开；目前仅支持一次批量演示与作者成本报告。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#email-batch)<br>**内容更新：** 2026-09-19 16:55:36 | [3,161](https://x.com/rileybrown/status/2100404532119269426) |
 | [Jev + Kimi 邮件反欺诈](2026-09-18-email-fraud/README.md) | 先快速筛查诈骗邮件，再把拿不准的交给更大的模型复核。<br>**🟡 B · 效果待验证**<br>96% 属于组合流程；95% 阈值不是已经校准的欺诈概率，也没有真实低欺诈基率下的误报率。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#email-fraud)<br>**内容更新：** 2026-09-19 16:55:36 | [542](https://x.com/nutlope/status/2100614659690713543) |
 | [银行流水收款方整理](2026-09-18-bank-payee/README.md) | 把银行流水里杂乱的交易说明，整理成更容易认出的商户名。<br>**🟡 B · 效果待验证**<br>作者措辞是粗略完成度，不是标注测试集 95% 准确率；候选生成和名称构造尚不明确。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#bank-payee)<br>**内容更新：** 2026-09-19 16:55:36 | [633](https://x.com/jlongster/status/2100179852053639236) |
@@ -83,6 +86,8 @@
 | [DocJev · 给文档分类、拆分合订本](2026-09-21-docjev/README.md) | 识别文档类别，并找出一份合订 PDF 中各文件的起止页。<br>**🟢 A · 功能/原理证据较清楚**<br>实现和测量边界清楚；“同等准确、约六倍快”只部分成立，拆分质量有差异且计时不含完整处理。<br>[判断依据与来源](../references/2026-09-21-increment9-audit.md#docjev)<br>**内容更新：** 2026-09-21 11:02:26 | [695](https://x.com/jerryjliu0/status/2101738281046294552) |
 | [Reddit Radar MCP · 按自定义条件筛帖子](2026-09-21-reddit-radar-mcp/README.md) | 通过 Claude Code 或 Codex，寻找符合自己条件的 Reddit 讨论。<br>**🟡 B · 效果待验证**<br>任务与演示明确，规模和商业判断效果仍属作者陈述。<br>[判断依据与来源](../references/2026-09-21-increment9-audit.md#reddit-radar-mcp)<br>**内容更新：** 2026-09-21 11:02:26 | [295](https://x.com/oguzhankayancom/status/2101667801274478707) |
 | [Jev Field Notes · 用 Jev 整理 Jev 案例](2026-09-21-jev-field-notes-curation/README.md) | 从 X 的应用演示中筛选内容，更新案例集。<br>**🟡 B · 效果待验证**<br>来源支持作者的整理原型；尚不能证明自动更新完整性、去重率或事实核查能力。<br>[判断依据与来源](../references/2026-09-21-increment9-audit.md#jev-field-notes-curation)<br>**内容更新：** 2026-09-21 11:02:26 | [298](https://x.com/omarsar0/status/2101696753749655863) |
+| [Jimothy · 把 Jev 的示范教给本地分类器](2026-09-23-jimothy/README.md) | 收集 Jev 对特定任务的判断，训练能在浏览器或服务器本地运行的小分类器。<br>**🟢 A · 功能/原理证据较清楚**<br>A 针对可检查的数据与训练分工；小模型速度不能直接当完整流程速度，教师错误也可能被继承。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#jimothy)<br>**内容更新：** 2026-09-23 12:09:12 | [367](https://x.com/AndrewPrifer/status/2102162296739099126) |
+| [Kaku · 按已有习惯给笔记打标签](2026-09-23-kaku-note-tags/README.md) | 根据工作区已有标签整理笔记，把不确定的匹配留给人确认。<br>**🟡 B · 效果待验证**<br>任务与复核流程有作者依据；大规模分类质量、成本和具体模型配置仍待验证。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#kaku-note-tags)<br>**内容更新：** 2026-09-23 12:09:12 | [2,026](https://x.com/gemama0/status/2102198046201086356) |
 
 ## 内容与广告分析
 
@@ -99,6 +104,8 @@
 | [MaxFusion · 广告素材分类](2026-09-19-maxfusion-ad-classifier/README.md) | 给广告标注风格和用户旅程阶段，方便按维度分析账号素材。<br>**🟡 B · 效果待验证**<br>缺人工标签评测和素材前处理成本；批次更大不能直接证明比 StealAds 更好，MCP 仍是预告。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#maxfusion-ad-classifier)<br>**内容更新：** 2026-09-19 16:55:36 | [320](https://x.com/OriSilver/status/2100941251478458871) |
 | [Ryze AI · SEO/GEO 审核与修复](2026-09-19-ryze-seo-geo/README.md) | 把 Jev 加入网站搜索可见性审核，分析页面及 AI 搜索引用并提出修复。<br>**🟠 C · 宣传超出证据**<br>新增七类判断说明仍属 Ryze 同一产品；90% 降费、20–30 倍提速和引用效果缺可复核对照，不按工作流数扩充案例。<br>[判断依据与来源](../references/2026-09-20-increment8-audit.md#ryze-seo-geo)<br>**内容更新：** 2026-09-20 11:01:10 | [790](https://x.com/irabukht/status/2101090579127951694) |
 | [X 草稿检查 · 发帖前看看是否太浮夸](2026-09-20-x-draft-hype-check/README.md) | 在编辑帖子时提醒措辞是否像夸张营销或卖课话术。<br>**🟡 B · 效果待验证**<br>可支持草稿风格提醒原型；不能把标签当成事实核查或对人的可靠评价。<br>[判断依据与来源](../references/2026-09-20-increment8-audit.md#x-draft-hype-check)<br>**内容更新：** 2026-09-20 11:01:10 | [446](https://x.com/unsu0707/status/2101249913099375058) |
+| [联动编辑 · 改一处，找出其他需要改的地方](2026-09-23-semantic-edit-consistency/README.md) | 修改文字后，寻找相关段落的不一致，并给出修改建议。<br>**🟡 B · 效果待验证**<br>支持联动编辑原型；全量覆盖、实时性和可用性仍待补证据。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#semantic-edit-consistency)<br>**内容更新：** 2026-09-23 12:09:12 | [225](https://x.com/Saboo_Shubham_/status/2102297903247307067) |
+| [Higgsfield · 用语音串起广告制作](2026-09-23-higgsfield-voice-ads/README.md) | 通过语音操作，串联产品选择、图片生成和视频广告制作。<br>**🟡 B · 效果待验证**<br>可支持语音广告制作的集成演示；精确分工及可靠性未知，保留 B。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#higgsfield-voice-ads)<br>**内容更新：** 2026-09-23 12:09:12 | [202](https://x.com/higgsfield_ai/status/2102369525048168862) |
 
 ## 网页与信息流过滤
 
@@ -109,6 +116,7 @@
 | [YouTube 赞助片段跳过](2026-09-18-youtube-sponsor-skip/README.md) | 观看 YouTube 时识别口播赞助片段，自动跳到后面的内容。<br>**🟢 A · 功能/原理证据较清楚**<br>固定版本文档及 src/jev.js、src/live.js 公开字幕分窗、行号选择、程序映射时间和音频模式的转写分工，支持功能机制。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#youtube-sponsor-skip)<br>**内容更新：** 2026-09-19 16:55:36 | [238](https://x.com/tdinh_me/status/2100793777103466615) |
 | [X 回复清理 · 标记低价值评论](2026-09-19-x-reply-cleanup/README.md) | 识别帖子下面疑似低价值回复，帮助用户清理评论区。<br>**🟡 B · 效果待验证**<br>实际处理是隐藏还是屏蔽未核清；更正进入下一次上下文不等于训练模型，也没有准确率证明。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#x-reply-cleanup)<br>**内容更新：** 2026-09-19 16:55:36 | [223](https://x.com/iannuttall/status/2100888635943883244) |
 | [Needle · 按意思查找网页原文](2026-09-21-needle-semantic-find/README.md) | 记不清关键词时，用自己的话找到网页里的相关句子。<br>**🟢 A · 功能/原理证据较清楚**<br>固定代码可核对提取、相关性判断和原句选择；A 表示分工清楚，不代表搜索完整性已验证。<br>[判断依据与来源](../references/2026-09-21-increment9-audit.md#needle-semantic-find)<br>**内容更新：** 2026-09-21 11:02:26 | [1,658](https://x.com/Saboo_Shubham_/status/2101576462042366114) |
+| [webctl · 先筛网页，再交给研究助手](2026-09-23-webctl/README.md) | 筛掉搜索结果中的无关内容和近似重复，减少助手要读的材料。<br>**🟢 A · 功能/原理证据较清楚**<br>A 表示筛选流程与评测边界可检查；小样本、单次运行与分项计费不足以证明普遍更准更便宜。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#webctl)<br>**内容更新：** 2026-09-23 12:09:12 | [357](https://x.com/dorkitude/status/2102194028704092585) |
 
 ## 上下文与记忆筛选
 
@@ -140,7 +148,7 @@
 | [Flappy Bird · 飞行避障](2026-09-19-flappy-bird/README.md) | 让 Jev 参与控制小鸟穿过障碍。<br>**🟡 B · 效果待验证**<br>没有状态格式、是否暂停、失败局、多局分数和成本；轻松是观感，不能推断稳定水平。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#flappy-bird)<br>**内容更新：** 2026-09-19 16:55:36 | [254](https://x.com/thymikee/status/2100937960115838984) |
 | [语音咒语游戏 · 一句话决定魔法](2026-09-20-voice-spell-game/README.md) | 念出自己编的咒语，由语义判断决定魔法的属性与威力。<br>**🟡 B · 效果待验证**<br>原帖明确判断维度和游戏参数分工；可玩性、识别准确率及稳定性待验证。<br>[判断依据与来源](../references/2026-09-20-increment8-audit.md#voice-spell-game)<br>**内容更新：** 2026-09-20 11:01:10 | [576](https://x.com/izumisatoshi05/status/2101287104030609624) |
 | [聊天小游戏 · 识别情绪与话题](2026-09-20-emotion-topic-chat-game/README.md) | 把玩家输入分成情绪和话题，让聊天游戏作出响应。<br>**🟡 B · 效果待验证**<br>可支持情绪/话题驱动的聊天原型；免费运营和长期对话质量仍无完整证据。<br>[判断依据与来源](../references/2026-09-20-increment8-audit.md#emotion-topic-chat-game)<br>**内容更新：** 2026-09-20 11:01:10 | [391](https://x.com/gigabit_million/status/2101285853859545263) |
-| [Mario 教师数据 · Jev 示范，小模型接手](2026-09-21-mario-lightgbm-teacher/README.md) | 用 Jev 生成训练样例，再让本地 LightGBM 控制马里奥。<br>**🟡 B · 效果待验证**<br>明确区分教师与运行模型；短片和作者说明尚不能证明泛化或稳定通关。<br>[判断依据与来源](../references/2026-09-21-increment9-audit.md#mario-lightgbm-teacher)<br>**内容更新：** 2026-09-21 11:02:26 | [945](https://x.com/nwnwnyo/status/2101605150242849140) |
+| [Mario 教师数据 · Jev 示范，小模型接手](2026-09-21-mario-lightgbm-teacher/README.md) | 用教师模型生成训练样例，再让本地 LightGBM 控制马里奥；作者后续更换了教师。<br>**🟡 B · 效果待验证**<br>合并同作者、同 harness 的后续反向证据；保留原始主帖，明确教师已换成 DeepSeek，不能把新通关宣传归给 Jev。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#mario-lightgbm-teacher)<br>**内容更新：** 2026-09-23 12:09:12 | [945](https://x.com/nwnwnyo/status/2101605150242849140) |
 | [Minecraft 固定路线 · 规划与动作选择协作](2026-09-21-minecraft-fixed-route/README.md) | 用规划模型、Jev 和寻路代码，沿已知路线挑战末影龙。<br>**🟠 C · 宣传超出证据**<br>“Jev 操作 WASD/鼠标”的说法与仓库明确的结构化状态及高层动作不一致；收录受限路线实验，不据此认定通用自主通关。<br>[判断依据与来源](../references/2026-09-21-increment9-audit.md#minecraft-fixed-route)<br>**内容更新：** 2026-09-21 11:02:26 | [6,861](https://x.com/rronak_/status/2101544156757950697) |
 
 ## NPC、驾驶与群体模拟
@@ -158,6 +166,7 @@
 | [生命体征模拟 · 状态变化判断](2026-09-19-vital-signs-simulator/README.md) | 用正常状态和心率偏慢的模拟场景，对照规则报警与 Jev 判断。<br>**🟠 C · 宣传超出证据**<br>两段模拟不能支持“可用于实际工作”；回答一致性、置信度和临床事件概率并非同一验证目标。<br>[判断依据与来源](../references/2026-09-19-increment7-audit.md#vital-signs-simulator)<br>**内容更新：** 2026-09-19 17:48:49 | [216](https://x.com/roiyaruRIZ/status/2101130711067431018) |
 | [双臂机器人仿真 · 分层动作决策](2026-09-19-dual-arm-robot-sim/README.md) | 在模拟环境中按指令操作积木，由 Jev 承担中间层决策。<br>**🟡 B · 效果待验证**<br>分层结构和仿真画面支持原型存在；速度、费用与实体迁移效果仍是未验证的作者报告。<br>[判断依据与来源](../references/2026-09-19-increment7-audit.md#dual-arm-robot-sim)<br>**内容更新：** 2026-09-19 17:48:49 | [229](https://x.com/Raptor_zip/status/2101091398447505567) |
 | [MuJoCo · 三模型搬苹果对照](2026-09-20-mujoco-apple-control/README.md) | 让模拟机械臂把苹果放进盘子，比较三种模型的方向与夹爪决策。<br>**🟢 A · 功能/原理证据较清楚**<br>固定版本披露单次试验、物理控制分工和回放计时；A 表示可检查性较好，本库未运行校验或真实机器人。<br>[判断依据与来源](../references/2026-09-20-increment8-audit.md#mujoco-apple-control)<br>**内容更新：** 2026-09-20 11:01:10 | [272](https://x.com/openroboto/status/2101310974359941332) |
+| [旧金山城市演示 · 让虚拟街区动起来](2026-09-23-sf-unreal-city/README.md) | 在 Unreal 城市场景中，展示人物、宠物和车辆的活动。<br>**🟠 C · 宣传超出证据**<br>C 针对“驱动一切”的宽泛归因；保留城市演示事实，实体行为分工和规模效果仍未知。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#sf-unreal-city)<br>**内容更新：** 2026-09-23 12:09:12 | [1,501](https://x.com/MatthewBerman/status/2102483668468195539) |
 
 ## 实时交互与组合实验
 
@@ -186,6 +195,7 @@
 | [Toothless · 判断一句话是不是在叫助手](2026-09-21-toothless-voice-gate/README.md) | 区分对助手说的话和人与人之间的交谈，减少无关插话。<br>**🟡 B · 效果待验证**<br>可支持语音入口的判断原型；自然接话与长期常驻可靠性仍待验证。<br>[判断依据与来源](../references/2026-09-21-increment9-audit.md#toothless-voice-gate)<br>**内容更新：** 2026-09-21 11:02:26 | [266](https://x.com/ashutoshpuro97/status/2101660362882085299) |
 | [Token 选择循环 · 用选择题逐步拼文字](2026-09-21-token-choice-loop/README.md) | 把候选 token 交给 Jev，反复选择下一个，拼出文本。<br>**🟡 B · 效果待验证**<br>循环结构和原型有来源；只能证明一种拼接思路，文本质量与效率待验证。<br>[判断依据与来源](../references/2026-09-21-increment9-audit.md#token-choice-loop)<br>**内容更新：** 2026-09-21 11:02:26 | [211](https://x.com/erikdunteman/status/2101533797527454109) |
 | [AnimeAct · 让角色跟着台词做表情和动作](2026-09-21-animeact-jev-demo/README.md) | 把台词意图接到 3D 角色表演系统，展示接近即时的动作反馈。<br>**🟡 B · 效果待验证**<br>可确认联动演示，精确接口和正式可用性待补；商品页还含未来日期，不能据此当成已发布。<br>[判断依据与来源](../references/2026-09-21-increment9-audit.md#animeact-jev-demo)<br>**内容更新：** 2026-09-21 11:02:26 | [2,014](https://x.com/frombit_jp/status/2101298040741253195) |
+| [演讲教练 · 提醒哪些要点还没讲](2026-09-23-presentation-coach/README.md) | 跟随演讲进度，对照幻灯片和讲稿，提示遗漏的内容。<br>**🟡 B · 效果待验证**<br>用途和原型明确，公开可用性及真实演讲中的准确性尚未验证。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#presentation-coach)<br>**内容更新：** 2026-09-23 12:09:12 | [202](https://x.com/hakimel/status/2102355980621324494) |
 
 ## 交易与历史回测
 
@@ -195,3 +205,4 @@
 | [AI Hedge Fund · 策略回测](2026-09-19-ai-hedge-fund-backtest/README.md) | 选择策略和股票代码，在历史数据上运行策略实验。<br>**🟠 C · 宣传超出证据**<br>未公布比较模型、同一任务和精度定义、费用与时间记录；约 7 秒流程视频无法支持质量等同与双重 100 倍改善。回测也不是实盘收益。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#ai-hedge-fund-backtest)<br>**内容更新：** 2026-09-19 16:55:36 | [613](https://x.com/virattt/status/2100959848623899005) |
 | [丹麦股票 · 全年历史策略实验](2026-09-19-danish-stock-backtest/README.md) | 用市场、新闻等信息，在 2025 年行情上做交易策略实验。<br>**🟡 B · 效果待验证**<br>没有逐时信息截断、前视偏差控制、手续费或滑点；token 费用不是完整策略成本，不能理解为真实全年实盘获利。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#danish-stock-backtest)<br>**内容更新：** 2026-09-19 16:55:36 | [269](https://x.com/tommy_jepsen/status/2100939646653903063) |
 | [Nifty 日内交易 · 含止损的账户演示](2026-09-19-nifty-trading/README.md) | 展示将 Jev 接入 Nifty 日内交易，并报告触发止损。<br>**🟡 B · 效果待验证**<br>真实账户、成交、净收益和风控执行未独立核验；一次亏损披露也不能证明长期风控可靠或可获利。<br>[判断依据与来源](../references/2026-09-19-claims-audit.md#nifty-trading)<br>**内容更新：** 2026-09-19 16:55:36 | [673](https://x.com/IndraVahan/status/2100929105382564113) |
+| [BTC 模拟交易 · 用订单簿估计五分钟涨跌](2026-09-23-btc-polymarket-paper/README.md) | 读取市场订单簿，估计涨跌并在预测市场价格上做模拟买卖。<br>**🟡 B · 效果待验证**<br>B 仅支持明确的模拟交易实验，预测准确性和可盈利性均未验证。<br>[判断依据与来源](../references/2026-09-23-increment10-audit.md#btc-polymarket-paper)<br>**内容更新：** 2026-09-23 12:09:12 | [356](https://x.com/FrankDa18249347/status/2102197241331290121) |

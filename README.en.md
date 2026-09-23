@@ -6,7 +6,7 @@ Most AI tools are known for writing answers. **TypeSafe Jev specializes in makin
 Give it the current situation and a question or set of choices; it returns a choice, score or yes/no judgment for code to act on.
 This guide explores what people have built with it—and what their demonstrations actually establish.
 
-**137 examples · 11 categories** · Sources checked through 2026-09-21
+**148 examples · 11 categories** · Sources checked through 2026-09-23
 
 [Browse all applications](#all-apps) · [How Jev works](breakdowns/2026-09-18-how-jev-apps-work.en.md) · [Latest additions](CHANGELOG.en.md)
 
@@ -203,7 +203,7 @@ These systems connect observation to action. Browser tools often read page struc
 <a id="routing"></a>
 
 <details>
-<summary><strong>Choose an assistant for the task</strong> · 11</summary>
+<summary><strong>Choose an assistant for the task</strong> · 13</summary>
 
 Models, skills and tools serve different needs; Jev helps assign work. Model routing affects cost and quality, while skill routing finds capabilities. The two can work together.
 
@@ -276,6 +276,18 @@ Models, skills and tools serve different needs; Jev helps assign work. Model rou
 <p><strong><a href="cases/2026-09-19-claude-code-jev-router/README.en.md">Claude Code Mod: model and effort routing</a></strong><br>Choose subagent models and adjust reasoning effort in the main conversation.</p>
 <p><a href="references/2026-09-19-increment7-audit.en.md#claude-code-jev-router">Clearer mechanism</a> · <a href="cases/2026-09-19-claude-code-jev-router/README.en.md">Details</a><br><a href="https://x.com/dani_avila7/status/2101176629745561686">X · 417 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
 </td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/miu21590/status/2101857866378362926"><img src="https://pbs.twimg.com/amplify_video_thumb/2101857791967178752/img/MiCcd9s5hrptUHqe.jpg" width="320" alt="Astra-Ares: adjust reasoning effort as work progresses"></a></p>
+<p><strong><a href="cases/2026-09-23-astra-ares/README.en.md">Astra-Ares: adjust reasoning effort as work progresses</a></strong><br>Give Codex more reasoning effort for difficult steps and less for routine ones.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#astra-ares">Clearer mechanism</a> · <a href="cases/2026-09-23-astra-ares/README.en.md">Details</a><br><a href="https://x.com/miu21590/status/2101857866378362926">X · 3,466 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/openclaw/status/2102488199486656862"><img src="https://pbs.twimg.com/amplify_video_thumb/2102486637041315840/img/FzZ0g52-3ocut6K2.jpg" width="320" alt="OpenClaw: a shared decision interface for plugins"></a></p>
+<p><strong><a href="cases/2026-09-23-openclaw-decisions/README.en.md">OpenClaw: a shared decision interface for plugins</a></strong><br>Let plugins or application code request classification, scoring and choices for later workflow steps.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#openclaw-decisions">Effectiveness unverified</a> · <a href="cases/2026-09-23-openclaw-decisions/README.en.md">Details</a><br><a href="https://x.com/openclaw/status/2102488199486656862">X · 438 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
 <td width="50%"></td>
 </tr>
 </table>
@@ -285,7 +297,7 @@ Models, skills and tools serve different needs; Jev helps assign work. Model rou
 <a id="review"></a>
 
 <details>
-<summary><strong>Check code and risky actions</strong> · 13</summary>
+<summary><strong>Check code and risky actions</strong> · 14</summary>
 
 Break a broad review into specific judgments. Code review looks for defects; permission checks govern actions. Both false alarms and missed problems matter, and scores do not replace tests.
 
@@ -370,7 +382,11 @@ Break a broad review into specific judgments. Code review looks for defects; per
 <p><strong><a href="cases/2026-09-20-jev-align/README.en.md">jev-align: refine decision criteria with human feedback</a></strong><br>Label boundary cases and iteratively improve Jev’s decision instructions.</p>
 <p><a href="references/2026-09-20-increment8-audit.en.md#jev-align">Clearer mechanism</a> · <a href="cases/2026-09-20-jev-align/README.en.md">Details</a><br><a href="https://x.com/sethkimmel3/status/2101357768640987302">X · 511 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
 </td>
-<td width="50%"></td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/joshuafbrown/status/2102085153015451695"><img src="https://pbs.twimg.com/amplify_video_thumb/2102085145339842560/img/sRjfu4DinUQLEad8.jpg" width="320" alt="Perch: check code against natural-language rules"></a></p>
+<p><strong><a href="cases/2026-09-23-perch/README.en.md">Perch: check code against natural-language rules</a></strong><br>Check behavioral expectations and rank suspicious defects for human or agent review.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#perch">Clearer mechanism</a> · <a href="cases/2026-09-23-perch/README.en.md">Details</a><br><a href="https://x.com/joshuafbrown/status/2102085153015451695">X · 229 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
 </tr>
 </table>
 
@@ -379,7 +395,7 @@ Break a broad review into specific judgments. Code review looks for defects; per
 <a id="data"></a>
 
 <details>
-<summary><strong>Organize files and information</strong> · 23</summary>
+<summary><strong>Organize files and information</strong> · 25</summary>
 
 Label emails, identify forms or find relevant files. Classification, retrieval and numerical estimates fail in different ways; one speed ranking cannot compare them fairly.
 
@@ -393,9 +409,9 @@ Label emails, identify forms or find relevant files. Classification, retrieval a
 <p><a href="references/2026-09-19-claims-audit.en.md#papers">Effectiveness unverified</a> · <a href="cases/2026-09-18-papers/README.en.md">Details</a><br><a href="https://x.com/nutlope/status/2100426999546184123">X · 1,684 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
 </td>
 <td width="50%" valign="top">
-<p><a href="https://x.com/hamiltonulmer/status/2100370557405667768"><img src="https://pbs.twimg.com/media/HSYD5B1bsAAWqeg.jpg?name=orig" width="320" alt="DuckDB semantic classification"></a></p>
-<p><strong><a href="cases/2026-09-18-duckdb/README.en.md">DuckDB semantic classification</a></strong><br>Classify text rows while working with a table.</p>
-<p><a href="references/2026-09-21-increment9-audit.en.md#duckdb">Effectiveness unverified</a> · <a href="cases/2026-09-18-duckdb/README.en.md">Details</a><br><a href="https://x.com/hamiltonulmer/status/2100370557405667768">X · 1,310 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+<p><a href="https://x.com/hamiltonulmer/status/2100370557405667768"><img src="https://pbs.twimg.com/media/HSYD5B1bsAAWqeg.jpg?name=orig" width="320" alt="DuckDB / MotherDuck: classify text inside SQL"></a></p>
+<p><strong><a href="cases/2026-09-18-duckdb/README.en.md">DuckDB / MotherDuck: classify text inside SQL</a></strong><br>Call Jev while querying a table without exporting the text first.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#duckdb">Effectiveness unverified</a> · <a href="cases/2026-09-18-duckdb/README.en.md">Details</a><br><a href="https://x.com/hamiltonulmer/status/2100370557405667768">X · 1,310 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
 </td>
 </tr>
 <tr>
@@ -524,6 +540,18 @@ Label emails, identify forms or find relevant files. Classification, retrieval a
 <p><strong><a href="cases/2026-09-21-jev-field-notes-curation/README.en.md">Jev Field Notes: curate Jev examples with Jev</a></strong><br>Select X application demos for a community collection.</p>
 <p><a href="references/2026-09-21-increment9-audit.en.md#jev-field-notes-curation">Effectiveness unverified</a> · <a href="cases/2026-09-21-jev-field-notes-curation/README.en.md">Details</a><br><a href="https://x.com/omarsar0/status/2101696753749655863">X · 298 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
 </td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/AndrewPrifer/status/2102162296739099126"><img src="https://pbs.twimg.com/amplify_video_thumb/2102161913723691008/img/elm99ez4yx84JJO2.jpg" width="320" alt="Jimothy: teach a local classifier from Jev examples"></a></p>
+<p><strong><a href="cases/2026-09-23-jimothy/README.en.md">Jimothy: teach a local classifier from Jev examples</a></strong><br>Collect Jev decisions for a specific task and train a small classifier for local browser or server use.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#jimothy">Clearer mechanism</a> · <a href="cases/2026-09-23-jimothy/README.en.md">Details</a><br><a href="https://x.com/AndrewPrifer/status/2102162296739099126">X · 367 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/gemama0/status/2102198046201086356"><img src="https://pbs.twimg.com/amplify_video_thumb/2102197556138684416/img/VOAFvXpPpUMtUKYH.jpg" width="320" alt="Kaku: tag notes using your existing organization"></a></p>
+<p><strong><a href="cases/2026-09-23-kaku-note-tags/README.en.md">Kaku: tag notes using your existing organization</a></strong><br>Organize notes with workspace tags and send uncertain matches for human review.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#kaku-note-tags">Effectiveness unverified</a> · <a href="cases/2026-09-23-kaku-note-tags/README.en.md">Details</a><br><a href="https://x.com/gemama0/status/2102198046201086356">X · 2,026 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
 <td width="50%"></td>
 </tr>
 </table>
@@ -533,7 +561,7 @@ Label emails, identify forms or find relevant files. Classification, retrieval a
 <a id="content"></a>
 
 <details>
-<summary><strong>Analyze content and reach</strong> · 11</summary>
+<summary><strong>Analyze content and reach</strong> · 13</summary>
 
 Some tools label ads; others connect articles or predict reach. Describing content differs from predicting the future, and a high score does not guarantee traffic or citations.
 
@@ -606,6 +634,18 @@ Some tools label ads; others connect articles or predict reach. Describing conte
 <p><strong><a href="cases/2026-09-20-x-draft-hype-check/README.en.md">X draft check: flag overhyped wording before posting</a></strong><br>Warn when a draft sounds like exaggerated marketing or a sales pitch.</p>
 <p><a href="references/2026-09-20-increment8-audit.en.md#x-draft-hype-check">Effectiveness unverified</a> · <a href="cases/2026-09-20-x-draft-hype-check/README.en.md">Details</a><br><a href="https://x.com/unsu0707/status/2101249913099375058">X · 446 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
 </td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/Saboo_Shubham_/status/2102297903247307067"><img src="https://pbs.twimg.com/amplify_video_thumb/2102297584434139136/img/BbRWikJDVA0qCmPo.jpg" width="320" alt="Linked editing: find other passages affected by a change"></a></p>
+<p><strong><a href="cases/2026-09-23-semantic-edit-consistency/README.en.md">Linked editing: find other passages affected by a change</a></strong><br>After an edit, find related inconsistencies and suggest revisions.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#semantic-edit-consistency">Effectiveness unverified</a> · <a href="cases/2026-09-23-semantic-edit-consistency/README.en.md">Details</a><br><a href="https://x.com/Saboo_Shubham_/status/2102297903247307067">X · 225 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/higgsfield_ai/status/2102369525048168862"><img src="https://pbs.twimg.com/amplify_video_thumb/2102369418189963264/img/MHnxiaMsiijAiMLF.jpg" width="320" alt="Higgsfield: control an ad-production workflow by voice"></a></p>
+<p><strong><a href="cases/2026-09-23-higgsfield-voice-ads/README.en.md">Higgsfield: control an ad-production workflow by voice</a></strong><br>Use voice to connect product selection, image generation and video-ad creation.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#higgsfield-voice-ads">Effectiveness unverified</a> · <a href="cases/2026-09-23-higgsfield-voice-ads/README.en.md">Details</a><br><a href="https://x.com/higgsfield_ai/status/2102369525048168862">X · 202 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
 <td width="50%"></td>
 </tr>
 </table>
@@ -615,7 +655,7 @@ Some tools label ads; others connect articles or predict reach. Describing conte
 <a id="filter"></a>
 
 <details>
-<summary><strong>Filter unwanted content</strong> · 5</summary>
+<summary><strong>Filter unwanted content</strong> · 6</summary>
 
 Turn preferences into filtering rules. Feed tools judge posts, page cleaners judge elements, and video tools locate time segments. Each needs a way to correct mistakes.
 
@@ -652,7 +692,11 @@ Turn preferences into filtering rules. Feed tools judge posts, page cleaners jud
 <p><strong><a href="cases/2026-09-21-needle-semantic-find/README.en.md">Needle: find webpage passages by meaning</a></strong><br>Use your own words to find relevant sentences without remembering exact keywords.</p>
 <p><a href="references/2026-09-21-increment9-audit.en.md#needle-semantic-find">Clearer mechanism</a> · <a href="cases/2026-09-21-needle-semantic-find/README.en.md">Details</a><br><a href="https://x.com/Saboo_Shubham_/status/2101576462042366114">X · 1,658 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
 </td>
-<td width="50%"></td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/dorkitude/status/2102194028704092585"><img src="https://pbs.twimg.com/media/HSx-UqEaIAEjR4L.jpg?name=orig" width="320" alt="webctl: filter web results before the research assistant reads them"></a></p>
+<p><strong><a href="cases/2026-09-23-webctl/README.en.md">webctl: filter web results before the research assistant reads them</a></strong><br>Remove irrelevant and near-duplicate search material before it reaches an assistant.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#webctl">Clearer mechanism</a> · <a href="cases/2026-09-23-webctl/README.en.md">Details</a><br><a href="https://x.com/dorkitude/status/2102194028704092585">X · 357 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
 </tr>
 </table>
 
@@ -813,8 +857,8 @@ Turn game state into choices and watch small decisions add up. Some systems only
 <tr>
 <td width="50%" valign="top">
 <p><a href="https://x.com/nwnwnyo/status/2101605150242849140"><img src="https://pbs.twimg.com/amplify_video_thumb/2101595622608687104/img/0WizOSDnwuaCFE80.jpg" width="320" alt="Mario teacher data: Jev demonstrates, LightGBM takes over"></a></p>
-<p><strong><a href="cases/2026-09-21-mario-lightgbm-teacher/README.en.md">Mario teacher data: Jev demonstrates, LightGBM takes over</a></strong><br>Generate training examples with Jev, then control Mario with local LightGBM.</p>
-<p><a href="references/2026-09-21-increment9-audit.en.md#mario-lightgbm-teacher">Effectiveness unverified</a> · <a href="cases/2026-09-21-mario-lightgbm-teacher/README.en.md">Details</a><br><a href="https://x.com/nwnwnyo/status/2101605150242849140">X · 945 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
+<p><strong><a href="cases/2026-09-21-mario-lightgbm-teacher/README.en.md">Mario teacher data: Jev demonstrates, LightGBM takes over</a></strong><br>Generate examples with a teacher model, then let local LightGBM play Mario; the author later changed teachers.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#mario-lightgbm-teacher">Effectiveness unverified</a> · <a href="cases/2026-09-21-mario-lightgbm-teacher/README.en.md">Details</a><br><a href="https://x.com/nwnwnyo/status/2101605150242849140">X · 945 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
 </td>
 <td width="50%" valign="top">
 <p><a href="https://x.com/rronak_/status/2101544156757950697"><img src="https://pbs.twimg.com/amplify_video_thumb/2101542497042481152/img/edco8P9wl-DUp5z8.jpg" width="320" alt="Minecraft fixed route: planning plus bounded actions"></a></p>
@@ -829,7 +873,7 @@ Turn game state into choices and watch small decisions add up. Some systems only
 <a id="simulation"></a>
 
 <details>
-<summary><strong>Experiment in simulated worlds</strong> · 11</summary>
+<summary><strong>Experiment in simulated worlds</strong> · 12</summary>
 
 Explore decisions in traffic, robotics and virtual characters. Code usually handles physics and movement. Success in a simulation still needs validation in the real world.
 
@@ -902,7 +946,11 @@ Explore decisions in traffic, robotics and virtual characters. Code usually hand
 <p><strong><a href="cases/2026-09-20-mujoco-apple-control/README.en.md">MuJoCo: three-model apple pick-and-place comparison</a></strong><br>Move an apple onto a plate with a simulated arm and compare direction and gripper decisions.</p>
 <p><a href="references/2026-09-20-increment8-audit.en.md#mujoco-apple-control">Clearer mechanism</a> · <a href="cases/2026-09-20-mujoco-apple-control/README.en.md">Details</a><br><a href="https://x.com/openroboto/status/2101310974359941332">X · 272 likes snapshot</a><br><sub>Content updated: 2026-09-20</sub></p>
 </td>
-<td width="50%"></td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/MatthewBerman/status/2102483668468195539"><img src="https://pbs.twimg.com/amplify_video_thumb/2102483408551366656/img/LdGqXiG3HWBRzHXT.jpg" width="320" alt="San Francisco city demo: animate a virtual neighborhood"></a></p>
+<p><strong><a href="cases/2026-09-23-sf-unreal-city/README.en.md">San Francisco city demo: animate a virtual neighborhood</a></strong><br>Show people, pets and vehicles moving in an Unreal city scene.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#sf-unreal-city">Claims lack support</a> · <a href="cases/2026-09-23-sf-unreal-city/README.en.md">Details</a><br><a href="https://x.com/MatthewBerman/status/2102483668468195539">X · 1,501 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
 </tr>
 </table>
 
@@ -911,7 +959,7 @@ Explore decisions in traffic, robotics and virtual characters. Code usually hand
 <a id="interaction"></a>
 
 <details>
-<summary><strong>Turn judgments into interactions</strong> · 23</summary>
+<summary><strong>Turn judgments into interactions</strong> · 24</summary>
 
 Choose a color or component, or decide whether speech needs a response. Small judgments can create new interfaces. Compare meaning, structure and false activations as well as latency.
 
@@ -1056,7 +1104,11 @@ Choose a color or component, or decide whether speech needs a response. Small ju
 <p><strong><a href="cases/2026-09-21-animeact-jev-demo/README.en.md">AnimeAct: connect dialogue to character acting</a></strong><br>Connect dialogue intent to a 3D acting system for responsive expressions and motion.</p>
 <p><a href="references/2026-09-21-increment9-audit.en.md#animeact-jev-demo">Effectiveness unverified</a> · <a href="cases/2026-09-21-animeact-jev-demo/README.en.md">Details</a><br><a href="https://x.com/frombit_jp/status/2101298040741253195">X · 2,014 likes snapshot</a><br><sub>Content updated: 2026-09-21</sub></p>
 </td>
-<td width="50%"></td>
+<td width="50%" valign="top">
+<p><a href="https://x.com/hakimel/status/2102355980621324494"><img src="https://pbs.twimg.com/amplify_video_thumb/2102352492243591169/img/uQWNf2IaCBWq7xXw.jpg" width="320" alt="Presentation coach: track points still left to cover"></a></p>
+<p><strong><a href="cases/2026-09-23-presentation-coach/README.en.md">Presentation coach: track points still left to cover</a></strong><br>Follow a presentation against slides and notes, flagging material not yet covered.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#presentation-coach">Effectiveness unverified</a> · <a href="cases/2026-09-23-presentation-coach/README.en.md">Details</a><br><a href="https://x.com/hakimel/status/2102355980621324494">X · 202 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
 </tr>
 </table>
 
@@ -1065,7 +1117,7 @@ Choose a color or component, or decide whether speech needs a response. Small ju
 <a id="finance"></a>
 
 <details>
-<summary><strong>Explore trading and backtests</strong> · 4</summary>
+<summary><strong>Explore trading and backtests</strong> · 5</summary>
 
 Some examples test strategies on historical data; others demonstrate execution. Backtests need time-valid data, while execution needs fill and risk checks. Speed and low cost do not establish profit.
 
@@ -1095,6 +1147,14 @@ Some examples test strategies on historical data; others demonstrate execution. 
 <p><strong><a href="cases/2026-09-19-nifty-trading/README.en.md">Nifty intraday trading: an account demo with a stop-loss report</a></strong><br>Demonstrate Jev-connected Nifty trading and report a triggered stop loss.</p>
 <p><a href="references/2026-09-19-claims-audit.en.md#nifty-trading">Effectiveness unverified</a> · <a href="cases/2026-09-19-nifty-trading/README.en.md">Details</a><br><a href="https://x.com/IndraVahan/status/2100929105382564113">X · 673 likes snapshot</a><br><sub>Content updated: 2026-09-19</sub></p>
 </td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<p><a href="https://x.com/FrankDa18249347/status/2102197241331290121"><img src="https://pbs.twimg.com/amplify_video_thumb/2102196000005963776/img/J_7eFuDjznhJL_6l.jpg" width="320" alt="BTC paper trading: estimate five-minute direction from an order book"></a></p>
+<p><strong><a href="cases/2026-09-23-btc-polymarket-paper/README.en.md">BTC paper trading: estimate five-minute direction from an order book</a></strong><br>Read market order-book data, estimate direction and simulate trades against prediction-market prices.</p>
+<p><a href="references/2026-09-23-increment10-audit.en.md#btc-polymarket-paper">Effectiveness unverified</a> · <a href="cases/2026-09-23-btc-polymarket-paper/README.en.md">Details</a><br><a href="https://x.com/FrankDa18249347/status/2102197241331290121">X · 356 likes snapshot</a><br><sub>Content updated: 2026-09-23</sub></p>
+</td>
+<td width="50%"></td>
 </tr>
 </table>
 

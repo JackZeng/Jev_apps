@@ -106,3 +106,7 @@ Added 15 cases and merged 4 updates, yielding 127 cases (A 23 / B 90 / C 14). [P
 ## 2026-09-21 · Ninth incremental update
 
 Added 10 cases and merged 2 updates, for 137 cases. [Evidence, deduplication, source versions and review scope](2026-09-21-increment9-audit.en.md).
+
+## 2026-09-23 · Tenth incremental update
+
+Added 11 cases and merged 2 updates, for 148 cases. [Evidence, deduplication, versions and scope](2026-09-23-increment10-audit.en.md).

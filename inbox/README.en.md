@@ -87,3 +87,21 @@ Snapshot metadata was read on September 20 through the FxTwitter public mirror. 
 | Negative-chat filtering | [@developedbyed · 3933](https://x.com/developedbyed/status/2101628206478512341) | Establish filtering criteria and false removals; negative sentiment is not equivalent to abuse or harmful content. |
 
 These September 21 FxTwitter snapshots are research leads, excluded from the 137-case count. Also excluded: reposts, general launch/promotional posts, and standalone local models imitating Jev’s API. [Review scope](../references/2026-09-21-increment9-audit.en.md).
+
+## 2026-09-23 · Tenth-round pending evidence
+
+| Lead | Original / like snapshot | Missing evidence |
+| --- | --- | --- |
+| CommandCode nudges | [@MrAhmadAwais · 186](https://x.com/MrAhmadAwais/status/2102456912486989945) | The application original has only 186 likes; a 222-like official quote cannot replace the threshold or be added. |
+| Neatlogs semantic detections | [@simranrambles · 234](https://x.com/simranrambles/status/2102313324293820530) | Establish detection targets, input fields, alert criteria and component roles; a rollout announcement is not outcome validation. |
+| Bookkeeping replacement claim | [@andywang · 840](https://x.com/andywang/status/2102265179543400907) | Clarify transaction classification versus full bookkeeping; 20 seconds/$0.32 cannot directly replace a comparison with 34 months of accounting service. |
+| Working-memory lesson checks | [@Austin_Way · 609](https://x.com/Austin_Way/status/2102131624921968704) | Original source link found; inspect scoring rules, educational-quality evidence and the $250,000/$2,000 projection boundaries. |
+| Visual decision workflows | [@ctnicholasdev · 638](https://x.com/ctnicholasdev/status/2102070640589279318) | Inspect open source, node execution, output types and relationship to the author’s form tool; do not count nodes as separate applications. |
+| AgentRun repetitive tasks | [@_aj · 2142](https://x.com/_aj/status/2102061534956662818) | Review methods and full-task results; establish learning, code execution and Jev roles before evaluating the 90% cost reduction. |
+| Decision Index 0.1 | [@multimodalart · 268](https://x.com/multimodalart/status/2102296665331999098) | Inspect dataset provenance, splits, labels, timing and billing, rather than relying on the aggregate leaderboard. |
+| Monid video and tool retrieval | [@Jasperli0122 · 204](https://x.com/Jasperli0122/status/2102140451763749077) | Cross-check the related tool-search demo by another author (2102112693041938825); separate preprocessing, selection and full cost before intake, not two new cases. |
+| Cua-Bench S1 | [@trycua · 454](https://x.com/trycua/status/2102149662207844620) | Prefer a potential update to existing Cua; review methods, inputs and success-rate denominators before merging, not a new card. |
+| Autofill demo | [@misakism13 · 2100](https://x.com/misakism13/status/2102305405280080143) | Check implementation authorship and field candidates; rule out redistribution of existing form demos. |
+| Six-agent marketing workflow | [@askOkara · 444](https://x.com/askOkara/status/2102319722671047139) | Separate Jev decisions from other models’ writing; 30-fold speed at equal quality needs a matched benchmark. |
+
+September 23 FxTwitter snapshots; these leads are excluded from the 148-case count. Other observed demos with unclear interfaces or original authorship remain outside this selective intake. [Review scope](../references/2026-09-23-increment10-audit.en.md).

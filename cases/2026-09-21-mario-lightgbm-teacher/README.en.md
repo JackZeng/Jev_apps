@@ -2,11 +2,11 @@
 
 [简体中文](README.md) | **English**
 
-> Generate training examples with Jev, then control Mario with local LightGBM.
+> Generate examples with a teacher model, then let local LightGBM play Mario; the author later changed teachers.
 
-**Content updated:** 2026-09-21 11:02:26 (Beijing time, UTC+08:00)
+**Content updated:** 2026-09-23 12:09:12 (Beijing time, UTC+08:00)
 
-**🟡 B · Effectiveness unverified**<br>Teacher and runtime models are clearly distinguished, while generalization and reliable completion remain unverified.<br>[Assessment and sources](../../references/2026-09-21-increment9-audit.en.md#mario-lightgbm-teacher)
+**🟡 B · Effectiveness unverified**<br>Merge contrary follow-up evidence from the same author and harness. Preserve the original while identifying the switch to DeepSeek; its new completion claim cannot be credited to Jev.<br>[Assessment and sources](../../references/2026-09-23-increment10-audit.en.md#mario-lightgbm-teacher)
 
 ## How it works, in plain English
 
@@ -25,7 +25,7 @@ A coach demonstrates and a trainee takes over; the trainee runs during gameplay.
 | Main-post likes snapshot | **945** (threshold ≥ 200) |
 | Metrics/media retrieved (UTC) | 2026-09-21T02:49:26+00:00 |
 | Metadata source | [Public FxTwitter API](https://api.fxtwitter.com/status/2101605150242849140); may be cached |
-| Last source review | 2026-09-21; public descriptions and metadata reviewed, application not run |
+| Last source review | 2026-09-23; public descriptions and metadata reviewed, application not run |
 | Jev version | Unspecified in the post; unknown |
 | Reproduction / availability | Not independently reproduced / unknown (not tested) |
 
@@ -33,7 +33,7 @@ A coach demonstrates and a trainee takes over; the trainee runs during gameplay.
 
 [<img src="https://pbs.twimg.com/amplify_video_thumb/2101595622608687104/img/0WizOSDnwuaCFE80.jpg" width="640" alt="Mario teacher data: Jev demonstrates, LightGBM takes over preview">](https://x.com/nwnwnyo/status/2101605150242849140)<br>[Video](https://x.com/nwnwnyo/status/2101605150242849140)
 
-Compared with other Mario controllers by runtime architecture; reposts of this experiment are not new cases.
+Keep the original 22-second clip and add the 23-second teacher-switch demo, not another Jev application.
 
 - [Direct video 1](https://video.twimg.com/amplify_video/2101595622608687104/vid/avc1/1280x720/B_00-HweMXR0qUSE.mp4?tag=14) (metadata duration: 22.1s)
 
@@ -41,13 +41,13 @@ Media source: [original publishing page](https://x.com/nwnwnyo/status/2101605150
 
 ## Use and value
 
-Generate training examples with Jev, then control Mario with local LightGBM.
+Generate examples with a teacher model, then let local LightGBM play Mario; the author later changed teachers.
 
 **Useful aspect (analysis):** Moves network waiting to preparation instead of every gameplay decision, unlike continuously calling Jev.
 
 ## Inputs, steps and outputs
 
-The author reports excessive Jev latency from Japan, then generates teacher data and trains LightGBM to replace live decisions. Samples, features and training code are undisclosed.
+The original uses Jev teacher data to train LightGBM. A follow-up reports better results with DeepSeek-4.1-Flash outputs in the same harness. LightGBM still runs gameplay; data and training code are undisclosed.
 
 Undisclosed prompts, state formats, thresholds and recovery logic remain unknown. Inclusion of a demo does not establish a stable release.
 
@@ -55,14 +55,14 @@ Undisclosed prompts, state formats, thresholds and recovery logic remain unknown
 
 | Claim | Evidence type | Source | Scope |
 | --- | --- | --- | --- |
-| The author claims over 300-fold faster decisions and a completion, with a roughly 22-second clip; the ratio is specific to that reported setup. | Author report | [Post and attached media](https://x.com/nwnwnyo/status/2101605150242849140) | Not reproduced here; a demo does not establish general performance |
+| The earlier Jev-teacher version claimed over 300-fold speedup. The update reports repeated original failures, then over 1,000-fold speed and consistent completion with DeepSeek teaching. The latter is not a new Jev achievement; neither claim is independently verified. | Author report | [Results documentation](https://x.com/nwnwnyo/status/2102297736011997680) | Not reproduced here; a demo does not establish general performance |
 | Main post meets the threshold and has media | Metadata check | [Retrieval endpoint](https://api.fxtwitter.com/status/2101605150242849140) | Snapshot at the recorded time, not a live count |
 
 
 
 Updates and deduplicated supporting sources:
 
-None.
+- [Supporting post by @nwnwnyo](https://x.com/nwnwnyo/status/2102297736011997680): published 2026-09-22T07:23:33+00:00; 350 likes retrieved 2026-09-23T03:54:25+00:00. Supporting source only; not counted toward the threshold. [Metadata source](https://api.fxtwitter.com/status/2102297736011997680). [Supplementary media 1](https://video.twimg.com/amplify_video/2102297708744904704/vid/avc1/1280x720/BNY1gZ0OLmm3NiHj.mp4?tag=14)
 
 Public project / demo links (a link does not mean availability has been tested here):
 
@@ -70,7 +70,7 @@ No separately verified project entry point recorded from the post; the thread ma
 
 ## Mechanism and comparison
 
-This does not accelerate Jev itself. Dataset size, unseen-level results, repeated completion rates and full preparation costs are unknown.
+No matched dataset sizes, unseen-level evaluation or repeated-run records across teachers. These are not intrinsic Jev speedups; preparation and training costs are unknown.
 
 See the [category analysis](../../breakdowns/2026-09-18-games.en.md) for comparisons, common patterns and suggested experiments. Implementation statements come from public sources; the strengths and missing-evidence assessment are our analysis, not verification of model internals.
 
@@ -83,3 +83,4 @@ See the [category analysis](../../breakdowns/2026-09-18-games.en.md) for compari
 | Date | Change |
 | --- | --- |
 | 2026-09-21 | First collection; checked the main post, metric snapshot and media; added to category comparisons |
+| 2026-09-23T12:09:12+08:00 | Merged supporting sources and refined mechanism, evidence or tutorial notes; [deduplication record](../../CHANGELOG.en.md) |

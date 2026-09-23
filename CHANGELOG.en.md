@@ -2,6 +2,26 @@
 
 [简体中文](CHANGELOG.md) | **English**
 
+## 2026-09-23 · Tenth incremental update
+
+Reviewed through **2026-09-23 12:09:12 Beijing time**. **11 new cases**, **2 merged updates**, **148 cases in 11 groups** (A 29 / B 102 / C 17). New originals all have ≥200 likes in their snapshots and media.
+
+| New case | Like snapshot |
+| --- | ---: |
+| [Astra-Ares: adjust reasoning effort as work progresses](cases/2026-09-23-astra-ares/README.en.md) | [3466](https://x.com/miu21590/status/2101857866378362926) |
+| [webctl: filter web results before the research assistant reads them](cases/2026-09-23-webctl/README.en.md) | [357](https://x.com/dorkitude/status/2102194028704092585) |
+| [Jimothy: teach a local classifier from Jev examples](cases/2026-09-23-jimothy/README.en.md) | [367](https://x.com/AndrewPrifer/status/2102162296739099126) |
+| [Perch: check code against natural-language rules](cases/2026-09-23-perch/README.en.md) | [229](https://x.com/joshuafbrown/status/2102085153015451695) |
+| [Presentation coach: track points still left to cover](cases/2026-09-23-presentation-coach/README.en.md) | [202](https://x.com/hakimel/status/2102355980621324494) |
+| [Kaku: tag notes using your existing organization](cases/2026-09-23-kaku-note-tags/README.en.md) | [2026](https://x.com/gemama0/status/2102198046201086356) |
+| [Linked editing: find other passages affected by a change](cases/2026-09-23-semantic-edit-consistency/README.en.md) | [225](https://x.com/Saboo_Shubham_/status/2102297903247307067) |
+| [Higgsfield: control an ad-production workflow by voice](cases/2026-09-23-higgsfield-voice-ads/README.en.md) | [202](https://x.com/higgsfield_ai/status/2102369525048168862) |
+| [OpenClaw: a shared decision interface for plugins](cases/2026-09-23-openclaw-decisions/README.en.md) | [438](https://x.com/openclaw/status/2102488199486656862) |
+| [San Francisco city demo: animate a virtual neighborhood](cases/2026-09-23-sf-unreal-city/README.en.md) | [1501](https://x.com/MatthewBerman/status/2102483668468195539) |
+| [BTC paper trading: estimate five-minute direction from an order book](cases/2026-09-23-btc-polymarket-paper/README.en.md) | [356](https://x.com/FrankDa18249347/status/2102197241331290121) |
+
+Merged MotherDuck into the related DuckDB SQL case and the changed teacher into the Mario experiment. Four new cases have pinned implementation evidence; broad city-simulation attribution is flagged C. Original snapshots, six highlights and two-column cards are preserved. All remain unreproduced. [Evidence and deduplication report](references/2026-09-23-increment10-audit.en.md).
+
 ## 2026-09-21 · Ninth incremental update
 
 Reviewed through **2026-09-21 11:02:26 Beijing time**. **10 new cases**, **2 merged updates**, **137 cases in 11 groups** (A 25 / B 96 / C 16). Every new original has at least 200 likes in its recorded snapshot and corresponding media.
